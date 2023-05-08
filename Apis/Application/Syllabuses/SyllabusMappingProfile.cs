@@ -1,3 +1,5 @@
+using Application.Syllabuses.Commands;
+using Application.Syllabuses.Commands.CreateSyllabus;
 using Application.Syllabuses.DTO;
 using AutoMapper;
 using Domain.Entities.Syllabuses;
@@ -9,6 +11,7 @@ namespace Application.Syllabuses
         public SyllabusMappingProfile()
         {
             CreateMap<Syllabus, SyllabusDTO>().ReverseMap();
+            CreateMap<Syllabus, CreateSyllabusCommand>().ReverseMap();
         }
     }
 }

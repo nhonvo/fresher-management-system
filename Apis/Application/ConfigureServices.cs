@@ -1,4 +1,6 @@
+using Application.Commons.Behaviors;
 using FluentValidation;
+using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 
@@ -10,12 +12,15 @@ namespace Application
         {
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
-            services.AddMediatR(c =>
+            services.AddMediatR(config =>
             {
-                c.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
+                config.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
+                config.AddBehavior(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
             });
             return services;
         }
     }
 }
 // TODO: Add caching service(memory cache or redis cache). Add excel service.
+
+// TODO: DO FIRST Do authentication feature which has send mail when registration, role, set up policies.

@@ -1,12 +1,11 @@
 ﻿#nullable disable warnings
 
-using Domain.Entities.Common;
 using Domain.Entities.Syllabuses;
 using Domain.Entities.Users;
 
 namespace Domain.Entities
 {
-    public class TrainingProgram : BaseModel
+    public class TrainingProgram : BaseEntity
     {
         public string Name { get; set; }
         public int Duration { get; set; }

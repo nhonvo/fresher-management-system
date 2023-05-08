@@ -1,12 +1,14 @@
 ﻿using Application.Commons;
 using Application.Repositories;
+using Domain.Entities;
 using Infrastructures.Persistence;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Query;
 using System.Linq.Expressions;
 
 namespace Infrastructures.Repositories
 {
-    public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : class
+    public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : BaseEntity
     {
         protected DbSet<TEntity> _dbSet;
 
@@ -24,7 +26,43 @@ namespace Infrastructures.Repositories
         {
             await _dbSet.AddRangeAsync(entities);
         }
+
         // Read
+        public async Task<Pagination<TEntity>> ToPagination(
+            Expression<Func<TEntity, bool>>? filter = null,
+            Func<IQueryable<TEntity>, IIncludableQueryable<TEntity, object>>? include = null,
+            Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null,
+            int pageIndex = 0,
+            int pageSize = 10,
+            bool pageIndexStartsFromZero = true,
+            bool tracked = false)
+        {
+            var query = _dbSet.AsQueryable();
+
+            // filter
+            query = query.Filter(
+                filter: filter,
+                include: include,
+                orderBy: orderBy,
+                pageIndex: pageIndex,
+                pageSize: pageSize,
+                pageIndexStartsFromZero: pageIndexStartsFromZero,
+                tracked: tracked);
+
+            var count = await query.CountAsync();
+            var items = await query.ToListAsync();
+
+            var result = new Pagination<TEntity>()
+            {
+                PageIndex = pageIndex,
+                PageSize = pageSize,
+                TotalItemsCount = count,
+                Items = items,
+            };
+
+            return result;
+        }
+
         public async Task<Pagination<TEntity>> ToPagination(int pageIndex = 0, int pageSize = 10)
         {
             var itemCount = await _dbSet.CountAsync();

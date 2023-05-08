@@ -1,18 +1,11 @@
-using Application;
 using Application.Commons;
-using Infrastructures;
-using WebAPI;
 using WebAPI.Extensions;
-using WebAPI.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // parse the configuration in appsettings
 var configuration = builder.Configuration.Get<AppConfiguration>();
 builder.Services.AddSingleton(configuration);
-// builder.Services.AddInfrastructuresService(configuration.DatabaseConnection);
-// builder.Services.AddApplicationService();
-// builder.Services.AddWebAPIService();
 
 /*
     register with singleton life time

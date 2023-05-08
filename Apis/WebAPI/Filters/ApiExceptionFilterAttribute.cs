@@ -20,6 +20,7 @@ public class ApiExceptionFilterAttribute : ExceptionFilterAttribute
             { typeof(NotFoundException), HandleNotFoundException },
             { typeof(UnauthorizedAccessException), HandleUnauthorizedAccessException },
             //{ typeof(ForbiddenAccessException), HandleForbiddenAccessException },
+            { typeof(TransactionException), HandleTransactionException },
         };
     }
 
@@ -123,6 +124,22 @@ public class ApiExceptionFilterAttribute : ExceptionFilterAttribute
         context.Result = new ObjectResult(details)
         {
             StatusCode = StatusCodes.Status401Unauthorized
+        };
+
+        context.ExceptionHandled = true;
+    }
+
+    private void HandleTransactionException(ExceptionContext context)
+    {
+        var details = new ProblemDetails
+        {
+            Status = StatusCodes.Status500InternalServerError,
+            Title = "InternalServerError",
+        };
+
+        context.Result = new ObjectResult(details)
+        {
+            StatusCode = StatusCodes.Status500InternalServerError
         };
 
         context.ExceptionHandled = true;

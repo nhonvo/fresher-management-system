@@ -2,6 +2,8 @@
 using FluentValidation.AspNetCore;
 using Microsoft.OpenApi.Models;
 using System.Diagnostics;
+using System.Text.Json.Serialization;
+using WebAPI.Filters;
 using WebAPI.Middlewares;
 using WebAPI.Services;
 
@@ -11,7 +13,10 @@ namespace WebAPI
     {
         public static IServiceCollection AddWebAPIService(this IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllers(options =>
+            {
+                options.Filters.Add<ApiExceptionFilterAttribute>();
+            });
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen();
             services.AddHealthChecks();

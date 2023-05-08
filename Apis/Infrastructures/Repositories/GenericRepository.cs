@@ -1,0 +1,158 @@
+﻿using Application.Commons;
+using Application.Repositories;
+using Infrastructures.Persistence;
+using Microsoft.EntityFrameworkCore;
+using System.Linq.Expressions;
+
+namespace Infrastructures.Repositories
+{
+    public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : class
+    {
+        protected DbSet<TEntity> _dbSet;
+
+        public GenericRepository(ApplicationDbContext context)
+        {
+            _dbSet = context.Set<TEntity>();
+        }
+        // create
+        public async Task AddAsync(TEntity entity)
+        {
+            await _dbSet.AddAsync(entity);
+        }
+
+        public async Task AddRangeAsync(IEnumerable<TEntity> entities)
+        {
+            await _dbSet.AddRangeAsync(entities);
+        }
+        // Read
+        public async Task<Pagination<TEntity>> ToPagination(int pageIndex = 0, int pageSize = 10)
+        {
+            var itemCount = await _dbSet.CountAsync();
+            var items = await _dbSet.Skip(pageIndex * pageSize)
+                                    .Take(pageSize)
+                                    .AsNoTracking()
+                                    .ToListAsync();
+
+            var result = new Pagination<TEntity>()
+            {
+                PageIndex = pageIndex,
+                PageSize = pageSize,
+                TotalItemsCount = itemCount,
+                Items = items,
+            };
+
+            return result;
+        }
+
+        public async Task<bool> AnyAsync(Expression<Func<TEntity, bool>> filter) => await _dbSet.AnyAsync(filter);
+        public async Task<int> CountAsync(Expression<Func<TEntity, bool>> filter)
+        {
+            if (filter == null)
+                return await _dbSet.CountAsync();
+            return await _dbSet.CountAsync(filter);
+        }
+        public async Task<int> CountAsync() => await _dbSet.CountAsync();
+        public async Task<TEntity> GetByIdAsync(object id) => await _dbSet.FindAsync(id);
+        public async Task<Pagination<TEntity>> GetAsync(Expression<Func<TEntity, bool>> filter = null,
+                                                        Func<IQueryable<TEntity>, IQueryable<TEntity>> include = null,
+                                                        int pageIndex = 0,
+                                                        int pageSize = 10)
+        {
+            var query = _dbSet.AsQueryable();
+
+            if (include != null)
+            {
+                query = include(query);
+            }
+
+            if (filter != null)
+            {
+                query = query.Where(filter);
+            }
+
+            var itemCount = await query.CountAsync();
+
+            var items = await query.Skip(pageIndex * pageSize)
+                                    .Take(pageSize)
+                                    .ToListAsync();
+
+            var result = new Pagination<TEntity>()
+            {
+                PageIndex = pageIndex,
+                PageSize = pageSize,
+                TotalItemsCount = itemCount,
+                Items = items,
+            };
+
+            return result;
+        }
+
+
+        public async Task<IEnumerable<TEntity>> GetAsync(Expression<Func<TEntity, bool>> filter) => await _dbSet.Where(filter).ToListAsync();
+
+        public async Task<Pagination<TEntity>> GetAsync(Expression<Func<TEntity, bool>> filter, int pageIndex = 0, int pageSize = 10)
+        {
+            var itemCount = await _dbSet.CountAsync();
+            var items = await _dbSet.Where(filter)
+                                    .Skip(pageIndex * pageSize)
+                                    .Take(pageSize)
+                                    .AsNoTracking()
+                                    .ToListAsync();
+
+            var result = new Pagination<TEntity>()
+            {
+                PageIndex = pageIndex,
+                PageSize = pageSize,
+                TotalItemsCount = itemCount,
+                Items = items,
+            };
+
+            return result;
+        }
+        // Update
+        public void Update(TEntity entity)
+        {
+            _dbSet.Update(entity);
+        }
+        public void UpdateRange(IEnumerable<TEntity> entities)
+        {
+            _dbSet.UpdateRange(entities);
+        }
+        // delete
+        public void Delete(TEntity entity)
+        {
+            _dbSet.Remove(entity);
+        }
+        public void DeleteRange(IEnumerable<TEntity> entities)
+        {
+            _dbSet.RemoveRange(entities);
+        }
+        public async Task Delete(object id)
+        {
+            TEntity entity = await GetByIdAsync(id);
+            Delete(entity);
+        }
+        public void SoftRemove(TEntity entity)
+        {
+            _dbSet.Update(entity);
+        }
+
+        public void SoftRemoveRange(IEnumerable<TEntity> entities)
+        {
+            _dbSet.UpdateRange(entities);
+        }
+        public async Task<TEntity> FirstOrDefaultAsync(Expression<Func<TEntity, bool>> filter)
+            => await _dbSet.IgnoreQueryFilters().AsNoTracking().FirstOrDefaultAsync(filter);
+
+        public async Task<TEntity> FirstOrdDefaultAsync(Expression<Func<TEntity, bool>> filter, Func<IQueryable<TEntity>, IQueryable<TEntity>> include = null)
+        {
+            IQueryable<TEntity> query = _dbSet.AsNoTracking();
+
+            if (include != null)
+            {
+                query = include(query);
+            }
+            return await query.FirstOrDefaultAsync(filter);
+        }
+    }
+}

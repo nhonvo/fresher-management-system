@@ -41,5 +41,5 @@ namespace Infrastructures.Persistence
         }
     }
 }
-// TODO: ADD Logging service
+// TODO: ADD Logging service SeriLog, redis, elasticsearch, 
 // TODO: add data seed  - customer seed data extention. update program file 2 part: pileline and app services

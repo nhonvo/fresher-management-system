@@ -1,3 +1,4 @@
+using Application.Common.Exceptions;
 using Application.Syllabuses.DTO;
 using AutoMapper;
 using Domain.Aggregate.AppResult;
@@ -5,10 +6,10 @@ using Domain.Entities.Syllabuses;
 using Domain.Enums.SyllabusEnums;
 using MediatR;
 
-namespace Application.Syllabuses.Commands
+namespace Application.Syllabuses.Commands.CreateSyllabus
 {
     // TODO: not use api result customize the response.
-    public record CreateSyllabusCommand : IRequest<ApiResult<SyllabusDTO>>
+    public record CreateSyllabusCommand : IRequest<SyllabusDTO>
     {
         public string Code { get; set; }
         public float Version { get; set; }
@@ -29,7 +30,7 @@ namespace Application.Syllabuses.Commands
         public bool isActive { get; set; }
         public int Duration { get; set; }
     }
-    public class CreateSyllabusHandler : IRequestHandler<CreateSyllabusCommand, ApiResult<SyllabusDTO>>
+    public class CreateSyllabusHandler : IRequestHandler<CreateSyllabusCommand, SyllabusDTO>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
@@ -39,20 +40,13 @@ namespace Application.Syllabuses.Commands
             _mapper = mapper;
         }
 
-        public async Task<ApiResult<SyllabusDTO>> Handle(CreateSyllabusCommand request, CancellationToken cancellationToken)
+        public async Task<SyllabusDTO> Handle(CreateSyllabusCommand request, CancellationToken cancellationToken)
         {
             var syllabus = _mapper.Map<Syllabus>(request);
-            try
-            {
-                await _unitOfWork.ExecuteTransactionAsync(() => { _unitOfWork.SyllabusRepository.AddAsync(syllabus); });
-                var result = _mapper.Map<SyllabusDTO>(syllabus);
+            await _unitOfWork.ExecuteTransactionAsync(() => { _unitOfWork.SyllabusRepository.AddAsync(syllabus); });
+            var result = _mapper.Map<SyllabusDTO>(syllabus);
 
-                return new ApiSuccessResult<SyllabusDTO>(result);
-            }
-            catch (Exception ex)
-            {
-                return new ApiErrorResult<SyllabusDTO>("Can't add syllabus", new List<string> { ex.ToString() });
-            }
+            return result ?? throw new NotFoundException("Syllabus not found");
         }
     }
 }

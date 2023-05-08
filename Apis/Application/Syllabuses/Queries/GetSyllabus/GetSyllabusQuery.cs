@@ -1,3 +1,4 @@
+using Application.Common.Exceptions;
 using Application.Commons;
 using Application.Syllabuses.DTO;
 using AutoMapper;
@@ -5,7 +6,7 @@ using Domain.Aggregate.AppResult;
 using MediatR;
 
 
-namespace Application.Syllabuses.Queries
+namespace Application.Syllabuses.Queries.GetSyllabus
 {
     public record GetSyllabusQuery(int PageIndex = 0, int PageSize = 10) : IRequest<ApiResult<Pagination<SyllabusDTO>>>;
 
@@ -23,7 +24,7 @@ namespace Application.Syllabuses.Queries
         {
             var syllabus = await _unitOfWork.SyllabusRepository.ToPagination(request.PageIndex, request.PageSize);
             var result = _mapper.Map<Pagination<SyllabusDTO>>(syllabus);
-            if (syllabus == null)
+            if (syllabus.Items == null)
                 return new ApiErrorResult<Pagination<SyllabusDTO>>("Can't get syllabus");
             return new ApiSuccessResult<Pagination<SyllabusDTO>>(result);
         }

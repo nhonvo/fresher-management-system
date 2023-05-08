@@ -1,7 +1,8 @@
 using Application.Commons;
-using Application.Syllabuses.Commands;
+using Application.Syllabuses.Commands.CreateSyllabus;
 using Application.Syllabuses.DTO;
-using Application.Syllabuses.Queries;
+using Application.Syllabuses.Queries.GetSyllabus;
+using Application.Syllabuses.Queries.GetSyllabusById;
 using Domain.Aggregate.AppResult;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -19,8 +20,11 @@ namespace WebAPI.Controllers
         [HttpGet]
         public async Task<ApiResult<Pagination<SyllabusDTO>>> Get(int pageIndex = 0, int pageSize = 10)
          => await _mediator.Send(new GetSyllabusQuery(pageIndex, pageSize));
+        [HttpGet("{id}")]
+        public async Task<SyllabusDTO> Get(int id)
+         => await _mediator.Send(new GetSyllabusByIdQuery(id));
         [HttpPost]
-        public async Task<ApiResult<SyllabusDTO>> Post([FromBody] CreateSyllabusCommand request)
+        public async Task<SyllabusDTO> Post([FromBody] CreateSyllabusCommand request)
         => await _mediator.Send(request);
     }
 }

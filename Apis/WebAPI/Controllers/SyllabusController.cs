@@ -1,6 +1,8 @@
 using Application.Commons;
 using Application.Syllabuses.Commands.CreateSyllabus;
+using Application.Syllabuses.Commands.ImportSyllabusesCSV;
 using Application.Syllabuses.DTO;
+using Application.Syllabuses.Queries.ExportSyllabusesCSV;
 using Application.Syllabuses.Queries.GetSyllabus;
 using Application.Syllabuses.Queries.GetSyllabusById;
 using Domain.Aggregate.AppResult;
@@ -26,5 +28,26 @@ namespace WebAPI.Controllers
         [HttpPost]
         public async Task<SyllabusDTO> Post([FromBody] CreateSyllabusCommand request)
         => await _mediator.Send(request);
+
+        #region CSV
+        [HttpGet("export-syllabuses-csv")]
+        public async Task<FileStreamResult> ExportSyllabusesCSV(string columnSeparator)
+            => await _mediator.Send(new ExportSyllabusesCSVQuery(columnSeparator));
+
+        [HttpPost("import-syllabuses-csv")]
+        public async Task<List<SyllabusDTO>> ImportSyllabusesCSV(
+            [FromQuery] bool IsScanCode,
+            [FromQuery] bool IsScanName,
+            [FromQuery] DuplicateHandle DuplicateHandle,
+            [FromForm] IFormFile formFile
+            )
+            => await _mediator.Send(new ImportSyllabusesCSVCommand()
+            {
+                FormFile = formFile,
+                IsScanCode = IsScanCode,
+                IsScanName = IsScanName,
+                DuplicateHandle = DuplicateHandle
+            });
+        #endregion CSV
     }
 }

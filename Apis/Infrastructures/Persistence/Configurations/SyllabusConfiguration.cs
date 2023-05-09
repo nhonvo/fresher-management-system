@@ -40,11 +40,6 @@ namespace Infrastructures.Persistence.Configurations
             builder.HasMany(x => x.Units)
                 .WithMany(x => x.Syllabuses);
 
-            //TrainingPrograms
-            builder.HasMany(x => x.TrainingPrograms)
-                .WithMany(x => x.Syllabuses);
-
-
 
             //Created
             builder.HasOne(x => x.CreatedAdmin)

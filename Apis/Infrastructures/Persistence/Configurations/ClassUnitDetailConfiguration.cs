@@ -15,11 +15,6 @@ namespace Infrastructures.Persistence.Configurations
                 x.ClassId,
                 x.UnitId
             });
-
-            builder.HasOne(x => x.Class)
-                .WithMany(x => x.ClassUnitDetails)
-                .HasForeignKey(x => x.ClassId);
-
             builder.HasOne(x => x.Unit)
                 .WithMany(x => x.ClassUnitDetails)
                 .HasForeignKey(x => x.UnitId);

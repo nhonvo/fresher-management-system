@@ -51,10 +51,7 @@ namespace Infrastructures.Persistence.Configurations
                 .HasForeignKey(x => x.ApprovedBy)
                 .OnDelete(DeleteBehavior.ClientSetNull);
 
-            // Training program
-            builder.HasOne(x => x.TrainingProgram)
-                .WithMany(x => x.Classes)
-                .HasForeignKey(x => x.TrainingProgramId);
+         
 
         }
     }

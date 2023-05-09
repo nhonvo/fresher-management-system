@@ -9,6 +9,8 @@ using Application.Syllabuses.Queries.GetPagedSyllabusesByDateRange;
 using Domain.Aggregate.AppResult;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Application.Syllabuses.Commands.UpdateSyllabus;
+using Application.Syllabuses.Commands.DeleteSyllabus;
 
 namespace WebAPI.Controllers;
 
@@ -29,6 +31,12 @@ public class SyllabusesController : BaseController
     [HttpPost]
     public async Task<SyllabusDTO> Post([FromBody] CreateSyllabusCommand request)
     => await _mediator.Send(request);
+    [HttpPut]
+    public async Task<SyllabusDTO> Put([FromBody] UpdateSyllabusCommand request)
+    => await _mediator.Send(request);
+    [HttpDelete("{id}")]
+    public async Task<SyllabusDTO> Delete(int id)
+    => await _mediator.Send(new DeleteSyllabusCommand(id));
 
     #region CSV
     [HttpGet("export-syllabuses-csv")]

@@ -90,6 +90,8 @@ namespace Infrastructures.Repositories
         }
         public async Task<int> CountAsync() => await _dbSet.CountAsync();
         public async Task<TEntity> GetByIdAsync(object id) => await _dbSet.FindAsync(id);
+        public async Task<TEntity> GetByIdAsyncAsNoTracking(object id) => await _dbSet.AsNoTracking()
+            .FirstOrDefaultAsync(x => x.Id == int.Parse(id.ToString()));
         public async Task<Pagination<TEntity>> GetAsync(Expression<Func<TEntity, bool>> filter = null,
                                                         Func<IQueryable<TEntity>, IQueryable<TEntity>> include = null,
                                                         int pageIndex = 0,

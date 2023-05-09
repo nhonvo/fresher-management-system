@@ -2149,3 +2149,653 @@ Error Number:2628,State:1,Class:16
 2023-05-09 15:32:38.327 +07:00 [INF] End performance record
 2023-05-09 15:32:38.327 +07:00 [INF] Time taken: 0:00.063
 2023-05-09 15:32:43.479 +07:00 [INF] Application is shutting down...
+2023-05-09 16:45:41.950 +07:00 [FTL] Unhandled Exception
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at WebAPI.Extensions.HostingExtensions.ConfigureServices(WebApplicationBuilder builder, String databaseConnection, String userApp, String key, String issuer, String audience) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Extensions\HostingExtensions.cs:line 53
+   at Program.<Main>$(String[] args) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Program.cs:line 29
+2023-05-09 16:45:42.001 +07:00 [INF] Shut down complete
+2023-05-09 16:45:44.571 +07:00 [FTL] Unhandled Exception
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at WebAPI.Extensions.HostingExtensions.ConfigureServices(WebApplicationBuilder builder, String databaseConnection, String userApp, String key, String issuer, String audience) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Extensions\HostingExtensions.cs:line 53
+   at Program.<Main>$(String[] args) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Program.cs:line 29
+2023-05-09 16:45:44.601 +07:00 [INF] Shut down complete
+2023-05-09 16:46:19.068 +07:00 [FTL] Unhandled Exception
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at WebAPI.Extensions.HostingExtensions.ConfigureServices(WebApplicationBuilder builder, String databaseConnection, String userApp, String key, String issuer, String audience) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Extensions\HostingExtensions.cs:line 53
+   at Program.<Main>$(String[] args) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Program.cs:line 29
+2023-05-09 16:46:19.099 +07:00 [INF] Shut down complete
+2023-05-09 16:46:22.011 +07:00 [FTL] Unhandled Exception
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at WebAPI.Extensions.HostingExtensions.ConfigureServices(WebApplicationBuilder builder, String databaseConnection, String userApp, String key, String issuer, String audience) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Extensions\HostingExtensions.cs:line 53
+   at Program.<Main>$(String[] args) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Program.cs:line 29
+2023-05-09 16:46:22.042 +07:00 [INF] Shut down complete
+2023-05-09 16:48:06.678 +07:00 [FTL] Unhandled Exception
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at WebAPI.Extensions.HostingExtensions.ConfigureServices(WebApplicationBuilder builder, String databaseConnection, String userApp, String key, String issuer, String audience) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Extensions\HostingExtensions.cs:line 53
+   at Program.<Main>$(String[] args) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Program.cs:line 29
+2023-05-09 16:48:06.713 +07:00 [INF] Shut down complete
+2023-05-09 16:48:16.106 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 16:48:18.446 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-09 16:48:18.449 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-09 16:48:18.451 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 16:48:18.452 +07:00 [INF] Hosting environment: Development
+2023-05-09 16:48:18.453 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-09 16:48:22.954 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 16:48:25.622 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 16:48:35.027 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 16:48:35.035 +07:00 [INF] Start performance record
+2023-05-09 16:48:35.211 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-09 16:48:35.213 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-09 16:48:35.257 +07:00 [INF] End performance record
+2023-05-09 16:48:35.263 +07:00 [INF] Time taken: 0:00.225
+2023-05-09 16:48:44.978 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 16:48:44.981 +07:00 [INF] Start performance record
+2023-05-09 16:48:45.032 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-09 16:48:45.035 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-09 16:48:45.074 +07:00 [INF] End performance record
+2023-05-09 16:48:45.075 +07:00 [INF] Time taken: 0:00.094
+2023-05-09 16:48:59.896 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 16:48:59.898 +07:00 [INF] Start performance record
+2023-05-09 16:48:59.922 +07:00 [INF] End performance record
+2023-05-09 16:48:59.923 +07:00 [INF] Time taken: 0:00.024
+2023-05-09 16:53:31.319 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 16:53:32.278 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-09 16:53:32.280 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-09 16:53:32.280 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 16:53:32.281 +07:00 [INF] Hosting environment: Development
+2023-05-09 16:53:32.281 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-09 16:53:32.582 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 16:53:32.838 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:00:24.431 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:00:24.631 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:00:32.092 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 17:00:33.069 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-09 17:00:33.071 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-09 17:00:33.072 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 17:00:33.072 +07:00 [INF] Hosting environment: Development
+2023-05-09 17:00:33.072 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-09 17:00:33.178 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:00:33.377 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:00:41.512 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:00:41.517 +07:00 [INF] Start performance record
+2023-05-09 17:00:41.805 +07:00 [INF] End performance record
+2023-05-09 17:00:41.810 +07:00 [INF] Time taken: 0:00.288
+2023-05-09 17:01:11.987 +07:00 [DBG] Successfully validated the token.
+2023-05-09 17:01:11.989 +07:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2023-05-09 17:01:11.990 +07:00 [INF] Start performance record
+2023-05-09 17:01:12.084 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-09 17:01:12.085 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-09 17:01:12.122 +07:00 [INF] End performance record
+2023-05-09 17:01:12.122 +07:00 [INF] Time taken: 0:00.131
+2023-05-09 17:02:00.421 +07:00 [DBG] Successfully validated the token.
+2023-05-09 17:02:00.421 +07:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2023-05-09 17:02:00.422 +07:00 [INF] Start performance record
+2023-05-09 17:02:00.442 +07:00 [INF] End performance record
+2023-05-09 17:02:00.443 +07:00 [INF] Time taken: 0:00.020
+2023-05-09 17:02:02.849 +07:00 [DBG] Successfully validated the token.
+2023-05-09 17:02:02.849 +07:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2023-05-09 17:02:02.849 +07:00 [INF] Start performance record
+2023-05-09 17:02:02.934 +07:00 [INF] End performance record
+2023-05-09 17:02:02.934 +07:00 [INF] Time taken: 0:00.084
+2023-05-09 17:02:28.771 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:02:28.771 +07:00 [INF] Start performance record
+2023-05-09 17:02:28.861 +07:00 [WRN] Savepoints are disabled because Multiple Active Result Sets (MARS) is enabled. If 'SaveChanges' fails, then the transaction cannot be automatically rolled back to a known clean state. Instead, the transaction should be rolled back by the application before retrying 'SaveChanges'. See https://go.microsoft.com/fwlink/?linkid=2149338 for more information and examples. To identify the code which triggers this warning, call 'ConfigureWarnings(w => w.Throw(SqlServerEventId.SavepointsDisabledBecauseOfMARS))'.
+2023-05-09 17:02:28.896 +07:00 [INF] End performance record
+2023-05-09 17:02:28.896 +07:00 [INF] Time taken: 0:00.124
+2023-05-09 17:02:39.943 +07:00 [DBG] Successfully validated the token.
+2023-05-09 17:02:39.943 +07:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2023-05-09 17:02:39.943 +07:00 [INF] Start performance record
+2023-05-09 17:02:39.951 +07:00 [INF] End performance record
+2023-05-09 17:02:39.951 +07:00 [INF] Time taken: 0:00.008
+2023-05-09 17:04:12.277 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:04:12.469 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:06:50.557 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 17:06:51.636 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-09 17:06:51.638 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-09 17:06:51.639 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 17:06:51.640 +07:00 [INF] Hosting environment: Development
+2023-05-09 17:06:51.640 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-09 17:06:51.778 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:06:52.134 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:07:34.065 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:07:34.068 +07:00 [INF] Start performance record
+2023-05-09 17:07:34.488 +07:00 [WRN] Savepoints are disabled because Multiple Active Result Sets (MARS) is enabled. If 'SaveChanges' fails, then the transaction cannot be automatically rolled back to a known clean state. Instead, the transaction should be rolled back by the application before retrying 'SaveChanges'. See https://go.microsoft.com/fwlink/?linkid=2149338 for more information and examples. To identify the code which triggers this warning, call 'ConfigureWarnings(w => w.Throw(SqlServerEventId.SavepointsDisabledBecauseOfMARS))'.
+2023-05-09 17:07:34.539 +07:00 [INF] End performance record
+2023-05-09 17:07:34.546 +07:00 [INF] Time taken: 0:00.471
+2023-05-09 17:07:41.757 +07:00 [DBG] Successfully validated the token.
+2023-05-09 17:07:41.760 +07:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2023-05-09 17:07:41.762 +07:00 [INF] Start performance record
+2023-05-09 17:07:41.900 +07:00 [INF] End performance record
+2023-05-09 17:07:41.900 +07:00 [INF] Time taken: 0:00.138
+2023-05-09 17:08:02.798 +07:00 [DBG] Successfully validated the token.
+2023-05-09 17:08:02.798 +07:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2023-05-09 17:08:02.801 +07:00 [INF] Start performance record
+2023-05-09 17:08:02.819 +07:00 [INF] End performance record
+2023-05-09 17:08:02.823 +07:00 [INF] Time taken: 0:00.022
+2023-05-09 17:08:40.709 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:08:40.710 +07:00 [INF] Start performance record
+2023-05-09 17:09:13.073 +07:00 [WRN] Savepoints are disabled because Multiple Active Result Sets (MARS) is enabled. If 'SaveChanges' fails, then the transaction cannot be automatically rolled back to a known clean state. Instead, the transaction should be rolled back by the application before retrying 'SaveChanges'. See https://go.microsoft.com/fwlink/?linkid=2149338 for more information and examples. To identify the code which triggers this warning, call 'ConfigureWarnings(w => w.Throw(SqlServerEventId.SavepointsDisabledBecauseOfMARS))'.
+2023-05-09 17:09:20.980 +07:00 [INF] End performance record
+2023-05-09 17:09:20.980 +07:00 [INF] Time taken: 0:40.269
+2023-05-09 17:09:38.643 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 17:09:40.017 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-09 17:09:40.018 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-09 17:09:40.020 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 17:09:40.020 +07:00 [INF] Hosting environment: Development
+2023-05-09 17:09:40.020 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-09 17:09:40.140 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:09:40.484 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:09:42.451 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:09:42.672 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:10:09.819 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:10:09.962 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:10:26.835 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:10:27.016 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:10:34.241 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:10:34.409 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:11:06.618 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:11:06.759 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:11:25.966 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:11:25.969 +07:00 [INF] Start performance record
+2023-05-09 17:11:26.366 +07:00 [WRN] Savepoints are disabled because Multiple Active Result Sets (MARS) is enabled. If 'SaveChanges' fails, then the transaction cannot be automatically rolled back to a known clean state. Instead, the transaction should be rolled back by the application before retrying 'SaveChanges'. See https://go.microsoft.com/fwlink/?linkid=2149338 for more information and examples. To identify the code which triggers this warning, call 'ConfigureWarnings(w => w.Throw(SqlServerEventId.SavepointsDisabledBecauseOfMARS))'.
+2023-05-09 17:11:26.458 +07:00 [INF] End performance record
+2023-05-09 17:11:26.464 +07:00 [INF] Time taken: 0:00.490
+2023-05-09 17:11:40.876 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:11:40.878 +07:00 [INF] Start performance record
+2023-05-09 17:11:50.943 +07:00 [WRN] Savepoints are disabled because Multiple Active Result Sets (MARS) is enabled. If 'SaveChanges' fails, then the transaction cannot be automatically rolled back to a known clean state. Instead, the transaction should be rolled back by the application before retrying 'SaveChanges'. See https://go.microsoft.com/fwlink/?linkid=2149338 for more information and examples. To identify the code which triggers this warning, call 'ConfigureWarnings(w => w.Throw(SqlServerEventId.SavepointsDisabledBecauseOfMARS))'.
+2023-05-09 17:11:51.370 +07:00 [INF] End performance record
+2023-05-09 17:11:51.371 +07:00 [INF] Time taken: 0:10.492
+2023-05-09 17:11:54.897 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:11:57.798 +07:00 [INF] Start performance record
+2023-05-09 17:12:01.966 +07:00 [WRN] Savepoints are disabled because Multiple Active Result Sets (MARS) is enabled. If 'SaveChanges' fails, then the transaction cannot be automatically rolled back to a known clean state. Instead, the transaction should be rolled back by the application before retrying 'SaveChanges'. See https://go.microsoft.com/fwlink/?linkid=2149338 for more information and examples. To identify the code which triggers this warning, call 'ConfigureWarnings(w => w.Throw(SqlServerEventId.SavepointsDisabledBecauseOfMARS))'.
+2023-05-09 17:12:03.169 +07:00 [INF] End performance record
+2023-05-09 17:12:03.169 +07:00 [INF] Time taken: 0:05.370
+2023-05-09 17:12:05.175 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:12:05.175 +07:00 [INF] Start performance record
+2023-05-09 17:12:12.466 +07:00 [WRN] Savepoints are disabled because Multiple Active Result Sets (MARS) is enabled. If 'SaveChanges' fails, then the transaction cannot be automatically rolled back to a known clean state. Instead, the transaction should be rolled back by the application before retrying 'SaveChanges'. See https://go.microsoft.com/fwlink/?linkid=2149338 for more information and examples. To identify the code which triggers this warning, call 'ConfigureWarnings(w => w.Throw(SqlServerEventId.SavepointsDisabledBecauseOfMARS))'.
+2023-05-09 17:12:13.086 +07:00 [INF] End performance record
+2023-05-09 17:12:13.086 +07:00 [INF] Time taken: 0:07.910
+2023-05-09 17:12:45.318 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:12:45.319 +07:00 [INF] Start performance record
+2023-05-09 17:12:45.376 +07:00 [WRN] Savepoints are disabled because Multiple Active Result Sets (MARS) is enabled. If 'SaveChanges' fails, then the transaction cannot be automatically rolled back to a known clean state. Instead, the transaction should be rolled back by the application before retrying 'SaveChanges'. See https://go.microsoft.com/fwlink/?linkid=2149338 for more information and examples. To identify the code which triggers this warning, call 'ConfigureWarnings(w => w.Throw(SqlServerEventId.SavepointsDisabledBecauseOfMARS))'.
+2023-05-09 17:13:05.656 +07:00 [INF] End performance record
+2023-05-09 17:13:05.656 +07:00 [INF] Time taken: 0:20.337
+2023-05-09 17:13:09.555 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:13:09.803 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:13:26.719 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:13:26.866 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:13:28.411 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:13:28.537 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:13:40.948 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 17:13:42.118 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-09 17:13:42.123 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-09 17:13:42.125 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 17:13:42.125 +07:00 [INF] Hosting environment: Development
+2023-05-09 17:13:42.125 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-09 17:13:42.325 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:13:42.654 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:13:43.707 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:13:43.711 +07:00 [INF] Start performance record
+2023-05-09 17:13:44.126 +07:00 [WRN] Savepoints are disabled because Multiple Active Result Sets (MARS) is enabled. If 'SaveChanges' fails, then the transaction cannot be automatically rolled back to a known clean state. Instead, the transaction should be rolled back by the application before retrying 'SaveChanges'. See https://go.microsoft.com/fwlink/?linkid=2149338 for more information and examples. To identify the code which triggers this warning, call 'ConfigureWarnings(w => w.Throw(SqlServerEventId.SavepointsDisabledBecauseOfMARS))'.
+2023-05-09 17:13:44.165 +07:00 [INF] End performance record
+2023-05-09 17:13:44.169 +07:00 [INF] Time taken: 0:00.455
+2023-05-09 17:13:45.518 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:13:45.520 +07:00 [INF] Start performance record
+2023-05-09 17:13:45.591 +07:00 [WRN] Savepoints are disabled because Multiple Active Result Sets (MARS) is enabled. If 'SaveChanges' fails, then the transaction cannot be automatically rolled back to a known clean state. Instead, the transaction should be rolled back by the application before retrying 'SaveChanges'. See https://go.microsoft.com/fwlink/?linkid=2149338 for more information and examples. To identify the code which triggers this warning, call 'ConfigureWarnings(w => w.Throw(SqlServerEventId.SavepointsDisabledBecauseOfMARS))'.
+2023-05-09 17:13:45.604 +07:00 [INF] End performance record
+2023-05-09 17:13:45.605 +07:00 [INF] Time taken: 0:00.084
+2023-05-09 17:14:30.331 +07:00 [DBG] Successfully validated the token.
+2023-05-09 17:14:30.333 +07:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2023-05-09 17:14:30.334 +07:00 [INF] Start performance record
+2023-05-09 17:14:30.356 +07:00 [INF] End performance record
+2023-05-09 17:14:30.356 +07:00 [INF] Time taken: 0:00.021
+2023-05-09 17:15:14.892 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:15:14.895 +07:00 [INF] Start performance record
+2023-05-09 17:15:51.487 +07:00 [WRN] Savepoints are disabled because Multiple Active Result Sets (MARS) is enabled. If 'SaveChanges' fails, then the transaction cannot be automatically rolled back to a known clean state. Instead, the transaction should be rolled back by the application before retrying 'SaveChanges'. See https://go.microsoft.com/fwlink/?linkid=2149338 for more information and examples. To identify the code which triggers this warning, call 'ConfigureWarnings(w => w.Throw(SqlServerEventId.SavepointsDisabledBecauseOfMARS))'.
+2023-05-09 17:15:51.504 +07:00 [INF] End performance record
+2023-05-09 17:15:51.504 +07:00 [INF] Time taken: 0:36.609
+2023-05-09 17:15:52.090 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:15:52.232 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:16:13.608 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 17:16:14.754 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-09 17:16:14.755 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-09 17:16:14.756 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 17:16:14.756 +07:00 [INF] Hosting environment: Development
+2023-05-09 17:16:14.756 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-09 17:16:15.025 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:16:15.317 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:16:21.298 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 17:16:22.254 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-09 17:16:22.256 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-09 17:16:22.257 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 17:16:22.257 +07:00 [INF] Hosting environment: Development
+2023-05-09 17:16:22.258 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-09 17:16:22.362 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:16:22.597 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:16:52.152 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:16:52.157 +07:00 [INF] Start performance record
+2023-05-09 17:17:07.881 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:17:08.007 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:17:12.700 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:17:16.827 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 17:17:17.684 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-09 17:17:17.685 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-09 17:17:17.686 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 17:17:17.687 +07:00 [INF] Hosting environment: Development
+2023-05-09 17:17:17.687 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-09 17:17:17.797 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:17:17.972 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:17:29.251 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:17:29.254 +07:00 [INF] Start performance record
+2023-05-09 17:17:29.703 +07:00 [WRN] Savepoints are disabled because Multiple Active Result Sets (MARS) is enabled. If 'SaveChanges' fails, then the transaction cannot be automatically rolled back to a known clean state. Instead, the transaction should be rolled back by the application before retrying 'SaveChanges'. See https://go.microsoft.com/fwlink/?linkid=2149338 for more information and examples. To identify the code which triggers this warning, call 'ConfigureWarnings(w => w.Throw(SqlServerEventId.SavepointsDisabledBecauseOfMARS))'.
+2023-05-09 17:17:29.755 +07:00 [INF] End performance record
+2023-05-09 17:17:29.759 +07:00 [INF] Time taken: 0:00.501
+2023-05-09 17:18:44.945 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:18:44.947 +07:00 [INF] Start performance record
+2023-05-09 17:19:02.539 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 17:19:03.458 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-09 17:19:03.459 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-09 17:19:03.461 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 17:19:03.461 +07:00 [INF] Hosting environment: Development
+2023-05-09 17:19:03.461 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-09 17:19:03.614 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:19:03.804 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:19:07.550 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:19:07.554 +07:00 [INF] Start performance record
+2023-05-09 17:19:07.991 +07:00 [INF] End performance record
+2023-05-09 17:19:07.995 +07:00 [INF] Time taken: 0:00.437
+2023-05-09 17:19:15.440 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 17:19:16.457 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-09 17:19:16.458 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-09 17:19:16.459 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 17:19:16.460 +07:00 [INF] Hosting environment: Development
+2023-05-09 17:19:16.460 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-09 17:19:16.601 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:19:16.868 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:19:20.738 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:19:20.744 +07:00 [INF] Start performance record
+2023-05-09 17:19:21.141 +07:00 [INF] End performance record
+2023-05-09 17:19:21.146 +07:00 [INF] Time taken: 0:00.398
+2023-05-09 17:19:40.471 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:19:40.472 +07:00 [INF] Start performance record
+2023-05-09 17:20:13.036 +07:00 [INF] End performance record
+2023-05-09 17:20:13.037 +07:00 [INF] Time taken: 0:32.564
+2023-05-09 17:20:27.271 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:20:27.271 +07:00 [INF] Start performance record
+2023-05-09 17:20:59.133 +07:00 [INF] End performance record
+2023-05-09 17:20:59.133 +07:00 [INF] Time taken: 0:31.861
+2023-05-09 17:21:02.137 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:21:02.163 +07:00 [INF] Start performance record
+2023-05-09 17:21:21.607 +07:00 [INF] End performance record
+2023-05-09 17:21:21.607 +07:00 [INF] Time taken: 0:19.444
+2023-05-09 17:21:29.317 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:21:29.487 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:21:31.903 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:21:32.016 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:21:49.349 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:21:49.504 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:21:51.437 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:21:51.546 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:21:58.755 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:21:58.881 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:22:10.363 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 17:22:11.367 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-09 17:22:11.369 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-09 17:22:11.370 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 17:22:11.371 +07:00 [INF] Hosting environment: Development
+2023-05-09 17:22:11.371 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-09 17:22:11.563 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:22:11.767 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:22:23.376 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:22:23.510 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:22:25.479 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:22:25.615 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:22:27.822 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:22:28.140 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:22:39.326 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:22:39.440 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:22:49.493 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:22:49.627 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:23:02.118 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 17:23:03.083 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-09 17:23:03.085 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-09 17:23:03.086 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 17:23:03.086 +07:00 [INF] Hosting environment: Development
+2023-05-09 17:23:03.086 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-09 17:23:03.203 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:23:03.515 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:23:05.848 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:23:05.853 +07:00 [INF] Start performance record
+2023-05-09 17:23:06.286 +07:00 [INF] End performance record
+2023-05-09 17:23:06.292 +07:00 [INF] Time taken: 0:00.433
+2023-05-09 17:23:23.895 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:23:23.896 +07:00 [INF] Start performance record
+2023-05-09 17:23:31.040 +07:00 [INF] End performance record
+2023-05-09 17:23:31.040 +07:00 [INF] Time taken: 0:07.143
+2023-05-09 17:23:42.248 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:23:42.249 +07:00 [INF] Start performance record
+2023-05-09 17:23:42.263 +07:00 [INF] End performance record
+2023-05-09 17:23:42.263 +07:00 [INF] Time taken: 0:00.014
+2023-05-09 17:23:53.109 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:23:53.110 +07:00 [INF] Start performance record
+2023-05-09 17:24:28.281 +07:00 [INF] End performance record
+2023-05-09 17:24:28.281 +07:00 [INF] Time taken: 0:35.171
+2023-05-09 17:24:57.530 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:24:57.534 +07:00 [INF] Start performance record
+2023-05-09 17:26:11.490 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 17:26:13.766 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-09 17:26:13.769 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-09 17:26:13.772 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 17:26:13.773 +07:00 [INF] Hosting environment: Development
+2023-05-09 17:26:13.773 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-09 17:26:14.046 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:26:14.541 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:26:20.549 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:26:20.566 +07:00 [INF] Start performance record
+2023-05-09 17:27:25.075 +07:00 [INF] End performance record
+2023-05-09 17:27:25.076 +07:00 [INF] Time taken: 1:04.514
+2023-05-09 17:27:32.027 +07:00 [INF] Application is shutting down...
+2023-05-09 17:28:24.747 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 17:28:26.668 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-09 17:28:26.671 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-09 17:28:26.672 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 17:28:26.673 +07:00 [INF] Hosting environment: Development
+2023-05-09 17:28:26.673 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-09 17:28:27.276 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:28:27.717 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:28:30.604 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:28:30.610 +07:00 [INF] Start performance record
+2023-05-09 17:28:31.415 +07:00 [INF] End performance record
+2023-05-09 17:28:31.421 +07:00 [INF] Time taken: 0:00.807
+2023-05-09 17:28:31.709 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:28:32.039 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:28:48.635 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 17:28:50.716 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-09 17:28:50.719 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-09 17:28:50.723 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 17:28:50.723 +07:00 [INF] Hosting environment: Development
+2023-05-09 17:28:50.723 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-09 17:28:50.978 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:28:51.549 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:28:51.730 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:28:51.738 +07:00 [INF] Start performance record
+2023-05-09 17:28:52.676 +07:00 [INF] End performance record
+2023-05-09 17:28:52.685 +07:00 [INF] Time taken: 0:00.940
+2023-05-09 17:29:03.930 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:29:03.933 +07:00 [INF] Start performance record
+2023-05-09 17:30:01.770 +07:00 [INF] End performance record
+2023-05-09 17:30:01.770 +07:00 [INF] Time taken: 0:57.837
+2023-05-09 17:30:03.428 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:30:03.724 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:30:05.316 +07:00 [INF] Application is shutting down...
+2023-05-09 17:30:19.629 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 17:30:21.222 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-09 17:30:21.224 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-09 17:30:21.226 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 17:30:21.226 +07:00 [INF] Hosting environment: Development
+2023-05-09 17:30:21.226 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-09 17:30:21.877 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:30:22.519 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:30:23.837 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:30:23.844 +07:00 [INF] Start performance record
+2023-05-09 17:30:24.866 +07:00 [INF] End performance record
+2023-05-09 17:30:24.874 +07:00 [INF] Time taken: 0:01.023
+2023-05-09 17:30:32.222 +07:00 [DBG] Successfully validated the token.
+2023-05-09 17:30:32.226 +07:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2023-05-09 17:30:32.229 +07:00 [INF] Start performance record
+2023-05-09 17:30:32.417 +07:00 [INF] End performance record
+2023-05-09 17:30:32.417 +07:00 [INF] Time taken: 0:00.187
+2023-05-09 17:30:35.833 +07:00 [DBG] Successfully validated the token.
+2023-05-09 17:30:35.834 +07:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2023-05-09 17:30:35.835 +07:00 [INF] Start performance record
+2023-05-09 17:30:35.849 +07:00 [INF] End performance record
+2023-05-09 17:30:35.850 +07:00 [INF] Time taken: 0:00.014
+2023-05-09 17:30:46.169 +07:00 [DBG] Successfully validated the token.
+2023-05-09 17:30:46.169 +07:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2023-05-09 17:30:46.169 +07:00 [INF] Start performance record
+2023-05-09 17:30:46.189 +07:00 [INF] End performance record
+2023-05-09 17:30:46.189 +07:00 [INF] Time taken: 0:00.019
+2023-05-09 17:32:59.854 +07:00 [DBG] Successfully validated the token.
+2023-05-09 17:32:59.854 +07:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2023-05-09 17:32:59.854 +07:00 [INF] Start performance record
+2023-05-09 17:32:59.908 +07:00 [INF] End performance record
+2023-05-09 17:32:59.908 +07:00 [INF] Time taken: 0:00.054
+2023-05-09 17:33:13.852 +07:00 [DBG] Successfully validated the token.
+2023-05-09 17:33:13.852 +07:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2023-05-09 17:33:13.852 +07:00 [INF] Start performance record
+2023-05-09 17:33:14.103 +07:00 [WRN] Savepoints are disabled because Multiple Active Result Sets (MARS) is enabled. If 'SaveChanges' fails, then the transaction cannot be automatically rolled back to a known clean state. Instead, the transaction should be rolled back by the application before retrying 'SaveChanges'. See https://go.microsoft.com/fwlink/?linkid=2149338 for more information and examples. To identify the code which triggers this warning, call 'ConfigureWarnings(w => w.Throw(SqlServerEventId.SavepointsDisabledBecauseOfMARS))'.
+2023-05-09 17:33:14.256 +07:00 [INF] End performance record
+2023-05-09 17:33:14.256 +07:00 [INF] Time taken: 0:00.404
+2023-05-09 17:33:44.903 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:33:44.904 +07:00 [INF] Start performance record
+2023-05-09 17:34:18.756 +07:00 [INF] End performance record
+2023-05-09 17:34:18.757 +07:00 [INF] Time taken: 0:33.852
+2023-05-09 17:34:33.983 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:34:34.624 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:36:29.182 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 17:36:30.965 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-09 17:36:30.967 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-09 17:36:30.970 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 17:36:30.971 +07:00 [INF] Hosting environment: Development
+2023-05-09 17:36:30.971 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-09 17:36:31.231 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:36:31.364 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:36:31.371 +07:00 [INF] Start performance record
+2023-05-09 17:36:31.802 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:36:32.273 +07:00 [INF] End performance record
+2023-05-09 17:36:32.286 +07:00 [INF] Time taken: 0:00.904
+2023-05-09 17:36:34.732 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:36:34.737 +07:00 [INF] Start performance record
+2023-05-09 17:36:34.996 +07:00 [INF] End performance record
+2023-05-09 17:36:34.997 +07:00 [INF] Time taken: 0:00.259
+2023-05-09 17:36:49.820 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 17:36:51.631 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-09 17:36:51.633 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-09 17:36:51.636 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 17:36:51.637 +07:00 [INF] Hosting environment: Development
+2023-05-09 17:36:51.637 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-09 17:36:51.829 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:36:52.298 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:37:08.340 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:37:08.373 +07:00 [INF] Start performance record
+2023-05-09 17:37:30.326 +07:00 [INF] End performance record
+2023-05-09 17:37:30.327 +07:00 [INF] Time taken: 0:21.962
+2023-05-09 17:38:38.048 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 17:38:40.637 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-09 17:38:40.642 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-09 17:38:40.645 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 17:38:40.645 +07:00 [INF] Hosting environment: Development
+2023-05-09 17:38:40.646 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-09 17:38:40.942 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:38:41.383 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:38:56.752 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 17:38:59.097 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-09 17:38:59.100 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-09 17:38:59.103 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 17:38:59.103 +07:00 [INF] Hosting environment: Development
+2023-05-09 17:38:59.103 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-09 17:38:59.369 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:38:59.861 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:39:19.510 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:39:19.896 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:39:22.037 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:39:22.303 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:39:22.319 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Conflicting method/path combination "DELETE api/Syllabuses" for actions - WebAPI.Controllers.SyllabusesController.Dekete (WebAPI),WebAPI.Controllers.SyllabusesController.Delete (WebAPI). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerDocumentWithoutFilters(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-05-09 17:39:49.330 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:39:49.622 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:39:49.634 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Ambiguous HTTP method for action - WebAPI.Controllers.SyllabusesController.Dekete (WebAPI). Actions require an explicit HttpMethod binding for Swagger/OpenAPI 3.0
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerDocumentWithoutFilters(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-05-09 17:40:02.788 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:40:02.982 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:40:02.997 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Ambiguous HTTP method for action - WebAPI.Controllers.SyllabusesController.Dekete (WebAPI). Actions require an explicit HttpMethod binding for Swagger/OpenAPI 3.0
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerDocumentWithoutFilters(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-05-09 17:45:42.774 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 17:45:43.754 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-09 17:45:43.755 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-09 17:45:43.756 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 17:45:43.756 +07:00 [INF] Hosting environment: Development
+2023-05-09 17:45:43.756 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-09 17:45:44.388 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:45:44.760 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:46:05.969 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:46:05.973 +07:00 [INF] Start performance record
+2023-05-09 17:46:06.060 +07:00 [INF] End performance record
+2023-05-09 17:46:06.064 +07:00 [INF] Time taken: 0:00.087
+2023-05-09 17:46:24.876 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:46:24.877 +07:00 [INF] Start performance record
+2023-05-09 17:46:25.208 +07:00 [INF] End performance record
+2023-05-09 17:46:25.208 +07:00 [INF] Time taken: 0:00.330
+2023-05-09 17:46:42.516 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:46:42.821 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:47:00.291 +07:00 [INF] Application is shutting down...
+2023-05-09 17:47:07.817 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 17:47:08.848 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-09 17:47:08.850 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-09 17:47:08.851 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 17:47:08.851 +07:00 [INF] Hosting environment: Development
+2023-05-09 17:47:08.851 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-09 17:47:09.163 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:47:09.442 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:47:22.802 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:47:22.806 +07:00 [INF] Start performance record
+2023-05-09 17:48:31.228 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 17:48:39.331 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 17:48:40.765 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-09 17:48:40.767 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-09 17:48:40.768 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 17:48:40.768 +07:00 [INF] Hosting environment: Development
+2023-05-09 17:48:40.768 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-09 17:48:41.088 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:48:41.399 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 17:48:45.519 +07:00 [DBG] Successfully validated the token.
+2023-05-09 17:48:45.521 +07:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2023-05-09 17:48:45.527 +07:00 [INF] Start performance record
+2023-05-09 17:48:45.734 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-09 17:48:45.735 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-09 17:48:45.855 +07:00 [INF] End performance record
+2023-05-09 17:48:45.860 +07:00 [INF] Time taken: 0:00.329
+2023-05-09 17:48:53.690 +07:00 [DBG] Successfully validated the token.
+2023-05-09 17:48:53.690 +07:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2023-05-09 17:48:53.692 +07:00 [INF] Start performance record
+2023-05-09 17:48:53.802 +07:00 [INF] End performance record
+2023-05-09 17:48:53.803 +07:00 [INF] Time taken: 0:00.110
+2023-05-09 17:49:02.209 +07:00 [DBG] Successfully validated the token.
+2023-05-09 17:49:02.211 +07:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2023-05-09 17:49:02.211 +07:00 [INF] Start performance record
+2023-05-09 17:49:02.243 +07:00 [INF] End performance record
+2023-05-09 17:49:02.243 +07:00 [INF] Time taken: 0:00.031
+2023-05-09 18:01:32.407 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 18:01:32.408 +07:00 [INF] Start performance record
+2023-05-09 18:01:33.007 +07:00 [WRN] Savepoints are disabled because Multiple Active Result Sets (MARS) is enabled. If 'SaveChanges' fails, then the transaction cannot be automatically rolled back to a known clean state. Instead, the transaction should be rolled back by the application before retrying 'SaveChanges'. See https://go.microsoft.com/fwlink/?linkid=2149338 for more information and examples. To identify the code which triggers this warning, call 'ConfigureWarnings(w => w.Throw(SqlServerEventId.SavepointsDisabledBecauseOfMARS))'.
+2023-05-09 18:01:33.138 +07:00 [INF] End performance record
+2023-05-09 18:01:33.138 +07:00 [INF] Time taken: 0:00.730
+2023-05-09 18:01:42.784 +07:00 [DBG] Successfully validated the token.
+2023-05-09 18:01:42.785 +07:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2023-05-09 18:01:42.785 +07:00 [INF] Start performance record
+2023-05-09 18:01:42.824 +07:00 [INF] End performance record
+2023-05-09 18:01:42.825 +07:00 [INF] Time taken: 0:00.039
+2023-05-09 18:02:48.077 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 18:02:48.081 +07:00 [INF] Start performance record
+2023-05-09 18:03:08.456 +07:00 [INF] End performance record
+2023-05-09 18:03:08.457 +07:00 [INF] Time taken: 0:20.375
+2023-05-09 18:03:26.308 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 18:03:28.353 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-09 18:03:28.355 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-09 18:03:28.357 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 18:03:28.358 +07:00 [INF] Hosting environment: Development
+2023-05-09 18:03:28.358 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-09 18:03:28.623 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 18:03:29.559 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 18:03:47.501 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 18:03:47.507 +07:00 [INF] Start performance record
+2023-05-09 18:08:01.432 +07:00 [INF] End performance record
+2023-05-09 18:08:01.434 +07:00 [INF] Time taken: 4:12.618
+2023-05-09 18:08:24.758 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 18:08:26.252 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-09 18:08:26.254 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-09 18:08:26.256 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 18:08:26.256 +07:00 [INF] Hosting environment: Development
+2023-05-09 18:08:26.256 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-09 18:08:30.588 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 18:08:30.641 +07:00 [INF] Start performance record
+2023-05-09 18:08:31.607 +07:00 [INF] End performance record
+2023-05-09 18:08:31.615 +07:00 [INF] Time taken: 0:00.969
+2023-05-09 18:08:37.557 +07:00 [DBG] Successfully validated the token.
+2023-05-09 18:08:37.560 +07:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2023-05-09 18:08:37.577 +07:00 [INF] Start performance record
+2023-05-09 18:08:37.774 +07:00 [INF] End performance record
+2023-05-09 18:08:37.774 +07:00 [INF] Time taken: 0:00.197
+2023-05-09 18:08:42.192 +07:00 [DBG] Successfully validated the token.
+2023-05-09 18:08:42.192 +07:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2023-05-09 18:08:42.195 +07:00 [INF] Start performance record
+2023-05-09 18:08:42.252 +07:00 [INF] End performance record
+2023-05-09 18:08:42.257 +07:00 [INF] Time taken: 0:00.061
+2023-05-09 18:17:22.367 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 18:17:24.480 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-09 18:17:24.482 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-09 18:17:24.484 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 18:17:24.484 +07:00 [INF] Hosting environment: Development
+2023-05-09 18:17:24.484 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-09 18:17:29.501 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 18:17:29.578 +07:00 [INF] Start performance record
+2023-05-09 18:17:30.700 +07:00 [WRN] Savepoints are disabled because Multiple Active Result Sets (MARS) is enabled. If 'SaveChanges' fails, then the transaction cannot be automatically rolled back to a known clean state. Instead, the transaction should be rolled back by the application before retrying 'SaveChanges'. See https://go.microsoft.com/fwlink/?linkid=2149338 for more information and examples. To identify the code which triggers this warning, call 'ConfigureWarnings(w => w.Throw(SqlServerEventId.SavepointsDisabledBecauseOfMARS))'.
+2023-05-09 18:17:30.823 +07:00 [INF] End performance record
+2023-05-09 18:17:30.831 +07:00 [INF] Time taken: 0:01.250
+2023-05-09 18:17:35.735 +07:00 [DBG] Successfully validated the token.
+2023-05-09 18:17:35.740 +07:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2023-05-09 18:17:35.751 +07:00 [INF] Start performance record
+2023-05-09 18:17:35.978 +07:00 [INF] End performance record
+2023-05-09 18:17:35.978 +07:00 [INF] Time taken: 0:00.227
+2023-05-09 18:18:15.313 +07:00 [INF] Application is shutting down...

@@ -6,16 +6,20 @@
    1. Allow for easy creation of classes.
    2. Allow trainers or administrators to add details such as class name, description, and training plan.
    // include program table.
+   // TODO: Add author only role trainer allow use this endpoint.
 2. Progress Tracking
-   1. Have the ability to track progress and provide analytics on class performance.
+   1. Have the ability to track progress and provide analytics on class performance. MR. DO KU TO(assign)
    // score feature. getStudent of class sort by ???. ***.
+   // include table test and syllabus get "he so" of test and caculate the score. (caculate by 5 fields in syllabus)
    2. Allow trainers or administrators to view the progress of each student in the class through a dashboard or report.
    /// optional. (đang ơ ngay bn, tong bn, list student và diem hien tai) 
 
 ## Student
 
 1. Progress Tracking
-   1. Have the ability to track student progress through each training plan.  - same 2
+   1. Have the ability to track student progress through each training plan. 
+   GET /student/:id/progress (id of student) return student and list training plan of student.
+   
    2. Allow trainers and administrators to view the progress of each student through a dashboard or report.
    3. Have the ability to send automated notifications to students, trainers, or administrators when a training plan is completed or when a student is falling behind.// optional hangfire.
 2. Performance Analytics
@@ -33,7 +37,7 @@
    // csv
 3. Profile Customization
    1. Allow for custom fields to be added to student profiles to capture additional information that may be required.
-   // nullable
+   // add new table profile of student
    2. Allow students to customize their profiles and manage their personal information.
    // edit profile.
 4. Communication (optional)

@@ -24,8 +24,6 @@ namespace Application.Syllabuses.Queries.GetSyllabus
         {
             var syllabus = await _unitOfWork.SyllabusRepository.ToPagination(request.PageIndex, request.PageSize);
             var result = _mapper.Map<Pagination<SyllabusDTO>>(syllabus);
-            if (syllabus.Items == null)
-                return new ApiErrorResult<Pagination<SyllabusDTO>>("Can't get syllabus");
             return new ApiSuccessResult<Pagination<SyllabusDTO>>(result);
         }
     }

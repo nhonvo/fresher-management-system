@@ -1,7 +1,7 @@
 ﻿namespace Application.Interfaces
 {
-    public interface IClaimsService
+    public interface IClaimService
     {
-        public Guid GetCurrentUserId { get; }
+        public Guid CurrentUserId { get; }
     }
 }

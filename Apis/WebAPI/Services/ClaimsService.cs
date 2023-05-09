@@ -3,15 +3,33 @@ using System.Security.Claims;
 
 namespace WebAPI.Services
 {
-    public class ClaimsService : IClaimsService
+    public class ClaimService : IClaimService
     {
-        public ClaimsService(IHttpContextAccessor httpContextAccessor)
-        {
-            // todo implementation to get the current userId
-            var Id = httpContextAccessor.HttpContext?.User?.FindFirstValue("userId");
-            GetCurrentUserId = string.IsNullOrEmpty(Id) ? Guid.Empty : Guid.Parse(Id);
-        }
+        private readonly IJWTService _jwtService;
+        private string accessToken;
 
-        public Guid GetCurrentUserId { get; }
+        public ClaimService(IHttpContextAccessor httpContextAccessor, IJWTService jwtService)
+        {
+            _jwtService = jwtService;
+            accessToken = httpContextAccessor.HttpContext.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last()!;
+
+        }
+        public Guid CurrentUserId 
+        {
+            get
+            {
+                if (accessToken == null)
+
+                    throw new Exception("No access token found!!!");
+
+                var id = _jwtService.Validate(accessToken).Claims.FirstOrDefault(c => c.Type == "ID")?.Value;
+
+                if (id == null)
+
+                    throw new Exception("No user id found!!!");
+
+                return string.IsNullOrEmpty(id) ? Guid.Empty : Guid.Parse(id);
+            }
+        }
     }
 }

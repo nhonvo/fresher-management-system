@@ -11,6 +11,9 @@ try
 {
     var builder = WebApplication.CreateBuilder(args);
 
+    // parse the configuration in appsettings
+    var configuration = builder.Configuration.Get<AppConfiguration>();
+    builder.Services.AddSingleton(configuration);
 
     builder.Host.UseSerilog((ctx, lc) => lc
         .WriteTo.Console(outputTemplate: "[{Timestamp:HH:mm:ss} {Level}] {SourceContext}{NewLine}{Message:lj}{NewLine}{Exception}{NewLine}")
@@ -18,17 +21,13 @@ try
         .Enrich.FromLogContext()
         .ReadFrom.Configuration(ctx.Configuration));
 
-    // parse the configuration in appsettings
-    var configuration = builder.Configuration.Get<AppConfiguration>();
-    builder.Services.AddSingleton(configuration);
-
     /*
         register with singleton life time
         now we can use dependency injection for AppConfiguration
     */
 
     var app = await builder
-           .ConfigureServices(configuration.DatabaseConnection)
+           .ConfigureServices(configuration.ConnectionStrings.DatabaseConnection, configuration.MyAllowSpecificOrigins.UserApp)
            .ConfigurePipelineAsync();
     app.Run();
 

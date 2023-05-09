@@ -1,5 +1,6 @@
 ﻿using Application;
 using Application.Interfaces;
+using Application.Services;
 using FluentValidation.AspNetCore;
 using Infrastructures;
 using Microsoft.OpenApi.Models;
@@ -25,7 +26,8 @@ namespace WebAPI
             services.AddSingleton<GlobalExceptionMiddleware>();
             services.AddSingleton<PerformanceMiddleware>();
             services.AddSingleton<Stopwatch>();
-            services.AddScoped<IClaimsService, ClaimsService>();
+            services.AddScoped<IClaimService, ClaimService>();
+            services.AddScoped<IJWTService, JWTService>();
             services.AddHttpContextAccessor();
             services.AddFluentValidationAutoValidation();
             services.AddFluentValidationClientsideAdapters();

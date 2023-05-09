@@ -1,4 +1,5 @@
 ﻿using System.Text.Json;
+using Domain.Entities;
 using Domain.Entities.Users;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
@@ -44,9 +45,11 @@ namespace Infrastructures.Persistence
             // user or "||" operator for another table
             if (_context.Users.Any()) return;
             string json = File.ReadAllText(@"D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Json\user.json");
+            string classtraining = File.ReadAllText(@"D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Json\user.json");
             List<User> users = JsonSerializer.Deserialize<List<User>>(json);
-
+            List<TrainingClass> trainingClasses = JsonSerializer.Deserialize<List<TrainingClass>>(classtraining);
             await _context.AddRangeAsync(users);
+            await _context.AddRangeAsync(trainingClasses);
             await _context.SaveChangesAsync();
         }
     }

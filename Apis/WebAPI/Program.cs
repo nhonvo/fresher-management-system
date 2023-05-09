@@ -27,7 +27,12 @@ try
     */
 
     var app = await builder
-           .ConfigureServices(configuration.ConnectionStrings.DatabaseConnection, configuration.MyAllowSpecificOrigins.UserApp)
+           .ConfigureServices(
+        configuration.ConnectionStrings.DatabaseConnection,
+        configuration.MyAllowSpecificOrigins.UserApp,
+        configuration.Jwt.Key,
+        configuration.Jwt.Issuer,
+        configuration.Jwt.Audience)
            .ConfigurePipelineAsync();
     app.Run();
 

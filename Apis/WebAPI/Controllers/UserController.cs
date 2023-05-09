@@ -1,7 +1,10 @@
-using Application.Account.Commands.Login;
-using Application.Account.Commands.Register;
-using Application.Account.DTOs;
+using Application.Commons;
+using Application.Users.DTO;
+using Application.Users.GetUser.Queries;
+using Application.Users.GetUserById.Queries;
+using Application.Users.Queries;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers
@@ -13,15 +16,18 @@ namespace WebAPI.Controllers
         {
             _mediator = mediator;
         }
-        [HttpPost("Login")]
-        public async Task<AccountDTO> LoginAsync([FromBody] LoginCommand request)
-            => await _mediator.Send(request);
+        [HttpGet]
+        public async Task<Pagination<UserDTO>> GetAsync(int pageIndex = 0, int pageSize = 10)
+            => await _mediator.Send(new GetUserQuery(pageIndex, pageSize));
 
-        [HttpPost("Register")]
-        public async Task<AccountDTO> RegisterAsync([FromBody] RegisterCommand request)
-            => await _mediator.Send(request);
+        [HttpGet("{id}")]
+        [Authorize]
+        public async Task<UserDTO> GetAsync(int id)
+            => await _mediator.Send(new GetUserByIdQuery(id));
+
     }
-    // TODO: Seed data
+
+    // TODO: Seed data - done
     // TODO: allow create role for user 
     // TODO: Send mail when user register
     // TODO: Method: forget password,

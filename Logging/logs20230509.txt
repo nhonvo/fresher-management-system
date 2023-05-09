@@ -2915,3 +2915,49 @@ Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
    at WebAPI.Extensions.HostingExtensions.ConfigureServices(WebApplicationBuilder builder, String databaseConnection, String userApp, String key, String issuer, String audience) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Extensions\HostingExtensions.cs:line 53
    at Program.<Main>$(String[] args) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Program.cs:line 29
 2023-05-09 18:53:21.071 +07:00 [INF] Shut down complete
+2023-05-09 18:53:36.686 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 18:53:41.460 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-09 18:53:41.465 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-09 18:53:41.468 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 18:53:41.469 +07:00 [INF] Hosting environment: Development
+2023-05-09 18:53:41.472 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-09 18:53:46.203 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 18:53:51.747 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 18:53:53.421 +07:00 [DBG] Successfully validated the token.
+2023-05-09 18:53:53.427 +07:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2023-05-09 18:53:53.441 +07:00 [INF] Start performance record
+2023-05-09 18:53:54.095 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-09 18:53:54.119 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-09 18:53:54.289 +07:00 [INF] End performance record
+2023-05-09 18:53:54.297 +07:00 [INF] Time taken: 0:00.852
+2023-05-09 18:54:11.452 +07:00 [DBG] Successfully validated the token.
+2023-05-09 18:54:11.456 +07:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2023-05-09 18:54:11.461 +07:00 [INF] Start performance record
+2023-05-09 18:54:11.715 +07:00 [INF] End performance record
+2023-05-09 18:54:11.717 +07:00 [INF] Time taken: 0:00.256
+2023-05-09 18:54:20.211 +07:00 [DBG] Successfully validated the token.
+2023-05-09 18:54:20.213 +07:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2023-05-09 18:54:20.216 +07:00 [INF] Start performance record
+2023-05-09 18:54:20.302 +07:00 [WRN] Savepoints are disabled because Multiple Active Result Sets (MARS) is enabled. If 'SaveChanges' fails, then the transaction cannot be automatically rolled back to a known clean state. Instead, the transaction should be rolled back by the application before retrying 'SaveChanges'. See https://go.microsoft.com/fwlink/?linkid=2149338 for more information and examples. To identify the code which triggers this warning, call 'ConfigureWarnings(w => w.Throw(SqlServerEventId.SavepointsDisabledBecauseOfMARS))'.
+2023-05-09 18:54:20.355 +07:00 [INF] End performance record
+2023-05-09 18:54:20.359 +07:00 [INF] Time taken: 0:00.142
+2023-05-09 18:54:34.644 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 18:54:34.648 +07:00 [INF] Start performance record
+2023-05-09 18:54:34.747 +07:00 [WRN] Savepoints are disabled because Multiple Active Result Sets (MARS) is enabled. If 'SaveChanges' fails, then the transaction cannot be automatically rolled back to a known clean state. Instead, the transaction should be rolled back by the application before retrying 'SaveChanges'. See https://go.microsoft.com/fwlink/?linkid=2149338 for more information and examples. To identify the code which triggers this warning, call 'ConfigureWarnings(w => w.Throw(SqlServerEventId.SavepointsDisabledBecauseOfMARS))'.
+2023-05-09 18:54:34.803 +07:00 [INF] End performance record
+2023-05-09 18:54:34.807 +07:00 [INF] Time taken: 0:00.159
+2023-05-09 18:54:40.666 +07:00 [DBG] Successfully validated the token.
+2023-05-09 18:54:40.669 +07:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2023-05-09 18:54:40.673 +07:00 [INF] Start performance record
+2023-05-09 18:54:40.692 +07:00 [INF] End performance record
+2023-05-09 18:54:40.695 +07:00 [INF] Time taken: 0:00.021
+2023-05-09 18:54:47.123 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 18:54:47.126 +07:00 [INF] Start performance record
+2023-05-09 18:54:47.159 +07:00 [WRN] Savepoints are disabled because Multiple Active Result Sets (MARS) is enabled. If 'SaveChanges' fails, then the transaction cannot be automatically rolled back to a known clean state. Instead, the transaction should be rolled back by the application before retrying 'SaveChanges'. See https://go.microsoft.com/fwlink/?linkid=2149338 for more information and examples. To identify the code which triggers this warning, call 'ConfigureWarnings(w => w.Throw(SqlServerEventId.SavepointsDisabledBecauseOfMARS))'.
+2023-05-09 18:54:47.205 +07:00 [INF] End performance record
+2023-05-09 18:54:47.207 +07:00 [INF] Time taken: 0:00.081
+2023-05-09 18:54:51.201 +07:00 [DBG] Successfully validated the token.
+2023-05-09 18:54:51.204 +07:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2023-05-09 18:54:51.208 +07:00 [INF] Start performance record
+2023-05-09 18:54:51.231 +07:00 [INF] End performance record
+2023-05-09 18:54:51.233 +07:00 [INF] Time taken: 0:00.025

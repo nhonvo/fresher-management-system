@@ -1,10 +1,9 @@
 ﻿using Application;
-using Application.Commons;
 using Application.Interfaces;
 using Application.Utils;
 using Application.ViewModels.UserViewModels;
 using AutoMapper;
-using Domain.Commons;
+using Domain;
 using Domain.Entities.Users;
 
 namespace Infrastructures.Services

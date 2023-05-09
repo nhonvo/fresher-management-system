@@ -1,5 +1,4 @@
-using Application.Commons;
-using Domain.Commons;
+using Domain;
 using Serilog;
 using WebAPI.Extensions;
 

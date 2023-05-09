@@ -1,11 +1,10 @@
 ﻿#nullable disable warnings
 
-using Domain.Entities.Common;
 using Domain.Entities.Users;
 
 namespace Domain.Entities
 {
-    public class TrainingMaterial : BaseModel
+    public class TrainingMaterial : BaseEntity
     {
         public string Name { get; set; }
         public string Url { get; set; }

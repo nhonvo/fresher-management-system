@@ -1,115 +1,139 @@
 ﻿using Application;
+using Application.Common.Exceptions;
 using Application.Repositories;
 using Infrastructures.Persistence;
 using Infrastructures.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 
-namespace Infrastructures
+namespace Infrastructures;
+
+public class UnitOfWork : IUnitOfWork
 {
-    public class UnitOfWork : IUnitOfWork
+    private IDbContextTransaction? _transaction;
+    private bool _disposed;
+    //
+    private readonly ApplicationDbContext _context;
+    // repositories
+    public IUserRepository UserRepository { get; }
+    public ISyllabusRepository SyllabusRepository { get; }
+    public IOutputStandardRepository OutputStandardRepository { get; }
+    //
+    public UnitOfWork(ApplicationDbContext dbContext)
     {
-        private readonly ApplicationDbContext _context;
-        private readonly ISyllabusRepository _syllabusRepository;
-        private readonly IUserRepository _userRepository;
-        private IDbContextTransaction _transaction;
-        private bool _disposed;
+        _context = dbContext;
+        // repositories
+        UserRepository = new UserRepository(_context);
+        SyllabusRepository = new SyllabusRepository(_context);
+        OutputStandardRepository = new OutputStandardRepository(_context);
+    }
 
-        public UnitOfWork(ApplicationDbContext context)
+    // save changes
+    public int SaveChanges() => _context.SaveChanges();
+
+    public async Task<int> SaveChangesAsync() => await _context.SaveChangesAsync();
+
+    // transaction
+    public void BeginTransaction()
+    {
+        _transaction = _context.Database.BeginTransaction();
+    }
+
+    // commit
+    public void Commit()
+    {
+        if (_transaction == null)
+            throw new TransactionException("No transaction to commit");
+        try
         {
-            _context = context;
-            _userRepository = new UserRepository(_context);
-            _syllabusRepository = new SyllabusRepository(_context);
+            _context.SaveChanges();
+            _transaction.Commit();
         }
-
-        public IUserRepository UserRepository => _userRepository;
-        public ISyllabusRepository SyllabusRepository => _syllabusRepository;
-
-        public int SaveChanges() => _context.SaveChanges();
-
-        public async Task<int> SaveChangesAsync() => await _context.SaveChangesAsync();
-
-        public void BeginTransaction()
+        finally
         {
-            _transaction = _context.Database.BeginTransaction();
-        }
-
-        public void Commit()
-        {
-            try
-            {
-                _context.SaveChanges();
-                _transaction?.Commit();
-            }
-            finally
-            {
-                _transaction?.Dispose();
-                _transaction = null;
-            }
-        }
-
-        public async Task CommitAsync()
-        {
-            try
-            {
-                await _context.SaveChangesAsync();
-                _transaction?.Commit();
-            }
-            finally
-            {
-                _transaction?.Dispose();
-                _transaction = null;
-            }
-        }
-
-        public void Rollback()
-        {
-            _transaction?.Rollback();
-            _transaction?.Dispose();
+            _transaction.Dispose();
             _transaction = null;
         }
+    }
 
-        protected virtual void Dispose(bool disposing)
+    public async Task CommitAsync()
+    {
+        if (_transaction == null)
+            throw new TransactionException("No transaction to commit");
+        try
         {
-            if (!_disposed)
-            {
-                if (disposing)
-                {
-                    _transaction?.Dispose();
-                    _context.Dispose();
-                }
+            await _context.SaveChangesAsync();
+            _transaction.Commit();
+        }
+        finally
+        {
+            _transaction.Dispose();
+            _transaction = null;
+        }
+    }
 
-                _disposed = true;
-            }
-        }
+    // rollback
+    public void Rollback()
+    {
+        if (_transaction == null)
+            throw new TransactionException("No transaction to rollback");
+        _transaction.Rollback();
+        _transaction.Dispose();
+        _transaction = null;
+    }
 
-        public void Dispose()
+    public async Task RollbackAsync()
+    {
+        if (_transaction == null)
+            throw new TransactionException("No transaction to rollback");
+        await _transaction.RollbackAsync();
+        _transaction.Dispose();
+        _transaction = null;
+    }
+
+    // dispose
+    protected virtual void Dispose(bool disposing)
+    {
+        if (!_disposed)
         {
-            Dispose(true);
-            GC.SuppressFinalize(this);
-        }
-        public async Task ExecuteTransactionAsync(Action action)
-        {
-            using var transaction = await _context.Database.BeginTransactionAsync();
-            try
+            if (disposing)
             {
-                action();
-                await _context.SaveChangesAsync();
-                await transaction.CommitAsync();
+                _transaction?.Dispose();
+                _context.Dispose();
             }
-            catch (Exception)
-            {
-                await transaction.RollbackAsync();
-                throw;
-            }
+
+            _disposed = true;
         }
-        public List<object> GetTrackedEntities()
+    }
+
+    public void Dispose()
+    {
+        Dispose(true);
+        GC.SuppressFinalize(this);
+    }
+
+    // execute transaction
+    public async Task ExecuteTransactionAsync(Action action)
+    {
+        using var transaction = await _context.Database.BeginTransactionAsync();
+        try
         {
-            return _context.ChangeTracker
-                .Entries()
-                .Where(e => e.State != EntityState.Detached && e.Entity != null)
-                .Select(e => e.Entity)
-                .ToList();
+            action();
+            await _context.SaveChangesAsync();
+            await transaction.CommitAsync();
         }
+        catch (Exception)
+        {
+            await transaction.RollbackAsync();
+            throw new TransactionException("Can't execute transaction");
+        }
+    }
+    public List<object> GetTrackedEntities()
+    {
+        return _context.ChangeTracker
+            .Entries()
+            .Where(e => e.State != EntityState.Detached && e.Entity != null)
+            .Select(e => e.Entity)
+            .ToList();
     }
 }

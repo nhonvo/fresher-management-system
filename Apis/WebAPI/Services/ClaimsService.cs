@@ -14,21 +14,19 @@ namespace WebAPI.Services
             accessToken = httpContextAccessor.HttpContext.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last()!;
 
         }
-        public Guid CurrentUserId 
+        public int CurrentUserId
         {
             get
             {
                 if (accessToken == null)
-
                     throw new Exception("No access token found!!!");
 
                 var id = _jwtService.Validate(accessToken).Claims.FirstOrDefault(c => c.Type == "ID")?.Value;
 
                 if (id == null)
-
                     throw new Exception("No user id found!!!");
 
-                return string.IsNullOrEmpty(id) ? Guid.Empty : Guid.Parse(id);
+                return string.IsNullOrEmpty(id) ? 0 : int.Parse(id);
             }
         }
     }

@@ -2,6 +2,6 @@
 {
     public interface IClaimService
     {
-        public Guid CurrentUserId { get; }
+        public int CurrentUserId { get; }
     }
 }

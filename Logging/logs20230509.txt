@@ -3078,3 +3078,411 @@ Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Conflicting method/
 2023-05-09 22:20:57.113 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
 2023-05-09 22:23:42.243 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
 2023-05-09 22:23:42.521 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 23:35:06.182 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 23:35:07.299 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-09 23:35:07.301 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-09 23:35:07.303 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 23:35:07.303 +07:00 [INF] Hosting environment: Development
+2023-05-09 23:35:07.303 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-09 23:35:07.769 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 23:35:08.047 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 23:35:15.746 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 23:35:15.896 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 23:35:15.900 +07:00 [INF] Start performance record
+2023-05-09 23:35:15.904 +07:00 [INF] End performance record
+2023-05-09 23:35:15.910 +07:00 [INF] Time taken: 0:00.004
+2023-05-09 23:36:15.811 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 23:36:51.023 +07:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2023-05-09 23:36:51.024 +07:00 [INF] Start performance record
+2023-05-09 23:36:51.216 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-09 23:36:51.217 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-09 23:36:51.267 +07:00 [ERR] Failed executing DbCommand (60ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AttendeeId], [t].[CreatedBy], [t].[CreatedOn], [t].[IsDeleted], [t].[Score], [t].[SyllabusId], [t].[TestAssessmentType]
+FROM [TestAssessments] AS [t]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2023-05-09 23:36:51.289 +07:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Infrastructures.Persistence.ApplicationDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'CreatedBy'.
+Invalid column name 'CreatedOn'.
+Invalid column name 'IsDeleted'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__208_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:bf1bcad6-a6f7-49fd-a281-66a986b6e314
+Error Number:207,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'CreatedBy'.
+Invalid column name 'CreatedOn'.
+Invalid column name 'IsDeleted'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__208_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:bf1bcad6-a6f7-49fd-a281-66a986b6e314
+Error Number:207,State:1,Class:16
+2023-05-09 23:38:00.979 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 23:38:02.011 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-09 23:38:02.013 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-09 23:38:02.015 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 23:38:02.015 +07:00 [INF] Hosting environment: Development
+2023-05-09 23:38:02.015 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-09 23:38:02.171 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 23:38:02.427 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 23:38:04.757 +07:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2023-05-09 23:38:04.760 +07:00 [INF] Start performance record
+2023-05-09 23:38:04.965 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-09 23:38:04.966 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-09 23:38:05.012 +07:00 [ERR] Failed executing DbCommand (58ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AttendeeId], [t].[CreatedBy], [t].[CreatedOn], [t].[IsDeleted], [t].[Score], [t].[SyllabusId], [t].[TestAssessmentType]
+FROM [TestAssessments] AS [t]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2023-05-09 23:38:05.029 +07:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Infrastructures.Persistence.ApplicationDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'CreatedBy'.
+Invalid column name 'CreatedOn'.
+Invalid column name 'IsDeleted'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__208_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:b94fb1c2-4ffa-41a8-8107-731c9d7bdfbe
+Error Number:207,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'CreatedBy'.
+Invalid column name 'CreatedOn'.
+Invalid column name 'IsDeleted'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__208_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:b94fb1c2-4ffa-41a8-8107-731c9d7bdfbe
+Error Number:207,State:1,Class:16
+2023-05-09 23:38:24.539 +07:00 [INF] Application is shutting down...
+2023-05-09 23:39:18.395 +07:00 [FTL] Unhandled Exception
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at WebAPI.Extensions.HostingExtensions.ConfigureServices(WebApplicationBuilder builder, String databaseConnection, String userApp, String key, String issuer, String audience) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Extensions\HostingExtensions.cs:line 53
+   at Program.<Main>$(String[] args) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Program.cs:line 29
+2023-05-09 23:39:18.432 +07:00 [INF] Shut down complete
+2023-05-09 23:39:34.397 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 23:39:35.293 +07:00 [ERR] Failed executing DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [OutputStandards] (
+    [Id] int NOT NULL IDENTITY,
+    [Code] nvarchar(max) NOT NULL,
+    [Description] nvarchar(1000) NOT NULL,
+    [CreatedOn] datetime2 NOT NULL,
+    [CreatedBy] int NULL,
+    [IsDeleted] bit NOT NULL,
+    CONSTRAINT [PK_OutputStandards] PRIMARY KEY ([Id])
+);
+2023-05-09 23:39:35.323 +07:00 [ERR] Migration error
+Microsoft.Data.SqlClient.SqlException (0x80131904): There is already an object named 'OutputStandards' in the database.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalEndExecuteNonQuery(IAsyncResult asyncResult, Boolean isInternal, String endMethod)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryAsync(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteNonQueryAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteNonQueryAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteNonQueryAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Migrations.Internal.MigrationCommandExecutor.ExecuteNonQueryAsync(IEnumerable`1 migrationCommands, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Migrations.Internal.MigrationCommandExecutor.ExecuteNonQueryAsync(IEnumerable`1 migrationCommands, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Migrations.Internal.MigrationCommandExecutor.ExecuteNonQueryAsync(IEnumerable`1 migrationCommands, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Migrations.Internal.MigrationCommandExecutor.ExecuteNonQueryAsync(IEnumerable`1 migrationCommands, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Migrations.Internal.Migrator.MigrateAsync(String targetMigration, CancellationToken cancellationToken)
+   at Infrastructures.Persistence.ApplicationDbContextInitializer.InitialiseAsync() in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\Infrastructures\Persistence\ApplicationDbContextInitializer.cs:line 21
+ClientConnectionId:56e03b63-3533-443c-afb3-a6f935340980
+Error Number:2714,State:6,Class:16
+2023-05-09 23:39:35.685 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-09 23:39:35.686 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-09 23:39:35.687 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 23:39:35.687 +07:00 [INF] Hosting environment: Development
+2023-05-09 23:39:35.687 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-09 23:39:35.999 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 23:39:36.279 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 23:39:43.018 +07:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2023-05-09 23:39:43.022 +07:00 [INF] Start performance record
+2023-05-09 23:39:43.231 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-09 23:39:43.232 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-09 23:39:43.276 +07:00 [ERR] Failed executing DbCommand (56ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AttendeeId], [t].[CreatedBy], [t].[CreatedOn], [t].[IsDeleted], [t].[Score], [t].[SyllabusId], [t].[TestAssessmentType]
+FROM [TestAssessments] AS [t]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2023-05-09 23:39:43.283 +07:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Infrastructures.Persistence.ApplicationDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'CreatedBy'.
+Invalid column name 'CreatedOn'.
+Invalid column name 'IsDeleted'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__208_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:56e03b63-3533-443c-afb3-a6f935340980
+Error Number:207,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'CreatedBy'.
+Invalid column name 'CreatedOn'.
+Invalid column name 'IsDeleted'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__208_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:56e03b63-3533-443c-afb3-a6f935340980
+Error Number:207,State:1,Class:16
+2023-05-09 23:40:24.587 +07:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2023-05-09 23:40:24.589 +07:00 [INF] Start performance record
+2023-05-09 23:40:31.751 +07:00 [ERR] Failed executing DbCommand (617ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AttendeeId], [t].[CreatedBy], [t].[CreatedOn], [t].[IsDeleted], [t].[Score], [t].[SyllabusId], [t].[TestAssessmentType]
+FROM [TestAssessments] AS [t]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2023-05-09 23:40:31.752 +07:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Infrastructures.Persistence.ApplicationDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'CreatedBy'.
+Invalid column name 'CreatedOn'.
+Invalid column name 'IsDeleted'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__208_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:56e03b63-3533-443c-afb3-a6f935340980
+Error Number:207,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'CreatedBy'.
+Invalid column name 'CreatedOn'.
+Invalid column name 'IsDeleted'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__208_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:56e03b63-3533-443c-afb3-a6f935340980
+Error Number:207,State:1,Class:16
+2023-05-09 23:43:24.228 +07:00 [INF] Application is shutting down...
+2023-05-09 23:43:34.770 +07:00 [FTL] Unhandled Exception
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at WebAPI.Extensions.HostingExtensions.ConfigureServices(WebApplicationBuilder builder, String databaseConnection, String userApp, String key, String issuer, String audience) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Extensions\HostingExtensions.cs:line 53
+   at Program.<Main>$(String[] args) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Program.cs:line 29
+2023-05-09 23:43:34.805 +07:00 [INF] Shut down complete
+2023-05-09 23:43:37.377 +07:00 [FTL] Unhandled Exception
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at WebAPI.Extensions.HostingExtensions.ConfigureServices(WebApplicationBuilder builder, String databaseConnection, String userApp, String key, String issuer, String audience) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Extensions\HostingExtensions.cs:line 53
+   at Program.<Main>$(String[] args) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Program.cs:line 29
+2023-05-09 23:43:37.413 +07:00 [INF] Shut down complete
+2023-05-09 23:43:46.181 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 23:43:48.740 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-09 23:43:48.742 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-09 23:43:48.743 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 23:43:48.743 +07:00 [INF] Hosting environment: Development
+2023-05-09 23:43:48.743 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-09 23:43:49.114 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 23:43:49.352 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 23:43:54.706 +07:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2023-05-09 23:43:54.711 +07:00 [INF] Start performance record
+2023-05-09 23:43:54.908 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-09 23:43:54.908 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-09 23:43:54.978 +07:00 [INF] End performance record
+2023-05-09 23:43:54.985 +07:00 [INF] Time taken: 0:00.268
+2023-05-09 23:44:52.724 +07:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2023-05-09 23:44:52.725 +07:00 [INF] Start performance record
+2023-05-09 23:45:19.219 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 23:45:19.364 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 23:45:42.429 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 23:45:43.342 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 23:45:47.288 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 23:45:47.452 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 23:45:52.436 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 23:45:52.677 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 23:45:58.104 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 23:45:59.238 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-09 23:45:59.239 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-09 23:45:59.241 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 23:45:59.241 +07:00 [INF] Hosting environment: Development
+2023-05-09 23:45:59.241 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-09 23:45:59.381 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 23:45:59.634 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 23:46:01.683 +07:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2023-05-09 23:46:01.688 +07:00 [INF] Start performance record
+2023-05-09 23:46:10.467 +07:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2023-05-09 23:46:10.469 +07:00 [INF] Start performance record
+2023-05-09 23:46:16.528 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 23:46:16.674 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 23:46:22.456 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 23:46:23.487 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-09 23:46:23.488 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-09 23:46:23.490 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 23:46:23.490 +07:00 [INF] Hosting environment: Development
+2023-05-09 23:46:23.490 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-09 23:46:23.659 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 23:46:23.961 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 23:46:24.759 +07:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2023-05-09 23:46:24.765 +07:00 [INF] Start performance record
+2023-05-09 23:46:25.129 +07:00 [WRN] Savepoints are disabled because Multiple Active Result Sets (MARS) is enabled. If 'SaveChanges' fails, then the transaction cannot be automatically rolled back to a known clean state. Instead, the transaction should be rolled back by the application before retrying 'SaveChanges'. See https://go.microsoft.com/fwlink/?linkid=2149338 for more information and examples. To identify the code which triggers this warning, call 'ConfigureWarnings(w => w.Throw(SqlServerEventId.SavepointsDisabledBecauseOfMARS))'.
+2023-05-09 23:46:25.205 +07:00 [INF] End performance record
+2023-05-09 23:46:25.210 +07:00 [INF] Time taken: 0:00.441
+2023-05-09 23:46:51.600 +07:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2023-05-09 23:46:51.601 +07:00 [INF] Start performance record
+2023-05-09 23:46:51.722 +07:00 [INF] End performance record
+2023-05-09 23:46:51.723 +07:00 [INF] Time taken: 0:00.121
+2023-05-09 23:46:55.152 +07:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2023-05-09 23:46:55.153 +07:00 [INF] Start performance record
+2023-05-09 23:46:55.173 +07:00 [INF] End performance record
+2023-05-09 23:46:55.173 +07:00 [INF] Time taken: 0:00.020
+2023-05-09 23:46:56.812 +07:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2023-05-09 23:46:56.812 +07:00 [INF] Start performance record
+2023-05-09 23:46:56.818 +07:00 [INF] End performance record
+2023-05-09 23:46:56.818 +07:00 [INF] Time taken: 0:00.005
+2023-05-09 23:47:01.015 +07:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2023-05-09 23:47:01.015 +07:00 [INF] Start performance record
+2023-05-09 23:47:07.142 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 23:47:11.610 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 23:47:12.474 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-09 23:47:12.475 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-09 23:47:12.477 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 23:47:12.477 +07:00 [INF] Hosting environment: Development
+2023-05-09 23:47:12.477 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-09 23:47:12.592 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 23:47:12.801 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 23:47:18.789 +07:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2023-05-09 23:47:18.793 +07:00 [INF] Start performance record
+2023-05-09 23:47:19.196 +07:00 [WRN] Savepoints are disabled because Multiple Active Result Sets (MARS) is enabled. If 'SaveChanges' fails, then the transaction cannot be automatically rolled back to a known clean state. Instead, the transaction should be rolled back by the application before retrying 'SaveChanges'. See https://go.microsoft.com/fwlink/?linkid=2149338 for more information and examples. To identify the code which triggers this warning, call 'ConfigureWarnings(w => w.Throw(SqlServerEventId.SavepointsDisabledBecauseOfMARS))'.
+2023-05-09 23:47:19.246 +07:00 [INF] End performance record
+2023-05-09 23:47:19.253 +07:00 [INF] Time taken: 0:00.453
+2023-05-09 23:47:25.133 +07:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2023-05-09 23:47:25.135 +07:00 [INF] Start performance record
+2023-05-09 23:47:25.220 +07:00 [INF] End performance record
+2023-05-09 23:47:25.220 +07:00 [INF] Time taken: 0:00.085
+2023-05-09 23:47:43.314 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 23:47:43.433 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 23:47:49.631 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 23:47:50.537 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-09 23:47:50.539 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-09 23:47:50.540 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 23:47:50.541 +07:00 [INF] Hosting environment: Development
+2023-05-09 23:47:50.542 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-09 23:47:50.676 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 23:47:50.866 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 23:47:57.825 +07:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2023-05-09 23:47:57.830 +07:00 [INF] Start performance record
+2023-05-09 23:47:58.147 +07:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Infrastructures.Persistence.ApplicationDbContext'.
+System.InvalidOperationException: Invalid attempt to call ReadAsync when reader is closed.
+   at Microsoft.Data.Common.ADP.ExceptionWithStackTrace(Exception e)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+System.InvalidOperationException: Invalid attempt to call ReadAsync when reader is closed.
+   at Microsoft.Data.Common.ADP.ExceptionWithStackTrace(Exception e)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2023-05-09 23:48:03.623 +07:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2023-05-09 23:48:03.625 +07:00 [INF] Start performance record
+2023-05-09 23:49:09.138 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 23:49:10.045 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-09 23:49:10.047 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-09 23:49:10.048 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 23:49:10.049 +07:00 [INF] Hosting environment: Development
+2023-05-09 23:49:10.049 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-09 23:49:10.239 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 23:49:10.579 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 23:49:19.390 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 23:49:20.300 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-09 23:49:20.301 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-09 23:49:20.303 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 23:49:20.303 +07:00 [INF] Hosting environment: Development
+2023-05-09 23:49:20.303 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-09 23:49:20.418 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 23:49:20.628 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 23:49:26.069 +07:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2023-05-09 23:49:26.075 +07:00 [INF] Start performance record
+2023-05-09 23:49:26.409 +07:00 [WRN] Savepoints are disabled because Multiple Active Result Sets (MARS) is enabled. If 'SaveChanges' fails, then the transaction cannot be automatically rolled back to a known clean state. Instead, the transaction should be rolled back by the application before retrying 'SaveChanges'. See https://go.microsoft.com/fwlink/?linkid=2149338 for more information and examples. To identify the code which triggers this warning, call 'ConfigureWarnings(w => w.Throw(SqlServerEventId.SavepointsDisabledBecauseOfMARS))'.
+2023-05-09 23:49:26.456 +07:00 [INF] End performance record
+2023-05-09 23:49:26.460 +07:00 [INF] Time taken: 0:00.382
+2023-05-09 23:49:30.379 +07:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2023-05-09 23:49:30.380 +07:00 [INF] Start performance record
+2023-05-09 23:49:30.454 +07:00 [INF] End performance record
+2023-05-09 23:49:30.454 +07:00 [INF] Time taken: 0:00.074
+2023-05-09 23:50:06.936 +07:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2023-05-09 23:50:06.937 +07:00 [INF] Start performance record
+2023-05-09 23:50:06.985 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-09 23:50:06.985 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-09 23:50:07.038 +07:00 [INF] End performance record
+2023-05-09 23:50:07.038 +07:00 [INF] Time taken: 0:00.101

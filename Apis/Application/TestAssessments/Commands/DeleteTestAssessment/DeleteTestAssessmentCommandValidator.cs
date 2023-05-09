@@ -7,7 +7,7 @@ namespace Application.Lectures.Commands
     {
          public DeleteTestAssessmentCommandValidator()
         {
-            RuleFor(x => x.Id).NotEmpty().NotNull();
+            RuleFor(x => x.id).NotEmpty().NotNull();
         }
     }
 }

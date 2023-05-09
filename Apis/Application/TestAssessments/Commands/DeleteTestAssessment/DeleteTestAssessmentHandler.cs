@@ -5,7 +5,7 @@ using Application.TestAssessments.DTO;
 
 namespace Application.TestAssessments.Commands.DeleteTestAssessment
 {
-    public record DeleteTestAssessmentCommand(int Id) : IRequest<TestAssessmentDTO>{};
+    public record DeleteTestAssessmentCommand(int id) : IRequest<TestAssessmentDTO>{};
     public class DeleteTestAssessmentHandler : IRequestHandler<DeleteTestAssessmentCommand, TestAssessmentDTO>
     {
         private readonly IUnitOfWork _unitOfWork;
@@ -17,7 +17,7 @@ namespace Application.TestAssessments.Commands.DeleteTestAssessment
         }
         public async Task<TestAssessmentDTO> Handle(DeleteTestAssessmentCommand request, CancellationToken cancellationToken)
         {
-            var testAssessments = _unitOfWork.TestAssessmentRepository.GetByIdAsync(request.Id);
+            var testAssessments = await _unitOfWork.TestAssessmentRepository.GetByIdAsync(request.id);
             if (testAssessments == null)
                 throw new NotFoundException("TestAssessment not found");
 

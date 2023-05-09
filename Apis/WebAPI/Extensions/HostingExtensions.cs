@@ -73,7 +73,7 @@ public static class HostingExtensions
         app.UseMiddleware<GlobalExceptionMiddleware>();
         app.UseMiddleware<PerformanceMiddleware>();
         app.MapHealthChecks("/healthchecks");
-
+        app.UseResponseCompression();
         app.UseHttpsRedirection();
         // todo authentication
         app.UseAuthorization();

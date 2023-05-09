@@ -1,6 +1,8 @@
 ﻿using Application.Class.DTO;
 using Application.Class.Queries.GetClass;
 using Application.Commons;
+using Application.Student.Commands.AddStudent;
+using Application.Student.Commands.UpdateStudent;
 using Application.StudentProgresses.Queries.GetStudentProgressById;
 using Application.Students.DTO;
 using Domain.Aggregate.AppResult;
@@ -20,4 +22,11 @@ public class StudentController : BaseController
     [HttpGet("{id}/paged-student-progresses")]
     public async Task<ApiResult<Pagination<StudentProgressDTO>>> GetPagedStudentProgressesById(int id)
     => await _mediator.Send(new GetPagedStudentProgressesByIdQuery(id));
+
+    [HttpPut("add-student-fields")]
+    public async Task<StudentDTO> Add(AddStudentCommand request)
+    => await _mediator.Send(request);
+    [HttpPut("update-student-profiles")]
+    public async Task<StudentDTO> Put(UpdateStudentCommand request)
+    => await _mediator.Send(request);
 }

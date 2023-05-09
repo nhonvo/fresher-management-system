@@ -24,19 +24,21 @@ namespace WebAPI.Controllers
         }
         [HttpGet]
         public async Task<ApiResult<Pagination<ClassDTO>>> Get(int pageIndex = 0, int pageSize = 10)
-        => await _mediator.Send(new GetClassQuery(pageIndex, pageSize));
+            => await _mediator.Send(new GetClassQuery(pageIndex, pageSize));
+        [HttpGet("{id}")]
+        public async Task<ClassDTO> Get(int id)
+            => await _mediator.Send(new GetClassByIdQuery(id));
         [HttpGet("Program")]
         public async Task<ApiResult<Pagination<ClassProgram>>> GetProgram(int pageIndex = 0, int pageSize = 10)
-        => await _mediator.Send(new GetClassProgramQuery(pageIndex, pageSize));
+            => await _mediator.Send(new GetClassProgramQuery(pageIndex, pageSize));
         [HttpPost]
         public async Task<ClassDTO> Post([FromBody] CreateClassCommand request)
-         => await _mediator.Send(request);
+            => await _mediator.Send(request);
         [HttpPut]
         public async Task<ClassDTO> Put([FromBody] UpdateClassCommand request)
-         => await _mediator.Send(request);
-        [HttpDelete]
-        public async Task<ClassDTO> Delete([FromBody] DeleteClassCommand request)
-         => await _mediator.Send(request);
+            => await _mediator.Send(request);
+        [HttpDelete("{id}")]
+        public async Task<ClassDTO> Delete(int id)
+            => await _mediator.Send(new DeleteClassCommand(id));
     }
 }
-// TODO: Seed data class entities and test endpoints

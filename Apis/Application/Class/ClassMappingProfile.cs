@@ -11,6 +11,7 @@ namespace Application.Class
         public ClassMappingProfile()
         {
             CreateMap<TrainingClass, ClassDTO>().ReverseMap();
+            CreateMap<TrainingClass, ClassProgram>().ReverseMap();
             CreateMap<TrainingClass, CreateClassCommand>().ReverseMap();
             CreateMap<TrainingClass, UpdateClassCommand>().ReverseMap();
             CreateMap<TrainingProgram, TrainingPrograms>().ReverseMap();

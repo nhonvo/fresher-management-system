@@ -16,9 +16,9 @@ namespace Infrastructures.Persistence
         public DbSet<Class> Classes { get; set; }
         public DbSet<ClassUsers> ClassUsers { get; set; }
         public DbSet<FeedbackForm> FeedbackForms { get; set; }
-        public DbSet<GradeReport> GradeReports { get; set; }
         public DbSet<Lecture> Lectures { get; set; }
         public DbSet<OutputStandard> OutputStandards { get; set; }
+        public DbSet<TestAssessment> TestAssessments { get; set; }
         public DbSet<TMS> TimeMngSystems { get; set; }
         public DbSet<TrainingMaterial> TrainingMaterials { get; set; }
         public DbSet<TrainingProgram> TrainingPrograms { get; set; }

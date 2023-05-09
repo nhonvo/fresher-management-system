@@ -82,11 +82,6 @@ namespace Infrastructures.Persistence.Configurations
                 .WithOne(x => x.Trainer)
                 .OnDelete(DeleteBehavior.ClientSetNull);
 
-            //GradeReport
-            builder.HasMany(x => x.GradeReports)
-                .WithOne(x => x.User)
-                .OnDelete(DeleteBehavior.ClientSetNull);
-
             //ClassUsers
             builder.HasMany(x => x.ClassUsers)
                 .WithOne(x => x.User)
@@ -97,8 +92,8 @@ namespace Infrastructures.Persistence.Configurations
                 .WithOne(x => x.User)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            // score
-            builder.HasMany(x => x.Scores)
+            // TestAssessments
+            builder.HasMany(x => x.TestAssessments)
                    .WithOne(x => x.Attendee)
                    .HasForeignKey(x => x.AttendeeId);
 

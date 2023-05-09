@@ -7,7 +7,7 @@ namespace Domain.Entities.Users
     public partial class User
     {
         // public Role Role { get; set; }   
-        public ICollection<Score> Scores { get; set; }
+        public ICollection<TestAssessment> TestAssessments { get; set; }
         public ICollection<TMS> TimeMngSystem { get; set; }
         public ICollection<TrainingProgram> ModifyTrainingProgram { get; set; }
         public ICollection<TrainingProgram> CreatedTrainingProgram { get; set; }
@@ -17,7 +17,6 @@ namespace Domain.Entities.Users
         public ICollection<Class> CreatedClass { get; set; }
         public ICollection<FeedbackForm> FeedbackTrainee { get; set; }
         public ICollection<FeedbackForm> FeedbackTrainer { get; set; }
-        public ICollection<GradeReport> GradeReports { get; set; }
         public ICollection<ClassUsers> ClassUsers { get; set; }
         public ICollection<TMS> TimeMngSystemList { get; set; }
         public ICollection<TrainingMaterial> TrainingMaterials { get; set; }

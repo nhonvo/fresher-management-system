@@ -12,7 +12,7 @@
    // score feature. getStudent of class sort by ???. ***.
    // include table test and syllabus get "he so" of test and caculate the score. (caculate by 5 fields in syllabus)
    2. Allow trainers or administrators to view the progress of each student in the class through a dashboard or report.
-   /// optional. (đang ơ ngay bn, tong bn, list student và diem hien tai) 
+   /// optional. (đang ơ ngay bn, tong bn, list student và diem hien tai)
 
 ## Student
 
@@ -31,10 +31,11 @@
          "items": [
             {
                "classId": 1,
-               "CurrentScore": 0,
-               "AverageScore": 0,
+               "CurrentGPA": 8,
+               "AverageGPA": 0,
             }
-   ]}
+         ]
+      }
 
    2. Allow for easy exporting of performance data for further analysis.
    // csv

@@ -16,7 +16,6 @@ namespace Domain.Entities
         public Unit? Unit { get; set; }
         public int? OutputStandardId { get; set; }
         public OutputStandard? OutputStandard { get; set; }
-        public ICollection<GradeReport> GradeReports { get; set; }
         public ICollection<TrainingMaterial> TrainingMaterials { get; set; }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Application;
 using Application.Repositories;
 using Infrastructures.Persistence;
+using Infrastructures.Repositories;
 using Microsoft.EntityFrameworkCore.Storage;
 
 namespace Infrastructures
@@ -13,13 +14,11 @@ namespace Infrastructures
         private IDbContextTransaction _transaction;
         private bool _disposed;
 
-        public UnitOfWork(ApplicationDbContext context,
-            IUserRepository userRepository,
-            ISyllabusRepository syllabusRepository)
+        public UnitOfWork(ApplicationDbContext context)
         {
             _context = context;
-            _userRepository = userRepository;
-            _syllabusRepository = syllabusRepository;
+            _userRepository = new UserRepository(_context);
+            _syllabusRepository = new SyllabusRepository(_context);
         }
 
         public IUserRepository UserRepository => _userRepository;

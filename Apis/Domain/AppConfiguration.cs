@@ -1,4 +1,4 @@
-﻿namespace Application.Commons
+﻿namespace Domain.Commons
 {
     public class AppConfiguration
     {

@@ -24,7 +24,7 @@ namespace WebAPI.Controllers
         [HttpGet("{id}")]
         public async Task<SyllabusDTO> Get(int id)
          => await _mediator.Send(new GetSyllabusByIdQuery(id));
-        [HttpGet]
+        [HttpGet("{name}")]
         public async Task<ApiResult<Pagination<SyllabusDTO>>> Get(
             string? name,
             int pageIndex = 0,

@@ -43,7 +43,7 @@
 
    2. Allow for easy exporting of performance data for further analysis.
    // csv
-3. Profile Customization _Nhon_
+3. Profile Customization _Nhon_ done
    1. Allow for custom fields to be added to student profiles to capture additional information that may be required.
    // add new table profile of student
    2. Allow students to customize their profiles and manage their personal information. _Nhon_
@@ -51,6 +51,8 @@
 4. Communication (optional)
    1. Have the ability to send notifications to students regarding upcoming classes, training plans, and assessment deadlines.
    2. Have the ability to allow students to communicate with trainers or administrators through messaging or chat features.
+
+//TODO: Add hangfire services, add cache services
 
 ## Class/Student
 
@@ -66,6 +68,8 @@
    2. Support retrieving the list of enrolled students for each class.
    // get from table ClassUser.
 2. Absence Reporting
+// TODO: FIRST USE ALL ENPOINT AND TEST
+//TODO: create link user click to attendance
    1. Have the ability to track and manage class attendance.
    2. Allow trainers or administrators to view the list of reported absences for each student, or view summary on class.
    3. Have the ability to send automated notifications to students, trainers, or administrators when a student is absent from a class (optional).
@@ -86,7 +90,8 @@
    2. Support different weighting methods, such as equal weighting or custom weighting.
    3. Allow trainers or administrators to generate score reports for each class or for individual students.
    4. Support filtering and sorting options for the score reports, such as by assessment type or score range.
-   5. CRUD TestAssignment _Nhon_
+   5. CRUD TestAssignment _Nhon_ DONE
+
 ## Trainer
 
 1. Registration
@@ -95,4 +100,6 @@
 2. Assignment
    1. Have the ability to restrict trainer access to certain resources or assessments based on their qualifications or areas of expertise.
 3. Evaluation
-   1. Have the ability to evaluate the performance of trainers based on student feedback
+   1. Have the ability to evaluate the performance of trainers based on student feedback.
+
+// trainer and students.

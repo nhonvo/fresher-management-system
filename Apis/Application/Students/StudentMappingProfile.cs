@@ -1,3 +1,6 @@
+using Application.Class.DTO;
+using Application.Student.Commands.UpdateStudent;
+using Application.Students.DTO;
 using AutoMapper;
 using Domain.Entities;
 using Domain.Entities.Users;
@@ -8,10 +11,8 @@ namespace Application.Student
     {
         public StudentMappingProfile()
         {
-            // CreateMap<User, StudentDTO>().ReverseMap();
-            // CreateMap<User, CreateStudentCommand>().ReverseMap();
-            // CreateMap<User, UpdateStudentCommand>().ReverseMap();
-            // CreateMap<TrainingProgram, TrainingPrograms>().ReverseMap();
+            CreateMap<User, StudentDTO>().ReverseMap();
+            CreateMap<User, UpdateStudentCommand>().ReverseMap();
         }
     }
 }

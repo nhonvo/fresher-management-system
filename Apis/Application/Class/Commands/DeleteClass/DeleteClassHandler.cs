@@ -20,7 +20,7 @@ namespace Application.Class.Commands.DeleteClass
         }
         public async Task<ClassDTO> Handle(DeleteClassCommand request, CancellationToken cancellationToken)
         {
-            var classes = _unitOfWork.ClassRepository.GetByIdAsync(request.Id);
+            var classes = await _unitOfWork.ClassRepository.GetByIdAsync(request.Id);
             if (classes == null)
                 throw new NotFoundException("Class not found");
 

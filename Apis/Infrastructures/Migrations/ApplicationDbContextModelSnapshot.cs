@@ -358,6 +358,15 @@ namespace Infrastructures.Migrations
                     b.Property<int>("AttendeeId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("CreatedBy")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
                     b.Property<float>("Score")
                         .HasColumnType("real");
 

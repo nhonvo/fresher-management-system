@@ -6,6 +6,7 @@ namespace Application.Class.DTO
 {
     public class ClassDTO
     {
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Code { get; set; }
         public ClassLocation? Location { get; set; }
@@ -21,10 +22,7 @@ namespace Application.Class.DTO
         public ClassStatus Status { get; set; }
         public DateTime ApprovedOn { get; set; }
         public int? ApprovedBy { get; set; }
-        public User? ApprovedAdmin { get; set; }
-        public User? CreatedAdmin { get; set; }
         public int? TrainingProgramId { get; set; }
-        public TrainingProgram? TrainingProgram { get; set; }
     }
    
 }

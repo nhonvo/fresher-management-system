@@ -4,7 +4,7 @@ using AutoMapper;
 using Domain.Aggregate.AppResult;
 using MediatR;
 
-namespace Application.TestAssessmentes.Queries.GetPagedTestAssessments;
+namespace Application.TestAssessments.Queries.GetPagedTestAssessments;
 
 public record GetPagedTestAssessmentsQuery(int PageIndex = 0, int PageSize = 10) : IRequest<ApiResult<Pagination<TestAssessmentDTO>>>;
 

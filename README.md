@@ -35,10 +35,11 @@
          "items": [
             {
                "classId": 1,
-               "CurrentScore": 0,
-               "AverageScore": 0,
+               "CurrentGPA": 8,
+               "AverageGPA": 0,
             }
-   ]}
+         ]
+      }
 
    2. Allow for easy exporting of performance data for further analysis.
    // csv

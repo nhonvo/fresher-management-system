@@ -24,18 +24,4 @@ namespace Domain.Entities.Syllabuses
         public bool IsActive { get; set; }
         public int Duration { get; set; }
     }
-    // TODO: Rename to Pascal case naming
 }
-
-// TODO: CLEAR this concept 
-
-// 20	Delivery Type	Drop Down-list	-	-	o	o	o	Click to select delivery type. There are 6 types:
-// - Assignment/ Task
-// - Concept/ Lecture
-// - Guide/ Review
-// - Test/ Quiz
-// - Exam
-// - Seminar/ Workshop
-
-// TODO: fix quiz simplify this 
-// TODO: add more child tables.

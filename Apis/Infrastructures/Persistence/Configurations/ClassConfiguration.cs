@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Infrastructures.Persistence.Configurations
 {
-    public class ClassConfiguration : IEntityTypeConfiguration<Class>
+    public class ClassConfiguration : IEntityTypeConfiguration<TrainingClass>
     {
-        public void Configure(EntityTypeBuilder<Class> builder)
+        public void Configure(EntityTypeBuilder<TrainingClass> builder)
         {
             builder.ToTable("Class");
 

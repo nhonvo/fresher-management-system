@@ -1,8 +1,8 @@
-using Domain.Entities;
+// using Domain.Entities;
 
-namespace Application.Repositories
-{
-    public interface ILectureRepository : IGenericRepository<Lecture>
-    {
-    }
-}
+// namespace Application.Repositories
+// {
+//     public interface ILectureRepository : IGenericRepository<Lecture>
+//     {
+//     }
+// }

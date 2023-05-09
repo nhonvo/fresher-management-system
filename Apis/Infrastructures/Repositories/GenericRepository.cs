@@ -9,7 +9,6 @@ namespace Infrastructures.Repositories
     public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : class
     {
         protected DbSet<TEntity> _dbSet;
-
         public GenericRepository(ApplicationDbContext context)
         {
             _dbSet = context.Set<TEntity>();

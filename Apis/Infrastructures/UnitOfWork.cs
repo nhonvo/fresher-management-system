@@ -2,6 +2,7 @@
 using Application.Repositories;
 using Infrastructures.Persistence;
 using Infrastructures.Repositories;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 
 namespace Infrastructures
@@ -101,6 +102,14 @@ namespace Infrastructures
                 await transaction.RollbackAsync();
                 throw;
             }
+        }
+        public List<object> GetTrackedEntities()
+        {
+            return _context.ChangeTracker
+                .Entries()
+                .Where(e => e.State != EntityState.Detached && e.Entity != null)
+                .Select(e => e.Entity)
+                .ToList();
         }
     }
 }

@@ -30,6 +30,7 @@ namespace Application
         /// </summary>
         void Rollback();
         Task ExecuteTransactionAsync(Action action);
+        List<object> GetTrackedEntities();
         public IUserRepository UserRepository { get; }
         public ISyllabusRepository SyllabusRepository { get; }
     }

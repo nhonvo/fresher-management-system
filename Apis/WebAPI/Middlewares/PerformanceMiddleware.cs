@@ -1,25 +1,32 @@
 ﻿using System.Diagnostics;
+using Infrastructures;
+using Serilog;
 
 namespace WebAPI.Middlewares
 {
     public class PerformanceMiddleware : IMiddleware
     {
-        private readonly Stopwatch stopwatch;
+        private readonly Stopwatch _stopwatch;
 
         public PerformanceMiddleware(Stopwatch stopwatch)
         {
-            this.stopwatch = stopwatch;
+            _stopwatch = stopwatch;
         }
+
         public async Task InvokeAsync(HttpContext context, RequestDelegate next)
         {
-            stopwatch.Restart();
-            stopwatch.Start();
-            Console.WriteLine("start performance recored");
+            _stopwatch.Restart();
+            _stopwatch.Start();
+            Log.Information("Start performance record");
+
             await next(context);
-            Console.WriteLine("end performance recored");
-            stopwatch.Stop();
-            TimeSpan timeTaken = stopwatch.Elapsed;
-            Console.WriteLine("Time taken: " + timeTaken.ToString(@"m\:ss\.fff"));
+
+            Log.Information("End performance record");
+            _stopwatch.Stop();
+
+            TimeSpan timeTaken = _stopwatch.Elapsed;
+            Log.Information("Time taken: " + timeTaken.ToString(@"m\:ss\.fff"));
+
         }
     }
 }

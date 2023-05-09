@@ -3,7 +3,6 @@ using System.Security.Claims;
 using System.Text;
 using Application.Interfaces;
 using Domain;
-using Domain.Entities;
 using Domain.Entities.Users;
 using Microsoft.IdentityModel.Logging;
 using Microsoft.IdentityModel.Tokens;
@@ -30,7 +29,7 @@ namespace Application.Services
                 new Claim("Email", user.Email),
                 new Claim("Phone", user.Phone),
                 new Claim(JwtRegisteredClaimNames.Name, user.FullName),
-                new Claim(ClaimTypes.Role, user.Role.ToString()),
+                new Claim(ClaimTypes.Role, user.Role.ToString())
             };
             var token = new JwtSecurityToken(
                     claims: claims,

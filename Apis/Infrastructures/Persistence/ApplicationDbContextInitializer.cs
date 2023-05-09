@@ -1,4 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.Text.Json;
+using Domain.Entities.Users;
+using Microsoft.EntityFrameworkCore;
+using Serilog;
 
 namespace Infrastructures.Persistence
 {
@@ -19,7 +22,7 @@ namespace Infrastructures.Persistence
             catch (Exception ex)
             {
                 System.Console.WriteLine(ex.ToString(), "Migration error");
-                // Log.Error(ex, "Migration error");
+                Log.Error(ex, "Migration error");
             }
         }
 
@@ -31,15 +34,24 @@ namespace Infrastructures.Persistence
             }
             catch (Exception ex)
             {
-                // Log.Error(ex, "Migration error");
+                Log.Error(ex, "Migration error");
                 System.Console.WriteLine(ex.ToString(), "Seeding error");
             }
         }
 
         public async Task TrySeedAsync()
         {
+            // user or "||" operator for another table
+            if (_context.Users.Any()) return;
+            string json = File.ReadAllText(@"D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Json\user.json");
+            List<User> users = JsonSerializer.Deserialize<List<User>>(json);
+
+            await _context.AddRangeAsync(users);
+            await _context.SaveChangesAsync();
         }
     }
 }
-// TODO: ADD Logging service SeriLog, redis, elasticsearch, 
-// TODO: add data seed  - customer seed data extention. update program file 2 part: pileline and app services
+// TODO: ADD Logging service SeriLog - done
+//update program file 2 part: pileline and app services- done
+// , redis, elasticsearch, 
+// TODO: add data seed  - customer seed data extention. 

@@ -13,5 +13,6 @@ namespace Domain.Entities.Syllabuses
         public ICollection<Unit> Units { get; set; }
         public ICollection<TrainingProgram> TrainingPrograms { get; set; }
         public ICollection<TrainingClass> Classes { get; set; }
+        public ICollection<Score> Scores { get; set; }
     }
 }

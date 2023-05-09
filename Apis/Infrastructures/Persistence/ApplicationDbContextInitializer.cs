@@ -43,67 +43,8 @@ namespace Infrastructures.Persistence
         {
             // user or "||" operator for another table
             if (_context.Users.Any()) return;
-            // string json = File.ReadAllText("customers.json");
-            // List<User> customers = JsonSerializer.Deserialize<List<User>>(json);
-
-            var users = new User[]
-            {
-                new User
-                {
-                    FullName = "Võ Thương Trường Nhơn",
-                    Email ="vothuongtruongnhon2002@gmail.com",
-                    Password ="$2a$11$JpdSbKC0DPnarMb4CfQ8tOoa2GcuPCweteqA2kk8tn7RUiPOqIMGi",
-                    Phone ="0905726748",
-                    DateOfBirth =new DateTime(2002,10,30),
-                    Role = Domain.Enums.UserEnums.UserRole.Trainee,
-                    IsMale = true,
-                    AvatarURL = "Null"
-                },
-                new User
-                {
-                    FullName = "Võ Thành Đô",
-                    Email ="vothanhdo@gmail.com",
-                    Password ="$2a$11$JpdSbKC0DPnarMb4CfQ8tOoa2GcuPCweteqA2kk8tn7RUiPOqIMGi",
-                    Phone ="0905726748",
-                    DateOfBirth =new DateTime(2000,10,30),
-                    Role = Domain.Enums.UserEnums.UserRole.Trainee,
-                    IsMale = true,
-                    AvatarURL = "Null"
-                },
-                new User
-                {
-                    FullName = "Bình Đẹp Trai",
-                    Email ="binhdeptrai@gmail.com",
-                    Password ="$2a$11$JpdSbKC0DPnarMb4CfQ8tOoa2GcuPCweteqA2kk8tn7RUiPOqIMGi",
-                    Phone ="0905726748",
-                    DateOfBirth =new DateTime(2002,10,30),
-                    Role = Domain.Enums.UserEnums.UserRole.Trainee,
-                    IsMale = true,
-                    AvatarURL = "Null"
-                },
-                new User
-                {
-                    FullName = "Đạt Lớp Trưởng",
-                    Email ="datloptruong@gmail.com",
-                    Password ="$2a$11$JpdSbKC0DPnarMb4CfQ8tOoa2GcuPCweteqA2kk8tn7RUiPOqIMGi",
-                    Phone ="0905726748",
-                    DateOfBirth =new DateTime(2000,10,30),
-                    Role = Domain.Enums.UserEnums.UserRole.Trainee,
-                    IsMale = true,
-                    AvatarURL = "Null"
-                },
-                new User
-                {
-                    FullName = "Nam Lớn",
-                    Email ="namlon@gmail.com",
-                    Password ="$2a$11$JpdSbKC0DPnarMb4CfQ8tOoa2GcuPCweteqA2kk8tn7RUiPOqIMGi",
-                    Phone ="0905726748",
-                    DateOfBirth =new DateTime(2000,10,30),
-                    Role = Domain.Enums.UserEnums.UserRole.Trainee,
-                    IsMale = true,
-                    AvatarURL = "Null"
-                }
-            };
+            string json = File.ReadAllText(@"D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Json\user.json");
+            List<User> users = JsonSerializer.Deserialize<List<User>>(json);
 
             await _context.AddRangeAsync(users);
             await _context.SaveChangesAsync();

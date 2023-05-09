@@ -24,7 +24,7 @@ namespace Infrastructures.Persistence.Configurations
             builder.Property(x => x.IsActive).IsRequired();
 
             //isDeleted
-            builder.Property(x => x.isDeleted).IsRequired();
+            builder.Property(x => x.IsDeleted).IsRequired();
 
             //CreatedBy
             builder.Property(x => x.CreatedBy).IsRequired(false);
@@ -57,53 +57,12 @@ namespace Infrastructures.Persistence.Configurations
                 .WithMany(x => x.ModifiedSyllabus)
                 .HasForeignKey(x => x.LastModifiedBy)
                 .OnDelete(DeleteBehavior.ClientSetNull);
-            /*
-                        builder.HasData(
-                            new Syllabus
-                            {
-                                Id = 1,
-                                Code = "Code",
-                                Version = 1,
-                                Name = "Name",
-                                LastModifiedOn = new DateTime(2023, 1, 2),
-                                LastModifiedBy = 1,
-                                Level = SyllabusLevel.AllLevel,
-                                AttendeeNumber = 1,
-                                CourseObjectives = "CourseObjectives",
-                                TechnicalRequirements = "TechnicalRequirements",
-                                TrainingDeliveryPrinciple = "TrainingDeliveryPrinciple",
-                                QuizCriteria = 1,
-                                AssignmentCriteria = 1,
-                                FinalCriteria = 1,
-                                FinalTheoryCriteria = 1,
-                                FinalPracticalCriteria = 1,
-                                PassingGPA = 1,
-                                IsActive = true,
-                                Duration = 10,
-                            },
-                            new Syllabus
-                            {
-                                Id = 2,
-                                Code = "abc",
-                                Version = 1,
-                                Name = "nhon",
-                                LastModifiedOn = new DateTime(2023, 1, 2),
-                                LastModifiedBy = 1,
-                                Level = SyllabusLevel.AllLevel,
-                                AttendeeNumber = 1,
-                                CourseObjectives = "CourseObjectives 1",
-                                TechnicalRequirements = "TechnicalRequirements 1",
-                                TrainingDeliveryPrinciple = "TrainingDeliveryPrinciple 1",
-                                QuizCriteria = 10,
-                                AssignmentCriteria = 10,
-                                FinalCriteria = 10,
-                                FinalTheoryCriteria = 10,
-                                FinalPracticalCriteria = 10,
-                                PassingGPA = 10,
-                                IsActive = true,
-                                Duration = 10,
-                            }
-                        );*/
+            // score
+
+            builder.HasMany(x => x.Scores)
+                   .WithOne(x => x.Syllabus)
+                   .HasForeignKey(x=>x.SyllabusId);
+
         }
     }
 }

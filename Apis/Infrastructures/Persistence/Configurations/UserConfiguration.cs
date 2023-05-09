@@ -96,6 +96,12 @@ namespace Infrastructures.Persistence.Configurations
             builder.HasMany(x => x.TrainingMaterials)
                 .WithOne(x => x.User)
                 .OnDelete(DeleteBehavior.Cascade);
+
+            // score
+            builder.HasMany(x => x.Scores)
+                   .WithOne(x => x.Attendee)
+                   .HasForeignKey(x => x.AttendeeId);
+
         }
     }
 }

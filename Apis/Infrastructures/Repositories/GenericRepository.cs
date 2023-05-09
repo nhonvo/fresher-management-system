@@ -1,4 +1,5 @@
 ﻿using Application.Commons;
+using Application.Interfaces;
 using Application.Repositories;
 using Domain.Entities;
 using Infrastructures.Persistence;
@@ -11,22 +12,28 @@ namespace Infrastructures.Repositories
     public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : BaseEntity
     {
         protected DbSet<TEntity> _dbSet;
-        public GenericRepository(ApplicationDbContext context)
+        private readonly ICacheService _cacheService;
+        private readonly string _cacheKey = $"{typeof(TEntity)}";
+
+        public GenericRepository(ApplicationDbContext context, ICacheService cacheService)
         {
             _dbSet = context.Set<TEntity>();
+            _cacheService = cacheService;
         }
         // create
         public async Task AddAsync(TEntity entity)
         {
             await _dbSet.AddAsync(entity);
+            _cacheService.Remove(_cacheKey);
         }
 
         public async Task AddRangeAsync(IEnumerable<TEntity> entities)
         {
             await _dbSet.AddRangeAsync(entities);
+            _cacheService.Remove(_cacheKey);
         }
 
-        // Read
+        #region  Read
         public async Task<Pagination<TEntity>> ToPagination(
             Expression<Func<TEntity, bool>>? filter = null,
             Func<IQueryable<TEntity>, IIncludableQueryable<TEntity, object>>? include = null,
@@ -64,6 +71,8 @@ namespace Infrastructures.Repositories
 
         public async Task<Pagination<TEntity>> ToPagination(int pageIndex = 0, int pageSize = 10)
         {
+            if (_cacheService.TryGet(_cacheKey, out Pagination<TEntity> cachedResult))
+                return cachedResult;
             var itemCount = await _dbSet.CountAsync();
             var items = await _dbSet.Skip(pageIndex * pageSize)
                                     .Take(pageSize)
@@ -77,6 +86,7 @@ namespace Infrastructures.Repositories
                 TotalItemsCount = itemCount,
                 Items = items,
             };
+            _cacheService.Set(_cacheKey, result);
 
             return result;
         }
@@ -90,12 +100,14 @@ namespace Infrastructures.Repositories
         }
         public async Task<int> CountAsync() => await _dbSet.CountAsync();
         public async Task<TEntity> GetByIdAsync(object id) => await _dbSet.FindAsync(id);
-        public async Task<TEntity> GetByIdAsyncAsNoTracking(object id) => await _dbSet.AsNoTracking()
-            .FirstOrDefaultAsync(x => x.Id == int.Parse(id.ToString()));
-        public async Task<Pagination<TEntity>> GetAsync(Expression<Func<TEntity, bool>> filter = null,
-                                                        Func<IQueryable<TEntity>, IQueryable<TEntity>> include = null,
-                                                        int pageIndex = 0,
-                                                        int pageSize = 10)
+        public async Task<TEntity> GetByIdAsyncAsNoTracking(object id)
+                => await _dbSet.AsNoTracking()
+                               .FirstOrDefaultAsync(x => x.Id == int.Parse(id.ToString()));
+        public async Task<Pagination<TEntity>> GetAsync(
+            Expression<Func<TEntity, bool>> filter = null,
+            Func<IQueryable<TEntity>, IQueryable<TEntity>> include = null,
+            int pageIndex = 0,
+            int pageSize = 10)
         {
             var query = _dbSet.AsQueryable();
 
@@ -126,11 +138,13 @@ namespace Infrastructures.Repositories
             return result;
         }
 
-
-        public async Task<IEnumerable<TEntity>> GetAsync(Expression<Func<TEntity, bool>> filter) => await _dbSet.Where(filter).ToListAsync();
-
-        public async Task<Pagination<TEntity>> GetAsync(Expression<Func<TEntity, bool>> filter, int pageIndex = 0, int pageSize = 10)
+        public async Task<Pagination<TEntity>> GetAsync(
+            Expression<Func<TEntity, bool>> filter,
+            int pageIndex = 0,
+            int pageSize = 10)
         {
+
+
             var itemCount = await _dbSet.CountAsync();
             var items = await _dbSet.Where(filter)
                                     .Skip(pageIndex * pageSize)
@@ -148,40 +162,8 @@ namespace Infrastructures.Repositories
 
             return result;
         }
-        // Update
-        public void Update(TEntity entity)
-        {
-            _dbSet.Update(entity);
-        }
-        public void UpdateRange(IEnumerable<TEntity> entities)
-        {
-            _dbSet.UpdateRange(entities);
-        }
-        // delete
-        public void Delete(TEntity entity)
-        {
-            _dbSet.Remove(entity);
-        }
-        public void DeleteRange(IEnumerable<TEntity> entities)
-        {
-            _dbSet.RemoveRange(entities);
-        }
-        public async Task Delete(object id)
-        {
-            TEntity entity = await GetByIdAsync(id);
-            Delete(entity);
-        }
-        public void SoftRemove(TEntity entity)
-        {
-            _dbSet.Update(entity);
-        }
-
-        public void SoftRemoveRange(IEnumerable<TEntity> entities)
-        {
-            _dbSet.UpdateRange(entities);
-        }
         public async Task<TEntity> FirstOrDefaultAsync(Expression<Func<TEntity, bool>> filter)
-            => await _dbSet.IgnoreQueryFilters().AsNoTracking().FirstOrDefaultAsync(filter);
+          => await _dbSet.IgnoreQueryFilters().AsNoTracking().FirstOrDefaultAsync(filter);
 
         public async Task<TEntity> FirstOrdDefaultAsync(Expression<Func<TEntity, bool>> filter, Func<IQueryable<TEntity>, IQueryable<TEntity>> include = null)
         {
@@ -193,5 +175,49 @@ namespace Infrastructures.Repositories
             }
             return await query.FirstOrDefaultAsync(filter);
         }
+        #endregion
+        #region Update & delete
+        public void Update(TEntity entity)
+        {
+            _dbSet.Update(entity);
+            // Update the cached list of entities
+            _cacheService.Remove(_cacheKey);
+
+        }
+
+        public void UpdateRange(IEnumerable<TEntity> entities)
+        {
+            _dbSet.UpdateRange(entities);
+            _cacheService.Remove(_cacheKey);
+        }
+
+        public void Delete(TEntity entity)
+        {
+            _dbSet.Remove(entity);
+            _cacheService.Remove(_cacheKey);
+        }
+
+        public void DeleteRange(IEnumerable<TEntity> entities)
+        {
+            _dbSet.RemoveRange(entities);
+            _cacheService.Remove(_cacheKey);
+        }
+
+        public async Task Delete(object id)
+        {
+            TEntity entity = await GetByIdAsync(id);
+            Delete(entity);
+        }
+
+        public void SoftRemove(TEntity entity)
+        {
+            _dbSet.Update(entity);
+        }
+
+        public void SoftRemoveRange(IEnumerable<TEntity> entities)
+        {
+            _dbSet.UpdateRange(entities);
+        }
+        #endregion
     }
 }

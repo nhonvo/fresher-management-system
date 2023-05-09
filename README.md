@@ -68,7 +68,6 @@
    2. Support retrieving the list of enrolled students for each class.
    // get from table ClassUser.
 2. Absence Reporting
-// TODO: FIRST USE ALL ENPOINT AND TEST
 //TODO: create link user click to attendance
    1. Have the ability to track and manage class attendance.
    2. Allow trainers or administrators to view the list of reported absences for each student, or view summary on class.

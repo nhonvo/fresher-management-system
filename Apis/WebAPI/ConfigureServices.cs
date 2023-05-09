@@ -28,16 +28,25 @@ namespace WebAPI
                 options.Filters.Add<ApiExceptionFilterAttribute>();
             });
             services.AddEndpointsApiExplorer();
-            services.AddSwaggerGen();
             services.AddHealthChecks();
+            // Middleware
             services.AddSingleton<GlobalExceptionMiddleware>();
             services.AddSingleton<PerformanceMiddleware>();
             services.AddSingleton<Stopwatch>();
+            // Extension Services
             services.AddScoped<IClaimService, ClaimService>();
             services.AddScoped<IJWTService, JWTService>();
+            // IMemoryCache
+            services.AddMemoryCache();
+            services.AddScoped<ICacheService, CacheService>();
+
             services.AddHttpContextAccessor();
+            // IValidator
             services.AddFluentValidationAutoValidation();
             services.AddFluentValidationClientsideAdapters();
+            
+            #region Swagger
+            services.AddSwaggerGen();
             services.AddSwaggerGen(options =>
             {
                 options.SwaggerDoc("v1", new OpenApiInfo
@@ -77,7 +86,8 @@ namespace WebAPI
 
                 options.AddSecurityRequirement(securityRequirement);
             });
-            // JWT
+            #endregion
+            #region  JWT configuration
             services.AddAuthentication(options =>
             {
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -96,6 +106,7 @@ namespace WebAPI
                     ValidateIssuerSigningKey = true
                 };
             });
+            #endregion
             return services;
         }
     }

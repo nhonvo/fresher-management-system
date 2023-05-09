@@ -1,10 +1,12 @@
 ﻿using Application;
 using Application.Common.Exceptions;
+using Application.Interfaces;
 using Application.Repositories;
 using Infrastructures.Persistence;
 using Infrastructures.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
+using Microsoft.Extensions.Caching.Memory;
 
 namespace Infrastructures;
 
@@ -14,6 +16,8 @@ public class UnitOfWork : IUnitOfWork
     private bool _disposed;
     //
     private readonly ApplicationDbContext _context;
+    private readonly ICacheService _cache;
+
     // repositories
     public IUserRepository UserRepository { get; }
     public ISyllabusRepository SyllabusRepository { get; }
@@ -21,15 +25,16 @@ public class UnitOfWork : IUnitOfWork
     public IClassRepository ClassRepository { get; }
     public ITestAssessmentRepository TestAssessmentRepository { get; }
     //
-    public UnitOfWork(ApplicationDbContext dbContext)
+    public UnitOfWork(ApplicationDbContext dbContext, ICacheService cache)
     {
         _context = dbContext;
+        _cache = cache;
         // repositories
-        UserRepository = new UserRepository(_context);
-        SyllabusRepository = new SyllabusRepository(_context);
-        OutputStandardRepository = new OutputStandardRepository(_context);
-        ClassRepository = new ClassRepository(_context);
-        TestAssessmentRepository = new TestAssessmentRepository(_context);
+        UserRepository = new UserRepository(_context, _cache);
+        SyllabusRepository = new SyllabusRepository(_context, _cache);
+        OutputStandardRepository = new OutputStandardRepository(_context, _cache);
+        ClassRepository = new ClassRepository(_context, _cache);
+        TestAssessmentRepository = new TestAssessmentRepository(_context, _cache);
     }
 
     // save changes

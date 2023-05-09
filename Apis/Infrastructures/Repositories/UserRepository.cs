@@ -1,4 +1,5 @@
-﻿using Application.Repositories;
+﻿using Application.Interfaces;
+using Application.Repositories;
 using Domain.Entities.Users;
 using Infrastructures.Persistence;
 using Microsoft.EntityFrameworkCore;
@@ -9,7 +10,7 @@ namespace Infrastructures.Repositories
     {
         private readonly ApplicationDbContext _context;
 
-        public UserRepository(ApplicationDbContext dbContext) : base(dbContext)
+        public UserRepository(ApplicationDbContext dbContext, ICacheService cache) : base(dbContext, cache)
         {
             _context = dbContext;
         }

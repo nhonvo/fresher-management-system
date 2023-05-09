@@ -1,10 +1,9 @@
-﻿using Domain.Entities.Users;
-using Domain.Entities;
+using Domain.Entities.Users;
 using Domain.Enums.ClassEnums;
 
 namespace Application.Class.DTO
 {
-    public class ClassDTO
+    public class ClassProgram
     {
         public string Name { get; set; }
         public string Code { get; set; }
@@ -24,7 +23,15 @@ namespace Application.Class.DTO
         public User? ApprovedAdmin { get; set; }
         public User? CreatedAdmin { get; set; }
         public int? TrainingProgramId { get; set; }
-        public TrainingProgram? TrainingProgram { get; set; }
+        public TrainingPrograms? TrainingPrograms { get; set; }
     }
-   
+    public class TrainingPrograms
+    {
+        public string Name { get; set; }
+        public int Duration { get; set; }
+        public DateTime LastModify { get; set; }
+        public bool IsActive { get; set; } = true;
+        public int DaysDuration { get; set; }
+        public int TimeDuration { get; set; }
+    }
 }

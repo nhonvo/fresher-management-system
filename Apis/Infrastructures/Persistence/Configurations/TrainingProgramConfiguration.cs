@@ -22,14 +22,6 @@ namespace Infrastructures.Persistence.Configurations
             //ModifiedBy
             builder.Property(x => x.LastModifyBy).IsRequired(false);
 
-            //Class
-            builder.HasMany(x => x.Classes)
-                .WithOne(x => x.TrainingProgram)
-                .OnDelete(DeleteBehavior.SetNull);
-
-            //Syllabus
-            builder.HasMany(x => x.Syllabuses)
-                .WithMany(x => x.TrainingPrograms);
 
             //Modified
             builder.HasOne(x => x.ModifiedAdmin)

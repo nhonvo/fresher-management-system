@@ -18,6 +18,7 @@ public class UnitOfWork : IUnitOfWork
     public IUserRepository UserRepository { get; }
     public ISyllabusRepository SyllabusRepository { get; }
     public IOutputStandardRepository OutputStandardRepository { get; }
+    public IClassRepository ClassRepository { get; }
     //
     public UnitOfWork(ApplicationDbContext dbContext)
     {
@@ -26,6 +27,7 @@ public class UnitOfWork : IUnitOfWork
         UserRepository = new UserRepository(_context);
         SyllabusRepository = new SyllabusRepository(_context);
         OutputStandardRepository = new OutputStandardRepository(_context);
+        ClassRepository = new ClassRepository(_context);
     }
 
     // save changes

@@ -25,7 +25,10 @@
 2. Performance Analytics
    1. Provide detailed analytics on student performance, including individual performance metrics and comparative metrics against the class average.
    // {
-         "student": [
+         index: 1,
+         pageSize: 5.
+         totalCount: 5,
+         "items": [
             {
                "classId": 1,
                "CurrentScore": 0,

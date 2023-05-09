@@ -25,6 +25,8 @@
     public class ConnectionStrings
     {
         public string DatabaseConnection { get; set; }
+        public string DatabaseConnectionV1 { get; set; }
+        public string DatabaseConnectionV2 { get; set; }
         public string HangfireConnection { get; set; }
     }
     public class Jwt

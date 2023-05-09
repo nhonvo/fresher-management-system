@@ -9,7 +9,7 @@ public interface IUnitOfWork : IDisposable
     ISyllabusRepository SyllabusRepository { get; }
     IOutputStandardRepository OutputStandardRepository { get; }
     IClassRepository ClassRepository { get; }
-
+    ITestAssessmentRepository TestAssessmentRepository { get; }
 
     /// <summary>
     /// Saves changes to the database. This is called when the user changes the data or saves a new version of the data.

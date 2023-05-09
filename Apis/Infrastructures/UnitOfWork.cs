@@ -19,6 +19,7 @@ public class UnitOfWork : IUnitOfWork
     public ISyllabusRepository SyllabusRepository { get; }
     public IOutputStandardRepository OutputStandardRepository { get; }
     public IClassRepository ClassRepository { get; }
+    public ITestAssessmentRepository TestAssessmentRepository { get; }
     //
     public UnitOfWork(ApplicationDbContext dbContext)
     {
@@ -28,6 +29,7 @@ public class UnitOfWork : IUnitOfWork
         SyllabusRepository = new SyllabusRepository(_context);
         OutputStandardRepository = new OutputStandardRepository(_context);
         ClassRepository = new ClassRepository(_context);
+        TestAssessmentRepository = new TestAssessmentRepository(_context);
     }
 
     // save changes

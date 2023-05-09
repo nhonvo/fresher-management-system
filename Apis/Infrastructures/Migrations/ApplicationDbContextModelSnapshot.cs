@@ -212,6 +212,21 @@ namespace Infrastructures.Migrations
                     b.ToTable("OutputStandards", (string)null);
                 });
 
+            modelBuilder.Entity("Domain.Entities.ProgramSyllabus", b =>
+                {
+                    b.Property<int>("SyllabusId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TrainingProgramId")
+                        .HasColumnType("int");
+
+                    b.HasKey("SyllabusId", "TrainingProgramId");
+
+                    b.HasIndex("TrainingProgramId");
+
+                    b.ToTable("ProgramSyllabus");
+                });
+
             modelBuilder.Entity("Domain.Entities.Syllabuses.Syllabus", b =>
                 {
                     b.Property<int>("Id")
@@ -391,9 +406,6 @@ namespace Infrastructures.Migrations
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("DaysDuration")
-                        .HasColumnType("int");
-
                     b.Property<int?>("FSU")
                         .HasColumnType("int");
 
@@ -402,14 +414,6 @@ namespace Infrastructures.Migrations
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
-
-                    b.Property<string>("LectureFinishedTime")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LectureStartedTime")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("Location")
                         .HasColumnType("int");
@@ -424,9 +428,6 @@ namespace Infrastructures.Migrations
                     b.Property<int>("Status")
                         .HasColumnType("int");
 
-                    b.Property<int>("TimeDuration")
-                        .HasColumnType("int");
-
                     b.Property<int?>("TrainingProgramId")
                         .HasColumnType("int");
 
@@ -435,8 +436,6 @@ namespace Infrastructures.Migrations
                     b.HasIndex("ApprovedBy");
 
                     b.HasIndex("CreatedBy");
-
-                    b.HasIndex("TrainingProgramId");
 
                     b.ToTable("Class", (string)null);
                 });
@@ -521,11 +520,17 @@ namespace Infrastructures.Migrations
                     b.Property<int>("TimeDuration")
                         .HasColumnType("int");
 
+                    b.Property<int>("TrainingClassId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("CreatedBy");
 
                     b.HasIndex("LastModifyBy");
+
+                    b.HasIndex("TrainingClassId")
+                        .IsUnique();
 
                     b.ToTable("TrainingPrograms", (string)null);
                 });
@@ -627,36 +632,6 @@ namespace Infrastructures.Migrations
                     b.ToTable("Users", (string)null);
                 });
 
-            modelBuilder.Entity("SyllabusTrainingClass", b =>
-                {
-                    b.Property<int>("ClassesId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("SyllabusesId")
-                        .HasColumnType("int");
-
-                    b.HasKey("ClassesId", "SyllabusesId");
-
-                    b.HasIndex("SyllabusesId");
-
-                    b.ToTable("SyllabusTrainingClass");
-                });
-
-            modelBuilder.Entity("SyllabusTrainingProgram", b =>
-                {
-                    b.Property<int>("SyllabusesId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TrainingProgramsId")
-                        .HasColumnType("int");
-
-                    b.HasKey("SyllabusesId", "TrainingProgramsId");
-
-                    b.HasIndex("TrainingProgramsId");
-
-                    b.ToTable("SyllabusTrainingProgram");
-                });
-
             modelBuilder.Entity("SyllabusUnit", b =>
                 {
                     b.Property<int>("SyllabusesId")
@@ -686,7 +661,7 @@ namespace Infrastructures.Migrations
             modelBuilder.Entity("Domain.Entities.ClassUnitDetail", b =>
                 {
                     b.HasOne("Domain.Entities.TrainingClass", "Class")
-                        .WithMany("ClassUnitDetails")
+                        .WithMany()
                         .HasForeignKey("ClassId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -760,6 +735,25 @@ namespace Infrastructures.Migrations
                     b.Navigation("Unit");
                 });
 
+            modelBuilder.Entity("Domain.Entities.ProgramSyllabus", b =>
+                {
+                    b.HasOne("Domain.Entities.Syllabuses.Syllabus", "Syllabus")
+                        .WithMany("ProgramSyllabuses")
+                        .HasForeignKey("SyllabusId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Domain.Entities.TrainingProgram", "TrainingProgram")
+                        .WithMany("ProgramSyllabuses")
+                        .HasForeignKey("TrainingProgramId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Syllabus");
+
+                    b.Navigation("TrainingProgram");
+                });
+
             modelBuilder.Entity("Domain.Entities.Syllabuses.Syllabus", b =>
                 {
                     b.HasOne("Domain.Entities.Users.User", "CreatedAdmin")
@@ -821,16 +815,9 @@ namespace Infrastructures.Migrations
                         .WithMany("CreatedClass")
                         .HasForeignKey("CreatedBy");
 
-                    b.HasOne("Domain.Entities.TrainingProgram", "TrainingProgram")
-                        .WithMany("Classes")
-                        .HasForeignKey("TrainingProgramId")
-                        .OnDelete(DeleteBehavior.SetNull);
-
                     b.Navigation("ApprovedAdmin");
 
                     b.Navigation("CreatedAdmin");
-
-                    b.Navigation("TrainingProgram");
                 });
 
             modelBuilder.Entity("Domain.Entities.TrainingMaterial", b =>
@@ -861,39 +848,17 @@ namespace Infrastructures.Migrations
                         .WithMany("ModifyTrainingProgram")
                         .HasForeignKey("LastModifyBy");
 
+                    b.HasOne("Domain.Entities.TrainingClass", "TrainingClass")
+                        .WithOne("TrainingProgram")
+                        .HasForeignKey("Domain.Entities.TrainingProgram", "TrainingClassId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("CreatedAdmin");
 
                     b.Navigation("ModifiedAdmin");
-                });
 
-            modelBuilder.Entity("SyllabusTrainingClass", b =>
-                {
-                    b.HasOne("Domain.Entities.TrainingClass", null)
-                        .WithMany()
-                        .HasForeignKey("ClassesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Domain.Entities.Syllabuses.Syllabus", null)
-                        .WithMany()
-                        .HasForeignKey("SyllabusesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("SyllabusTrainingProgram", b =>
-                {
-                    b.HasOne("Domain.Entities.Syllabuses.Syllabus", null)
-                        .WithMany()
-                        .HasForeignKey("SyllabusesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Domain.Entities.TrainingProgram", null)
-                        .WithMany()
-                        .HasForeignKey("TrainingProgramsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Navigation("TrainingClass");
                 });
 
             modelBuilder.Entity("SyllabusUnit", b =>
@@ -928,19 +893,21 @@ namespace Infrastructures.Migrations
 
             modelBuilder.Entity("Domain.Entities.Syllabuses.Syllabus", b =>
                 {
+                    b.Navigation("ProgramSyllabuses");
+
                     b.Navigation("TestAssessments");
                 });
 
             modelBuilder.Entity("Domain.Entities.TrainingClass", b =>
                 {
-                    b.Navigation("ClassUnitDetails");
-
                     b.Navigation("ClassUsers");
+
+                    b.Navigation("TrainingProgram");
                 });
 
             modelBuilder.Entity("Domain.Entities.TrainingProgram", b =>
                 {
-                    b.Navigation("Classes");
+                    b.Navigation("ProgramSyllabuses");
                 });
 
             modelBuilder.Entity("Domain.Entities.Unit", b =>

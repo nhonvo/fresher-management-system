@@ -32,6 +32,10 @@ namespace Infrastructures.Persistence.Configurations
             builder.HasOne(x => x.CreatedAdmin)
                 .WithMany(x => x.CreatedTrainingProgram)
                 .HasForeignKey(x => x.CreatedBy);
+
+            builder.HasOne(x => x.TrainingClass)
+                .WithOne(x => x.TrainingProgram)
+                .HasForeignKey<TrainingProgram>(x => x.TrainingClassId);
         }
     }
 }

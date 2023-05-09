@@ -26,7 +26,7 @@ namespace Application.Lectures.Commands
         }
         public Task<ApiResult<LectureDTO>> Handle(CreateLectureCommand request, CancellationToken cancellationToken)
         {
-                throw new NotImplementedException();
+            throw new NotImplementedException();
         }
     }
 

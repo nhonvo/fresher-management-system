@@ -2961,3 +2961,110 @@ Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
 2023-05-09 18:54:51.208 +07:00 [INF] Start performance record
 2023-05-09 18:54:51.231 +07:00 [INF] End performance record
 2023-05-09 18:54:51.233 +07:00 [INF] Time taken: 0:00.025
+2023-05-09 19:33:07.902 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 19:33:09.102 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-09 19:33:09.104 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-09 19:33:09.105 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 19:33:09.105 +07:00 [INF] Hosting environment: Development
+2023-05-09 19:33:09.106 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-09 19:33:09.749 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 19:33:10.194 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 19:33:16.609 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 19:33:16.613 +07:00 [INF] Start performance record
+2023-05-09 19:33:16.811 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-09 19:33:16.811 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-09 19:33:16.896 +07:00 [INF] End performance record
+2023-05-09 19:33:16.902 +07:00 [INF] Time taken: 0:00.284
+2023-05-09 19:36:14.586 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 19:36:14.761 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 19:37:15.136 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 19:37:16.302 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-09 19:37:16.303 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-09 19:37:16.305 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 19:37:16.305 +07:00 [INF] Hosting environment: Development
+2023-05-09 19:37:16.305 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-09 19:37:16.424 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 19:37:16.675 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 19:38:21.188 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 19:38:22.372 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-09 19:38:22.374 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-09 19:38:22.375 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 19:38:22.376 +07:00 [INF] Hosting environment: Development
+2023-05-09 19:38:22.376 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-09 19:38:22.526 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 19:38:22.814 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 19:39:01.027 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 19:39:01.706 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 19:39:10.748 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 19:39:10.944 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 19:39:22.100 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 19:39:22.362 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 20:01:55.679 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 20:01:56.667 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-09 20:01:56.668 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-09 20:01:56.670 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 20:01:56.670 +07:00 [INF] Hosting environment: Development
+2023-05-09 20:01:56.670 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-09 20:01:56.789 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 20:01:57.095 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 20:02:20.335 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 20:02:20.572 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 20:02:20.581 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Conflicting method/path combination "GET api/Class" for actions - WebAPI.Controllers.ClassController.Get (WebAPI),WebAPI.Controllers.ClassController.GetProgram (WebAPI). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerDocumentWithoutFilters(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-05-09 20:02:39.117 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 20:02:39.295 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 20:02:39.301 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Conflicting method/path combination "GET api/Class" for actions - WebAPI.Controllers.ClassController.Get (WebAPI),WebAPI.Controllers.ClassController.GetProgram (WebAPI),WebAPI.Controllers.ClassController.GetProgram (WebAPI). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerDocumentWithoutFilters(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-05-09 20:02:41.472 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 20:02:41.587 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 20:02:41.591 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Conflicting method/path combination "GET api/Class" for actions - WebAPI.Controllers.ClassController.Get (WebAPI),WebAPI.Controllers.ClassController.GetProgram (WebAPI),WebAPI.Controllers.ClassController.GetProgram (WebAPI). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerDocumentWithoutFilters(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-05-09 20:02:47.430 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 20:02:47.589 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 20:02:47.594 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Conflicting method/path combination "GET api/Class" for actions - WebAPI.Controllers.ClassController.Get (WebAPI),WebAPI.Controllers.ClassController.GetProgram (WebAPI). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerDocumentWithoutFilters(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-05-09 20:02:54.666 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 20:02:55.596 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-09 20:02:55.597 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-09 20:02:55.598 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 20:02:55.598 +07:00 [INF] Hosting environment: Development
+2023-05-09 20:02:55.598 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-09 20:02:55.713 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 20:02:55.900 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 20:03:06.198 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 20:03:06.203 +07:00 [INF] Start performance record
+2023-05-09 20:03:06.423 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-09 20:03:06.423 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-09 20:03:06.537 +07:00 [INF] End performance record
+2023-05-09 20:03:06.542 +07:00 [INF] Time taken: 0:00.335
+2023-05-09 20:03:31.962 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 20:03:32.118 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 20:03:44.944 +07:00 [INF] Application is shutting down...

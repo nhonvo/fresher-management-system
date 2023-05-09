@@ -10,7 +10,7 @@
    1. Have the ability to track progress and provide analytics on class performance.
    // score feature. getStudent of class sort by ???. ***.
    2. Allow trainers or administrators to view the progress of each student in the class through a dashboard or report.
-   /// optional. (đang ơ ngay bn, tong bn, list student và diem hien tai) 
+   /// optional. (đang ơ ngay bn, tong bn, list student và diem hien tai)
 
 ## Student
 
@@ -27,10 +27,11 @@
          "items": [
             {
                "classId": 1,
-               "CurrentScore": 0,
-               "AverageScore": 0,
+               "CurrentGPA": 8,
+               "AverageGPA": 0,
             }
-   ]}
+         ]
+      }
 
    2. Allow for easy exporting of performance data for further analysis.
    // csv

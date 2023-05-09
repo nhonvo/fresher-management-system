@@ -43,7 +43,7 @@ namespace Infrastructures.Persistence
         {
             // user or "||" operator for another table
             if (_context.Users.Any()) return;
-            string json = File.ReadAllText(@"D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Json\user.json");
+            string json = File.ReadAllText(@"../../Json/user.json");
             List<User> users = JsonSerializer.Deserialize<List<User>>(json);
 
             await _context.AddRangeAsync(users);

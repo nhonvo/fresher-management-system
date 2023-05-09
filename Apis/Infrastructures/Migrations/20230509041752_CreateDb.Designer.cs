@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructures.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230509013128_Createdb")]
-    partial class Createdb
+    [Migration("20230509041752_CreateDb")]
+    partial class CreateDb
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -663,7 +663,10 @@ namespace Infrastructures.Migrations
                     b.Property<string>("ResetToken")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("RoleId")
+                    b.Property<int>("Role")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("RoleId")
                         .HasColumnType("int");
 
                     b.Property<int?>("Status")
@@ -922,12 +925,9 @@ namespace Infrastructures.Migrations
 
             modelBuilder.Entity("Domain.Entities.Users.User", b =>
                 {
-                    b.HasOne("Domain.Entities.Role", "Role")
+                    b.HasOne("Domain.Entities.Role", null)
                         .WithMany("Users")
-                        .HasForeignKey("RoleId")
-                        .IsRequired();
-
-                    b.Navigation("Role");
+                        .HasForeignKey("RoleId");
                 });
 
             modelBuilder.Entity("SyllabusTrainingProgram", b =>

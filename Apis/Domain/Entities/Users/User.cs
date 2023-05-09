@@ -9,7 +9,8 @@ namespace Domain.Entities.Users
         public string Password { get; set; }
         public string Phone { get; set; }
         public DateTime DateOfBirth { get; set; }
-        public int RoleId { get; set; }
+        // public int RoleId { get; set; }
+        public UserRole Role { get; set; }
         public UserLevel? Level { get; set; } = null;
         public UserStatus? Status { get; set; } = null;
         public bool IsMale { get; set; } = true;

@@ -422,3 +422,160 @@ System.NullReferenceException: Object reference not set to an instance of an obj
 2023-05-09 08:53:01.888 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
 2023-05-09 08:53:02.021 +07:00 [INF] End performance record
 2023-05-09 08:53:02.028 +07:00 [INF] Time taken: 0:00.497
+2023-05-09 10:56:32.671 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 10:56:34.024 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-09 10:56:34.026 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-09 10:56:34.028 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 10:56:34.028 +07:00 [INF] Hosting environment: Development
+2023-05-09 10:56:34.028 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-09 10:57:01.319 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 10:57:02.039 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-09 10:57:02.040 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-09 10:57:02.042 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 10:57:02.043 +07:00 [INF] Hosting environment: Development
+2023-05-09 10:57:02.043 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-09 10:59:20.332 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Conflicting method/path combination "POST api/User/Login" for actions - WebAPI.Controllers.UserController.LoginAsync (WebAPI),WebAPI.Controllers.UserController.LoginAsync (WebAPI). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerDocumentWithoutFilters(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-05-09 10:59:30.995 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Conflicting method/path combination "POST api/User/Login" for actions - WebAPI.Controllers.UserController.LoginAsync (WebAPI),WebAPI.Controllers.UserController.LoginAsync (WebAPI). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerDocumentWithoutFilters(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-05-09 10:59:33.832 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Conflicting method/path combination "POST api/User/Login" for actions - WebAPI.Controllers.UserController.LoginAsync (WebAPI),WebAPI.Controllers.UserController.LoginAsync (WebAPI). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerDocumentWithoutFilters(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-05-09 10:59:37.867 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Conflicting method/path combination "POST api/User/Login" for actions - WebAPI.Controllers.UserController.LoginAsync (WebAPI),WebAPI.Controllers.UserController.LoginAsync (WebAPI). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerDocumentWithoutFilters(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-05-09 10:59:40.321 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Conflicting method/path combination "POST api/User/Login" for actions - WebAPI.Controllers.UserController.LoginAsync (WebAPI),WebAPI.Controllers.UserController.LoginAsync (WebAPI). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerDocumentWithoutFilters(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-05-09 10:59:45.483 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 10:59:46.269 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-09 10:59:46.271 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-09 10:59:46.273 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 10:59:46.274 +07:00 [INF] Hosting environment: Development
+2023-05-09 10:59:46.274 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-09 11:00:25.014 +07:00 [INF] Start performance record
+2023-05-09 11:01:48.790 +07:00 [INF] Application is shutting down...
+2023-05-09 11:01:57.974 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 11:01:58.710 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-09 11:01:58.712 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-09 11:01:58.714 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 11:01:58.714 +07:00 [INF] Hosting environment: Development
+2023-05-09 11:01:58.714 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-09 11:02:15.113 +07:00 [INF] Start performance record
+2023-05-09 11:04:12.393 +07:00 [INF] Start performance record
+2023-05-09 11:04:57.197 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 11:04:57.958 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-09 11:04:57.959 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-09 11:04:57.961 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 11:04:57.961 +07:00 [INF] Hosting environment: Development
+2023-05-09 11:04:57.962 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-09 11:05:01.927 +07:00 [INF] Start performance record
+2023-05-09 11:05:55.416 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 11:05:56.144 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-09 11:05:56.145 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-09 11:05:56.148 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 11:05:56.149 +07:00 [INF] Hosting environment: Development
+2023-05-09 11:05:56.150 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-09 11:06:10.756 +07:00 [INF] Start performance record
+2023-05-09 11:06:11.661 +07:00 [WRN] Savepoints are disabled because Multiple Active Result Sets (MARS) is enabled. If 'SaveChanges' fails, then the transaction cannot be automatically rolled back to a known clean state. Instead, the transaction should be rolled back by the application before retrying 'SaveChanges'. See https://go.microsoft.com/fwlink/?linkid=2149338 for more information and examples. To identify the code which triggers this warning, call 'ConfigureWarnings(w => w.Throw(SqlServerEventId.SavepointsDisabledBecauseOfMARS))'.
+2023-05-09 11:06:11.710 +07:00 [INF] End performance record
+2023-05-09 11:06:11.714 +07:00 [INF] Time taken: 0:00.954
+2023-05-09 11:06:30.674 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 11:06:31.433 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-09 11:06:31.434 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-09 11:06:31.437 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 11:06:31.437 +07:00 [INF] Hosting environment: Development
+2023-05-09 11:06:31.437 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-09 11:06:35.892 +07:00 [INF] Start performance record
+2023-05-09 11:06:36.241 +07:00 [INF] End performance record
+2023-05-09 11:06:36.246 +07:00 [INF] Time taken: 0:00.350
+2023-05-09 11:07:32.129 +07:00 [INF] Start performance record
+2023-05-09 11:07:32.202 +07:00 [INF] End performance record
+2023-05-09 11:07:32.203 +07:00 [INF] Time taken: 0:00.073
+2023-05-09 11:07:54.159 +07:00 [INF] Start performance record
+2023-05-09 11:08:36.863 +07:00 [INF] Application is shutting down...
+2023-05-09 11:08:44.725 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 11:08:45.495 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-09 11:08:45.497 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-09 11:08:45.498 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 11:08:45.499 +07:00 [INF] Hosting environment: Development
+2023-05-09 11:08:45.499 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-09 11:08:56.680 +07:00 [INF] Start performance record
+2023-05-09 11:10:10.324 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 11:10:11.189 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-09 11:10:11.190 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-09 11:10:11.192 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 11:10:11.192 +07:00 [INF] Hosting environment: Development
+2023-05-09 11:10:11.192 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-09 11:10:13.917 +07:00 [INF] Start performance record
+2023-05-09 11:11:22.045 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 11:11:22.858 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-09 11:11:22.859 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-09 11:11:22.861 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 11:11:22.861 +07:00 [INF] Hosting environment: Development
+2023-05-09 11:11:22.861 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-09 11:11:27.428 +07:00 [INF] Start performance record
+2023-05-09 11:11:53.593 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 11:11:54.332 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-09 11:11:54.334 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-09 11:11:54.336 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 11:11:54.336 +07:00 [INF] Hosting environment: Development
+2023-05-09 11:11:54.336 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-09 11:11:57.993 +07:00 [INF] Start performance record
+2023-05-09 11:11:59.019 +07:00 [INF] End performance record
+2023-05-09 11:11:59.024 +07:00 [INF] Time taken: 0:01.026
+2023-05-09 11:15:32.791 +07:00 [INF] Application is shutting down...
+2023-05-09 11:17:51.353 +07:00 [FTL] Unhandled Exception
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at WebAPI.Extensions.HostingExtensions.ConfigureServices(WebApplicationBuilder builder, String DatabaseConnection, String UserApp) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Extensions\HostingExtensions.cs:line 50
+   at Program.<Main>$(String[] args) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Program.cs:line 29
+2023-05-09 11:17:51.408 +07:00 [INF] Shut down complete
+2023-05-09 11:18:01.177 +07:00 [FTL] Unhandled Exception
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at WebAPI.Extensions.HostingExtensions.ConfigureServices(WebApplicationBuilder builder, String DatabaseConnection, String UserApp) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Extensions\HostingExtensions.cs:line 50
+   at Program.<Main>$(String[] args) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Program.cs:line 29
+2023-05-09 11:18:01.223 +07:00 [INF] Shut down complete

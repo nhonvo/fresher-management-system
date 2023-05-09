@@ -7,27 +7,17 @@ namespace Infrastructures.Repositories
 {
     public class UserRepository : GenericRepository<User>, IUserRepository
     {
-        private readonly ApplicationDbContext _dbContext;
+        private readonly ApplicationDbContext _context;
 
         public UserRepository(ApplicationDbContext dbContext) : base(dbContext)
         {
-            _dbContext = dbContext;
+            _context = dbContext;
         }
 
-        public Task<bool> CheckUserNameExited(string username) => _dbContext.Users.AnyAsync(u => u.FullName == username);
+        public async Task<bool> CheckExistUser(string email)
+             => await _context.Users.AnyAsync(x => x.Email == email);
 
-        public async Task<User> GetUserByUserNameAndPasswordHash(string username, string passwordHash)
-        {
-            var user = await _dbContext.Users
-                .FirstOrDefaultAsync(record => record.FullName == username
-                                        && record.Password == passwordHash);
-            if (user is null)
-            {
-                throw new Exception("UserName & password is not correct");
-            }
-
-
-            return user;
-        }
+        public async Task<User> Find(string email)
+           => await _context.Users.FirstOrDefaultAsync(x => x.Email == email);
     }
 }

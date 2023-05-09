@@ -17,11 +17,11 @@ namespace Infrastructures.Persistence.Configurations
             //Name
             builder.HasIndex(x => x.Name).IsUnique();
 
-            //Users
-            builder.HasMany(x => x.Users)
-                 .WithOne(x => x.Role)
-                 .HasForeignKey(x => x.RoleId)
-                 .OnDelete(DeleteBehavior.ClientSetNull);
+            // //Users
+            // builder.HasMany(x => x.Users)
+            //      .WithOne(x => x.Role)
+            //      .HasForeignKey(x => x.RoleId)
+            //      .OnDelete(DeleteBehavior.ClientSetNull);
         }
     }
 }

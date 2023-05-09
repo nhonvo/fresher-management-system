@@ -6,7 +6,8 @@ namespace Domain.Entities.Users
 {
     public partial class User
     {
-        // public Role Role { get; set; }
+        // public Role Role { get; set; }   
+        public ICollection<Score> Scores { get; set; }
         public ICollection<TMS> TimeMngSystem { get; set; }
         public ICollection<TrainingProgram> ModifyTrainingProgram { get; set; }
         public ICollection<TrainingProgram> CreatedTrainingProgram { get; set; }

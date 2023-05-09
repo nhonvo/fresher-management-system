@@ -1,5 +1,3 @@
-
-using Application.Common.Exceptions;
 using Application.Commons;
 using Application.Syllabuses.DTO;
 using AutoMapper;

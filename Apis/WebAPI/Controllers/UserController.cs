@@ -21,6 +21,7 @@ namespace WebAPI.Controllers
         public async Task<AccountDTO> RegisterAsync([FromBody] RegisterCommand request)
             => await _mediator.Send(request);
     }
+    // TODO: Seed data
     // TODO: allow create role for user 
     // TODO: Send mail when user register
     // TODO: Method: forget password,

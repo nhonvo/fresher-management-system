@@ -10,11 +10,11 @@ namespace Domain.Entities.Users
         public string Phone { get; set; }
         public DateTime DateOfBirth { get; set; }
         // public int RoleId { get; set; }
-        public UserRole Role { get; set; }
+        public UserRole Role { get; set; } // remove this property after add role feature
         public UserLevel? Level { get; set; } = null;
         public UserStatus? Status { get; set; } = null;
         public bool IsMale { get; set; } = true;
         public string AvatarURL { get; set; }
-        public string? ResetToken { get; set; }
+        public string? ResetToken { get; set; } // consider remove
     }
 }

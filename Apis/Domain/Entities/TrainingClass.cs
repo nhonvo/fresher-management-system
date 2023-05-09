@@ -16,10 +16,6 @@ namespace Domain.Entities
         public ClassTime ClassTime { get; set; }
         public DateTime StartedOn { get; set; }
         public DateTime FinishedOn { get; set; }
-        public string LectureStartedTime { get; set; }
-        public string LectureFinishedTime { get; set; }
-        public int DaysDuration { get; set; }
-        public int TimeDuration { get; set; }
         public ClassStatus Status { get; set; }
         public DateTime ApprovedOn { get; set; }
         public int? ApprovedBy { get; set; }
@@ -28,7 +24,5 @@ namespace Domain.Entities
         public int? TrainingProgramId { get; set; }
         public TrainingProgram? TrainingProgram { get; set; }
         public ICollection<ClassUsers> ClassUsers { get; set; }
-        public ICollection<ClassUnitDetail> ClassUnitDetails { get; set; }
-        public ICollection<Syllabus> Syllabuses { get; set; }
     }
 }

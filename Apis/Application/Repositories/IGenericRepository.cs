@@ -50,11 +50,6 @@ namespace Application.Repositories
         Task<Pagination<TEntity>> GetAsync(Expression<Func<TEntity, bool>> filter = null, Func<IQueryable<TEntity>, IQueryable<TEntity>> include = null, int pageIndex = 0, int pageSize = 10);
 
         /// <summary>
-        /// Get entities by filter. This is an asynchronous operation. If you want to wait for the result use GetAsync ( Expression. Of ( TEntity ))
-        /// </summary>
-        /// <param name="filter">Expression to filter entities by. Can be null</param>
-        Task<IEnumerable<TEntity>> GetAsync(Expression<Func<TEntity, bool>> filter);
-        /// <summary>
         /// Get entities by filter. This is a async operation. You can use it to get a subset of entities that match the filter
         /// </summary>
         /// <param name="filter">Expression that determines which entities to get</param>

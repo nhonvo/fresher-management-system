@@ -6,4 +6,5 @@ namespace Application.Services
     {
         public DateTime GetCurrentTime() => DateTime.UtcNow;
     }
+
 }

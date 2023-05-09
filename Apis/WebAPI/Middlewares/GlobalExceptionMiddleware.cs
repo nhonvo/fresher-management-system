@@ -1,4 +1,6 @@
-﻿namespace WebAPI.Middlewares
+﻿using Serilog;
+
+namespace WebAPI.Middlewares
 {
     public class GlobalExceptionMiddleware : IMiddleware
     {
@@ -10,10 +12,14 @@
             }
             catch (Exception ex)
             {
-                // todo push notification & writing log
-                Console.WriteLine("GobalExceptionMiddleware");
+                // write to console 
+                Console.WriteLine("GlobalExceptionMiddleware");
                 Console.WriteLine(ex.Message);
                 await context.Response.WriteAsync(ex.ToString());
+                //writing log
+                Log.Information("GlobalExceptionMiddleware");
+                Log.Information(ex.Message.ToString());
+                Log.Information(ex.ToString());
             }
         }
     }

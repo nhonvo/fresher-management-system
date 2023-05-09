@@ -235,3 +235,263 @@ Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Conflicting method/
 2023-05-10 00:47:20.241 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
 2023-05-10 00:47:23.288 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
 2023-05-10 00:47:23.835 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 00:47:35.101 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 00:47:35.931 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-10 00:47:35.933 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-10 00:47:35.934 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 00:47:35.934 +07:00 [INF] Hosting environment: Development
+2023-05-10 00:47:35.934 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-10 00:47:36.048 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 00:47:36.232 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 01:00:52.485 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 01:00:54.520 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-10 01:00:54.522 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-10 01:00:54.524 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 01:00:54.524 +07:00 [INF] Hosting environment: Development
+2023-05-10 01:00:54.524 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-10 01:05:33.931 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 01:05:34.971 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-10 01:05:34.973 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-10 01:05:34.975 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 01:05:34.975 +07:00 [INF] Hosting environment: Development
+2023-05-10 01:05:34.975 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-10 01:06:43.997 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 01:06:44.927 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-10 01:06:44.928 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-10 01:06:44.929 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 01:06:44.930 +07:00 [INF] Hosting environment: Development
+2023-05-10 01:06:44.930 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-10 01:07:07.764 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 01:07:08.767 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-10 01:07:08.768 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-10 01:07:08.769 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 01:07:08.770 +07:00 [INF] Hosting environment: Development
+2023-05-10 01:07:08.770 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-10 01:08:01.639 +07:00 [FTL] Unhandled Exception
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: Application.Interfaces.ICacheService Lifetime: Scoped ImplementationType: Application.Services.CacheService': Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: Application.Interfaces.ICacheService Lifetime: Scoped ImplementationType: Application.Services.CacheService': Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at WebAPI.Extensions.HostingExtensions.ConfigureServices(WebApplicationBuilder builder, String databaseConnection, String userApp, String key, String issuer, String audience) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Extensions\HostingExtensions.cs:line 53
+   at Program.<Main>$(String[] args) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Program.cs:line 29
+2023-05-10 01:08:01.688 +07:00 [INF] Shut down complete
+2023-05-10 01:08:38.525 +07:00 [FTL] Unhandled Exception
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: Application.Interfaces.ICacheService Lifetime: Scoped ImplementationType: Application.Services.CacheService': Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: Application.Interfaces.ICacheService Lifetime: Scoped ImplementationType: Application.Services.CacheService': Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at WebAPI.Extensions.HostingExtensions.ConfigureServices(WebApplicationBuilder builder, String databaseConnection, String userApp, String key, String issuer, String audience) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Extensions\HostingExtensions.cs:line 53
+   at Program.<Main>$(String[] args) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Program.cs:line 29
+2023-05-10 01:08:38.576 +07:00 [INF] Shut down complete
+2023-05-10 01:08:43.263 +07:00 [FTL] Unhandled Exception
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: Application.Interfaces.ICacheService Lifetime: Scoped ImplementationType: Application.Services.CacheService': Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: Application.Interfaces.ICacheService Lifetime: Scoped ImplementationType: Application.Services.CacheService': Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at WebAPI.Extensions.HostingExtensions.ConfigureServices(WebApplicationBuilder builder, String databaseConnection, String userApp, String key, String issuer, String audience) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Extensions\HostingExtensions.cs:line 53
+   at Program.<Main>$(String[] args) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Program.cs:line 29
+2023-05-10 01:08:43.317 +07:00 [INF] Shut down complete
+2023-05-10 01:08:51.485 +07:00 [FTL] Unhandled Exception
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: Application.Interfaces.ICacheService Lifetime: Scoped ImplementationType: Application.Services.CacheService': Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: Application.Interfaces.ICacheService Lifetime: Scoped ImplementationType: Application.Services.CacheService': Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at WebAPI.Extensions.HostingExtensions.ConfigureServices(WebApplicationBuilder builder, String databaseConnection, String userApp, String key, String issuer, String audience) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Extensions\HostingExtensions.cs:line 53
+   at Program.<Main>$(String[] args) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Program.cs:line 29
+2023-05-10 01:08:51.535 +07:00 [INF] Shut down complete
+2023-05-10 01:08:56.345 +07:00 [FTL] Unhandled Exception
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: Application.Interfaces.ICacheService Lifetime: Scoped ImplementationType: Application.Services.CacheService': Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: Application.Interfaces.ICacheService Lifetime: Scoped ImplementationType: Application.Services.CacheService': Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at WebAPI.Extensions.HostingExtensions.ConfigureServices(WebApplicationBuilder builder, String databaseConnection, String userApp, String key, String issuer, String audience) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Extensions\HostingExtensions.cs:line 53
+   at Program.<Main>$(String[] args) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Program.cs:line 29
+2023-05-10 01:08:56.406 +07:00 [INF] Shut down complete
+2023-05-10 01:13:20.618 +07:00 [FTL] Unhandled Exception
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: Application.Interfaces.ICacheService Lifetime: Scoped ImplementationType: Application.Services.CacheService': Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: Application.Interfaces.ICacheService Lifetime: Scoped ImplementationType: Application.Services.CacheService': Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at WebAPI.Extensions.HostingExtensions.ConfigureServices(WebApplicationBuilder builder, String databaseConnection, String userApp, String key, String issuer, String audience) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Extensions\HostingExtensions.cs:line 53
+   at Program.<Main>$(String[] args) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Program.cs:line 29
+2023-05-10 01:13:20.664 +07:00 [INF] Shut down complete
+2023-05-10 01:22:15.976 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 01:22:16.865 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-10 01:22:16.866 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-10 01:22:16.867 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 01:22:16.867 +07:00 [INF] Hosting environment: Development
+2023-05-10 01:22:16.867 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-10 01:23:45.423 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 01:23:46.346 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-10 01:23:46.347 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-10 01:23:46.349 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 01:23:46.349 +07:00 [INF] Hosting environment: Development
+2023-05-10 01:23:46.349 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-10 01:23:52.229 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 01:23:54.199 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-10 01:23:54.200 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-10 01:23:54.202 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 01:23:54.202 +07:00 [INF] Hosting environment: Development
+2023-05-10 01:23:54.202 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-10 01:23:59.408 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 01:23:59.436 +07:00 [INF] Start performance record
+2023-05-10 01:23:59.438 +07:00 [INF] End performance record
+2023-05-10 01:23:59.443 +07:00 [INF] Time taken: 0:00.003
+2023-05-10 01:24:03.071 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 01:24:03.287 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 01:24:22.121 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 01:24:22.133 +07:00 [INF] Start performance record
+2023-05-10 01:24:22.338 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-10 01:24:22.339 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-10 01:24:22.446 +07:00 [INF] End performance record
+2023-05-10 01:24:22.446 +07:00 [INF] Time taken: 0:00.312
+2023-05-10 01:24:27.337 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 01:24:27.338 +07:00 [INF] Start performance record
+2023-05-10 01:24:27.406 +07:00 [INF] End performance record
+2023-05-10 01:24:27.406 +07:00 [INF] Time taken: 0:00.068
+2023-05-10 01:24:28.209 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 01:24:28.210 +07:00 [INF] Start performance record
+2023-05-10 01:24:28.217 +07:00 [INF] End performance record
+2023-05-10 01:24:28.217 +07:00 [INF] Time taken: 0:00.007
+2023-05-10 01:24:28.919 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 01:24:28.919 +07:00 [INF] Start performance record
+2023-05-10 01:24:28.925 +07:00 [INF] End performance record
+2023-05-10 01:24:28.926 +07:00 [INF] Time taken: 0:00.005
+2023-05-10 01:24:29.389 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 01:24:29.389 +07:00 [INF] Start performance record
+2023-05-10 01:24:29.394 +07:00 [INF] End performance record
+2023-05-10 01:24:29.394 +07:00 [INF] Time taken: 0:00.004
+2023-05-10 01:24:29.910 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 01:24:29.910 +07:00 [INF] Start performance record
+2023-05-10 01:24:29.914 +07:00 [INF] End performance record
+2023-05-10 01:24:29.914 +07:00 [INF] Time taken: 0:00.004
+2023-05-10 01:24:30.652 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 01:24:30.653 +07:00 [INF] Start performance record
+2023-05-10 01:24:30.658 +07:00 [INF] End performance record
+2023-05-10 01:24:30.658 +07:00 [INF] Time taken: 0:00.005
+2023-05-10 01:24:31.173 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 01:24:31.173 +07:00 [INF] Start performance record
+2023-05-10 01:24:31.178 +07:00 [INF] End performance record
+2023-05-10 01:24:31.178 +07:00 [INF] Time taken: 0:00.005
+2023-05-10 01:24:31.691 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 01:24:31.691 +07:00 [INF] Start performance record
+2023-05-10 01:24:31.696 +07:00 [INF] End performance record
+2023-05-10 01:24:31.696 +07:00 [INF] Time taken: 0:00.005
+2023-05-10 01:24:51.823 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 01:24:52.886 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-10 01:24:52.888 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-10 01:24:52.889 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 01:24:52.890 +07:00 [INF] Hosting environment: Development
+2023-05-10 01:24:52.890 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-10 01:24:53.043 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 01:24:53.336 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 01:27:01.939 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 01:27:02.159 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 01:27:46.544 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 01:27:47.581 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-10 01:27:47.583 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-10 01:27:47.584 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 01:27:47.584 +07:00 [INF] Hosting environment: Development
+2023-05-10 01:27:47.584 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-10 01:27:47.708 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 01:27:48.009 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 01:28:28.509 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 01:28:28.761 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 01:28:44.414 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 01:28:45.406 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-10 01:28:45.407 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-10 01:28:45.409 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 01:28:45.409 +07:00 [INF] Hosting environment: Development
+2023-05-10 01:28:45.409 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-10 01:28:45.531 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 01:28:45.741 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 01:35:00.699 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 01:35:01.693 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-10 01:35:01.695 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-10 01:35:01.696 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 01:35:01.696 +07:00 [INF] Hosting environment: Development
+2023-05-10 01:35:01.696 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-10 01:35:08.679 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 01:35:09.547 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-10 01:35:09.549 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-10 01:35:09.550 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 01:35:09.550 +07:00 [INF] Hosting environment: Development
+2023-05-10 01:35:09.550 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-10 01:38:55.330 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 01:38:56.238 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-10 01:38:56.239 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-10 01:38:56.241 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 01:38:56.241 +07:00 [INF] Hosting environment: Development
+2023-05-10 01:38:56.241 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI

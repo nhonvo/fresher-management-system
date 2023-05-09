@@ -1,3 +1,4 @@
+using Application.Interfaces;
 using Application.Repositories;
 using Domain.Entities.Syllabuses;
 using Infrastructures.Persistence;
@@ -8,7 +9,7 @@ namespace Infrastructures.Repositories
     {
         private readonly ApplicationDbContext _dbContext;
 
-        public SyllabusRepository(ApplicationDbContext dbContext) : base(dbContext)
+        public SyllabusRepository(ApplicationDbContext dbContext, ICacheService cache) : base(dbContext, cache)
         {
             _dbContext = dbContext;
         }

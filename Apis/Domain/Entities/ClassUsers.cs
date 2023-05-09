@@ -12,7 +12,7 @@ namespace Domain.Entities
         public int ClassId { get; set; }
         public int UserId { get; set; }
 
-        public Class? Class { get; set; }
+        public TrainingClass? Class { get; set; }
         public User? User { get; set; }
         public ICollection<Attendance> Attendances { get; set; }
     }

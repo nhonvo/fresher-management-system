@@ -13,7 +13,7 @@ namespace Domain.Entities
         public int? DayNo { get; set; }
         public DateTime? OperationDate { get; set; }
 
-        public Class Class { get; set; }
+        public TrainingClass Class { get; set; }
         public Unit Unit { get; set; }
         public User? Trainer { get; set; }
     }

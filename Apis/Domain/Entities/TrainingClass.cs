@@ -6,7 +6,7 @@ using Domain.Enums.ClassEnums;
 
 namespace Domain.Entities
 {
-    public class Class : BaseEntity
+    public class TrainingClass : BaseEntity
     {
         public string Name { get; set; }
         public string Code { get; set; }

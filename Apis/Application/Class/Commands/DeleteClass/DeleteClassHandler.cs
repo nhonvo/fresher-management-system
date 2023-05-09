@@ -8,10 +8,7 @@ using Application.Common.Exceptions;
 
 namespace Application.Class.Commands.DeleteClass
 {
-    public record DeleteClassCommand : IRequest<ClassDTO>
-    {
-        public int Id { get; set; }
-    }
+    public record DeleteClassCommand(int Id) : IRequest<ClassDTO>{};
     public class DeleteClassHandler : IRequestHandler<DeleteClassCommand, ClassDTO>
     {
         private readonly IUnitOfWork _unitOfWork;

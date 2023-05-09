@@ -495,3 +495,204 @@ System.AggregateException: Some services are not able to be constructed (Error w
 2023-05-10 01:38:56.241 +07:00 [INF] Application started. Press Ctrl+C to shut down.
 2023-05-10 01:38:56.241 +07:00 [INF] Hosting environment: Development
 2023-05-10 01:38:56.241 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-10 01:39:10.250 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 01:39:11.484 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-10 01:39:11.485 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-10 01:39:11.486 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 01:39:11.486 +07:00 [INF] Hosting environment: Development
+2023-05-10 01:39:11.486 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-10 01:49:03.751 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 01:49:04.595 +07:00 [FTL] Application startup exception
+System.InvalidOperationException: Unable to resolve service for type 'Microsoft.AspNetCore.ResponseCompression.IResponseCompressionProvider' while attempting to activate 'Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware'.
+   at Microsoft.Extensions.Internal.ActivatorUtilities.ConstructorMatcher.CreateInstance(IServiceProvider provider)
+   at Microsoft.Extensions.Internal.ActivatorUtilities.CreateInstance(IServiceProvider provider, Type instanceType, Object[] parameters)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass5_0.<UseMiddleware>b__0(RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+2023-05-10 01:49:12.529 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 01:49:14.551 +07:00 [FTL] Application startup exception
+System.InvalidOperationException: Unable to resolve service for type 'Microsoft.AspNetCore.ResponseCompression.IResponseCompressionProvider' while attempting to activate 'Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware'.
+   at Microsoft.Extensions.Internal.ActivatorUtilities.ConstructorMatcher.CreateInstance(IServiceProvider provider)
+   at Microsoft.Extensions.Internal.ActivatorUtilities.CreateInstance(IServiceProvider provider, Type instanceType, Object[] parameters)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass5_0.<UseMiddleware>b__0(RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+2023-05-10 01:49:45.864 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 01:49:46.851 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-10 01:49:46.853 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-10 01:49:46.855 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 01:49:46.855 +07:00 [INF] Hosting environment: Development
+2023-05-10 01:49:46.855 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-10 01:52:57.874 +07:00 [INF] Application is shutting down...
+2023-05-10 02:07:56.487 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 02:07:57.863 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-10 02:07:57.864 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-10 02:07:57.866 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 02:07:57.866 +07:00 [INF] Hosting environment: Development
+2023-05-10 02:07:57.866 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-10 02:07:58.268 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 02:08:02.300 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 02:08:02.305 +07:00 [INF] Start performance record
+2023-05-10 02:08:02.310 +07:00 [INF] End performance record
+2023-05-10 02:08:02.317 +07:00 [INF] Time taken: 0:00.006
+2023-05-10 02:10:17.045 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 02:10:17.048 +07:00 [INF] Start performance record
+2023-05-10 02:10:18.328 +07:00 [ERR] Health check TrainingManagementSystem with status "Unhealthy" completed after 1270.5947ms with message 'null'
+2023-05-10 02:10:18.401 +07:00 [INF] End performance record
+2023-05-10 02:10:18.401 +07:00 [INF] Time taken: 0:01.353
+2023-05-10 02:12:14.572 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 02:12:15.726 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-10 02:12:15.727 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-10 02:12:15.729 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 02:12:15.729 +07:00 [INF] Hosting environment: Development
+2023-05-10 02:12:15.729 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-10 02:12:17.168 +07:00 [INF] Start performance record
+2023-05-10 02:12:17.188 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 02:12:18.013 +07:00 [ERR] Health check TrainingManagementSystem with status "Unhealthy" completed after 817.4681ms with message 'null'
+2023-05-10 02:12:18.078 +07:00 [INF] End performance record
+2023-05-10 02:12:18.085 +07:00 [INF] Time taken: 0:00.910
+2023-05-10 02:12:23.053 +07:00 [INF] Start performance record
+2023-05-10 02:12:23.055 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 02:12:23.056 +07:00 [INF] End performance record
+2023-05-10 02:12:23.056 +07:00 [INF] Time taken: 0:00.002
+2023-05-10 02:12:42.552 +07:00 [INF] Start performance record
+2023-05-10 02:12:42.554 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 02:12:42.554 +07:00 [INF] End performance record
+2023-05-10 02:12:42.554 +07:00 [INF] Time taken: 0:00.002
+2023-05-10 02:13:31.316 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 02:13:33.139 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-10 02:13:33.141 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-10 02:13:33.142 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 02:13:33.142 +07:00 [INF] Hosting environment: Development
+2023-05-10 02:13:33.142 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-10 02:14:14.561 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 02:14:15.598 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-10 02:14:15.599 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-10 02:14:15.600 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 02:14:15.600 +07:00 [INF] Hosting environment: Development
+2023-05-10 02:14:15.601 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-10 02:14:29.580 +07:00 [INF] Application is shutting down...
+2023-05-10 02:15:09.862 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 02:15:14.039 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-10 02:15:14.041 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-10 02:15:14.042 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 02:15:14.042 +07:00 [INF] Hosting environment: Development
+2023-05-10 02:15:14.042 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-10 02:15:14.307 +07:00 [INF] Start performance record
+2023-05-10 02:15:14.363 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 02:15:14.365 +07:00 [INF] End performance record
+2023-05-10 02:15:14.372 +07:00 [INF] Time taken: 0:00.059
+2023-05-10 02:18:15.492 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 02:18:16.397 +07:00 [FTL] Unhandled Exception
+System.InvalidOperationException: Unable to find the required services. Please add all the required services by calling 'IServiceCollection.AddHealthChecks' inside the call to 'ConfigureServices(...)' in the application startup code.
+   at Microsoft.AspNetCore.Builder.HealthCheckEndpointRouteBuilderExtensions.MapHealthChecksCore(IEndpointRouteBuilder endpoints, String pattern, HealthCheckOptions options)
+   at WebAPI.Extensions.HostingExtensions.ConfigurePipelineAsync(WebApplication app) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Extensions\HostingExtensions.cs:line 50
+   at Program.<Main>$(String[] args) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Program.cs:line 29
+2023-05-10 02:18:16.411 +07:00 [INF] Shut down complete
+2023-05-10 02:18:59.616 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 02:19:01.378 +07:00 [FTL] Unhandled Exception
+System.InvalidOperationException: Unable to find the required services. Please add all the required services by calling 'IServiceCollection.AddHealthChecks' inside the call to 'ConfigureServices(...)' in the application startup code.
+   at Microsoft.AspNetCore.Builder.HealthCheckEndpointRouteBuilderExtensions.MapHealthChecksCore(IEndpointRouteBuilder endpoints, String pattern, HealthCheckOptions options)
+   at WebAPI.Extensions.HostingExtensions.ConfigurePipelineAsync(WebApplication app) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Extensions\HostingExtensions.cs:line 50
+   at Program.<Main>$(String[] args) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Program.cs:line 29
+2023-05-10 02:19:01.398 +07:00 [INF] Shut down complete
+2023-05-10 02:19:29.960 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 02:19:31.170 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-10 02:19:31.172 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-10 02:19:31.173 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 02:19:31.173 +07:00 [INF] Hosting environment: Development
+2023-05-10 02:19:31.173 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-10 02:22:03.430 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 02:22:04.380 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-10 02:22:04.381 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-10 02:22:04.382 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 02:22:04.383 +07:00 [INF] Hosting environment: Development
+2023-05-10 02:22:04.383 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-10 02:22:20.396 +07:00 [INF] Start performance record
+2023-05-10 02:22:20.427 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 02:22:20.429 +07:00 [INF] End performance record
+2023-05-10 02:22:20.433 +07:00 [INF] Time taken: 0:00.033
+2023-05-10 02:24:17.540 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 02:24:18.399 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-10 02:24:18.400 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-10 02:24:18.401 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 02:24:18.401 +07:00 [INF] Hosting environment: Development
+2023-05-10 02:24:18.402 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-10 02:25:30.553 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 02:25:32.445 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-10 02:25:32.447 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-10 02:25:32.448 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 02:25:32.448 +07:00 [INF] Hosting environment: Development
+2023-05-10 02:25:32.448 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-10 02:27:17.894 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 02:27:19.022 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-10 02:27:19.023 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-10 02:27:19.024 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 02:27:19.025 +07:00 [INF] Hosting environment: Development
+2023-05-10 02:27:19.025 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-10 02:28:31.926 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 02:28:32.893 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-10 02:28:32.895 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-10 02:28:32.896 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 02:28:32.896 +07:00 [INF] Hosting environment: Development
+2023-05-10 02:28:32.897 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-10 02:28:39.287 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 02:29:04.759 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 02:29:05.784 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-10 02:29:05.787 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-10 02:29:05.788 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 02:29:05.789 +07:00 [INF] Hosting environment: Development
+2023-05-10 02:29:05.789 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-10 02:29:51.380 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 02:29:52.437 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-10 02:29:52.438 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-10 02:29:52.439 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 02:29:52.439 +07:00 [INF] Hosting environment: Development
+2023-05-10 02:29:52.439 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-10 02:29:55.324 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 02:30:49.159 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 02:30:50.244 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-10 02:30:50.246 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-10 02:30:50.248 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 02:30:50.248 +07:00 [INF] Hosting environment: Development
+2023-05-10 02:30:50.248 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-10 02:31:09.386 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 02:31:10.325 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-10 02:31:10.327 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-10 02:31:10.329 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 02:31:10.329 +07:00 [INF] Hosting environment: Development
+2023-05-10 02:31:10.329 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-10 02:31:22.588 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 02:31:23.644 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-10 02:31:23.645 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-10 02:31:23.647 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 02:31:23.647 +07:00 [INF] Hosting environment: Development
+2023-05-10 02:31:23.647 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-10 02:31:27.517 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 02:31:52.539 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 02:31:53.520 +07:00 [FTL] Application startup exception
+System.InvalidOperationException: Unable to resolve service for type 'Microsoft.AspNetCore.ResponseCompression.IResponseCompressionProvider' while attempting to activate 'Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware'.
+   at Microsoft.Extensions.Internal.ActivatorUtilities.ConstructorMatcher.CreateInstance(IServiceProvider provider)
+   at Microsoft.Extensions.Internal.ActivatorUtilities.CreateInstance(IServiceProvider provider, Type instanceType, Object[] parameters)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass5_0.<UseMiddleware>b__0(RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+2023-05-10 02:32:00.663 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 02:32:01.531 +07:00 [FTL] Application startup exception
+System.InvalidOperationException: Unable to resolve service for type 'Microsoft.AspNetCore.ResponseCompression.IResponseCompressionProvider' while attempting to activate 'Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware'.
+   at Microsoft.Extensions.Internal.ActivatorUtilities.ConstructorMatcher.CreateInstance(IServiceProvider provider)
+   at Microsoft.Extensions.Internal.ActivatorUtilities.CreateInstance(IServiceProvider provider, Type instanceType, Object[] parameters)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass5_0.<UseMiddleware>b__0(RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+2023-05-10 02:32:12.459 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 02:32:13.406 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-10 02:32:13.408 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-10 02:32:13.410 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 02:32:13.410 +07:00 [INF] Hosting environment: Development
+2023-05-10 02:32:13.410 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-10 02:33:04.571 +07:00 [INF] Application is shutting down...

@@ -1,0 +1,60 @@
+2023-05-10 02:32:45.423 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 02:33:25.088 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 02:33:27.985 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-10 02:33:27.988 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-10 02:33:27.990 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 02:33:27.991 +07:00 [INF] Hosting environment: Development
+2023-05-10 02:33:27.992 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-10 02:33:28.320 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 02:33:28.346 +07:00 [INF] Start performance record
+2023-05-10 02:33:28.350 +07:00 [INF] End performance record
+2023-05-10 02:33:28.357 +07:00 [INF] Time taken: 0:00.005
+2023-05-10 02:34:58.332 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 02:34:59.974 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-10 02:34:59.977 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-10 02:34:59.978 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 02:34:59.979 +07:00 [INF] Hosting environment: Development
+2023-05-10 02:34:59.979 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-10 02:35:00.559 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 02:35:00.599 +07:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2023-05-10 02:35:00.624 +07:00 [INF] Start performance record
+2023-05-10 02:35:00.624 +07:00 [INF] Start performance record
+2023-05-10 02:35:00.629 +07:00 [INF] End performance record
+2023-05-10 02:35:00.638 +07:00 [INF] Time taken: 0:00.007
+2023-05-10 02:35:01.014 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-10 02:35:01.015 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-10 02:35:01.309 +07:00 [INF] End performance record
+2023-05-10 02:35:01.310 +07:00 [INF] Time taken: 0:00.007
+2023-05-10 02:35:13.554 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 02:35:13.555 +07:00 [INF] Start performance record
+2023-05-10 02:35:13.555 +07:00 [INF] End performance record
+2023-05-10 02:35:13.556 +07:00 [INF] Time taken: 0:00.000
+2023-05-10 02:35:20.601 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 02:36:20.524 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 02:36:20.524 +07:00 [INF] Start performance record
+2023-05-10 02:36:20.529 +07:00 [INF] End performance record
+2023-05-10 02:36:20.529 +07:00 [INF] Time taken: 0:00.004
+2023-05-10 02:37:30.672 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 02:37:31.670 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-10 02:37:31.672 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-10 02:37:31.673 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 02:37:31.673 +07:00 [INF] Hosting environment: Development
+2023-05-10 02:37:31.673 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-10 02:37:41.809 +07:00 [INF] Start performance record
+2023-05-10 02:37:41.840 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 02:37:42.740 +07:00 [ERR] Health check TrainingManagementSystem with status "Unhealthy" completed after 888.6914ms with message 'null'
+2023-05-10 02:37:42.792 +07:00 [INF] End performance record
+2023-05-10 02:37:42.798 +07:00 [INF] Time taken: 0:00.984
+2023-05-10 02:38:08.752 +07:00 [INF] Start performance record
+2023-05-10 02:38:08.761 +07:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2023-05-10 02:38:08.974 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-10 02:38:08.975 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-10 02:38:09.135 +07:00 [INF] End performance record
+2023-05-10 02:38:09.135 +07:00 [INF] Time taken: 0:00.383
+2023-05-10 02:38:47.533 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 02:38:48.693 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-10 02:38:48.695 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-10 02:38:48.697 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 02:38:48.697 +07:00 [INF] Hosting environment: Development
+2023-05-10 02:38:48.697 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-10 02:39:22.964 +07:00 [INF] Application is shutting down...

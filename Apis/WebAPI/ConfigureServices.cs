@@ -4,9 +4,11 @@ using Application.Services;
 using FluentValidation.AspNetCore;
 using Infrastructures;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Diagnostics;
+using System.IO.Compression;
 using System.Text;
 using System.Text.Json.Serialization;
 using WebAPI.Filters;
@@ -28,7 +30,10 @@ namespace WebAPI
                 options.Filters.Add<ApiExceptionFilterAttribute>();
             });
             services.AddEndpointsApiExplorer();
-            services.AddHealthChecks();
+            // services.AddHealthChecks();
+            services.AddHealthChecks().AddCheck<ApiHealthCheck>(
+                "TrainingManagementSystem",
+                tags: new string[] { "TrainingManagementSystem" });
             // Middleware
             services.AddSingleton<GlobalExceptionMiddleware>();
             services.AddSingleton<PerformanceMiddleware>();
@@ -44,7 +49,9 @@ namespace WebAPI
             // IValidator
             services.AddFluentValidationAutoValidation();
             services.AddFluentValidationClientsideAdapters();
-            
+
+
+
             #region Swagger
             services.AddSwaggerGen();
             services.AddSwaggerGen(options =>
@@ -107,6 +114,35 @@ namespace WebAPI
                 };
             });
             #endregion
+
+            #region Compression
+            // compress file size response from server to client
+            services.AddResponseCompression(options =>
+            {
+                options.EnableForHttps = true;
+                options.Providers.Add<GzipCompressionProvider>();
+                options.Providers.Add<BrotliCompressionProvider>();
+            });
+            services.Configure<BrotliCompressionProviderOptions>(options =>
+            {
+                options.Level = CompressionLevel.SmallestSize;
+            });
+            services.Configure<GzipCompressionProviderOptions>(options =>
+            {
+                options.Level = CompressionLevel.SmallestSize;
+            });
+            #endregion
+            // Cors
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: "MyCors",
+                policy =>
+                {
+                    policy.AllowAnyHeader()
+                 .AllowAnyMethod()
+                 .WithOrigins(new string[] { userApp });
+                });
+            });
             return services;
         }
     }

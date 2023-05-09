@@ -1,11 +1,8 @@
-﻿
-
-using System.IO.Compression;
-using Application;
+﻿using Application;
 using Infrastructures;
 using Infrastructures.Persistence;
-using Microsoft.AspNetCore.ResponseCompression;
-using WebAPI;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
 using WebAPI.Middlewares;
 
 namespace WebAPI.Extensions;
@@ -22,34 +19,6 @@ public static class HostingExtensions
         builder.Services.AddWebAPIService(userApp, key, issuer, audience);
 
 
-
-        #region Compression
-        builder.Services.AddResponseCompression(options =>
-        {
-            options.EnableForHttps = true;
-            options.Providers.Add<GzipCompressionProvider>();
-            options.Providers.Add<BrotliCompressionProvider>();
-        });
-        builder.Services.Configure<BrotliCompressionProviderOptions>(options =>
-        {
-            options.Level = CompressionLevel.SmallestSize;
-        });
-        builder.Services.Configure<GzipCompressionProviderOptions>(options =>
-        {
-            options.Level = CompressionLevel.SmallestSize;
-        });
-        #endregion
-        // Cors
-        builder.Services.AddCors(options =>
-        {
-            options.AddPolicy(name: "MyCors",
-            policy =>
-            {
-                policy.AllowAnyHeader()
-             .AllowAnyMethod()
-             .WithOrigins(new string[] { userApp });
-            });
-        });
         return builder.Build();
     }
     public static async Task<WebApplication> ConfigurePipelineAsync(this WebApplication app)
@@ -72,15 +41,26 @@ public static class HostingExtensions
         app.UseCors("MyCors");
         app.UseMiddleware<GlobalExceptionMiddleware>();
         app.UseMiddleware<PerformanceMiddleware>();
-        app.MapHealthChecks("/healthchecks");
+        // app.MapHealthChecks("/health");
+        app.MapHealthChecks("/health", new HealthCheckOptions()
+        {
+            Predicate = _ => true,
+            // ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse,
+            AllowCachingResponses = false,
+            ResultStatusCodes =
+            {
+                [HealthStatus.Healthy] = StatusCodes.Status200OK,
+                [HealthStatus.Degraded] = StatusCodes.Status200OK,
+                [HealthStatus.Unhealthy] = StatusCodes.Status503ServiceUnavailable
+            }
+        });
         app.UseResponseCompression();
         app.UseHttpsRedirection();
         // todo authentication
+        app.UseAuthentication();
         app.UseAuthorization();
 
         app.MapControllers();
-
-
 
         return app;
     }

@@ -58,3 +58,9 @@
 2023-05-10 02:38:48.697 +07:00 [INF] Hosting environment: Development
 2023-05-10 02:38:48.697 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
 2023-05-10 02:39:22.964 +07:00 [INF] Application is shutting down...
+2023-05-10 02:40:19.031 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 02:40:19.995 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-10 02:40:19.996 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-10 02:40:19.997 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 02:40:19.997 +07:00 [INF] Hosting environment: Development
+2023-05-10 02:40:19.997 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI

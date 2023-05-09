@@ -22,21 +22,6 @@ namespace Infrastructures.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("ClassSyllabus", b =>
-                {
-                    b.Property<int>("ClassesId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("SyllabusesId")
-                        .HasColumnType("int");
-
-                    b.HasKey("ClassesId", "SyllabusesId");
-
-                    b.HasIndex("SyllabusesId");
-
-                    b.ToTable("ClassSyllabus");
-                });
-
             modelBuilder.Entity("Domain.Entities.Attendance", b =>
                 {
                     b.Property<int>("AttendanceId")
@@ -64,86 +49,6 @@ namespace Infrastructures.Migrations
                     b.HasIndex("ClassUserId");
 
                     b.ToTable("Attendances", (string)null);
-                });
-
-            modelBuilder.Entity("Domain.Entities.Class", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int?>("ApprovedBy")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("ApprovedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int?>("AttendeeType")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ClassTime")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Code")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("CreatedBy")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("CreatedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("DaysDuration")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("FSU")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("FinishedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("LectureFinishedTime")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LectureStartedTime")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("Location")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("StartedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("Status")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TimeDuration")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("TrainingProgramId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ApprovedBy");
-
-                    b.HasIndex("CreatedBy");
-
-                    b.HasIndex("TrainingProgramId");
-
-                    b.ToTable("Class", (string)null);
                 });
 
             modelBuilder.Entity("Domain.Entities.ClassUnitDetail", b =>
@@ -456,6 +361,86 @@ namespace Infrastructures.Migrations
                     b.ToTable("TestAssessments", (string)null);
                 });
 
+            modelBuilder.Entity("Domain.Entities.TrainingClass", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int?>("ApprovedBy")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("ApprovedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("AttendeeType")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ClassTime")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("CreatedBy")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("DaysDuration")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("FSU")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("FinishedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("LectureFinishedTime")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LectureStartedTime")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("Location")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("StartedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TimeDuration")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("TrainingProgramId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ApprovedBy");
+
+                    b.HasIndex("CreatedBy");
+
+                    b.HasIndex("TrainingProgramId");
+
+                    b.ToTable("Class", (string)null);
+                });
+
             modelBuilder.Entity("Domain.Entities.TrainingMaterial", b =>
                 {
                     b.Property<int>("Id")
@@ -642,6 +627,21 @@ namespace Infrastructures.Migrations
                     b.ToTable("Users", (string)null);
                 });
 
+            modelBuilder.Entity("SyllabusTrainingClass", b =>
+                {
+                    b.Property<int>("ClassesId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SyllabusesId")
+                        .HasColumnType("int");
+
+                    b.HasKey("ClassesId", "SyllabusesId");
+
+                    b.HasIndex("SyllabusesId");
+
+                    b.ToTable("SyllabusTrainingClass");
+                });
+
             modelBuilder.Entity("SyllabusTrainingProgram", b =>
                 {
                     b.Property<int>("SyllabusesId")
@@ -672,21 +672,6 @@ namespace Infrastructures.Migrations
                     b.ToTable("SyllabusUnit");
                 });
 
-            modelBuilder.Entity("ClassSyllabus", b =>
-                {
-                    b.HasOne("Domain.Entities.Class", null)
-                        .WithMany()
-                        .HasForeignKey("ClassesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Domain.Entities.Syllabuses.Syllabus", null)
-                        .WithMany()
-                        .HasForeignKey("SyllabusesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("Domain.Entities.Attendance", b =>
                 {
                     b.HasOne("Domain.Entities.ClassUsers", "ClassUser")
@@ -698,31 +683,9 @@ namespace Infrastructures.Migrations
                     b.Navigation("ClassUser");
                 });
 
-            modelBuilder.Entity("Domain.Entities.Class", b =>
-                {
-                    b.HasOne("Domain.Entities.Users.User", "ApprovedAdmin")
-                        .WithMany("ApprovedClass")
-                        .HasForeignKey("ApprovedBy");
-
-                    b.HasOne("Domain.Entities.Users.User", "CreatedAdmin")
-                        .WithMany("CreatedClass")
-                        .HasForeignKey("CreatedBy");
-
-                    b.HasOne("Domain.Entities.TrainingProgram", "TrainingProgram")
-                        .WithMany("Classes")
-                        .HasForeignKey("TrainingProgramId")
-                        .OnDelete(DeleteBehavior.SetNull);
-
-                    b.Navigation("ApprovedAdmin");
-
-                    b.Navigation("CreatedAdmin");
-
-                    b.Navigation("TrainingProgram");
-                });
-
             modelBuilder.Entity("Domain.Entities.ClassUnitDetail", b =>
                 {
-                    b.HasOne("Domain.Entities.Class", "Class")
+                    b.HasOne("Domain.Entities.TrainingClass", "Class")
                         .WithMany("ClassUnitDetails")
                         .HasForeignKey("ClassId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -747,7 +710,7 @@ namespace Infrastructures.Migrations
 
             modelBuilder.Entity("Domain.Entities.ClassUsers", b =>
                 {
-                    b.HasOne("Domain.Entities.Class", "Class")
+                    b.HasOne("Domain.Entities.TrainingClass", "Class")
                         .WithMany("ClassUsers")
                         .HasForeignKey("ClassId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -848,6 +811,28 @@ namespace Infrastructures.Migrations
                     b.Navigation("Syllabus");
                 });
 
+            modelBuilder.Entity("Domain.Entities.TrainingClass", b =>
+                {
+                    b.HasOne("Domain.Entities.Users.User", "ApprovedAdmin")
+                        .WithMany("ApprovedClass")
+                        .HasForeignKey("ApprovedBy");
+
+                    b.HasOne("Domain.Entities.Users.User", "CreatedAdmin")
+                        .WithMany("CreatedClass")
+                        .HasForeignKey("CreatedBy");
+
+                    b.HasOne("Domain.Entities.TrainingProgram", "TrainingProgram")
+                        .WithMany("Classes")
+                        .HasForeignKey("TrainingProgramId")
+                        .OnDelete(DeleteBehavior.SetNull);
+
+                    b.Navigation("ApprovedAdmin");
+
+                    b.Navigation("CreatedAdmin");
+
+                    b.Navigation("TrainingProgram");
+                });
+
             modelBuilder.Entity("Domain.Entities.TrainingMaterial", b =>
                 {
                     b.HasOne("Domain.Entities.Users.User", "User")
@@ -881,6 +866,21 @@ namespace Infrastructures.Migrations
                     b.Navigation("ModifiedAdmin");
                 });
 
+            modelBuilder.Entity("SyllabusTrainingClass", b =>
+                {
+                    b.HasOne("Domain.Entities.TrainingClass", null)
+                        .WithMany()
+                        .HasForeignKey("ClassesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Domain.Entities.Syllabuses.Syllabus", null)
+                        .WithMany()
+                        .HasForeignKey("SyllabusesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("SyllabusTrainingProgram", b =>
                 {
                     b.HasOne("Domain.Entities.Syllabuses.Syllabus", null)
@@ -911,13 +911,6 @@ namespace Infrastructures.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Domain.Entities.Class", b =>
-                {
-                    b.Navigation("ClassUnitDetails");
-
-                    b.Navigation("ClassUsers");
-                });
-
             modelBuilder.Entity("Domain.Entities.ClassUsers", b =>
                 {
                     b.Navigation("Attendances");
@@ -936,6 +929,13 @@ namespace Infrastructures.Migrations
             modelBuilder.Entity("Domain.Entities.Syllabuses.Syllabus", b =>
                 {
                     b.Navigation("TestAssessments");
+                });
+
+            modelBuilder.Entity("Domain.Entities.TrainingClass", b =>
+                {
+                    b.Navigation("ClassUnitDetails");
+
+                    b.Navigation("ClassUsers");
                 });
 
             modelBuilder.Entity("Domain.Entities.TrainingProgram", b =>

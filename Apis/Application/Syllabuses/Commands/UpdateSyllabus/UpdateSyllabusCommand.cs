@@ -8,7 +8,6 @@ using MediatR;
 
 namespace Application.Syllabuses.Commands.UpdateSyllabus
 {
-    // TODO: not use api result customize the response.
     public record UpdateSyllabusCommand : IRequest<SyllabusDTO>
     {
         public int Id { get; set; }
@@ -42,13 +41,24 @@ namespace Application.Syllabuses.Commands.UpdateSyllabus
 
         public async Task<SyllabusDTO> Handle(UpdateSyllabusCommand request, CancellationToken cancellationToken)
         {
-            var syllabus = await _unitOfWork.SyllabusRepository.GetByIdAsync(request.Id);
+            var syllabus = await _unitOfWork.SyllabusRepository.GetByIdAsyncAsNoTracking(request.Id);
+            if (syllabus == null)
+                throw new NotFoundException("Syllabus not found");
+            syllabus = _mapper.Map<Syllabus>(request);
+            try
+            {
+                _unitOfWork.BeginTransaction();
+                _unitOfWork.SyllabusRepository.Update(syllabus);
+                await _unitOfWork.CommitAsync();
+                var result = _mapper.Map<SyllabusDTO>(syllabus);
+                return result;
+            }
+            catch (Exception ex)
+            {
+                _unitOfWork.Rollback();
+                throw new NotFoundException("Update has some error"); ;
+            }
 
-            var syllabusa = _mapper.Map<Syllabus>(request);
-            await _unitOfWork.ExecuteTransactionAsync(() => { _unitOfWork.SyllabusRepository.AddAsync(syllabusa); });
-            var result = _mapper.Map<SyllabusDTO>(syllabusa);
-
-            return result ?? throw new NotFoundException("Syllabus not found");
         }
     }
 }

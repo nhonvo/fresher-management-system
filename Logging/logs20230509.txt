@@ -2052,3 +2052,100 @@ Error Number:2628,State:1,Class:16
 2023-05-09 14:15:36.904 +07:00 [INF] Hosting environment: Development
 2023-05-09 14:15:36.904 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
 2023-05-09 14:16:01.685 +07:00 [INF] Application is shutting down...
+2023-05-09 15:13:13.006 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 15:13:14.726 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-09 15:13:14.727 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-09 15:13:14.729 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 15:13:14.729 +07:00 [INF] Hosting environment: Development
+2023-05-09 15:13:14.729 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-09 15:13:25.326 +07:00 [INF] Start performance record
+2023-05-09 15:13:25.514 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-09 15:13:25.515 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-09 15:15:17.226 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 15:15:18.340 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-09 15:15:18.341 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-09 15:15:18.343 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 15:15:18.343 +07:00 [INF] Hosting environment: Development
+2023-05-09 15:15:18.343 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-09 15:15:25.641 +07:00 [INF] Start performance record
+2023-05-09 15:15:25.893 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-09 15:15:25.893 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-09 15:15:25.988 +07:00 [INF] End performance record
+2023-05-09 15:15:25.994 +07:00 [INF] Time taken: 0:00.348
+2023-05-09 15:15:31.230 +07:00 [INF] Start performance record
+2023-05-09 15:15:31.298 +07:00 [INF] End performance record
+2023-05-09 15:15:31.298 +07:00 [INF] Time taken: 0:00.068
+2023-05-09 15:15:54.649 +07:00 [INF] Start performance record
+2023-05-09 15:16:59.835 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 15:17:00.786 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-09 15:17:00.788 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-09 15:17:00.789 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 15:17:00.790 +07:00 [INF] Hosting environment: Development
+2023-05-09 15:17:00.790 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-09 15:17:13.149 +07:00 [INF] Start performance record
+2023-05-09 15:17:13.375 +07:00 [INF] End performance record
+2023-05-09 15:17:13.379 +07:00 [INF] Time taken: 0:00.226
+2023-05-09 15:17:21.609 +07:00 [INF] Start performance record
+2023-05-09 15:17:21.763 +07:00 [INF] End performance record
+2023-05-09 15:17:21.764 +07:00 [INF] Time taken: 0:00.154
+2023-05-09 15:18:10.411 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 15:18:11.393 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-09 15:18:11.395 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-09 15:18:11.396 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 15:18:11.397 +07:00 [INF] Hosting environment: Development
+2023-05-09 15:18:11.397 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-09 15:19:10.118 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 15:19:11.066 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-09 15:19:11.068 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-09 15:19:11.070 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 15:19:11.070 +07:00 [INF] Hosting environment: Development
+2023-05-09 15:19:11.070 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-09 15:20:28.805 +07:00 [INF] Start performance record
+2023-05-09 15:20:28.808 +07:00 [INF] End performance record
+2023-05-09 15:20:28.811 +07:00 [INF] Time taken: 0:00.004
+2023-05-09 15:21:00.370 +07:00 [INF] Start performance record
+2023-05-09 15:21:00.528 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-09 15:21:00.529 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-09 15:21:00.598 +07:00 [INF] End performance record
+2023-05-09 15:21:00.598 +07:00 [INF] Time taken: 0:00.228
+2023-05-09 15:21:51.563 +07:00 [INF] Start performance record
+2023-05-09 15:21:51.603 +07:00 [INF] End performance record
+2023-05-09 15:21:51.603 +07:00 [INF] Time taken: 0:00.040
+2023-05-09 15:22:20.811 +07:00 [INF] Start performance record
+2023-05-09 15:22:20.815 +07:00 [INF] End performance record
+2023-05-09 15:22:20.815 +07:00 [INF] Time taken: 0:00.004
+2023-05-09 15:22:28.258 +07:00 [INF] Start performance record
+2023-05-09 15:22:28.890 +07:00 [WRN] Savepoints are disabled because Multiple Active Result Sets (MARS) is enabled. If 'SaveChanges' fails, then the transaction cannot be automatically rolled back to a known clean state. Instead, the transaction should be rolled back by the application before retrying 'SaveChanges'. See https://go.microsoft.com/fwlink/?linkid=2149338 for more information and examples. To identify the code which triggers this warning, call 'ConfigureWarnings(w => w.Throw(SqlServerEventId.SavepointsDisabledBecauseOfMARS))'.
+2023-05-09 15:22:28.932 +07:00 [INF] End performance record
+2023-05-09 15:22:28.933 +07:00 [INF] Time taken: 0:00.674
+2023-05-09 15:22:41.913 +07:00 [INF] Start performance record
+2023-05-09 15:22:42.737 +07:00 [INF] End performance record
+2023-05-09 15:22:42.737 +07:00 [INF] Time taken: 0:00.824
+2023-05-09 15:23:11.104 +07:00 [INF] Start performance record
+2023-05-09 15:23:15.985 +07:00 [INF] Start performance record
+2023-05-09 15:23:24.216 +07:00 [INF] Start performance record
+2023-05-09 15:24:14.789 +07:00 [INF] Start performance record
+2023-05-09 15:32:16.234 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 15:32:17.498 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-09 15:32:17.500 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-09 15:32:17.501 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 15:32:17.502 +07:00 [INF] Hosting environment: Development
+2023-05-09 15:32:17.502 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-09 15:32:18.077 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 15:32:18.326 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 15:32:22.447 +07:00 [DBG] Successfully validated the token.
+2023-05-09 15:32:22.448 +07:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2023-05-09 15:32:22.454 +07:00 [INF] Start performance record
+2023-05-09 15:32:22.789 +07:00 [INF] End performance record
+2023-05-09 15:32:22.797 +07:00 [INF] Time taken: 0:00.336
+2023-05-09 15:32:31.241 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-09 15:32:31.243 +07:00 [INF] Start performance record
+2023-05-09 15:32:31.260 +07:00 [INF] AuthenticationScheme: Bearer was challenged.
+2023-05-09 15:32:31.260 +07:00 [INF] End performance record
+2023-05-09 15:32:31.260 +07:00 [INF] Time taken: 0:00.017
+2023-05-09 15:32:38.263 +07:00 [DBG] Successfully validated the token.
+2023-05-09 15:32:38.263 +07:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2023-05-09 15:32:38.264 +07:00 [INF] Start performance record
+2023-05-09 15:32:38.327 +07:00 [INF] End performance record
+2023-05-09 15:32:38.327 +07:00 [INF] Time taken: 0:00.063
+2023-05-09 15:32:43.479 +07:00 [INF] Application is shutting down...

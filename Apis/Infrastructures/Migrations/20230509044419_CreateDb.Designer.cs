@@ -4,6 +4,7 @@ using Infrastructures.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructures.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230509044419_CreateDb")]
+    partial class CreateDb
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -105,9 +108,6 @@ namespace Infrastructures.Migrations
                     b.Property<DateTime>("FinishedOn")
                         .HasColumnType("datetime2");
 
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
                     b.Property<string>("LectureFinishedTime")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -134,6 +134,9 @@ namespace Infrastructures.Migrations
 
                     b.Property<int?>("TrainingProgramId")
                         .HasColumnType("int");
+
+                    b.Property<bool>("isDeleted")
+                        .HasColumnType("bit");
 
                     b.HasKey("Id");
 
@@ -232,6 +235,38 @@ namespace Infrastructures.Migrations
                     b.ToTable("FeedBackForms", (string)null);
                 });
 
+            modelBuilder.Entity("Domain.Entities.GradeReport", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<float>("Grade")
+                        .HasColumnType("real");
+
+                    b.Property<DateTime>("GradedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("LectureId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TraineeId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Type")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("LectureId");
+
+                    b.HasIndex("TraineeId");
+
+                    b.ToTable("GradeReports", (string)null);
+                });
+
             modelBuilder.Entity("Domain.Entities.Lecture", b =>
                 {
                     b.Property<int>("Id")
@@ -299,7 +334,7 @@ namespace Infrastructures.Migrations
                         .HasMaxLength(1000)
                         .HasColumnType("nvarchar(1000)");
 
-                    b.Property<bool>("IsDeleted")
+                    b.Property<bool>("isDeleted")
                         .HasColumnType("bit");
 
                     b.HasKey("Id");
@@ -351,9 +386,6 @@ namespace Infrastructures.Migrations
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
                     b.Property<int?>("LastModifiedBy")
                         .HasColumnType("int");
 
@@ -383,6 +415,9 @@ namespace Infrastructures.Migrations
 
                     b.Property<float>("Version")
                         .HasColumnType("real");
+
+                    b.Property<bool>("isDeleted")
+                        .HasColumnType("bit");
 
                     b.HasKey("Id");
 
@@ -427,35 +462,6 @@ namespace Infrastructures.Migrations
                     b.ToTable("TMS", (string)null);
                 });
 
-            modelBuilder.Entity("Domain.Entities.TestAssessment", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("AttendeeId")
-                        .HasColumnType("int");
-
-                    b.Property<float>("Score")
-                        .HasColumnType("real");
-
-                    b.Property<int>("SyllabusId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TestAssessmentType")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("AttendeeId");
-
-                    b.HasIndex("SyllabusId");
-
-                    b.ToTable("TestAssessments", (string)null);
-                });
-
             modelBuilder.Entity("Domain.Entities.TrainingMaterial", b =>
                 {
                     b.Property<int>("Id")
@@ -472,9 +478,6 @@ namespace Infrastructures.Migrations
                         .HasColumnType("datetime2")
                         .HasColumnName("EditedOn");
 
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
                     b.Property<int>("LectureId")
                         .HasColumnType("int");
 
@@ -486,6 +489,9 @@ namespace Infrastructures.Migrations
                     b.Property<string>("Url")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("isDeleted")
+                        .HasColumnType("bit");
 
                     b.HasKey("Id");
 
@@ -519,9 +525,6 @@ namespace Infrastructures.Migrations
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
                     b.Property<DateTime>("LastModify")
                         .HasColumnType("datetime2");
 
@@ -535,6 +538,9 @@ namespace Infrastructures.Migrations
 
                     b.Property<int>("TimeDuration")
                         .HasColumnType("int");
+
+                    b.Property<bool>("isDeleted")
+                        .HasColumnType("bit");
 
                     b.HasKey("Id");
 
@@ -606,9 +612,6 @@ namespace Infrastructures.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
                     b.Property<bool>("IsMale")
                         .HasColumnType("bit");
 
@@ -633,6 +636,9 @@ namespace Infrastructures.Migrations
 
                     b.Property<int?>("Status")
                         .HasColumnType("int");
+
+                    b.Property<bool>("isDeleted")
+                        .HasColumnType("bit");
 
                     b.HasKey("Id");
 
@@ -780,6 +786,24 @@ namespace Infrastructures.Migrations
                     b.Navigation("Trainer");
                 });
 
+            modelBuilder.Entity("Domain.Entities.GradeReport", b =>
+                {
+                    b.HasOne("Domain.Entities.Lecture", "Lecture")
+                        .WithMany("GradeReports")
+                        .HasForeignKey("LectureId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Domain.Entities.Users.User", "User")
+                        .WithMany("GradeReports")
+                        .HasForeignKey("TraineeId")
+                        .IsRequired();
+
+                    b.Navigation("Lecture");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("Domain.Entities.Lecture", b =>
                 {
                     b.HasOne("Domain.Entities.OutputStandard", "OutputStandard")
@@ -827,25 +851,6 @@ namespace Infrastructures.Migrations
                     b.Navigation("Admin");
 
                     b.Navigation("Trainee");
-                });
-
-            modelBuilder.Entity("Domain.Entities.TestAssessment", b =>
-                {
-                    b.HasOne("Domain.Entities.Users.User", "Attendee")
-                        .WithMany("TestAssessments")
-                        .HasForeignKey("AttendeeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Domain.Entities.Syllabuses.Syllabus", "Syllabus")
-                        .WithMany("TestAssessments")
-                        .HasForeignKey("SyllabusId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Attendee");
-
-                    b.Navigation("Syllabus");
                 });
 
             modelBuilder.Entity("Domain.Entities.TrainingMaterial", b =>
@@ -925,17 +930,14 @@ namespace Infrastructures.Migrations
 
             modelBuilder.Entity("Domain.Entities.Lecture", b =>
                 {
+                    b.Navigation("GradeReports");
+
                     b.Navigation("TrainingMaterials");
                 });
 
             modelBuilder.Entity("Domain.Entities.OutputStandard", b =>
                 {
                     b.Navigation("Lectures");
-                });
-
-            modelBuilder.Entity("Domain.Entities.Syllabuses.Syllabus", b =>
-                {
-                    b.Navigation("TestAssessments");
                 });
 
             modelBuilder.Entity("Domain.Entities.TrainingProgram", b =>
@@ -968,11 +970,11 @@ namespace Infrastructures.Migrations
 
                     b.Navigation("FeedbackTrainer");
 
+                    b.Navigation("GradeReports");
+
                     b.Navigation("ModifiedSyllabus");
 
                     b.Navigation("ModifyTrainingProgram");
-
-                    b.Navigation("TestAssessments");
 
                     b.Navigation("TimeMngSystem");
 

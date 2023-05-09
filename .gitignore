@@ -477,5 +477,7 @@ $RECYCLE.BIN/
 *.lnk
 Logging/logs20230509.txt
 
-/migrations/
 Apis/Infrastructures/Persistence/ApplicationDbContextInitializer.cs
+
+**/migrations/**
+**/migrations/ApplicationDbContextModelSnapshot.cs**

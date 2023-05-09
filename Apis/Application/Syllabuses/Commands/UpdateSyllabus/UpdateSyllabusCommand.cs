@@ -6,11 +6,12 @@ using Domain.Entities.Syllabuses;
 using Domain.Enums.SyllabusEnums;
 using MediatR;
 
-namespace Application.Syllabuses.Commands.CreateSyllabus
+namespace Application.Syllabuses.Commands.UpdateSyllabus
 {
     // TODO: not use api result customize the response.
-    public record CreateSyllabusCommand : IRequest<SyllabusDTO>
+    public record UpdateSyllabusCommand : IRequest<SyllabusDTO>
     {
+        public int Id { get; set; }
         public string Code { get; set; }
         public float Version { get; set; }
         public string Name { get; set; }
@@ -29,21 +30,23 @@ namespace Application.Syllabuses.Commands.CreateSyllabus
         public bool isActive { get; set; }
         public int Duration { get; set; }
     }
-    public class CreateSyllabusHandler : IRequestHandler<CreateSyllabusCommand, SyllabusDTO>
+    public class UpdateSyllabusHandler : IRequestHandler<UpdateSyllabusCommand, SyllabusDTO>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
-        public CreateSyllabusHandler(IUnitOfWork unitOfWork, IMapper mapper)
+        public UpdateSyllabusHandler(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
 
-        public async Task<SyllabusDTO> Handle(CreateSyllabusCommand request, CancellationToken cancellationToken)
+        public async Task<SyllabusDTO> Handle(UpdateSyllabusCommand request, CancellationToken cancellationToken)
         {
-            var syllabus = _mapper.Map<Syllabus>(request);
-            await _unitOfWork.ExecuteTransactionAsync(() => { _unitOfWork.SyllabusRepository.AddAsync(syllabus); });
-            var result = _mapper.Map<SyllabusDTO>(syllabus);
+            var syllabus = await _unitOfWork.SyllabusRepository.GetByIdAsync(request.Id);
+
+            var syllabusa = _mapper.Map<Syllabus>(request);
+            await _unitOfWork.ExecuteTransactionAsync(() => { _unitOfWork.SyllabusRepository.AddAsync(syllabusa); });
+            var result = _mapper.Map<SyllabusDTO>(syllabusa);
 
             return result ?? throw new NotFoundException("Syllabus not found");
         }

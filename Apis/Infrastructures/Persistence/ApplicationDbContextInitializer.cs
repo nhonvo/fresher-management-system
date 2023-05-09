@@ -1,5 +1,6 @@
 ﻿using System.Text.Json;
 using Domain.Entities;
+using Domain.Entities.Syllabuses;
 using Domain.Entities.Users;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
@@ -43,14 +44,30 @@ namespace Infrastructures.Persistence
         public async Task TrySeedAsync()
         {
             // user or "||" operator for another table
-            if (_context.Users.Any()) return;
-            string json = File.ReadAllText(@"D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Json\user.json");
-            string classtraining = File.ReadAllText(@"D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Json\user.json");
-            List<User> users = JsonSerializer.Deserialize<List<User>>(json);
-            List<TrainingClass> trainingClasses = JsonSerializer.Deserialize<List<TrainingClass>>(classtraining);
-            await _context.AddRangeAsync(users);
-            await _context.AddRangeAsync(trainingClasses);
-            await _context.SaveChangesAsync();
+            if (!_context.Users.Any())
+            {
+                string json = File.ReadAllText(@"../../Json/User.json");
+                List<User> users = JsonSerializer.Deserialize<List<User>>(json);
+                await _context.AddRangeAsync(users);
+                await _context.SaveChangesAsync();
+            };
+
+            if (!_context.Syllabus.Any())
+            {
+                string json = File.ReadAllText(@"../../Json/Syllabus.json");
+                List<Syllabus> sylabuses = JsonSerializer.Deserialize<List<Syllabus>>(json);
+                await _context.AddRangeAsync(sylabuses);
+                await _context.SaveChangesAsync();
+
+            };
+
+            if (!_context.TestAssessments.Any())
+            {
+                string json = File.ReadAllText(@"../../Json/TestAssessment.json");
+                List<TestAssessment> testAssessments = JsonSerializer.Deserialize<List<TestAssessment>>(json);
+                await _context.AddRangeAsync(testAssessments);
+                await _context.SaveChangesAsync();
+            };
         }
     }
 }

@@ -42,10 +42,6 @@ namespace Infrastructures.Persistence.Configurations
                 .WithMany(x => x.Lectures)
                 .HasForeignKey(x => x.OutputStandardId);
 
-            //GradeReport
-            builder.HasMany(x => x.GradeReports)
-                .WithOne(x => x.Lecture)
-                .OnDelete(DeleteBehavior.Cascade);
 
             //TrainingMaterials
             builder.HasMany(x => x.TrainingMaterials)

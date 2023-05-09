@@ -5,21 +5,26 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Apis", "Apis", "{9D66F440-CC72-4A58-AB64-A5FFECAA0ED6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Apis\Application\Application.csproj", "{A671C60D-060C-4A2B-8EBE-5CCC299BF593}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "Apis\Application\Application.csproj", "{A671C60D-060C-4A2B-8EBE-5CCC299BF593}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI", "Apis\WebAPI\WebAPI.csproj", "{5254C6F3-23A5-48CD-82C3-08A16FCE47AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAPI", "Apis\WebAPI\WebAPI.csproj", "{5254C6F3-23A5-48CD-82C3-08A16FCE47AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Apis\Domain\Domain.csproj", "{BE856A8B-863A-43F3-B443-63F4F41AB8B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Apis\Domain\Domain.csproj", "{BE856A8B-863A-43F3-B443-63F4F41AB8B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructures", "Apis\Infrastructures\Infrastructures.csproj", "{77751B25-7A02-4818-A741-05D3622F160D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructures", "Apis\Infrastructures\Infrastructures.csproj", "{77751B25-7A02-4818-A741-05D3622F160D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7C2BDD0E-A7D9-4547-8FF5-2258A19553C7}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		README.md = README.md
+		Json\syllabus.json = Json\syllabus.json
+		Json\user.json = Json\user.json
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{A671C60D-060C-4A2B-8EBE-5CCC299BF593}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -39,10 +44,16 @@ Global
 		{77751B25-7A02-4818-A741-05D3622F160D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77751B25-7A02-4818-A741-05D3622F160D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{A671C60D-060C-4A2B-8EBE-5CCC299BF593} = {9D66F440-CC72-4A58-AB64-A5FFECAA0ED6}
 		{5254C6F3-23A5-48CD-82C3-08A16FCE47AC} = {9D66F440-CC72-4A58-AB64-A5FFECAA0ED6}
 		{BE856A8B-863A-43F3-B443-63F4F41AB8B6} = {9D66F440-CC72-4A58-AB64-A5FFECAA0ED6}
 		{77751B25-7A02-4818-A741-05D3622F160D} = {9D66F440-CC72-4A58-AB64-A5FFECAA0ED6}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {60D158F6-0480-4A33-993E-1D4602C1D305}
 	EndGlobalSection
 EndGlobal

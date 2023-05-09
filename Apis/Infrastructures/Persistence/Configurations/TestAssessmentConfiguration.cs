@@ -4,23 +4,23 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Infrastructures.Persistence.Configurations
 {
-    public class ScoreConfiguration : IEntityTypeConfiguration<Score>
+    public class TestAssessmentConfiguration : IEntityTypeConfiguration<TestAssessment>
     {
-        public void Configure(EntityTypeBuilder<Score> builder)
+        public void Configure(EntityTypeBuilder<TestAssessment> builder)
         {
-            builder.ToTable("Score");
+            builder.ToTable("TestAssessments");
 
             //Id
             builder.HasKey(x => x.Id);
 
             // Syllabus
             builder.HasOne(x => x.Syllabus)
-                   .WithMany(x => x.Scores)
+                   .WithMany(x => x.TestAssessments)
                    .HasForeignKey(x=>x.SyllabusId);
 
             // Attendee
             builder.HasOne(x => x.Attendee)
-                   .WithMany(x => x.Scores)
+                   .WithMany(x => x.TestAssessments)
                    .HasForeignKey(x=>x.AttendeeId);
 
         }

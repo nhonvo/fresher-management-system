@@ -59,7 +59,7 @@ namespace Infrastructures.Persistence.Configurations
                 .OnDelete(DeleteBehavior.ClientSetNull);
             // score
 
-            builder.HasMany(x => x.Scores)
+            builder.HasMany(x => x.TestAssessments)
                    .WithOne(x => x.Syllabus)
                    .HasForeignKey(x=>x.SyllabusId);
 

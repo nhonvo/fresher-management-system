@@ -13,7 +13,7 @@ namespace Infrastructures.Persistence
 
         }
         public DbSet<Attendance> Attendances { get; set; }
-        public DbSet<Class> Classes { get; set; }
+        public DbSet<TrainingClass> Classes { get; set; }
         public DbSet<ClassUsers> ClassUsers { get; set; }
         public DbSet<FeedbackForm> FeedbackForms { get; set; }
         public DbSet<Lecture> Lectures { get; set; }

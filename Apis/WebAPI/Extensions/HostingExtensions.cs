@@ -12,11 +12,14 @@ namespace WebAPI.Extensions;
 
 public static class HostingExtensions
 {
-    public static WebApplication ConfigureServices(this WebApplicationBuilder builder, string DatabaseConnection, string UserApp)
+    public static WebApplication ConfigureServices(
+        this WebApplicationBuilder builder,
+        string databaseConnection,
+        string userApp, string key, string issuer, string audience)
     {
-        builder.Services.AddInfrastructuresService(DatabaseConnection);
+        builder.Services.AddInfrastructuresService(databaseConnection);
         builder.Services.AddApplicationService();
-        builder.Services.AddWebAPIService();
+        builder.Services.AddWebAPIService(userApp, key, issuer, audience);
 
 
 
@@ -44,7 +47,7 @@ public static class HostingExtensions
             {
                 policy.AllowAnyHeader()
              .AllowAnyMethod()
-             .WithOrigins(new string[] { UserApp });
+             .WithOrigins(new string[] { userApp });
             });
         });
         return builder.Build();

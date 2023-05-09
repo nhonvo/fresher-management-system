@@ -17,7 +17,7 @@ namespace Domain.Entities
         public int? LastModifyBy { get; set; }
         public User? ModifiedAdmin { get; set; }
         public User? CreatedAdmin { get; set; }
-        public ICollection<Class> Classes { get; set; }
+        public ICollection<TrainingClass> Classes { get; set; }
         public ICollection<Syllabus> Syllabuses { get; set; }
     }
 }

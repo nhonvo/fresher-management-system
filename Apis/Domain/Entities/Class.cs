@@ -1,13 +1,12 @@
 ﻿#nullable disable warnings
 
-using Domain.Entities.Common;
 using Domain.Entities.Syllabuses;
 using Domain.Entities.Users;
 using Domain.Enums.ClassEnums;
 
 namespace Domain.Entities
 {
-    public class Class : BaseModel
+    public class Class : BaseEntity
     {
         public string Name { get; set; }
         public string Code { get; set; }

@@ -1,9 +1,11 @@
 ﻿using Application.Commons;
+using Domain.Entities;
+using Microsoft.EntityFrameworkCore.Query;
 using System.Linq.Expressions;
 
 namespace Application.Repositories
 {
-    public interface IGenericRepository<TEntity> where TEntity : class
+    public interface IGenericRepository<TEntity> where TEntity : BaseEntity
     {
         /// <summary>
         /// Adds the specified entity to the repository asynchronously. This method is called when the user clicks the Add button in the form.
@@ -59,6 +61,16 @@ namespace Application.Repositories
         /// <param name="pageIndex">Index of page to start retrieving from.</param>
         /// <param name="pageSize">Size of page to retrieve from the API ( default 10</param>
         Task<Pagination<TEntity>> GetAsync(Expression<Func<TEntity, bool>> filter, int pageIndex = 0, int pageSize = 10);
+
+        Task<Pagination<TEntity>> ToPagination(
+            Expression<Func<TEntity, bool>>? filter = null,
+            Func<IQueryable<TEntity>, IIncludableQueryable<TEntity, object>>? include = null,
+            Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null,
+            int pageIndex = 0,
+            int pageSize = 10,
+            bool pageIndexStartsFromZero = true,
+            bool tracked = false);
+
         /// <summary>
         /// Converts the data to a pagination. Used to get the list of entities that have been added to the data store
         /// </summary>
@@ -110,6 +122,5 @@ namespace Application.Repositories
         /// <param name="filter">The filter to match entities by. Cannot be null</param>
         Task<TEntity> FirstOrDefaultAsync(Expression<Func<TEntity, bool>> filter);
         Task<TEntity> FirstOrdDefaultAsync(Expression<Func<TEntity, bool>> filter, Func<IQueryable<TEntity>, IQueryable<TEntity>> include = null);
-
     }
 }

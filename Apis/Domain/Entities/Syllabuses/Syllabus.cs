@@ -1,10 +1,9 @@
-﻿using Domain.Entities.Common;
-using Domain.Enums.SyllabusEnums;
+﻿using Domain.Enums.SyllabusEnums;
 
 #nullable disable warnings
 namespace Domain.Entities.Syllabuses
 {
-    public partial class Syllabus : BaseModel
+    public partial class Syllabus : BaseEntity
     {
         public string Code { get; set; }
         public float Version { get; set; }

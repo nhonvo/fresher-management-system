@@ -1,0 +1,424 @@
+2023-05-09 07:43:50.633 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 07:43:51.663 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-09 07:43:51.665 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-09 07:43:51.666 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 07:43:51.667 +07:00 [INF] Hosting environment: Development
+2023-05-09 07:43:51.667 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-09 07:43:58.968 +07:00 [INF] Application is shutting down...
+2023-05-09 08:00:37.150 +07:00 [FTL] Unhandled Exception
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: WebAPI.Middlewares.PerformanceMiddleware Lifetime: Singleton ImplementationType: WebAPI.Middlewares.PerformanceMiddleware': Unable to resolve service for type 'Infrastructures.UnitOfWork' while attempting to activate 'WebAPI.Middlewares.PerformanceMiddleware'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: WebAPI.Middlewares.PerformanceMiddleware Lifetime: Singleton ImplementationType: WebAPI.Middlewares.PerformanceMiddleware': Unable to resolve service for type 'Infrastructures.UnitOfWork' while attempting to activate 'WebAPI.Middlewares.PerformanceMiddleware'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Infrastructures.UnitOfWork' while attempting to activate 'WebAPI.Middlewares.PerformanceMiddleware'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at WebAPI.Extensions.HostingExtensions.ConfigureServices(WebApplicationBuilder builder, String DatabaseConnection) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Extensions\HostingExtensions.cs:line 21
+   at Program.<Main>$(String[] args) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Program.cs:line 31
+2023-05-09 08:00:37.215 +07:00 [INF] Shut down complete
+2023-05-09 08:01:04.809 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 08:01:05.856 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-09 08:01:05.858 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-09 08:01:05.860 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 08:01:05.861 +07:00 [INF] Hosting environment: Development
+2023-05-09 08:01:05.861 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-09 08:01:20.725 +07:00 [INF] Application is shutting down...
+2023-05-09 08:03:21.745 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 08:03:22.831 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-09 08:03:22.833 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-09 08:03:22.835 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 08:03:22.835 +07:00 [INF] Hosting environment: Development
+2023-05-09 08:03:22.835 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-09 08:03:27.491 +07:00 [INF] Start performance record
+2023-05-09 08:03:28.088 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-09 08:03:28.090 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-09 08:03:28.227 +07:00 [INF] End performance record
+2023-05-09 08:03:28.232 +07:00 [INF] Time taken: 0:00.738
+2023-05-09 08:06:02.012 +07:00 [INF] Application is shutting down...
+2023-05-09 08:06:11.283 +07:00 [FTL] Unhandled Exception
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: WebAPI.Middlewares.PerformanceMiddleware Lifetime: Singleton ImplementationType: WebAPI.Middlewares.PerformanceMiddleware': Unable to resolve service for type 'Infrastructures.UnitOfWork' while attempting to activate 'WebAPI.Middlewares.PerformanceMiddleware'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: WebAPI.Middlewares.PerformanceMiddleware Lifetime: Singleton ImplementationType: WebAPI.Middlewares.PerformanceMiddleware': Unable to resolve service for type 'Infrastructures.UnitOfWork' while attempting to activate 'WebAPI.Middlewares.PerformanceMiddleware'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Infrastructures.UnitOfWork' while attempting to activate 'WebAPI.Middlewares.PerformanceMiddleware'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at WebAPI.Extensions.HostingExtensions.ConfigureServices(WebApplicationBuilder builder, String DatabaseConnection) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Extensions\HostingExtensions.cs:line 21
+   at Program.<Main>$(String[] args) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Program.cs:line 31
+2023-05-09 08:06:11.340 +07:00 [INF] Shut down complete
+2023-05-09 08:06:43.673 +07:00 [FTL] Unhandled Exception
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: WebAPI.Middlewares.PerformanceMiddleware Lifetime: Singleton ImplementationType: WebAPI.Middlewares.PerformanceMiddleware': Unable to resolve service for type 'Infrastructures.UnitOfWork' while attempting to activate 'WebAPI.Middlewares.PerformanceMiddleware'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: WebAPI.Middlewares.PerformanceMiddleware Lifetime: Singleton ImplementationType: WebAPI.Middlewares.PerformanceMiddleware': Unable to resolve service for type 'Infrastructures.UnitOfWork' while attempting to activate 'WebAPI.Middlewares.PerformanceMiddleware'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Infrastructures.UnitOfWork' while attempting to activate 'WebAPI.Middlewares.PerformanceMiddleware'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at WebAPI.Extensions.HostingExtensions.ConfigureServices(WebApplicationBuilder builder, String DatabaseConnection) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Extensions\HostingExtensions.cs:line 21
+   at Program.<Main>$(String[] args) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Program.cs:line 31
+2023-05-09 08:06:43.814 +07:00 [INF] Shut down complete
+2023-05-09 08:07:09.861 +07:00 [FTL] Unhandled Exception
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: WebAPI.Middlewares.PerformanceMiddleware Lifetime: Singleton ImplementationType: WebAPI.Middlewares.PerformanceMiddleware': Unable to resolve service for type 'Infrastructures.UnitOfWork' while attempting to activate 'WebAPI.Middlewares.PerformanceMiddleware'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: WebAPI.Middlewares.PerformanceMiddleware Lifetime: Singleton ImplementationType: WebAPI.Middlewares.PerformanceMiddleware': Unable to resolve service for type 'Infrastructures.UnitOfWork' while attempting to activate 'WebAPI.Middlewares.PerformanceMiddleware'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Infrastructures.UnitOfWork' while attempting to activate 'WebAPI.Middlewares.PerformanceMiddleware'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at WebAPI.Extensions.HostingExtensions.ConfigureServices(WebApplicationBuilder builder, String DatabaseConnection) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Extensions\HostingExtensions.cs:line 21
+   at Program.<Main>$(String[] args) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Program.cs:line 31
+2023-05-09 08:07:09.939 +07:00 [INF] Shut down complete
+2023-05-09 08:07:50.031 +07:00 [FTL] Unhandled Exception
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: Application.Interfaces.IUserService Lifetime: Scoped ImplementationType: Infrastructures.Services.UserService': Cannot consume scoped service 'Infrastructures.Persistence.ApplicationDbContext' from singleton 'Application.IUnitOfWork'.) (Error while validating the service descriptor 'ServiceType: MediatR.IRequestHandler`2[Application.Syllabuses.Queries.GetSyllabus.GetSyllabusQuery,Domain.Aggregate.AppResult.ApiResult`1[Application.Commons.Pagination`1[Application.Syllabuses.DTO.SyllabusDTO]]] Lifetime: Transient ImplementationType: Application.Syllabuses.Queries.GetSyllabus.GetSyllabusHandler': Cannot consume scoped service 'Infrastructures.Persistence.ApplicationDbContext' from singleton 'Application.IUnitOfWork'.) (Error while validating the service descriptor 'ServiceType: MediatR.IRequestHandler`2[Application.Syllabuses.Queries.GetSyllabusName.GetSyllabusNameQuery,Domain.Aggregate.AppResult.ApiResult`1[Application.Commons.Pagination`1[Application.Syllabuses.DTO.SyllabusDTO]]] Lifetime: Transient ImplementationType: Application.Syllabuses.Queries.GetSyllabusName.GetSyllabusNameHandler': Cannot consume scoped service 'Infrastructures.Persistence.ApplicationDbContext' from singleton 'Application.IUnitOfWork'.) (Error while validating the service descriptor 'ServiceType: MediatR.IRequestHandler`2[Application.Syllabuses.Queries.GetSyllabusById.GetSyllabusByIdQuery,Application.Syllabuses.DTO.SyllabusDTO] Lifetime: Transient ImplementationType: Application.Syllabuses.Queries.GetSyllabusById.GetSyllabusByIdHandler': Cannot consume scoped service 'Infrastructures.Persistence.ApplicationDbContext' from singleton 'Application.IUnitOfWork'.) (Error while validating the service descriptor 'ServiceType: MediatR.IRequestHandler`2[Application.Syllabuses.Commands.DeleteSyllabus.DeleteSyllabusCommand,Application.Syllabuses.DTO.SyllabusDTO] Lifetime: Transient ImplementationType: Application.Syllabuses.Commands.DeleteSyllabus.DeleteSyllabusHandler': Cannot consume scoped service 'Infrastructures.Persistence.ApplicationDbContext' from singleton 'Application.IUnitOfWork'.) (Error while validating the service descriptor 'ServiceType: MediatR.IRequestHandler`2[Application.Syllabuses.Commands.CreateSyllabus.CreateSyllabusCommand,Application.Syllabuses.DTO.SyllabusDTO] Lifetime: Transient ImplementationType: Application.Syllabuses.Commands.CreateSyllabus.CreateSyllabusHandler': Cannot consume scoped service 'Infrastructures.Persistence.ApplicationDbContext' from singleton 'Application.IUnitOfWork'.) (Error while validating the service descriptor 'ServiceType: WebAPI.Middlewares.PerformanceMiddleware Lifetime: Singleton ImplementationType: WebAPI.Middlewares.PerformanceMiddleware': Unable to resolve service for type 'Infrastructures.UnitOfWork' while attempting to activate 'WebAPI.Middlewares.PerformanceMiddleware'.) (Error while validating the service descriptor 'ServiceType: Application.IUnitOfWork Lifetime: Singleton ImplementationType: Infrastructures.UnitOfWork': Cannot consume scoped service 'Infrastructures.Persistence.ApplicationDbContext' from singleton 'Application.IUnitOfWork'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: Application.Interfaces.IUserService Lifetime: Scoped ImplementationType: Infrastructures.Services.UserService': Cannot consume scoped service 'Infrastructures.Persistence.ApplicationDbContext' from singleton 'Application.IUnitOfWork'.
+ ---> System.InvalidOperationException: Cannot consume scoped service 'Infrastructures.Persistence.ApplicationDbContext' from singleton 'Application.IUnitOfWork'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteValidator.VisitScopeCache(ServiceCallSite scopedCallSite, CallSiteValidatorState state)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteValidator.VisitConstructor(ConstructorCallSite constructorCallSite, CallSiteValidatorState state)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteValidator.VisitConstructor(ConstructorCallSite constructorCallSite, CallSiteValidatorState state)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteValidator.VisitScopeCache(ServiceCallSite scopedCallSite, CallSiteValidatorState state)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteValidator.ValidateCallSite(ServiceCallSite callSite)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at WebAPI.Extensions.HostingExtensions.ConfigureServices(WebApplicationBuilder builder, String DatabaseConnection) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Extensions\HostingExtensions.cs:line 21
+   at Program.<Main>$(String[] args) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Program.cs:line 31
+ ---> (Inner Exception #1) System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: MediatR.IRequestHandler`2[Application.Syllabuses.Queries.GetSyllabus.GetSyllabusQuery,Domain.Aggregate.AppResult.ApiResult`1[Application.Commons.Pagination`1[Application.Syllabuses.DTO.SyllabusDTO]]] Lifetime: Transient ImplementationType: Application.Syllabuses.Queries.GetSyllabus.GetSyllabusHandler': Cannot consume scoped service 'Infrastructures.Persistence.ApplicationDbContext' from singleton 'Application.IUnitOfWork'.
+ ---> System.InvalidOperationException: Cannot consume scoped service 'Infrastructures.Persistence.ApplicationDbContext' from singleton 'Application.IUnitOfWork'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteValidator.VisitScopeCache(ServiceCallSite scopedCallSite, CallSiteValidatorState state)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteValidator.VisitConstructor(ConstructorCallSite constructorCallSite, CallSiteValidatorState state)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteValidator.VisitConstructor(ConstructorCallSite constructorCallSite, CallSiteValidatorState state)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteValidator.ValidateCallSite(ServiceCallSite callSite)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)<---
+
+ ---> (Inner Exception #2) System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: MediatR.IRequestHandler`2[Application.Syllabuses.Queries.GetSyllabusName.GetSyllabusNameQuery,Domain.Aggregate.AppResult.ApiResult`1[Application.Commons.Pagination`1[Application.Syllabuses.DTO.SyllabusDTO]]] Lifetime: Transient ImplementationType: Application.Syllabuses.Queries.GetSyllabusName.GetSyllabusNameHandler': Cannot consume scoped service 'Infrastructures.Persistence.ApplicationDbContext' from singleton 'Application.IUnitOfWork'.
+ ---> System.InvalidOperationException: Cannot consume scoped service 'Infrastructures.Persistence.ApplicationDbContext' from singleton 'Application.IUnitOfWork'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteValidator.VisitScopeCache(ServiceCallSite scopedCallSite, CallSiteValidatorState state)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteValidator.VisitConstructor(ConstructorCallSite constructorCallSite, CallSiteValidatorState state)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteValidator.VisitConstructor(ConstructorCallSite constructorCallSite, CallSiteValidatorState state)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteValidator.ValidateCallSite(ServiceCallSite callSite)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)<---
+
+ ---> (Inner Exception #3) System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: MediatR.IRequestHandler`2[Application.Syllabuses.Queries.GetSyllabusById.GetSyllabusByIdQuery,Application.Syllabuses.DTO.SyllabusDTO] Lifetime: Transient ImplementationType: Application.Syllabuses.Queries.GetSyllabusById.GetSyllabusByIdHandler': Cannot consume scoped service 'Infrastructures.Persistence.ApplicationDbContext' from singleton 'Application.IUnitOfWork'.
+ ---> System.InvalidOperationException: Cannot consume scoped service 'Infrastructures.Persistence.ApplicationDbContext' from singleton 'Application.IUnitOfWork'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteValidator.VisitScopeCache(ServiceCallSite scopedCallSite, CallSiteValidatorState state)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteValidator.VisitConstructor(ConstructorCallSite constructorCallSite, CallSiteValidatorState state)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteValidator.VisitConstructor(ConstructorCallSite constructorCallSite, CallSiteValidatorState state)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteValidator.ValidateCallSite(ServiceCallSite callSite)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)<---
+
+ ---> (Inner Exception #4) System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: MediatR.IRequestHandler`2[Application.Syllabuses.Commands.DeleteSyllabus.DeleteSyllabusCommand,Application.Syllabuses.DTO.SyllabusDTO] Lifetime: Transient ImplementationType: Application.Syllabuses.Commands.DeleteSyllabus.DeleteSyllabusHandler': Cannot consume scoped service 'Infrastructures.Persistence.ApplicationDbContext' from singleton 'Application.IUnitOfWork'.
+ ---> System.InvalidOperationException: Cannot consume scoped service 'Infrastructures.Persistence.ApplicationDbContext' from singleton 'Application.IUnitOfWork'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteValidator.VisitScopeCache(ServiceCallSite scopedCallSite, CallSiteValidatorState state)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteValidator.VisitConstructor(ConstructorCallSite constructorCallSite, CallSiteValidatorState state)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteValidator.VisitConstructor(ConstructorCallSite constructorCallSite, CallSiteValidatorState state)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteValidator.ValidateCallSite(ServiceCallSite callSite)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)<---
+
+ ---> (Inner Exception #5) System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: MediatR.IRequestHandler`2[Application.Syllabuses.Commands.CreateSyllabus.CreateSyllabusCommand,Application.Syllabuses.DTO.SyllabusDTO] Lifetime: Transient ImplementationType: Application.Syllabuses.Commands.CreateSyllabus.CreateSyllabusHandler': Cannot consume scoped service 'Infrastructures.Persistence.ApplicationDbContext' from singleton 'Application.IUnitOfWork'.
+ ---> System.InvalidOperationException: Cannot consume scoped service 'Infrastructures.Persistence.ApplicationDbContext' from singleton 'Application.IUnitOfWork'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteValidator.VisitScopeCache(ServiceCallSite scopedCallSite, CallSiteValidatorState state)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteValidator.VisitConstructor(ConstructorCallSite constructorCallSite, CallSiteValidatorState state)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteValidator.VisitConstructor(ConstructorCallSite constructorCallSite, CallSiteValidatorState state)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteValidator.ValidateCallSite(ServiceCallSite callSite)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)<---
+
+ ---> (Inner Exception #6) System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: WebAPI.Middlewares.PerformanceMiddleware Lifetime: Singleton ImplementationType: WebAPI.Middlewares.PerformanceMiddleware': Unable to resolve service for type 'Infrastructures.UnitOfWork' while attempting to activate 'WebAPI.Middlewares.PerformanceMiddleware'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Infrastructures.UnitOfWork' while attempting to activate 'WebAPI.Middlewares.PerformanceMiddleware'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)<---
+
+ ---> (Inner Exception #7) System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: Application.IUnitOfWork Lifetime: Singleton ImplementationType: Infrastructures.UnitOfWork': Cannot consume scoped service 'Infrastructures.Persistence.ApplicationDbContext' from singleton 'Application.IUnitOfWork'.
+ ---> System.InvalidOperationException: Cannot consume scoped service 'Infrastructures.Persistence.ApplicationDbContext' from singleton 'Application.IUnitOfWork'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteValidator.VisitScopeCache(ServiceCallSite scopedCallSite, CallSiteValidatorState state)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteValidator.VisitConstructor(ConstructorCallSite constructorCallSite, CallSiteValidatorState state)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteValidator.ValidateCallSite(ServiceCallSite callSite)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)<---
+
+2023-05-09 08:07:50.113 +07:00 [INF] Shut down complete
+2023-05-09 08:07:59.909 +07:00 [FTL] Unhandled Exception
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: WebAPI.Middlewares.PerformanceMiddleware Lifetime: Singleton ImplementationType: WebAPI.Middlewares.PerformanceMiddleware': Unable to resolve service for type 'Infrastructures.UnitOfWork' while attempting to activate 'WebAPI.Middlewares.PerformanceMiddleware'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: WebAPI.Middlewares.PerformanceMiddleware Lifetime: Singleton ImplementationType: WebAPI.Middlewares.PerformanceMiddleware': Unable to resolve service for type 'Infrastructures.UnitOfWork' while attempting to activate 'WebAPI.Middlewares.PerformanceMiddleware'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Infrastructures.UnitOfWork' while attempting to activate 'WebAPI.Middlewares.PerformanceMiddleware'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at WebAPI.Extensions.HostingExtensions.ConfigureServices(WebApplicationBuilder builder, String DatabaseConnection) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Extensions\HostingExtensions.cs:line 21
+   at Program.<Main>$(String[] args) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Program.cs:line 31
+2023-05-09 08:07:59.984 +07:00 [INF] Shut down complete
+2023-05-09 08:08:17.055 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 08:08:18.826 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-09 08:08:18.827 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-09 08:08:18.829 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 08:08:18.829 +07:00 [INF] Hosting environment: Development
+2023-05-09 08:08:18.829 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-09 08:08:23.766 +07:00 [INF] Application is shutting down...
+2023-05-09 08:24:20.302 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 08:24:21.318 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-09 08:24:21.320 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-09 08:24:21.322 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 08:24:21.322 +07:00 [INF] Hosting environment: Development
+2023-05-09 08:24:21.322 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-09 08:24:28.862 +07:00 [INF] Start performance record
+2023-05-09 08:24:29.218 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-09 08:24:29.219 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-09 08:24:29.282 +07:00 [ERR] Failed executing DbCommand (84ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[Code], [o].[CreatedBy], [o].[CreatedOn], [o].[Description], [o].[isDeleted]
+FROM [OutputStandards] AS [o]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2023-05-09 08:24:29.311 +07:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Infrastructures.Persistence.ApplicationDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'CreatedBy'.
+Invalid column name 'CreatedOn'.
+Invalid column name 'isDeleted'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__208_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:68b139e3-20f2-461e-add4-4ea910c02874
+Error Number:207,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'CreatedBy'.
+Invalid column name 'CreatedOn'.
+Invalid column name 'isDeleted'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__208_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:68b139e3-20f2-461e-add4-4ea910c02874
+Error Number:207,State:1,Class:16
+2023-05-09 08:24:34.962 +07:00 [INF] Start performance record
+2023-05-09 08:24:35.042 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-09 08:24:35.042 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-09 08:24:35.104 +07:00 [INF] End performance record
+2023-05-09 08:24:35.110 +07:00 [INF] Time taken: 0:00.142
+2023-05-09 08:24:54.980 +07:00 [INF] Application is shutting down...
+2023-05-09 08:26:34.802 +07:00 [FTL] Unhandled Exception
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at WebAPI.Extensions.HostingExtensions.ConfigureServices(WebApplicationBuilder builder, String DatabaseConnection) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\webapi\Extensions\HostingExtensions.cs:line 21
+   at Program.<Main>$(String[] args) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\webapi\Program.cs:line 31
+2023-05-09 08:26:34.882 +07:00 [INF] Shut down complete
+2023-05-09 08:28:20.599 +07:00 [FTL] Unhandled Exception
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at WebAPI.Extensions.HostingExtensions.ConfigureServices(WebApplicationBuilder builder, String DatabaseConnection) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Extensions\HostingExtensions.cs:line 21
+   at Program.<Main>$(String[] args) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Program.cs:line 31
+2023-05-09 08:28:20.645 +07:00 [INF] Shut down complete
+2023-05-09 08:30:06.206 +07:00 [FTL] Unhandled Exception
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at WebAPI.Extensions.HostingExtensions.ConfigureServices(WebApplicationBuilder builder, String DatabaseConnection) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Extensions\HostingExtensions.cs:line 21
+   at Program.<Main>$(String[] args) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Program.cs:line 30
+2023-05-09 08:30:06.249 +07:00 [INF] Shut down complete
+2023-05-09 08:30:17.609 +07:00 [FTL] Unhandled Exception
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at WebAPI.Extensions.HostingExtensions.ConfigureServices(WebApplicationBuilder builder, String DatabaseConnection) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Extensions\HostingExtensions.cs:line 21
+   at Program.<Main>$(String[] args) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Program.cs:line 30
+2023-05-09 08:30:17.657 +07:00 [INF] Shut down complete
+2023-05-09 08:30:38.353 +07:00 [FTL] Unhandled Exception
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at WebAPI.Extensions.HostingExtensions.ConfigureServices(WebApplicationBuilder builder, String DatabaseConnection) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Extensions\HostingExtensions.cs:line 21
+   at Program.<Main>$(String[] args) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Program.cs:line 30
+2023-05-09 08:30:38.410 +07:00 [INF] Shut down complete
+2023-05-09 08:31:01.376 +07:00 [FTL] Unhandled Exception
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at WebAPI.Extensions.HostingExtensions.ConfigureServices(WebApplicationBuilder builder, String DatabaseConnection) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Extensions\HostingExtensions.cs:line 21
+   at Program.<Main>$(String[] args) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Program.cs:line 30
+2023-05-09 08:31:01.433 +07:00 [INF] Shut down complete
+2023-05-09 08:31:27.478 +07:00 [FTL] Unhandled Exception
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at WebAPI.Extensions.HostingExtensions.ConfigureServices(WebApplicationBuilder builder, String DatabaseConnection) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Extensions\HostingExtensions.cs:line 21
+   at Program.<Main>$(String[] args) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Program.cs:line 30
+2023-05-09 08:31:27.519 +07:00 [INF] Shut down complete
+2023-05-09 08:32:12.297 +07:00 [FTL] Unhandled Exception
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at WebAPI.Extensions.HostingExtensions.ConfigureServices(WebApplicationBuilder builder, String DatabaseConnection) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Extensions\HostingExtensions.cs:line 21
+   at Program.<Main>$(String[] args) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Program.cs:line 30
+2023-05-09 08:32:12.340 +07:00 [INF] Shut down complete
+2023-05-09 08:46:06.005 +07:00 [FTL] Unhandled Exception
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Program.<Main>$(String[] args) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Program.cs:line 30
+2023-05-09 08:46:06.094 +07:00 [INF] Shut down complete
+2023-05-09 08:47:21.560 +07:00 [FTL] Unhandled Exception
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Program.<Main>$(String[] args) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Program.cs:line 24
+2023-05-09 08:47:21.618 +07:00 [INF] Shut down complete
+2023-05-09 08:47:36.802 +07:00 [FTL] Unhandled Exception
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Program.<Main>$(String[] args) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Program.cs:line 24
+2023-05-09 08:47:36.859 +07:00 [INF] Shut down complete
+2023-05-09 08:47:40.633 +07:00 [FTL] Unhandled Exception
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Program.<Main>$(String[] args) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Program.cs:line 25
+2023-05-09 08:47:40.690 +07:00 [INF] Shut down complete
+2023-05-09 08:51:24.826 +07:00 [FTL] Unhandled Exception
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Program.<Main>$(String[] args) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Program.cs:line 18
+2023-05-09 08:51:24.912 +07:00 [INF] Shut down complete
+2023-05-09 08:52:54.981 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-09 08:52:56.700 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-09 08:52:56.702 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-09 08:52:56.703 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-09 08:52:56.704 +07:00 [INF] Hosting environment: Development
+2023-05-09 08:52:56.704 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-09 08:53:01.525 +07:00 [INF] Start performance record
+2023-05-09 08:53:01.887 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-09 08:53:01.888 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-09 08:53:02.021 +07:00 [INF] End performance record
+2023-05-09 08:53:02.028 +07:00 [INF] Time taken: 0:00.497

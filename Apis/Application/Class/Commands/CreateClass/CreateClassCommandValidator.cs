@@ -1,13 +1,12 @@
-using Application.Class.Commands.UpdateClass;
+using Application.Class.Commands.CreateClass;
 using FluentValidation;
 
 namespace Application.Lectures.Commands
 {
-    public class UpdateClassCommandValidator : AbstractValidator<UpdateClassCommand>
+    public class CreateClassCommandValidator : AbstractValidator<CreateClassCommand>
     {
-        public UpdateClassCommandValidator()
+        public CreateClassCommandValidator()
         {
-            RuleFor(x => x.Id).NotEmpty().NotNull().GreaterThan(0);;
             RuleFor(x => x.Name).NotEmpty().NotNull();
             RuleFor(x => x.Code).NotEmpty().NotNull();
             RuleFor(x => x.Location).NotNull();

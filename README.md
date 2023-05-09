@@ -1,6 +1,9 @@
 # Training management system
 
-## Class
+// TODO: check and add validation if not has
+// TODO: check again error message
+
+## Class _Nhon_
 
 1. Creation
    1. Allow for easy creation of classes.
@@ -8,22 +11,23 @@
    // include program table.
    // TODO: Add author only role trainer allow use this endpoint.
 2. Progress Tracking
-   1. Have the ability to track progress and provide analytics on class performance. MR. DO KU TO(assign)
+   1. Have the ability to track progress and provide analytics on class performance.
    // score feature. getStudent of class sort by ???. ***.
-   // include table test and syllabus get "he so" of test and caculate the score. (caculate by 5 fields in syllabus)
-   2. Allow trainers or administrators to view the progress of each student in the class through a dashboard or report.
-   /// optional. (đang ơ ngay bn, tong bn, list student và diem hien tai) 
+   // include table test and syllabus get "he so" of test and calculate the score. (calculate by 5 fields in syllabus)
+   2. Allow trainers or administrators to view the progress of each student in the class through a dashboard or report. (**)
+   /// optional. (đang ơ ngay bn, tong bn, list student và diem hien tai)
 
 ## Student
 
 1. Progress Tracking
-   1. Have the ability to track student progress through each training plan. 
+   1. Have the ability to track student progress through each training plan.
    GET /student/:id/progress (id of student) return student and list training plan of student.
-   
+  _MR. DO KU TO(assign)_
+   // TODO: get date, score, ... of student in class. (include table classUser, score, test, syllabus)
    2. Allow trainers and administrators to view the progress of each student through a dashboard or report.
    3. Have the ability to send automated notifications to students, trainers, or administrators when a training plan is completed or when a student is falling behind.// optional hangfire.
 2. Performance Analytics
-   1. Provide detailed analytics on student performance, including individual performance metrics and comparative metrics against the class average.
+   1. Provide detailed analytics on student performance, including individual performance metrics and comparative metrics against the class average. _MR. DO KU TO(assign)_
    // {
          index: 1,
          pageSize: 5.
@@ -38,10 +42,10 @@
 
    2. Allow for easy exporting of performance data for further analysis.
    // csv
-3. Profile Customization
+3. Profile Customization _Nhon_
    1. Allow for custom fields to be added to student profiles to capture additional information that may be required.
    // add new table profile of student
-   2. Allow students to customize their profiles and manage their personal information.
+   2. Allow students to customize their profiles and manage their personal information. _Nhon_
    // edit profile.
 4. Communication (optional)
    1. Have the ability to send notifications to students regarding upcoming classes, training plans, and assessment deadlines.
@@ -81,7 +85,7 @@
    2. Support different weighting methods, such as equal weighting or custom weighting.
    3. Allow trainers or administrators to generate score reports for each class or for individual students.
    4. Support filtering and sorting options for the score reports, such as by assessment type or score range.
-
+   5. CRUD TestAssignment _Nhon_
 ## Trainer
 
 1. Registration

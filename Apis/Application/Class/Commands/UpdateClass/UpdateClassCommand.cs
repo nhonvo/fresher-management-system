@@ -11,6 +11,16 @@ namespace Application.Class.Commands.UpdateClass
     public record UpdateClassCommand : IRequest<ClassDTO>
     {
         public int Id { get; set; }
+        public string Name { get; set; }
+        public string Code { get; set; }
+        public ClassLocation? Location { get; set; }
+        public ClassAttendeeType? AttendeeType { get; set; }
+        public ClassFSU? FSU { get; set; }
+        public ClassTime ClassTime { get; set; }
+        public DateTime StartedOn { get; set; }
+        public DateTime FinishedOn { get; set; }
+        public ClassStatus Status { get; set; }
+        public DateTime ApprovedOn { get; set; }
     }
     public class UpdateClassHandler : IRequestHandler<UpdateClassCommand, ClassDTO>
     {

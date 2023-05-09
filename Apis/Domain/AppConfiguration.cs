@@ -9,7 +9,7 @@
         public MyAllowSpecificOrigins MyAllowSpecificOrigins { get; set; }
         public Token Token { get; set; }
     }
-
+// TODO: UPDATE this class remove unnecessary properties
     public class Token
     {
         public string TenantId { get; set; }

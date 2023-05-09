@@ -122,6 +122,5 @@ namespace Application.Repositories
         /// <param name="filter">The filter to match entities by. Cannot be null</param>
         Task<TEntity> FirstOrDefaultAsync(Expression<Func<TEntity, bool>> filter);
         Task<TEntity> FirstOrdDefaultAsync(Expression<Func<TEntity, bool>> filter, Func<IQueryable<TEntity>, IQueryable<TEntity>> include = null);
-
     }
 }

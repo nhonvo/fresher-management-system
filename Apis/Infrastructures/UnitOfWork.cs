@@ -3,6 +3,7 @@ using Application.Common.Exceptions;
 using Application.Repositories;
 using Infrastructures.Persistence;
 using Infrastructures.Repositories;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 
 namespace Infrastructures;
@@ -126,5 +127,13 @@ public class UnitOfWork : IUnitOfWork
             await transaction.RollbackAsync();
             throw new TransactionException("Can't execute transaction");
         }
+    }
+    public List<object> GetTrackedEntities()
+    {
+        return _context.ChangeTracker
+            .Entries()
+            .Where(e => e.State != EntityState.Detached && e.Entity != null)
+            .Select(e => e.Entity)
+            .ToList();
     }
 }

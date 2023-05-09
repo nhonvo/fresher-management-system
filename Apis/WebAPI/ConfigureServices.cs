@@ -1,5 +1,7 @@
-﻿using Application.Interfaces;
+﻿using Application;
+using Application.Interfaces;
 using FluentValidation.AspNetCore;
+using Infrastructures;
 using Microsoft.OpenApi.Models;
 using System.Diagnostics;
 using System.Text.Json.Serialization;

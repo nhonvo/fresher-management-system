@@ -35,4 +35,5 @@ public interface IUnitOfWork : IDisposable
     /// </summary>
     void Rollback();
     Task ExecuteTransactionAsync(Action action);
+    List<object> GetTrackedEntities();
 }

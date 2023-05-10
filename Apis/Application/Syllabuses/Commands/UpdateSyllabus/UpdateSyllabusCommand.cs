@@ -55,7 +55,7 @@ namespace Application.Syllabuses.Commands.UpdateSyllabus
             catch (Exception ex)
             {
                 _unitOfWork.Rollback();
-                throw new NotFoundException("Update has some error"); ;
+                throw new NotFoundException("Update has some error");
             }
 
         }

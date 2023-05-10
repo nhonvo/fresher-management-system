@@ -3,18 +3,19 @@ using Application.Common.Exceptions;
 using Application.Interfaces;
 using AutoMapper;
 using Domain.Entities;
+using Domain.Enums;
 using MediatR;
 
 namespace Application.Account.Commands.Register;
 
 public record RegisterCommand : IRequest<AccountDTO>
 {
-    public string Name { get; set; }
     public string Email { get; set; }
-    public string Password { get; set; }
+    public Gender Gender { get; set; }
+    public string Name { get; set; }
     public string Phone { get; set; }
+    public string Password { get; set; }
     public DateTime DateOfBirth { get; set; }
-    public bool IsMale { get; set; } = true;
 }
 public class RegisterCommandHandler : IRequestHandler<RegisterCommand, AccountDTO>
 {
@@ -38,8 +39,8 @@ public class RegisterCommandHandler : IRequestHandler<RegisterCommand, AccountDT
             throw new NotFoundException("Email is exist !!!");
 
         var user = _mapper.Map<User>(request);
-        //user.RoleId = 1;
-        // user.AvatarURL = "null";
+        user.Role = UserRoleType.Trainee;
+        user.Status = UserStatus.Active;
         user.Password = _jwtService.Hash(user.Password);
         try
         {

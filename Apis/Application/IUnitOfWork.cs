@@ -6,12 +6,14 @@ namespace Application;
 public interface IUnitOfWork : IDisposable
 {
     // repositories
-    IUserRepository UserRepository { get; }
-    ISyllabusRepository SyllabusRepository { get; }
-    IOutputStandardRepository OutputStandardRepository { get; }
-    IClassRepository ClassRepository { get; }
-    ITestAssessmentRepository TestAssessmentRepository { get; }
     IAttendanceRepository AttendanceRepository { get; }
+    IClassRepository ClassRepository { get; }
+    IClassStudentRepository ClassStudentRepository { get; }
+    IOutputStandardRepository OutputStandardRepository { get; }
+    ISyllabusRepository SyllabusRepository { get; }
+    ITestAssessmentRepository TestAssessmentRepository { get; }
+    IUserRepository UserRepository { get; }
+    IUnitRepository UnitRepository { get; }
 
     IReportAttendenceRepository ReportAttendenceRepository { get; }
     /// <summary>

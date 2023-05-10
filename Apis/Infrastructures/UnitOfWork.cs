@@ -23,6 +23,7 @@ public class UnitOfWork : IUnitOfWork
     public IOutputStandardRepository OutputStandardRepository { get; }
     public IClassRepository ClassRepository { get; }
     public ITestAssessmentRepository TestAssessmentRepository { get; }
+    public IAttendanceRepository AttendanceRepository { get; }
     //
     public UnitOfWork(ApplicationDbContext dbContext, ICacheService cache)
     {
@@ -34,6 +35,7 @@ public class UnitOfWork : IUnitOfWork
         OutputStandardRepository = new OutputStandardRepository(_context, _cache);
         ClassRepository = new ClassRepository(_context, _cache);
         TestAssessmentRepository = new TestAssessmentRepository(_context, _cache);
+        AttendanceRepository = new AttendanceRepository(_context, _cache);
     }
 
     // save changes

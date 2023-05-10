@@ -77,6 +77,7 @@
 2. Absence Reporting
 //TODO: create link user click to attendance
    1. Have the ability to track and manage class attendance.
+   get all, get follow class
    2. Allow trainers or administrators to view the list of reported absences for each student, or view summary on class.
    3. Have the ability to send automated notifications to students, trainers, or administrators when a student is absent from a class (optional).
 3. Absence Approval

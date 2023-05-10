@@ -5,6 +5,7 @@ using Application.Users.GetUserById.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using WebAPI.Controllers;
 
 namespace WebAPI.Controllers
 {

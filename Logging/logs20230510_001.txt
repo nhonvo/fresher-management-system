@@ -1472,3 +1472,341 @@ Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
    at WebAPI.Extensions.HostingExtensions.ConfigureServices(WebApplicationBuilder builder, String databaseConnection, String userApp, String key, String issuer, String audience) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Extensions\HostingExtensions.cs:line 23
    at Program.<Main>$(String[] args) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Program.cs:line 29
 2023-05-10 11:02:46.599 +07:00 [INF] Shut down complete
+2023-05-10 11:23:50.474 +07:00 [FTL] Unhandled Exception
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at WebAPI.Extensions.HostingExtensions.ConfigureServices(WebApplicationBuilder builder, String databaseConnection, String userApp, String key, String issuer, String audience) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Extensions\HostingExtensions.cs:line 23
+   at Program.<Main>$(String[] args) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Program.cs:line 29
+2023-05-10 11:23:50.515 +07:00 [INF] Shut down complete
+2023-05-10 11:23:52.999 +07:00 [FTL] Unhandled Exception
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at WebAPI.Extensions.HostingExtensions.ConfigureServices(WebApplicationBuilder builder, String databaseConnection, String userApp, String key, String issuer, String audience) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Extensions\HostingExtensions.cs:line 23
+   at Program.<Main>$(String[] args) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Program.cs:line 29
+2023-05-10 11:23:53.030 +07:00 [INF] Shut down complete
+2023-05-10 11:24:05.205 +07:00 [FTL] Unhandled Exception
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at WebAPI.Extensions.HostingExtensions.ConfigureServices(WebApplicationBuilder builder, String databaseConnection, String userApp, String key, String issuer, String audience) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Extensions\HostingExtensions.cs:line 23
+   at Program.<Main>$(String[] args) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Program.cs:line 29
+2023-05-10 11:24:05.239 +07:00 [INF] Shut down complete
+2023-05-10 11:24:14.803 +07:00 [FTL] Unhandled Exception
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at WebAPI.Extensions.HostingExtensions.ConfigureServices(WebApplicationBuilder builder, String databaseConnection, String userApp, String key, String issuer, String audience) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Extensions\HostingExtensions.cs:line 23
+   at Program.<Main>$(String[] args) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Program.cs:line 29
+2023-05-10 11:24:14.845 +07:00 [INF] Shut down complete
+2023-05-10 11:40:53.491 +07:00 [FTL] Unhandled Exception
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at WebAPI.Extensions.HostingExtensions.ConfigureServices(WebApplicationBuilder builder, String databaseConnection, String userApp, String key, String issuer, String audience) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Extensions\HostingExtensions.cs:line 23
+   at Program.<Main>$(String[] args) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Program.cs:line 29
+2023-05-10 11:40:53.531 +07:00 [INF] Shut down complete
+2023-05-10 11:41:02.789 +07:00 [FTL] Unhandled Exception
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at WebAPI.Extensions.HostingExtensions.ConfigureServices(WebApplicationBuilder builder, String databaseConnection, String userApp, String key, String issuer, String audience) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Extensions\HostingExtensions.cs:line 23
+   at Program.<Main>$(String[] args) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Program.cs:line 29
+2023-05-10 11:41:02.842 +07:00 [INF] Shut down complete
+2023-05-10 11:41:14.691 +07:00 [FTL] Unhandled Exception
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at WebAPI.Extensions.HostingExtensions.ConfigureServices(WebApplicationBuilder builder, String databaseConnection, String userApp, String key, String issuer, String audience) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Extensions\HostingExtensions.cs:line 23
+   at Program.<Main>$(String[] args) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Program.cs:line 29
+2023-05-10 11:41:14.732 +07:00 [INF] Shut down complete
+2023-05-10 11:43:52.207 +07:00 [FTL] Unhandled Exception
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at WebAPI.Extensions.HostingExtensions.ConfigureServices(WebApplicationBuilder builder, String databaseConnection, String userApp, String key, String issuer, String audience) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Extensions\HostingExtensions.cs:line 23
+   at Program.<Main>$(String[] args) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Program.cs:line 29
+2023-05-10 11:43:52.257 +07:00 [INF] Shut down complete
+2023-05-10 11:43:57.041 +07:00 [FTL] Unhandled Exception
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at WebAPI.Extensions.HostingExtensions.ConfigureServices(WebApplicationBuilder builder, String databaseConnection, String userApp, String key, String issuer, String audience) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Extensions\HostingExtensions.cs:line 23
+   at Program.<Main>$(String[] args) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Program.cs:line 29
+2023-05-10 11:43:57.082 +07:00 [INF] Shut down complete
+2023-05-10 12:00:00.535 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 12:00:01.619 +07:00 [ERR] Migration error
+System.IO.FileNotFoundException: Could not find file 'D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Json\TrainingClass.json'.
+File name: 'D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Json\TrainingClass.json'
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.StreamReader.ValidateArgsAndOpenPath(String path, Encoding encoding, Int32 bufferSize)
+   at System.IO.File.ReadAllText(String path, Encoding encoding)
+   at Infrastructures.Persistence.ApplicationDbContextInitializer.TrySeedAsync() in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\Infrastructures\Persistence\ApplicationDbContextInitializer.cs:line 78
+   at Infrastructures.Persistence.ApplicationDbContextInitializer.SeedAsync() in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\Infrastructures\Persistence\ApplicationDbContextInitializer.cs:line 33
+2023-05-10 12:00:01.804 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-10 12:00:01.806 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-10 12:00:01.807 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 12:00:01.807 +07:00 [INF] Hosting environment: Development
+2023-05-10 12:00:01.807 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-10 12:02:35.703 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 12:02:36.881 +07:00 [ERR] Migration error
+System.IO.FileNotFoundException: Could not find file 'D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Json\TrainingClass.json'.
+File name: 'D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Json\TrainingClass.json'
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.StreamReader.ValidateArgsAndOpenPath(String path, Encoding encoding, Int32 bufferSize)
+   at System.IO.File.ReadAllText(String path, Encoding encoding)
+   at Infrastructures.Persistence.ApplicationDbContextInitializer.TrySeedAsync() in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\Infrastructures\Persistence\ApplicationDbContextInitializer.cs:line 78
+   at Infrastructures.Persistence.ApplicationDbContextInitializer.SeedAsync() in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\Infrastructures\Persistence\ApplicationDbContextInitializer.cs:line 33
+2023-05-10 12:02:37.182 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-10 12:02:37.184 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-10 12:02:37.186 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 12:02:37.186 +07:00 [INF] Hosting environment: Development
+2023-05-10 12:02:37.186 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-10 12:02:49.975 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 12:02:50.730 +07:00 [ERR] Migration error
+System.IO.FileNotFoundException: Could not find file 'D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Json\TrainingClass.json'.
+File name: 'D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Json\TrainingClass.json'
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.StreamReader.ValidateArgsAndOpenPath(String path, Encoding encoding, Int32 bufferSize)
+   at System.IO.File.ReadAllText(String path, Encoding encoding)
+   at Infrastructures.Persistence.ApplicationDbContextInitializer.TrySeedAsync() in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\Infrastructures\Persistence\ApplicationDbContextInitializer.cs:line 78
+   at Infrastructures.Persistence.ApplicationDbContextInitializer.SeedAsync() in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\Infrastructures\Persistence\ApplicationDbContextInitializer.cs:line 33
+2023-05-10 12:02:50.878 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-10 12:02:50.879 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-10 12:02:50.880 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 12:02:50.880 +07:00 [INF] Hosting environment: Development
+2023-05-10 12:02:50.881 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-10 12:03:05.370 +07:00 [INF] Start performance record
+2023-05-10 12:03:05.424 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 12:03:05.753 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-10 12:03:05.754 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-10 12:03:05.863 +07:00 [INF] GlobalExceptionMiddleware
+2023-05-10 12:03:05.864 +07:00 [INF] Missing type map configuration or unsupported mapping.
+
+Mapping types:
+WhereListIterator`1 -> AttendanceDTO
+System.Linq.Enumerable+WhereListIterator`1[[Domain.Entities.Attendance, Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Application.Account.DTOs.AttendanceDTO
+2023-05-10 12:03:05.867 +07:00 [INF] AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+WhereListIterator`1 -> AttendanceDTO
+System.Linq.Enumerable+WhereListIterator`1[[Domain.Entities.Attendance, Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> Application.Account.DTOs.AttendanceDTO
+   at lambda_method51(Closure, Object, AttendanceDTO, ResolutionContext)
+   at Application.Account.Queries.GetAttendanceByClass.GetAttendanceByClassQueryHandler.Handle(GetAttendanceByClassQuery request, CancellationToken cancellationToken) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\Application\Attendance\Queries\GetAttendanceByClassQuery.cs:line 33
+   at Application.Commons.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\Application\Commons\Behaviors\ValidationBehavior.cs:line 34
+   at WebAPI.Controllers.AttendanceController.GetAsync(Int32 id) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Controllers\AttendanceController.cs:line 18
+   at lambda_method37(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ExceptionContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at WebAPI.Middlewares.PerformanceMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Middlewares\PerformanceMiddleware.cs:line 22
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at WebAPI.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Middlewares\GlobalExceptionMiddleware.cs:line 11
+2023-05-10 12:03:41.781 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 12:03:42.604 +07:00 [ERR] Migration error
+System.IO.FileNotFoundException: Could not find file 'D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Json\TrainingClass.json'.
+File name: 'D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Json\TrainingClass.json'
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.StreamReader.ValidateArgsAndOpenPath(String path, Encoding encoding, Int32 bufferSize)
+   at System.IO.File.ReadAllText(String path, Encoding encoding)
+   at Infrastructures.Persistence.ApplicationDbContextInitializer.TrySeedAsync() in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\Infrastructures\Persistence\ApplicationDbContextInitializer.cs:line 78
+   at Infrastructures.Persistence.ApplicationDbContextInitializer.SeedAsync() in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\Infrastructures\Persistence\ApplicationDbContextInitializer.cs:line 33
+2023-05-10 12:03:42.750 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-10 12:03:42.751 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-10 12:03:42.752 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 12:03:42.752 +07:00 [INF] Hosting environment: Development
+2023-05-10 12:03:42.752 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-10 12:03:50.103 +07:00 [INF] Start performance record
+2023-05-10 12:03:50.126 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 12:03:50.345 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-10 12:03:50.346 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-10 12:03:50.442 +07:00 [INF] End performance record
+2023-05-10 12:03:50.457 +07:00 [INF] Time taken: 0:00.339
+2023-05-10 12:04:04.291 +07:00 [INF] Start performance record
+2023-05-10 12:04:04.293 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 12:04:04.363 +07:00 [INF] End performance record
+2023-05-10 12:04:04.363 +07:00 [INF] Time taken: 0:00.071
+2023-05-10 12:04:05.331 +07:00 [INF] Start performance record
+2023-05-10 12:04:05.333 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 12:04:05.342 +07:00 [INF] End performance record
+2023-05-10 12:04:05.342 +07:00 [INF] Time taken: 0:00.011
+2023-05-10 12:04:05.630 +07:00 [INF] Start performance record
+2023-05-10 12:04:05.630 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 12:04:05.634 +07:00 [INF] End performance record
+2023-05-10 12:04:05.634 +07:00 [INF] Time taken: 0:00.004
+2023-05-10 12:04:05.852 +07:00 [INF] Start performance record
+2023-05-10 12:04:05.853 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 12:04:05.858 +07:00 [INF] End performance record
+2023-05-10 12:04:05.858 +07:00 [INF] Time taken: 0:00.005
+2023-05-10 12:04:06.221 +07:00 [INF] Start performance record
+2023-05-10 12:04:06.221 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 12:04:06.226 +07:00 [INF] End performance record
+2023-05-10 12:04:06.226 +07:00 [INF] Time taken: 0:00.005
+2023-05-10 12:04:06.417 +07:00 [INF] Start performance record
+2023-05-10 12:04:06.418 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 12:04:06.435 +07:00 [INF] End performance record
+2023-05-10 12:04:06.435 +07:00 [INF] Time taken: 0:00.017
+2023-05-10 12:04:06.630 +07:00 [INF] Start performance record
+2023-05-10 12:04:06.630 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 12:04:06.634 +07:00 [INF] End performance record
+2023-05-10 12:04:06.635 +07:00 [INF] Time taken: 0:00.004
+2023-05-10 12:04:06.854 +07:00 [INF] Start performance record
+2023-05-10 12:04:06.855 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 12:04:06.858 +07:00 [INF] End performance record
+2023-05-10 12:04:06.858 +07:00 [INF] Time taken: 0:00.004
+2023-05-10 12:08:17.752 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 12:08:19.053 +07:00 [ERR] Migration error
+System.IO.FileNotFoundException: Could not find file 'D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Json\TrainingClass.json'.
+File name: 'D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Json\TrainingClass.json'
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.StreamReader.ValidateArgsAndOpenPath(String path, Encoding encoding, Int32 bufferSize)
+   at System.IO.File.ReadAllText(String path, Encoding encoding)
+   at Infrastructures.Persistence.ApplicationDbContextInitializer.TrySeedAsync() in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\Infrastructures\Persistence\ApplicationDbContextInitializer.cs:line 78
+   at Infrastructures.Persistence.ApplicationDbContextInitializer.SeedAsync() in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\Infrastructures\Persistence\ApplicationDbContextInitializer.cs:line 33
+2023-05-10 12:08:19.428 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-10 12:08:19.430 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-10 12:08:19.432 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 12:08:19.432 +07:00 [INF] Hosting environment: Development
+2023-05-10 12:08:19.432 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-10 12:08:56.938 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 12:08:58.723 +07:00 [ERR] Migration error
+System.IO.FileNotFoundException: Could not find file 'D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Json\TrainingClass.json'.
+File name: 'D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Json\TrainingClass.json'
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.StreamReader.ValidateArgsAndOpenPath(String path, Encoding encoding, Int32 bufferSize)
+   at System.IO.File.ReadAllText(String path, Encoding encoding)
+   at Infrastructures.Persistence.ApplicationDbContextInitializer.TrySeedAsync() in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\Infrastructures\Persistence\ApplicationDbContextInitializer.cs:line 78
+   at Infrastructures.Persistence.ApplicationDbContextInitializer.SeedAsync() in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\Infrastructures\Persistence\ApplicationDbContextInitializer.cs:line 33
+2023-05-10 12:08:59.118 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-10 12:08:59.120 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-10 12:08:59.122 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 12:08:59.123 +07:00 [INF] Hosting environment: Development
+2023-05-10 12:08:59.123 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-10 12:09:21.169 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 12:09:22.952 +07:00 [ERR] Migration error
+System.IO.FileNotFoundException: Could not find file 'D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Json\TrainingClass.json'.
+File name: 'D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Json\TrainingClass.json'
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.StreamReader.ValidateArgsAndOpenPath(String path, Encoding encoding, Int32 bufferSize)
+   at System.IO.File.ReadAllText(String path, Encoding encoding)
+   at Infrastructures.Persistence.ApplicationDbContextInitializer.TrySeedAsync() in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\Infrastructures\Persistence\ApplicationDbContextInitializer.cs:line 78
+   at Infrastructures.Persistence.ApplicationDbContextInitializer.SeedAsync() in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\Infrastructures\Persistence\ApplicationDbContextInitializer.cs:line 33
+2023-05-10 12:09:23.261 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-10 12:09:23.264 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-10 12:09:23.267 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 12:09:23.267 +07:00 [INF] Hosting environment: Development
+2023-05-10 12:09:23.267 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-10 12:10:58.548 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 12:11:00.838 +07:00 [ERR] Migration error
+System.IO.FileNotFoundException: Could not find file 'D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Json\TrainingClass.json'.
+File name: 'D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Json\TrainingClass.json'
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.StreamReader.ValidateArgsAndOpenPath(String path, Encoding encoding, Int32 bufferSize)
+   at System.IO.File.ReadAllText(String path, Encoding encoding)
+   at Infrastructures.Persistence.ApplicationDbContextInitializer.TrySeedAsync() in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\Infrastructures\Persistence\ApplicationDbContextInitializer.cs:line 78
+   at Infrastructures.Persistence.ApplicationDbContextInitializer.SeedAsync() in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\Infrastructures\Persistence\ApplicationDbContextInitializer.cs:line 33
+2023-05-10 12:11:01.313 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-10 12:11:01.316 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-10 12:11:01.319 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 12:11:01.320 +07:00 [INF] Hosting environment: Development
+2023-05-10 12:11:01.320 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-10 12:11:14.830 +07:00 [INF] Start performance record
+2023-05-10 12:11:14.934 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 12:11:15.672 +07:00 [INF] End performance record
+2023-05-10 12:11:15.680 +07:00 [INF] Time taken: 0:00.843
+2023-05-10 12:11:50.185 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 12:11:51.502 +07:00 [ERR] Migration error
+System.IO.FileNotFoundException: Could not find file 'D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Json\TrainingClass.json'.
+File name: 'D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Json\TrainingClass.json'
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.StreamReader.ValidateArgsAndOpenPath(String path, Encoding encoding, Int32 bufferSize)
+   at System.IO.File.ReadAllText(String path, Encoding encoding)
+   at Infrastructures.Persistence.ApplicationDbContextInitializer.TrySeedAsync() in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\Infrastructures\Persistence\ApplicationDbContextInitializer.cs:line 78
+   at Infrastructures.Persistence.ApplicationDbContextInitializer.SeedAsync() in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\Infrastructures\Persistence\ApplicationDbContextInitializer.cs:line 33
+2023-05-10 12:11:51.775 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-10 12:11:51.776 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-10 12:11:51.778 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 12:11:51.778 +07:00 [INF] Hosting environment: Development
+2023-05-10 12:11:51.778 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-10 12:12:00.278 +07:00 [INF] Start performance record
+2023-05-10 12:12:00.318 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 12:12:01.021 +07:00 [INF] End performance record
+2023-05-10 12:12:01.031 +07:00 [INF] Time taken: 0:00.743

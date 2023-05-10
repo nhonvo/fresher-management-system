@@ -4,15 +4,15 @@ namespace Domain.Entities
 {
     public class TrainingClass : BaseEntity
     {
-        public string ClassName { get; set; }
-        public string ClassCode { get; set; }
-        public DateTime ClassTimeStart { get; set; }
-        public DateTime ClassTimeEnd { get; set; }
-        public DateTime ReviewOn { get; set; }
-        public DateTime ApproveOn { get; set; }
-        public int NumberAttendeePlanned { get; set; }
-        public int NumberAttendeeAccepted { get; set; }
-        public int NumberAttendeeActual { get; set; }
+            public string ClassName { get; set; }
+            public string ClassCode { get; set; }
+            public DateTime ClassTimeStart { get; set; }
+            public DateTime ClassTimeEnd { get; set; }
+            public DateTime ReviewOn { get; set; }
+            public DateTime ApproveOn { get; set; }
+            public int NumberAttendeePlanned { get; set; }
+            public int NumberAttendeeAccepted { get; set; }
+            public int NumberAttendeeActual { get; set; }
 
         // Navigation Properties
         public ClassLocation ClassLocation { get; set; }
@@ -28,5 +28,6 @@ namespace Domain.Entities
         public ICollection<UnitClassDetail> UnitClassDetail { get; set; }
         public int? TrainingProgramId { get; set; }
         public TrainingProgram? TrainingProgram { get; set; }
+        public ICollection<Attendance> Attendances { get; set; }    
     }
 }

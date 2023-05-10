@@ -20,14 +20,12 @@ public class TrainingClass : BaseEntity
     public ClassStatus Status { get; set; }
     public ICollection<ClassAdmin> Admin { get; set; }
 
-    public int ReviewByUserId { get; set; }
+    public int? ReviewByUserId { get; set; }
     public User ReviewBy { get; set; }
-    public int ApproveByUserId { get; set; }
+    public int? ApproveByUserId { get; set; }
     public User ApproveBy { get; set; }
     public AttendeeType AttendeeType { get; set; }
-    public int FSUId { get; set; }
-    public FSU FSU { get; set; }
-    public string ContactPoint { get; set; }
+    public string? ContactPoint { get; set; }
     public ICollection<UnitClassDetail> UnitClassDetail { get; set; }
     public int? TrainingProgramId { get; set; }
     public TrainingProgram? TrainingProgram { get; set; }

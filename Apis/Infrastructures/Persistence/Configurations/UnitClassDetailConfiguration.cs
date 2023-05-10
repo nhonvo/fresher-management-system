@@ -18,9 +18,6 @@ namespace Infrastructures.Persistence.Configurations
             builder.HasOne(o => o.Trainer)
                    .WithMany(u => u.UnitTrainers)
                    .HasForeignKey(o => o.TrainerId);
-            builder.HasOne(o => o.Location)
-                   .WithMany(u => u.UnitClassDetails)
-                   .HasForeignKey(o => o.LocationId);
         }
     }
 }

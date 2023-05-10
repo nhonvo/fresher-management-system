@@ -9,8 +9,8 @@ public class UnitClassDetail : BaseEntity
     public Unit Unit { get; set; }
     public int TrainerId { get; set; }
     public User Trainer { get; set; }
-    public int LocationId { get; set; }
-    public UnitClassLocation Location { get; set; }
+    //public int LocationId { get; set; }
+    //public UnitClassLocation Location { get; set; }
     public DateTime StartTime { get; set; }
     public DateTime EndTime { get; set; }
 }

@@ -25,6 +25,8 @@ public class UnitOfWork : IUnitOfWork
     public ISyllabusRepository SyllabusRepository { get; }
     public ITestAssessmentRepository TestAssessmentRepository { get; }
     public IUserRepository UserRepository { get; }
+    public IReportAttendenceRepository ReportAttendenceRepository { get; }
+    public IUnitRepository UnitRepository { get; }
     //
     public UnitOfWork(ApplicationDbContext dbContext, ICacheService cache)
     {
@@ -38,6 +40,7 @@ public class UnitOfWork : IUnitOfWork
         SyllabusRepository = new SyllabusRepository(_context, _cache);
         OutputStandardRepository = new OutputStandardRepository(_context, _cache);
         TestAssessmentRepository = new TestAssessmentRepository(_context, _cache);
+        ReportAttendenceRepository = new ReportAttendenceRepository(_context, _cache);
     }
 
     // save changes

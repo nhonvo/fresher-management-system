@@ -8,7 +8,7 @@ namespace Application.StudentProgresses.Queries.GetPagedStudentProgressesById;
 public record GetPagedStudentProgressesByIdQuery : IRequest<Pagination<StudentProgressDTO>>
 {
     public int Id { get; set; }
-    public int PageNumber { get; set; } = 1;
+    public int PageIndex { get; set; } = 1;
     public int PageSize { get; set; } = 10;
 }
 
@@ -27,10 +27,8 @@ public class GetPagedStudentProgressesByIdHandler : IRequestHandler<GetPagedStud
     {
         var result = await _unitOfWork.ClassStudentRepository.GetPagedStudentProgressesById(
             id: request.Id,
-            pageNumber: request.PageNumber,
+            pageNumber: request.PageIndex,
             pageSize: request.PageSize);
-        // var result = _mapper.Map<StudentProgressDTO>(StudentProgress);
-
         return result;
     }
 }

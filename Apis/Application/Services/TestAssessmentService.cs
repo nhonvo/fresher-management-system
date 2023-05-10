@@ -16,6 +16,11 @@ namespace Application.Services
             _mapper = mapper;
         }
 
+        public async Task<List<TestAssessmentViewModel>> GetChemicalAsync()
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<List<TestAssessmentViewModel>> GetTestAssessmentPagingsionAsync(int pageIndex = 0, int pageSize = 10)
         {
             var chemicals = await _unitOfWork.TestAssessmentRepository.ToPagination(pageIndex, pageSize);

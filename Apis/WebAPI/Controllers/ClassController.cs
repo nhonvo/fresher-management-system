@@ -15,18 +15,18 @@ namespace WebAPI.Controllers
         {
             _mediator = mediator;
         }
-        [HttpGet]
-        public async Task<IActionResult> Get(int pageIndex = 0, int pageSize = 10)
-        {
-            try
-            {
-                var result =  await _mediator.Send(new GetClassQuery(pageIndex, pageSize));
-                return CustomResult(result);
-            } catch(Exception ex)
-            {
-                return CustomResult(ex.Message, HttpStatusCode.BadRequest);
-            }
-        }
+        //[HttpGet]
+        //public async Task<IActionResult> Get(int pageIndex = 0, int pageSize = 10)
+        //{
+        //    try
+        //    {
+        //        var result =  await _mediator.Send(new GetClassQuery(pageIndex, pageSize));
+        //        return CustomResult(result);
+        //    } catch(Exception ex)
+        //    {
+        //        return CustomResult(ex.Message, HttpStatusCode.BadRequest);
+        //    }
+        //}
            
         // [HttpGet("{id}")]
         // public async Task<ClassDTO> Get(int id)

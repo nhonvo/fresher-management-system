@@ -16,13 +16,11 @@ namespace Application.Services
             _mapper = mapper;
         }
 
-        public async Task<List<TestAssessmentViewModel>> GetChemicalPagingsionAsync(int pageIndex = 0, int pageSize = 10)
+        public async Task<List<TestAssessmentViewModel>> GetTestAssessmentPagingsionAsync(int pageIndex = 0, int pageSize = 10)
         {
             var chemicals = await _unitOfWork.TestAssessmentRepository.ToPagination(pageIndex, pageSize);
             var result = _mapper.Map<List<TestAssessmentViewModel>>(chemicals);
             return result;
         }
-
-        
     }
 }

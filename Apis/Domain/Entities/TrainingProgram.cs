@@ -11,9 +11,10 @@ namespace Domain.Entities
         //Navigation properties
         public int? ParentId { get; set; }
         public TrainingProgram? Parent { get; set; }
-        public int TrainingClassId { get; set; }
-        public TrainingClass TrainingClass { get; set; }
+        public int? TrainingClassId { get; set; }
+        public TrainingClass? TrainingClass { get; set; }
         public ICollection<ProgramSyllabus> ProgramSyllabus { get; set; }
+        public ICollection<TestAssessment> TestAssessments { get; set; }
         public DateTime CreationDate { get; set; }
 
         public int? CreatedBy { get; set; }

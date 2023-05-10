@@ -1,13 +1,15 @@
-﻿using Application.Commons;
+﻿using Application.Class.Queries.GetClass;
+using Application.Commons;
 using Application.Interfaces;
 using Application.ViewModels.TestAssessmentViewModels;
 using Microsoft.AspNetCore.Mvc;
+using System.Net;
 
 namespace WebAPI.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-public class TestAssessmentController : ControllerBase
+public class TestAssessmentController : CustomBaseController
 { 
     private readonly ITestAssessmentService _testAssessmentService;
     public TestAssessmentController(ITestAssessmentService testAssessmentService)
@@ -16,9 +18,17 @@ public class TestAssessmentController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<Pagination<TestAssessmentViewModel>> GetTestAssessmentPagingsion(int pageIndex = 0, int pageSize = 10)
+    public async Task<IActionResult> GetTestAssessmentPagingsion(int pageIndex = 0, int pageSize = 10)
     {
-        return await _testAssessmentService.GetTestAssessmentPagingsionAsync(pageIndex, pageSize);
+        try
+        {
+            var result = await _testAssessmentService.GetTestAssessmentPagingsionAsync(pageIndex, pageSize);
+            return CustomResult(result);
+        }
+        catch (Exception ex)
+        {
+            return CustomResult(ex.Message, HttpStatusCode.BadRequest);
+        }
     }
 
 }

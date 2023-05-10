@@ -1,7 +1,6 @@
 using Application.Common.Exceptions;
 using Application.Syllabuses.DTO;
 using AutoMapper;
-using Domain.Aggregate.AppResult;
 using MediatR;
 
 

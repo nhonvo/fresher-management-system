@@ -1,11 +1,11 @@
-﻿using MediatR;
-using Application.Class.DTO;
-using AutoMapper;
+﻿using Application.Class.DTO;
 using Application.Common.Exceptions;
+using AutoMapper;
+using MediatR;
 
 namespace Application.Class.Commands.DeleteClass
 {
-    public record DeleteClassCommand(int Id) : IRequest<ClassDTO>{};
+    public record DeleteClassCommand(int Id) : IRequest<ClassDTO> { };
     public class DeleteClassHandler : IRequestHandler<DeleteClassCommand, ClassDTO>
     {
         private readonly IUnitOfWork _unitOfWork;

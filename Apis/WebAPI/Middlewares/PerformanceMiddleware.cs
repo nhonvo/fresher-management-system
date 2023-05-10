@@ -1,6 +1,5 @@
-﻿using System.Diagnostics;
-using Infrastructures;
-using Serilog;
+﻿using Serilog;
+using System.Diagnostics;
 
 namespace WebAPI.Middlewares
 {

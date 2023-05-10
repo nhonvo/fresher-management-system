@@ -1,11 +1,11 @@
-﻿using MediatR;
-using AutoMapper;
-using Application.Common.Exceptions;
+﻿using Application.Common.Exceptions;
 using Application.TestAssessments.DTO;
+using AutoMapper;
+using MediatR;
 
 namespace Application.TestAssessments.Commands.DeleteTestAssessment
 {
-    public record DeleteTestAssessmentCommand(int id) : IRequest<TestAssessmentDTO>{};
+    public record DeleteTestAssessmentCommand(int id) : IRequest<TestAssessmentDTO> { };
     public class DeleteTestAssessmentHandler : IRequestHandler<DeleteTestAssessmentCommand, TestAssessmentDTO>
     {
         private readonly IUnitOfWork _unitOfWork;

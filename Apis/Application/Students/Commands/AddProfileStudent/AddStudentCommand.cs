@@ -1,8 +1,8 @@
-﻿using MediatR;
-using AutoMapper;
-using Application.Common.Exceptions;
+﻿using Application.Common.Exceptions;
 using Application.Students.DTO;
+using AutoMapper;
 using Domain.Entities;
+using MediatR;
 // TODO: user soft removes
 // TODO: add createBy, modify when, from authentication
 // TODO: create all api endpoints

@@ -1,4 +1,3 @@
-using Application.Common.Exceptions;
 using Application.Commons;
 using Application.Students.DTO;
 using AutoMapper;

@@ -80,6 +80,13 @@ namespace Infrastructures.Persistence
                 await _context.AddRangeAsync(testAssessments);
                 await _context.SaveChangesAsync();
             };
+            if (!_context.Units.Any())
+            {
+                string json = File.ReadAllText(@"../../Json/Unit.json");
+                List<Unit> testAssessments = JsonSerializer.Deserialize<List<Unit>>(json)!;
+                await _context.AddRangeAsync(testAssessments);
+                await _context.SaveChangesAsync();
+            };
 
         }
     }

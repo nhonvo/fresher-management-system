@@ -4,6 +4,7 @@ namespace Application.Class.DTO
 {
     public class ClassProgram
     {
+        public int Id { get; set; }
         public string ClassName { get; set; }
         public string ClassCode { get; set; }
         public DateTime ClassTimeStart { get; set; }

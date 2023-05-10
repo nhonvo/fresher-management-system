@@ -20,6 +20,7 @@ namespace Infrastructures
             #region Repositories
             services.AddScoped<IAttendanceRepository, AttendanceRepository>();
             services.AddScoped<IClassRepository, ClassRepository>();
+            services.AddScoped<IClassStudentRepository, ClassStudentRepository>();
             services.AddScoped<IOutputStandardRepository, OutputStandardRepository>();
             services.AddScoped<ISyllabusRepository, SyllabusRepository>();
             services.AddScoped<ITestAssessmentRepository, TestAssessmentRepository>();

@@ -1,4 +1,5 @@
 ﻿using Application.Account.DTOs;
+using Application.Attendances.DTOs;
 using AutoMapper;
 using Domain.Entities;
 

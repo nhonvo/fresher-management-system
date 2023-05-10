@@ -1,8 +1,7 @@
-﻿using System.Text.Json;
-using Application.Class.DTO;
-using Domain.Entities;
+﻿using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
+using System.Text.Json;
 
 namespace Infrastructures.Persistence
 {
@@ -76,10 +75,17 @@ namespace Infrastructures.Persistence
             //     await _context.AddRangeAsync(testAssessments);
             //     await _context.SaveChangesAsync();
             // };
-            if (!_context.FSUs.Any())
+            //if (!_context.FSUs.Any())
+            //{
+            //    string json = File.ReadAllText(@"../../Json/FSU.json");
+            //    List<FSU> testAssessments = JsonSerializer.Deserialize<List<FSU>>(json)!;
+            //    await _context.AddRangeAsync(testAssessments);
+            //    await _context.SaveChangesAsync();
+            //};
+            if (!_context.TrainingClasses.Any())
             {
-                string json = File.ReadAllText(@"../../Json/FSU.json");
-                List<FSU> testAssessments = JsonSerializer.Deserialize<List<FSU>>(json)!;
+                string json = File.ReadAllText(@"../../Json/TrainingClass.json");
+                List<TrainingClass> testAssessments = JsonSerializer.Deserialize<List<TrainingClass>>(json)!;
                 await _context.AddRangeAsync(testAssessments);
                 await _context.SaveChangesAsync();
             };

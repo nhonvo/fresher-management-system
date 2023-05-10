@@ -1,9 +1,9 @@
-﻿using MediatR;
-using AutoMapper;
-using Application.Common.Exceptions;
+﻿using Application.Common.Exceptions;
 using Application.TestAssessments.DTO;
+using AutoMapper;
 using Domain.Entities;
 using Domain.Enums;
+using MediatR;
 
 namespace Application.TestAssessments.Commands.UpdateTestAssessment
 {

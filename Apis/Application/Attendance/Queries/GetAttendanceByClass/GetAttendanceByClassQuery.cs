@@ -1,13 +1,12 @@
-﻿using Application.Account.DTOs;
+﻿using Application.Attendances.DTOs;
 using Application.Common.Exceptions;
 using Application.Commons;
 using Application.Interfaces;
 using AutoMapper;
-using Domain.Enums;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
-namespace Application.Account.Queries.GetAttendanceByClass;
+namespace Application.Attendances.Queries.GetAttendanceByClass;
 
 public record GetAttendanceByClassQuery(int id, int pageIndex = 0, int pageSize = 10) : IRequest<Pagination<AttendanceDTO>> { };
 public class GetAttendanceByClassQueryHandler : IRequestHandler<GetAttendanceByClassQuery, Pagination<AttendanceDTO>>

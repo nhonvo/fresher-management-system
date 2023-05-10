@@ -1,5 +1,5 @@
-using Application.Account.DTOs;
-using Application.Account.Queries.GetAttendanceByClass;
+using Application.Attendances.DTOs;
+using Application.Attendances.Queries.GetAttendanceByClass;
 using Application.Commons;
 using CoreApiResponse;
 using MediatR;
@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers
 {
-    public class AttendanceController : BaseController
+    public class AttendanceController : BasesController
     {
         private readonly IMediator _mediator;
         public AttendanceController(IMediator mediator)

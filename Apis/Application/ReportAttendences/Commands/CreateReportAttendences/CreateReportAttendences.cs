@@ -1,5 +1,6 @@
 ﻿using Application.Class.DTO;
 using Application.Common.Exceptions;
+using Application.Interfaces;
 using Application.ReportAttendences.DTO;
 using AutoMapper;
 using Domain.Entities;
@@ -23,21 +24,25 @@ namespace Application.ReportAttendences.Commands.CreateReportAttendences
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
+        private readonly IClaimService _claimService;
 
-        public CreateReportAttendencesHandler(IUnitOfWork unitOfWork, IMapper mapper)
+
+        public CreateReportAttendencesHandler(IUnitOfWork unitOfWork, IMapper mapper , IClaimService claimService)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
+            _claimService = claimService
         }
         public async Task<ReportAttendenceDTO> Handle(CreateReportAttendencesCommand request, CancellationToken cancellationToken)
         {
             var reportAttendance = _mapper.Map<ReportAttendence>(request);
+            reportAttendance.
             await _unitOfWork.ExecuteTransactionAsync(() =>
             {
                 _unitOfWork.ReportAttendenceRepository.AddAsync(reportAttendance);
             });
             var result = _mapper.Map<ReportAttendenceDTO>(reportAttendance);
-            return result ?? throw new NotFoundException("Class not found");
+            return result ?? throw new NotFoundException("reportAttendance not found");
         }
     }
 }

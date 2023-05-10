@@ -1,5 +1,5 @@
-using Application.Account.DTOs;
-using Application.Account.Queries.GetAttendanceByClass;
+using Application.Attendances.DTOs;
+using Application.Attendances.Queries.GetAttendanceByClass;
 using Application.Commons;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;

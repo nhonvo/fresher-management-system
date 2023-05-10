@@ -66,13 +66,21 @@ namespace Infrastructures.Persistence
             //     await _context.AddRangeAsync(testAssessments);
             //     await _context.SaveChangesAsync();
             // };
-            // if (!_context.Classes.Any())
-            // {
-            //     string json = File.ReadAllText(@"../../Json/class.json");
-            //     List<TrainingClass> testAssessments = JsonSerializer.Deserialize<List<TrainingClass>>(json)!;
-            //     await _context.AddRangeAsync(testAssessments);
-            //     await _context.SaveChangesAsync();
-            // };
+            if (!_context.FSUs.Any())
+            {
+                string json = File.ReadAllText(@"../../Json/FSU.json");
+                List<FSU> testAssessments = JsonSerializer.Deserialize<List<FSU>>(json)!;
+                await _context.AddRangeAsync(testAssessments);
+                await _context.SaveChangesAsync();
+            };
+            if (!_context.TrainingClasses.Any())
+            {
+                string json = File.ReadAllText(@"../../Json/TrainingClass.json");
+                List<TrainingClass> testAssessments = JsonSerializer.Deserialize<List<TrainingClass>>(json)!;
+                await _context.AddRangeAsync(testAssessments);
+                await _context.SaveChangesAsync();
+            };
+
         }
     }
 }

@@ -1,8 +1,6 @@
-﻿using Domain.Entities.Syllabuses;
-
-namespace Domain.Entities
+﻿namespace Domain.Entities
 {
-    public class ProgramSyllabus
+    public class ProgramSyllabus : BaseEntity
     {
         public int TrainingProgramId;
         public TrainingProgram TrainingProgram;

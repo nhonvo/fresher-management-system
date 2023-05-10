@@ -1,6 +1,6 @@
 ﻿using Application.Interfaces;
 using Application.Repositories;
-using Domain.Entities.Users;
+using Domain.Entities;
 using Infrastructures.Persistence;
 using Microsoft.EntityFrameworkCore;
 

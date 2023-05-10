@@ -1,0 +1,770 @@
+2023-05-10 02:32:45.423 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 02:33:25.088 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 02:33:27.985 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-10 02:33:27.988 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-10 02:33:27.990 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 02:33:27.991 +07:00 [INF] Hosting environment: Development
+2023-05-10 02:33:27.992 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-10 02:33:28.320 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 02:33:28.346 +07:00 [INF] Start performance record
+2023-05-10 02:33:28.350 +07:00 [INF] End performance record
+2023-05-10 02:33:28.357 +07:00 [INF] Time taken: 0:00.005
+2023-05-10 02:34:58.332 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 02:34:59.974 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-10 02:34:59.977 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-10 02:34:59.978 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 02:34:59.979 +07:00 [INF] Hosting environment: Development
+2023-05-10 02:34:59.979 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-10 02:35:00.559 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 02:35:00.599 +07:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2023-05-10 02:35:00.624 +07:00 [INF] Start performance record
+2023-05-10 02:35:00.624 +07:00 [INF] Start performance record
+2023-05-10 02:35:00.629 +07:00 [INF] End performance record
+2023-05-10 02:35:00.638 +07:00 [INF] Time taken: 0:00.007
+2023-05-10 02:35:01.014 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-10 02:35:01.015 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-10 02:35:01.309 +07:00 [INF] End performance record
+2023-05-10 02:35:01.310 +07:00 [INF] Time taken: 0:00.007
+2023-05-10 02:35:13.554 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 02:35:13.555 +07:00 [INF] Start performance record
+2023-05-10 02:35:13.555 +07:00 [INF] End performance record
+2023-05-10 02:35:13.556 +07:00 [INF] Time taken: 0:00.000
+2023-05-10 02:35:20.601 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 02:36:20.524 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 02:36:20.524 +07:00 [INF] Start performance record
+2023-05-10 02:36:20.529 +07:00 [INF] End performance record
+2023-05-10 02:36:20.529 +07:00 [INF] Time taken: 0:00.004
+2023-05-10 02:37:30.672 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 02:37:31.670 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-10 02:37:31.672 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-10 02:37:31.673 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 02:37:31.673 +07:00 [INF] Hosting environment: Development
+2023-05-10 02:37:31.673 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-10 02:37:41.809 +07:00 [INF] Start performance record
+2023-05-10 02:37:41.840 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 02:37:42.740 +07:00 [ERR] Health check TrainingManagementSystem with status "Unhealthy" completed after 888.6914ms with message 'null'
+2023-05-10 02:37:42.792 +07:00 [INF] End performance record
+2023-05-10 02:37:42.798 +07:00 [INF] Time taken: 0:00.984
+2023-05-10 02:38:08.752 +07:00 [INF] Start performance record
+2023-05-10 02:38:08.761 +07:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2023-05-10 02:38:08.974 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-10 02:38:08.975 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-10 02:38:09.135 +07:00 [INF] End performance record
+2023-05-10 02:38:09.135 +07:00 [INF] Time taken: 0:00.383
+2023-05-10 02:38:47.533 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 02:38:48.693 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-10 02:38:48.695 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-10 02:38:48.697 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 02:38:48.697 +07:00 [INF] Hosting environment: Development
+2023-05-10 02:38:48.697 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-10 02:39:22.964 +07:00 [INF] Application is shutting down...
+2023-05-10 02:40:19.031 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 02:40:19.995 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-10 02:40:19.996 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-10 02:40:19.997 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 02:40:19.997 +07:00 [INF] Hosting environment: Development
+2023-05-10 02:40:19.997 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-10 08:01:01.342 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 08:01:02.564 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-10 08:01:02.566 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-10 08:01:02.568 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 08:01:02.568 +07:00 [INF] Hosting environment: Development
+2023-05-10 08:01:02.568 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-10 08:52:54.749 +07:00 [INF] Start performance record
+2023-05-10 08:52:56.583 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 08:52:57.733 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-10 08:52:57.734 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-10 08:52:58.327 +07:00 [INF] End performance record
+2023-05-10 08:52:58.334 +07:00 [INF] Time taken: 0:03.582
+2023-05-10 09:20:32.937 +07:00 [FTL] Unhandled Exception
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at WebAPI.Extensions.HostingExtensions.ConfigureServices(WebApplicationBuilder builder, String databaseConnection, String userApp, String key, String issuer, String audience) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Extensions\HostingExtensions.cs:line 23
+   at Program.<Main>$(String[] args) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Program.cs:line 29
+2023-05-10 09:20:33.054 +07:00 [INF] Shut down complete
+2023-05-10 09:20:37.144 +07:00 [FTL] Unhandled Exception
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at WebAPI.Extensions.HostingExtensions.ConfigureServices(WebApplicationBuilder builder, String databaseConnection, String userApp, String key, String issuer, String audience) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Extensions\HostingExtensions.cs:line 23
+   at Program.<Main>$(String[] args) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Program.cs:line 29
+2023-05-10 09:20:37.227 +07:00 [INF] Shut down complete
+2023-05-10 09:20:46.613 +07:00 [FTL] Unhandled Exception
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at WebAPI.Extensions.HostingExtensions.ConfigureServices(WebApplicationBuilder builder, String databaseConnection, String userApp, String key, String issuer, String audience) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Extensions\HostingExtensions.cs:line 23
+   at Program.<Main>$(String[] args) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Program.cs:line 29
+2023-05-10 09:20:46.663 +07:00 [INF] Shut down complete
+2023-05-10 09:21:04.217 +07:00 [FTL] Unhandled Exception
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at WebAPI.Extensions.HostingExtensions.ConfigureServices(WebApplicationBuilder builder, String databaseConnection, String userApp, String key, String issuer, String audience) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Extensions\HostingExtensions.cs:line 23
+   at Program.<Main>$(String[] args) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Program.cs:line 29
+2023-05-10 09:21:04.314 +07:00 [INF] Shut down complete
+2023-05-10 09:31:23.823 +07:00 [FTL] Unhandled Exception
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: MediatR.IRequestHandler`2[Application.Class.Queries.GetClass.GetClassByIdQuery,Application.Class.DTO.ClassDTO] Lifetime: Transient ImplementationType: Application.Class.Queries.GetClass.GetClassByIdHandler': Unable to resolve service for type 'Application.IUnitOfWork' while attempting to activate 'Application.Class.Queries.GetClass.GetClassByIdHandler'.) (Error while validating the service descriptor 'ServiceType: MediatR.IRequestHandler`2[Application.Class.Queries.GetClass.GetClassQuery,Domain.Aggregate.AppResult.ApiResult`1[Application.Commons.Pagination`1[Application.Class.DTO.ClassDTO]]] Lifetime: Transient ImplementationType: Application.Class.Queries.GetClass.GetClassHandler': Unable to resolve service for type 'Application.IUnitOfWork' while attempting to activate 'Application.Class.Queries.GetClass.GetClassHandler'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: MediatR.IRequestHandler`2[Application.Class.Queries.GetClass.GetClassByIdQuery,Application.Class.DTO.ClassDTO] Lifetime: Transient ImplementationType: Application.Class.Queries.GetClass.GetClassByIdHandler': Unable to resolve service for type 'Application.IUnitOfWork' while attempting to activate 'Application.Class.Queries.GetClass.GetClassByIdHandler'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Application.IUnitOfWork' while attempting to activate 'Application.Class.Queries.GetClass.GetClassByIdHandler'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at WebAPI.Extensions.HostingExtensions.ConfigureServices(WebApplicationBuilder builder, String databaseConnection, String userApp, String key, String issuer, String audience) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Extensions\HostingExtensions.cs:line 23
+   at Program.<Main>$(String[] args) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Program.cs:line 29
+ ---> (Inner Exception #1) System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: MediatR.IRequestHandler`2[Application.Class.Queries.GetClass.GetClassQuery,Domain.Aggregate.AppResult.ApiResult`1[Application.Commons.Pagination`1[Application.Class.DTO.ClassDTO]]] Lifetime: Transient ImplementationType: Application.Class.Queries.GetClass.GetClassHandler': Unable to resolve service for type 'Application.IUnitOfWork' while attempting to activate 'Application.Class.Queries.GetClass.GetClassHandler'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Application.IUnitOfWork' while attempting to activate 'Application.Class.Queries.GetClass.GetClassHandler'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)<---
+
+2023-05-10 09:31:24.015 +07:00 [INF] Shut down complete
+2023-05-10 09:32:20.801 +07:00 [FTL] Unhandled Exception
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: Application.IUnitOfWork Lifetime: Scoped ImplementationType: Infrastructures.UnitOfWork': Unable to resolve service for type 'Application.Interfaces.ICacheService' while attempting to activate 'Infrastructures.UnitOfWork'.) (Error while validating the service descriptor 'ServiceType: MediatR.IRequestHandler`2[Application.Class.Queries.GetClass.GetClassByIdQuery,Application.Class.DTO.ClassDTO] Lifetime: Transient ImplementationType: Application.Class.Queries.GetClass.GetClassByIdHandler': Unable to resolve service for type 'Application.Interfaces.ICacheService' while attempting to activate 'Infrastructures.UnitOfWork'.) (Error while validating the service descriptor 'ServiceType: MediatR.IRequestHandler`2[Application.Class.Queries.GetClass.GetClassQuery,Domain.Aggregate.AppResult.ApiResult`1[Application.Commons.Pagination`1[Application.Class.DTO.ClassDTO]]] Lifetime: Transient ImplementationType: Application.Class.Queries.GetClass.GetClassHandler': Unable to resolve service for type 'Application.Interfaces.ICacheService' while attempting to activate 'Infrastructures.UnitOfWork'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: Application.IUnitOfWork Lifetime: Scoped ImplementationType: Infrastructures.UnitOfWork': Unable to resolve service for type 'Application.Interfaces.ICacheService' while attempting to activate 'Infrastructures.UnitOfWork'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Application.Interfaces.ICacheService' while attempting to activate 'Infrastructures.UnitOfWork'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at WebAPI.Extensions.HostingExtensions.ConfigureServices(WebApplicationBuilder builder, String databaseConnection, String userApp, String key, String issuer, String audience) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Extensions\HostingExtensions.cs:line 23
+   at Program.<Main>$(String[] args) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Program.cs:line 29
+ ---> (Inner Exception #1) System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: MediatR.IRequestHandler`2[Application.Class.Queries.GetClass.GetClassByIdQuery,Application.Class.DTO.ClassDTO] Lifetime: Transient ImplementationType: Application.Class.Queries.GetClass.GetClassByIdHandler': Unable to resolve service for type 'Application.Interfaces.ICacheService' while attempting to activate 'Infrastructures.UnitOfWork'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Application.Interfaces.ICacheService' while attempting to activate 'Infrastructures.UnitOfWork'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)<---
+
+ ---> (Inner Exception #2) System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: MediatR.IRequestHandler`2[Application.Class.Queries.GetClass.GetClassQuery,Domain.Aggregate.AppResult.ApiResult`1[Application.Commons.Pagination`1[Application.Class.DTO.ClassDTO]]] Lifetime: Transient ImplementationType: Application.Class.Queries.GetClass.GetClassHandler': Unable to resolve service for type 'Application.Interfaces.ICacheService' while attempting to activate 'Infrastructures.UnitOfWork'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Application.Interfaces.ICacheService' while attempting to activate 'Infrastructures.UnitOfWork'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)<---
+
+2023-05-10 09:32:20.918 +07:00 [INF] Shut down complete
+2023-05-10 09:32:39.906 +07:00 [FTL] Unhandled Exception
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: Application.IUnitOfWork Lifetime: Scoped ImplementationType: Infrastructures.UnitOfWork': Unable to resolve service for type 'Application.Interfaces.ICacheService' while attempting to activate 'Infrastructures.UnitOfWork'.) (Error while validating the service descriptor 'ServiceType: MediatR.IRequestHandler`2[Application.Class.Queries.GetClass.GetClassByIdQuery,Application.Class.DTO.ClassDTO] Lifetime: Transient ImplementationType: Application.Class.Queries.GetClass.GetClassByIdHandler': Unable to resolve service for type 'Application.Interfaces.ICacheService' while attempting to activate 'Infrastructures.UnitOfWork'.) (Error while validating the service descriptor 'ServiceType: MediatR.IRequestHandler`2[Application.Class.Queries.GetClass.GetClassQuery,Domain.Aggregate.AppResult.ApiResult`1[Application.Commons.Pagination`1[Application.Class.DTO.ClassDTO]]] Lifetime: Transient ImplementationType: Application.Class.Queries.GetClass.GetClassHandler': Unable to resolve service for type 'Application.Interfaces.ICacheService' while attempting to activate 'Infrastructures.UnitOfWork'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: Application.IUnitOfWork Lifetime: Scoped ImplementationType: Infrastructures.UnitOfWork': Unable to resolve service for type 'Application.Interfaces.ICacheService' while attempting to activate 'Infrastructures.UnitOfWork'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Application.Interfaces.ICacheService' while attempting to activate 'Infrastructures.UnitOfWork'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at WebAPI.Extensions.HostingExtensions.ConfigureServices(WebApplicationBuilder builder, String databaseConnection, String userApp, String key, String issuer, String audience) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Extensions\HostingExtensions.cs:line 23
+   at Program.<Main>$(String[] args) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Program.cs:line 29
+ ---> (Inner Exception #1) System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: MediatR.IRequestHandler`2[Application.Class.Queries.GetClass.GetClassByIdQuery,Application.Class.DTO.ClassDTO] Lifetime: Transient ImplementationType: Application.Class.Queries.GetClass.GetClassByIdHandler': Unable to resolve service for type 'Application.Interfaces.ICacheService' while attempting to activate 'Infrastructures.UnitOfWork'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Application.Interfaces.ICacheService' while attempting to activate 'Infrastructures.UnitOfWork'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)<---
+
+ ---> (Inner Exception #2) System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: MediatR.IRequestHandler`2[Application.Class.Queries.GetClass.GetClassQuery,Domain.Aggregate.AppResult.ApiResult`1[Application.Commons.Pagination`1[Application.Class.DTO.ClassDTO]]] Lifetime: Transient ImplementationType: Application.Class.Queries.GetClass.GetClassHandler': Unable to resolve service for type 'Application.Interfaces.ICacheService' while attempting to activate 'Infrastructures.UnitOfWork'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Application.Interfaces.ICacheService' while attempting to activate 'Infrastructures.UnitOfWork'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)<---
+
+2023-05-10 09:32:39.973 +07:00 [INF] Shut down complete
+2023-05-10 09:33:49.509 +07:00 [FTL] Unhandled Exception
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: Application.IUnitOfWork Lifetime: Scoped ImplementationType: Infrastructures.UnitOfWork': Unable to resolve service for type 'Application.Interfaces.ICacheService' while attempting to activate 'Infrastructures.UnitOfWork'.) (Error while validating the service descriptor 'ServiceType: MediatR.IRequestHandler`2[Application.Class.Queries.GetClass.GetClassByIdQuery,Application.Class.DTO.ClassDTO] Lifetime: Transient ImplementationType: Application.Class.Queries.GetClass.GetClassByIdHandler': Unable to resolve service for type 'Application.Interfaces.ICacheService' while attempting to activate 'Infrastructures.UnitOfWork'.) (Error while validating the service descriptor 'ServiceType: MediatR.IRequestHandler`2[Application.Class.Queries.GetClass.GetClassQuery,Domain.Aggregate.AppResult.ApiResult`1[Application.Commons.Pagination`1[Application.Class.DTO.ClassDTO]]] Lifetime: Transient ImplementationType: Application.Class.Queries.GetClass.GetClassHandler': Unable to resolve service for type 'Application.Interfaces.ICacheService' while attempting to activate 'Infrastructures.UnitOfWork'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: Application.IUnitOfWork Lifetime: Scoped ImplementationType: Infrastructures.UnitOfWork': Unable to resolve service for type 'Application.Interfaces.ICacheService' while attempting to activate 'Infrastructures.UnitOfWork'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Application.Interfaces.ICacheService' while attempting to activate 'Infrastructures.UnitOfWork'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at WebAPI.Extensions.HostingExtensions.ConfigureServices(WebApplicationBuilder builder, String databaseConnection, String userApp, String key, String issuer, String audience) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Extensions\HostingExtensions.cs:line 23
+   at Program.<Main>$(String[] args) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Program.cs:line 29
+ ---> (Inner Exception #1) System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: MediatR.IRequestHandler`2[Application.Class.Queries.GetClass.GetClassByIdQuery,Application.Class.DTO.ClassDTO] Lifetime: Transient ImplementationType: Application.Class.Queries.GetClass.GetClassByIdHandler': Unable to resolve service for type 'Application.Interfaces.ICacheService' while attempting to activate 'Infrastructures.UnitOfWork'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Application.Interfaces.ICacheService' while attempting to activate 'Infrastructures.UnitOfWork'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)<---
+
+ ---> (Inner Exception #2) System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: MediatR.IRequestHandler`2[Application.Class.Queries.GetClass.GetClassQuery,Domain.Aggregate.AppResult.ApiResult`1[Application.Commons.Pagination`1[Application.Class.DTO.ClassDTO]]] Lifetime: Transient ImplementationType: Application.Class.Queries.GetClass.GetClassHandler': Unable to resolve service for type 'Application.Interfaces.ICacheService' while attempting to activate 'Infrastructures.UnitOfWork'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Application.Interfaces.ICacheService' while attempting to activate 'Infrastructures.UnitOfWork'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)<---
+
+2023-05-10 09:33:49.613 +07:00 [INF] Shut down complete
+2023-05-10 09:33:58.608 +07:00 [FTL] Unhandled Exception
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: Application.IUnitOfWork Lifetime: Scoped ImplementationType: Infrastructures.UnitOfWork': Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.) (Error while validating the service descriptor 'ServiceType: Application.Interfaces.ICacheService Lifetime: Singleton ImplementationType: Application.Services.CacheService': Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.) (Error while validating the service descriptor 'ServiceType: MediatR.IRequestHandler`2[Application.Class.Queries.GetClass.GetClassByIdQuery,Application.Class.DTO.ClassDTO] Lifetime: Transient ImplementationType: Application.Class.Queries.GetClass.GetClassByIdHandler': Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.) (Error while validating the service descriptor 'ServiceType: MediatR.IRequestHandler`2[Application.Class.Queries.GetClass.GetClassQuery,Domain.Aggregate.AppResult.ApiResult`1[Application.Commons.Pagination`1[Application.Class.DTO.ClassDTO]]] Lifetime: Transient ImplementationType: Application.Class.Queries.GetClass.GetClassHandler': Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: Application.IUnitOfWork Lifetime: Scoped ImplementationType: Infrastructures.UnitOfWork': Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at WebAPI.Extensions.HostingExtensions.ConfigureServices(WebApplicationBuilder builder, String databaseConnection, String userApp, String key, String issuer, String audience) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Extensions\HostingExtensions.cs:line 23
+   at Program.<Main>$(String[] args) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Program.cs:line 29
+ ---> (Inner Exception #1) System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: Application.Interfaces.ICacheService Lifetime: Singleton ImplementationType: Application.Services.CacheService': Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)<---
+
+ ---> (Inner Exception #2) System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: MediatR.IRequestHandler`2[Application.Class.Queries.GetClass.GetClassByIdQuery,Application.Class.DTO.ClassDTO] Lifetime: Transient ImplementationType: Application.Class.Queries.GetClass.GetClassByIdHandler': Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)<---
+
+ ---> (Inner Exception #3) System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: MediatR.IRequestHandler`2[Application.Class.Queries.GetClass.GetClassQuery,Domain.Aggregate.AppResult.ApiResult`1[Application.Commons.Pagination`1[Application.Class.DTO.ClassDTO]]] Lifetime: Transient ImplementationType: Application.Class.Queries.GetClass.GetClassHandler': Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)<---
+
+2023-05-10 09:33:58.693 +07:00 [INF] Shut down complete
+2023-05-10 09:34:25.556 +07:00 [FTL] Unhandled Exception
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: Application.IUnitOfWork Lifetime: Scoped ImplementationType: Infrastructures.UnitOfWork': Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.) (Error while validating the service descriptor 'ServiceType: Application.Interfaces.ICacheService Lifetime: Singleton ImplementationType: Application.Services.CacheService': Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.) (Error while validating the service descriptor 'ServiceType: MediatR.IRequestHandler`2[Application.Class.Queries.GetClass.GetClassByIdQuery,Application.Class.DTO.ClassDTO] Lifetime: Transient ImplementationType: Application.Class.Queries.GetClass.GetClassByIdHandler': Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.) (Error while validating the service descriptor 'ServiceType: MediatR.IRequestHandler`2[Application.Class.Queries.GetClass.GetClassQuery,Domain.Aggregate.AppResult.ApiResult`1[Application.Commons.Pagination`1[Application.Class.DTO.ClassDTO]]] Lifetime: Transient ImplementationType: Application.Class.Queries.GetClass.GetClassHandler': Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: Application.IUnitOfWork Lifetime: Scoped ImplementationType: Infrastructures.UnitOfWork': Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at WebAPI.Extensions.HostingExtensions.ConfigureServices(WebApplicationBuilder builder, String databaseConnection, String userApp, String key, String issuer, String audience) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Extensions\HostingExtensions.cs:line 23
+   at Program.<Main>$(String[] args) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Program.cs:line 29
+ ---> (Inner Exception #1) System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: Application.Interfaces.ICacheService Lifetime: Singleton ImplementationType: Application.Services.CacheService': Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)<---
+
+ ---> (Inner Exception #2) System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: MediatR.IRequestHandler`2[Application.Class.Queries.GetClass.GetClassByIdQuery,Application.Class.DTO.ClassDTO] Lifetime: Transient ImplementationType: Application.Class.Queries.GetClass.GetClassByIdHandler': Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)<---
+
+ ---> (Inner Exception #3) System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: MediatR.IRequestHandler`2[Application.Class.Queries.GetClass.GetClassQuery,Domain.Aggregate.AppResult.ApiResult`1[Application.Commons.Pagination`1[Application.Class.DTO.ClassDTO]]] Lifetime: Transient ImplementationType: Application.Class.Queries.GetClass.GetClassHandler': Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)<---
+
+2023-05-10 09:34:25.667 +07:00 [INF] Shut down complete
+2023-05-10 09:36:18.319 +07:00 [FTL] Unhandled Exception
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: Application.IUnitOfWork Lifetime: Scoped ImplementationType: Infrastructures.UnitOfWork': Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.) (Error while validating the service descriptor 'ServiceType: Application.Interfaces.ICacheService Lifetime: Singleton ImplementationType: Application.Services.CacheService': Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.) (Error while validating the service descriptor 'ServiceType: MediatR.IRequestHandler`2[Application.Class.Queries.GetClass.GetClassByIdQuery,Application.Class.DTO.ClassDTO] Lifetime: Transient ImplementationType: Application.Class.Queries.GetClass.GetClassByIdHandler': Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.) (Error while validating the service descriptor 'ServiceType: MediatR.IRequestHandler`2[Application.Class.Queries.GetClass.GetClassQuery,Domain.Aggregate.AppResult.ApiResult`1[Application.Commons.Pagination`1[Application.Class.DTO.ClassDTO]]] Lifetime: Transient ImplementationType: Application.Class.Queries.GetClass.GetClassHandler': Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: Application.IUnitOfWork Lifetime: Scoped ImplementationType: Infrastructures.UnitOfWork': Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at WebAPI.Extensions.HostingExtensions.ConfigureServices(WebApplicationBuilder builder, String databaseConnection, String userApp, String key, String issuer, String audience) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Extensions\HostingExtensions.cs:line 23
+   at Program.<Main>$(String[] args) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Program.cs:line 29
+ ---> (Inner Exception #1) System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: Application.Interfaces.ICacheService Lifetime: Singleton ImplementationType: Application.Services.CacheService': Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)<---
+
+ ---> (Inner Exception #2) System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: MediatR.IRequestHandler`2[Application.Class.Queries.GetClass.GetClassByIdQuery,Application.Class.DTO.ClassDTO] Lifetime: Transient ImplementationType: Application.Class.Queries.GetClass.GetClassByIdHandler': Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)<---
+
+ ---> (Inner Exception #3) System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: MediatR.IRequestHandler`2[Application.Class.Queries.GetClass.GetClassQuery,Domain.Aggregate.AppResult.ApiResult`1[Application.Commons.Pagination`1[Application.Class.DTO.ClassDTO]]] Lifetime: Transient ImplementationType: Application.Class.Queries.GetClass.GetClassHandler': Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)<---
+
+2023-05-10 09:36:18.442 +07:00 [INF] Shut down complete
+2023-05-10 09:37:04.420 +07:00 [FTL] Unhandled Exception
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: Application.IUnitOfWork Lifetime: Scoped ImplementationType: Infrastructures.UnitOfWork': Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.) (Error while validating the service descriptor 'ServiceType: Application.Interfaces.ICacheService Lifetime: Singleton ImplementationType: Application.Services.CacheService': Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.) (Error while validating the service descriptor 'ServiceType: MediatR.IRequestHandler`2[Application.Class.Queries.GetClass.GetClassByIdQuery,Application.Class.DTO.ClassDTO] Lifetime: Transient ImplementationType: Application.Class.Queries.GetClass.GetClassByIdHandler': Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.) (Error while validating the service descriptor 'ServiceType: MediatR.IRequestHandler`2[Application.Class.Queries.GetClass.GetClassQuery,Domain.Aggregate.AppResult.ApiResult`1[Application.Commons.Pagination`1[Application.Class.DTO.ClassDTO]]] Lifetime: Transient ImplementationType: Application.Class.Queries.GetClass.GetClassHandler': Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: Application.IUnitOfWork Lifetime: Scoped ImplementationType: Infrastructures.UnitOfWork': Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at WebAPI.Extensions.HostingExtensions.ConfigureServices(WebApplicationBuilder builder, String databaseConnection, String userApp, String key, String issuer, String audience) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Extensions\HostingExtensions.cs:line 23
+   at Program.<Main>$(String[] args) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Program.cs:line 29
+ ---> (Inner Exception #1) System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: Application.Interfaces.ICacheService Lifetime: Singleton ImplementationType: Application.Services.CacheService': Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)<---
+
+ ---> (Inner Exception #2) System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: MediatR.IRequestHandler`2[Application.Class.Queries.GetClass.GetClassByIdQuery,Application.Class.DTO.ClassDTO] Lifetime: Transient ImplementationType: Application.Class.Queries.GetClass.GetClassByIdHandler': Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)<---
+
+ ---> (Inner Exception #3) System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: MediatR.IRequestHandler`2[Application.Class.Queries.GetClass.GetClassQuery,Domain.Aggregate.AppResult.ApiResult`1[Application.Commons.Pagination`1[Application.Class.DTO.ClassDTO]]] Lifetime: Transient ImplementationType: Application.Class.Queries.GetClass.GetClassHandler': Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)<---
+
+2023-05-10 09:37:05.611 +07:00 [INF] Shut down complete
+2023-05-10 09:37:46.598 +07:00 [FTL] Unhandled Exception
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: Application.IUnitOfWork Lifetime: Scoped ImplementationType: Infrastructures.UnitOfWork': Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.) (Error while validating the service descriptor 'ServiceType: Application.Interfaces.ICacheService Lifetime: Singleton ImplementationType: Application.Services.CacheService': Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.) (Error while validating the service descriptor 'ServiceType: MediatR.IRequestHandler`2[Application.Class.Queries.GetClass.GetClassByIdQuery,Application.Class.DTO.ClassDTO] Lifetime: Transient ImplementationType: Application.Class.Queries.GetClass.GetClassByIdHandler': Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.) (Error while validating the service descriptor 'ServiceType: MediatR.IRequestHandler`2[Application.Class.Queries.GetClass.GetClassQuery,Domain.Aggregate.AppResult.ApiResult`1[Application.Commons.Pagination`1[Application.Class.DTO.ClassDTO]]] Lifetime: Transient ImplementationType: Application.Class.Queries.GetClass.GetClassHandler': Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: Application.IUnitOfWork Lifetime: Scoped ImplementationType: Infrastructures.UnitOfWork': Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at WebAPI.Extensions.HostingExtensions.ConfigureServices(WebApplicationBuilder builder, String databaseConnection, String userApp, String key, String issuer, String audience) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Extensions\HostingExtensions.cs:line 23
+   at Program.<Main>$(String[] args) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Program.cs:line 29
+ ---> (Inner Exception #1) System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: Application.Interfaces.ICacheService Lifetime: Singleton ImplementationType: Application.Services.CacheService': Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)<---
+
+ ---> (Inner Exception #2) System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: MediatR.IRequestHandler`2[Application.Class.Queries.GetClass.GetClassByIdQuery,Application.Class.DTO.ClassDTO] Lifetime: Transient ImplementationType: Application.Class.Queries.GetClass.GetClassByIdHandler': Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)<---
+
+ ---> (Inner Exception #3) System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: MediatR.IRequestHandler`2[Application.Class.Queries.GetClass.GetClassQuery,Domain.Aggregate.AppResult.ApiResult`1[Application.Commons.Pagination`1[Application.Class.DTO.ClassDTO]]] Lifetime: Transient ImplementationType: Application.Class.Queries.GetClass.GetClassHandler': Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Microsoft.Extensions.Caching.Memory.IMemoryCache' while attempting to activate 'Application.Services.CacheService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)<---
+
+2023-05-10 09:37:46.673 +07:00 [INF] Shut down complete
+2023-05-10 09:38:25.351 +07:00 [FTL] Unhandled Exception
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: Application.IUnitOfWork Lifetime: Scoped ImplementationType: Infrastructures.UnitOfWork': Unable to resolve service for type 'Application.Interfaces.ICacheService' while attempting to activate 'Infrastructures.UnitOfWork'.) (Error while validating the service descriptor 'ServiceType: MediatR.IRequestHandler`2[Application.Class.Queries.GetClass.GetClassByIdQuery,Application.Class.DTO.ClassDTO] Lifetime: Transient ImplementationType: Application.Class.Queries.GetClass.GetClassByIdHandler': Unable to resolve service for type 'Application.Interfaces.ICacheService' while attempting to activate 'Infrastructures.UnitOfWork'.) (Error while validating the service descriptor 'ServiceType: MediatR.IRequestHandler`2[Application.Class.Queries.GetClass.GetClassQuery,Domain.Aggregate.AppResult.ApiResult`1[Application.Commons.Pagination`1[Application.Class.DTO.ClassDTO]]] Lifetime: Transient ImplementationType: Application.Class.Queries.GetClass.GetClassHandler': Unable to resolve service for type 'Application.Interfaces.ICacheService' while attempting to activate 'Infrastructures.UnitOfWork'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: Application.IUnitOfWork Lifetime: Scoped ImplementationType: Infrastructures.UnitOfWork': Unable to resolve service for type 'Application.Interfaces.ICacheService' while attempting to activate 'Infrastructures.UnitOfWork'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Application.Interfaces.ICacheService' while attempting to activate 'Infrastructures.UnitOfWork'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at WebAPI.Extensions.HostingExtensions.ConfigureServices(WebApplicationBuilder builder, String databaseConnection, String userApp, String key, String issuer, String audience) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Extensions\HostingExtensions.cs:line 23
+   at Program.<Main>$(String[] args) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Program.cs:line 29
+ ---> (Inner Exception #1) System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: MediatR.IRequestHandler`2[Application.Class.Queries.GetClass.GetClassByIdQuery,Application.Class.DTO.ClassDTO] Lifetime: Transient ImplementationType: Application.Class.Queries.GetClass.GetClassByIdHandler': Unable to resolve service for type 'Application.Interfaces.ICacheService' while attempting to activate 'Infrastructures.UnitOfWork'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Application.Interfaces.ICacheService' while attempting to activate 'Infrastructures.UnitOfWork'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)<---
+
+ ---> (Inner Exception #2) System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: MediatR.IRequestHandler`2[Application.Class.Queries.GetClass.GetClassQuery,Domain.Aggregate.AppResult.ApiResult`1[Application.Commons.Pagination`1[Application.Class.DTO.ClassDTO]]] Lifetime: Transient ImplementationType: Application.Class.Queries.GetClass.GetClassHandler': Unable to resolve service for type 'Application.Interfaces.ICacheService' while attempting to activate 'Infrastructures.UnitOfWork'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'Application.Interfaces.ICacheService' while attempting to activate 'Infrastructures.UnitOfWork'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(Type serviceType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, Type serviceType, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)<---
+
+2023-05-10 09:38:25.483 +07:00 [INF] Shut down complete
+2023-05-10 09:39:07.766 +07:00 [WRN] There are multiple relationships between 'Syllabus' and 'User' without configured foreign key properties. This will cause Entity Framework to create shadow properties on 'Syllabus' with names dependent on the discovery order. Consider configuring the foreign key properties using the [ForeignKey] attribute or in 'OnModelCreating'.
+2023-05-10 09:39:07.808 +07:00 [WRN] There are multiple relationships between 'TrainingProgram' and 'User' without configured foreign key properties. This will cause Entity Framework to create shadow properties on 'TrainingProgram' with names dependent on the discovery order. Consider configuring the foreign key properties using the [ForeignKey] attribute or in 'OnModelCreating'.
+2023-05-10 09:39:07.809 +07:00 [WRN] There are multiple relationships between 'Unit' and 'User' without configured foreign key properties. This will cause Entity Framework to create shadow properties on 'Unit' with names dependent on the discovery order. Consider configuring the foreign key properties using the [ForeignKey] attribute or in 'OnModelCreating'.
+2023-05-10 09:39:08.107 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 09:39:08.219 +07:00 [WRN] The foreign key property 'Syllabus.UserId1' was created in shadow state because a conflicting property with the simple name 'UserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2023-05-10 09:39:08.219 +07:00 [WRN] The foreign key property 'TrainingProgram.UserId1' was created in shadow state because a conflicting property with the simple name 'UserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2023-05-10 09:39:08.219 +07:00 [WRN] The foreign key property 'Unit.UserId1' was created in shadow state because a conflicting property with the simple name 'UserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2023-05-10 09:39:09.615 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-10 09:39:09.616 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-10 09:39:09.617 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 09:39:09.617 +07:00 [INF] Hosting environment: Development
+2023-05-10 09:39:09.617 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-10 09:39:15.982 +07:00 [INF] Start performance record
+2023-05-10 09:39:16.056 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 09:39:17.148 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-10 09:39:17.150 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-10 09:39:17.396 +07:00 [INF] End performance record
+2023-05-10 09:39:17.409 +07:00 [INF] Time taken: 0:01.420
+2023-05-10 09:39:27.967 +07:00 [INF] Application is shutting down...

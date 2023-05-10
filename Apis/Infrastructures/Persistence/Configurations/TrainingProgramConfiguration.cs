@@ -8,34 +8,20 @@ namespace Infrastructures.Persistence.Configurations
     {
         public void Configure(EntityTypeBuilder<TrainingProgram> builder)
         {
-            builder.ToTable("TrainingPrograms");
-
-            //Id
-            builder.HasKey(x => x.Id);
-
-            //Name
-            builder.Property(x => x.Name).HasMaxLength(500);
-
-            //CreatedBy
-            builder.Property(x => x.CreatedBy).IsRequired(false);
-
-            //ModifiedBy
-            builder.Property(x => x.LastModifyBy).IsRequired(false);
-
-
-            //Modified
-            builder.HasOne(x => x.ModifiedAdmin)
-                .WithMany(x => x.ModifyTrainingProgram)
-                .HasForeignKey(x => x.LastModifyBy);
-
-            //Created
-            builder.HasOne(x => x.CreatedAdmin)
-                .WithMany(x => x.CreatedTrainingProgram)
-                .HasForeignKey(x => x.CreatedBy);
-
-            builder.HasOne(x => x.TrainingClass)
-                .WithOne(x => x.TrainingProgram)
-                .HasForeignKey<TrainingProgram>(x => x.TrainingClassId);
+            //builder.HasOne(o => o.CreatedByUser)
+            //       .WithMany(u => u.CreatedTrainingPrograms)
+            //       .HasForeignKey(o => o.CreatedByUserId)
+            //       .OnDelete(DeleteBehavior.NoAction);
+            //builder.HasOne(o => o.ModifiedByUser)
+            //       .WithMany(u => u.ModifiedTrainingPrograms)
+            //       .HasForeignKey(o => o.ModifiedByUserId)
+            //       .OnDelete(DeleteBehavior.NoAction);
+            builder.HasOne(o => o.TrainingClass)
+                   .WithOne(u => u.TrainingProgram)
+                   .HasForeignKey<TrainingProgram>(o => o.TrainingClassId);
+            builder.HasOne(e => e.Parent)
+                    .WithMany()
+                    .HasForeignKey(m => m.ParentId).OnDelete(DeleteBehavior.NoAction);
         }
     }
 }

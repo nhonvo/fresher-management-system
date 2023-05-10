@@ -8,27 +8,17 @@ namespace Infrastructures.Persistence.Configurations
     {
         public void Configure(EntityTypeBuilder<Unit> builder)
         {
-            builder.ToTable("Units")
-                .ToTable(x => x
-                .HasTrigger("trgUnitUpdate"));
-
-            //Id
-            builder.HasKey(x => x.Id);
-
-            //Name
-            builder.Property(x => x.Name).HasMaxLength(250);
-
-            //Session
-            builder.Property(x => x.Session).IsRequired();
-
-            //Syllabus
-            builder.HasMany(x => x.Syllabuses)
-                .WithMany(x => x.Units);
-
-            //Lecture
-            builder.HasMany(x => x.Lectures)
-                .WithOne(x => x.Unit)
-                .OnDelete(DeleteBehavior.SetNull);
+            //builder.HasOne(o => o.CreatedByUser)
+            //       .WithMany(u => u.CreatedUnits)
+            //       .HasForeignKey(o => o.CreatedByUserId)
+            //       .OnDelete(DeleteBehavior.NoAction);
+            //builder.HasOne(o => o.ModifiedByUser)
+            //       .WithMany(u => u.ModifiedUnits)
+            //       .HasForeignKey(o => o.ModifiedByUserId)
+            //       .OnDelete(DeleteBehavior.NoAction);
+            builder.HasOne(o => o.Syllabus)
+                   .WithMany(u => u.Units)
+                   .HasForeignKey(o => o.SyllabusId);
         }
     }
 }

@@ -1,5 +1,5 @@
 using System.Security.Claims;
-using Domain.Entities.Users;
+using Domain.Entities;
 
 namespace Application.Interfaces
 {

@@ -1,4 +1,4 @@
-using Domain.Entities.Syllabuses;
+using Domain.Entities;
 
 namespace Application.Repositories
 {

@@ -1,4 +1,5 @@
-﻿using Application.Interfaces;
+﻿using Application.Commons;
+using Application.Interfaces;
 using Application.ViewModels.TestAssessmentViewModels;
 using AutoMapper;
 
@@ -15,10 +16,10 @@ namespace Application.Services
             _mapper = mapper;
         }
 
-        public async Task<List<TestAssessmentViewModel>> GetTestAssessmentPagingsionAsync(int pageIndex = 0, int pageSize = 10)
+        public async Task<Pagination<TestAssessmentViewModel>> GetTestAssessmentPagingsionAsync(int pageIndex = 0, int pageSize = 10)
         {
             var chemicals = await _unitOfWork.TestAssessmentRepository.ToPagination(pageIndex, pageSize);
-            var result = _mapper.Map<List<TestAssessmentViewModel>>(chemicals);
+            var result = _mapper.Map<Pagination<TestAssessmentViewModel>>(chemicals);
             return result;
         }
     }

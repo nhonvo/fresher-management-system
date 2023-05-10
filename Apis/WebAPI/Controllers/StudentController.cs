@@ -25,7 +25,7 @@ public class StudentController : BasesController
         => await _mediator.Send(new GetPagedStudentProgressesByIdQuery()
         {
             Id = id,
-            PageNumber = pageIndex,
+            PageIndex = pageIndex,
             PageSize = pageSize
         });
 

@@ -4,10 +4,11 @@ using Application.Commons;
 using Domain.Aggregate.AppResult;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using System.Net;
 
 namespace WebAPI.Controllers
 {
-    public class ClassController : BaseController
+    public class ClassController : CustomBaseController
     {
         private readonly IMediator _mediator;
         public ClassController(IMediator mediator)
@@ -15,8 +16,18 @@ namespace WebAPI.Controllers
             _mediator = mediator;
         }
         [HttpGet]
-        public async Task<ApiResult<Pagination<ClassDTO>>> Get(int pageIndex = 0, int pageSize = 10)
-            => await _mediator.Send(new GetClassQuery(pageIndex, pageSize));
+        public async Task<IActionResult> Get(int pageIndex = 0, int pageSize = 10)
+        {
+            try
+            {
+                var result =  await _mediator.Send(new GetClassQuery(pageIndex, pageSize));
+                return CustomResult(result);
+            } catch(Exception ex)
+            {
+                return CustomResult(ex.Message, HttpStatusCode.BadRequest);
+            }
+        }
+           
         // [HttpGet("{id}")]
         // public async Task<ClassDTO> Get(int id)
         //     => await _mediator.Send(new GetClassByIdQuery(id));

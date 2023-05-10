@@ -8,14 +8,14 @@ namespace Infrastructures.Persistence.Configurations
     {
         public void Configure(EntityTypeBuilder<TrainingProgram> builder)
         {
-            //builder.HasOne(o => o.CreatedByUser)
-            //       .WithMany(u => u.CreatedTrainingPrograms)
-            //       .HasForeignKey(o => o.CreatedByUserId)
-            //       .OnDelete(DeleteBehavior.NoAction);
-            //builder.HasOne(o => o.ModifiedByUser)
-            //       .WithMany(u => u.ModifiedTrainingPrograms)
-            //       .HasForeignKey(o => o.ModifiedByUserId)
-            //       .OnDelete(DeleteBehavior.NoAction);
+            builder.HasOne(o => o.CreateByUser)
+                  .WithMany(u => u.CreatedTrainingPrograms)
+                  .HasForeignKey(o => o.CreatedBy)
+                  .OnDelete(DeleteBehavior.NoAction);
+            builder.HasOne(o => o.ModificationByUser)
+                  .WithMany(u => u.ModifiedTrainingPrograms)
+                  .HasForeignKey(o => o.ModificationBy)
+                  .OnDelete(DeleteBehavior.NoAction);
             builder.HasOne(o => o.TrainingClass)
                    .WithOne(u => u.TrainingProgram)
                    .HasForeignKey<TrainingProgram>(o => o.TrainingClassId);

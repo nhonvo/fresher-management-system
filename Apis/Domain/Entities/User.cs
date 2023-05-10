@@ -15,7 +15,7 @@ namespace Domain.Entities
         public UserRole Role { get; set; }
         public UserStatus Status { get; set; }
         public DateTime DateOfBirth { get; set; }
-
+        public ICollection<ClassAdmin> CreatedClassAdmin { get; set; }
         public ICollection<ClassAdmin> ClassAdmins { get; set; }
         public ICollection<Syllabus> CreatedSyllabuses { get; set; }
         public ICollection<Syllabus> ModifiedSyllabuses { get; set; }

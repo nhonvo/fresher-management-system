@@ -25,6 +25,10 @@ namespace Domain.Entities
         public float FinalTheoryScheme { get; set; }
         public float FinalPraticeScheme { get; set; }
         public float GPAScheme { get; set; }
+        //public User CreateByUser { get; set; }
+        //public User ModificationByUser { get; set; }
+
+
 
         // Navigation Property
  

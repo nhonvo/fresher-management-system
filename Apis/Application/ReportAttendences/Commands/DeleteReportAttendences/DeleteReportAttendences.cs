@@ -27,7 +27,6 @@ namespace Application.ReportAttendences.Commands.DeleteReportAttendences
             var reportAttendence = await _unitOfWork.ReportAttendenceRepository.GetByIdAsync(request.Id);
             if (reportAttendence == null)
                 throw new NotFoundException("reportAttendence not found");
-
             await _unitOfWork.ExecuteTransactionAsync(() =>
             {
                 _unitOfWork.ReportAttendenceRepository.Delete(reportAttendence);

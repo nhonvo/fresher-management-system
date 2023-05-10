@@ -29,14 +29,14 @@ namespace Application.ReportAttendences.Commands.UpdateReportAttendences
         {
             var reportAttendence = await _unitOfWork.ReportAttendenceRepository.GetByIdAsyncAsNoTracking(request.Id);
             if (reportAttendence == null)
-                throw new NotFoundException("Class not found");
+                throw new NotFoundException("reportAttendence not found");
             reportAttendence = _mapper.Map<ReportAttendence>(request);
             await _unitOfWork.ExecuteTransactionAsync(() =>
             {
                 _unitOfWork.ReportAttendenceRepository.Update(reportAttendence);
             });
             var result = _mapper.Map<ReportAttendenceDTO>(reportAttendence);
-            return result ?? throw new NotFoundException("Can not update class");
+            return result ?? throw new NotFoundException("Can not update reportAttendence");
         }
     }
 }

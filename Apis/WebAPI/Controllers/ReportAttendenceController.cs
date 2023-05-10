@@ -23,7 +23,6 @@ namespace WebAPI.Controllers
         {
             return await _mediator.Send(new GetReportAttendenceQuery(pageIndex, pageSize));
         }
-
         [HttpGet("{id}")]
         public async Task<ReportAttendenceDTO> Get(int id)
             => await _mediator.Send(new GetReportAttendenceByIdQuery(id));
@@ -37,5 +36,9 @@ namespace WebAPI.Controllers
         [HttpDelete("{id}")]
         public async Task<ReportAttendenceDTO> Delete(int id)
             => await _mediator.Send(new DeleteReportAttendencesCommand(id));
+
+        [HttpPut("status")]
+        public async Task<ReportAttendenceDTO> ChangeStatus(ChangeAttendanceStatusCommand request)
+       => await _mediator.Send(request);
     }
 }

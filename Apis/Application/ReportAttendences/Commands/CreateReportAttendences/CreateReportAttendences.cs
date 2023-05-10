@@ -16,7 +16,6 @@ namespace Application.ReportAttendences.Commands.CreateReportAttendences
     public record CreateReportAttendencesCommand : IRequest<ReportAttendenceDTO>
     {
         public string Reason { get; set; }
-        public StatusAttendance statusAttendance { get; set; } = StatusAttendance.Waiting;
         public DateTime expectedDates { get; set; }
         public string StudentId { get; set; }
     }
@@ -38,7 +37,7 @@ namespace Application.ReportAttendences.Commands.CreateReportAttendences
                 _unitOfWork.ReportAttendenceRepository.AddAsync(reportAttendence);
             });
             var result = _mapper.Map<ReportAttendenceDTO>(reportAttendence);
-            return result ?? throw new NotFoundException("Class not found");
+            return result ?? throw new NotFoundException("reportAttendence not found");
         }
     }
 }

@@ -1,12 +1,10 @@
-﻿using Domain.Entities.Syllabuses;
+﻿namespace Domain.Entities;
 
-namespace Domain.Entities
+#pragma warning disable
+public class ProgramSyllabus : BaseEntity
 {
-    public class ProgramSyllabus
-    {
-        public int TrainingProgramId;
-        public TrainingProgram TrainingProgram;
-        public int SyllabusId;
-        public Syllabus Syllabus;
-    }
+    public int TrainingProgramId;
+    public TrainingProgram TrainingProgram;
+    public int SyllabusId;
+    public Syllabus Syllabus;
 }

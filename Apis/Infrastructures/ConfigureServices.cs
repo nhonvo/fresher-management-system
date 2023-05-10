@@ -18,7 +18,6 @@ namespace Infrastructures
             #region Repositories
             // services.AddScoped<IUserService, UserService>();
             services.AddSingleton<ICurrentTime, CurrentTime>();
-
             #endregion
             #region DbContext 
             services.AddDbContext<DbContext, ApplicationDbContext>(options =>

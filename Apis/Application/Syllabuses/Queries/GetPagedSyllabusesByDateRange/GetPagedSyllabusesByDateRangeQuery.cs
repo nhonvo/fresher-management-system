@@ -28,7 +28,7 @@ public class GetPagedSyllabusesByDateRangeHandler : IRequestHandler<GetPagedSyll
     public async Task<ApiResult<Pagination<SyllabusDTO>>> Handle(GetPagedSyllabusesByDateRangeQuery request, CancellationToken cancellationToken)
     {
         var syllabus = await _unitOfWork.SyllabusRepository.ToPagination(
-            filter: s => s.CreatedOn.Date >= request.FromDate.Date && s.CreatedOn.Date <= request.ToDate.Date,
+            // filter: s => s.CreatedOn.Date >= request.FromDate.Date && s.CreatedOn.Date <= request.ToDate.Date,
             pageIndex: request.PageIndex,
             pageSize: request.PageSize);
         var result = _mapper.Map<Pagination<SyllabusDTO>>(syllabus);

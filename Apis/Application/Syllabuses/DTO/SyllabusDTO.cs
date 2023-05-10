@@ -1,4 +1,4 @@
-using Domain.Enums.SyllabusEnums;
+using Domain.Enums;
 
 namespace Application.Syllabuses.DTO
 {

@@ -2,7 +2,7 @@
 using Application.Account.Commands.Register;
 using Application.Account.DTOs;
 using AutoMapper;
-using Domain.Entities.Users;
+using Domain.Entities;
 
 namespace Application.Account;
 

@@ -1,20 +1,24 @@
-﻿#nullable disable warnings
+﻿namespace Domain.Entities;
 
-using Domain.Entities.Syllabuses;
-
-namespace Domain.Entities
+#pragma warning disable
+public class Unit : BaseEntity
 {
-    public class Unit
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public int Session { get; set; }
-        public bool isDeleted { get; set; } = false;
-        public int Duration { get; set; }
+    public string Name { get; set; }
+    public int SyllabusSession { get; set; }
+    public int UnitNumber { get; set; }
 
-        public ICollection<Syllabus> Syllabuses { get; set; }
-        public ICollection<Lecture> Lectures { get; set; }
-        public ICollection<ClassUnitDetail> ClassUnitDetails { get; set; }
-    }
+    //Navigation Property
+    public int SyllabusId { get; set; }
+    public Syllabus Syllabus { get; set; }
+    public ICollection<UnitLesson> UnitLessons { get; set; }
+    public ICollection<UnitClassDetail> UnitClassDetails { get; set; }
+    public DateTime CreationDate { get; set; }
+
+    public int? CreatedBy { get; set; }
+    public User? CreateByUser { get; set; }
+
+    public DateTime? ModificationDate { get; set; }
+
+    public int? ModificationBy { get; set; }
+    public User? ModificationByUser { get; set; }
 }
-// TODO: CHECK quiz and assignment

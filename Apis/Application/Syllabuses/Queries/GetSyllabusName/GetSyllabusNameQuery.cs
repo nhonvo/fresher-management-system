@@ -20,7 +20,8 @@ namespace Application.Syllabuses.Queries.GetSyllabusName
         public async Task<ApiResult<Pagination<SyllabusDTO>>> Handle(GetSyllabusNameQuery request, CancellationToken cancellationToken)
         {
             var syllabus = await _unitOfWork.SyllabusRepository.GetAsync(
-                filter: x => x.Name == request.name && x.IsActive == true,
+                filter: x => x.Name == request.name,
+                // && x.IsActive == true,
                 pageIndex: request.pageIndex,
                 pageSize: request.pageSize);
 

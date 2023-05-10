@@ -1,9 +1,8 @@
 ﻿using MediatR;
 using AutoMapper;
 using Application.Common.Exceptions;
-using Domain.Enums.UserEnums;
 using Application.Students.DTO;
-using Domain.Entities.Users;
+using Domain.Entities;
 // TODO: user soft removes
 namespace Application.Student.Commands.UpdateStudent
 {

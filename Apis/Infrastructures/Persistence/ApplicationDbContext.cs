@@ -1,6 +1,4 @@
 ﻿using Domain.Entities;
-using Domain.Entities.Syllabuses;
-using Domain.Entities.Users;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
@@ -12,20 +10,20 @@ namespace Infrastructures.Persistence
         {
 
         }
-        public DbSet<Attendance> Attendances { get; set; }
-        public DbSet<TrainingClass> Classes { get; set; }
-        public DbSet<ClassUsers> ClassUsers { get; set; }
-        public DbSet<FeedbackForm> FeedbackForms { get; set; }
-        public DbSet<Lecture> Lectures { get; set; }
+        public DbSet<ClassAdmin> ClassAdmins { get; set; }
+        public DbSet<FSU> FSUs { get; set; }
         public DbSet<OutputStandard> OutputStandards { get; set; }
+        public DbSet<ProgramSyllabus> ProgramSyllabuses { get; set; }
+        public DbSet<Syllabus> Syllabuses { get; set; }
         public DbSet<TestAssessment> TestAssessments { get; set; }
-        public DbSet<TMS> TimeMngSystems { get; set; }
+        public DbSet<TrainingClass> TrainingClasses { get; set; }
         public DbSet<TrainingMaterial> TrainingMaterials { get; set; }
         public DbSet<TrainingProgram> TrainingPrograms { get; set; }
         public DbSet<Unit> Units { get; set; }
-        public DbSet<Syllabus> Syllabus { get; set; }
+        public DbSet<UnitClassDetail> UnitClassDetails { get; set; }
+        public DbSet<UnitLesson> UnitLessons { get; set; }
         public DbSet<User> Users { get; set; }
-        public DbSet<ClassUnitDetail> ClassUnitDetails { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());

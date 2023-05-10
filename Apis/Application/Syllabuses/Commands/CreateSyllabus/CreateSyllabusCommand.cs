@@ -1,9 +1,8 @@
 using Application.Common.Exceptions;
 using Application.Syllabuses.DTO;
 using AutoMapper;
-using Domain.Aggregate.AppResult;
-using Domain.Entities.Syllabuses;
-using Domain.Enums.SyllabusEnums;
+using Domain.Entities;
+using Domain.Enums;
 using MediatR;
 
 namespace Application.Syllabuses.Commands.CreateSyllabus

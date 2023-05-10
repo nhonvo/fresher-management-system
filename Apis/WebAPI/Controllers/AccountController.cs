@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers
 {
-    public class AccountController : BaseController
+    public class AccountController : CustomBaseController
     {
         private readonly IMediator _mediator;
         public AccountController(IMediator mediator)

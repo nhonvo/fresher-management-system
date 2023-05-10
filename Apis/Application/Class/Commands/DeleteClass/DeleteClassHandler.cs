@@ -1,7 +1,4 @@
-﻿using Domain.Entities.Users;
-using Domain.Entities;
-using Domain.Enums.ClassEnums;
-using MediatR;
+﻿using MediatR;
 using Application.Class.DTO;
 using AutoMapper;
 using Application.Common.Exceptions;

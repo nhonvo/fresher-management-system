@@ -2,14 +2,13 @@ using Application.Commons;
 using Application.Users.DTO;
 using Application.Users.GetUser.Queries;
 using Application.Users.GetUserById.Queries;
-using Application.Users.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers
 {
-    public class UserController : BaseController
+    public class UserController : CustomBaseController
     {
         private readonly IMediator _mediator;
         public UserController(IMediator mediator)

@@ -1,28 +1,32 @@
-﻿#nullable disable warnings
+﻿using Domain.Enums;
 
-using Domain.Entities.Syllabuses;
-using Domain.Entities.Users;
-using Domain.Enums.ClassEnums;
+namespace Domain.Entities;
 
-namespace Domain.Entities
+#pragma warning disable
+public class TrainingClass : BaseEntity
 {
-    public class TrainingClass : BaseEntity
-    {
-        public string Name { get; set; }
-        public string Code { get; set; }
-        public ClassLocation? Location { get; set; }
-        public ClassAttendeeType? AttendeeType { get; set; }
-        public ClassFSU? FSU { get; set; }
-        public ClassTime ClassTime { get; set; }
-        public DateTime StartedOn { get; set; }
-        public DateTime FinishedOn { get; set; }
-        public ClassStatus Status { get; set; }
-        public DateTime ApprovedOn { get; set; }
-        public int? ApprovedBy { get; set; }
-        public User? ApprovedAdmin { get; set; }
-        public User? CreatedAdmin { get; set; }
-        public int? TrainingProgramId { get; set; }
-        public TrainingProgram? TrainingProgram { get; set; }
-        public ICollection<ClassUsers> ClassUsers { get; set; }
-    }
+    public string ClassName { get; set; }
+    public string ClassCode { get; set; }
+    public DateTime ClassTimeStart { get; set; }
+    public DateTime ClassTimeEnd { get; set; }
+    public DateTime ReviewOn { get; set; }
+    public DateTime ApproveOn { get; set; }
+    public int NumberAttendeePlanned { get; set; }
+    public int NumberAttendeeAccepted { get; set; }
+    public int NumberAttendeeActual { get; set; }
+
+    // Navigation Properties
+    public ClassLocation ClassLocation { get; set; }
+    public ClassStatus Status { get; set; }
+    public ICollection<ClassAdmin> Admin { get; set; }
+
+    public int? ReviewByUserId { get; set; }
+    public User ReviewBy { get; set; }
+    public int? ApproveByUserId { get; set; }
+    public User ApproveBy { get; set; }
+    public AttendeeType AttendeeType { get; set; }
+    public string? ContactPoint { get; set; }
+    public ICollection<UnitClassDetail> UnitClassDetail { get; set; }
+    public int? TrainingProgramId { get; set; }
+    public TrainingProgram? TrainingProgram { get; set; }
 }

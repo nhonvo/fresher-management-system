@@ -1,7 +1,6 @@
 ﻿using System.Text.Json;
+using Application.Class.DTO;
 using Domain.Entities;
-using Domain.Entities.Syllabuses;
-using Domain.Entities.Users;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
 
@@ -52,7 +51,7 @@ namespace Infrastructures.Persistence
                 await _context.SaveChangesAsync();
             };
 
-            if (!_context.Syllabus.Any())
+            if (!_context.Syllabuses.Any())
             {
                 string json = File.ReadAllText(@"../../Json/Syllabus.json");
                 List<Syllabus> sylabuses = JsonSerializer.Deserialize<List<Syllabus>>(json)!;
@@ -61,20 +60,37 @@ namespace Infrastructures.Persistence
 
             };
 
-            if (!_context.TestAssessments.Any())
+            if (!_context.TrainingPrograms.Any())
             {
-                string json = File.ReadAllText(@"../../Json/TestAssessment.json");
-                List<TestAssessment> testAssessments = JsonSerializer.Deserialize<List<TestAssessment>>(json)!;
+                string json = File.ReadAllText(@"../../Json/TrainingProgram.json");
+                List<TrainingProgram> trainingProgram = JsonSerializer.Deserialize<List<TrainingProgram>>(json)!;
+                await _context.AddRangeAsync(trainingProgram);
+                await _context.SaveChangesAsync();
+
+            };
+
+            // if (!_context.TestAssessments.Any())
+            // {
+            //     string json = File.ReadAllText(@"../../Json/TestAssessment.json");
+            //     List<TestAssessment> testAssessments = JsonSerializer.Deserialize<List<TestAssessment>>(json)!;
+            //     await _context.AddRangeAsync(testAssessments);
+            //     await _context.SaveChangesAsync();
+            // };
+            if (!_context.FSUs.Any())
+            {
+                string json = File.ReadAllText(@"../../Json/FSU.json");
+                List<FSU> testAssessments = JsonSerializer.Deserialize<List<FSU>>(json)!;
                 await _context.AddRangeAsync(testAssessments);
                 await _context.SaveChangesAsync();
             };
-            if (!_context.Classes.Any())
-            {
-                string json = File.ReadAllText(@"../../Json/class.json");
-                List<TrainingClass> testAssessments = JsonSerializer.Deserialize<List<TrainingClass>>(json)!;
-                await _context.AddRangeAsync(testAssessments);
-                await _context.SaveChangesAsync();
-            };
+            //if (!_context.TrainingClasses.Any())
+            //{
+            //    string json = File.ReadAllText(@"../../Json/TrainingClass.json");
+            //    List<TrainingClass> testAssessments = JsonSerializer.Deserialize<List<TrainingClass>>(json)!;
+            //    await _context.AddRangeAsync(testAssessments);
+            //    await _context.SaveChangesAsync();
+            //};
+
         }
     }
 }

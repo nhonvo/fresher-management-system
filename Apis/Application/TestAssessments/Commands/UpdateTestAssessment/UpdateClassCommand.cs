@@ -3,7 +3,7 @@ using AutoMapper;
 using Application.Common.Exceptions;
 using Application.TestAssessments.DTO;
 using Domain.Entities;
-using Domain.Enums.TestAssessmentEnums;
+using Domain.Enums;
 
 namespace Application.TestAssessments.Commands.UpdateTestAssessment
 {

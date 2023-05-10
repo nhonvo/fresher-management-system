@@ -1,18 +1,14 @@
-#nullable disable warnings
-
-using Domain.Entities.Syllabuses;
-using Domain.Entities.Users;
-using Domain.Enums.TestAssessmentEnums;
+﻿using Domain.Enums;
 
 namespace Domain.Entities
 {
     public class TestAssessment : BaseEntity
     {
-        public float Score { get; set; }
+        public float? Score { get; set; }
         public TestAssessmentType TestAssessmentType { get; set; }
         public int AttendeeId { get; set; }
         public User Attendee { get; set; }
-        public int SyllabusId { get; set; }
-        public Syllabus Syllabus { get; set; }
+        public int TraningProgramId { get; set; }
+        public TrainingProgram TrainingProgram { get; set; }
     }
 }

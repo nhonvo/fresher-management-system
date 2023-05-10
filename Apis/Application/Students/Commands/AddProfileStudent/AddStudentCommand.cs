@@ -2,7 +2,7 @@
 using AutoMapper;
 using Application.Common.Exceptions;
 using Application.Students.DTO;
-using Domain.Entities.Users;
+using Domain.Entities;
 // TODO: user soft removes
 // TODO: add createBy, modify when, from authentication
 // TODO: create all api endpoints

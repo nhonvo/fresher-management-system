@@ -1,6 +1,4 @@
-using Domain.Entities.Syllabuses;
-using Domain.Entities.Users;
-using Domain.Enums.TestAssessmentEnums;
+using Domain.Enums;
 
 namespace Application.TestAssessments.DTO;
 

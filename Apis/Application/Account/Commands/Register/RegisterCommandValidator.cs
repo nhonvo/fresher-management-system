@@ -1,4 +1,4 @@
-﻿using Domain.Entities.Users;
+﻿using Domain.Entities;
 using FluentValidation;
 using Microsoft.AspNetCore.Identity;
 
@@ -20,7 +20,7 @@ public class RegisterCommandValidator : AbstractValidator<RegisterCommand>
                    .NotEmpty().WithMessage("Password is requied.")
                    .MinimumLength(8).WithMessage("Password must be at least 8 characters long.");
 
-        RuleFor(x => x.FullName)
+        RuleFor(x => x.Name)
                  .NotEmpty().WithMessage("FirstName is required.");
 
         RuleFor(request => request.Phone)

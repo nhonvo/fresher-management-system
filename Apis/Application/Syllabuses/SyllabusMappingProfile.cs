@@ -3,7 +3,7 @@ using Application.Syllabuses.Commands.CreateSyllabus;
 using Application.Syllabuses.Commands.UpdateSyllabus;
 using Application.Syllabuses.DTO;
 using AutoMapper;
-using Domain.Entities.Syllabuses;
+using Domain.Entities;
 
 namespace Application.Syllabuses
 {

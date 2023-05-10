@@ -1,40 +1,34 @@
-﻿using Application.Commons;
-using Application.TestAssessments.Commands.CreateTestAssessment;
-using Application.TestAssessments.Commands.DeleteTestAssessment;
-using Application.TestAssessments.Commands.UpdateTestAssessment;
-using Application.TestAssessments.DTO;
-using Application.TestAssessments.Queries.GetPagedTestAssessments;
-using Application.TestAssessments.Queries.GetTestAssessmentById;
-using Domain.Aggregate.AppResult;
-using MediatR;
+﻿using Application.Class.Queries.GetClass;
+using Application.Commons;
+using Application.Interfaces;
+using Application.ViewModels.TestAssessmentViewModels;
 using Microsoft.AspNetCore.Mvc;
+using System.Net;
 
 namespace WebAPI.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-public class TestAssessmentController : ControllerBase
-{
-    private readonly IMediator _mediator;
-    public TestAssessmentController(IMediator mediator)
+public class TestAssessmentController : CustomBaseController
+{ 
+    private readonly ITestAssessmentService _testAssessmentService;
+    public TestAssessmentController(ITestAssessmentService testAssessmentService)
     {
-        _mediator = mediator;
+        _testAssessmentService = testAssessmentService;
     }
 
     [HttpGet]
-    public async Task<ApiResult<Pagination<TestAssessmentDTO>>> Get(int pageIndex = 0, int pageSize = 10)
-     => await _mediator.Send(new GetPagedTestAssessmentsQuery(pageIndex, pageSize));
+    public async Task<IActionResult> GetTestAssessmentPagingsion(int pageIndex = 0, int pageSize = 10)
+    {
+        try
+        {
+            var result = await _testAssessmentService.GetTestAssessmentPagingsionAsync(pageIndex, pageSize);
+            return CustomResult(result);
+        }
+        catch (Exception ex)
+        {
+            return CustomResult(ex.Message, HttpStatusCode.BadRequest);
+        }
+    }
 
-    [HttpGet("{id}")]
-    public async Task<TestAssessmentDTO> Get(int id)
-     => await _mediator.Send(new GetTestAssessmentByIdQuery(id));
-    [HttpPost]
-    public async Task<TestAssessmentDTO> Post(CreateTestAssessmentCommand request)
-     => await _mediator.Send(request);
-    [HttpPut]
-    public async Task<TestAssessmentDTO> Put(UpdateTestAssessmentCommand request)
-     => await _mediator.Send(request);
-    [HttpDelete("{id}")]
-    public async Task<TestAssessmentDTO> Delete(int id)
-     => await _mediator.Send(new DeleteTestAssessmentCommand(id));
 }

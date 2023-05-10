@@ -1,6 +1,6 @@
 using Application.Interfaces;
 using Application.Repositories;
-using Domain.Entities.Syllabuses;
+using Domain.Entities;
 using Infrastructures.Persistence;
 
 namespace Infrastructures.Repositories

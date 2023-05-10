@@ -2,7 +2,7 @@ using Application.Common.Exceptions;
 using Application.TestAssessments.DTO;
 using AutoMapper;
 using Domain.Entities;
-using Domain.Enums.TestAssessmentEnums;
+using Domain.Enums;
 using MediatR;
 
 namespace Application.TestAssessments.Commands.CreateTestAssessment

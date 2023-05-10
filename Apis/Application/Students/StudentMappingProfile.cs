@@ -3,7 +3,6 @@ using Application.Student.Commands.UpdateStudent;
 using Application.Students.DTO;
 using AutoMapper;
 using Domain.Entities;
-using Domain.Entities.Users;
 
 namespace Application.Student
 {

@@ -67,6 +67,13 @@ namespace Infrastructures.Persistence
                 await _context.SaveChangesAsync();
 
             };
+            if (!_context.TrainingClasses.Any())
+            {
+                string json = File.ReadAllText(@"../../Json/TrainingClass.json");
+                List<TrainingClass> testAssessments = JsonSerializer.Deserialize<List<TrainingClass>>(json)!;
+                await _context.AddRangeAsync(testAssessments);
+                await _context.SaveChangesAsync();
+            };
 
             if (!_context.TestAssessments.Any())
             {
@@ -82,13 +89,7 @@ namespace Infrastructures.Persistence
                 await _context.AddRangeAsync(testAssessments);
                 await _context.SaveChangesAsync();
             };
-            if (!_context.TrainingClasses.Any())
-            {
-                string json = File.ReadAllText(@"../../Json/TrainingClass.json");
-                List<TrainingClass> testAssessments = JsonSerializer.Deserialize<List<TrainingClass>>(json)!;
-                await _context.AddRangeAsync(testAssessments);
-                await _context.SaveChangesAsync();
-            };
+
         }
     }
 }

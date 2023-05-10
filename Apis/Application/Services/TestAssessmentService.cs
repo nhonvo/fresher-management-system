@@ -65,5 +65,20 @@ namespace Application.Services
             var productDto = _mapper.Map<TestAssessmentViewModel>(model);
             return productDto ?? throw new NotFoundException("Can not update test assessment");
         }
+
+        public async Task<List<GetStudentFinalSyllabusScoreViewModel>> GetFinalSyllabusScoreAsync(int id)
+        {
+            var scoreByTestType = await _unitOfWork.TestAssessmentRepository.GetFinalScoreAsync(id);
+            var result = scoreByTestType.GroupBy(ta => new { ta.AttendeeId, ta.SyllabusId, ta.TrainingClassId}).Select(group => new GetStudentFinalSyllabusScoreViewModel
+            {
+                AttendeeId = group.Key.AttendeeId,
+                SyllabusId = group.Key.SyllabusId,
+                TrainingClassId = group.Key.TrainingClassId,
+                FinalSyllabusScore = group.Sum(ta => ta.AverageScore * ta.SyllabusScheme ) / group.Sum(ta => ta.SyllabusScheme) ?? 0,
+                ListAssessment = scoreByTestType.Where(x => x.SyllabusId == group.Key.SyllabusId && x.TrainingClassId == group.Key.TrainingClassId).ToList()
+            }).ToList();
+            return result ?? throw new NotFoundException("Can not update test assessment");
+        }
+
     }
 }

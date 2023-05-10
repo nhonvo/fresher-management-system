@@ -31,6 +31,8 @@ public class TestAssessmentController : CustomBaseController
         }
     }
 
+
+
     [HttpPost]
     public async Task<IActionResult?> CreateTestAssessment(CreateTestAssessmentViewModel request)
     {
@@ -89,6 +91,24 @@ public class TestAssessmentController : CustomBaseController
 
             await _testAssessmentService.RemoveAsync(id);
             return CustomResult("Delete Test Assessment success", HttpStatusCode.OK);
+        }
+        catch (Exception ex)
+        {
+            var ErrorMessages = new List<string>()
+                {
+                    ex.ToString()
+                };
+            return CustomResult(ErrorMessages, HttpStatusCode.BadRequest);
+        };
+    }
+
+    [HttpGet("{id:int}/finalSyllabusScores")]
+    public async Task<IActionResult> GetStudentFinalSyllabusScoreAsync(int id)
+    {
+        try
+        {
+            var result = await _testAssessmentService.GetFinalSyllabusScoreAsync(id);
+            return CustomResult(result);
         }
         catch (Exception ex)
         {

@@ -1,4 +1,5 @@
 ﻿using System.Text.Json;
+using Application.Class.DTO;
 using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
@@ -42,22 +43,31 @@ namespace Infrastructures.Persistence
         public async Task TrySeedAsync()
         {
             // user or "||" operator for another table
-            // if (!_context.Users.Any())
-            // {
-            //     string json = File.ReadAllText(@"../../Json/User.json");
-            //     List<User> users = JsonSerializer.Deserialize<List<User>>(json)!;
-            //     await _context.AddRangeAsync(users);
-            //     await _context.SaveChangesAsync();
-            // };
+            if (!_context.Users.Any())
+            {
+                string json = File.ReadAllText(@"../../Json/User.json");
+                List<User> users = JsonSerializer.Deserialize<List<User>>(json)!;
+                await _context.AddRangeAsync(users);
+                await _context.SaveChangesAsync();
+            };
 
-            // if (!_context.Syllabus.Any())
-            // {
-            //     string json = File.ReadAllText(@"../../Json/Syllabus.json");
-            //     List<Syllabus> sylabuses = JsonSerializer.Deserialize<List<Syllabus>>(json)!;
-            //     await _context.AddRangeAsync(sylabuses);
-            //     await _context.SaveChangesAsync();
+            if (!_context.Syllabuses.Any())
+            {
+                string json = File.ReadAllText(@"../../Json/Syllabus.json");
+                List<Syllabus> sylabuses = JsonSerializer.Deserialize<List<Syllabus>>(json)!;
+                await _context.AddRangeAsync(sylabuses);
+                await _context.SaveChangesAsync();
 
-            // };
+            };
+
+            if (!_context.TrainingPrograms.Any())
+            {
+                string json = File.ReadAllText(@"../../Json/TrainingProgram.json");
+                List<TrainingProgram> trainingProgram = JsonSerializer.Deserialize<List<TrainingProgram>>(json)!;
+                await _context.AddRangeAsync(trainingProgram);
+                await _context.SaveChangesAsync();
+
+            };
 
             // if (!_context.TestAssessments.Any())
             // {
@@ -73,13 +83,13 @@ namespace Infrastructures.Persistence
                 await _context.AddRangeAsync(testAssessments);
                 await _context.SaveChangesAsync();
             };
-            if (!_context.TrainingClasses.Any())
-            {
-                string json = File.ReadAllText(@"../../Json/TrainingClass.json");
-                List<TrainingClass> testAssessments = JsonSerializer.Deserialize<List<TrainingClass>>(json)!;
-                await _context.AddRangeAsync(testAssessments);
-                await _context.SaveChangesAsync();
-            };
+            //if (!_context.TrainingClasses.Any())
+            //{
+            //    string json = File.ReadAllText(@"../../Json/TrainingClass.json");
+            //    List<TrainingClass> testAssessments = JsonSerializer.Deserialize<List<TrainingClass>>(json)!;
+            //    await _context.AddRangeAsync(testAssessments);
+            //    await _context.SaveChangesAsync();
+            //};
 
         }
     }

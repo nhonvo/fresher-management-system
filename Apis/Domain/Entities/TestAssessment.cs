@@ -1,14 +1,14 @@
 ﻿using Domain.Enums;
 
-namespace Domain.Entities;
-
-#pragma warning disable
-public class TestAssessment : BaseEntity
+namespace Domain.Entities
 {
-    public float Score { get; set; }
-    public TestAssessmentType TestAssessmentType { get; set; }
-    public int AttendeeId { get; set; }
-    public User Attendee { get; set; }
-    public int SyllabusId { get; set; }
-    public Syllabus Syllabus { get; set; }
+    public class TestAssessment : BaseEntity
+    {
+        public float? Score { get; set; }
+        public TestAssessmentType TestAssessmentType { get; set; }
+        public int AttendeeId { get; set; }
+        public User Attendee { get; set; }
+        public int TraningProgramId { get; set; }
+        public TrainingProgram TrainingProgram { get; set; }
+    }
 }

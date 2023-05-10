@@ -1,4 +1,6 @@
-﻿using FluentValidation.AspNetCore;
+﻿using Application.Interfaces;
+using Application.Services;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.IdentityModel.Tokens;
@@ -34,11 +36,11 @@ namespace WebAPI
             services.AddSingleton<PerformanceMiddleware>();
             services.AddSingleton<Stopwatch>();
             // Extension Services
-            // services.AddScoped<IClaimService, ClaimService>();
-            // services.AddScoped<IJWTService, JWTService>();
+            services.AddScoped<IClaimService, ClaimService>();
+            services.AddScoped<IJWTService, JWTService>();
             // // IMemoryCache
-            // services.AddMemoryCache();
-            // services.AddScoped<ICacheService, CacheService>();
+            services.AddMemoryCache();
+            services.AddScoped<ICacheService, CacheService>();
 
             services.AddHttpContextAccessor();
             // IValidator

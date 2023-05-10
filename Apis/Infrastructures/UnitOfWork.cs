@@ -6,7 +6,6 @@ using Infrastructures.Persistence;
 using Infrastructures.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
-using Microsoft.Extensions.Caching.Memory;
 
 namespace Infrastructures;
 

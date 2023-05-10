@@ -2,7 +2,7 @@
 
 namespace Application.ViewModels.TestAssessmentViewModels
 {
-    public class TestAssessmentViewModel
+    public class CreateTestAssessmentViewModel
     {
         public float Score { get; set; }
         public TestAssessmentType TestAssessmentType { get; set; }

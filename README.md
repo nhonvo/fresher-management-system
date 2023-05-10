@@ -1,4 +1,8 @@
 # Training management system
+// binh diem danh
+// dat tinh diem
+// do phan tich hoc sinh
+// nhon nam seed data lay tinh nang
 
 // TODO: check and add validation if not has
 // TODO: check again error message
@@ -73,6 +77,7 @@
 2. Absence Reporting
 //TODO: create link user click to attendance
    1. Have the ability to track and manage class attendance.
+   get all, get follow class
    2. Allow trainers or administrators to view the list of reported absences for each student, or view summary on class.
    3. Have the ability to send automated notifications to students, trainers, or administrators when a student is absent from a class (optional).
 3. Absence Approval
@@ -102,6 +107,6 @@
 2. Assignment
    1. Have the ability to restrict trainer access to certain resources or assessments based on their qualifications or areas of expertise.
 3. Evaluation
-   1. Have the ability to evaluate the performance of trainers based on student feedback.
+   1. Have the ability to evaluate the performance of trainers based on student feedback.****
 
 // trainer and students.

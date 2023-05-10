@@ -15,7 +15,9 @@ namespace Infrastructures.Persistence.Configurations
             builder.HasOne(ca => ca.User)
                    .WithMany(tc => tc.ClassAdmins)
                    .HasForeignKey(ca => ca.UserId);
-
+            builder.HasOne(ca => ca.CreateByUser)
+                   .WithMany(tc => tc.CreatedClassAdmin)
+                   .HasForeignKey(ca => ca.CreatedBy);
         }
     }
 }

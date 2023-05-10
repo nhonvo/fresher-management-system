@@ -27,7 +27,7 @@ namespace Application.Services
             {
                 new Claim("ID", user.Id.ToString()),
                 new Claim("Email", user.Email),
-                new Claim(JwtRegisteredClaimNames.Name, user.UserName),
+                new Claim(JwtRegisteredClaimNames.Name, user.Email),
                 new Claim(ClaimTypes.Role, user.Role.ToString())
             };
             var token = new JwtSecurityToken(
@@ -55,7 +55,8 @@ namespace Application.Services
 
             return principal;
         }
-        public string Hash(string inputString) => BCrypt.Net.BCrypt.HashPassword(inputString);
+        public string Hash(string inputString)
+            => BCrypt.Net.BCrypt.HashPassword(inputString);
         public bool Verify(string Pass, string oldPass) => BCrypt.Net.BCrypt.Verify(Pass, oldPass);
     }
 }

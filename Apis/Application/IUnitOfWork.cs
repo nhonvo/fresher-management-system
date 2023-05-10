@@ -1,14 +1,16 @@
 ﻿
+using Application.Repositories;
+
 namespace Application;
 
 public interface IUnitOfWork : IDisposable
 {
     // repositories
-    // IUserRepository UserRepository { get; }
-    // ISyllabusRepository SyllabusRepository { get; }
-    // IOutputStandardRepository OutputStandardRepository { get; }
-    // IClassRepository ClassRepository { get; }
-    // ITestAssessmentRepository TestAssessmentRepository { get; }
+    IUserRepository UserRepository { get; }
+    ISyllabusRepository SyllabusRepository { get; }
+    IOutputStandardRepository OutputStandardRepository { get; }
+    IClassRepository ClassRepository { get; }
+    ITestAssessmentRepository TestAssessmentRepository { get; }
 
     /// <summary>
     /// Saves changes to the database. This is called when the user changes the data or saves a new version of the data.

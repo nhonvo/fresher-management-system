@@ -65,6 +65,7 @@
 
 1. Enrollment Management
    1. Allow for easy enrollment of students into classes.
+   // TODO: endpoint: POST /class/:id/enroll (id of class) body: {studentId: 1} return class and student.
    // post: add student to class. approve by admin. Create new table relation with user and class has fields(
       "classId": 1,
       "studentId": 1,
@@ -73,7 +74,7 @@
       "approveBy": 1,
    )
    2. Support retrieving the list of enrolled students for each class.
-   // get from table ClassUser.
+   // TODO: endpoint: GET /class/:id/enroll (id of class) return list student of class.
 2. Absence Reporting
    1. Have the ability to track and manage class attendance.
          //TODO: endpoint:  get duration of training program for all syllabus.
@@ -83,18 +84,26 @@
          //TODO: allow send mails to student, trainer, admin when student absence.
 3. Absence Approval
    1. Allow students to report their absences in advance, providing reasons and expected dates of return.
+   // TODO: CRUD _DONE_
    2. Allow trainers or administrators to approve or reject reported absences.
+   // TODO: endpoint: POST /attendance/:id/approve (id of student)
    3. Allow trainers or administrators to mark student attendance and view attendance records.
+   // TODO: endpoint: POST /attendance/:id/mark (id of student)
 
 ## Score
 
 1. Tracking & Recording
    1. Have the ability to track student scores and provide analytics on student performance.
+   // TODO: endpoint: GET /score/:id (id of student) return list score of student.
    2. Allow trainers or administrators to view the score records of each student and identify patterns of performance.
    3. Allow trainers or administrators to record and update student scores for each assessment.
+   // TODO: endpoint: POST /score/:id (id of student) body: {score: 10, testId: 1} return score of student.
+   // TODO: endpoint: PUT /score/:id (id of score) body: {score: 10} return score of student.
+   // TODO: endpoint: DELETE /score/:id (id of score) return score of student.
    4. Support different types of scores, such as assignment, homework, final test, bonus.
 2. Calculation & Report
-   1. Have the ability to calculate final scores for each student based on the weighted average of their scores in each assessment.
+   1. Have the ability to calculate final scores for each student based on the weighted _average_ of their scores in each assessment.
+   // TODO: endpoint: GET /score/:id (id of student) return score average of student.
    2. Support different weighting methods, such as equal weighting or custom weighting.
    3. Allow trainers or administrators to generate score reports for each class or for individual students.
    4. Support filtering and sorting options for the score reports, such as by assessment type or score range.
@@ -104,10 +113,12 @@
 
 1. Registration
    1. Allow trainers to register themselves by providing their basic information such as name, contact information, and credentials.
+   // TODO: endpoint: POST /trainer {id}/ Role: {add role}
+   // TODO: endpoint: POST /trainer body: {name: "Nhon", email: "nhon@gmail", password: "123456"} return trainer.
    2. Have the ability to authenticate and verify the identity and qualifications of the trainer.
+   // TODO: endpoint: POST /trainer/login body: {email: "nhon@gmail", password: "123456"} return token.
+   // TODO: endpoint: GET /trainer/:id (id of trainer) return trainer.
 2. Assignment
    1. Have the ability to restrict trainer access to certain resources or assessments based on their qualifications or areas of expertise.
 3. Evaluation
    1. Have the ability to evaluate the performance of trainers based on student feedback.****
-
-// trainer and students.

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.Attendences.DTO
+namespace Application.Repositories
 {
-    internal interface AttendanceLesssonDTO
+    internal interface IUnitRepository
     {
     }
 }

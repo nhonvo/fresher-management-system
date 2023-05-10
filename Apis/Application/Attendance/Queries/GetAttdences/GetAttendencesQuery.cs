@@ -1,11 +1,10 @@
-﻿using Application.Account.DTOs;
-using Application.Attendences.DTO;
+using Application.Attendances.DTOs;
 using Application.Commons;
 using AutoMapper;
 using Domain.Aggregate.AppResult;
 using MediatR;
 
-namespace Application.Attendences.Queries.GetAttdences
+namespace Application.Attendances.Queries.GetAttendances
 {
 
     public record AttendencesQuery(int PageIndex = 0, int PageSize = 10) : IRequest<ApiResult<Pagination<AttendanceDTO>>>;

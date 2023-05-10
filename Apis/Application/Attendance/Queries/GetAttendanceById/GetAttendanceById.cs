@@ -1,10 +1,9 @@
-﻿using Application.Account.DTOs;
-using Application.Attendences.DTO;
+using Application.Attendances.DTOs;
 using Application.Common.Exceptions;
 using AutoMapper;
 using MediatR;
 
-namespace Application.Attendences.Queries.GetAttendanceById
+namespace Application.Attendances.Queries.GetAttendanceById
 {
     public record GetAttendanceByIdQuery(int id) : IRequest<AttendanceDTO>;
 

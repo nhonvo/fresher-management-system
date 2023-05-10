@@ -2063,3 +2063,114 @@ Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
 2023-05-10 14:34:27.180 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
 2023-05-10 14:34:27.206 +07:00 [INF] End performance record
 2023-05-10 14:34:27.210 +07:00 [INF] Time taken: 0:00.035
+2023-05-10 14:54:39.691 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 14:54:41.246 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-10 14:54:41.248 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-10 14:54:41.249 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 14:54:41.249 +07:00 [INF] Hosting environment: Development
+2023-05-10 14:54:41.249 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-10 14:59:49.591 +07:00 [INF] Start performance record
+2023-05-10 14:59:49.611 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 14:59:49.613 +07:00 [INF] End performance record
+2023-05-10 14:59:49.618 +07:00 [INF] Time taken: 0:00.022
+2023-05-10 15:00:11.064 +07:00 [INF] Start performance record
+2023-05-10 15:00:11.066 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 15:00:12.183 +07:00 [ERR] Health check TrainingManagementSystem with status "Unhealthy" completed after 1109.5467ms with message 'null'
+2023-05-10 15:00:12.256 +07:00 [INF] End performance record
+2023-05-10 15:00:12.256 +07:00 [INF] Time taken: 0:01.192
+2023-05-10 15:00:45.550 +07:00 [INF] Start performance record
+2023-05-10 15:00:45.737 +07:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2023-05-10 15:00:45.915 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-10 15:00:45.916 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-10 15:00:45.981 +07:00 [INF] End performance record
+2023-05-10 15:00:45.981 +07:00 [INF] Time taken: 0:00.431
+2023-05-10 15:03:31.231 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 15:03:32.261 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-10 15:03:32.262 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-10 15:03:32.264 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 15:03:32.264 +07:00 [INF] Hosting environment: Development
+2023-05-10 15:03:32.264 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-10 15:04:51.661 +07:00 [INF] Start performance record
+2023-05-10 15:04:51.685 +07:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2023-05-10 15:04:52.480 +07:00 [WRN] Savepoints are disabled because Multiple Active Result Sets (MARS) is enabled. If 'SaveChanges' fails, then the transaction cannot be automatically rolled back to a known clean state. Instead, the transaction should be rolled back by the application before retrying 'SaveChanges'. See https://go.microsoft.com/fwlink/?linkid=2149338 for more information and examples. To identify the code which triggers this warning, call 'ConfigureWarnings(w => w.Throw(SqlServerEventId.SavepointsDisabledBecauseOfMARS))'.
+2023-05-10 15:04:52.546 +07:00 [INF] End performance record
+2023-05-10 15:04:52.552 +07:00 [INF] Time taken: 0:00.885
+2023-05-10 15:05:12.223 +07:00 [INF] Start performance record
+2023-05-10 15:05:12.225 +07:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2023-05-10 15:05:12.537 +07:00 [INF] End performance record
+2023-05-10 15:05:12.537 +07:00 [INF] Time taken: 0:00.314
+2023-05-10 15:05:50.944 +07:00 [INF] Start performance record
+2023-05-10 15:05:50.974 +07:00 [DBG] Successfully validated the token.
+2023-05-10 15:05:50.986 +07:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2023-05-10 15:05:51.030 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-10 15:05:51.030 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-10 15:05:51.059 +07:00 [INF] End performance record
+2023-05-10 15:05:51.059 +07:00 [INF] Time taken: 0:00.115
+2023-05-10 15:06:39.706 +07:00 [INF] Start performance record
+2023-05-10 15:06:39.707 +07:00 [DBG] Successfully validated the token.
+2023-05-10 15:06:39.707 +07:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2023-05-10 15:06:39.762 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-10 15:06:39.762 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-10 15:06:39.875 +07:00 [INF] End performance record
+2023-05-10 15:06:39.876 +07:00 [INF] Time taken: 0:00.169
+2023-05-10 15:09:42.545 +07:00 [INF] Start performance record
+2023-05-10 15:09:42.546 +07:00 [DBG] Successfully validated the token.
+2023-05-10 15:09:42.546 +07:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2023-05-10 15:09:42.558 +07:00 [INF] End performance record
+2023-05-10 15:09:42.558 +07:00 [INF] Time taken: 0:00.012
+2023-05-10 15:10:15.282 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 15:10:16.243 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-10 15:10:16.245 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-10 15:10:16.246 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 15:10:16.246 +07:00 [INF] Hosting environment: Development
+2023-05-10 15:10:16.246 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-10 15:10:18.478 +07:00 [INF] Start performance record
+2023-05-10 15:10:18.586 +07:00 [DBG] Successfully validated the token.
+2023-05-10 15:10:18.588 +07:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2023-05-10 15:10:18.790 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-10 15:10:18.790 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-10 15:10:19.002 +07:00 [INF] End performance record
+2023-05-10 15:10:19.006 +07:00 [INF] Time taken: 0:00.523
+2023-05-10 15:11:01.690 +07:00 [INF] Application is shutting down...
+2023-05-10 15:11:09.254 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 15:11:10.341 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-10 15:11:10.342 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-10 15:11:10.344 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 15:11:10.344 +07:00 [INF] Hosting environment: Development
+2023-05-10 15:11:10.344 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-10 15:11:21.156 +07:00 [INF] Start performance record
+2023-05-10 15:11:21.360 +07:00 [DBG] Successfully validated the token.
+2023-05-10 15:11:21.362 +07:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2023-05-10 15:11:26.664 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-10 15:11:26.665 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-10 15:11:28.344 +07:00 [INF] End performance record
+2023-05-10 15:11:28.354 +07:00 [INF] Time taken: 0:07.189
+2023-05-10 15:11:41.060 +07:00 [INF] Start performance record
+2023-05-10 15:11:41.062 +07:00 [DBG] Successfully validated the token.
+2023-05-10 15:11:41.062 +07:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2023-05-10 15:14:59.751 +07:00 [INF] End performance record
+2023-05-10 15:14:59.751 +07:00 [INF] Time taken: 3:18.690
+2023-05-10 15:20:39.824 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 15:20:40.711 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-10 15:20:40.713 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-10 15:20:40.714 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 15:20:40.714 +07:00 [INF] Hosting environment: Development
+2023-05-10 15:20:40.714 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-10 15:20:47.341 +07:00 [INF] Start performance record
+2023-05-10 15:20:47.452 +07:00 [DBG] Successfully validated the token.
+2023-05-10 15:20:47.454 +07:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2023-05-10 15:20:47.691 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-10 15:20:47.691 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-10 15:20:47.936 +07:00 [INF] End performance record
+2023-05-10 15:20:47.941 +07:00 [INF] Time taken: 0:00.595
+2023-05-10 15:21:16.244 +07:00 [INF] Start performance record
+2023-05-10 15:21:16.247 +07:00 [DBG] Successfully validated the token.
+2023-05-10 15:21:16.247 +07:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2023-05-10 15:23:16.310 +07:00 [INF] End performance record
+2023-05-10 15:23:16.310 +07:00 [INF] Time taken: 2:00.065
+2023-05-10 15:23:20.526 +07:00 [INF] Start performance record
+2023-05-10 15:23:20.529 +07:00 [DBG] Successfully validated the token.
+2023-05-10 15:23:20.529 +07:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2023-05-10 15:23:20.572 +07:00 [INF] End performance record
+2023-05-10 15:23:20.572 +07:00 [INF] Time taken: 0:00.045
+2023-05-10 15:24:17.771 +07:00 [INF] Application is shutting down...

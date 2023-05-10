@@ -20,14 +20,7 @@ namespace WebAPI.Controllers
         [HttpPost("Register")]
         public async Task<AccountDTO> RegisterAsync([FromBody] RegisterCommand request)
             => await _mediator.Send(request);
+        
     }
-    // TODO: Method: forget password,
-    /// change password,
-    /// filter user,
-    ///TODO: Add session service
-    // TODO: Send mail when user register
-    // TODO: allow create role for user 
-    /// validate token(fe),
-    /// save token in session, 
-    /// Logout 
+    // TODO: ADD session service , mail service
 }

@@ -7,16 +7,15 @@ namespace Application.Lectures.Commands
     {
         public CreateClassCommandValidator()
         {
-            // RuleFor(x => x.Name).NotEmpty().NotNull();
-            // RuleFor(x => x.Code).NotEmpty().NotNull();
-            // RuleFor(x => x.Location).NotNull();
-            // RuleFor(x => x.AttendeeType).NotNull();
-            // RuleFor(x => x.FSU).NotNull();
-            // RuleFor(x => x.ClassTime).NotNull();
-            // RuleFor(x => x.StartedOn).NotNull();
-            // RuleFor(x => x.FinishedOn).NotNull();
-            // RuleFor(x => x.Status).NotNull();
-            // RuleFor(x => x.ApprovedOn).NotNull();
+            RuleFor(c => c.ClassName).NotEmpty();
+            RuleFor(c => c.ClassCode).NotEmpty();
+            RuleFor(c => c.ClassTimeStart).NotEmpty().LessThan(c => c.ClassTimeEnd);
+            RuleFor(c => c.ClassTimeEnd).NotEmpty().GreaterThan(c => c.ClassTimeStart);
+            RuleFor(c => c.NumberAttendeePlanned).NotEmpty().GreaterThan(0);
+            RuleFor(c => c.NumberAttendeeAccepted).GreaterThanOrEqualTo(0);
+            RuleFor(c => c.NumberAttendeeActual).GreaterThanOrEqualTo(0);
+            RuleFor(c => c.ClassLocation).NotNull();
+            RuleFor(c => c.Status).IsInEnum();
         }
     }
 }

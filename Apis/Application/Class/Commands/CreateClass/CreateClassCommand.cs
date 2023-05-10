@@ -1,5 +1,6 @@
 ﻿using Application.Class.DTO;
 using Application.Common.Exceptions;
+using Application.Interfaces;
 using AutoMapper;
 using Domain.Entities;
 using Domain.Enums;
@@ -24,15 +25,18 @@ namespace Application.Class.Commands.CreateClass
     public class CreateClassHandler : IRequestHandler<CreateClassCommand, ClassDTO>
     {
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IJWTService _jwtService;
         private readonly IMapper _mapper;
-        public CreateClassHandler(IUnitOfWork unitOfWork, IMapper mapper)
+        public CreateClassHandler(IUnitOfWork unitOfWork, IMapper mapper, IJWTService jwtService)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
+            _jwtService = jwtService;
         }
         public async Task<ClassDTO> Handle(CreateClassCommand request, CancellationToken cancellationToken)
         {
             var trainingClass = _mapper.Map<TrainingClass>(request);
+            // trainingClass.
             await _unitOfWork.ExecuteTransactionAsync(() =>
             {
                 _unitOfWork.ClassRepository.AddAsync(trainingClass);

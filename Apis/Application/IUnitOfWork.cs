@@ -14,6 +14,7 @@ public interface IUnitOfWork : IDisposable
     IAttendanceRepository AttendanceRepository { get; }
     IUnitRepository UnitRepository { get; }
 
+    IReportAttendenceRepository ReportAttendenceRepository { get; }
     /// <summary>
     /// Saves changes to the database. This is called when the user changes the data or saves a new version of the data.
     /// </summary>

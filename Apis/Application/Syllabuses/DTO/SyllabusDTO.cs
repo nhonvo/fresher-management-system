@@ -1,5 +1,5 @@
 using Domain.Enums;
-
+// TODO: Fix syllabus model dto
 namespace Application.Syllabuses.DTO
 {
     public class SyllabusDTO

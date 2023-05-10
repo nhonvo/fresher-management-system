@@ -75,11 +75,12 @@
    2. Support retrieving the list of enrolled students for each class.
    // get from table ClassUser.
 2. Absence Reporting
-//TODO: create link user click to attendance
    1. Have the ability to track and manage class attendance.
-   get all, get follow class
+         //TODO: endpoint:  get duration of training program for all syllabus.
    2. Allow trainers or administrators to view the list of reported absences for each student, or view summary on class.
+         //TODO: endpoint: get list absence of student in class.
    3. Have the ability to send automated notifications to students, trainers, or administrators when a student is absent from a class (optional).
+         //TODO: allow send mails to student, trainer, admin when student absence.
 3. Absence Approval
    1. Allow students to report their absences in advance, providing reasons and expected dates of return.
    2. Allow trainers or administrators to approve or reject reported absences.

@@ -1,8 +1,10 @@
 ﻿using Application;
 using Application.Interfaces;
+using Application.Repositories;
 using Application.Services;
 using Infrastructures.Mappers;
 using Infrastructures.Persistence;
+using Infrastructures.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -16,9 +18,14 @@ namespace Infrastructures
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             #endregion
             #region Repositories
-            // services.AddScoped<IUserService, UserService>();
-            services.AddSingleton<ICurrentTime, CurrentTime>();
+            services.AddScoped<IAttendanceRepository, AttendanceRepository>();
+            services.AddScoped<IClassRepository, ClassRepository>();
+            services.AddScoped<IOutputStandardRepository, OutputStandardRepository>();
+            services.AddScoped<ISyllabusRepository, SyllabusRepository>();
+            services.AddScoped<ITestAssessmentRepository, TestAssessmentRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
             #endregion
+            services.AddSingleton<ICurrentTime, CurrentTime>();
             #region DbContext 
             services.AddDbContext<DbContext, ApplicationDbContext>(options =>
             {

@@ -26,6 +26,7 @@ public class UnitOfWork : IUnitOfWork
     public IAttendanceRepository AttendanceRepository { get; }
     public IReportAttendenceRepository ReportAttendenceRepository { get; }
     public IUnitRepository UnitRepository { get; }
+    public IUnitLessonRepository UnitLessonRepository { get; }
     //
     public UnitOfWork(ApplicationDbContext dbContext, ICacheService cache)
     {

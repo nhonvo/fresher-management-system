@@ -1,12 +1,13 @@
 ﻿using Domain.Enums;
 
-namespace Domain.Entities
+namespace Domain.Entities;
+
+#pragma warning disable
+public class TrainingProgram : BaseEntity
 {
-    public class TrainingProgram : BaseEntity
-    {
-        public string Name { get; set; }
-        public int Duration { get; set; }
-        public TrainingProgramStatus Status { get; set; }
+    public string Name { get; set; }
+    public int Duration { get; set; }
+    public TrainingProgramStatus Status { get; set; }
 
         //Navigation properties
         public int? ParentId { get; set; }

@@ -2,38 +2,33 @@ using Domain;
 using Serilog;
 using WebAPI.Extensions;
 
-Log.Logger = new LoggerConfiguration()
-    .WriteTo.Console()
-    .WriteTo.File(@"D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Logging\logs.txt", rollingInterval: RollingInterval.Day)
-    .CreateLogger();
-
 try
 {
     var builder = WebApplication.CreateBuilder(args);
 
     // parse the configuration in appsettings
-    var configuration = builder.Configuration.Get<AppConfiguration>();
+    var configuration = builder.Configuration.Get<AppConfiguration>() ?? new AppConfiguration();
     builder.Services.AddSingleton(configuration);
+
+    Log.Logger = new LoggerConfiguration()
+        .WriteTo.Console()
+        .WriteTo.File(configuration.LoggingPath, rollingInterval: RollingInterval.Day)
+        .CreateLogger();
 
     builder.Host.UseSerilog((ctx, lc) => lc
         .WriteTo.Console(outputTemplate: "[{Timestamp:HH:mm:ss} {Level}] {SourceContext}{NewLine}{Message:lj}{NewLine}{Exception}{NewLine}")
-        .WriteTo.File(@"D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Logging\logs.txt", rollingInterval: RollingInterval.Day)
+        .WriteTo.File(configuration.LoggingPath, rollingInterval: RollingInterval.Day)
         .Enrich.FromLogContext()
         .ReadFrom.Configuration(ctx.Configuration));
 
-    /*
-        register with singleton life time
-        now we can use dependency injection for AppConfiguration
-    */
-
     var app = await builder
-           .ConfigureServices(
-        configuration.ConnectionStrings.DatabaseConnection,
-        configuration.MyAllowSpecificOrigins.UserApp,
-        configuration.Jwt.Key,
-        configuration.Jwt.Issuer,
-        configuration.Jwt.Audience)
-           .ConfigurePipelineAsync();
+        .ConfigureServices(
+            configuration.ConnectionStrings.DatabaseConnection,
+            configuration.MyAllowSpecificOrigins.UserApp,
+            configuration.Jwt.Key,
+            configuration.Jwt.Issuer,
+            configuration.Jwt.Audience)
+        .ConfigurePipelineAsync();
     app.Run();
 
 }
@@ -47,7 +42,5 @@ finally
     Log.CloseAndFlush();
 }
 
-
-// this line tell intergrasion test
 // https://stackoverflow.com/questions/69991983/deps-file-missing-for-dotnet-6-integration-tests
 public partial class Program { }

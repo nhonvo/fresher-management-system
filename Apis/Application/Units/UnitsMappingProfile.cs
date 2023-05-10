@@ -1,4 +1,8 @@
-﻿using AutoMapper;
+﻿using Application.Units.Commands.CreateUnit;
+using Application.Units.Commands.UpdateUnit;
+using Application.Units.DTO;
+using AutoMapper;
+using Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +15,9 @@ namespace Application.Units
     {
         public UnitsMappingProfile()
         {
-
+            CreateMap<Unit, UnitDTO>().ReverseMap();
+            CreateMap<Unit, CreateUnitCommand>().ReverseMap();
+            CreateMap<Unit, UpdateUnitCommand>().ReverseMap();
         }
     }
 }

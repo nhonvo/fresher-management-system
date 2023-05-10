@@ -18,12 +18,13 @@ public class UnitOfWork : IUnitOfWork
     private readonly ICacheService _cache;
 
     // repositories
-    public IUserRepository UserRepository { get; }
-    public ISyllabusRepository SyllabusRepository { get; }
-    public IOutputStandardRepository OutputStandardRepository { get; }
-    public IClassRepository ClassRepository { get; }
-    public ITestAssessmentRepository TestAssessmentRepository { get; }
     public IAttendanceRepository AttendanceRepository { get; }
+    public IClassRepository ClassRepository { get; }
+    public IClassStudentRepository ClassStudentRepository { get; }
+    public IOutputStandardRepository OutputStandardRepository { get; }
+    public ISyllabusRepository SyllabusRepository { get; }
+    public ITestAssessmentRepository TestAssessmentRepository { get; }
+    public IUserRepository UserRepository { get; }
     public IReportAttendenceRepository ReportAttendenceRepository { get; }
     public IUnitRepository UnitRepository { get; }
     //
@@ -32,12 +33,13 @@ public class UnitOfWork : IUnitOfWork
         _context = dbContext;
         _cache = cache;
         // repositories
+        AttendanceRepository = new AttendanceRepository(_context, _cache);
+        ClassRepository = new ClassRepository(_context, _cache);
+        ClassStudentRepository = new ClassStudentRepository(_context, _cache);
         UserRepository = new UserRepository(_context, _cache);
         SyllabusRepository = new SyllabusRepository(_context, _cache);
         OutputStandardRepository = new OutputStandardRepository(_context, _cache);
-        ClassRepository = new ClassRepository(_context, _cache);
         TestAssessmentRepository = new TestAssessmentRepository(_context, _cache);
-        AttendanceRepository = new AttendanceRepository(_context, _cache);
         ReportAttendenceRepository = new ReportAttendenceRepository(_context, _cache);
     }
 

@@ -14,9 +14,14 @@ namespace Infrastructures.Persistence.Configurations
             builder.HasKey(x => x.Id);
 
             // Syllabus
-            builder.HasOne(x => x.TrainingProgram)
+            builder.HasOne(x => x.Syllabus)
                    .WithMany(x => x.TestAssessments)
-                   .HasForeignKey(x => x.TraningProgramId);
+                   .HasForeignKey(x => x.SyllabusId);
+
+            // TrainingClass
+            builder.HasOne(x => x.TrainingClass)
+                   .WithMany(x => x.TestAssessments)
+                   .HasForeignKey(x => x.TrainingCLassId);
 
             // Attendee
             builder.HasOne(x => x.Attendee)

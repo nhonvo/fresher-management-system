@@ -11,8 +11,7 @@ namespace Domain.Entities
         public string Phone { get; set; }
         public string Password { get; set; }
 
-        public int RoleId { get; set; }
-        public UserRole Role { get; set; }
+        public UserRoleType Role { get; set; }
         public UserStatus Status { get; set; }
         public DateTime DateOfBirth { get; set; }
         public ICollection<ClassAdmin> CreatedClassAdmin { get; set; }

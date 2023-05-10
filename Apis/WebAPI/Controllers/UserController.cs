@@ -9,7 +9,7 @@ using WebAPI.Controllers;
 
 namespace WebAPI.Controllers
 {
-    public class UserController : BaseController
+    public class UserController : CustomBaseController
     {
         private readonly IMediator _mediator;
         public UserController(IMediator mediator)

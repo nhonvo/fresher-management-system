@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Infrastructures.Persistence.Configurations
 {
-    public class OutputStandardConfiguration : IEntityTypeConfiguration<OutputStandard>
+    public class UnitClassLocationConfiguration : IEntityTypeConfiguration<UnitClassLocation>
     {
-        public void Configure(EntityTypeBuilder<OutputStandard> builder)
+        public void Configure(EntityTypeBuilder<UnitClassLocation> builder)
         {
         }
     }

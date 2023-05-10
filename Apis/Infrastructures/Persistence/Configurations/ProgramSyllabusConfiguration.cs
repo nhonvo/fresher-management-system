@@ -1,6 +1,6 @@
 ﻿using Domain.Entities;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Infrastructures.Persistence.Configurations
 {
@@ -8,13 +8,13 @@ namespace Infrastructures.Persistence.Configurations
     {
         public void Configure(EntityTypeBuilder<ProgramSyllabus> builder)
         {
-            builder.HasKey(x=> new {x.SyllabusId, x.TrainingProgramId});
-            builder.HasOne(x => x.TrainingProgram)
-                .WithMany(x => x.ProgramSyllabuses)
-                .HasForeignKey(x => x.TrainingProgramId);
-            builder.HasOne(x => x.Syllabus)
-                .WithMany(x => x.ProgramSyllabuses)
-                .HasForeignKey(x => x.SyllabusId);
+            builder.HasKey(x => new { x.TrainingProgramId, x.SyllabusId });
+            builder.HasOne(ps => ps.TrainingProgram)
+                   .WithMany(tp => tp.ProgramSyllabus)
+                   .HasForeignKey(ps => ps.TrainingProgramId);
+            builder.HasOne(ps => ps.Syllabus)
+                   .WithMany(s => s.ProgramSyllabus)
+                   .HasForeignKey(ps => ps.SyllabusId);
         }
     }
 }

@@ -1,20 +1,23 @@
-﻿#nullable disable warnings
-
-using Domain.Entities.Syllabuses;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Domain.Entities
 {
-    public class Unit
+    public class Unit : BaseEntity
     {
-        public int Id { get; set; }
         public string Name { get; set; }
-        public int Session { get; set; }
-        public bool isDeleted { get; set; } = false;
-        public int Duration { get; set; }
+        public int SyllabusSession { get; set; }
+        public int UnitNumber { get; set; }
 
-        public ICollection<Syllabus> Syllabuses { get; set; }
-        public ICollection<Lecture> Lectures { get; set; }
-        public ICollection<ClassUnitDetail> ClassUnitDetails { get; set; }
+        //Navigation Property
+        public int SyllabusId { get; set; }
+        public Syllabus Syllabus { get; set; }
+        public ICollection<UnitLesson> UnitLessons { get; set; }
+        public ICollection<UnitClassDetail> UnitClassDetails { get; set; }
+
+
     }
 }
-// TODO: CHECK quiz and assignment

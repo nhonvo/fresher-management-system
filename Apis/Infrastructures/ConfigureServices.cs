@@ -1,6 +1,4 @@
 ﻿using Application;
-using Application.Interfaces;
-using Application.Services;
 using Infrastructures.Mappers;
 using Infrastructures.Persistence;
 using Microsoft.EntityFrameworkCore;
@@ -13,11 +11,11 @@ namespace Infrastructures
         public static IServiceCollection AddInfrastructuresService(this IServiceCollection services, string databaseConnection)
         {
             #region UnitOfWork
-            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            // services.AddScoped<IUnitOfWork, UnitOfWork>();
             #endregion
             #region Repositories
             // services.AddScoped<IUserService, UserService>();
-            services.AddSingleton<ICurrentTime, CurrentTime>();
+            // services.AddSingleton<ICurrentTime, CurrentTime>();
 
             #endregion
             #region DbContext 

@@ -1,4 +1,5 @@
 ﻿using Application;
+using HealthChecks.UI.Client;
 using Infrastructures;
 using Infrastructures.Persistence;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
@@ -45,7 +46,7 @@ public static class HostingExtensions
         app.MapHealthChecks("/health", new HealthCheckOptions()
         {
             Predicate = _ => true,
-            // ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse,
+            ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse,
             AllowCachingResponses = false,
             ResultStatusCodes =
             {

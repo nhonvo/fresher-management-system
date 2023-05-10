@@ -1,16 +1,15 @@
-﻿#nullable disable warnings
-
-using Domain.Entities.Users;
-
-namespace Domain.Entities
+﻿namespace Domain.Entities
 {
     public class TrainingMaterial : BaseEntity
     {
-        public string Name { get; set; }
-        public string Url { get; set; }
+        public string FileName { get; set; }
+        public string FilePath { get; set; }
 
-        public int LectureId { get; set; }
-        public Lecture? Lecture { get; set; }
-        public User? User { get; set; }
+        public long FileSize { get; set; }
+
+
+        //Navigation Property
+        public int UnitLessonId { get; set; }
+        public UnitLesson UnitLesson { get; set; }
     }
 }

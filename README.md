@@ -8,14 +8,13 @@
 1. Creation
    1. Allow for easy creation of classes.
    2. Allow trainers or administrators to add details such as class name, description, and training plan.
-   // include program table.
    // TODO: Add author only role trainer allow use this endpoint.
 2. Progress Tracking
    1. Have the ability to track progress and provide analytics on class performance.
    // score feature. getStudent of class sort by ???. ***.
    // include table test and syllabus get "he so" of test and calculate the score. (calculate by 5 fields in syllabus)
    2. Allow trainers or administrators to view the progress of each student in the class through a dashboard or report. (**)
-   /// optional. (đang ơ ngay bn, tong bn, list student và diem hien tai)
+   /// (đang ơ ngay bn, tong bn, list student và diem hien tai)
 
 ## Student
 
@@ -52,7 +51,11 @@
    1. Have the ability to send notifications to students regarding upcoming classes, training plans, and assessment deadlines.
    2. Have the ability to allow students to communicate with trainers or administrators through messaging or chat features.
 
-//TODO: Add hangfire services, add cache services
+/// TODO: Add hangfire services
+/// student enroll class has admin approve
+/// attendance student 
+
+/// TODO: Tracking score
 
 ## Class/Student
 

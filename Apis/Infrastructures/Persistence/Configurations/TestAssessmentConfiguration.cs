@@ -1,6 +1,11 @@
-using Domain.Entities;
-using Microsoft.EntityFrameworkCore;
+﻿using Domain.Entities;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Infrastructures.Persistence.Configurations
 {
@@ -16,12 +21,12 @@ namespace Infrastructures.Persistence.Configurations
             // Syllabus
             builder.HasOne(x => x.Syllabus)
                    .WithMany(x => x.TestAssessments)
-                   .HasForeignKey(x=>x.SyllabusId);
+                   .HasForeignKey(x => x.SyllabusId);
 
             // Attendee
             builder.HasOne(x => x.Attendee)
                    .WithMany(x => x.TestAssessments)
-                   .HasForeignKey(x=>x.AttendeeId);
+                   .HasForeignKey(x => x.AttendeeId);
 
         }
     }

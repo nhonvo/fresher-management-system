@@ -78,6 +78,7 @@
 2. Absence Reporting
    1. Have the ability to track and manage class attendance.
          //TODO: endpoint:  get duration of training program for all syllabus.
+         // can not find duration property of training program.
    2. Allow trainers or administrators to view the list of reported absences for each student, or view summary on class.
          //TODO: endpoint: get list absence of student in class.
    3. Have the ability to send automated notifications to students, trainers, or administrators when a student is absent from a class (optional).
@@ -86,7 +87,7 @@
    1. Allow students to report their absences in advance, providing reasons and expected dates of return.
    // TODO: CRUD _DONE_
    2. Allow trainers or administrators to approve or reject reported absences.
-   // TODO: endpoint: POST /attendance/:id/approve (id of student)
+   // TODO: endpoint: POST /attendance/:id/approve (id of student) _
    3. Allow trainers or administrators to mark student attendance and view attendance records.
    // TODO: endpoint: POST /attendance/:id/mark (id of student)
 

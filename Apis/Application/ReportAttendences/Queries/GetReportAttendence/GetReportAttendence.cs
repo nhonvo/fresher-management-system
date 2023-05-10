@@ -24,7 +24,7 @@ namespace Application.ReportAttendences.Queries.GetReportAttendence
         }
         public async Task<Pagination<ReportAttendenceDTO>> Handle(GetReportAttendenceQuery request, CancellationToken cancellationToken)
         {
-             var reportAttendence = await _unitOfWork.ReportAttendenceRepository.ToPagination(request.PageIndex, request.PageSize);
+            var reportAttendence = await _unitOfWork.ReportAttendanceRepository.ToPagination(request.PageIndex, request.PageSize);
 
             var result = _mapper.Map<Pagination<ReportAttendenceDTO>>(reportAttendence);
 

@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 
 namespace Infrastructures.Repositories
 {
-    public class ReportAttendenceRepository : GenericRepository<ReportAttendence>, IReportAttendenceRepository
+    public class ReportAttendanceRepository : GenericRepository<ReportAttendence>, IReportAttendanceRepository
     {
-        public ReportAttendenceRepository(ApplicationDbContext context, ICacheService cacheService) : base(context, cacheService)
+        public ReportAttendanceRepository(ApplicationDbContext context, ICacheService cacheService) : base(context, cacheService)
         {
         }
     }

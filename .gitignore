@@ -483,3 +483,4 @@ Apis/Infrastructures/Persistence/ApplicationDbContextInitializer.cs
 **/migrations/ApplicationDbContextModelSnapshot.cs**
 
 **/Logging/**
+**/vscode/**

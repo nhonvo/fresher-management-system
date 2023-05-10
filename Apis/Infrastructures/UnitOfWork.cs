@@ -24,8 +24,8 @@ public class UnitOfWork : IUnitOfWork
     public IClassRepository ClassRepository { get; }
     public ITestAssessmentRepository TestAssessmentRepository { get; }
     public IAttendanceRepository AttendanceRepository { get; }
-    public IReportAttendenceRepository ReportAttendenceRepository { get; }
-    //
+    public IReportAttendanceRepository ReportAttendanceRepository { get; }
+    public IApproveRequestRepository ApproveRequestRepository { get; }
     public UnitOfWork(ApplicationDbContext dbContext, ICacheService cache)
     {
         _context = dbContext;
@@ -37,7 +37,8 @@ public class UnitOfWork : IUnitOfWork
         ClassRepository = new ClassRepository(_context, _cache);
         TestAssessmentRepository = new TestAssessmentRepository(_context, _cache);
         AttendanceRepository = new AttendanceRepository(_context, _cache);
-        ReportAttendenceRepository = new ReportAttendenceRepository(_context, _cache);
+        ReportAttendanceRepository = new ReportAttendanceRepository(_context, _cache);
+        ApproveRequestRepository = new ApproveRequestRepository(_context, _cache);
     }
 
     // save changes

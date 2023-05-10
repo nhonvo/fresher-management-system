@@ -24,13 +24,13 @@ namespace Application.ReportAttendences.Commands.DeleteReportAttendences
         }
         public async Task<ReportAttendenceDTO> Handle(DeleteReportAttendencesCommand request, CancellationToken cancellationToken)
         {
-            var reportAttendence = await _unitOfWork.ReportAttendenceRepository.GetByIdAsync(request.Id);
+            var reportAttendence = await _unitOfWork.ReportAttendanceRepository.GetByIdAsync(request.Id);
             if (reportAttendence == null)
                 throw new NotFoundException("reportAttendence not found");
 
             await _unitOfWork.ExecuteTransactionAsync(() =>
             {
-                _unitOfWork.ReportAttendenceRepository.Delete(reportAttendence);
+                _unitOfWork.ReportAttendanceRepository.Delete(reportAttendence);
             });
             var result = _mapper.Map<ReportAttendenceDTO>(reportAttendence);
             return result ?? throw new NotFoundException("Can not delete class");

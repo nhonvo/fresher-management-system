@@ -35,7 +35,7 @@ namespace Application.ReportAttendences.Commands.CreateReportAttendences
             var reportAttendance = _mapper.Map<ReportAttendence>(request);
             await _unitOfWork.ExecuteTransactionAsync(() =>
             {
-                _unitOfWork.ReportAttendenceRepository.AddAsync(reportAttendance);
+                _unitOfWork.ReportAttendanceRepository.AddAsync(reportAttendance);
             });
             var result = _mapper.Map<ReportAttendenceDTO>(reportAttendance);
             return result ?? throw new NotFoundException("Class not found");

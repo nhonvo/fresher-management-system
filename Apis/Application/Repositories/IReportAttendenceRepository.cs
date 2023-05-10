@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Application.Repositories
 {
-    public interface IReportAttendenceRepository : IGenericRepository<ReportAttendence>
+    public interface IReportAttendanceRepository : IGenericRepository<ReportAttendence>
     {
     }
 }

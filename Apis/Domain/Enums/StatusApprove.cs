@@ -1,6 +1,6 @@
-﻿namespace Domain.Enums
+namespace Domain.Enums
 {
-    public enum StatusAttendance
+    public enum StatusApprove
     {
         Approve = 0,
         Reject = 1,

@@ -7,6 +7,12 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <Compile Remove="Attendences\**" />
+	  <EmbeddedResource Remove="Attendences\**" />
+	  <None Remove="Attendences\**" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="AutoMapper" Version="12.0.1" />
 		<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
 		<PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
@@ -19,11 +25,6 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\Domain\Domain.csproj" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="Attendences\Command\" />
-	  <Folder Include="Attendences\Queries\GetLesson\" />
 	</ItemGroup>
 
 </Project>

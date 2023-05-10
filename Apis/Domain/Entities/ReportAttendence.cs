@@ -12,7 +12,7 @@ namespace Domain.Entities
         public string Reason { get; set; }
         public StatusAttendance statusAttendance { get; set; } = StatusAttendance.Waiting;
         public DateTime expectedDates { get; set; }
-        public string StudentId { get; set; }
+        public int StudentId { get; set; }
         public User Student { get; set; }
 
     }

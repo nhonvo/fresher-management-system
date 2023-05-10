@@ -1,5 +1,5 @@
-﻿using Application.Class.DTO;
-using Application.Class.Queries.GetClass;
+﻿// using Application.Class.DTO;
+// using Application.Class.Queries.GetClass;
 using Application.Commons;
 using Domain.Aggregate.AppResult;
 using MediatR;
@@ -14,9 +14,9 @@ namespace WebAPI.Controllers
         {
             _mediator = mediator;
         }
-        [HttpGet]
-        public async Task<ApiResult<Pagination<ClassDTO>>> Get(int pageIndex = 0, int pageSize = 10)
-            => await _mediator.Send(new GetClassQuery(pageIndex, pageSize));
+        // [HttpGet]
+        // public async Task<ApiResult<Pagination<ClassDTO>>> Get(int pageIndex = 0, int pageSize = 10)
+        //     => await _mediator.Send(new GetClassQuery(pageIndex, pageSize));
         // [HttpGet("{id}")]
         // public async Task<ClassDTO> Get(int id)
         //     => await _mediator.Send(new GetClassByIdQuery(id));

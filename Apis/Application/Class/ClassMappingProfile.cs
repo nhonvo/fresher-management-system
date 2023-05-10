@@ -1,4 +1,5 @@
-
+using Application.Class.Commands.CreateClass;
+using Application.Class.Commands.UpdateClass;
 using Application.Class.DTO;
 using AutoMapper;
 using Domain.Entities;
@@ -10,10 +11,10 @@ namespace Application.Class
         public ClassMappingProfile()
         {
             CreateMap<TrainingClass, ClassDTO>().ReverseMap();
-            // CreateMap<TrainingClass, ClassProgram>().ReverseMap();
-            // CreateMap<TrainingClass, CreateClassCommand>().ReverseMap();
-            // CreateMap<TrainingClass, UpdateClassCommand>().ReverseMap();
-            // CreateMap<TrainingProgram, TrainingPrograms>().ReverseMap();
+            CreateMap<TrainingClass, ClassProgram>().ReverseMap();
+            CreateMap<TrainingClass, CreateClassCommand>().ReverseMap();
+            CreateMap<TrainingClass, UpdateClassCommand>().ReverseMap();
+            CreateMap<TrainingProgram, TrainingPrograms>().ReverseMap();
         }
     }
 }

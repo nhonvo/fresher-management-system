@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers
 {
-    public class UserController : BaseController
+    public class UserController : CustomBaseController
     {
         private readonly IMediator _mediator;
         public UserController(IMediator mediator)
@@ -26,8 +26,6 @@ namespace WebAPI.Controllers
 
     }
 
-    // TODO: Seed data - done
-    // TODO: allow create role for user 
     // TODO: Send mail when user register
     // TODO: Method: forget password,
     /// change password,

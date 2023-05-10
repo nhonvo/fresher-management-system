@@ -14,12 +14,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.gitignore = .gitignore
 		README.md = README.md
 		Json\syllabus.json = Json\syllabus.json
+		Json\TrainingProgram.json = Json\TrainingProgram.json
 		Json\user.json = Json\user.json
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI", "Apis\WebAPI\WebAPI.csproj", "{D801B99B-0082-4628-94A6-996978201A35}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAPI", "Apis\WebAPI\WebAPI.csproj", "{D801B99B-0082-4628-94A6-996978201A35}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Apis\Application\Application.csproj", "{67E1E97B-8CCB-46AA-8B01-256AF1BC7C9C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "Apis\Application\Application.csproj", "{67E1E97B-8CCB-46AA-8B01-256AF1BC7C9C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

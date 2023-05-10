@@ -5,10 +5,10 @@ namespace Application.Lectures.Commands
 {
     public class DeleteClassCommandValidator : AbstractValidator<DeleteClassCommand>
     {
-         public DeleteClassCommandValidator()
+        public DeleteClassCommandValidator()
         {
             RuleFor(x => x.Id).NotEmpty().NotNull();
-         
+
         }
     }
 }

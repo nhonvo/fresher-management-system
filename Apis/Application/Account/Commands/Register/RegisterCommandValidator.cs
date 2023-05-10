@@ -1,6 +1,4 @@
-﻿using Domain.Entities;
-using FluentValidation;
-using Microsoft.AspNetCore.Identity;
+﻿using FluentValidation;
 
 namespace Application.Account.Commands.Register;
 

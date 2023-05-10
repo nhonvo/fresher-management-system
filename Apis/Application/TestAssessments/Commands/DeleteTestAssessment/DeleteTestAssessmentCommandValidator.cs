@@ -5,7 +5,7 @@ namespace Application.Lectures.Commands
 {
     public class DeleteTestAssessmentCommandValidator : AbstractValidator<DeleteTestAssessmentCommand>
     {
-         public DeleteTestAssessmentCommandValidator()
+        public DeleteTestAssessmentCommandValidator()
         {
             RuleFor(x => x.id).NotEmpty().NotNull();
         }

@@ -1,15 +1,15 @@
-﻿namespace Domain.Entities
+﻿namespace Domain.Entities;
+
+#pragma warning disable
+public class TrainingMaterial : BaseEntity
 {
-    public class TrainingMaterial : BaseEntity
-    {
-        public string FileName { get; set; }
-        public string FilePath { get; set; }
+    public string FileName { get; set; }
+    public string FilePath { get; set; }
 
-        public long FileSize { get; set; }
+    public long FileSize { get; set; }
 
 
-        //Navigation Property
-        public int UnitLessonId { get; set; }
-        public UnitLesson UnitLesson { get; set; }
-    }
+    //Navigation Property
+    public int UnitLessonId { get; set; }
+    public UnitLesson UnitLesson { get; set; }
 }

@@ -768,3 +768,663 @@ System.AggregateException: Some services are not able to be constructed (Error w
 2023-05-10 09:39:17.396 +07:00 [INF] End performance record
 2023-05-10 09:39:17.409 +07:00 [INF] Time taken: 0:01.420
 2023-05-10 09:39:27.967 +07:00 [INF] Application is shutting down...
+2023-05-10 09:41:31.913 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 09:41:34.718 +07:00 [ERR] Failed executing DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [OutputStandards] (
+    [Id] int NOT NULL IDENTITY,
+    [Code] nvarchar(max) NOT NULL,
+    [Description] nvarchar(1000) NOT NULL,
+    [CreatedOn] datetime2 NOT NULL,
+    [CreatedBy] int NULL,
+    [IsDeleted] bit NOT NULL,
+    CONSTRAINT [PK_OutputStandards] PRIMARY KEY ([Id])
+);
+2023-05-10 09:41:34.780 +07:00 [ERR] Migration error
+Microsoft.Data.SqlClient.SqlException (0x80131904): There is already an object named 'OutputStandards' in the database.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalEndExecuteNonQuery(IAsyncResult asyncResult, Boolean isInternal, String endMethod)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryAsync(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteNonQueryAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteNonQueryAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteNonQueryAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Migrations.Internal.MigrationCommandExecutor.ExecuteNonQueryAsync(IEnumerable`1 migrationCommands, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Migrations.Internal.MigrationCommandExecutor.ExecuteNonQueryAsync(IEnumerable`1 migrationCommands, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Migrations.Internal.MigrationCommandExecutor.ExecuteNonQueryAsync(IEnumerable`1 migrationCommands, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Migrations.Internal.MigrationCommandExecutor.ExecuteNonQueryAsync(IEnumerable`1 migrationCommands, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Migrations.Internal.Migrator.MigrateAsync(String targetMigration, CancellationToken cancellationToken)
+   at Infrastructures.Persistence.ApplicationDbContextInitializer.InitialiseAsync() in F:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\Infrastructures\Persistence\ApplicationDbContextInitializer.cs:line 21
+ClientConnectionId:8c161088-1448-4e5b-a36c-68cbef848e0e
+Error Number:2714,State:6,Class:16
+2023-05-10 09:41:35.843 +07:00 [ERR] Failed executing DbCommand (71ms) [Parameters=[@p0='http://dummyimage.com/159x100.png/cc0000/ffffff' (Nullable = false) (Size = 4000), @p1=NULL (DbType = Int32), @p2='0001-01-01T00:00:00.0000000', @p3='2023-01-03T00:00:00.0000000', @p4='asimanenko0@ucla.edu' (Nullable = false) (Size = 50), @p5='Archambault Simanenko' (Nullable = false) (Size = 50), @p6='False', @p7='False', @p8=NULL (DbType = Int32), @p9='iOV0DYt9' (Nullable = false) (Size = 100), @p10='8704419952' (Nullable = false) (Size = 10), @p11=NULL (Size = 4000), @p12='1', @p13=NULL (DbType = Int32), @p14='http://dummyimage.com/132x100.png/cc0000/ffffff' (Nullable = false) (Size = 4000), @p15=NULL (DbType = Int32), @p16='0001-01-01T00:00:00.0000000', @p17='2023-04-03T00:00:00.0000000', @p18='tmacmorland1@creativecommons.org' (Nullable = false) (Size = 50), @p19='Tera MacMorland' (Nullable = false) (Size = 50), @p20='False', @p21='True', @p22=NULL (DbType = Int32), @p23='n6Oy22' (Nullable = false) (Size = 100), @p24='7255372996' (Nullable = false) (Size = 10), @p25=NULL (Size = 4000), @p26='1', @p27=NULL (DbType = Int32), @p28='http://dummyimage.com/220x100.png/ff4444/ffffff' (Nullable = false) (Size = 4000), @p29=NULL (DbType = Int32), @p30='0001-01-01T00:00:00.0000000', @p31='2022-04-10T00:00:00.0000000', @p32='jmufford2@cnet.com' (Nullable = false) (Size = 50), @p33='Julienne Mufford' (Nullable = false) (Size = 50), @p34='False', @p35='True', @p36=NULL (DbType = Int32), @p37='rfbfESdguXJ' (Nullable = false) (Size = 100), @p38='3778245929' (Nullable = false) (Size = 10), @p39=NULL (Size = 4000), @p40='2', @p41=NULL (DbType = Int32), @p42='http://dummyimage.com/152x100.png/cc0000/ffffff' (Nullable = false) (Size = 4000), @p43=NULL (DbType = Int32), @p44='0001-01-01T00:00:00.0000000', @p45='2023-01-01T00:00:00.0000000', @p46='obulbrook3@msu.edu' (Nullable = false) (Size = 50), @p47='Obie Bulbrook' (Nullable = false) (Size = 50), @p48='False', @p49='True', @p50=NULL (DbType = Int32), @p51='MkNuXNkOdN8' (Nullable = false) (Size = 100), @p52='0514510064' (Nullable = false) (Size = 10), @p53=NULL (Size = 4000), @p54='1', @p55=NULL (DbType = Int32), @p56='http://dummyimage.com/167x100.png/5fa2dd/ffffff' (Nullable = false) (Size = 4000), @p57=NULL (DbType = Int32), @p58='0001-01-01T00:00:00.0000000', @p59='2023-01-28T00:00:00.0000000', @p60='swoodyer4@telegraph.co.uk' (Nullable = false) (Size = 50), @p61='Stillmann Woodyer' (Nullable = false) (Size = 50), @p62='False', @p63='False', @p64=NULL (DbType = Int32), @p65='8hUwZNZ' (Nullable = false) (Size = 100), @p66='9402632298' (Nullable = false) (Size = 10), @p67=NULL (Size = 4000), @p68='3', @p69=NULL (DbType = Int32), @p70='http://dummyimage.com/234x100.png/cc0000/ffffff' (Nullable = false) (Size = 4000), @p71=NULL (DbType = Int32), @p72='0001-01-01T00:00:00.0000000', @p73='2022-10-28T00:00:00.0000000', @p74='gdurrand5@meetup.com' (Nullable = false) (Size = 50), @p75='Guthry Durrand' (Nullable = false) (Size = 50), @p76='False', @p77='True', @p78=NULL (DbType = Int32), @p79='gwU4pBcZ' (Nullable = false) (Size = 100), @p80='4126430555' (Nullable = false) (Size = 10), @p81=NULL (Size = 4000), @p82='4', @p83=NULL (DbType = Int32), @p84='http://dummyimage.com/169x100.png/ff4444/ffffff' (Nullable = false) (Size = 4000), @p85=NULL (DbType = Int32), @p86='0001-01-01T00:00:00.0000000', @p87='2021-10-05T00:00:00.0000000', @p88='wmantha6@netscape.com' (Nullable = false) (Size = 50), @p89='Wilmer Mantha' (Nullable = false) (Size = 50), @p90='False', @p91='False', @p92=NULL (DbType = Int32), @p93='UGwuUpN' (Nullable = false) (Size = 100), @p94='7131774960' (Nullable = false) (Size = 10), @p95=NULL (Size = 4000), @p96='3', @p97=NULL (DbType = Int32), @p98='http://dummyimage.com/172x100.png/5fa2dd/ffffff' (Nullable = false) (Size = 4000), @p99=NULL (DbType = Int32), @p100='0001-01-01T00:00:00.0000000', @p101='2023-05-04T00:00:00.0000000', @p102='mkirsop7@github.io' (Nullable = false) (Size = 50), @p103='Melinde Kirsop' (Nullable = false) (Size = 50), @p104='False', @p105='False', @p106=NULL (DbType = Int32), @p107='F5boXGl' (Nullable = false) (Size = 100), @p108='9499924167' (Nullable = false) (Size = 10), @p109=NULL (Size = 4000), @p110='1', @p111=NULL (DbType = Int32), @p112='http://dummyimage.com/236x100.png/5fa2dd/ffffff' (Nullable = false) (Size = 4000), @p113=NULL (DbType = Int32), @p114='0001-01-01T00:00:00.0000000', @p115='2023-03-09T00:00:00.0000000', @p116='hlunck8@illinois.edu' (Nullable = false) (Size = 50), @p117='Hatti Lunck' (Nullable = false) (Size = 50), @p118='False', @p119='True', @p120=NULL (DbType = Int32), @p121='w94ikOPZ5' (Nullable = false) (Size = 100), @p122='6616275337' (Nullable = false) (Size = 10), @p123=NULL (Size = 4000), @p124='1', @p125=NULL (DbType = Int32), @p126='http://dummyimage.com/160x100.png/5fa2dd/ffffff' (Nullable = false) (Size = 4000), @p127=NULL (DbType = Int32), @p128='0001-01-01T00:00:00.0000000', @p129='2023-01-27T00:00:00.0000000', @p130='wheliot9@seattletimes.com' (Nullable = false) (Size = 50), @p131='Wilmette Heliot' (Nullable = false) (Size = 50), @p132='False', @p133='False', @p134=NULL (DbType = Int32), @p135='cyMDZZ7lzNi' (Nullable = false) (Size = 100), @p136='0533610850' (Nullable = false) (Size = 10), @p137=NULL (Size = 4000), @p138='1', @p139=NULL (DbType = Int32), @p140='http://dummyimage.com/205x100.png/cc0000/ffffff' (Nullable = false) (Size = 4000), @p141=NULL (DbType = Int32), @p142='0001-01-01T00:00:00.0000000', @p143='2022-04-28T00:00:00.0000000', @p144='baichesona@jugem.jp' (Nullable = false) (Size = 50), @p145='Bonni Aicheson' (Nullable = false) (Size = 50), @p146='False', @p147='True', @p148=NULL (DbType = Int32), @p149='UjdtcmMzDWK' (Nullable = false) (Size = 100), @p150='3087954314' (Nullable = false) (Size = 10), @p151=NULL (Size = 4000), @p152='4', @p153=NULL (DbType = Int32), @p154='http://dummyimage.com/219x100.png/dddddd/000000' (Nullable = false) (Size = 4000), @p155=NULL (DbType = Int32), @p156='0001-01-01T00:00:00.0000000', @p157='2023-03-02T00:00:00.0000000', @p158='ddaintithb@ca.gov' (Nullable = false) (Size = 50), @p159='Delores Daintith' (Nullable = false) (Size = 50), @p160='False', @p161='True', @p162=NULL (DbType = Int32), @p163='71rvAFC' (Nullable = false) (Size = 100), @p164='9855924061' (Nullable = false) (Size = 10), @p165=NULL (Size = 4000), @p166='5', @p167=NULL (DbType = Int32), @p168='http://dummyimage.com/102x100.png/cc0000/ffffff' (Nullable = false) (Size = 4000), @p169=NULL (DbType = Int32), @p170='0001-01-01T00:00:00.0000000', @p171='2022-02-26T00:00:00.0000000', @p172='ndinckec@goodreads.com' (Nullable = false) (Size = 50), @p173='Natala Dincke' (Nullable = false) (Size = 50), @p174='False', @p175='False', @p176=NULL (DbType = Int32), @p177='eTd3131gUxF' (Nullable = false) (Size = 100), @p178='3438998475' (Nullable = false) (Size = 10), @p179=NULL (Size = 4000), @p180='4', @p181=NULL (DbType = Int32), @p182='http://dummyimage.com/165x100.png/cc0000/ffffff' (Nullable = false) (Size = 4000), @p183=NULL (DbType = Int32), @p184='0001-01-01T00:00:00.0000000', @p185='2022-03-06T00:00:00.0000000', @p186='hpleveyd@google.it' (Nullable = false) (Size = 50), @p187='Harald Plevey' (Nullable = false) (Size = 50), @p188='False', @p189='True', @p190=NULL (DbType = Int32), @p191='a7XlInW1w9x' (Nullable = false) (Size = 100), @p192='4935740817' (Nullable = false) (Size = 10), @p193=NULL (Size = 4000), @p194='2', @p195=NULL (DbType = Int32), @p196='http://dummyimage.com/111x100.png/5fa2dd/ffffff' (Nullable = false) (Size = 4000), @p197=NULL (DbType = Int32), @p198='0001-01-01T00:00:00.0000000', @p199='2022-04-12T00:00:00.0000000', @p200='aroycee@printfriendly.com' (Nullable = false) (Size = 50), @p201='Anderea Royce' (Nullable = false) (Size = 50), @p202='False', @p203='False', @p204=NULL (DbType = Int32), @p205='5ckEI9SN' (Nullable = false) (Size = 100), @p206='1647021170' (Nullable = false) (Size = 10), @p207=NULL (Size = 4000), @p208='4', @p209=NULL (DbType = Int32), @p210='http://dummyimage.com/164x100.png/cc0000/ffffff' (Nullable = false) (Size = 4000), @p211=NULL (DbType = Int32), @p212='0001-01-01T00:00:00.0000000', @p213='2022-11-01T00:00:00.0000000', @p214='estf@w3.org' (Nullable = false) (Size = 50), @p215='Ealasaid St. Louis' (Nullable = false) (Size = 50), @p216='False', @p217='True', @p218=NULL (DbType = Int32), @p219='Sf3PZRFl' (Nullable = false) (Size = 100), @p220='1535848561' (Nullable = false) (Size = 10), @p221=NULL (Size = 4000), @p222='4', @p223=NULL (DbType = Int32), @p224='http://dummyimage.com/179x100.png/5fa2dd/ffffff' (Nullable = false) (Size = 4000), @p225=NULL (DbType = Int32), @p226='0001-01-01T00:00:00.0000000', @p227='2022-10-28T00:00:00.0000000', @p228='cfieldstoneg@yale.edu' (Nullable = false) (Size = 50), @p229='Carl Fieldstone' (Nullable = false) (Size = 50), @p230='False', @p231='False', @p232=NULL (DbType = Int32), @p233='PBx58mBZrWhd' (Nullable = false) (Size = 100), @p234='8421208977' (Nullable = false) (Size = 10), @p235=NULL (Size = 4000), @p236='4', @p237=NULL (DbType = Int32), @p238='http://dummyimage.com/114x100.png/cc0000/ffffff' (Nullable = false) (Size = 4000), @p239=NULL (DbType = Int32), @p240='0001-01-01T00:00:00.0000000', @p241='2021-08-29T00:00:00.0000000', @p242='cbangleyh@patch.com' (Nullable = false) (Size = 50), @p243='Carie Bangley' (Nullable = false) (Size = 50), @p244='False', @p245='True', @p246=NULL (DbType = Int32), @p247='Rk5latTT9d1q' (Nullable = false) (Size = 100), @p248='8764775801' (Nullable = false) (Size = 10), @p249=NULL (Size = 4000), @p250='3', @p251=NULL (DbType = Int32), @p252='http://dummyimage.com/228x100.png/cc0000/ffffff' (Nullable = false) (Size = 4000), @p253=NULL (DbType = Int32), @p254='0001-01-01T00:00:00.0000000', @p255='2022-09-16T00:00:00.0000000', @p256='jdaybelli@pinterest.com' (Nullable = false) (Size = 50), @p257='Job Daybell' (Nullable = false) (Size = 50), @p258='False', @p259='False', @p260=NULL (DbType = Int32), @p261='1kuI1C' (Nullable = false) (Size = 100), @p262='6143001030' (Nullable = false) (Size = 10), @p263=NULL (Size = 4000), @p264='4', @p265=NULL (DbType = Int32), @p266='http://dummyimage.com/200x100.png/dddddd/000000' (Nullable = false) (Size = 4000), @p267=NULL (DbType = Int32), @p268='0001-01-01T00:00:00.0000000', @p269='2022-12-06T00:00:00.0000000', @p270='sclackersj@gnu.org' (Nullable = false) (Size = 50), @p271='Stormie Clackers' (Nullable = false) (Size = 50), @p272='False', @p273='True', @p274=NULL (DbType = Int32), @p275='Ccltd9jnP' (Nullable = false) (Size = 100), @p276='2574926072' (Nullable = false) (Size = 10), @p277=NULL (Size = 4000), @p278='5', @p279=NULL (DbType = Int32), @p280='http://dummyimage.com/115x100.png/cc0000/ffffff' (Nullable = false) (Size = 4000), @p281=NULL (DbType = Int32), @p282='0001-01-01T00:00:00.0000000', @p283='2022-10-23T00:00:00.0000000', @p284='soleszczakk@comcast.net' (Nullable = false) (Size = 50), @p285='Sylas Oleszczak' (Nullable = false) (Size = 50), @p286='False', @p287='False', @p288=NULL (DbType = Int32), @p289='ovG2P70dYzG' (Nullable = false) (Size = 100), @p290='9927037007' (Nullable = false) (Size = 10), @p291=NULL (Size = 4000), @p292='1', @p293=NULL (DbType = Int32), @p294='http://dummyimage.com/133x100.png/5fa2dd/ffffff' (Nullable = false) (Size = 4000), @p295=NULL (DbType = Int32), @p296='0001-01-01T00:00:00.0000000', @p297='2021-10-24T00:00:00.0000000', @p298='cflodel@tumblr.com' (Nullable = false) (Size = 50), @p299='Corby Flode' (Nullable = false) (Size = 50), @p300='False', @p301='False', @p302=NULL (DbType = Int32), @p303='HN2uwohWaoBk' (Nullable = false) (Size = 100), @p304='3560852013' (Nullable = false) (Size = 10), @p305=NULL (Size = 4000), @p306='4', @p307=NULL (DbType = Int32), @p308='http://dummyimage.com/236x100.png/dddddd/000000' (Nullable = false) (Size = 4000), @p309=NULL (DbType = Int32), @p310='0001-01-01T00:00:00.0000000', @p311='2021-08-13T00:00:00.0000000', @p312='sselbachm@naver.com' (Nullable = false) (Size = 50), @p313='Sandy Selbach' (Nullable = false) (Size = 50), @p314='False', @p315='True', @p316=NULL (DbType = Int32), @p317='AXRFNkyBzwy' (Nullable = false) (Size = 100), @p318='7603640164' (Nullable = false) (Size = 10), @p319=NULL (Size = 4000), @p320='4', @p321=NULL (DbType = Int32), @p322='http://dummyimage.com/231x100.png/ff4444/ffffff' (Nullable = false) (Size = 4000), @p323=NULL (DbType = Int32), @p324='0001-01-01T00:00:00.0000000', @p325='2022-07-09T00:00:00.0000000', @p326='wlodemannn@360.cn' (Nullable = false) (Size = 50), @p327='Willy Lodemann' (Nullable = false) (Size = 50), @p328='False', @p329='True', @p330=NULL (DbType = Int32), @p331='dFQ7oJjiPMW' (Nullable = false) (Size = 100), @p332='6788885850' (Nullable = false) (Size = 10), @p333=NULL (Size = 4000), @p334='4', @p335=NULL (DbType = Int32), @p336='http://dummyimage.com/121x100.png/5fa2dd/ffffff' (Nullable = false) (Size = 4000), @p337=NULL (DbType = Int32), @p338='0001-01-01T00:00:00.0000000', @p339='2021-12-28T00:00:00.0000000', @p340='cproswello@reddit.com' (Nullable = false) (Size = 50), @p341='Celestia Proswell' (Nullable = false) (Size = 50), @p342='False', @p343='False', @p344=NULL (DbType = Int32), @p345='sQPI5wf9' (Nullable = false) (Size = 100), @p346='5226829337' (Nullable = false) (Size = 10), @p347=NULL (Size = 4000), @p348='3', @p349=NULL (DbType = Int32), @p350='http://dummyimage.com/241x100.png/cc0000/ffffff' (Nullable = false) (Size = 4000), @p351=NULL (DbType = Int32), @p352='0001-01-01T00:00:00.0000000', @p353='2021-12-06T00:00:00.0000000', @p354='mmallinderp@epa.gov' (Nullable = false) (Size = 50), @p355='Marcy Mallinder' (Nullable = false) (Size = 50), @p356='False', @p357='True', @p358=NULL (DbType = Int32), @p359='iTTH1Wc' (Nullable = false) (Size = 100), @p360='7554072684' (Nullable = false) (Size = 10), @p361=NULL (Size = 4000), @p362='5', @p363=NULL (DbType = Int32), @p364='http://dummyimage.com/149x100.png/ff4444/ffffff' (Nullable = false) (Size = 4000), @p365=NULL (DbType = Int32), @p366='0001-01-01T00:00:00.0000000', @p367='2022-09-08T00:00:00.0000000', @p368='dgreyq@php.net' (Nullable = false) (Size = 50), @p369='Dennet Grey' (Nullable = false) (Size = 50), @p370='False', @p371='False', @p372=NULL (DbType = Int32), @p373='KkUtFtt' (Nullable = false) (Size = 100), @p374='6861045241' (Nullable = false) (Size = 10), @p375=NULL (Size = 4000), @p376='5', @p377=NULL (DbType = Int32), @p378='http://dummyimage.com/190x100.png/cc0000/ffffff' (Nullable = false) (Size = 4000), @p379=NULL (DbType = Int32), @p380='0001-01-01T00:00:00.0000000', @p381='2022-03-24T00:00:00.0000000', @p382='ucozensr@hhs.gov' (Nullable = false) (Size = 50), @p383='Ulrica Cozens' (Nullable = false) (Size = 50), @p384='False', @p385='True', @p386=NULL (DbType = Int32), @p387='4GD6NoYzk9M' (Nullable = false) (Size = 100), @p388='1892712490' (Nullable = false) (Size = 10), @p389=NULL (Size = 4000), @p390='5', @p391=NULL (DbType = Int32), @p392='http://dummyimage.com/128x100.png/ff4444/ffffff' (Nullable = false) (Size = 4000), @p393=NULL (DbType = Int32), @p394='0001-01-01T00:00:00.0000000', @p395='2023-04-19T00:00:00.0000000', @p396='czannutos@mac.com' (Nullable = false) (Size = 50), @p397='Catarina Zannuto' (Nullable = false) (Size = 50), @p398='False', @p399='True', @p400=NULL (DbType = Int32), @p401='dIiu1XrBEa' (Nullable = false) (Size = 100), @p402='7100102677' (Nullable = false) (Size = 10), @p403=NULL (Size = 4000), @p404='1', @p405=NULL (DbType = Int32), @p406='http://dummyimage.com/131x100.png/dddddd/000000' (Nullable = false) (Size = 4000), @p407=NULL (DbType = Int32), @p408='0001-01-01T00:00:00.0000000', @p409='2022-11-20T00:00:00.0000000', @p410='szoellnert@icq.com' (Nullable = false) (Size = 50), @p411='Sullivan Zoellner' (Nullable = false) (Size = 50), @p412='False', @p413='True', @p414=NULL (DbType = Int32), @p415='8DHTor8' (Nullable = false) (Size = 100), @p416='6924396488' (Nullable = false) (Size = 10), @p417=NULL (Size = 4000), @p418='1', @p419=NULL (DbType = Int32), @p420='http://dummyimage.com/170x100.png/ff4444/ffffff' (Nullable = false) (Size = 4000), @p421=NULL (DbType = Int32), @p422='0001-01-01T00:00:00.0000000', @p423='2022-08-19T00:00:00.0000000', @p424='bbowateru@sina.com.cn' (Nullable = false) (Size = 50), @p425='Beverie Bowater' (Nullable = false) (Size = 50), @p426='False', @p427='True', @p428=NULL (DbType = Int32), @p429='9hQul3CnuRa' (Nullable = false) (Size = 100), @p430='0471205451' (Nullable = false) (Size = 10), @p431=NULL (Size = 4000), @p432='1', @p433=NULL (DbType = Int32), @p434='http://dummyimage.com/101x100.png/dddddd/000000' (Nullable = false) (Size = 4000), @p435=NULL (DbType = Int32), @p436='0001-01-01T00:00:00.0000000', @p437='2023-03-04T00:00:00.0000000', @p438='tgymlettv@mail.ru' (Nullable = false) (Size = 50), @p439='Theresa Gymlett' (Nullable = false) (Size = 50), @p440='False', @p441='True', @p442=NULL (DbType = Int32), @p443='16uKwPneUUDB' (Nullable = false) (Size = 100), @p444='3215904950' (Nullable = false) (Size = 10), @p445=NULL (Size = 4000), @p446='3', @p447=NULL (DbType = Int32), @p448='http://dummyimage.com/113x100.png/dddddd/000000' (Nullable = false) (Size = 4000), @p449=NULL (DbType = Int32), @p450='0001-01-01T00:00:00.0000000', @p451='2022-06-16T00:00:00.0000000', @p452='slearnedw@cornell.edu' (Nullable = false) (Size = 50), @p453='Sephira Learned' (Nullable = false) (Size = 50), @p454='False', @p455='True', @p456=NULL (DbType = Int32), @p457='sEdNkf3d' (Nullable = false) (Size = 100), @p458='1089439377' (Nullable = false) (Size = 10), @p459=NULL (Size = 4000), @p460='1', @p461=NULL (DbType = Int32), @p462='http://dummyimage.com/196x100.png/5fa2dd/ffffff' (Nullable = false) (Size = 4000), @p463=NULL (DbType = Int32), @p464='0001-01-01T00:00:00.0000000', @p465='2023-04-19T00:00:00.0000000', @p466='bcrewex@sfgate.com' (Nullable = false) (Size = 50), @p467='Boone Crewe' (Nullable = false) (Size = 50), @p468='False', @p469='False', @p470=NULL (DbType = Int32), @p471='Djyh2dCa1' (Nullable = false) (Size = 100), @p472='5440687157' (Nullable = false) (Size = 10), @p473=NULL (Size = 4000), @p474='5', @p475=NULL (DbType = Int32), @p476='http://dummyimage.com/150x100.png/dddddd/000000' (Nullable = false) (Size = 4000), @p477=NULL (DbType = Int32), @p478='0001-01-01T00:00:00.0000000', @p479='2021-11-29T00:00:00.0000000', @p480='sdeschelley@discuz.net' (Nullable = false) (Size = 50), @p481='Slade Deschelle' (Nullable = false) (Size = 50), @p482='False', @p483='False', @p484=NULL (DbType = Int32), @p485='xKOzWohY1' (Nullable = false) (Size = 100), @p486='8667054534' (Nullable = false) (Size = 10), @p487=NULL (Size = 4000), @p488='3', @p489=NULL (DbType = Int32), @p490='http://dummyimage.com/207x100.png/ff4444/ffffff' (Nullable = false) (Size = 4000), @p491=NULL (DbType = Int32), @p492='0001-01-01T00:00:00.0000000', @p493='2022-01-19T00:00:00.0000000', @p494='glarringtonz@sakura.ne.jp' (Nullable = false) (Size = 50), @p495='Griffie Larrington' (Nullable = false) (Size = 50), @p496='False', @p497='True', @p498=NULL (DbType = Int32), @p499='MOjcKsYzn' (Nullable = false) (Size = 100), @p500='2042322970' (Nullable = false) (Size = 10), @p501=NULL (Size = 4000), @p502='4', @p503=NULL (DbType = Int32), @p504='http://dummyimage.com/116x100.png/cc0000/ffffff' (Nullable = false) (Size = 4000), @p505=NULL (DbType = Int32), @p506='0001-01-01T00:00:00.0000000', @p507='2023-01-12T00:00:00.0000000', @p508='ldesquesnes10@nasa.gov' (Nullable = false) (Size = 50), @p509='Lorie Desquesnes' (Nullable = false) (Size = 50), @p510='False', @p511='False', @p512=NULL (DbType = Int32), @p513='KgAu1ezw6p' (Nullable = false) (Size = 100), @p514='8068770844' (Nullable = false) (Size = 10), @p515=NULL (Size = 4000), @p516='3', @p517=NULL (DbType = Int32), @p518='http://dummyimage.com/106x100.png/dddddd/000000' (Nullable = false) (Size = 4000), @p519=NULL (DbType = Int32), @p520='0001-01-01T00:00:00.0000000', @p521='2022-08-10T00:00:00.0000000', @p522='shorlock11@ucoz.ru' (Nullable = false) (Size = 50), @p523='Sarajane Horlock' (Nullable = false) (Size = 50), @p524='False', @p525='True', @p526=NULL (DbType = Int32), @p527='okscSmQ6NZP' (Nullable = false) (Size = 100), @p528='6698421537' (Nullable = false) (Size = 10), @p529=NULL (Size = 4000), @p530='1', @p531=NULL (DbType = Int32), @p532='http://dummyimage.com/165x100.png/ff4444/ffffff' (Nullable = false) (Size = 4000), @p533=NULL (DbType = Int32), @p534='0001-01-01T00:00:00.0000000', @p535='2021-10-26T00:00:00.0000000', @p536='koleahy12@cisco.com' (Nullable = false) (Size = 50), @p537='Kali O'Leahy' (Nullable = false) (Size = 50), @p538='False', @p539='False', @p540=NULL (DbType = Int32), @p541='Yy3nO77KwZ' (Nullable = false) (Size = 100), @p542='9078805056' (Nullable = false) (Size = 10), @p543=NULL (Size = 4000), @p544='3', @p545=NULL (DbType = Int32), @p546='http://dummyimage.com/217x100.png/cc0000/ffffff' (Nullable = false) (Size = 4000), @p547=NULL (DbType = Int32), @p548='0001-01-01T00:00:00.0000000', @p549='2022-07-29T00:00:00.0000000', @p550='pdobbinson13@xrea.com' (Nullable = false) (Size = 50), @p551='Pierrette Dobbinson' (Nullable = false) (Size = 50), @p552='False', @p553='False', @p554=NULL (DbType = Int32), @p555='vgdxPCf' (Nullable = false) (Size = 100), @p556='0814908500' (Nullable = false) (Size = 10), @p557=NULL (Size = 4000), @p558='4', @p559=NULL (DbType = Int32), @p560='http://dummyimage.com/135x100.png/cc0000/ffffff' (Nullable = false) (Size = 4000), @p561=NULL (DbType = Int32), @p562='0001-01-01T00:00:00.0000000', @p563='2021-11-22T00:00:00.0000000', @p564='fcarlill14@alibaba.com' (Nullable = false) (Size = 50), @p565='Finn Carlill' (Nullable = false) (Size = 50), @p566='False', @p567='False', @p568=NULL (DbType = Int32), @p569='O6Fi3nrVI1mT' (Nullable = false) (Size = 100), @p570='0890300143' (Nullable = false) (Size = 10), @p571=NULL (Size = 4000), @p572='3', @p573=NULL (DbType = Int32), @p574='http://dummyimage.com/239x100.png/ff4444/ffffff' (Nullable = false) (Size = 4000), @p575=NULL (DbType = Int32), @p576='0001-01-01T00:00:00.0000000', @p577='2021-12-12T00:00:00.0000000', @p578='gmcdonogh15@google.co.uk' (Nullable = false) (Size = 50), @p579='Gale McDonogh' (Nullable = false) (Size = 50), @p580='False', @p581='False', @p582=NULL (DbType = Int32), @p583='A33WUeEw0o' (Nullable = false) (Size = 100), @p584='0309336880' (Nullable = false) (Size = 10), @p585=NULL (Size = 4000), @p586='1', @p587=NULL (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+MERGE [Users] USING (
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, 0),
+(@p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23, @p24, @p25, @p26, @p27, 1),
+(@p28, @p29, @p30, @p31, @p32, @p33, @p34, @p35, @p36, @p37, @p38, @p39, @p40, @p41, 2),
+(@p42, @p43, @p44, @p45, @p46, @p47, @p48, @p49, @p50, @p51, @p52, @p53, @p54, @p55, 3),
+(@p56, @p57, @p58, @p59, @p60, @p61, @p62, @p63, @p64, @p65, @p66, @p67, @p68, @p69, 4),
+(@p70, @p71, @p72, @p73, @p74, @p75, @p76, @p77, @p78, @p79, @p80, @p81, @p82, @p83, 5),
+(@p84, @p85, @p86, @p87, @p88, @p89, @p90, @p91, @p92, @p93, @p94, @p95, @p96, @p97, 6),
+(@p98, @p99, @p100, @p101, @p102, @p103, @p104, @p105, @p106, @p107, @p108, @p109, @p110, @p111, 7),
+(@p112, @p113, @p114, @p115, @p116, @p117, @p118, @p119, @p120, @p121, @p122, @p123, @p124, @p125, 8),
+(@p126, @p127, @p128, @p129, @p130, @p131, @p132, @p133, @p134, @p135, @p136, @p137, @p138, @p139, 9),
+(@p140, @p141, @p142, @p143, @p144, @p145, @p146, @p147, @p148, @p149, @p150, @p151, @p152, @p153, 10),
+(@p154, @p155, @p156, @p157, @p158, @p159, @p160, @p161, @p162, @p163, @p164, @p165, @p166, @p167, 11),
+(@p168, @p169, @p170, @p171, @p172, @p173, @p174, @p175, @p176, @p177, @p178, @p179, @p180, @p181, 12),
+(@p182, @p183, @p184, @p185, @p186, @p187, @p188, @p189, @p190, @p191, @p192, @p193, @p194, @p195, 13),
+(@p196, @p197, @p198, @p199, @p200, @p201, @p202, @p203, @p204, @p205, @p206, @p207, @p208, @p209, 14),
+(@p210, @p211, @p212, @p213, @p214, @p215, @p216, @p217, @p218, @p219, @p220, @p221, @p222, @p223, 15),
+(@p224, @p225, @p226, @p227, @p228, @p229, @p230, @p231, @p232, @p233, @p234, @p235, @p236, @p237, 16),
+(@p238, @p239, @p240, @p241, @p242, @p243, @p244, @p245, @p246, @p247, @p248, @p249, @p250, @p251, 17),
+(@p252, @p253, @p254, @p255, @p256, @p257, @p258, @p259, @p260, @p261, @p262, @p263, @p264, @p265, 18),
+(@p266, @p267, @p268, @p269, @p270, @p271, @p272, @p273, @p274, @p275, @p276, @p277, @p278, @p279, 19),
+(@p280, @p281, @p282, @p283, @p284, @p285, @p286, @p287, @p288, @p289, @p290, @p291, @p292, @p293, 20),
+(@p294, @p295, @p296, @p297, @p298, @p299, @p300, @p301, @p302, @p303, @p304, @p305, @p306, @p307, 21),
+(@p308, @p309, @p310, @p311, @p312, @p313, @p314, @p315, @p316, @p317, @p318, @p319, @p320, @p321, 22),
+(@p322, @p323, @p324, @p325, @p326, @p327, @p328, @p329, @p330, @p331, @p332, @p333, @p334, @p335, 23),
+(@p336, @p337, @p338, @p339, @p340, @p341, @p342, @p343, @p344, @p345, @p346, @p347, @p348, @p349, 24),
+(@p350, @p351, @p352, @p353, @p354, @p355, @p356, @p357, @p358, @p359, @p360, @p361, @p362, @p363, 25),
+(@p364, @p365, @p366, @p367, @p368, @p369, @p370, @p371, @p372, @p373, @p374, @p375, @p376, @p377, 26),
+(@p378, @p379, @p380, @p381, @p382, @p383, @p384, @p385, @p386, @p387, @p388, @p389, @p390, @p391, 27),
+(@p392, @p393, @p394, @p395, @p396, @p397, @p398, @p399, @p400, @p401, @p402, @p403, @p404, @p405, 28),
+(@p406, @p407, @p408, @p409, @p410, @p411, @p412, @p413, @p414, @p415, @p416, @p417, @p418, @p419, 29),
+(@p420, @p421, @p422, @p423, @p424, @p425, @p426, @p427, @p428, @p429, @p430, @p431, @p432, @p433, 30),
+(@p434, @p435, @p436, @p437, @p438, @p439, @p440, @p441, @p442, @p443, @p444, @p445, @p446, @p447, 31),
+(@p448, @p449, @p450, @p451, @p452, @p453, @p454, @p455, @p456, @p457, @p458, @p459, @p460, @p461, 32),
+(@p462, @p463, @p464, @p465, @p466, @p467, @p468, @p469, @p470, @p471, @p472, @p473, @p474, @p475, 33),
+(@p476, @p477, @p478, @p479, @p480, @p481, @p482, @p483, @p484, @p485, @p486, @p487, @p488, @p489, 34),
+(@p490, @p491, @p492, @p493, @p494, @p495, @p496, @p497, @p498, @p499, @p500, @p501, @p502, @p503, 35),
+(@p504, @p505, @p506, @p507, @p508, @p509, @p510, @p511, @p512, @p513, @p514, @p515, @p516, @p517, 36),
+(@p518, @p519, @p520, @p521, @p522, @p523, @p524, @p525, @p526, @p527, @p528, @p529, @p530, @p531, 37),
+(@p532, @p533, @p534, @p535, @p536, @p537, @p538, @p539, @p540, @p541, @p542, @p543, @p544, @p545, 38),
+(@p546, @p547, @p548, @p549, @p550, @p551, @p552, @p553, @p554, @p555, @p556, @p557, @p558, @p559, 39),
+(@p560, @p561, @p562, @p563, @p564, @p565, @p566, @p567, @p568, @p569, @p570, @p571, @p572, @p573, 40),
+(@p574, @p575, @p576, @p577, @p578, @p579, @p580, @p581, @p582, @p583, @p584, @p585, @p586, @p587, 41)) AS i ([AvatarURL], [CreatedBy], [CreatedOn], [DateOfBirth], [Email], [FullName], [IsDeleted], [IsMale], [Level], [Password], [Phone], [ResetToken], [Role], [Status], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([AvatarURL], [CreatedBy], [CreatedOn], [DateOfBirth], [Email], [FullName], [IsDeleted], [IsMale], [Level], [Password], [Phone], [ResetToken], [Role], [Status])
+VALUES (i.[AvatarURL], i.[CreatedBy], i.[CreatedOn], i.[DateOfBirth], i.[Email], i.[FullName], i.[IsDeleted], i.[IsMale], i.[Level], i.[Password], i.[Phone], i.[ResetToken], i.[Role], i.[Status])
+OUTPUT INSERTED.[Id], i._Position;
+2023-05-10 09:41:35.909 +07:00 [ERR] An exception occurred in the database while saving changes for context type 'Infrastructures.Persistence.ApplicationDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'AvatarURL'.
+Invalid column name 'CreatedOn'.
+Invalid column name 'FullName'.
+Invalid column name 'IsMale'.
+Invalid column name 'Level'.
+Invalid column name 'Password'.
+Invalid column name 'Phone'.
+Invalid column name 'ResetToken'.
+Invalid column name 'Role'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__208_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:8c161088-1448-4e5b-a36c-68cbef848e0e
+Error Number:207,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'AvatarURL'.
+Invalid column name 'CreatedOn'.
+Invalid column name 'FullName'.
+Invalid column name 'IsMale'.
+Invalid column name 'Level'.
+Invalid column name 'Password'.
+Invalid column name 'Phone'.
+Invalid column name 'ResetToken'.
+Invalid column name 'Role'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__208_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:8c161088-1448-4e5b-a36c-68cbef848e0e
+Error Number:207,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2023-05-10 09:41:35.918 +07:00 [ERR] Migration error
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'AvatarURL'.
+Invalid column name 'CreatedOn'.
+Invalid column name 'FullName'.
+Invalid column name 'IsMale'.
+Invalid column name 'Level'.
+Invalid column name 'Password'.
+Invalid column name 'Phone'.
+Invalid column name 'ResetToken'.
+Invalid column name 'Role'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__208_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:8c161088-1448-4e5b-a36c-68cbef848e0e
+Error Number:207,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Infrastructures.Persistence.ApplicationDbContextInitializer.TrySeedAsync() in F:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\Infrastructures\Persistence\ApplicationDbContextInitializer.cs:line 52
+   at Infrastructures.Persistence.ApplicationDbContextInitializer.SeedAsync() in F:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\Infrastructures\Persistence\ApplicationDbContextInitializer.cs:line 35
+2023-05-10 09:41:36.234 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-10 09:41:36.234 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-10 09:41:36.236 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 09:41:36.237 +07:00 [INF] Hosting environment: Development
+2023-05-10 09:41:36.237 +07:00 [INF] Content root path: F:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-10 10:05:07.911 +07:00 [WRN] There are multiple relationships between 'Syllabus' and 'User' without configured foreign key properties. This will cause Entity Framework to create shadow properties on 'Syllabus' with names dependent on the discovery order. Consider configuring the foreign key properties using the [ForeignKey] attribute or in 'OnModelCreating'.
+2023-05-10 10:05:07.956 +07:00 [WRN] There are multiple relationships between 'TrainingProgram' and 'User' without configured foreign key properties. This will cause Entity Framework to create shadow properties on 'TrainingProgram' with names dependent on the discovery order. Consider configuring the foreign key properties using the [ForeignKey] attribute or in 'OnModelCreating'.
+2023-05-10 10:05:07.957 +07:00 [WRN] There are multiple relationships between 'Unit' and 'User' without configured foreign key properties. This will cause Entity Framework to create shadow properties on 'Unit' with names dependent on the discovery order. Consider configuring the foreign key properties using the [ForeignKey] attribute or in 'OnModelCreating'.
+2023-05-10 10:05:08.264 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 10:05:08.366 +07:00 [WRN] The foreign key property 'Syllabus.UserId1' was created in shadow state because a conflicting property with the simple name 'UserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2023-05-10 10:05:08.366 +07:00 [WRN] The foreign key property 'TrainingProgram.UserId1' was created in shadow state because a conflicting property with the simple name 'UserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2023-05-10 10:05:08.366 +07:00 [WRN] The foreign key property 'Unit.UserId1' was created in shadow state because a conflicting property with the simple name 'UserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2023-05-10 10:05:09.635 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-10 10:05:09.635 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-10 10:05:09.636 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 10:05:09.637 +07:00 [INF] Hosting environment: Development
+2023-05-10 10:05:09.637 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-10 10:05:43.808 +07:00 [INF] Start performance record
+2023-05-10 10:05:43.850 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 10:05:44.924 +07:00 [INF] GlobalExceptionMiddleware
+2023-05-10 10:05:44.925 +07:00 [INF] Value cannot be null. (Parameter 'inputKey')
+2023-05-10 10:05:44.931 +07:00 [INF] System.ArgumentNullException: Value cannot be null. (Parameter 'inputKey')
+   at BCrypt.Net.BCrypt.HashPassword(String inputKey, String salt, Boolean enhancedEntropy, HashType hashType)
+   at BCrypt.Net.BCrypt.HashPassword(String inputKey, String salt)
+   at BCrypt.Net.BCrypt.HashPassword(String inputKey)
+   at Application.Services.JWTService.Hash(String inputString) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\Application\Services\JWTService.cs:line 58
+   at Application.Account.Commands.Register.RegisterCommandHandler.Handle(RegisterCommand request, CancellationToken cancellationToken) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\Application\Account\Commands\Register\RegisterCommand.cs:line 43
+   at Application.Commons.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\Application\Commons\Behaviors\ValidationBehavior.cs:line 34
+   at WebAPI.Controllers.AccountController.RegisterAsync(RegisterCommand request) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Controllers\AccountController.cs:line 22
+   at lambda_method37(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ExceptionContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at WebAPI.Middlewares.PerformanceMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Middlewares\PerformanceMiddleware.cs:line 22
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at WebAPI.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Middlewares\GlobalExceptionMiddleware.cs:line 11
+2023-05-10 10:08:34.123 +07:00 [INF] Start performance record
+2023-05-10 10:08:34.127 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 10:09:16.701 +07:00 [INF] GlobalExceptionMiddleware
+2023-05-10 10:09:16.701 +07:00 [INF] Value cannot be null. (Parameter 'inputKey')
+2023-05-10 10:09:16.704 +07:00 [INF] System.ArgumentNullException: Value cannot be null. (Parameter 'inputKey')
+   at BCrypt.Net.BCrypt.HashPassword(String inputKey, String salt, Boolean enhancedEntropy, HashType hashType)
+   at BCrypt.Net.BCrypt.HashPassword(String inputKey, String salt)
+   at BCrypt.Net.BCrypt.HashPassword(String inputKey)
+   at Application.Services.JWTService.Hash(String inputString) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\Application\Services\JWTService.cs:line 58
+   at Application.Account.Commands.Register.RegisterCommandHandler.Handle(RegisterCommand request, CancellationToken cancellationToken) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\Application\Account\Commands\Register\RegisterCommand.cs:line 43
+   at Application.Commons.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\Application\Commons\Behaviors\ValidationBehavior.cs:line 34
+   at WebAPI.Controllers.AccountController.RegisterAsync(RegisterCommand request) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Controllers\AccountController.cs:line 22
+   at lambda_method37(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ExceptionContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at WebAPI.Middlewares.PerformanceMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Middlewares\PerformanceMiddleware.cs:line 22
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at WebAPI.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Middlewares\GlobalExceptionMiddleware.cs:line 11
+2023-05-10 10:09:19.785 +07:00 [INF] Start performance record
+2023-05-10 10:09:19.800 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 10:09:27.997 +07:00 [INF] GlobalExceptionMiddleware
+2023-05-10 10:09:27.998 +07:00 [INF] Value cannot be null. (Parameter 'inputKey')
+2023-05-10 10:09:28.025 +07:00 [INF] System.ArgumentNullException: Value cannot be null. (Parameter 'inputKey')
+   at BCrypt.Net.BCrypt.HashPassword(String inputKey, String salt, Boolean enhancedEntropy, HashType hashType)
+   at BCrypt.Net.BCrypt.HashPassword(String inputKey, String salt)
+   at BCrypt.Net.BCrypt.HashPassword(String inputKey)
+   at Application.Services.JWTService.Hash(String inputString) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\Application\Services\JWTService.cs:line 58
+   at Application.Account.Commands.Register.RegisterCommandHandler.Handle(RegisterCommand request, CancellationToken cancellationToken) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\Application\Account\Commands\Register\RegisterCommand.cs:line 43
+   at Application.Commons.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\Application\Commons\Behaviors\ValidationBehavior.cs:line 34
+   at WebAPI.Controllers.AccountController.RegisterAsync(RegisterCommand request) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Controllers\AccountController.cs:line 22
+   at lambda_method37(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ExceptionContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at WebAPI.Middlewares.PerformanceMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Middlewares\PerformanceMiddleware.cs:line 22
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at WebAPI.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Middlewares\GlobalExceptionMiddleware.cs:line 11
+2023-05-10 10:09:38.739 +07:00 [INF] Start performance record
+2023-05-10 10:09:38.739 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 10:10:32.553 +07:00 [INF] GlobalExceptionMiddleware
+2023-05-10 10:10:32.557 +07:00 [INF] Value cannot be null. (Parameter 'inputKey')
+2023-05-10 10:10:32.567 +07:00 [INF] System.ArgumentNullException: Value cannot be null. (Parameter 'inputKey')
+   at BCrypt.Net.BCrypt.HashPassword(String inputKey, String salt, Boolean enhancedEntropy, HashType hashType)
+   at BCrypt.Net.BCrypt.HashPassword(String inputKey, String salt)
+   at BCrypt.Net.BCrypt.HashPassword(String inputKey)
+   at Application.Services.JWTService.Hash(String inputString) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\Application\Services\JWTService.cs:line 58
+   at Application.Account.Commands.Register.RegisterCommandHandler.Handle(RegisterCommand request, CancellationToken cancellationToken) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\Application\Account\Commands\Register\RegisterCommand.cs:line 43
+   at Application.Commons.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\Application\Commons\Behaviors\ValidationBehavior.cs:line 34
+   at WebAPI.Controllers.AccountController.RegisterAsync(RegisterCommand request) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Controllers\AccountController.cs:line 22
+   at lambda_method37(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ExceptionContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at WebAPI.Middlewares.PerformanceMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Middlewares\PerformanceMiddleware.cs:line 22
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at WebAPI.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Middlewares\GlobalExceptionMiddleware.cs:line 11
+2023-05-10 10:10:46.371 +07:00 [INF] Start performance record
+2023-05-10 10:10:46.372 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 10:11:31.962 +07:00 [INF] GlobalExceptionMiddleware
+2023-05-10 10:11:31.962 +07:00 [INF] Value cannot be null. (Parameter 'inputKey')
+2023-05-10 10:11:32.065 +07:00 [INF] System.ArgumentNullException: Value cannot be null. (Parameter 'inputKey')
+   at BCrypt.Net.BCrypt.HashPassword(String inputKey, String salt, Boolean enhancedEntropy, HashType hashType)
+   at BCrypt.Net.BCrypt.HashPassword(String inputKey, String salt)
+   at BCrypt.Net.BCrypt.HashPassword(String inputKey)
+   at Application.Services.JWTService.Hash(String inputString) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\Application\Services\JWTService.cs:line 58
+   at Application.Account.Commands.Register.RegisterCommandHandler.Handle(RegisterCommand request, CancellationToken cancellationToken) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\Application\Account\Commands\Register\RegisterCommand.cs:line 43
+   at Application.Commons.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\Application\Commons\Behaviors\ValidationBehavior.cs:line 34
+   at WebAPI.Controllers.AccountController.RegisterAsync(RegisterCommand request) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Controllers\AccountController.cs:line 22
+   at lambda_method37(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ExceptionContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at WebAPI.Middlewares.PerformanceMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Middlewares\PerformanceMiddleware.cs:line 22
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at WebAPI.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Middlewares\GlobalExceptionMiddleware.cs:line 11
+2023-05-10 10:13:29.823 +07:00 [INF] Start performance record
+2023-05-10 10:13:29.834 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 10:13:50.562 +07:00 [INF] GlobalExceptionMiddleware
+2023-05-10 10:13:50.563 +07:00 [INF] Value cannot be null. (Parameter 'inputKey')
+2023-05-10 10:13:50.601 +07:00 [INF] System.ArgumentNullException: Value cannot be null. (Parameter 'inputKey')
+   at BCrypt.Net.BCrypt.HashPassword(String inputKey, String salt, Boolean enhancedEntropy, HashType hashType)
+   at BCrypt.Net.BCrypt.HashPassword(String inputKey, String salt)
+   at BCrypt.Net.BCrypt.HashPassword(String inputKey)
+   at Application.Services.JWTService.Hash(String inputString) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\Application\Services\JWTService.cs:line 58
+   at Application.Account.Commands.Register.RegisterCommandHandler.Handle(RegisterCommand request, CancellationToken cancellationToken) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\Application\Account\Commands\Register\RegisterCommand.cs:line 43
+   at Application.Commons.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\Application\Commons\Behaviors\ValidationBehavior.cs:line 34
+   at WebAPI.Controllers.AccountController.RegisterAsync(RegisterCommand request) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Controllers\AccountController.cs:line 22
+   at lambda_method52(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ExceptionContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at WebAPI.Middlewares.PerformanceMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Middlewares\PerformanceMiddleware.cs:line 22
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at WebAPI.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Middlewares\GlobalExceptionMiddleware.cs:line 11
+2023-05-10 10:15:37.635 +07:00 [INF] Start performance record
+2023-05-10 10:15:37.635 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 10:15:37.654 +07:00 [INF] GlobalExceptionMiddleware
+2023-05-10 10:15:37.654 +07:00 [INF] Value cannot be null. (Parameter 'inputKey')
+2023-05-10 10:15:37.663 +07:00 [INF] System.ArgumentNullException: Value cannot be null. (Parameter 'inputKey')
+   at BCrypt.Net.BCrypt.HashPassword(String inputKey, String salt, Boolean enhancedEntropy, HashType hashType)
+   at BCrypt.Net.BCrypt.HashPassword(String inputKey, String salt)
+   at BCrypt.Net.BCrypt.HashPassword(String inputKey)
+   at Application.Services.JWTService.Hash(String inputString) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\Application\Services\JWTService.cs:line 58
+   at Application.Account.Commands.Register.RegisterCommandHandler.Handle(RegisterCommand request, CancellationToken cancellationToken) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\Application\Account\Commands\Register\RegisterCommand.cs:line 43
+   at Application.Commons.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\Application\Commons\Behaviors\ValidationBehavior.cs:line 34
+   at WebAPI.Controllers.AccountController.RegisterAsync(RegisterCommand request) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Controllers\AccountController.cs:line 22
+   at lambda_method52(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ExceptionContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at WebAPI.Middlewares.PerformanceMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Middlewares\PerformanceMiddleware.cs:line 22
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at WebAPI.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Middlewares\GlobalExceptionMiddleware.cs:line 11
+2023-05-10 10:15:58.550 +07:00 [INF] Start performance record
+2023-05-10 10:15:58.554 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 10:16:34.328 +07:00 [INF] GlobalExceptionMiddleware
+2023-05-10 10:16:34.328 +07:00 [INF] Value cannot be null. (Parameter 'inputKey')
+2023-05-10 10:16:34.335 +07:00 [INF] System.ArgumentNullException: Value cannot be null. (Parameter 'inputKey')
+   at BCrypt.Net.BCrypt.HashPassword(String inputKey, String salt, Boolean enhancedEntropy, HashType hashType)
+   at BCrypt.Net.BCrypt.HashPassword(String inputKey, String salt)
+   at BCrypt.Net.BCrypt.HashPassword(String inputKey)
+   at Application.Services.JWTService.Hash(String inputString) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\Application\Services\JWTService.cs:line 58
+   at Application.Account.Commands.Register.RegisterCommandHandler.Handle(RegisterCommand request, CancellationToken cancellationToken) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\Application\Account\Commands\Register\RegisterCommand.cs:line 43
+   at Application.Commons.Behaviors.ValidationBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\Application\Commons\Behaviors\ValidationBehavior.cs:line 34
+   at WebAPI.Controllers.AccountController.RegisterAsync(RegisterCommand request) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Controllers\AccountController.cs:line 22
+   at lambda_method52(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ExceptionContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at WebAPI.Middlewares.PerformanceMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Middlewares\PerformanceMiddleware.cs:line 22
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass6_1.<<UseMiddlewareInterface>b__1>d.MoveNext()
+--- End of stack trace from previous location ---
+   at WebAPI.Middlewares.GlobalExceptionMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Middlewares\GlobalExceptionMiddleware.cs:line 11
+2023-05-10 10:17:04.131 +07:00 [WRN] There are multiple relationships between 'Syllabus' and 'User' without configured foreign key properties. This will cause Entity Framework to create shadow properties on 'Syllabus' with names dependent on the discovery order. Consider configuring the foreign key properties using the [ForeignKey] attribute or in 'OnModelCreating'.
+2023-05-10 10:17:04.171 +07:00 [WRN] There are multiple relationships between 'TrainingProgram' and 'User' without configured foreign key properties. This will cause Entity Framework to create shadow properties on 'TrainingProgram' with names dependent on the discovery order. Consider configuring the foreign key properties using the [ForeignKey] attribute or in 'OnModelCreating'.
+2023-05-10 10:17:04.171 +07:00 [WRN] There are multiple relationships between 'Unit' and 'User' without configured foreign key properties. This will cause Entity Framework to create shadow properties on 'Unit' with names dependent on the discovery order. Consider configuring the foreign key properties using the [ForeignKey] attribute or in 'OnModelCreating'.
+2023-05-10 10:17:04.462 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 10:17:04.557 +07:00 [WRN] The foreign key property 'Syllabus.UserId1' was created in shadow state because a conflicting property with the simple name 'UserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2023-05-10 10:17:04.557 +07:00 [WRN] The foreign key property 'TrainingProgram.UserId1' was created in shadow state because a conflicting property with the simple name 'UserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2023-05-10 10:17:04.557 +07:00 [WRN] The foreign key property 'Unit.UserId1' was created in shadow state because a conflicting property with the simple name 'UserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2023-05-10 10:17:05.623 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-10 10:17:05.623 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-10 10:17:05.625 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 10:17:05.625 +07:00 [INF] Hosting environment: Development
+2023-05-10 10:17:05.626 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-10 10:17:52.431 +07:00 [INF] Start performance record
+2023-05-10 10:17:52.530 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 10:17:52.846 +07:00 [INF] End performance record
+2023-05-10 10:17:52.855 +07:00 [INF] Time taken: 0:00.419
+2023-05-10 10:17:59.985 +07:00 [INF] Start performance record
+2023-05-10 10:17:59.999 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 10:18:02.264 +07:00 [WRN] Savepoints are disabled because Multiple Active Result Sets (MARS) is enabled. If 'SaveChanges' fails, then the transaction cannot be automatically rolled back to a known clean state. Instead, the transaction should be rolled back by the application before retrying 'SaveChanges'. See https://go.microsoft.com/fwlink/?linkid=2149338 for more information and examples. To identify the code which triggers this warning, call 'ConfigureWarnings(w => w.Throw(SqlServerEventId.SavepointsDisabledBecauseOfMARS))'.
+2023-05-10 10:18:02.396 +07:00 [ERR] An exception occurred in the database while saving changes for context type 'Infrastructures.Persistence.ApplicationDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'UserName', table 'TrainingManagementSystem.dbo.Users'; column does not allow nulls. INSERT fails.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:11fa67d6-b1d9-4149-b2a3-a628691eaf40
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'UserName', table 'TrainingManagementSystem.dbo.Users'; column does not allow nulls. INSERT fails.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:11fa67d6-b1d9-4149-b2a3-a628691eaf40
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2023-05-10 10:18:02.475 +07:00 [INF] End performance record
+2023-05-10 10:18:02.476 +07:00 [INF] Time taken: 0:02.490
+2023-05-10 10:19:36.636 +07:00 [INF] Start performance record
+2023-05-10 10:19:36.643 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 10:20:16.650 +07:00 [WRN] Savepoints are disabled because Multiple Active Result Sets (MARS) is enabled. If 'SaveChanges' fails, then the transaction cannot be automatically rolled back to a known clean state. Instead, the transaction should be rolled back by the application before retrying 'SaveChanges'. See https://go.microsoft.com/fwlink/?linkid=2149338 for more information and examples. To identify the code which triggers this warning, call 'ConfigureWarnings(w => w.Throw(SqlServerEventId.SavepointsDisabledBecauseOfMARS))'.
+2023-05-10 10:20:16.739 +07:00 [ERR] An exception occurred in the database while saving changes for context type 'Infrastructures.Persistence.ApplicationDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'UserName', table 'TrainingManagementSystem.dbo.Users'; column does not allow nulls. INSERT fails.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:11fa67d6-b1d9-4149-b2a3-a628691eaf40
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'UserName', table 'TrainingManagementSystem.dbo.Users'; column does not allow nulls. INSERT fails.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:11fa67d6-b1d9-4149-b2a3-a628691eaf40
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2023-05-10 10:20:23.064 +07:00 [INF] End performance record
+2023-05-10 10:20:23.064 +07:00 [INF] Time taken: 0:46.427
+2023-05-10 10:24:24.816 +07:00 [INF] Application is shutting down...
+2023-05-10 10:24:27.783 +07:00 [FTL] Unhandled Exception
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at WebAPI.Extensions.HostingExtensions.ConfigureServices(WebApplicationBuilder builder, String databaseConnection, String userApp, String key, String issuer, String audience) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Extensions\HostingExtensions.cs:line 23
+   at Program.<Main>$(String[] args) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Program.cs:line 29
+2023-05-10 10:24:27.850 +07:00 [INF] Shut down complete
+2023-05-10 10:24:36.831 +07:00 [FTL] Unhandled Exception
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at WebAPI.Extensions.HostingExtensions.ConfigureServices(WebApplicationBuilder builder, String databaseConnection, String userApp, String key, String issuer, String audience) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Extensions\HostingExtensions.cs:line 23
+   at Program.<Main>$(String[] args) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Program.cs:line 29
+2023-05-10 10:24:36.932 +07:00 [INF] Shut down complete
+2023-05-10 10:25:42.077 +07:00 [FTL] Unhandled Exception
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at WebAPI.Extensions.HostingExtensions.ConfigureServices(WebApplicationBuilder builder, String databaseConnection, String userApp, String key, String issuer, String audience) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Extensions\HostingExtensions.cs:line 23
+   at Program.<Main>$(String[] args) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Program.cs:line 29
+2023-05-10 10:25:42.130 +07:00 [INF] Shut down complete
+2023-05-10 10:25:53.986 +07:00 [FTL] Unhandled Exception
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at WebAPI.Extensions.HostingExtensions.ConfigureServices(WebApplicationBuilder builder, String databaseConnection, String userApp, String key, String issuer, String audience) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Extensions\HostingExtensions.cs:line 23
+   at Program.<Main>$(String[] args) in D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI\Program.cs:line 29
+2023-05-10 10:25:54.058 +07:00 [INF] Shut down complete
+2023-05-10 10:26:17.784 +07:00 [WRN] There are multiple relationships between 'Syllabus' and 'User' without configured foreign key properties. This will cause Entity Framework to create shadow properties on 'Syllabus' with names dependent on the discovery order. Consider configuring the foreign key properties using the [ForeignKey] attribute or in 'OnModelCreating'.
+2023-05-10 10:26:17.868 +07:00 [WRN] There are multiple relationships between 'TrainingProgram' and 'User' without configured foreign key properties. This will cause Entity Framework to create shadow properties on 'TrainingProgram' with names dependent on the discovery order. Consider configuring the foreign key properties using the [ForeignKey] attribute or in 'OnModelCreating'.
+2023-05-10 10:26:17.878 +07:00 [WRN] There are multiple relationships between 'Unit' and 'User' without configured foreign key properties. This will cause Entity Framework to create shadow properties on 'Unit' with names dependent on the discovery order. Consider configuring the foreign key properties using the [ForeignKey] attribute or in 'OnModelCreating'.
+2023-05-10 10:26:18.205 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 10:26:18.314 +07:00 [WRN] The foreign key property 'Syllabus.UserId1' was created in shadow state because a conflicting property with the simple name 'UserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2023-05-10 10:26:18.318 +07:00 [WRN] The foreign key property 'TrainingProgram.UserId1' was created in shadow state because a conflicting property with the simple name 'UserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2023-05-10 10:26:18.321 +07:00 [WRN] The foreign key property 'Unit.UserId1' was created in shadow state because a conflicting property with the simple name 'UserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2023-05-10 10:26:19.859 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-10 10:26:19.863 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-10 10:26:19.867 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 10:26:19.869 +07:00 [INF] Hosting environment: Development
+2023-05-10 10:26:19.872 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI

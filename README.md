@@ -1,4 +1,8 @@
 # Training management system
+// binh diem danh
+// dat tinh diem
+// do phan tich hoc sinh
+// nhon nam seed data lay tinh nang
 
 // TODO: check and add validation if not has
 // TODO: check again error message
@@ -102,6 +106,6 @@
 2. Assignment
    1. Have the ability to restrict trainer access to certain resources or assessments based on their qualifications or areas of expertise.
 3. Evaluation
-   1. Have the ability to evaluate the performance of trainers based on student feedback.
+   1. Have the ability to evaluate the performance of trainers based on student feedback.****
 
 // trainer and students.

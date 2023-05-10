@@ -64,3 +64,15 @@
 2023-05-10 02:40:19.997 +07:00 [INF] Application started. Press Ctrl+C to shut down.
 2023-05-10 02:40:19.997 +07:00 [INF] Hosting environment: Development
 2023-05-10 02:40:19.997 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-10 08:01:01.342 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 08:01:02.564 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-10 08:01:02.566 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-10 08:01:02.568 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 08:01:02.568 +07:00 [INF] Hosting environment: Development
+2023-05-10 08:01:02.568 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-10 08:52:54.749 +07:00 [INF] Start performance record
+2023-05-10 08:52:56.583 +07:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-05-10 08:52:57.733 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-10 08:52:57.734 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-10 08:52:58.327 +07:00 [INF] End performance record
+2023-05-10 08:52:58.334 +07:00 [INF] Time taken: 0:03.582

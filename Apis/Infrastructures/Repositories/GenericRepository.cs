@@ -23,14 +23,14 @@ namespace Infrastructures.Repositories
         // create
         public async Task AddAsync(TEntity entity)
         {
-            await _dbSet.AddAsync(entity);
             _cacheService.Remove(_cacheKey);
+            await _dbSet.AddAsync(entity);
         }
 
         public async Task AddRangeAsync(IEnumerable<TEntity> entities)
         {
-            await _dbSet.AddRangeAsync(entities);
             _cacheService.Remove(_cacheKey);
+            await _dbSet.AddRangeAsync(entities);
         }
 
         #region  Read

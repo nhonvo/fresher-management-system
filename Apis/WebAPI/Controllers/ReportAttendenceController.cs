@@ -1,17 +1,10 @@
-﻿using Application.Class.Commands.CreateClass;
-using Application.Class.Commands.DeleteClass;
-using Application.Class.Commands.UpdateClass;
-using Application.Class.DTO;
-using Application.Class.Queries.GetClass;
-using Application.Class.Queries.GetClassProgram;
-using Application.Commons;
+﻿using Application.Commons;
 using Application.ReportAttendences.Commands.CreateReportAttendences;
 using Application.ReportAttendences.Commands.DeleteReportAttendences;
 using Application.ReportAttendences.Commands.UpdateReportAttendences;
 using Application.ReportAttendences.DTO;
 using Application.ReportAttendences.Queries.GetReportAttendence;
 using Application.ReportAttendences.Queries.GetReportAttendenceById;
-using Domain.Aggregate.AppResult;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 

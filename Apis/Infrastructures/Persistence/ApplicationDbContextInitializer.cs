@@ -42,13 +42,13 @@ namespace Infrastructures.Persistence
         public async Task TrySeedAsync()
         {
             // user or "||" operator for another table
-            // if (!_context.Users.Any())
-            // {
-            //     string json = File.ReadAllText(@"../../Json/User.json");
-            //     List<User> users = JsonSerializer.Deserialize<List<User>>(json)!;
-            //     await _context.AddRangeAsync(users);
-            //     await _context.SaveChangesAsync();
-            // };
+            //if (!_context.Users.Any())
+            //{
+            //    string json = File.ReadAllText(@"../../Json/User.json");
+            //    List<User> users = JsonSerializer.Deserialize<List<User>>(json)!;
+            //    await _context.AddRangeAsync(users);
+            //    await _context.SaveChangesAsync();
+            //};
 
             // if (!_context.Syllabus.Any())
             // {
@@ -66,13 +66,13 @@ namespace Infrastructures.Persistence
             //     await _context.AddRangeAsync(testAssessments);
             //     await _context.SaveChangesAsync();
             // };
-            if (!_context.FSUs.Any())
-            {
-                string json = File.ReadAllText(@"../../Json/FSU.json");
-                List<FSU> testAssessments = JsonSerializer.Deserialize<List<FSU>>(json)!;
-                await _context.AddRangeAsync(testAssessments);
-                await _context.SaveChangesAsync();
-            };
+            //if (!_context.FSUs.Any())
+            //{
+            //    string json = File.ReadAllText(@"../../Json/FSU.json");
+            //    List<FSU> testAssessments = JsonSerializer.Deserialize<List<FSU>>(json)!;
+            //    await _context.AddRangeAsync(testAssessments);
+            //    await _context.SaveChangesAsync();
+            //};
             if (!_context.TrainingClasses.Any())
             {
                 string json = File.ReadAllText(@"../../Json/TrainingClass.json");

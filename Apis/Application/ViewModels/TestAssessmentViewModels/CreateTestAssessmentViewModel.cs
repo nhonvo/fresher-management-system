@@ -1,6 +1,12 @@
-﻿namespace Application.ViewModels.TestAssessmentViewModels
+﻿using Domain.Enums;
+
+namespace Application.ViewModels.TestAssessmentViewModels
 {
     public class CreateTestAssessmentViewModel
     {
+        public float Score { get; set; }
+        public TestAssessmentType TestAssessmentType { get; set; }
+        public int AttendeeId { get; set; }
+        public int TraningProgramId { get; set; }
     }
 }

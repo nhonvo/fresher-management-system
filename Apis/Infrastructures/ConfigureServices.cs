@@ -48,6 +48,7 @@ namespace Infrastructures
             #region Mapping
             //TODO: remove later when we have mapping each component
             services.AddAutoMapper(typeof(MapperConfigurationsProfile).Assembly);
+            services.AddAutoMapper(typeof(TestAssessementProfile).Assembly);
 
             #endregion
 

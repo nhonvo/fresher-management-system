@@ -1,4 +1,3 @@
-using Application.Syllabuses.Commands;
 using Application.Syllabuses.Commands.CreateSyllabus;
 using Application.Syllabuses.Commands.UpdateSyllabus;
 using Application.Syllabuses.DTO;

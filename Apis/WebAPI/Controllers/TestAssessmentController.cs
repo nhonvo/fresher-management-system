@@ -1,7 +1,4 @@
-﻿using Application.Class.Queries.GetClass;
-using Application.Commons;
-using Application.Interfaces;
-using Application.ViewModels.TestAssessmentViewModels;
+﻿using Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 
@@ -10,7 +7,7 @@ namespace WebAPI.Controllers;
 [Route("api/[controller]")]
 [ApiController]
 public class TestAssessmentController : CustomBaseController
-{ 
+{
     private readonly ITestAssessmentService _testAssessmentService;
     public TestAssessmentController(ITestAssessmentService testAssessmentService)
     {

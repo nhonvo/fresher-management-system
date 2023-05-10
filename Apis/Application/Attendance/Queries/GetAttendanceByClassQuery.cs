@@ -3,7 +3,6 @@ using Application.Common.Exceptions;
 using Application.Commons;
 using Application.Interfaces;
 using AutoMapper;
-using Domain.Enums;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 

@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers
 {
-    public class AttendanceController : BaseController
+    public class AttendanceController : BasesController
     {
         private readonly IMediator _mediator;
         public AttendanceController(IMediator mediator)

@@ -23,7 +23,7 @@ namespace Domain.Entities
 
 
         // Navigation Property
- 
+
         public ICollection<Unit> Units { get; set; }
         public ICollection<ProgramSyllabus> ProgramSyllabus { get; set; }
         public DateTime CreationDate { get; set; }

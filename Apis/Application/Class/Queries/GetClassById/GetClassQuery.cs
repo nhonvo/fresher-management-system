@@ -1,8 +1,6 @@
 ﻿using Application.Class.DTO;
 using Application.Common.Exceptions;
-using Application.Commons;
 using AutoMapper;
-using Domain.Aggregate.AppResult;
 using MediatR;
 
 namespace Application.Class.Queries.GetClass

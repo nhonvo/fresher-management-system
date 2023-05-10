@@ -1,8 +1,8 @@
-using System.Text;
 using Application.Syllabuses.DTO;
 using AutoMapper;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using System.Text;
 
 namespace Application.Syllabuses.Queries.ExportSyllabusesCSV;
 

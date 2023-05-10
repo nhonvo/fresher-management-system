@@ -2,7 +2,7 @@ using Domain.Enums;
 
 namespace Domain.Entities
 {
-    public class Attendance :BaseEntity
+    public class Attendance : BaseEntity
     {
         public int AttendanceId { get; set; }
         public int ClassUserId { get; set; }

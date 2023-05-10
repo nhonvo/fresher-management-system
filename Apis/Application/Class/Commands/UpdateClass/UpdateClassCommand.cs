@@ -1,9 +1,9 @@
-﻿using Domain.Entities;
-using MediatR;
-using Application.Class.DTO;
-using AutoMapper;
+﻿using Application.Class.DTO;
 using Application.Common.Exceptions;
+using AutoMapper;
+using Domain.Entities;
 using Domain.Enums;
+using MediatR;
 
 namespace Application.Class.Commands.UpdateClass
 {

@@ -1,8 +1,7 @@
-﻿using System.Text.Json;
-using Application.Class.DTO;
-using Domain.Entities;
+﻿using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
+using System.Text.Json;
 
 namespace Infrastructures.Persistence
 {

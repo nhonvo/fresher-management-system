@@ -5,7 +5,6 @@ using Application.Users.GetUserById.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using WebAPI.Controllers;
 
 namespace WebAPI.Controllers
 {
@@ -27,8 +26,6 @@ namespace WebAPI.Controllers
 
     }
 
-    // TODO: Seed data - done
-    // TODO: allow create role for user 
     // TODO: Send mail when user register
     // TODO: Method: forget password,
     /// change password,

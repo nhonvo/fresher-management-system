@@ -24,11 +24,9 @@ namespace Domain.Entities
         public int? ApproveByUserId { get; set; }
         public User ApproveBy { get; set; }
         public AttendeeType AttendeeType { get; set; }
-        public int? FSUId { get; set; }
-        public FSU FSU { get; set; }
         public string? ContactPoint { get; set; }
         public ICollection<UnitClassDetail> UnitClassDetail { get; set; }
         public int? TrainingProgramId { get; set; }
-        public TrainingProgram TrainingProgram { get; set; }
+        public TrainingProgram? TrainingProgram { get; set; }
     }
 }

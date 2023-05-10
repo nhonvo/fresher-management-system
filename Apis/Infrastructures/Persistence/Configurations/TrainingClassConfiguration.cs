@@ -17,9 +17,6 @@ namespace Infrastructures.Persistence.Configurations
             builder.HasOne(tc => tc.ApproveBy)
                    .WithMany(u => u.ApprovedTrainingClasses)
                    .HasForeignKey(tc => tc.ApproveByUserId).OnDelete(DeleteBehavior.NoAction);
-            builder.HasOne(tc => tc.FSU)
-                   .WithMany(f => f.TrainingClasses)
-                   .HasForeignKey(tc => tc.FSUId);
             builder.HasOne(tc => tc.TrainingProgram)
                    .WithOne(tp => tp.TrainingClass)
                    .HasForeignKey<TrainingClass>(tc => tc.TrainingProgramId);

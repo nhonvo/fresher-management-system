@@ -38,7 +38,7 @@ public class RegisterCommandHandler : IRequestHandler<RegisterCommand, AccountDT
             throw new NotFoundException("Email is exist !!!");
 
         var user = _mapper.Map<User>(request);
-        user.RoleId = 1;
+        //user.RoleId = 1;
         // user.AvatarURL = "null";
         user.Password = _jwtService.Hash(user.Password);
         try

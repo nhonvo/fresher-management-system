@@ -12,6 +12,7 @@ public interface IUnitOfWork : IDisposable
     IClassRepository ClassRepository { get; }
     ITestAssessmentRepository TestAssessmentRepository { get; }
     IAttendanceRepository AttendanceRepository { get; }
+    IUnitRepository UnitRepository { get; }
 
     IReportAttendenceRepository ReportAttendenceRepository { get; }
     /// <summary>

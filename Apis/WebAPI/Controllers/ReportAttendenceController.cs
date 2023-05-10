@@ -1,6 +1,7 @@
 ﻿using Application.Commons;
 using Application.ReportAttendences.Commands.CreateReportAttendences;
 using Application.ReportAttendences.Commands.DeleteReportAttendences;
+using Application.ReportAttendences.Commands.UpdateReportAttendanceStatus;
 using Application.ReportAttendences.Commands.UpdateReportAttendences;
 using Application.ReportAttendences.DTO;
 using Application.ReportAttendences.Queries.GetReportAttendence;

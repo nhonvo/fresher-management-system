@@ -25,18 +25,22 @@ namespace Application.ReportAttendences.Commands.CreateReportAttendences
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
         private readonly IClaimService _claimService;
+        private readonly ICurrentTime _currentTime;
 
 
-        public CreateReportAttendencesHandler(IUnitOfWork unitOfWork, IMapper mapper , IClaimService claimService)
+        public CreateReportAttendencesHandler(IUnitOfWork unitOfWork, IMapper mapper , IClaimService claimService, ICurrentTime currentTime)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
-            _claimService = claimService
+            _claimService = claimService;
+            _currentTime = currentTime;
         }
         public async Task<ReportAttendenceDTO> Handle(CreateReportAttendencesCommand request, CancellationToken cancellationToken)
         {
             var reportAttendance = _mapper.Map<ReportAttendence>(request);
-            reportAttendance.
+            reportAttendance.IsDeleted = false;
+            reportAttendance.CreatedBy = _claimService.CurrentUserId;
+            reportAttendance.CreationDate = _currentTime.GetCurrentTime();
             await _unitOfWork.ExecuteTransactionAsync(() =>
             {
                 _unitOfWork.ReportAttendenceRepository.AddAsync(reportAttendance);

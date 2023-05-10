@@ -18,8 +18,8 @@ namespace WebAPI.Services
             get
             {
                 if (accessToken == null)
-                    throw new Exception("No access token found!!!");
-
+                    //throw new Exception("No access token found!!!");
+                    return 0;
                 var id = _jwtService.Validate(accessToken).Claims.FirstOrDefault(c => c.Type == "ID")?.Value;
 
                 if (id == null)

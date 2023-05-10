@@ -21,7 +21,7 @@ namespace Infrastructures.Persistence
             }
             catch (Exception ex)
             {
-                System.Console.WriteLine(ex.ToString(), "Migration error");
+                // System.Console.WriteLine(ex.ToString(), "Migration error");
                 Log.Error(ex, "Migration error");
             }
         }
@@ -89,18 +89,6 @@ namespace Infrastructures.Persistence
                 await _context.AddRangeAsync(testAssessments);
                 await _context.SaveChangesAsync();
             };
-            //if (!_context.TrainingClasses.Any())
-            //{
-            //    string json = File.ReadAllText(@"../../Json/TrainingClass.json");
-            //    List<TrainingClass> testAssessments = JsonSerializer.Deserialize<List<TrainingClass>>(json)!;
-            //    await _context.AddRangeAsync(testAssessments);
-            //    await _context.SaveChangesAsync();
-            //};
-
         }
     }
 }
-// TODO: ADD Logging service SeriLog - done
-//update program file 2 part: pileline and app services- done
-// , redis, elasticsearch, 
-// TODO: add data seed  - customer seed data extention. 

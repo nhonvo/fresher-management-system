@@ -68,20 +68,20 @@ namespace Infrastructures.Persistence
 
             };
 
-            // if (!_context.TestAssessments.Any())
-            // {
-            //     string json = File.ReadAllText(@"../../Json/TestAssessment.json");
-            //     List<TestAssessment> testAssessments = JsonSerializer.Deserialize<List<TestAssessment>>(json)!;
-            //     await _context.AddRangeAsync(testAssessments);
-            //     await _context.SaveChangesAsync();
-            // };
-            //if (!_context.FSUs.Any())
-            //{
-            //    string json = File.ReadAllText(@"../../Json/FSU.json");
-            //    List<FSU> testAssessments = JsonSerializer.Deserialize<List<FSU>>(json)!;
-            //    await _context.AddRangeAsync(testAssessments);
-            //    await _context.SaveChangesAsync();
-            //};
+            if (!_context.TestAssessments.Any())
+            {
+                string json = File.ReadAllText(@"../../Json/TestAssessment.json");
+                List<TestAssessment> testAssessments = JsonSerializer.Deserialize<List<TestAssessment>>(json)!;
+                await _context.AddRangeAsync(testAssessments);
+                await _context.SaveChangesAsync();
+            };
+            if (!_context.FSUs.Any())
+            {
+                string json = File.ReadAllText(@"../../Json/FSU.json");
+                List<FSU> testAssessments = JsonSerializer.Deserialize<List<FSU>>(json)!;
+                await _context.AddRangeAsync(testAssessments);
+                await _context.SaveChangesAsync();
+            };
             if (!_context.TrainingClasses.Any())
             {
                 string json = File.ReadAllText(@"../../Json/TrainingClass.json");

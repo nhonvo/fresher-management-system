@@ -1,6 +1,7 @@
 ﻿using Application.Interfaces;
 using Application.ViewModels.TestAssessmentViewModels;
 using AutoMapper;
+using Domain.Entities;
 
 namespace Application.Services
 {
@@ -15,9 +16,23 @@ namespace Application.Services
             _mapper = mapper;
         }
 
+        public async Task<TestAssessmentViewModel?> CreateChemicalAsync(CreateTestAssessmentViewModel request)
+        {
+            var obj = _mapper.Map<TestAssessment>(request);
+            await _unitOfWork.TestAssessmentRepository.AddAsync(obj);
+            var isSuccess = await _unitOfWork.SaveChangesAsync() > 0;
+            if (isSuccess)
+            {
+                return _mapper.Map<TestAssessmentViewModel>(obj);
+            }
+            return null;
+        }
+
         public async Task<List<TestAssessmentViewModel>> GetChemicalAsync()
         {
-            throw new NotImplementedException();
+            var chemicals = await _unitOfWork.TestAssessmentRepository.GetAsync();
+            var result = _mapper.Map<List<TestAssessmentViewModel>>(chemicals);
+            return result;
         }
 
         public async Task<List<TestAssessmentViewModel>> GetTestAssessmentPagingsionAsync(int pageIndex = 0, int pageSize = 10)
@@ -25,6 +40,16 @@ namespace Application.Services
             var chemicals = await _unitOfWork.TestAssessmentRepository.ToPagination(pageIndex, pageSize);
             var result = _mapper.Map<List<TestAssessmentViewModel>>(chemicals);
             return result;
+        }
+
+        public Task RemoveAsync(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<TestAssessmentViewModel> UpdateAsync(int id, UpdateTestAssessmentViewModel updateDTO)
+        {
+            throw new NotImplementedException();
         }
     }
 }

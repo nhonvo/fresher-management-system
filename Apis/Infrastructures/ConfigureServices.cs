@@ -16,7 +16,7 @@ namespace Infrastructures
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             #endregion
             #region Repositories
-            // services.AddScoped<IUserService, UserService>();
+            services.AddScoped<ITestAssessmentService, TestAssessmentService>();
             services.AddSingleton<ICurrentTime, CurrentTime>();
             #endregion
             #region DbContext 

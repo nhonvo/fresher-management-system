@@ -6,6 +6,9 @@ namespace Application.Interfaces
     {
         public Task<List<TestAssessmentViewModel>> GetTestAssessmentPagingsionAsync(int pageIndex = 0, int pageSize = 10);
         public Task<List<TestAssessmentViewModel>> GetChemicalAsync();
+        public Task<TestAssessmentViewModel?> CreateChemicalAsync(CreateTestAssessmentViewModel testAssessmentViewModel);
+        Task RemoveAsync(int id);
+        Task<TestAssessmentViewModel> UpdateAsync(int id, UpdateTestAssessmentViewModel updateDTO);
 
     }
 }

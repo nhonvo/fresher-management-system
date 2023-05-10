@@ -12,6 +12,7 @@ public interface IUnitOfWork : IDisposable
     IClassRepository ClassRepository { get; }
     ITestAssessmentRepository TestAssessmentRepository { get; }
     IAttendanceRepository AttendanceRepository { get; }
+    IUnitRepository UnitRepository { get; }
 
     /// <summary>
     /// Saves changes to the database. This is called when the user changes the data or saves a new version of the data.

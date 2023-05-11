@@ -32,7 +32,7 @@ namespace Application.UnitLessons.Commands.CreateUnitLesson
             {
                 _unitOfWork.UnitLessonRepository.AddAsync(unitlesson);
             });
-            var result = _mapper.Map<UnitLesson>(unitlesson);
+            var result = _mapper.Map<UnitLessonDTO>(unitlesson);
 
             return result ?? throw new NotFoundException("Unit Lesson not found");
         }

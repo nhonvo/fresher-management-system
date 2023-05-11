@@ -1,4 +1,7 @@
-﻿namespace Application.Account.DTOs;
+﻿using System.Text.Json.Serialization;
+using Domain.Enums;
+
+namespace Application.Account.DTOs;
 
 public record AccountDTO
 {
@@ -7,7 +10,8 @@ public record AccountDTO
     public string Email { get; set; }
     public string Phone { get; set; }
     public DateTime DateOfBirth { get; set; }
-    public int RoleId { get; set; }
+    [JsonConverter(typeof(JsonStringEnumConverter))]
+    public UserRoleType Role { get; set; }
     public string Token { get; set; }
     public DateTime? ExpireDay { get; set; }
 }

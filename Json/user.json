@@ -1,6 +1,40 @@
-[{"id":1,"Name":"Morton Quarterman","Phone":"922-215-1843","Password":"yrKE3YgYTrg","Gender":0,"Status":0,"DateOfBirth":"2022-06-11","IsDeleted":true,"Email":"mquarterman0@prweb.com"},
-{"id":2,"Name":"Issi Ruspine","Phone":"643-942-5552","Password":"KJBgPXDBk","Gender":1,"Status":3,"DateOfBirth":"2022-07-08","IsDeleted":true,"Email":"iruspine1@paypal.com"},
-{"id":3,"Name":"Theodora Obeney","Phone":"855-576-8861","Password":"0VK9Jxaw0","Gender":1,"Status":2,"DateOfBirth":"2022-10-05","IsDeleted":false,"Email":"tobeney2@google.ca"},
+[
+    {
+        "id": 1,
+        "Name": "SuperAdmin",
+        "Phone": "922-215-1843",
+        "Password": "$2a$11$8SylUOilhjdL8bfK.8lIg.Heu52KFJrsKLsACsvUroxQAd660dBQG",
+        "Role":0,
+        "Gender": 0,
+        "Status": 0,
+        "DateOfBirth": "2022-06-11",
+        "IsDeleted": true,
+        "Email": "superadmin@gmail.com"
+    },
+    {
+        "id": 2,
+        "Name": "ClassAdmin",
+        "Phone": "922-215-1843",
+        "Password": "$2a$11$8SylUOilhjdL8bfK.8lIg.Heu52KFJrsKLsACsvUroxQAd660dBQG",
+        "Role":1,
+        "Gender": 0,
+        "Status": 0,
+        "DateOfBirth": "2022-06-11",
+        "IsDeleted": true,
+        "Email": "classadmin@gmail.com"
+    },
+    {
+        "id": 3,
+        "Name": "Trainer",
+        "Phone": "922-215-1843",
+        "Password": "$2a$11$8SylUOilhjdL8bfK.8lIg.Heu52KFJrsKLsACsvUroxQAd660dBQG",
+        "Role":1,
+        "Gender": 0,
+        "Status": 0,
+        "DateOfBirth": "2022-06-11",
+        "IsDeleted": true,
+        "Email": "trainer@gmail.com"
+    },
 {"id":4,"Name":"Carlie Swyne","Phone":"840-322-6989","Password":"69haXkZb","Gender":1,"Status":2,"DateOfBirth":"2023-03-21","IsDeleted":true,"Email":"cswyne3@archive.org"},
 {"id":5,"Name":"Fidelia Ephson","Phone":"877-235-4669","Password":"xBJbQLb","Gender":1,"Status":3,"DateOfBirth":"2022-07-31","IsDeleted":false,"Email":"fephson4@google.com.hk"},
 {"id":6,"Name":"Tate Saer","Phone":"284-978-1575","Password":"lJoTno","Gender":0,"Status":2,"DateOfBirth":"2022-10-16","IsDeleted":false,"Email":"tsaer5@storify.com"},

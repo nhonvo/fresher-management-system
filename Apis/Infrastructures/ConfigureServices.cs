@@ -1,7 +1,9 @@
 ﻿using Application;
+using Application.Common.Interfaces;
 using Application.Interfaces;
 using Application.Repositories;
 using Application.Services;
+using Infrastructure.Files;
 using Infrastructures.Mappers;
 using Infrastructures.Persistence;
 using Infrastructures.Repositories;
@@ -27,6 +29,7 @@ namespace Infrastructures
             services.AddScoped<IUserRepository, UserRepository>();
             #endregion
             services.AddSingleton<ICurrentTime, CurrentTime>();
+            services.AddTransient<ICsvFileBuilder, CsvFileBuilder>();
             #region DbContext 
             services.AddDbContext<DbContext, ApplicationDbContext>(options =>
             {

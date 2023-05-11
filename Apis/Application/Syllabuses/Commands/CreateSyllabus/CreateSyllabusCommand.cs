@@ -63,9 +63,6 @@ namespace Application.Syllabuses.Commands.CreateSyllabus
                 _unitOfWork.BeginTransaction();
                 await _unitOfWork.SyllabusRepository.AddAsync(syllabus);
                 await _unitOfWork.CommitAsync();
-                // await _unitOfWork.ExecuteTransactionAsync(() =>
-                // {
-                // });
                 var result = _mapper.Map<SyllabusDTO>(syllabus);
 
                 return result;

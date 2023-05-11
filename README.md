@@ -134,7 +134,7 @@
 //done admin -> class(program)
 //DONE admin add trainer -> class (**)
 
-// trainer -> syllabus(unit(lesson(material))) // nam
+// done trainer -> syllabus(unit(lesson(material))) 
 // trainer -> Program(syllabus)
 // duplicate -> program
 // export file csv

@@ -481,3 +481,7 @@ Apis/Infrastructures/Persistence/ApplicationDbContextInitializer.cs
 
 **/migrations/**
 **/migrations/ApplicationDbContextModelSnapshot.cs**
+
+**/Logging/**
+/Apis/WebAPI/appsettings.Development.json
+/Apis/WebAPI/appsettings.json

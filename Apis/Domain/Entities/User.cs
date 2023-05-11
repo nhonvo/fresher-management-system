@@ -15,6 +15,8 @@ public class User : BaseEntity
     public DateTime DateOfBirth { get; set; }
     public ICollection<ClassAdmin> CreatedClassAdmin { get; set; }
     public ICollection<ClassAdmin> ClassAdmins { get; set; }
+    public ICollection<ClassStudent> CreatedClassStudents { get; set; }
+    public ICollection<ClassStudent> ClassStudents { get; set; }
     public ICollection<Syllabus> CreatedSyllabuses { get; set; }
     public ICollection<Syllabus> ModifiedSyllabuses { get; set; }
     public ICollection<TestAssessment> TestAssessments { get; set; }
@@ -28,4 +30,7 @@ public class User : BaseEntity
     public ICollection<Unit> ModifiedUnits { get; set; }
     public ICollection<UnitClassDetail> UnitTrainers { get; set; }
     public ICollection<ReportAttendence> ReportAttendence { get; set; }
+    public ICollection<ApproveRequest> ApproveRequests { get; set; }
+    public ICollection<FeedBack> FeedbackTrainee { get; set; }
+    public ICollection<FeedBack> FeedbackTrainer { get; set; }
 }

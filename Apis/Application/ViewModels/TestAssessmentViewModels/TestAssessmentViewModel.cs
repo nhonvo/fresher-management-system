@@ -8,5 +8,6 @@ namespace Application.ViewModels.TestAssessmentViewModels
         public TestAssessmentType TestAssessmentType { get; set; }
         public int AttendeeId { get; set; }
         public int SyllabusId { get; set; }
+        public int TrainingCLassId { get; set; }
     }
 }

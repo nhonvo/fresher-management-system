@@ -1,13 +1,7 @@
-﻿using Application.Class.DTO;
-using Application.Commons;
+﻿using Application.Commons;
 using Application.ReportAttendences.DTO;
 using AutoMapper;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Application.ReportAttendences.Queries.GetReportAttendence
 {
@@ -24,7 +18,7 @@ namespace Application.ReportAttendences.Queries.GetReportAttendence
         }
         public async Task<Pagination<ReportAttendenceDTO>> Handle(GetReportAttendenceQuery request, CancellationToken cancellationToken)
         {
-             var reportAttendence = await _unitOfWork.ReportAttendenceRepository.ToPagination(request.PageIndex, request.PageSize);
+            var reportAttendence = await _unitOfWork.ReportAttendanceRepository.ToPagination(request.PageIndex, request.PageSize);
 
             var result = _mapper.Map<Pagination<ReportAttendenceDTO>>(reportAttendence);
 

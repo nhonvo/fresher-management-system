@@ -9,5 +9,7 @@ namespace Infrastructures.Repositories
         public ClassRepository(ApplicationDbContext context, ICacheService cache) : base(context, cache)
         {
         }
+
+
     }
 }

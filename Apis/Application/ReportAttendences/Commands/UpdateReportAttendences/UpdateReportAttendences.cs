@@ -1,5 +1,4 @@
-﻿using Application.Class.DTO;
-using Application.Common.Exceptions;
+﻿using Application.Common.Exceptions;
 using Application.ReportAttendences.DTO;
 using AutoMapper;
 using Domain.Entities;
@@ -8,7 +7,7 @@ using MediatR;
 
 namespace Application.ReportAttendences.Commands.UpdateReportAttendences
 {
-    public record UpdateReportAttendencesCommand : IRequest<ReportAttendenceDTO> 
+    public record UpdateReportAttendencesCommand : IRequest<ReportAttendenceDTO>
     {
         public int Id { get; set; }
         public string Reason { get; set; }
@@ -27,13 +26,13 @@ namespace Application.ReportAttendences.Commands.UpdateReportAttendences
         }
         public async Task<ReportAttendenceDTO> Handle(UpdateReportAttendencesCommand request, CancellationToken cancellationToken)
         {
-            var reportAttendence = await _unitOfWork.ReportAttendenceRepository.GetByIdAsyncAsNoTracking(request.Id);
+            var reportAttendence = await _unitOfWork.ReportAttendanceRepository.GetByIdAsyncAsNoTracking(request.Id);
             if (reportAttendence == null)
                 throw new NotFoundException("Class not found");
             reportAttendence = _mapper.Map<ReportAttendence>(request);
             await _unitOfWork.ExecuteTransactionAsync(() =>
             {
-                _unitOfWork.ReportAttendenceRepository.Update(reportAttendence);
+                _unitOfWork.ReportAttendanceRepository.Update(reportAttendence);
             });
             var result = _mapper.Map<ReportAttendenceDTO>(reportAttendence);
             return result ?? throw new NotFoundException("Can not update class");

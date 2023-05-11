@@ -1,5 +1,4 @@
-﻿using Application.Class.DTO;
-using Application.Common.Exceptions;
+﻿using Application.Common.Exceptions;
 using Application.ReportAttendences.DTO;
 using AutoMapper;
 using MediatR;
@@ -20,7 +19,7 @@ namespace Application.ReportAttendences.Queries.GetReportAttendenceById
         }
         public async Task<ReportAttendenceDTO> Handle(GetReportAttendenceByIdQuery request, CancellationToken cancellationToken)
         {
-            var ReportAttendence = await _unitOfWork.ReportAttendenceRepository.GetByIdAsync(request.id);
+            var ReportAttendence = await _unitOfWork.ReportAttendanceRepository.GetByIdAsync(request.id);
 
             var result = _mapper.Map<ReportAttendenceDTO>(ReportAttendence);
 

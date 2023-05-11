@@ -6,16 +6,18 @@ namespace Application;
 public interface IUnitOfWork : IDisposable
 {
     // repositories
-    IUserRepository UserRepository { get; }
-    ISyllabusRepository SyllabusRepository { get; }
-    IOutputStandardRepository OutputStandardRepository { get; }
-    IClassRepository ClassRepository { get; }
-    ITestAssessmentRepository TestAssessmentRepository { get; }
     IAttendanceRepository AttendanceRepository { get; }
+    IApproveRequestRepository ApproveRequestRepository { get; }
+    IReportAttendanceRepository ReportAttendanceRepository { get; }
+    IClassRepository ClassRepository { get; }
+    IClassStudentRepository ClassStudentRepository { get; }
+    IOutputStandardRepository OutputStandardRepository { get; }
+    ISyllabusRepository SyllabusRepository { get; }
+    ITestAssessmentRepository TestAssessmentRepository { get; }
+    IUserRepository UserRepository { get; }
     IUnitRepository UnitRepository { get; }
     IUnitLessonRepository UnitLessonRepository { get; }
 
-    IReportAttendenceRepository ReportAttendenceRepository { get; }
     /// <summary>
     /// Saves changes to the database. This is called when the user changes the data or saves a new version of the data.
     /// </summary>

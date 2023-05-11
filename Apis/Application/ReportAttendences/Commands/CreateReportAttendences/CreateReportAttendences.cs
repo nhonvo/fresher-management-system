@@ -1,15 +1,9 @@
-﻿using Application.Class.DTO;
-using Application.Common.Exceptions;
+﻿using Application.Common.Exceptions;
 using Application.ReportAttendences.DTO;
 using AutoMapper;
 using Domain.Entities;
 using Domain.Enums;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Application.ReportAttendences.Commands.CreateReportAttendences
 {
@@ -32,12 +26,12 @@ namespace Application.ReportAttendences.Commands.CreateReportAttendences
         }
         public async Task<ReportAttendenceDTO> Handle(CreateReportAttendencesCommand request, CancellationToken cancellationToken)
         {
-            var reportAttendence = _mapper.Map<ReportAttendence>(request);
+            var reportAttendance = _mapper.Map<ReportAttendence>(request);
             await _unitOfWork.ExecuteTransactionAsync(() =>
             {
-                _unitOfWork.ReportAttendenceRepository.AddAsync(reportAttendence);
+                _unitOfWork.ReportAttendanceRepository.AddAsync(reportAttendance);
             });
-            var result = _mapper.Map<ReportAttendenceDTO>(reportAttendence);
+            var result = _mapper.Map<ReportAttendenceDTO>(reportAttendance);
             return result ?? throw new NotFoundException("Class not found");
         }
     }

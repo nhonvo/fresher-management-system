@@ -5,7 +5,6 @@ using Application.UnitLessons.Commands.UpdateUnitLesson;
 using Application.UnitLessons.DTO;
 using Application.UnitLessons.Queries.GetUnitLessonById;
 using Application.UnitLessons.Queries.GetUnitLessons;
-using Application.Units.Queries.GetUnitById;
 using Domain.Aggregate.AppResult;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;

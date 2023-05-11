@@ -32,13 +32,13 @@ namespace Infrastructures.Repositories
                     TestAssessmentType = group.Key.TestAssessmentType.ToString(),
                     AverageScore = group.Average(ta => ta.Score),
                     SyllabusScheme = group.Key.TestAssessmentType == TestAssessmentType.Quiz ? _context.Syllabuses.FirstOrDefault(s => s.Id == group.Key.SyllabusId).QuizScheme
-                    : group.Key.TestAssessmentType == TestAssessmentType.Assignment ? _context.Syllabuses.FirstOrDefault(s => s.Id == group.Key.SyllabusId).AsignmentScheme
+                    : group.Key.TestAssessmentType == TestAssessmentType.Assignment ? _context.Syllabuses.FirstOrDefault(s => s.Id == group.Key.SyllabusId).AssignmentScheme
                     : group.Key.TestAssessmentType == TestAssessmentType.FinalTheory ? _context.Syllabuses.Where(s => s.Id == group.Key.SyllabusId).Select(x => new { FinalScheme = x.FinalTheoryScheme * x.FinalScheme }).FirstOrDefault().FinalScheme
-                    : group.Key.TestAssessmentType == TestAssessmentType.FinalPractice ? _context.Syllabuses.Where(s => s.Id == group.Key.SyllabusId).Select(x => new { FinalScheme = x.FinalPraticeScheme * x.FinalScheme }).FirstOrDefault().FinalScheme : 0
+                    : group.Key.TestAssessmentType == TestAssessmentType.FinalPractice ? _context.Syllabuses.Where(s => s.Id == group.Key.SyllabusId).Select(x => new { FinalScheme = x.FinalPracticeScheme * x.FinalScheme }).FirstOrDefault().FinalScheme : 0
                 }).OrderBy(x => x.TrainingClassId).ThenBy(x => x.SyllabusId)
                 .ToListAsync();
             // paging
-            
+
             return result;
         }
     }

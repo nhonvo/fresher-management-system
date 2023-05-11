@@ -132,8 +132,10 @@
 //DONE admin -> trainer
 //DONE GET PROFILE
 //done admin -> class(program)
-// admin add trainer -> class (**)
+//DONE admin add trainer -> class (**)
 
 // trainer -> syllabus(unit(lesson(material))) // nam
 // trainer -> Program(syllabus)
 // duplicate -> program
+// export file csv
+// hangfire send mail

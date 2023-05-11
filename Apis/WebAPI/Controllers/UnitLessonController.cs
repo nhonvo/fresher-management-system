@@ -36,7 +36,7 @@ namespace WebAPI.Controllers
         public async Task<UnitLessonDTO> Put([FromBody] UpdateUnitLessonCommand request)
             => await _mediator.Send(request);
 
-        [HttpDelete(("{id}")]
+        [HttpDelete("{id}")]
         public async Task<UnitLessonDTO> Delete(int id)
             => await _mediator.Send(new DeleteUnitLessonCommand(id));
     }

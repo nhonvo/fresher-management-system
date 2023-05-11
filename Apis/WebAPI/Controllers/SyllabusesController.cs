@@ -10,6 +10,7 @@ using Application.Syllabuses.Queries.GetSyllabus;
 using Application.Syllabuses.Queries.GetSyllabusById;
 using Domain.Aggregate.AppResult;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers;
@@ -28,9 +29,11 @@ public class SyllabusesController : BasesController
     public async Task<SyllabusDTO> Get(int id)
      => await _mediator.Send(new GetSyllabusByIdQuery(id));
     [HttpPost]
+    [Authorize(Roles = "Trainer")]
     public async Task<SyllabusDTO> Post([FromBody] CreateSyllabusCommand request)
     => await _mediator.Send(request);
     [HttpPut]
+    [Authorize(Roles = "Trainer")]
     public async Task<SyllabusDTO> Put([FromBody] UpdateSyllabusCommand request)
     => await _mediator.Send(request);
     [HttpDelete("{id}")]

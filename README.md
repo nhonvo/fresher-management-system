@@ -104,9 +104,9 @@
    // TODO: endpoint: DELETE /score/:id (id of score) return score of student.
    4. Support different types of scores, such as assignment, homework, final test, bonus.
 2. Calculation & Report
-   1. Have the ability to calculate final scores for each student based on the weighted _average_ of their scores in each assessment.
+   1. Have the ability to calculate final scores for each student based on the weighted _average_ of their scores in each assessment. (done)
    // TODO: endpoint: GET /score/:id (id of student) return score average of student.
-   2. Support different weighting methods, such as equal weighting or custom weighting.
+   2. Support different weighting methods, such as equal weighting or custom weighting. (done)
    3. Allow trainers or administrators to generate score reports for each class or for individual students.
    4. Support filtering and sorting options for the score reports, such as by assessment type or score range.
    5. CRUD TestAssignment _Nhon_ DONE

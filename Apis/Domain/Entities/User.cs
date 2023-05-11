@@ -31,4 +31,6 @@ public class User : BaseEntity
     public ICollection<UnitClassDetail> UnitTrainers { get; set; }
     public ICollection<ReportAttendence> ReportAttendence { get; set; }
     public ICollection<ApproveRequest> ApproveRequests { get; set; }
+    public ICollection<FeedBack> FeedbackTrainee { get; set; }
+    public ICollection<FeedBack> FeedbackTrainer { get; set; }
 }

@@ -19,6 +19,7 @@ public class TrainingClass : BaseEntity
     public ClassLocation ClassLocation { get; set; }
     public ClassStatus Status { get; set; }
     public ICollection<ClassAdmin> Admin { get; set; }
+    public ICollection<ClassTrainer> ClassTrainers { get; set; }
     public ICollection<ClassStudent> Students { get; set; }
 
     public int? ReviewByUserId { get; set; }

@@ -13,6 +13,9 @@ namespace Application.Syllabuses
             CreateMap<Syllabus, SyllabusDTO>().ReverseMap();
             CreateMap<Syllabus, CreateSyllabusCommand>().ReverseMap();
             CreateMap<Syllabus, UpdateSyllabusCommand>().ReverseMap();
+            CreateMap<Unit, SyllabusUnit>().ReverseMap();
+            CreateMap<UnitLesson, LessonUnit>().ReverseMap();
+            CreateMap<LessonTrainingMaterial, TrainingMaterial>().ReverseMap();
         }
     }
 }

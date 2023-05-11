@@ -1,6 +1,7 @@
 using Application.Account.Commands.AddRole;
 using Application.Account.Commands.ChangPassword;
 using Application.Account.Commands.CreateAccount;
+using Application.Account.Commands.CreateAccountTrainer;
 using Application.Account.Commands.Login;
 using Application.Account.Commands.Register;
 using Application.Account.DTOs;
@@ -29,13 +30,17 @@ namespace WebAPI.Controllers
         [HttpPatch("change-password")]
         public async Task<AccountDTO> ChangePassword(ChangePasswordCommand request)
             => await _mediator.Send(request);
-        [Authorize(Roles = "1")]
+        [Authorize(Roles = "SuperAdmin")]
         [HttpPost("add-role")]
         public async Task<AccountDTO> AddRole([FromBody] AddRoleCommand request)
             => await _mediator.Send(request);
         [Authorize(Roles = "SuperAdmin")]
         [HttpPost("create-account-admin")]
         public async Task<AccountDTO> CreateAccount([FromBody] CreateAccountCommand request)
+            => await _mediator.Send(request);
+        [Authorize(Roles = "ClassAdmin")]
+        [HttpPost("create-account-trainer")]
+        public async Task<AccountDTO> CreateAccount([FromBody] CreateAccountTrainerCommand request)
             => await _mediator.Send(request);
     }
     // TODO: ADD session service , mail service, hangfire service

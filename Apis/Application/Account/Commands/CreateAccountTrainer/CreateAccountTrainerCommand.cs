@@ -5,18 +5,18 @@ using AutoMapper;
 using Domain.Entities;
 using MediatR;
 
-namespace Application.Account.Commands.CreateAccount;
+namespace Application.Account.Commands.CreateAccountTrainer;
 
-public record CreateAccountCommand(string Email, string Password) : IRequest<AccountDTO>;
+public record CreateAccountTrainerCommand(string Email, string Password) : IRequest<AccountDTO>;
 
-public class CreateAccountCommandHandler : IRequestHandler<CreateAccountCommand, AccountDTO>
+public class CreateAccountTrainerCommandHandler : IRequestHandler<CreateAccountTrainerCommand, AccountDTO>
 {
     private readonly IUnitOfWork _unitOfWork;
     private readonly IClaimService _claimService;
     private readonly IJWTService _jwtService;
     private readonly IMapper _mapper;
 
-    public CreateAccountCommandHandler(
+    public CreateAccountTrainerCommandHandler(
         IUnitOfWork unitOfWork,
         IClaimService claimService,
         IJWTService jwtService,
@@ -28,7 +28,7 @@ public class CreateAccountCommandHandler : IRequestHandler<CreateAccountCommand,
         _jwtService = jwtService;
     }
 
-    public async Task<AccountDTO> Handle(CreateAccountCommand request, CancellationToken cancellationToken)
+    public async Task<AccountDTO> Handle(CreateAccountTrainerCommand request, CancellationToken cancellationToken)
     {
         var isExist = await _unitOfWork.UserRepository.CheckExistUser(request.Email);
 
@@ -36,7 +36,7 @@ public class CreateAccountCommandHandler : IRequestHandler<CreateAccountCommand,
             throw new NotFoundException("Email is exist !!!");
 
         var user = _mapper.Map<User>(request);
-        user.Role = Domain.Enums.UserRoleType.ClassAdmin;
+        user.Role = Domain.Enums.UserRoleType.Trainer;
         user.Status = Domain.Enums.UserStatus.Active;
         await _unitOfWork.ExecuteTransactionAsync(async () =>
         {

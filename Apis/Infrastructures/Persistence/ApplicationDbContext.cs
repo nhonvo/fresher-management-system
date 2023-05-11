@@ -17,6 +17,7 @@ namespace Infrastructures.Persistence
         public DbSet<Syllabus> Syllabuses { get; set; }
         public DbSet<TestAssessment> TestAssessments { get; set; }
         public DbSet<TrainingClass> TrainingClasses { get; set; }
+        public DbSet<ClassStudent> ClassStudents { get; set; }
         public DbSet<TrainingMaterial> TrainingMaterials { get; set; }
         public DbSet<TrainingProgram> TrainingPrograms { get; set; }
         public DbSet<Unit> Units { get; set; }

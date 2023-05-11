@@ -21,7 +21,7 @@ namespace Infrastructures.Persistence.Configurations
             // TrainingClass
             builder.HasOne(x => x.TrainingClass)
                    .WithMany(x => x.TestAssessments)
-                   .HasForeignKey(x => x.TrainingCLassId);
+                   .HasForeignKey(x => x.TrainingClassId);
 
             // Attendee
             builder.HasOne(x => x.Attendee)

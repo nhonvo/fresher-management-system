@@ -86,7 +86,7 @@ public class ImportSyllabusesCSVHandler : IRequestHandler<ImportSyllabusesCSVCom
                     Version = isScanName ? float.TryParse(values[2], out var version) ? version : 0 : 0,
                     Level = (int.TryParse(values[3], out var level) ? level : 0) switch
                     {
-                        1 => SyllabusLevel.Beginer,
+                        1 => SyllabusLevel.Beginner,
                         2 => SyllabusLevel.Intermediate,
                         3 => SyllabusLevel.Advance,
                         0 => SyllabusLevel.AllLevel,

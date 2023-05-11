@@ -17,6 +17,8 @@ public interface IUnitOfWork : IDisposable
     IUserRepository UserRepository { get; }
     IUnitRepository UnitRepository { get; }
     IUnitLessonRepository UnitLessonRepository { get; }
+    IClassTrainerRepository ClassTrainerRepository { get; }
+    ITrainingProgramRepository TrainingProgramRepository { get; }
     IFeedBackrepository FeedBackRepository { get; }
 
     /// <summary>

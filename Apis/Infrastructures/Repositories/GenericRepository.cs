@@ -73,8 +73,8 @@ namespace Infrastructures.Repositories
         {
             if (_cacheService.TryGet(_cacheKey, out Pagination<TEntity> cachedResult))
                 return cachedResult;
-            var itemCount = await _dbSet.CountAsync();
-            var items = await _dbSet.Skip(pageIndex * pageSize)
+            var itemCount = await _dbSet.Where(x=>x.IsDeleted == false).CountAsync();
+            var items = await _dbSet.Where(x => x.IsDeleted == false).Skip(pageIndex * pageSize)
                                     .Take(pageSize)
                                     .AsNoTracking()
                                     .ToListAsync();

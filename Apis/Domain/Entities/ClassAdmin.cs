@@ -5,8 +5,8 @@ public class ClassAdmin : BaseEntity
 {
     public int TrainingClassId { get; set; }
     public TrainingClass TrainingClass { get; set; }
-    public int UserId { get; set; }
-    public User User { get; set; }
+    public int AdminId { get; set; }
+    public User Admin { get; set; }
     public DateTime CreationDate { get; set; }
     public int? CreatedBy { get; set; }
     public User? CreateByUser { get; set; }

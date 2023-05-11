@@ -10,23 +10,40 @@ namespace Application.Syllabuses.Commands.CreateSyllabus
     // TODO: not use api result customize the response.
     public record CreateSyllabusCommand : IRequest<SyllabusDTO>
     {
-        public string Code { get; set; }
-        public float Version { get; set; }
         public string Name { get; set; }
-        public DateTime LastModifiedOn { get; set; }
-        public SyllabusLevel Level { get; set; }
+        public string Code { get; set; }
         public int AttendeeNumber { get; set; }
-        public string CourseObjectives { get; set; }
-        public string TechnicalRequirements { get; set; }
-        public string TrainingDeliveryPrinciple { get; set; }
-        public float QuizCriteria { get; set; }
-        public float AssignmentCriteria { get; set; }
-        public float FinalCriteria { get; set; }
-        public float FinalTheoryCriteria { get; set; }
-        public float FinalPracticalCriteria { get; set; }
-        public float PassingGPA { get; set; }
-        public bool isActive { get; set; }
+        public string CourseObjective { get; set; }
+        public SyllabusLevel SyllabusLevel { get; set; }
+        public float QuizScheme { get; set; }
+        public float AssignmentScheme { get; set; }
+        public float FinalScheme { get; set; }
+        public float FinalTheoryScheme { get; set; }
+        public float FinalPracticeScheme { get; set; }
+        public float GPAScheme { get; set; }
+        public List<SyllabusUnit> Units { get; set; }
+    }
+    public record SyllabusUnit
+    {
+        public string Name { get; set; }
+        public int SyllabusSession { get; set; }
+        public int UnitNumber { get; set; }
+        public List<LessonUnit> UnitLessons { get; set; }
+    }
+    public class LessonUnit
+    {
+        public string Name { get; set; }
         public int Duration { get; set; }
+        public LessonType LessonType { get; set; }
+        public DeliveryType DeliveryType { get; set; }
+        public List<LessonTrainingMaterial> TrainingMaterials { get; set; }
+    }
+    public class LessonTrainingMaterial
+    {
+        public string FileName { get; set; }
+        public string FilePath { get; set; }
+        public long FileSize { get; set; }
+
     }
     public class CreateSyllabusHandler : IRequestHandler<CreateSyllabusCommand, SyllabusDTO>
     {
@@ -41,10 +58,20 @@ namespace Application.Syllabuses.Commands.CreateSyllabus
         public async Task<SyllabusDTO> Handle(CreateSyllabusCommand request, CancellationToken cancellationToken)
         {
             var syllabus = _mapper.Map<Syllabus>(request);
-            await _unitOfWork.ExecuteTransactionAsync(() => { _unitOfWork.SyllabusRepository.AddAsync(syllabus); });
-            var result = _mapper.Map<SyllabusDTO>(syllabus);
+            try
+            {
+                _unitOfWork.BeginTransaction();
+                await _unitOfWork.SyllabusRepository.AddAsync(syllabus);
+                await _unitOfWork.CommitAsync();
+                var result = _mapper.Map<SyllabusDTO>(syllabus);
 
-            return result ?? throw new NotFoundException("Syllabus not found");
+                return result;
+            }
+            catch (Exception ex)
+            {
+                _unitOfWork.Rollback();
+                throw new NotFoundException("Can not add Syllabus" + ex.ToString());
+            }
         }
     }
 }

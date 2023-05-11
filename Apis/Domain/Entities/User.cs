@@ -6,15 +6,17 @@ namespace Domain.Entities;
 public class User : BaseEntity
 {
     public string Email { get; set; }
-    public Gender Gender { get; set; }
-    public string Name { get; set; }
-    public string Phone { get; set; }
+    public Gender? Gender { get; set; }
+    public string? Name { get; set; }
+    public string? Phone { get; set; }
     public string Password { get; set; }
     public UserRoleType Role { get; set; }
     public UserStatus Status { get; set; }
-    public DateTime DateOfBirth { get; set; }
+    public DateTime? DateOfBirth { get; set; }
     public ICollection<ClassAdmin> CreatedClassAdmin { get; set; }
     public ICollection<ClassAdmin> ClassAdmins { get; set; }
+    public ICollection<ClassTrainer> CreatedClassTrainers { get; set; }
+    public ICollection<ClassTrainer> ClassTrainers { get; set; }
     public ICollection<ClassStudent> CreatedClassStudents { get; set; }
     public ICollection<ClassStudent> ClassStudents { get; set; }
     public ICollection<Syllabus> CreatedSyllabuses { get; set; }

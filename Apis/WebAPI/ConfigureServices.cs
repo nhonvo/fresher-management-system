@@ -38,7 +38,7 @@ namespace WebAPI
             // Extension Services
             services.AddScoped<IClaimService, ClaimService>();
             services.AddScoped<IJWTService, JWTService>();
-            // // IMemoryCache
+            // IMemoryCache
             services.AddMemoryCache();
             services.AddScoped<ICacheService, CacheService>();
 
@@ -135,9 +135,10 @@ namespace WebAPI
                 options.AddPolicy(name: "MyCors",
                 policy =>
                 {
-                    policy.AllowAnyHeader()
+            policy.AllowAnyHeader()
                  .AllowAnyMethod()
-                 .WithOrigins(new string[] { userApp });
+                 .WithOrigins("http://localhost:3000");
+                //  .WithOrigins(new string[] { userApp });
                 });
             });
             return services;

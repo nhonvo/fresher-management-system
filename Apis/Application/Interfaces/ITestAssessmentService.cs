@@ -10,7 +10,8 @@ namespace Application.Interfaces
         public Task<TestAssessmentViewModel?> CreateTestAssessmentAsync(CreateTestAssessmentViewModel testAssessmentViewModel);
         Task RemoveAsync(int id);
         Task<TestAssessmentViewModel> UpdateAsync(int id, UpdateTestAssessmentViewModel updateDTO);
-        Task<List<GetStudentFinalSyllabusScoreViewModel>> GetFinalSyllabusScoreAsync(int id);
+        Task<Pagination<GetStudentFinalSyllabusScoreViewModel>> GetStudentFinalSyllabusScoreAsync(int id, int pageIndex= 0, int pageSize = 10);
+        Task<Pagination<GetClassFinalSyllabusScoreViewModel>> GetClassFinalSyllabusScoreAsync(int id, int pageIndex = 0, int pageSize = 10);
 
     }
 }

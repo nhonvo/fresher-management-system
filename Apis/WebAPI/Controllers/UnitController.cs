@@ -5,6 +5,7 @@ using Application.Units.Commands.UpdateUnit;
 using Application.Units.DTO;
 using Application.Units.Queries.GetUnitById;
 using Application.Units.Queries.GetUnitByName;
+using Application.Units.Queries.GetUnitByName;
 using Application.Units.Queries.GetUnits;
 using Domain.Aggregate.AppResult;
 using MediatR;
@@ -29,7 +30,7 @@ namespace WebAPI.Controllers
             => await _mediator.Send(new GetUnitByIdQuery(id));
 
         [HttpGet("{name}")]
-        public async Task<UnitDTO> Get(string name)
+        public async Task<Pagination<UnitDTO>> Get(string name)
             => await _mediator.Send(new GetUnitByNameQuery(name));
 
         [HttpPost]

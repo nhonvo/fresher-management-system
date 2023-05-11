@@ -10,8 +10,9 @@ public abstract class BaseEntity
     //public DateTime? ModificationDate { get; set; }
     //public int? ModificationBy { get; set; }
     //public User? ModificationByUser { get; set; }
-    public DateTime? DeletionDate { get; set; }
     public int? DeleteBy { get; set; }
     //public User DeleteByUser { get; set; }
+    public DateTime? DeletionDate { get; set; }
     public bool IsDeleted { get; set; }
+
 }

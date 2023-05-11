@@ -4,6 +4,8 @@ using Application.Interfaces;
 using Application.ViewModels.TestAssessmentViewModels;
 using AutoMapper;
 using Domain.Entities;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.Linq.Expressions;
 
 namespace Application.Services
 {
@@ -66,18 +68,58 @@ namespace Application.Services
             return productDto ?? throw new NotFoundException("Can not update test assessment");
         }
 
-        public async Task<List<GetStudentFinalSyllabusScoreViewModel>> GetFinalSyllabusScoreAsync(int id)
+        public async Task<Pagination<GetStudentFinalSyllabusScoreViewModel>> GetStudentFinalSyllabusScoreAsync(int id, int pageIndex = 0, int pageSize = 10)
         {
-            var scoreByTestType = await _unitOfWork.TestAssessmentRepository.GetFinalScoreAsync(id);
-            var result = scoreByTestType.GroupBy(ta => new { ta.AttendeeId, ta.SyllabusId, ta.TrainingClassId}).Select(group => new GetStudentFinalSyllabusScoreViewModel
+
+            Expression<Func<TestAssessment, bool>> filter = x => x.AttendeeId == id;
+            var scoreByTestType = await _unitOfWork.TestAssessmentRepository.GetFinalScoreAsync(filter);
+            var studentFinalSyllabusScore = scoreByTestType.GroupBy(ta => new { ta.SyllabusId, ta.TrainingClassId }).Select(group => new GetStudentFinalSyllabusScoreViewModel
+            {
+                SyllabusId = group.Key.SyllabusId,
+                TrainingClassId = group.Key.TrainingClassId,
+                FinalSyllabusScore = group.Sum(ta => ta.AverageScore * ta.SyllabusScheme) / group.Sum(ta => ta.SyllabusScheme) ?? 0,
+                ListAssessment = scoreByTestType.Where(x => x.SyllabusId == group.Key.SyllabusId && x.TrainingClassId == group.Key.TrainingClassId).ToList()
+            }).ToList();
+            var count = studentFinalSyllabusScore.Count();
+
+            studentFinalSyllabusScore = studentFinalSyllabusScore
+                .Skip(pageIndex * pageSize)
+                .Take(pageSize).ToList();
+
+            var result = new Pagination<GetStudentFinalSyllabusScoreViewModel>()
+            {
+                PageIndex = pageIndex,
+                PageSize = pageSize,
+                Items = studentFinalSyllabusScore
+            };
+            return result ?? throw new NotFoundException("There is no test assessment for this class");
+        }
+
+        public async Task<Pagination<GetClassFinalSyllabusScoreViewModel>> GetClassFinalSyllabusScoreAsync(int id, int pageIndex = 0, int pageSize = 10)
+        {
+
+            Expression<Func<TestAssessment, bool>> filter = x => x.TrainingClassId == id;
+            var scoreByTestType = await _unitOfWork.TestAssessmentRepository.GetFinalScoreAsync(filter);
+            var classFinalSyllabusScore = scoreByTestType.GroupBy(ta => new { ta.AttendeeId, ta.SyllabusId }).Select(group => new GetClassFinalSyllabusScoreViewModel
             {
                 AttendeeId = group.Key.AttendeeId,
                 SyllabusId = group.Key.SyllabusId,
-                TrainingClassId = group.Key.TrainingClassId,
-                FinalSyllabusScore = group.Sum(ta => ta.AverageScore * ta.SyllabusScheme ) / group.Sum(ta => ta.SyllabusScheme) ?? 0,
-                ListAssessment = scoreByTestType.Where(x => x.SyllabusId == group.Key.SyllabusId && x.TrainingClassId == group.Key.TrainingClassId).ToList()
+                FinalSyllabusScore = group.Sum(ta => ta.AverageScore * ta.SyllabusScheme) / group.Sum(ta => ta.SyllabusScheme) ?? 0,
+                ListAssessment = scoreByTestType.Where(x => x.SyllabusId == group.Key.SyllabusId && x.AttendeeId == group.Key.AttendeeId).ToList()
             }).ToList();
-            return result ?? throw new NotFoundException("Can not update test assessment");
+            var count = classFinalSyllabusScore.Count();
+
+            classFinalSyllabusScore = classFinalSyllabusScore
+                .Skip(pageIndex * pageSize)
+                .Take(pageSize).ToList();
+
+            var result = new Pagination<GetClassFinalSyllabusScoreViewModel>()
+            {
+                PageIndex = pageIndex,
+                PageSize = pageSize,
+                Items = classFinalSyllabusScore
+            };
+            return result ?? throw new NotFoundException("There is no test assessment for this class");
         }
 
     }

@@ -12,18 +12,18 @@ try
 
     Log.Logger = new LoggerConfiguration()
         .WriteTo.Console()
-        .WriteTo.File(@"D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Logging", rollingInterval: RollingInterval.Day)
+        .WriteTo.File(configuration.LoggingPath, rollingInterval: RollingInterval.Day)
         .CreateLogger();
 
     builder.Host.UseSerilog((ctx, lc) => lc
         .WriteTo.Console(outputTemplate: "[{Timestamp:HH:mm:ss} {Level}] {SourceContext}{NewLine}{Message:lj}{NewLine}{Exception}{NewLine}")
-        .WriteTo.File(@"D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Logging\logs.txt", rollingInterval: RollingInterval.Day)
+        .WriteTo.File(configuration.LoggingPath, rollingInterval: RollingInterval.Day)
         .Enrich.FromLogContext()
         .ReadFrom.Configuration(ctx.Configuration));
 
     var app = await builder
         .ConfigureServices(
-            configuration.ConnectionStrings.DatabaseConnection,
+            configuration.ConnectionStrings.DatabaseConnectionV4,
             configuration.MyAllowSpecificOrigins.UserApp,
             configuration.Jwt.Key,
             configuration.Jwt.Issuer,

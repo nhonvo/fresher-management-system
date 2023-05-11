@@ -13,5 +13,6 @@ namespace Infrastructures.Repositories
         {
             _dbContext = dbContext;
         }
+
     }
 }

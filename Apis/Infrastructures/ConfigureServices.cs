@@ -20,6 +20,7 @@ namespace Infrastructures
             #region Repositories
             services.AddScoped<IAttendanceRepository, AttendanceRepository>();
             services.AddScoped<IClassRepository, ClassRepository>();
+            services.AddScoped<IClassStudentRepository, ClassStudentRepository>();
             services.AddScoped<IOutputStandardRepository, OutputStandardRepository>();
             services.AddScoped<ISyllabusRepository, SyllabusRepository>();
             services.AddScoped<ITestAssessmentRepository, TestAssessmentRepository>();
@@ -48,6 +49,7 @@ namespace Infrastructures
             #region Mapping
             //TODO: remove later when we have mapping each component
             services.AddAutoMapper(typeof(MapperConfigurationsProfile).Assembly);
+            services.AddAutoMapper(typeof(TestAssessementProfile).Assembly);
 
             #endregion
 

@@ -15,6 +15,8 @@ public class User : BaseEntity
     public DateTime DateOfBirth { get; set; }
     public ICollection<ClassAdmin> CreatedClassAdmin { get; set; }
     public ICollection<ClassAdmin> ClassAdmins { get; set; }
+    public ICollection<ClassStudent> CreatedClassStudents { get; set; }
+    public ICollection<ClassStudent> ClassStudents { get; set; }
     public ICollection<Syllabus> CreatedSyllabuses { get; set; }
     public ICollection<Syllabus> ModifiedSyllabuses { get; set; }
     public ICollection<TestAssessment> TestAssessments { get; set; }

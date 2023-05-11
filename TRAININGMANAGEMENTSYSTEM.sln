@@ -12,9 +12,14 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7C2BDD0E-A7D9-4547-8FF5-2258A19553C7}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
+		Json\class.json = Json\class.json
+		Json\FSU.json = Json\FSU.json
 		README.md = README.md
 		Json\syllabus.json = Json\syllabus.json
+		Json\TestAssessment.json = Json\TestAssessment.json
+		Json\TrainingClass.json = Json\TrainingClass.json
 		Json\TrainingProgram.json = Json\TrainingProgram.json
+		Json\Unit.json = Json\Unit.json
 		Json\user.json = Json\user.json
 	EndProjectSection
 EndProject

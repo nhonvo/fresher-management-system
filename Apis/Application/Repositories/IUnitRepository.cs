@@ -1,6 +1,8 @@
-﻿namespace Application.Repositories
+using Domain.Entities;
+
+namespace Application.Repositories
 {
-    internal interface IUnitRepository
+    public interface IUnitRepository : IGenericRepository<Unit>
     {
     }
 }

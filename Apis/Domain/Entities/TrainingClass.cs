@@ -19,6 +19,8 @@ public class TrainingClass : BaseEntity
     public ClassLocation ClassLocation { get; set; }
     public ClassStatus Status { get; set; }
     public ICollection<ClassAdmin> Admin { get; set; }
+    public ICollection<ClassStudent> Students { get; set; }
+
     public int? ReviewByUserId { get; set; }
     public User ReviewBy { get; set; }
     public int? ApproveByUserId { get; set; }
@@ -30,4 +32,5 @@ public class TrainingClass : BaseEntity
     public TrainingProgram? TrainingProgram { get; set; }
     public ICollection<Attendance> Attendances { get; set; }
     public ICollection<ApproveRequest> ApproveRequests { get; set; }
+    public ICollection<TestAssessment> TestAssessments { get; set; }
 }

@@ -1,14 +1,12 @@
-﻿using Application.Commons;
-using Application.Interfaces;
+﻿using Application.Interfaces;
 using Application.Repositories;
-using Application.Students.DTO;
 using Application.ViewModels.TestAssessmentViewModels;
 using Domain.Entities;
 using Domain.Enums;
 using Infrastructures.Persistence;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
+#nullable disable warnings
 
 namespace Infrastructures.Repositories
 {
@@ -33,8 +31,12 @@ namespace Infrastructures.Repositories
                     AverageScore = group.Average(ta => ta.Score),
                     SyllabusScheme = group.Key.TestAssessmentType == TestAssessmentType.Quiz ? _context.Syllabuses.FirstOrDefault(s => s.Id == group.Key.SyllabusId).QuizScheme
                     : group.Key.TestAssessmentType == TestAssessmentType.Assignment ? _context.Syllabuses.FirstOrDefault(s => s.Id == group.Key.SyllabusId).AsignmentScheme
-                    : group.Key.TestAssessmentType == TestAssessmentType.FinalTheory ? _context.Syllabuses.Where(s => s.Id == group.Key.SyllabusId).Select(x => new { FinalScheme = x.FinalTheoryScheme * x.FinalScheme }).FirstOrDefault().FinalScheme
-                    : group.Key.TestAssessmentType == TestAssessmentType.FinalPractice ? _context.Syllabuses.Where(s => s.Id == group.Key.SyllabusId).Select(x => new { FinalScheme = x.FinalPraticeScheme * x.FinalScheme }).FirstOrDefault().FinalScheme : 0
+                    : group.Key.TestAssessmentType == TestAssessmentType.FinalTheory ? _context.Syllabuses.Where(s => s.Id == group.Key.SyllabusId)
+                                                                                                          .Select(x => new { FinalScheme = x.FinalTheoryScheme * x.FinalScheme })
+                                                                                                          .FirstOrDefault().FinalScheme
+                    : group.Key.TestAssessmentType == TestAssessmentType.FinalPractice ? _context.Syllabuses.Where(s => s.Id == group.Key.SyllabusId)
+                                                                                                            .Select(x => new { FinalScheme = x.FinalPraticeScheme * x.FinalScheme })
+                                                                                                            .FirstOrDefault().FinalScheme : 0
                 }).OrderBy(x => x.TrainingClassId).ThenBy(x => x.SyllabusId)
                 .ToListAsync();
             // paging

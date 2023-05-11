@@ -29,10 +29,7 @@ namespace Application.UnitLessons.Commands.CreateUnitLesson
         {
             
             var unitlesson = _mapper.Map<UnitLesson>(request);
-            if (unitlesson == null)
-            {
-                throw new NotFoundException("Unit Lesson not found");
-            }
+            
             await _unitOfWork.ExecuteTransactionAsync(() =>
             {
                 _unitOfWork.UnitLessonRepository.AddAsync(unitlesson);

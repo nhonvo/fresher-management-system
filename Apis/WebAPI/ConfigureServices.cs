@@ -137,7 +137,7 @@ namespace WebAPI
                 {
             policy.AllowAnyHeader()
                  .AllowAnyMethod()
-                 .WithOrigins("http://localhost:3000");
+                 .AllowAnyOrigin();
                 //  .WithOrigins(new string[] { userApp });
                 });
             });

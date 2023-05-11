@@ -24,7 +24,7 @@ namespace Application.ReportAttendences.Commands.UpdateReportAttendanceStatus
         }
         public async Task<ReportAttendenceDTO> Handle(ChangeAttendanceStatusCommand request, CancellationToken cancellationToken)
         {
-            var report = await _unitOfWork.ReportAttendenceRepository.GetByIdAsyncAsNoTracking(request.Id);
+            var report = await _unitOfWork.ReportAttendanceRepository.GetByIdAsyncAsNoTracking(request.Id);
             if (report == null)
             {
                 throw new NotFoundException("Report Not Found");
@@ -32,7 +32,7 @@ namespace Application.ReportAttendences.Commands.UpdateReportAttendanceStatus
             report.statusAttendance = request.NewStatus;
             await _unitOfWork.ExecuteTransactionAsync(() =>
             {
-                _unitOfWork.ReportAttendenceRepository.Update(report);
+                _unitOfWork.ReportAttendanceRepository.Update(report);
             });
             var result = _mapper.Map<ReportAttendenceDTO>(report);
             return result;

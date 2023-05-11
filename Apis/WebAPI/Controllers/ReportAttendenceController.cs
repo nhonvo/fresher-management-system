@@ -1,6 +1,7 @@
 ﻿using Application.Commons;
 using Application.ReportAttendences.Commands.CreateReportAttendences;
 using Application.ReportAttendences.Commands.DeleteReportAttendences;
+using Application.ReportAttendences.Commands.UpdateReportAttendanceStatus;
 using Application.ReportAttendences.Commands.UpdateReportAttendences;
 using Application.ReportAttendences.DTO;
 using Application.ReportAttendences.Queries.GetReportAttendence;
@@ -23,7 +24,6 @@ namespace WebAPI.Controllers
         {
             return await _mediator.Send(new GetReportAttendenceQuery(pageIndex, pageSize));
         }
-
         [HttpGet("{id}")]
         public async Task<ReportAttendenceDTO> Get(int id)
             => await _mediator.Send(new GetReportAttendenceByIdQuery(id));
@@ -37,5 +37,9 @@ namespace WebAPI.Controllers
         [HttpDelete("{id}")]
         public async Task<ReportAttendenceDTO> Delete(int id)
             => await _mediator.Send(new DeleteReportAttendencesCommand(id));
+
+        [HttpPut("status")]
+        public async Task<ReportAttendenceDTO> ChangeStatus(ChangeAttendanceStatusCommand request)
+       => await _mediator.Send(request);
     }
 }

@@ -1,13 +1,12 @@
 ﻿using Application.Commons;
 using Application.UnitLessons.DTO;
 using AutoMapper;
-using Domain.Aggregate.AppResult;
 using MediatR;
 
 namespace Application.UnitLessons.Queries.GetUnitLessonByName
 {
-    public record GetUnitLessonByNameQuery(string? name, int pageIndex = 0, int pageSize = 10) : IRequest<ApiResult<Pagination<UnitLessonDTO>>>;
-    public class GetUnitLessonNameHandler : IRequestHandler<GetUnitLessonByNameQuery, ApiResult<Pagination<UnitLessonDTO>>>
+    public record GetUnitLessonByNameQuery(string? name, int pageIndex = 0, int pageSize = 10) : IRequest<Pagination<UnitLessonDTO>>;
+    public class GetUnitLessonNameHandler : IRequestHandler<GetUnitLessonByNameQuery, Pagination<UnitLessonDTO>>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
@@ -17,7 +16,7 @@ namespace Application.UnitLessons.Queries.GetUnitLessonByName
             _mapper = mapper;
         }
 
-        public async Task<ApiResult<Pagination<UnitLessonDTO>>> Handle(GetUnitLessonByNameQuery request, CancellationToken cancellationToken)
+        public async Task<Pagination<UnitLessonDTO>> Handle(GetUnitLessonByNameQuery request, CancellationToken cancellationToken)
         {
             var unitlesson = await _unitOfWork.UnitLessonRepository.GetAsync(
                 filter: x => x.Name == request.name,
@@ -25,10 +24,8 @@ namespace Application.UnitLessons.Queries.GetUnitLessonByName
                 pageSize: request.pageSize);
 
             var result = _mapper.Map<Pagination<UnitLessonDTO>>(unitlesson);
-            if (result.Items != null)
-                return new ApiErrorResult<Pagination<UnitLessonDTO>>("Unit Lesson not found");
 
-            return new ApiSuccessResult<Pagination<UnitLessonDTO>>(result);
+            return result;
         }
     }
 }

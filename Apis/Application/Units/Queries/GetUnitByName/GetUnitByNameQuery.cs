@@ -6,8 +6,8 @@ using MediatR;
 
 namespace Application.Units.Queries.GetUnitByName
 {
-    public record GetUnitByNameQuery(string? name, int pageIndex = 0, int pageSize = 10) : IRequest<ApiResult<Pagination<UnitDTO>>>;
-    public class GetUnitNameHandler : IRequestHandler<GetUnitByNameQuery, ApiResult<Pagination<UnitDTO>>>
+    public record GetUnitByNameQuery(string? name, int pageIndex = 0, int pageSize = 10) : IRequest<Pagination<UnitDTO>>;
+    public class GetUnitNameHandler : IRequestHandler<GetUnitByNameQuery, Pagination<UnitDTO>>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
@@ -17,7 +17,7 @@ namespace Application.Units.Queries.GetUnitByName
             _mapper = mapper;
         }
 
-        public async Task<ApiResult<Pagination<UnitDTO>>> Handle(GetUnitByNameQuery request, CancellationToken cancellationToken)
+        public async Task<Pagination<UnitDTO>> Handle(GetUnitByNameQuery request, CancellationToken cancellationToken)
         {
             var unit = await _unitOfWork.UnitRepository.GetAsync(
                 filter: x => x.Name == request.name,
@@ -25,10 +25,8 @@ namespace Application.Units.Queries.GetUnitByName
                 pageSize: request.pageSize);
 
             var result = _mapper.Map<Pagination<UnitDTO>>(unit);
-            if (result.Items != null)
-                return new ApiErrorResult<Pagination<UnitDTO>>("Not found unit");
 
-            return new ApiSuccessResult<Pagination<UnitDTO>>(result);
+            return result;
         }
     }
 }

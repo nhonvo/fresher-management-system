@@ -23,6 +23,7 @@ namespace Infrastructures.Persistence
         public DbSet<UnitClassDetail> UnitClassDetails { get; set; }
         public DbSet<UnitLesson> UnitLessons { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<ApproveRequest> ApproveRequests { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

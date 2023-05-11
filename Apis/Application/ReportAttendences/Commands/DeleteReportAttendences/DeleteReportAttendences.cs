@@ -1,14 +1,8 @@
-﻿using Application.Class.DTO;
 using Application.Common.Exceptions;
 using Application.Interfaces;
 using Application.ReportAttendences.DTO;
 using AutoMapper;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Application.ReportAttendences.Commands.DeleteReportAttendences
 {
@@ -31,7 +25,7 @@ namespace Application.ReportAttendences.Commands.DeleteReportAttendences
         }
         public async Task<ReportAttendenceDTO> Handle(DeleteReportAttendencesCommand request, CancellationToken cancellationToken)
         {
-            var reportAttendence = await _unitOfWork.ReportAttendenceRepository.GetByIdAsync(request.Id);
+            var reportAttendence = await _unitOfWork.ReportAttendanceRepository.GetByIdAsync(request.Id);
             reportAttendence.DeletionDate = _currentTime.GetCurrentTime();
             reportAttendence.IsDeleted = true;
             reportAttendence.DeleteBy = _claimService.CurrentUserId;
@@ -41,7 +35,7 @@ namespace Application.ReportAttendences.Commands.DeleteReportAttendences
                 throw new NotFoundException("reportAttendence not found");
             await _unitOfWork.ExecuteTransactionAsync(() =>
             {
-                _unitOfWork.ReportAttendenceRepository.Update(reportAttendence);
+                _unitOfWork.ReportAttendanceRepository.Update(reportAttendence);
             });
             var result = _mapper.Map<ReportAttendenceDTO>(reportAttendence);
             return result ?? throw new NotFoundException("Can not delete class");

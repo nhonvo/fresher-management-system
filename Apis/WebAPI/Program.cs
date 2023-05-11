@@ -10,10 +10,10 @@ try
     var configuration = builder.Configuration.Get<AppConfiguration>() ?? new AppConfiguration();
     builder.Services.AddSingleton(configuration);
 
-Log.Logger = new LoggerConfiguration()
-    .WriteTo.Console()
-    .WriteTo.File(@"D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Logging", rollingInterval: RollingInterval.Day)
-    .CreateLogger();
+    Log.Logger = new LoggerConfiguration()
+        .WriteTo.Console()
+        .WriteTo.File(@"D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Logging", rollingInterval: RollingInterval.Day)
+        .CreateLogger();
 
     builder.Host.UseSerilog((ctx, lc) => lc
         .WriteTo.Console(outputTemplate: "[{Timestamp:HH:mm:ss} {Level}] {SourceContext}{NewLine}{Message:lj}{NewLine}{Exception}{NewLine}")

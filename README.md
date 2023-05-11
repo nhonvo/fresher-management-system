@@ -65,7 +65,8 @@
 
 1. Enrollment Management
    1. Allow for easy enrollment of students into classes.
-   // TODO: endpoint: POST /class/:id/enroll (id of class) body: {studentId: 1} return class and student.
+   // problem how to know what class class students belong ? we don't have relationships between them
+   // DONE: endpoint: POST /class/:id/enroll (id of class) body: {studentId: 1} return class and student.
    // post: add student to class. approve by admin. Create new table relation with user and class has fields(
       "classId": 1,
       "studentId": 1,
@@ -78,17 +79,18 @@
 2. Absence Reporting
    1. Have the ability to track and manage class attendance.
          //TODO: endpoint:  get duration of training program for all syllabus.
+         // can not find duration property of training program.
    2. Allow trainers or administrators to view the list of reported absences for each student, or view summary on class.
-         //TODO: endpoint: get list absence of student in class.
+         //DONE: endpoint: get list absence of student in class.
    3. Have the ability to send automated notifications to students, trainers, or administrators when a student is absent from a class (optional).
          //TODO: allow send mails to student, trainer, admin when student absence.
 3. Absence Approval
    1. Allow students to report their absences in advance, providing reasons and expected dates of return.
-   // TODO: CRUD _DONE_
+   // DONE: CRUD _DONE_
    2. Allow trainers or administrators to approve or reject reported absences.
-   // TODO: endpoint: POST /attendance/:id/approve (id of student)
+   // DONE: endpoint: POST /attendance/:id/approve (id of student) _
    3. Allow trainers or administrators to mark student attendance and view attendance records.
-   // TODO: endpoint: POST /attendance/:id/mark (id of student)
+   // DONE: endpoint: POST /attendance/:id/mark (id of student)
 
 ## Score
 
@@ -113,12 +115,15 @@
 
 1. Registration
    1. Allow trainers to register themselves by providing their basic information such as name, contact information, and credentials.
-   // TODO: endpoint: POST /trainer {id}/ Role: {add role}
-   // TODO: endpoint: POST /trainer body: {name: "Nhon", email: "nhon@gmail", password: "123456"} return trainer.
+   // done: endpoint: POST /trainer {id}/ Role: {add role}
+   // done: endpoint: POST /trainer body: {name: "Nhon", email: "nhon@gmail", password: "123456"} return trainer.
    2. Have the ability to authenticate and verify the identity and qualifications of the trainer.
-   // TODO: endpoint: POST /trainer/login body: {email: "nhon@gmail", password: "123456"} return token.
-   // TODO: endpoint: GET /trainer/:id (id of trainer) return trainer.
+   // done: endpoint: POST /trainer/login body: {email: "nhon@gmail", password: "123456"} return token.
+   // done: endpoint: GET /trainer/:id (id of trainer) return trainer.
 2. Assignment
    1. Have the ability to restrict trainer access to certain resources or assessments based on their qualifications or areas of expertise.
 3. Evaluation
    1. Have the ability to evaluate the performance of trainers based on student feedback.****
+// TODO: endpoint: POST /student:trainerId/feedback
+// create table feedback between student and syllabus.
+// TODO: endpoint: GET /student:trainerId/feedback

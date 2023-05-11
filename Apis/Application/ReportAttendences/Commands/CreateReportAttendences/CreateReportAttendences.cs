@@ -6,11 +6,6 @@ using AutoMapper;
 using Domain.Entities;
 using Domain.Enums;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Application.ReportAttendences.Commands.CreateReportAttendences
 {
@@ -43,7 +38,7 @@ namespace Application.ReportAttendences.Commands.CreateReportAttendences
             reportAttendance.CreationDate = _currentTime.GetCurrentTime();
             await _unitOfWork.ExecuteTransactionAsync(() =>
             {
-                _unitOfWork.ReportAttendenceRepository.AddAsync(reportAttendance);
+                _unitOfWork.ReportAttendanceRepository.AddAsync(reportAttendance);
             });
             var result = _mapper.Map<ReportAttendenceDTO>(reportAttendance);
             return result ?? throw new NotFoundException("reportAttendance not found");

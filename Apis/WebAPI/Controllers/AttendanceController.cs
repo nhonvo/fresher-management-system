@@ -1,6 +1,7 @@
 using Application.Attendances.DTOs;
 using Application.Attendances.Queries.GetAttendanceByClass;
 using Application.Commons;
+using CoreApiResponse;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 

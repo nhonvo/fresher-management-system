@@ -36,6 +36,5 @@ namespace Domain.Entities
 
         public int? ModificationBy { get; set; }
         public User? ModificationByUser { get; set; }
-
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Application.Common.Exceptions;
+using Application.Interfaces;
 using Application.Units.DTO;
 using AutoMapper;
 using Domain.Entities;
@@ -21,15 +22,18 @@ namespace Application.Units.Commands.CreateUnit
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
-        public CreateUnitHandler(IUnitOfWork unitOfWork, IMapper mapper)
+        private readonly IJWTService _jwtService;
+        public CreateUnitHandler(IUnitOfWork unitOfWork, IMapper mapper, IJWTService jwtService)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
+            _jwtService = jwtService;
         }
 
         public async Task<UnitDTO> Handle(CreateUnitCommand request, CancellationToken cancellationToken)
         {
             var unit = _mapper.Map<Domain.Entities.Unit>(request);
+
             await _unitOfWork.ExecuteTransactionAsync(() =>
             {
                 _unitOfWork.UnitRepository.AddAsync(unit);

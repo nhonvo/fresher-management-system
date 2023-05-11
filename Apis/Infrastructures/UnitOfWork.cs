@@ -29,6 +29,7 @@ public class UnitOfWork : IUnitOfWork
     public IUserRepository UserRepository { get; }
     public IUnitRepository UnitRepository { get; }
     public IUnitLessonRepository UnitLessonRepository { get; }
+    public IFeedBackrepository FeedBackRepository { get; }
     //
     public UnitOfWork(ApplicationDbContext dbContext, ICacheService cache)
     {
@@ -45,6 +46,9 @@ public class UnitOfWork : IUnitOfWork
         AttendanceRepository = new AttendanceRepository(_context, _cache);
         ReportAttendanceRepository = new ReportAttendanceRepository(_context, _cache);
         ApproveRequestRepository = new ApproveRequestRepository(_context, _cache);
+        UnitLessonRepository = new UnitLessonRepository(_context, _cache);
+        UnitRepository = new UnitRepository(_context, _cache);
+        FeedBackRepository = new FeedBackRepository(_context, _cache);
     }
 
     // save changes

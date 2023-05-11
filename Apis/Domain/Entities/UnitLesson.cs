@@ -5,8 +5,8 @@ namespace Domain.Entities;
 #pragma warning disable
 public class UnitLesson : BaseEntity
 {
-    public string Name { get; set; }
-    public int Duration { get; set; }
+    public string? Name { get; set; }
+    public int? Duration { get; set; }
     public LessonType LessonType { get; set; }
     public DeliveryType DeliveryType { get; set; }
     public int SortOrder { get; set; }

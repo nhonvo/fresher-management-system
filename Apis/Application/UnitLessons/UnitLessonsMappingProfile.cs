@@ -1,12 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Application.UnitLessons.Commands.CreateUnitLesson;
+using Application.UnitLessons.Commands.UpdateUnitLesson;
+using Application.UnitLessons.DTO;
+using AutoMapper;
+using Domain.Entities;
 
 namespace Application.UnitLessons
 {
-    internal class UnitLessonsMappingProfile
+    public class UnitLessonsMappingProfile : Profile
     {
+        public UnitLessonsMappingProfile()
+        {
+            CreateMap<UnitLesson, UnitLessonDTO>().ReverseMap();
+            CreateMap<UnitLesson, CreateUnitLessonCommand>().ReverseMap();
+            CreateMap<UnitLesson, UpdateUnitLessonCommand>().ReverseMap();
+        }
     }
 }

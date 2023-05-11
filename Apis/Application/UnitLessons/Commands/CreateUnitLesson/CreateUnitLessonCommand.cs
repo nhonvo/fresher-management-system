@@ -27,14 +27,19 @@ namespace Application.UnitLessons.Commands.CreateUnitLesson
 
         public async Task<UnitLessonDTO> Handle(CreateUnitLessonCommand request, CancellationToken cancellationToken)
         {
+            
             var unitlesson = _mapper.Map<UnitLesson>(request);
+            if (unitlesson == null)
+            {
+                throw new NotFoundException("Unit Lesson not found");
+            }
             await _unitOfWork.ExecuteTransactionAsync(() =>
             {
                 _unitOfWork.UnitLessonRepository.AddAsync(unitlesson);
             });
             var result = _mapper.Map<UnitLessonDTO>(unitlesson);
 
-            return result ?? throw new NotFoundException("Unit Lesson not found");
+            return result ?? throw new NotFoundException("Unit Lesson can not create");
         }
     }
 }

@@ -6,6 +6,7 @@ using Application.TrainingPrograms.DTOs;
 using Application.TrainingPrograms.Queries.GetTrainingProgram;
 using Application.TrainingPrograms.Queries.GetTrainingProgramById;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers
@@ -24,12 +25,15 @@ namespace WebAPI.Controllers
         public async Task<TrainingProgramDTO> GetAsync(int id)
             => await _mediator.Send(new GetTrainingProgramByIdQuery(id));
         [HttpPost]
+        [Authorize(Roles = "ClassAdmin")]
         public async Task<TrainingProgramDTO> Post(CreateTrainingProgramCommand request)
             => await _mediator.Send(request);
         [HttpPut]
+        [Authorize(Roles = "ClassAdmin")]
         public async Task<TrainingProgramDTO> Put(UpdateTrainingProgramCommand request)
             => await _mediator.Send(request);
         [HttpDelete("{id}")]
+        [Authorize(Roles = "ClassAdmin")]
         public async Task<TrainingProgramDTO> Delete(DeleteTrainingProgramCommand request)
             => await _mediator.Send(request);
     }

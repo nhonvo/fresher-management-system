@@ -6,6 +6,7 @@ using Application.ApproveRequests.GetApproveFilter;
 using Application.Commons;
 using Domain.Enums;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers
@@ -27,9 +28,11 @@ namespace WebAPI.Controllers
             int pageSize = 10)
             => await _mediator.Send(new GetApproveFilterQuery(order, pageIndex, pageSize));
         [HttpPost]
+        [Authorize(Roles = "Trainee")]
         public async Task<ApproveRequestDTO> Post(CreateRequestCommand request)
             => await _mediator.Send(request);
         [HttpPost("ApproveEnroll")]
+        [Authorize(Roles = "ClassAdmin")]
         public async Task<ApproveRequestDTO> Post(AllowRequestCommand request)
             => await _mediator.Send(request);
     }

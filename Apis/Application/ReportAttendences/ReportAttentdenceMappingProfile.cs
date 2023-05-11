@@ -1,18 +1,18 @@
-﻿using Application.ReportAttendences.Commands.CreateReportAttendences;
+﻿using Application.ReportAttendances.Commands.CreateReportAttendances;
 using Application.ReportAttendences.Commands.UpdateReportAttendences;
 using Application.ReportAttendences.DTO;
 using AutoMapper;
 using Domain.Entities;
 
-namespace Application.ReportAttendences
+namespace Application.ReportAttendances
 {
-    public class ReportAttentdenceMappingProfile : Profile
+    public class ReportAttendanceMappingProfile : Profile
     {
-        public ReportAttentdenceMappingProfile()
+        public ReportAttendanceMappingProfile()
         {
-            CreateMap<ReportAttendence, ReportAttendenceDTO>().ReverseMap();
-            CreateMap<ReportAttendence, CreateReportAttendencesCommand>().ReverseMap();
-            CreateMap<ReportAttendence, UpdateReportAttendencesCommand>().ReverseMap();
+            CreateMap<ReportAttendance, ReportAttendanceDTO>().ReverseMap();
+            CreateMap<ReportAttendance, CreateReportAttendancesCommand>().ReverseMap();
+            CreateMap<ReportAttendance, UpdateReportAttendancesCommand>().ReverseMap();
 
 
         }

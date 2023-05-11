@@ -38,7 +38,7 @@ namespace WebAPI
             // Extension Services
             services.AddScoped<IClaimService, ClaimService>();
             services.AddScoped<IJWTService, JWTService>();
-            // // IMemoryCache
+            // IMemoryCache
             services.AddMemoryCache();
             services.AddScoped<ICacheService, CacheService>();
 

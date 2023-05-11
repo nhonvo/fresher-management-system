@@ -5,7 +5,7 @@ using Infrastructures.Persistence;
 
 namespace Infrastructures.Repositories
 {
-    public class UnitRepository :GenericRepository<Unit>, IUnitRepository
+    public class UnitRepository : GenericRepository<Unit>, IUnitRepository
     {
         private readonly ApplicationDbContext _dbcontext;
 

@@ -61,7 +61,7 @@ public class ClassStudentRepository : GenericRepository<ClassStudent>, IClassStu
                 // final 70%
                 // final theory 40%
                 // final practice 60%
-                // (6 + 10)/2 x 15% + 10 x 15% + 10 x 70% = 0.9 + 1.5 + 1.5 + 7 = 11.9
+                // (6 + 10)/2 x 15% + 10 x 15% + 10 x 70% = 1.2 + 1.5 + 7 = 9.7
                 programSyllabus.Syllabus.QuizScheme = 15;
                 var scoreQuizList = new List<float>();
                 var scoreAssignmentList = new List<float>();
@@ -99,9 +99,9 @@ public class ClassStudentRepository : GenericRepository<ClassStudent>, IClassStu
                 var finalPracticeAvg = scoreFinalPracticeList.Average();
 
                 var syllabusGPA = quizAvg * programSyllabus.Syllabus.QuizScheme +
-                    assignmentAvg * programSyllabus.Syllabus.AsignmentScheme +
+                    assignmentAvg * programSyllabus.Syllabus.AssignmentScheme +
                     (finalPracticeAvg * programSyllabus.Syllabus.FinalTheoryScheme +
-                        finalPracticeAvg * programSyllabus.Syllabus.FinalPraticeScheme) * programSyllabus.Syllabus.FinalScheme;
+                        finalPracticeAvg * programSyllabus.Syllabus.FinalPracticeScheme) * programSyllabus.Syllabus.FinalScheme;
 
                 syllabusGPAList.Add(syllabusGPA);
             }

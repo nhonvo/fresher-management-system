@@ -12,10 +12,10 @@ namespace Domain.Entities
         public SyllabusLevel SyllabusLevel { get; set; }
 
         public float QuizScheme { get; set; }
-        public float AsignmentScheme { get; set; }
+        public float AssignmentScheme { get; set; }
         public float FinalScheme { get; set; }
         public float FinalTheoryScheme { get; set; }
-        public float FinalPraticeScheme { get; set; }
+        public float FinalPracticeScheme { get; set; }
         public float GPAScheme { get; set; }
         //public User CreateByUser { get; set; }
         //public User ModificationByUser { get; set; }

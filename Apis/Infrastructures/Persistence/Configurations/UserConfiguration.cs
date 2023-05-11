@@ -13,6 +13,8 @@ namespace Infrastructures.Persistence.Configurations
             builder.Property(x => x.Id).ValueGeneratedOnAdd();
 
             builder.Property(x => x.Email).HasMaxLength(100);
+
+
         }
     }
 }

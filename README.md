@@ -115,13 +115,15 @@
 
 1. Registration
    1. Allow trainers to register themselves by providing their basic information such as name, contact information, and credentials.
-   // TODO: endpoint: POST /trainer {id}/ Role: {add role}
-   // TODO: endpoint: POST /trainer body: {name: "Nhon", email: "nhon@gmail", password: "123456"} return trainer.
+   // done: endpoint: POST /trainer {id}/ Role: {add role}
+   // done: endpoint: POST /trainer body: {name: "Nhon", email: "nhon@gmail", password: "123456"} return trainer.
    2. Have the ability to authenticate and verify the identity and qualifications of the trainer.
-   // TODO: endpoint: POST /trainer/login body: {email: "nhon@gmail", password: "123456"} return token.
-   // TODO: endpoint: GET /trainer/:id (id of trainer) return trainer.
+   // done: endpoint: POST /trainer/login body: {email: "nhon@gmail", password: "123456"} return token.
+   // done: endpoint: GET /trainer/:id (id of trainer) return trainer.
 2. Assignment
    1. Have the ability to restrict trainer access to certain resources or assessments based on their qualifications or areas of expertise.
 3. Evaluation
    1. Have the ability to evaluate the performance of trainers based on student feedback.****
 // TODO: endpoint: POST /student:trainerId/feedback
+// create table feedback between student and syllabus.
+// TODO: endpoint: GET /student:trainerId/feedback

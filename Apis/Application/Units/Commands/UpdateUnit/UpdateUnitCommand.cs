@@ -1,10 +1,7 @@
 ﻿using Application.Common.Exceptions;
 using Application.Units.DTO;
 using AutoMapper;
-using Domain.Entities;
-using FluentValidation.Validators;
 using MediatR;
-using System.Runtime.InteropServices;
 
 namespace Application.Units.Commands.UpdateUnit
 {

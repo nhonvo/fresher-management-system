@@ -28,6 +28,7 @@ public class UnitOfWork : IUnitOfWork
     public ITestAssessmentRepository TestAssessmentRepository { get; }
     public IUserRepository UserRepository { get; }
     public IUnitRepository UnitRepository { get; }
+    public IUnitLessonRepository UnitLessonRepository { get; }
     //
     public UnitOfWork(ApplicationDbContext dbContext, ICacheService cache)
     {

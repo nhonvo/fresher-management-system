@@ -3,7 +3,7 @@
     public enum SyllabusLevel
     {
         AllLevel = 0,
-        Beginer = 1,
+        Beginner = 1,
         Intermediate = 2,
         Advance = 3,
     }

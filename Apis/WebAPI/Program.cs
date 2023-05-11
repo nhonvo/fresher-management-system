@@ -23,7 +23,7 @@ try
 
     var app = await builder
         .ConfigureServices(
-            configuration.ConnectionStrings.DatabaseConnectionV1,
+            configuration.ConnectionStrings.DatabaseConnectionV3,
             configuration.MyAllowSpecificOrigins.UserApp,
             configuration.Jwt.Key,
             configuration.Jwt.Issuer,

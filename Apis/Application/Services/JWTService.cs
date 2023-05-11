@@ -27,6 +27,7 @@ namespace Application.Services
             {
                 new Claim("ID", user.Id.ToString()),
                 new Claim("Email", user.Email),
+                new Claim("Email", user.Email),
                 new Claim(JwtRegisteredClaimNames.Name, user.Email),
                 new Claim(ClaimTypes.Role, user.Role.ToString())
             };

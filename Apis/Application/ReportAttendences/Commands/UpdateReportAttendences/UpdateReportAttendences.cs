@@ -7,7 +7,7 @@ using MediatR;
 
 namespace Application.ReportAttendences.Commands.UpdateReportAttendences
 {
-    public record UpdateReportAttendencesCommand : IRequest<ReportAttendenceDTO>
+    public record UpdateReportAttendancesCommand : IRequest<ReportAttendanceDTO>
     {
         public int Id { get; set; }
         public string Reason { get; set; }
@@ -15,7 +15,7 @@ namespace Application.ReportAttendences.Commands.UpdateReportAttendences
         public DateTime expectedDates { get; set; }
         public string StudentId { get; set; }
     }
-    public class UpdateReportAttendencesHandler : IRequestHandler<UpdateReportAttendencesCommand, ReportAttendenceDTO>
+    public class UpdateReportAttendencesHandler : IRequestHandler<UpdateReportAttendancesCommand, ReportAttendanceDTO>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
@@ -24,17 +24,17 @@ namespace Application.ReportAttendences.Commands.UpdateReportAttendences
             _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
-        public async Task<ReportAttendenceDTO> Handle(UpdateReportAttendencesCommand request, CancellationToken cancellationToken)
+        public async Task<ReportAttendanceDTO> Handle(UpdateReportAttendancesCommand request, CancellationToken cancellationToken)
         {
             var reportAttendence = await _unitOfWork.ReportAttendanceRepository.GetByIdAsyncAsNoTracking(request.Id);
             if (reportAttendence == null)
                 throw new NotFoundException("reportAttendence not found");
-            reportAttendence = _mapper.Map<ReportAttendence>(request);
+            reportAttendence = _mapper.Map<ReportAttendance>(request);
             await _unitOfWork.ExecuteTransactionAsync(() =>
             {
                 _unitOfWork.ReportAttendanceRepository.Update(reportAttendence);
             });
-            var result = _mapper.Map<ReportAttendenceDTO>(reportAttendence);
+            var result = _mapper.Map<ReportAttendanceDTO>(reportAttendence);
             return result ?? throw new NotFoundException("Can not update reportAttendence");
         }
     }

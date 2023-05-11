@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Infrastructures.Persistence.Configurations
 {
-    public class ReportAttendenceConfiguration : IEntityTypeConfiguration<ReportAttendence>
+    public class ReportAttendenceConfiguration : IEntityTypeConfiguration<ReportAttendance>
     {
-        public void Configure(EntityTypeBuilder<ReportAttendence> builder)
+        public void Configure(EntityTypeBuilder<ReportAttendance> builder)
         {
             builder.HasKey(x => x.Id);
             builder.HasOne(st => st.Student)

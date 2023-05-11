@@ -28,7 +28,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="FeedBacks\Commands\CreateFeedBack\" />
 	  <Folder Include="FeedBacks\Commands\DeleteFeedBack\" />
 	  <Folder Include="FeedBacks\Commands\UpdateFeedBack\" />
 	  <Folder Include="FeedBacks\Queries\" />

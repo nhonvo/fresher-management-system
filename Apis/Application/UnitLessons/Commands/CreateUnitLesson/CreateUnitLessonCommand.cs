@@ -7,7 +7,7 @@ using MediatR;
 
 namespace Application.UnitLessons.Commands.CreateUnitLesson
 {
-    public class CreateUnitLessonCommand : IRequest<UnitLessonDTO>
+    public record CreateUnitLessonCommand : IRequest<UnitLessonDTO>
     {
         public string Name { get; set; }
         public int Duration { get; set; }

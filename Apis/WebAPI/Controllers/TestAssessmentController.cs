@@ -102,12 +102,30 @@ public class TestAssessmentController : CustomBaseController
         };
     }
 
-    [HttpGet("{id:int}/finalSyllabusScores")]
-    public async Task<IActionResult> GetStudentFinalSyllabusScoreAsync(int id)
+    [HttpGet("student/{id:int}/finalSyllabusScores")]
+    public async Task<IActionResult> GetStudentFinalSyllabusScoreAsync(int id, int pageIndex = 0, int pageSize = 10)
     {
         try
         {
-            var result = await _testAssessmentService.GetFinalSyllabusScoreAsync(id);
+            var result = await _testAssessmentService.GetStudentFinalSyllabusScoreAsync(id, pageIndex, pageSize);
+            return CustomResult(result);
+        }
+        catch (Exception ex)
+        {
+            var ErrorMessages = new List<string>()
+                {
+                    ex.ToString()
+                };
+            return CustomResult(ErrorMessages, HttpStatusCode.BadRequest);
+        };
+    }
+
+    [HttpGet("class/{id:int}/finalSyllabusScores")]
+    public async Task<IActionResult> GetClassFinalSyllabusScoreAsync(int id, int pageIndex = 0, int pageSize = 10)
+    {
+        try
+        {
+            var result = await _testAssessmentService.GetClassFinalSyllabusScoreAsync(id, pageIndex, pageSize);
             return CustomResult(result);
         }
         catch (Exception ex)

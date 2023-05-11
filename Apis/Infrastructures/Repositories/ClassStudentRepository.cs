@@ -99,9 +99,9 @@ public class ClassStudentRepository : GenericRepository<ClassStudent>, IClassStu
                 var finalPracticeAvg = scoreFinalPracticeList.Average();
 
                 var syllabusGPA = quizAvg * programSyllabus.Syllabus.QuizScheme +
-                    assignmentAvg * programSyllabus.Syllabus.AsignmentScheme +
+                    assignmentAvg * programSyllabus.Syllabus.AssignmentScheme +
                     (finalPracticeAvg * programSyllabus.Syllabus.FinalTheoryScheme +
-                        finalPracticeAvg * programSyllabus.Syllabus.FinalPraticeScheme) * programSyllabus.Syllabus.FinalScheme;
+                        finalPracticeAvg * programSyllabus.Syllabus.FinalPracticeScheme) * programSyllabus.Syllabus.FinalScheme;
 
                 syllabusGPAList.Add(syllabusGPA);
             }

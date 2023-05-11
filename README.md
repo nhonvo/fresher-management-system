@@ -127,3 +127,15 @@
 // TODO: endpoint: POST /student:trainerId/feedback
 // create table feedback between student and syllabus.
 // TODO: endpoint: GET /student:trainerId/feedback
+
+//DONE super admin -> admin
+//DONE admin -> trainer
+//DONE GET PROFILE
+//done admin -> class(program)
+//DONE admin add trainer -> class (**)
+
+// done trainer -> syllabus(unit(lesson(material))) 
+// trainer -> Program(syllabus)
+// duplicate -> program
+// export file csv
+// hangfire send mail

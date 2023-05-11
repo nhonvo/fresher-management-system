@@ -1,5 +1,4 @@
-﻿using Application.Class.DTO;
-using Application.Common.Exceptions;
+﻿using Application.Common.Exceptions;
 using Application.ReportAttendences.DTO;
 using AutoMapper;
 using Domain.Entities;

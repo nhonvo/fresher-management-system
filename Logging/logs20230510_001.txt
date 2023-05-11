@@ -2659,3 +2659,20 @@ Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
 2023-05-10 18:56:54.760 +07:00 [WRN] Savepoints are disabled because Multiple Active Result Sets (MARS) is enabled. If 'SaveChanges' fails, then the transaction cannot be automatically rolled back to a known clean state. Instead, the transaction should be rolled back by the application before retrying 'SaveChanges'. See https://go.microsoft.com/fwlink/?linkid=2149338 for more information and examples. To identify the code which triggers this warning, call 'ConfigureWarnings(w => w.Throw(SqlServerEventId.SavepointsDisabledBecauseOfMARS))'.
 2023-05-10 18:56:54.820 +07:00 [INF] End performance record
 2023-05-10 18:56:54.820 +07:00 [INF] Time taken: 0:13.821
+2023-05-10 18:57:07.931 +07:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2023-05-10 18:57:08.991 +07:00 [INF] Now listening on: https://localhost:5001
+2023-05-10 18:57:08.992 +07:00 [INF] Now listening on: http://localhost:5000
+2023-05-10 18:57:08.994 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-10 18:57:08.994 +07:00 [INF] Hosting environment: Development
+2023-05-10 18:57:08.994 +07:00 [INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+2023-05-10 18:57:09.729 +07:00 [INF] Start performance record
+2023-05-10 18:57:09.776 +07:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2023-05-10 18:57:10.448 +07:00 [WRN] Savepoints are disabled because Multiple Active Result Sets (MARS) is enabled. If 'SaveChanges' fails, then the transaction cannot be automatically rolled back to a known clean state. Instead, the transaction should be rolled back by the application before retrying 'SaveChanges'. See https://go.microsoft.com/fwlink/?linkid=2149338 for more information and examples. To identify the code which triggers this warning, call 'ConfigureWarnings(w => w.Throw(SqlServerEventId.SavepointsDisabledBecauseOfMARS))'.
+2023-05-10 18:57:10.555 +07:00 [INF] End performance record
+2023-05-10 18:57:10.560 +07:00 [INF] Time taken: 0:00.827
+2023-05-10 18:57:16.711 +07:00 [INF] Start performance record
+2023-05-10 18:57:16.713 +07:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2023-05-10 18:57:16.814 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-10 18:57:16.814 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-05-10 18:57:16.837 +07:00 [INF] End performance record
+2023-05-10 18:57:16.837 +07:00 [INF] Time taken: 0:00.125

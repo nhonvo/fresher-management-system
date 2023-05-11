@@ -10,9 +10,9 @@ namespace Infrastructures.Persistence.Configurations
         {
             builder.HasKey(x => x.Id);
             builder.HasOne(st => st.Student)
-                   .WithMany(rp=> rp.ReportAttendence)
+                   .WithMany(rp => rp.ReportAttendence)
                    .HasForeignKey(ps => ps.StudentId);
-           
+
         }
     }
 }

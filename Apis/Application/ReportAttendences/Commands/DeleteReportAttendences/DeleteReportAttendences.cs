@@ -1,13 +1,7 @@
-﻿using Application.Class.DTO;
-using Application.Common.Exceptions;
+﻿using Application.Common.Exceptions;
 using Application.ReportAttendences.DTO;
 using AutoMapper;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Application.ReportAttendences.Commands.DeleteReportAttendences
 {

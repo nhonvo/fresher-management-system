@@ -1,9 +1,7 @@
 ﻿using Application.ApproveRequests.DTOs;
 using Application.Common.Exceptions;
 using Application.Interfaces;
-using Application.Students.DTO;
 using AutoMapper;
-using Domain.Entities;
 using Domain.Enums;
 using MediatR;
 using Microsoft.EntityFrameworkCore;

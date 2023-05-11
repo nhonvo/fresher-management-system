@@ -1,7 +1,6 @@
 using AutoMapper;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace Application.Syllabuses.Queries.GetDurationOfTrainProgram;
 

@@ -10,7 +10,7 @@ namespace Domain.Entities
         public User Attendee { get; set; }
         public int SyllabusId { get; set; }
         public Syllabus Syllabus { get; set; }
-        public int TrainingCLassId { get; set; }
+        public int TrainingClassId { get; set; }
         public TrainingClass TrainingClass { get; set; }
     }
 }

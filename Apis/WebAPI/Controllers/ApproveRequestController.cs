@@ -33,7 +33,7 @@ namespace WebAPI.Controllers
             => await _mediator.Send(request);
         [HttpPost("ApproveEnroll")]
         [Authorize(Roles = "ClassAdmin")]
-        public async Task<ApproveRequestDTO> Post(AllowRequestCommand request)
+        public async Task<ApproveResponseDTO> Post(AllowRequestCommand request)
             => await _mediator.Send(request);
     }
 }

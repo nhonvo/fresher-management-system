@@ -3,7 +3,7 @@
 namespace Domain.Entities;
 
 #pragma warning disable
-public class ReportAttendence : BaseEntity
+public class ReportAttendance : BaseEntity
 {
     public string Reason { get; set; }
     public StatusAttendance statusAttendance { get; set; } = StatusAttendance.Waiting;

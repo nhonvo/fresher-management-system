@@ -7,12 +7,12 @@ using MediatR;
 
 namespace Application.ReportAttendences.Commands.UpdateReportAttendanceStatus
 {
-    public record ChangeAttendanceStatusCommand : IRequest<ReportAttendenceDTO>
+    public record ChangeAttendanceStatusCommand : IRequest<ReportAttendanceDTO>
     {
         public int Id { get; set; }
         public StatusAttendance NewStatus { get; set; }
     }
-    public class ChangeAttendanceStatusHandler : IRequestHandler<ChangeAttendanceStatusCommand, ReportAttendenceDTO>
+    public class ChangeAttendanceStatusHandler : IRequestHandler<ChangeAttendanceStatusCommand, ReportAttendanceDTO>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
@@ -22,7 +22,7 @@ namespace Application.ReportAttendences.Commands.UpdateReportAttendanceStatus
             _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
-        public async Task<ReportAttendenceDTO> Handle(ChangeAttendanceStatusCommand request, CancellationToken cancellationToken)
+        public async Task<ReportAttendanceDTO> Handle(ChangeAttendanceStatusCommand request, CancellationToken cancellationToken)
         {
             var report = await _unitOfWork.ReportAttendanceRepository.GetByIdAsyncAsNoTracking(request.Id);
             if (report == null)
@@ -34,7 +34,7 @@ namespace Application.ReportAttendences.Commands.UpdateReportAttendanceStatus
             {
                 _unitOfWork.ReportAttendanceRepository.Update(report);
             });
-            var result = _mapper.Map<ReportAttendenceDTO>(report);
+            var result = _mapper.Map<ReportAttendanceDTO>(report);
             return result;
         }
     }

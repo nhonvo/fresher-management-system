@@ -2,14 +2,15 @@
 using Application.Common.Exceptions;
 using Application.Interfaces;
 using AutoMapper;
+using Domain.Entities;
 using Domain.Enums;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
 namespace Application.ApproveRequests.Commands.AllowRequest
 {
-    public record AllowRequestCommand(int studentId, int classId, bool allow) : IRequest<ApproveRequestDTO>;
-    public class AllowRequestHandler : IRequestHandler<AllowRequestCommand, ApproveRequestDTO>
+    public record AllowRequestCommand(int studentId, int classId, bool allow) : IRequest<ApproveResponseDTO>;
+    public class AllowRequestHandler : IRequestHandler<AllowRequestCommand, ApproveResponseDTO>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
@@ -22,7 +23,7 @@ namespace Application.ApproveRequests.Commands.AllowRequest
             _claimService = claimService;
             _currentTime = currentTime;
         }
-        public async Task<ApproveRequestDTO> Handle(AllowRequestCommand request, CancellationToken cancellationToken)
+        public async Task<ApproveResponseDTO> Handle(AllowRequestCommand request, CancellationToken cancellationToken)
         {
             var studentExist = await CheckStudentExitsAsync(request.studentId);
             if (studentExist)
@@ -38,16 +39,37 @@ namespace Application.ApproveRequests.Commands.AllowRequest
             if (!request.allow)
                 approved.Status = StatusApprove.Reject;
             approved.Status = StatusApprove.Approve;
-            await _unitOfWork.ExecuteTransactionAsync(() =>
+            var classStudent = new ClassStudent
             {
+                TrainingClassId = request.classId,
+                UserId = request.studentId,
+                CreationDate = _currentTime.GetCurrentTime(),
+                GPA = 0
+            };
+            try
+            {
+                _unitOfWork.BeginTransaction();
                 _unitOfWork.ApproveRequestRepository.Update(approved);
-            });
-            var result = _mapper.Map<ApproveRequestDTO>(approved);
-            return result;
+                await _unitOfWork.ClassStudentRepository.AddAsync(classStudent);
+                var result = new ApproveResponseDTO
+                {
+                    Status = StatusApprove.Approve,
+                    StudentId = request.studentId,
+                    ClassId = request.classId,
+                    ApprovedBy = _claimService.CurrentUserId,
+                };
+                return result;
+            }
+            catch (Exception)
+            {
+                _unitOfWork.Rollback();
+                throw new TransactionException("Can't approve approval");
+            }
         }
         private async Task<bool> CheckStudentExitsAsync(int id)
             => await _unitOfWork.UserRepository.GetByIdAsyncAsNoTracking(id) == null ? true : false;
         private async Task<bool> CheckClassExitsAsync(int id)
             => await _unitOfWork.ClassRepository.GetByIdAsyncAsNoTracking(id) == null ? true : false;
+
     }
 }

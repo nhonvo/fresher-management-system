@@ -5,7 +5,7 @@ using Infrastructures.Persistence;
 
 namespace Infrastructures.Repositories
 {
-    public class ReportAttendanceRepository : GenericRepository<ReportAttendence>, IReportAttendanceRepository
+    public class ReportAttendanceRepository : GenericRepository<ReportAttendance>, IReportAttendanceRepository
     {
         public ReportAttendanceRepository(ApplicationDbContext context, ICacheService cacheService) : base(context, cacheService)
         {

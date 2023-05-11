@@ -6,9 +6,9 @@ using MediatR;
 
 namespace Application.ReportAttendences.Commands.DeleteReportAttendences
 {
-    public record DeleteReportAttendencesCommand(int Id) : IRequest<ReportAttendenceDTO>;
+    public record DeleteReportAttendencesCommand(int Id) : IRequest<ReportAttendanceDTO>;
 
-    public class DeleteReportAttendencesHandler : IRequestHandler<DeleteReportAttendencesCommand, ReportAttendenceDTO>
+    public class DeleteReportAttendencesHandler : IRequestHandler<DeleteReportAttendencesCommand, ReportAttendanceDTO>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
@@ -23,7 +23,7 @@ namespace Application.ReportAttendences.Commands.DeleteReportAttendences
             _claimService = claimService;
             _currentTime = currentTime;
         }
-        public async Task<ReportAttendenceDTO> Handle(DeleteReportAttendencesCommand request, CancellationToken cancellationToken)
+        public async Task<ReportAttendanceDTO> Handle(DeleteReportAttendencesCommand request, CancellationToken cancellationToken)
         {
             var reportAttendence = await _unitOfWork.ReportAttendanceRepository.GetByIdAsync(request.Id);
             reportAttendence.DeletionDate = _currentTime.GetCurrentTime();
@@ -37,7 +37,7 @@ namespace Application.ReportAttendences.Commands.DeleteReportAttendences
             {
                 _unitOfWork.ReportAttendanceRepository.Update(reportAttendence);
             });
-            var result = _mapper.Map<ReportAttendenceDTO>(reportAttendence);
+            var result = _mapper.Map<ReportAttendanceDTO>(reportAttendence);
             return result ?? throw new NotFoundException("Can not delete class");
         }
     }

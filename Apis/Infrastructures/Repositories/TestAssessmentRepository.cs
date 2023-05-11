@@ -23,12 +23,12 @@ namespace Infrastructures.Repositories
 
         public async Task<List<GetStudentTestScoreViewModel>> GetFinalScoreAsync(Expression<Func<TestAssessment, bool>> filter = null)
         {
-            List<GetStudentTestScoreViewModel> result = await _context.TestAssessments.Where(filter).GroupBy(ta => new { ta.AttendeeId, ta.SyllabusId, ta.TrainingCLassId, ta.TestAssessmentType })
+            List<GetStudentTestScoreViewModel> result = await _context.TestAssessments.Where(filter).GroupBy(ta => new { ta.AttendeeId, ta.SyllabusId, ta.TrainingClassId, ta.TestAssessmentType })
                 .Select(group => new GetStudentTestScoreViewModel
                 {
                     AttendeeId = group.Key.AttendeeId,
                     SyllabusId = group.Key.SyllabusId,
-                    TrainingClassId = group.Key.TrainingCLassId,
+                    TrainingClassId = group.Key.TrainingClassId,
                     TestAssessmentType = group.Key.TestAssessmentType.ToString(),
                     AverageScore = group.Average(ta => ta.Score),
                     SyllabusScheme = group.Key.TestAssessmentType == TestAssessmentType.Quiz ? _context.Syllabuses.FirstOrDefault(s => s.Id == group.Key.SyllabusId).QuizScheme

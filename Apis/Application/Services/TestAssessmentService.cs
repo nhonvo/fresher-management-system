@@ -98,7 +98,7 @@ namespace Application.Services
         public async Task<Pagination<GetClassFinalSyllabusScoreViewModel>> GetClassFinalSyllabusScoreAsync(int id, int pageIndex = 0, int pageSize = 10)
         {
 
-            Expression<Func<TestAssessment, bool>> filter = x => x.TrainingCLassId == id;
+            Expression<Func<TestAssessment, bool>> filter = x => x.TrainingClassId == id;
             var scoreByTestType = await _unitOfWork.TestAssessmentRepository.GetFinalScoreAsync(filter);
             var classFinalSyllabusScore = scoreByTestType.GroupBy(ta => new { ta.AttendeeId, ta.SyllabusId }).Select(group => new GetClassFinalSyllabusScoreViewModel
             {

@@ -13,3 +13,11 @@ public class ApproveRequestDTO
     public int ClassId { get; set; }
     public TrainingClasses TrainingClass { get; set; }
 }
+public class ApproveResponseDTO
+{
+    public int Id { get; set; }
+    public StatusApprove Status { get; set; }
+    public int StudentId { get; set; }
+    public int ClassId { get; set; }
+    public int ApprovedBy { get; set; }
+}

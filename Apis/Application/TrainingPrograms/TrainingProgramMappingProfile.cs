@@ -1,4 +1,5 @@
 using Application.TrainingPrograms.Commands.CreateTrainingProgram;
+using Application.TrainingPrograms.Commands.UpdateTrainingProgram;
 using Application.TrainingPrograms.DTOs;
 using AutoMapper;
 using Domain.Entities;
@@ -11,6 +12,7 @@ namespace Application.TrainingPrograms
         {
             CreateMap<TrainingProgram, TrainingProgramDTO>();
             CreateMap<TrainingProgram, CreateTrainingProgramCommand>();
+            CreateMap<TrainingProgram, UpdateTrainingProgramCommand>();
 
         }
     }

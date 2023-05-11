@@ -2,7 +2,7 @@
 
 namespace Application.ReportAttendences.DTO
 {
-    public class ReportAttendenceDTO
+    public class ReportAttendanceDTO
     {
         public string Reason { get; set; }
         public StatusAttendance statusAttendance { get; set; }
@@ -14,6 +14,6 @@ namespace Application.ReportAttendences.DTO
         public int? ModificationBy { get; set; }
         public int? DeleteBy { get; set; }
         public DateTime? DeletionDate { get; set; }
-        public bool IsDeleted { get; set; } 
+        public bool IsDeleted { get; set; }
     }
 }

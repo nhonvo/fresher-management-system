@@ -9,20 +9,12 @@ namespace Application.TrainingPrograms.Commands.CreateTrainingProgram
 {
     public record CreateTrainingProgramCommand : IRequest<TrainingProgramDTO>
     {
+        public int ParentId { get; set; }
         public string Name { get; set; }
         public int Duration { get; set; }
         public TrainingProgramStatus Status { get; set; }
-
-        //Navigation properties
-        // public int? ParentId { get; set; }
-        // public TrainingProgram? Parent { get; set; }
-        // public int? TrainingClassId { get; set; }
-        // public TrainingClass? TrainingClass { get; set; }
-        // public ICollection<ProgramSyllabus> ProgramSyllabus { get; set; }
-        // public ICollection<TestAssessment> TestAssessments { get; set; }
         public DateTime CreationDate { get; set; }
         public int? CreatedBy { get; set; }
-        // public User? CreateByUser { get; set; }
     }
     public class CreateTrainingProgramCommandHandler : IRequestHandler<CreateTrainingProgramCommand, TrainingProgramDTO>
     {

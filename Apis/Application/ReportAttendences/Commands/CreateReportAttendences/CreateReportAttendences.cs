@@ -7,15 +7,15 @@ using Domain.Entities;
 using Domain.Enums;
 using MediatR;
 
-namespace Application.ReportAttendences.Commands.CreateReportAttendences
+namespace Application.ReportAttendances.Commands.CreateReportAttendances
 {
-    public record CreateReportAttendencesCommand : IRequest<ReportAttendenceDTO>
+    public record CreateReportAttendancesCommand : IRequest<ReportAttendanceDTO>
     {
         public string Reason { get; set; }
         public DateTime expectedDates { get; set; }
         public string StudentId { get; set; }
     }
-    public class CreateReportAttendencesHandler : IRequestHandler<CreateReportAttendencesCommand, ReportAttendenceDTO>
+    public class CreateReportAttendancesHandler : IRequestHandler<CreateReportAttendancesCommand, ReportAttendanceDTO>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
@@ -23,16 +23,16 @@ namespace Application.ReportAttendences.Commands.CreateReportAttendences
         private readonly ICurrentTime _currentTime;
 
 
-        public CreateReportAttendencesHandler(IUnitOfWork unitOfWork, IMapper mapper , IClaimService claimService, ICurrentTime currentTime)
+        public CreateReportAttendancesHandler(IUnitOfWork unitOfWork, IMapper mapper, IClaimService claimService, ICurrentTime currentTime)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
             _claimService = claimService;
             _currentTime = currentTime;
         }
-        public async Task<ReportAttendenceDTO> Handle(CreateReportAttendencesCommand request, CancellationToken cancellationToken)
+        public async Task<ReportAttendanceDTO> Handle(CreateReportAttendancesCommand request, CancellationToken cancellationToken)
         {
-            var reportAttendance = _mapper.Map<ReportAttendence>(request);
+            var reportAttendance = _mapper.Map<ReportAttendance>(request);
             reportAttendance.IsDeleted = false;
             reportAttendance.CreatedBy = _claimService.CurrentUserId;
             reportAttendance.CreationDate = _currentTime.GetCurrentTime();
@@ -40,7 +40,7 @@ namespace Application.ReportAttendences.Commands.CreateReportAttendences
             {
                 _unitOfWork.ReportAttendanceRepository.AddAsync(reportAttendance);
             });
-            var result = _mapper.Map<ReportAttendenceDTO>(reportAttendance);
+            var result = _mapper.Map<ReportAttendanceDTO>(reportAttendance);
             return result ?? throw new NotFoundException("reportAttendance not found");
         }
     }

@@ -5,11 +5,11 @@ using Infrastructures.Persistence;
 
 namespace Infrastructures.Repositories
 {
-    public class UnitRepository : GenericRepository<Unit>, IUnitRepository
+    public class FeedBackRepository : GenericRepository<FeedBack>, IFeedBackrepository
     {
         private readonly ApplicationDbContext _dbcontext;
 
-        public UnitRepository(ApplicationDbContext dbContext, ICacheService cache) : base(dbContext, cache)
+        public FeedBackRepository(ApplicationDbContext dbContext, ICacheService cacheService) : base(dbContext, cacheService)
         {
             _dbcontext = dbContext;
         }

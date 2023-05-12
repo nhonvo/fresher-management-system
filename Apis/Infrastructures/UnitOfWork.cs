@@ -149,10 +149,10 @@ public class UnitOfWork : IUnitOfWork
             await _context.SaveChangesAsync();
             await transaction.CommitAsync();
         }
-        catch (Exception)
+        catch (Exception ex)
         {
             await transaction.RollbackAsync();
-            throw new TransactionException("Can't execute transaction");
+            throw new TransactionException("Can't execute transaction: "+ ex);
         }
     }
     public List<object> GetTrackedEntities()

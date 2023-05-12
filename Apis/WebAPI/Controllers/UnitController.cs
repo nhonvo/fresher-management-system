@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers
 {
+    //[Route("api/controller}")]
     public class UnitController : BasesController
     {
         private readonly IMediator _mediator;
@@ -28,7 +29,7 @@ namespace WebAPI.Controllers
         public async Task<UnitDTO> Get(int id)
             => await _mediator.Send(new GetUnitByIdQuery(id));
 
-        [HttpGet("/name/{name}")]
+        [HttpGet("name/{name}")]
         public async Task<Pagination<UnitDTO>> Get(string name)
             => await _mediator.Send(new GetUnitByNameQuery(name));
 

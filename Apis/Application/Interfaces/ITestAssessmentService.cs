@@ -10,10 +10,10 @@ namespace Application.Interfaces
         public Task<TestAssessmentViewModel?> CreateTestAssessmentAsync(CreateTestAssessmentViewModel testAssessmentViewModel);
         public Task RemoveAsync(int id);
         public Task<TestAssessmentViewModel> UpdateAsync(int id, UpdateTestAssessmentViewModel updateDTO);
-        public Task<Pagination<GetListSyllabusSocreOfStudentViewModel>> GetListSyllabusScoreOfStudentAsync(int id, int? classId, int pageIndex = 0, int pageSize = 10);
+        public Task<Pagination<GetListSyllabusScoreOfStudentViewModel>> GetListSyllabusScoreOfStudentAsync(int id, int? classId, int pageIndex = 0, int pageSize = 10);
         public Task<Pagination<GetListSyllabusScoreOfClassViewModel>> GetListSyllabusScoreOfClassAsync(int id, int? studentId, int pageIndex = 0, int pageSize = 10);
-        public Task<Pagination<GetClassGPAScoreOfStudentViewModel>> GetClassGPAScoreOfStudentAsync(int id, int classId, int pageIndex = 0, int pageSize = 10);
-        public Task<Pagination<GetStudentGPAScoreOfClassViewModel>> GetStudentGPAScoreOfClassAsync(int id, int studentId, int pageIndex = 0, int pageSize = 10);
+        public Task<Pagination<GetClassGPAScoreOfStudentViewModel>> GetClassGPAScoreOfStudentAsync(int id, int? classId, int pageIndex = 0, int pageSize = 10);
+        public Task<Pagination<GetStudentGPAScoreOfClassViewModel>> GetStudentGPAScoreOfClassAsync(int id, int? studentId, int pageIndex = 0, int pageSize = 10);
 
     }
 }

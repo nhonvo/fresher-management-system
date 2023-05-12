@@ -5,6 +5,7 @@ using Application.ViewModels.TestAssessmentViewModels;
 using AutoMapper;
 using Domain.Entities;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.Linq;
 using System.Linq.Expressions;
 
 namespace Application.Services
@@ -68,12 +69,12 @@ namespace Application.Services
             return productDto ?? throw new NotFoundException("Can not update test assessment");
         }
 
-        public async Task<Pagination<GetListSyllabusSocreOfStudentViewModel>> GetListSyllabusScoreOfStudentAsync(int id, int? classId, int pageIndex, int pageSize)
+        public async Task<Pagination<GetListSyllabusScoreOfStudentViewModel>> GetListSyllabusScoreOfStudentAsync(int id, int? classId, int pageIndex, int pageSize)
         {
             Expression<Func<TestAssessment, bool>> filter = classId == null ? x => x.AttendeeId == id :
                 x => x.AttendeeId == id && x.TrainingCLassId == classId;
             var scoreByTestType = await _unitOfWork.TestAssessmentRepository.GetFinalScoreAsync(filter);
-            var studentFinalSyllabusScore = scoreByTestType.GroupBy(ta => new { ta.SyllabusId, ta.TrainingClassId }).Select(group => new GetListSyllabusSocreOfStudentViewModel
+            var studentFinalSyllabusScore = scoreByTestType.GroupBy(ta => new { ta.SyllabusId, ta.TrainingClassId }).Select(group => new GetListSyllabusScoreOfStudentViewModel
             {
                 SyllabusId = group.Key.SyllabusId,
                 TrainingClassId = group.Key.TrainingClassId,
@@ -89,7 +90,7 @@ namespace Application.Services
                     .Take(pageSize).ToList();
             }
 
-            var result = new Pagination<GetListSyllabusSocreOfStudentViewModel>()
+            var result = new Pagination<GetListSyllabusScoreOfStudentViewModel>()
             {
                 PageIndex = pageIndex,
                 PageSize = pageSize,
@@ -128,14 +129,41 @@ namespace Application.Services
         }
 
 
-        public async Task<Pagination<GetClassGPAScoreOfStudentViewModel>> GetClassGPAScoreOfStudentAsync(int id, int classId, int pageIndex = 0, int pageSize = 10)
+        public async Task<Pagination<GetClassGPAScoreOfStudentViewModel>> GetClassGPAScoreOfStudentAsync(int id, int? classId, int pageIndex = 0, int pageSize = 10)
         {
-            var classFinalSyllabusScore = await GetListSyllabusScoreOfClassAsync(classId, id, 0, 0);
+            var classFinalSyllabusScore = await GetListSyllabusScoreOfStudentAsync(id, classId, 0, 0);
 
-            var classGPAScoreOfStudent = classFinalSyllabusScore.Items.GroupBy(x => new { x.AttendeeId }).Select(group => new GetClassGPAScoreOfStudentViewModel
+            var studentGPAScoreOfClass = classFinalSyllabusScore.Items.GroupBy(x => new { x.TrainingClassId }).Select(group => new GetClassGPAScoreOfStudentViewModel
             {
+                AttendeeId = id,
+                ClassId = group.Key.TrainingClassId,
+                GPA = classFinalSyllabusScore.Items.Where(x => x.TrainingClassId == group.Key.TrainingClassId).SelectMany(x => x.ListAssessment).Average(x => x.AverageScore),
+                ListSyllabus = classFinalSyllabusScore.Items.Where(x => x.TrainingClassId == group.Key.TrainingClassId).ToList()
+            }).ToList();
+
+            var count = studentGPAScoreOfClass.Count();
+            studentGPAScoreOfClass = studentGPAScoreOfClass
+                .Skip(pageIndex * pageSize)
+                .Take(pageSize).ToList();
+
+            var result = new Pagination<GetClassGPAScoreOfStudentViewModel>()
+            {
+                PageIndex = pageIndex,
+                PageSize = pageSize,
+                Items = studentGPAScoreOfClass
+            };
+            return result ?? throw new NotFoundException("There is no test assessment for this class");
+            
+        }
+
+        public async Task<Pagination<GetStudentGPAScoreOfClassViewModel>> GetStudentGPAScoreOfClassAsync(int id, int? studentId, int pageIndex = 0, int pageSize = 10)
+        {
+            var classFinalSyllabusScore = await GetListSyllabusScoreOfClassAsync(id, studentId, 0, 0);
+            var classGPAScoreOfStudent = classFinalSyllabusScore.Items.GroupBy(x => new { x.AttendeeId }).Select(group => new GetStudentGPAScoreOfClassViewModel
+            {
+                ClassId = id,
                 AttendeeId = group.Key.AttendeeId,
-                GPA = group.Average(x => x.FinalSyllabusScore),
+                GPA = classFinalSyllabusScore.Items.Where(x => x.AttendeeId == group.Key.AttendeeId).SelectMany(x => x.ListAssessment).Average(x => x.AverageScore),
                 ListSyllabus = classFinalSyllabusScore.Items.Where(x => x.AttendeeId == group.Key.AttendeeId).ToList()
             }).ToList();
 
@@ -147,36 +175,11 @@ namespace Application.Services
                 .Take(pageSize).ToList();
             }
 
-            var result = new Pagination<GetClassGPAScoreOfStudentViewModel>()
-            {
-                PageIndex = pageIndex,
-                PageSize = pageSize,
-                Items = classGPAScoreOfStudent
-            };
-            return result ?? throw new NotFoundException("There is no test assessment for this class");
-        }
-
-        public async Task<Pagination<GetStudentGPAScoreOfClassViewModel>> GetStudentGPAScoreOfClassAsync(int id, int studentId, int pageIndex = 0, int pageSize = 10)
-        {
-            var classFinalSyllabusScore = await GetListSyllabusScoreOfStudentAsync(studentId, id, 0, 0);
-
-            var studentGPAScoreOfClass = classFinalSyllabusScore.Items.GroupBy(x => new { x.TrainingClassId }).Select(group => new GetStudentGPAScoreOfClassViewModel
-            {
-                ClassId = group.Key.TrainingClassId,
-                GPA = group.Average(x => x.FinalSyllabusScore),
-                ListSyllabus = classFinalSyllabusScore.Items.Where(x => x.TrainingClassId == group.Key.TrainingClassId).ToList()
-            }).ToList();
-
-            var count = studentGPAScoreOfClass.Count();
-            studentGPAScoreOfClass = studentGPAScoreOfClass
-                .Skip(pageIndex * pageSize)
-                .Take(pageSize).ToList();
-
             var result = new Pagination<GetStudentGPAScoreOfClassViewModel>()
             {
                 PageIndex = pageIndex,
                 PageSize = pageSize,
-                Items = studentGPAScoreOfClass
+                Items = classGPAScoreOfStudent
             };
             return result ?? throw new NotFoundException("There is no test assessment for this class");
         }

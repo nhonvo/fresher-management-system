@@ -32,7 +32,7 @@ public class TestAssessmentController : CustomBaseController
 
 
     [HttpPost]
-    public async Task<IActionResult?> CreateTestAssessment(CreateTestAssessmentViewModel request)
+    public async Task<IActionResult> CreateTestAssessment(CreateTestAssessmentViewModel request)
     {
         return CustomResult(await _testAssessmentService.CreateTestAssessmentAsync(request));
     }
@@ -136,8 +136,8 @@ public class TestAssessmentController : CustomBaseController
         };
     }
 
-    [HttpGet("class/{id:int}/student/{studentId:int}")]
-    public async Task<IActionResult> GetStudentGPAScoreOfClassAsync(int id, int studentId, int pageIndex = 0, int pageSize = 10)
+    [HttpGet("class/{id:int}/gpa")]
+    public async Task<IActionResult> GetStudentGPAScoreOfClassAsync(int id, int? studentId, int pageIndex = 0, int pageSize = 10)
     {
         try
         {
@@ -154,8 +154,8 @@ public class TestAssessmentController : CustomBaseController
         };
     }
 
-    [HttpGet("student/{id:int}/class/{classId:int}")]
-    public async Task<IActionResult> GetClassGPAScoreOfStudentAsync(int id, int classId, int pageIndex = 0, int pageSize = 10)
+    [HttpGet("student/{id:int}/gpa")]
+    public async Task<IActionResult> GetClassGPAScoreOfStudentAsync(int id, int? classId, int pageIndex = 0, int pageSize = 10)
     {
         try
         {

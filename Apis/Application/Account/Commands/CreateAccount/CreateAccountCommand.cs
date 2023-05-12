@@ -38,7 +38,6 @@ public class CreateAccountCommandHandler : IRequestHandler<CreateAccountCommand,
         var user = _mapper.Map<User>(request);
         user.Role = Domain.Enums.UserRoleType.ClassAdmin;
         user.Status = Domain.Enums.UserStatus.Active;
-        // add user create and day
         await _unitOfWork.ExecuteTransactionAsync(async () =>
         {
             await _unitOfWork.UserRepository.AddAsync(user);

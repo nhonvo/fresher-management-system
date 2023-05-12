@@ -1,3 +1,4 @@
+using Apis.Domain.Enums;
 using Application.Syllabuses.DTO;
 using AutoMapper;
 using Domain.Entities;
@@ -7,15 +8,9 @@ using Microsoft.AspNetCore.Http;
 
 namespace Application.Syllabuses.Commands.ImportSyllabusesCSV;
 
-public enum DuplicateHandle
-{
-    Ignore,
-    Replace,
-    Throw
-}
-
 public record ImportSyllabusesCSVCommand : IRequest<List<SyllabusDTO>>
 {
+#pragma warning disable
     public IFormFile FormFile { get; set; }
     public bool IsScanCode { get; set; }
     public bool IsScanName { get; set; }

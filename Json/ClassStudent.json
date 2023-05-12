@@ -1,0 +1,502 @@
+[
+  {
+    "TrainingClassId": 1,
+    "UserId": 1,
+    "CreationDate": "2023-01-01",
+    "CreatedBy": 1,
+    "ModificationDate": "2022-07-19",
+    "ModificationBy": 1,
+    "PersonalEmail": "cjarvie0@yandex.ru",
+    "GPA": 6.78
+  },
+  {
+    "TrainingClassId": 2,
+    "UserId": 2,
+    "CreationDate": "2022-11-26",
+    "CreatedBy": 2,
+    "ModificationDate": "2022-12-02",
+    "ModificationBy": 2,
+    "PersonalEmail": "ltume1@quantcast.com",
+    "GPA": 6.42
+  },
+  {
+    "TrainingClassId": 3,
+    "UserId": 3,
+    "CreationDate": "2022-05-23",
+    "CreatedBy": 3,
+    "ModificationDate": "2022-08-11",
+    "ModificationBy": 3,
+    "PersonalEmail": "sbonass2@virginia.edu",
+    "GPA": 7.28
+  },
+  {
+    "TrainingClassId": 4,
+    "UserId": 4,
+    "CreationDate": "2023-05-01",
+    "CreatedBy": 4,
+    "ModificationDate": "2023-03-13",
+    "ModificationBy": 4,
+    "PersonalEmail": "brodway3@dailymail.co.uk",
+    "GPA": 8.67
+  },
+  {
+    "TrainingClassId": 5,
+    "UserId": 5,
+    "CreationDate": "2023-05-03",
+    "CreatedBy": 5,
+    "ModificationDate": "2022-09-12",
+    "ModificationBy": 5,
+    "PersonalEmail": "jmuston4@webeden.co.uk",
+    "GPA": 8.21
+  },
+  {
+    "TrainingClassId": 6,
+    "UserId": 6,
+    "CreationDate": "2023-01-25",
+    "CreatedBy": 6,
+    "ModificationDate": "2022-08-23",
+    "ModificationBy": 6,
+    "PersonalEmail": "tbulcock5@ox.ac.uk",
+    "GPA": 6.23
+  },
+  {
+    "TrainingClassId": 7,
+    "UserId": 7,
+    "CreationDate": "2023-01-31",
+    "CreatedBy": 7,
+    "ModificationDate": "2023-03-15",
+    "ModificationBy": 7,
+    "PersonalEmail": "ahuthart6@who.int",
+    "GPA": 5.78
+  },
+  {
+    "TrainingClassId": 8,
+    "UserId": 8,
+    "CreationDate": "2022-06-19",
+    "CreatedBy": 8,
+    "ModificationDate": "2023-01-28",
+    "ModificationBy": 8,
+    "PersonalEmail": "ljoder7@nationalgeographic.com",
+    "GPA": 8.48
+  },
+  {
+    "TrainingClassId": 9,
+    "UserId": 9,
+    "CreationDate": "2022-09-23",
+    "CreatedBy": 9,
+    "ModificationDate": "2022-08-11",
+    "ModificationBy": 9,
+    "PersonalEmail": "vmcmaster8@studiopress.com",
+    "GPA": 5.4
+  },
+  {
+    "TrainingClassId": 10,
+    "UserId": 10,
+    "CreationDate": "2023-04-18",
+    "CreatedBy": 10,
+    "ModificationDate": "2023-04-17",
+    "ModificationBy": 10,
+    "PersonalEmail": "abolter9@chicagotribune.com",
+    "GPA": 7.53
+  },
+  {
+    "TrainingClassId": 11,
+    "UserId": 11,
+    "CreationDate": "2022-06-26",
+    "CreatedBy": 11,
+    "ModificationDate": "2022-11-12",
+    "ModificationBy": 11,
+    "PersonalEmail": "mmongaina@newsvine.com",
+    "GPA": 8.21
+  },
+  {
+    "TrainingClassId": 12,
+    "UserId": 12,
+    "CreationDate": "2023-04-15",
+    "CreatedBy": 12,
+    "ModificationDate": "2022-10-03",
+    "ModificationBy": 12,
+    "PersonalEmail": "sdallistonb@ucla.edu",
+    "GPA": 6.33
+  },
+  {
+    "TrainingClassId": 13,
+    "UserId": 13,
+    "CreationDate": "2022-05-29",
+    "CreatedBy": 13,
+    "ModificationDate": "2022-08-30",
+    "ModificationBy": 13,
+    "PersonalEmail": "hburfootc@live.com",
+    "GPA": 6.97
+  },
+  {
+    "TrainingClassId": 14,
+    "UserId": 14,
+    "CreationDate": "2023-03-21",
+    "CreatedBy": 14,
+    "ModificationDate": "2023-04-07",
+    "ModificationBy": 14,
+    "PersonalEmail": "pdodsd@shop-pro.jp",
+    "GPA": 5.11
+  },
+  {
+    "TrainingClassId": 15,
+    "UserId": 15,
+    "CreationDate": "2022-06-04",
+    "CreatedBy": 15,
+    "ModificationDate": "2023-03-17",
+    "ModificationBy": 15,
+    "PersonalEmail": "rsouthgatee@altervista.org",
+    "GPA": 8.66
+  },
+  {
+    "TrainingClassId": 16,
+    "UserId": 16,
+    "CreationDate": "2023-02-05",
+    "CreatedBy": 16,
+    "ModificationDate": "2022-10-15",
+    "ModificationBy": 16,
+    "PersonalEmail": "bhellewellf@taobao.com",
+    "GPA": 5.29
+  },
+  {
+    "TrainingClassId": 17,
+    "UserId": 17,
+    "CreationDate": "2022-10-23",
+    "CreatedBy": 17,
+    "ModificationDate": "2022-06-14",
+    "ModificationBy": 17,
+    "PersonalEmail": "mmaynardg@biglobe.ne.jp",
+    "GPA": 5.3
+  },
+  {
+    "TrainingClassId": 18,
+    "UserId": 18,
+    "CreationDate": "2022-10-12",
+    "CreatedBy": 18,
+    "ModificationDate": "2023-05-06",
+    "ModificationBy": 18,
+    "PersonalEmail": "erustedh@guardian.co.uk",
+    "GPA": 6.57
+  },
+  {
+    "TrainingClassId": 19,
+    "UserId": 19,
+    "CreationDate": "2022-06-16",
+    "CreatedBy": 19,
+    "ModificationDate": "2022-10-08",
+    "ModificationBy": 19,
+    "PersonalEmail": "npaffoti@netlog.com",
+    "GPA": 8.17
+  },
+  {
+    "TrainingClassId": 20,
+    "UserId": 20,
+    "CreationDate": "2022-10-31",
+    "CreatedBy": 20,
+    "ModificationDate": "2022-11-11",
+    "ModificationBy": 20,
+    "PersonalEmail": "lbahlmannj@timesonline.co.uk",
+    "GPA": 6.87
+  },
+  {
+    "TrainingClassId": 21,
+    "UserId": 21,
+    "CreationDate": "2022-08-29",
+    "CreatedBy": 21,
+    "ModificationDate": "2022-11-01",
+    "ModificationBy": 21,
+    "PersonalEmail": "mstoffelsk@lulu.com",
+    "GPA": 9.5
+  },
+  {
+    "TrainingClassId": 22,
+    "UserId": 22,
+    "CreationDate": "2023-04-01",
+    "CreatedBy": 22,
+    "ModificationDate": "2023-03-28",
+    "ModificationBy": 22,
+    "PersonalEmail": "hhollingsheadl@comsenz.com",
+    "GPA": 5.81
+  },
+  {
+    "TrainingClassId": 23,
+    "UserId": 23,
+    "CreationDate": "2023-01-01",
+    "CreatedBy": 23,
+    "ModificationDate": "2022-10-22",
+    "ModificationBy": 23,
+    "PersonalEmail": "cshottinm@posterous.com",
+    "GPA": 8.71
+  },
+  {
+    "TrainingClassId": 24,
+    "UserId": 24,
+    "CreationDate": "2022-08-20",
+    "CreatedBy": 24,
+    "ModificationDate": "2023-02-24",
+    "ModificationBy": 24,
+    "PersonalEmail": "cabbessn@ovh.net",
+    "GPA": 6.7
+  },
+  {
+    "TrainingClassId": 25,
+    "UserId": 25,
+    "CreationDate": "2023-01-01",
+    "CreatedBy": 25,
+    "ModificationDate": "2022-06-28",
+    "ModificationBy": 25,
+    "PersonalEmail": "kdustingo@accuweather.com",
+    "GPA": 5.14
+  },
+  {
+    "TrainingClassId": 26,
+    "UserId": 26,
+    "CreationDate": "2022-05-26",
+    "CreatedBy": 26,
+    "ModificationDate": "2023-03-21",
+    "ModificationBy": 26,
+    "PersonalEmail": "sgradonp@sciencedaily.com",
+    "GPA": 7.38
+  },
+  {
+    "TrainingClassId": 27,
+    "UserId": 27,
+    "CreationDate": "2022-10-07",
+    "CreatedBy": 27,
+    "ModificationDate": "2022-06-11",
+    "ModificationBy": 27,
+    "PersonalEmail": "clacroixq@vkontakte.ru",
+    "GPA": 9.94
+  },
+  {
+    "TrainingClassId": 28,
+    "UserId": 28,
+    "CreationDate": "2023-01-26",
+    "CreatedBy": 28,
+    "ModificationDate": "2022-09-15",
+    "ModificationBy": 28,
+    "PersonalEmail": "bhonatschr@virginia.edu",
+    "GPA": 9.7
+  },
+  {
+    "TrainingClassId": 29,
+    "UserId": 29,
+    "CreationDate": "2022-12-25",
+    "CreatedBy": 29,
+    "ModificationDate": "2022-10-28",
+    "ModificationBy": 29,
+    "PersonalEmail": "reiverss@vimeo.com",
+    "GPA": 7.88
+  },
+  {
+    "TrainingClassId": 30,
+    "UserId": 30,
+    "CreationDate": "2023-02-26",
+    "CreatedBy": 30,
+    "ModificationDate": "2023-04-08",
+    "ModificationBy": 30,
+    "PersonalEmail": "ibeakest@nbcnews.com",
+    "GPA": 8.74
+  },
+  {
+    "TrainingClassId": 31,
+    "UserId": 31,
+    "CreationDate": "2023-02-12",
+    "CreatedBy": 31,
+    "ModificationDate": "2022-10-20",
+    "ModificationBy": 31,
+    "PersonalEmail": "gjohnstonu@dmoz.org",
+    "GPA": 7.92
+  },
+  {
+    "TrainingClassId": 32,
+    "UserId": 32,
+    "CreationDate": "2023-05-07",
+    "CreatedBy": 32,
+    "ModificationDate": "2022-11-24",
+    "ModificationBy": 32,
+    "PersonalEmail": "mstockfordv@eventbrite.com",
+    "GPA": 6.43
+  },
+  {
+    "TrainingClassId": 33,
+    "UserId": 33,
+    "CreationDate": "2022-09-25",
+    "CreatedBy": 33,
+    "ModificationDate": "2023-04-15",
+    "ModificationBy": 33,
+    "PersonalEmail": "cdunawayw@jimdo.com",
+    "GPA": 7.6
+  },
+  {
+    "TrainingClassId": 34,
+    "UserId": 34,
+    "CreationDate": "2023-04-01",
+    "CreatedBy": 34,
+    "ModificationDate": "2022-06-03",
+    "ModificationBy": 34,
+    "PersonalEmail": "mfairfullx@altervista.org",
+    "GPA": 6.83
+  },
+  {
+    "TrainingClassId": 35,
+    "UserId": 35,
+    "CreationDate": "2023-01-25",
+    "CreatedBy": 35,
+    "ModificationDate": "2022-08-24",
+    "ModificationBy": 35,
+    "PersonalEmail": "rpetryy@cnet.com",
+    "GPA": 9.7
+  },
+  {
+    "TrainingClassId": 36,
+    "UserId": 36,
+    "CreationDate": "2022-07-29",
+    "CreatedBy": 36,
+    "ModificationDate": "2022-07-16",
+    "ModificationBy": 36,
+    "PersonalEmail": "npiggottz@google.com.hk",
+    "GPA": 8.86
+  },
+  {
+    "TrainingClassId": 37,
+    "UserId": 37,
+    "CreationDate": "2022-09-06",
+    "CreatedBy": 37,
+    "ModificationDate": "2023-05-05",
+    "ModificationBy": 37,
+    "PersonalEmail": "shoneywood10@sitemeter.com",
+    "GPA": 7.92
+  },
+  {
+    "TrainingClassId": 38,
+    "UserId": 38,
+    "CreationDate": "2023-01-28",
+    "CreatedBy": 38,
+    "ModificationDate": "2023-01-16",
+    "ModificationBy": 38,
+    "PersonalEmail": "hbischof11@mapy.cz",
+    "GPA": 8.99
+  },
+  {
+    "TrainingClassId": 39,
+    "UserId": 39,
+    "CreationDate": "2022-09-09",
+    "CreatedBy": 39,
+    "ModificationDate": "2022-08-17",
+    "ModificationBy": 39,
+    "PersonalEmail": "dbrashier12@ucoz.com",
+    "GPA": 8.49
+  },
+  {
+    "TrainingClassId": 40,
+    "UserId": 40,
+    "CreationDate": "2023-01-25",
+    "CreatedBy": 40,
+    "ModificationDate": "2023-01-14",
+    "ModificationBy": 40,
+    "PersonalEmail": "cblakden13@ovh.net",
+    "GPA": 8.01
+  },
+  {
+    "TrainingClassId": 41,
+    "UserId": 41,
+    "CreationDate": "2022-12-15",
+    "CreatedBy": 41,
+    "ModificationDate": "2022-05-22",
+    "ModificationBy": 41,
+    "PersonalEmail": "vsiemon14@artisteer.com",
+    "GPA": 8.96
+  },
+  {
+    "TrainingClassId": 42,
+    "UserId": 42,
+    "CreationDate": "2022-06-10",
+    "CreatedBy": 42,
+    "ModificationDate": "2022-08-10",
+    "ModificationBy": 42,
+    "PersonalEmail": "mharbottle15@narod.ru",
+    "GPA": 9.44
+  },
+  {
+    "TrainingClassId": 43,
+    "UserId": 43,
+    "CreationDate": "2022-09-21",
+    "CreatedBy": 43,
+    "ModificationDate": "2022-12-28",
+    "ModificationBy": 43,
+    "PersonalEmail": "gpierrepoint16@rediff.com",
+    "GPA": 7.39
+  },
+  {
+    "TrainingClassId": 44,
+    "UserId": 44,
+    "CreationDate": "2023-01-11",
+    "CreatedBy": 44,
+    "ModificationDate": "2022-06-25",
+    "ModificationBy": 44,
+    "PersonalEmail": "dmccullum17@technorati.com",
+    "GPA": 6.65
+  },
+  {
+    "TrainingClassId": 45,
+    "UserId": 45,
+    "CreationDate": "2022-11-17",
+    "CreatedBy": 45,
+    "ModificationDate": "2022-06-11",
+    "ModificationBy": 45,
+    "PersonalEmail": "slindermann18@blinklist.com",
+    "GPA": 7.83
+  },
+  {
+    "TrainingClassId": 46,
+    "UserId": 46,
+    "CreationDate": "2022-07-29",
+    "CreatedBy": 46,
+    "ModificationDate": "2023-03-17",
+    "ModificationBy": 46,
+    "PersonalEmail": "kjacox19@dropbox.com",
+    "GPA": 9.85
+  },
+  {
+    "TrainingClassId": 47,
+    "UserId": 47,
+    "CreationDate": "2022-06-11",
+    "CreatedBy": 47,
+    "ModificationDate": "2022-06-24",
+    "ModificationBy": 47,
+    "PersonalEmail": "gwimms1a@patch.com",
+    "GPA": 7.4
+  },
+  {
+    "TrainingClassId": 48,
+    "UserId": 48,
+    "CreationDate": "2023-01-12",
+    "CreatedBy": 48,
+    "ModificationDate": "2023-03-20",
+    "ModificationBy": 48,
+    "PersonalEmail": "jknights1b@icq.com",
+    "GPA": 9.68
+  },
+  {
+    "TrainingClassId": 49,
+    "UserId": 49,
+    "CreationDate": "2023-01-02",
+    "CreatedBy": 49,
+    "ModificationDate": "2022-07-04",
+    "ModificationBy": 49,
+    "PersonalEmail": "ssingers1c@1und1.de",
+    "GPA": 9.07
+  },
+  {
+    "TrainingClassId": 50,
+    "UserId": 50,
+    "CreationDate": "2022-08-08",
+    "CreatedBy": 50,
+    "ModificationDate": "2022-12-27",
+    "ModificationBy": 50,
+    "PersonalEmail": "twillson1d@sciencedirect.com",
+    "GPA": 9.22
+  }
+]

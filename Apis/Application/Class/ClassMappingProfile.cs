@@ -14,7 +14,7 @@ namespace Application.Class
             CreateMap<TrainingClass, ClassProgram>().ReverseMap();
             CreateMap<TrainingClass, CreateClassCommand>().ReverseMap();
             CreateMap<TrainingClass, UpdateClassCommand>().ReverseMap();
-            CreateMap<TrainingProgram, TrainingPrograms>().ReverseMap();
+            CreateMap<TrainingProgram, TrainingProgramss>().ReverseMap();
         }
     }
 }

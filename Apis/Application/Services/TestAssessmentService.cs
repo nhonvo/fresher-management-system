@@ -72,7 +72,7 @@ namespace Application.Services
         public async Task<Pagination<GetListSyllabusScoreOfStudentViewModel>> GetListSyllabusScoreOfStudentAsync(int id, int? classId, int pageIndex, int pageSize)
         {
             Expression<Func<TestAssessment, bool>> filter = classId == null ? x => x.AttendeeId == id :
-                x => x.AttendeeId == id && x.TrainingCLassId == classId;
+                x => x.AttendeeId == id && x.TrainingClassId == classId;
             var scoreByTestType = await _unitOfWork.TestAssessmentRepository.GetFinalScoreAsync(filter);
             var studentFinalSyllabusScore = scoreByTestType.GroupBy(ta => new { ta.SyllabusId, ta.TrainingClassId }).Select(group => new GetListSyllabusScoreOfStudentViewModel
             {
@@ -101,8 +101,8 @@ namespace Application.Services
 
         public async Task<Pagination<GetListSyllabusScoreOfClassViewModel>> GetListSyllabusScoreOfClassAsync(int id, int? studentId, int pageIndex = 0, int pageSize = 10)
         {
-            Expression<Func<TestAssessment, bool>> filter = studentId == null ? x => x.TrainingCLassId == id :
-                x => x.AttendeeId == studentId && x.TrainingCLassId == id;
+            Expression<Func<TestAssessment, bool>> filter = studentId == null ? x => x.TrainingClassId == id :
+                x => x.AttendeeId == studentId && x.TrainingClassId == id;
             var scoreByTestType = await _unitOfWork.TestAssessmentRepository.GetFinalScoreAsync(filter);
             var classFinalSyllabusScore = scoreByTestType.GroupBy(ta => new { ta.AttendeeId, ta.SyllabusId }).Select(group => new GetListSyllabusScoreOfClassViewModel
             {

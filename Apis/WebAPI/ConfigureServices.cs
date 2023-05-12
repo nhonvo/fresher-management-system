@@ -38,7 +38,7 @@ namespace WebAPI
             // Extension Services
             services.AddScoped<IClaimService, ClaimService>();
             services.AddScoped<IJWTService, JWTService>();
-            // // IMemoryCache
+            // IMemoryCache
             services.AddMemoryCache();
             services.AddScoped<ICacheService, CacheService>();
 
@@ -137,7 +137,7 @@ namespace WebAPI
                 {
             policy.AllowAnyHeader()
                  .AllowAnyMethod()
-                 .WithOrigins("http://localhost:3000");
+                 .AllowAnyOrigin();
                 //  .WithOrigins(new string[] { userApp });
                 });
             });

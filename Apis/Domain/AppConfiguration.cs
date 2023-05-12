@@ -31,6 +31,7 @@ public class ConnectionStrings
     public string DatabaseConnectionV2 { get; set; }
     public string DatabaseConnectionV3 { get; set; }
     public string DatabaseConnectionV4 { get; set; }
+    public string DatabaseConnectionV5 { get; set; }
     public string HangfireConnection { get; set; }
 }
 public class Jwt

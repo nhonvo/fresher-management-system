@@ -1,7 +1,5 @@
 ﻿using Application.Interfaces;
 using Application.ViewModels.TestAssessmentViewModels;
-using Azure;
-using Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 
@@ -34,7 +32,7 @@ public class TestAssessmentController : CustomBaseController
 
 
     [HttpPost]
-    public async Task<IActionResult?> CreateTestAssessment(CreateTestAssessmentViewModel request)
+    public async Task<IActionResult> CreateTestAssessment(CreateTestAssessmentViewModel request)
     {
         return CustomResult(await _testAssessmentService.CreateTestAssessmentAsync(request));
     }
@@ -103,11 +101,11 @@ public class TestAssessmentController : CustomBaseController
     }
 
     [HttpGet("student/{id:int}/finalSyllabusScores")]
-    public async Task<IActionResult> GetStudentFinalSyllabusScoreAsync(int id, int pageIndex = 0, int pageSize = 10)
+    public async Task<IActionResult> GetListSyllabusSocreOfStudentAsync(int id, int? classId, int pageIndex = 0, int pageSize = 10)
     {
         try
         {
-            var result = await _testAssessmentService.GetStudentFinalSyllabusScoreAsync(id, pageIndex, pageSize);
+            var result = await _testAssessmentService.GetListSyllabusScoreOfStudentAsync(id, classId, pageIndex, pageSize);
             return CustomResult(result);
         }
         catch (Exception ex)
@@ -121,11 +119,11 @@ public class TestAssessmentController : CustomBaseController
     }
 
     [HttpGet("class/{id:int}/finalSyllabusScores")]
-    public async Task<IActionResult> GetClassFinalSyllabusScoreAsync(int id, int pageIndex = 0, int pageSize = 10)
+    public async Task<IActionResult> GetListSyllabusSocreOfClassAsync(int id, int? studentId, int pageIndex = 0, int pageSize = 10)
     {
         try
         {
-            var result = await _testAssessmentService.GetClassFinalSyllabusScoreAsync(id, pageIndex, pageSize);
+            var result = await _testAssessmentService.GetListSyllabusScoreOfClassAsync(id, studentId, pageIndex, pageSize);
             return CustomResult(result);
         }
         catch (Exception ex)
@@ -137,4 +135,41 @@ public class TestAssessmentController : CustomBaseController
             return CustomResult(ErrorMessages, HttpStatusCode.BadRequest);
         };
     }
+
+    [HttpGet("class/{id:int}/gpa")]
+    public async Task<IActionResult> GetStudentGPAScoreOfClassAsync(int id, int? studentId, int pageIndex = 0, int pageSize = 10)
+    {
+        try
+        {
+            var result = await _testAssessmentService.GetStudentGPAScoreOfClassAsync(id, studentId, pageIndex, pageSize);
+            return CustomResult(result);
+        }
+        catch (Exception ex)
+        {
+            var ErrorMessages = new List<string>()
+                {
+                    ex.ToString()
+                };
+            return CustomResult(ErrorMessages, HttpStatusCode.BadRequest);
+        };
+    }
+
+    [HttpGet("student/{id:int}/gpa")]
+    public async Task<IActionResult> GetClassGPAScoreOfStudentAsync(int id, int? classId, int pageIndex = 0, int pageSize = 10)
+    {
+        try
+        {
+            var result = await _testAssessmentService.GetClassGPAScoreOfStudentAsync(id, classId, pageIndex, pageSize);
+            return CustomResult(result);
+        }
+        catch (Exception ex)
+        {
+            var ErrorMessages = new List<string>()
+                {
+                    ex.ToString()
+                };
+            return CustomResult(ErrorMessages, HttpStatusCode.BadRequest);
+        };
+    }
+
 }

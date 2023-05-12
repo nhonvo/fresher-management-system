@@ -8,10 +8,12 @@ namespace Application.Interfaces
         public Task<Pagination<TestAssessmentViewModel>> GetTestAssessmentPagingsionAsync(int pageIndex = 0, int pageSize = 10);
         public Task<List<TestAssessmentViewModel>> GetTestAssessmentAsync();
         public Task<TestAssessmentViewModel?> CreateTestAssessmentAsync(CreateTestAssessmentViewModel testAssessmentViewModel);
-        Task RemoveAsync(int id);
-        Task<TestAssessmentViewModel> UpdateAsync(int id, UpdateTestAssessmentViewModel updateDTO);
-        Task<Pagination<GetStudentFinalSyllabusScoreViewModel>> GetStudentFinalSyllabusScoreAsync(int id, int pageIndex= 0, int pageSize = 10);
-        Task<Pagination<GetClassFinalSyllabusScoreViewModel>> GetClassFinalSyllabusScoreAsync(int id, int pageIndex = 0, int pageSize = 10);
+        public Task RemoveAsync(int id);
+        public Task<TestAssessmentViewModel> UpdateAsync(int id, UpdateTestAssessmentViewModel updateDTO);
+        public Task<Pagination<GetListSyllabusScoreOfStudentViewModel>> GetListSyllabusScoreOfStudentAsync(int id, int? classId, int pageIndex = 0, int pageSize = 10);
+        public Task<Pagination<GetListSyllabusScoreOfClassViewModel>> GetListSyllabusScoreOfClassAsync(int id, int? studentId, int pageIndex = 0, int pageSize = 10);
+        public Task<Pagination<GetClassGPAScoreOfStudentViewModel>> GetClassGPAScoreOfStudentAsync(int id, int? classId, int pageIndex = 0, int pageSize = 10);
+        public Task<Pagination<GetStudentGPAScoreOfClassViewModel>> GetStudentGPAScoreOfClassAsync(int id, int? studentId, int pageIndex = 0, int pageSize = 10);
 
     }
 }

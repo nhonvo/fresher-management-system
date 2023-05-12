@@ -11,10 +11,9 @@ namespace Application.Units.Commands.UpdateUnit
         public string Name { get; set; }
         public int SyllabusSession { get; set; }
         public int UnitNumber { get; set; }
-
         public DateTime CreationDate { get; set; }
-
         public DateTime? ModificationDate { get; set; }
+        public int SyllabusId { get; set; }
     }
 
     public class UpdateUnitHandler : IRequestHandler<UpdateUnitCommand, UnitDTO>

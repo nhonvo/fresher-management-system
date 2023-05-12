@@ -1,10 +1,8 @@
-﻿using Application.Class.DTO;
-using Application.Common.Exceptions;
+﻿using Application.Common.Exceptions;
 using Application.Interfaces;
 using Application.ReportAttendences.DTO;
 using AutoMapper;
 using Domain.Entities;
-using Domain.Enums;
 using MediatR;
 
 namespace Application.ReportAttendances.Commands.CreateReportAttendances

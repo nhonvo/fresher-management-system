@@ -1,15 +1,14 @@
 ﻿using FluentValidation;
 
-namespace Application.FeedBacks.Commands.CreateFeedBack
+namespace Application.FeedBacks.Commands.UpdateFeedBack
 {
-    public class CreateFeedBackCommandValidator : AbstractValidator<CreateFeedBackCommand>
+    public class UpdateFeedBackCommandValidator : AbstractValidator<UpdateFeedBackCommand>
     {
-        public CreateFeedBackCommandValidator()
+        public UpdateFeedBackCommandValidator()
         {
             RuleFor(x => x.Rating).InclusiveBetween(1, 5);
             RuleFor(x => x.Comment).MaximumLength(500);
             RuleFor(x => x.StudentId).GreaterThan(0);
         }
     }
-
 }

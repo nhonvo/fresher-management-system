@@ -1,8 +1,6 @@
-﻿using Application.Common.Exceptions;
-using Application.Interfaces;
+﻿using Application.Interfaces;
 using Application.Units.DTO;
 using AutoMapper;
-using Domain.Entities;
 using MediatR;
 
 namespace Application.Units.Commands.CreateUnit
@@ -14,6 +12,7 @@ namespace Application.Units.Commands.CreateUnit
         public int UnitNumber { get; set; }
         public DateTime CreationDate { get; set; }
         public DateTime? ModificationDate { get; set; }
+        public int SyllabusId { get; set; }
     }
 
     public class CreateUnitHandler : IRequestHandler<CreateUnitCommand, UnitDTO>
@@ -21,24 +20,42 @@ namespace Application.Units.Commands.CreateUnit
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
         private readonly IJWTService _jwtService;
-        public CreateUnitHandler(IUnitOfWork unitOfWork, IMapper mapper, IJWTService jwtService)
+        public CreateUnitHandler(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
-            _jwtService = jwtService;
         }
 
         public async Task<UnitDTO> Handle(CreateUnitCommand request, CancellationToken cancellationToken)
         {
-            var unit = _mapper.Map<Domain.Entities.Unit>(request);
+            //var unit = _mapper.Map<Domain.Entities.Unit>(request);
 
-            await _unitOfWork.ExecuteTransactionAsync(() =>
+            //await _unitOfWork.ExecuteTransactionAsync(() =>
+            //{
+            //    _unitOfWork.UnitRepository.AddAsync(unit);
+            //});
+            //var result = _mapper.Map<UnitDTO>(unit);
+
+            //return result ?? throw new NotFoundException("Unit not found");
+
+            try
             {
-                _unitOfWork.UnitRepository.AddAsync(unit);
-            });
-            var result = _mapper.Map<UnitDTO>(unit);
+                var unit = _mapper.Map<Domain.Entities.Unit>(request);
 
-            return result ?? throw new NotFoundException("Unit not found");
+                await _unitOfWork.ExecuteTransactionAsync(() =>
+                {
+                    _unitOfWork.UnitRepository.AddAsync(unit);
+                });
+
+                var result = _mapper.Map<UnitDTO>(unit);
+
+                return result; /*?? throw new NotFoundException("Unit not found");*/
+            }
+            catch (Exception ex)
+            {
+                // Handle the exception here
+                throw new Exception($"An error occurred while creating a unit: {ex.Message}");
+            }
         }
     }
 }

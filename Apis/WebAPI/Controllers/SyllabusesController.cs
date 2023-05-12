@@ -1,3 +1,4 @@
+using Apis.Domain.Enums;
 using Application.Commons;
 using Application.Syllabuses.Commands.CreateSyllabus;
 using Application.Syllabuses.Commands.DeleteSyllabus;

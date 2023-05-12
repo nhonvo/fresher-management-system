@@ -28,7 +28,7 @@ namespace WebAPI.Controllers
         public async Task<FeedBackDTO> Get(int id)
             => await _mediator.Send(new GetFeedBackByIdQuery(id));
 
-        [HttpGet("{name}")]
+        [HttpGet("name/{name}")]
         public async Task<Pagination<FeedBackDTO>> Get(string name)
             => await _mediator.Send(new GetFeedBackByTrainerQuery(name));
 

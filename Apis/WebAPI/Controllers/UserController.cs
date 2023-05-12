@@ -1,5 +1,6 @@
 using Apis.Domain.Enums;
 using Application.Commons;
+using Application.Emails.Commands.SendMail;
 using Application.Users.Commands.ImportUsersCSV;
 using Application.Users.DTO;
 using Application.Users.GetProfile.Queries;
@@ -49,5 +50,8 @@ namespace WebAPI.Controllers
             DuplicateHandle = duplicateHandle ?? DuplicateHandle.Ignore,
         });
         #endregion CSV
+        [HttpPost("SendMail")]
+        public async Task<bool> SendMail([FromBody] SendMailCommand request)
+        => await _mediator.Send(request);
     }
 }

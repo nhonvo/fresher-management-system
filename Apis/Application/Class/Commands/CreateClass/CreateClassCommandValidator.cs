@@ -8,7 +8,6 @@ namespace Application.Lectures.Commands
         public CreateClassCommandValidator()
         {
             RuleFor(c => c.ClassName).NotEmpty();
-            RuleFor(c => c.ClassCode).NotEmpty();
             RuleFor(c => c.ClassTimeStart).NotEmpty().LessThan(c => c.ClassTimeEnd);
             RuleFor(c => c.ClassTimeEnd).NotEmpty().GreaterThan(c => c.ClassTimeStart);
             RuleFor(c => c.NumberAttendeePlanned).NotEmpty().GreaterThan(0);

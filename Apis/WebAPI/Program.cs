@@ -35,7 +35,7 @@ try
     builder.Host.UseSerilog(Log.Logger);
     var app = await builder
         .ConfigureServices(
-            configuration.ConnectionStrings.DatabaseConnectionV5,
+            configuration.ConnectionStrings.DatabaseConnectionV3,
             configuration.MyAllowSpecificOrigins.UserApp,
             configuration.Jwt.Key,
             configuration.Jwt.Issuer,

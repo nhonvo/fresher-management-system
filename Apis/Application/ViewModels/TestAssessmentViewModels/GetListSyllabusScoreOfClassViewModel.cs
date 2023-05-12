@@ -1,6 +1,6 @@
 ﻿namespace Application.ViewModels.TestAssessmentViewModels
 {
-    public class GetClassFinalSyllabusScoreViewModel
+    public class GetListSyllabusScoreOfClassViewModel
     {
         public int AttendeeId { get; set; }
         public float FinalSyllabusScore { get; set; }

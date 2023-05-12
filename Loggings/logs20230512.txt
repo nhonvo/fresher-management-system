@@ -1,0 +1,110 @@
+[2023-05-12 14:25:37  Microsoft.EntityFrameworkCore.Model.Validation WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+
+[2023-05-12 14:25:38  Microsoft.EntityFrameworkCore.Database.Command INF] Executed DbCommand (31ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+
+[2023-05-12 14:25:38  Microsoft.EntityFrameworkCore.Database.Command INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+
+[2023-05-12 14:25:38  Microsoft.EntityFrameworkCore.Database.Command INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+
+[2023-05-12 14:25:38  Microsoft.EntityFrameworkCore.Database.Command INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+
+[2023-05-12 14:25:38  Microsoft.EntityFrameworkCore.Database.Command INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+
+[2023-05-12 14:25:38  Microsoft.EntityFrameworkCore.Migrations INF] No migrations were applied. The database is already up to date.
+
+[2023-05-12 14:25:38  Microsoft.EntityFrameworkCore.Database.Command INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+
+[2023-05-12 14:25:38  Microsoft.EntityFrameworkCore.Database.Command INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Syllabuses] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+
+[2023-05-12 14:25:38  Microsoft.EntityFrameworkCore.Database.Command INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [TrainingPrograms] AS [t]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+
+[2023-05-12 14:25:38  Microsoft.EntityFrameworkCore.Database.Command INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [TrainingClasses] AS [t]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+
+[2023-05-12 14:25:38  Microsoft.EntityFrameworkCore.Database.Command INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [ClassStudents] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+
+[2023-05-12 14:25:38  Microsoft.EntityFrameworkCore.Database.Command INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [TestAssessments] AS [t]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+
+[2023-05-12 14:25:38  Microsoft.EntityFrameworkCore.Database.Command INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [FSUs] AS [f]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+
+[2023-05-12 14:25:39  Microsoft.Hosting.Lifetime INF] Now listening on: https://localhost:5001
+
+[2023-05-12 14:25:39  Microsoft.Hosting.Lifetime INF] Now listening on: http://localhost:5000
+
+[2023-05-12 14:25:39  Microsoft.Hosting.Lifetime INF] Application started. Press Ctrl+C to shut down.
+
+[2023-05-12 14:25:39  Microsoft.Hosting.Lifetime INF] Hosting environment: Development
+
+[2023-05-12 14:25:39  Microsoft.Hosting.Lifetime INF] Content root path: D:\SRS_FA TRAINING MANAGEMENT SYSTEM\Apis\WebAPI
+
+[2023-05-12 14:26:06   INF] Start performance record
+
+[2023-05-12 14:26:06   INF] End performance record
+
+[2023-05-12 14:26:06   INF] Time taken: 0:00.099
+
+[2023-05-12 14:26:10   INF] Start performance record
+
+[2023-05-12 14:26:10   INF] End performance record
+
+[2023-05-12 14:26:10   INF] Time taken: 0:00.005
+
+[2023-05-12 14:26:27   INF] Start performance record
+
+[2023-05-12 14:26:27  Microsoft.EntityFrameworkCore.Database.Command INF] Executed DbCommand (21ms) [Parameters=[@__email_0='classadmin@gmail.com' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[DateOfBirth], [u].[DeleteBy], [u].[DeletionDate], [u].[Email], [u].[Gender], [u].[IsDeleted], [u].[Name], [u].[Password], [u].[Phone], [u].[Role], [u].[Status]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__email_0
+
+[2023-05-12 14:26:28   INF] End performance record
+
+[2023-05-12 14:26:28   INF] Time taken: 0:00.686
+

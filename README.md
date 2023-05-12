@@ -114,7 +114,7 @@
 // **done** trainer -> score
 
 // **done** check attendance.
-// approve attendance.
+// **done** approve attendance.
 // get list attendance.
 // report attendance of class and student.
 // **done** approve request.
@@ -122,3 +122,25 @@
 
 // duplicate -> program
 // export file csv && export file csv
+
+code generate name code
+
+```c#
+public async Task<string> GenerateClassCode(TrainingClassCreateDTO classDTO)
+        {
+            string hcmCode = classDTO.ClassLocation.ToString();
+            string year = DateTime.Now.Year.ToString().Substring(2);
+            string frCode = classDTO.AttendeeType switch
+            {
+                AttendeeType.Intern => "IN",
+                AttendeeType.Fresher => "FR",
+                AttendeeType.OnlineFeeFresher => "OF",
+                AttendeeType.OfflineFeeFresher => "FF",
+                _ => throw new ArgumentException($"Unknown AttendeeType: {classDTO.AttendeeType}")
+            };
+            string oCode = classDTO.ClassTimeStart.ToString("o").Substring(11, 1);
+            int sequenceNumber = await _unitOfWork.TrainingClass.CountAllTrainingClassAsync();
+            string classCode = $"{hcmCode}{year}_{frCode}.{oCode}_{classDTO.ClassName}_{sequenceNumber.ToString()}";
+            return classCode;
+        }
+```

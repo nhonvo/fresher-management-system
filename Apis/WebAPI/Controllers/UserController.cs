@@ -1,4 +1,6 @@
+using Apis.Domain.Enums;
 using Application.Commons;
+using Application.Users.Commands.ImportUsersCSV;
 using Application.Users.DTO;
 using Application.Users.GetProfile.Queries;
 using Application.Users.GetUser.Queries;
@@ -26,12 +28,26 @@ namespace WebAPI.Controllers
         public async Task<UserDTO> GetAsync()
             => await _mediator.Send(new GetProfileQuery());
 
-        [HttpGet("export-users")]
+        #region CSV
+        [HttpGet("export-users-csv")]
         public async Task<FileResult> Get()
         {
             var vm = await _mediator.Send(new ExportUsersQuery());
 
             return File(vm.Content, vm.ContentType, vm.FileName);
         }
+
+        [HttpPost("import-users-csv")]
+        public async Task<List<UserRecord>> ImportUsersCSV(
+        [FromQuery] bool? isScanEmail,
+        [FromQuery] DuplicateHandle? duplicateHandle,
+        [FromForm] IFormFile formFile)
+        => await _mediator.Send(new ImportUsersCSVCommand()
+        {
+            FormFile = formFile,
+            IsScanEmail = isScanEmail ?? false,
+            DuplicateHandle = duplicateHandle ?? DuplicateHandle.Ignore,
+        });
+        #endregion CSV
     }
 }

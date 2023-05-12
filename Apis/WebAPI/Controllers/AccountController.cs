@@ -5,6 +5,9 @@ using Application.Account.Commands.CreateAccountTrainer;
 using Application.Account.Commands.Login;
 using Application.Account.Commands.Register;
 using Application.Account.DTOs;
+using Application.Account.Queries.GetUserById;
+using Application.Users.GetUserById.Queries;
+using Domain.Aggregate.AppResult;
 using Domain.Enums;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
@@ -19,6 +22,11 @@ namespace WebAPI.Controllers
         {
             _mediator = mediator;
         }
+        [HttpGet("GetUserByToken")]
+        public async Task<ApiResult<AccountDTO>> GetUserByToken()
+        => await _mediator.Send(new GetTokenByIdQuery());
+
+
         [HttpPost("Login")]
         public async Task<AccountDTO> LoginAsync([FromBody] LoginCommand request)
             => await _mediator.Send(request);

@@ -11,7 +11,7 @@ namespace Application.FeedBacks.Commands.UpdateFeedBack
         public int Id { get; set; }
         public int Rating { get; set; }
         public string Comment { get; set; }
-        public int StudentId { get; set; }
+        public int UserId { get; set; }
     }
 
     public class UpdateFeedBackHandler : IRequestHandler<UpdateFeedBackCommand, FeedBackDTO>

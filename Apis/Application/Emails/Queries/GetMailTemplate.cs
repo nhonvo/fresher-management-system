@@ -1,0 +1,42 @@
+using System.Text;
+using MediatR;
+
+namespace Application.Emails.Queries
+{
+    public record GetMailTemplateQuery : IRequest<string>
+    {
+        public string? speech { get; set; } = "";
+        public string? title { get; set; } = "";
+        public string? mainContent { get; set; } = "";
+        public string? alternativeSpeech { get; set; } = "";
+        public string? alternativeContent { get; set; } = "";
+        public string? sign { get; set; } = "";
+        public string? mainContentLink { get; set; } = "";
+    };
+    public class GetMailTemplateHandler : IRequestHandler<GetMailTemplateQuery, string>
+    {
+        public async Task<string> Handle(GetMailTemplateQuery request, CancellationToken cancellationToken)
+        {
+            // TODO: USE relative path link instead
+            string body = string.Empty;
+            using (StreamReader reader = new StreamReader(@"D:\SRS_FA TRAINING MANAGEMENT SYSTEM\HtmlTemplate\MailTemplate\Layout.html"))
+            {
+                string line = "";
+                StringBuilder stringBuilder = new StringBuilder();
+                while ((line = reader.ReadLine()) != null)
+                {
+                    stringBuilder.Append(line);
+                }
+                body = stringBuilder.ToString();
+            }
+            body = body.Replace("{Title}", request.title);
+            body = body.Replace("{Speech}", request.speech);
+            body = body.Replace("{MainContentLink}", request.mainContentLink);
+            body = body.Replace("{MainContent}", request.mainContent);
+            body = body.Replace("{AlternativeSpeech}", request.alternativeSpeech);
+            body = body.Replace("{AlternativeContent}", request.alternativeContent);
+            body = body.Replace("{Sign}", request.sign);
+            return body;
+        }
+    }
+}

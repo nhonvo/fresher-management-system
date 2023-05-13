@@ -3,12 +3,6 @@ using Application.FeedBacks.DTO;
 using AutoMapper;
 using Domain.Entities;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Application.FeedBacks.Commands.CreateFeedBack
 {
@@ -16,7 +10,7 @@ namespace Application.FeedBacks.Commands.CreateFeedBack
     {
         public int Rating { get; set; }
         public string Comment { get; set; }
-        public int StudentId { get; set; }
+        public int UserId { get; set; }
     }
 
     public class CreateFeedBackHandler : IRequestHandler<CreateFeedBackCommand, FeedBackDTO>
@@ -32,15 +26,35 @@ namespace Application.FeedBacks.Commands.CreateFeedBack
 
         public async Task<FeedBackDTO> Handle(CreateFeedBackCommand request, CancellationToken cancellationToken)
         {
-            var feedback = _mapper.Map<FeedBack>(request);
-            
-            await _unitOfWork.ExecuteTransactionAsync(() =>
-            {
-                _unitOfWork.FeedBackRepository.AddAsync(feedback);
-            });
-            var result = _mapper.Map<FeedBackDTO>(feedback);
+            //var feedback = _mapper.Map<FeedBack>(request);
 
-            return result ?? throw new NotFoundException("Feed back can not create");
+            //await _unitOfWork.ExecuteTransactionAsync(() =>
+            //{
+            //    _unitOfWork.FeedBackRepository.AddAsync(feedback);
+            //});
+            //var result = _mapper.Map<FeedBackDTO>(feedback);
+
+            //return result ?? throw new NotFoundException("Feed back can not create");
+
+            try
+            {
+                var feedback = _mapper.Map<FeedBack>(request);
+
+                await _unitOfWork.ExecuteTransactionAsync(() =>
+                {
+                    _unitOfWork.FeedBackRepository.AddAsync(feedback);
+                });
+
+                var result = _mapper.Map<FeedBackDTO>(feedback);
+
+                return result; //?? throw new NotFoundException("Feedback not found");
+            }
+            catch (Exception ex)
+            {
+                // Handle the exception here
+                throw new Exception($"An error occurred while creating a feedback: {ex.Message}");
+            }
+
         }
     }
 }

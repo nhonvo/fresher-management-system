@@ -8,24 +8,23 @@ namespace Application.Emails.Commands.SendMail
     public record SendMailCommand : IRequest<bool>
     {
         // Receiver
-        public List<string> To { get; }
-        public List<string> Bcc { get; }
-
-        public List<string> Cc { get; }
+        public List<string> To { get; set; }
+        public List<string>? Bcc { get; set; }
+        public List<string>? Cc { get; set; }
 
         // Sender   
-        public string? From { get; }
+        public string? From { get; set; }
 
-        public string? DisplayName { get; }
+        public string? DisplayName { get; set; }
 
-        public string? ReplyTo { get; }
+        public string? ReplyTo { get; set; }
 
-        public string? ReplyToName { get; }
+        public string? ReplyToName { get; set; }
 
         // Content
-        public string Subject { get; }
+        public string Subject { get; set; }
 
-        public string? Body { get; }
+        public string? Body { get; set; }
 
 
     }
@@ -84,7 +83,7 @@ namespace Application.Emails.Commands.SendMail
             #endregion
 
             #region Send Mail
-            using var smtp = new SmtpClient(config.MailConfigurations.Host, config.MailConfigurations.Port);
+            var smtp = new SmtpClient(config.MailConfigurations.Host, config.MailConfigurations.Port);
             smtp.Credentials = new NetworkCredential(config.MailConfigurations.UserName, config.MailConfigurations.Password);
             smtp.EnableSsl = config.MailConfigurations.UseSSL;
             await smtp.SendMailAsync(mail);
@@ -93,7 +92,6 @@ namespace Application.Emails.Commands.SendMail
             return true;
         }
 
-        //TODO: create new gmail for smtp. Implement sendmail, get template mail from file. 
         //TODO: schedule setup hangfire or quartz auto sendmail in mid night. 
         // 
     }

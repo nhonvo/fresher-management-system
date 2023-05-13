@@ -1,6 +1,7 @@
 using Apis.Domain.Enums;
 using Application.Commons;
 using Application.Emails.Commands.SendMail;
+using Application.Emails.DTOs.MailViewModels;
 using Application.Users.Commands.ImportUsersCSV;
 using Application.Users.DTO;
 using Application.Users.GetProfile.Queries;
@@ -19,6 +20,9 @@ namespace WebAPI.Controllers
         {
             _mediator = mediator;
         }
+        [HttpPost("SendMail")]
+        public async Task<bool> SendMail([FromBody] SendMailCommand request)
+            => await _mediator.Send(request);
         [HttpGet]
         [Authorize(Roles = "SuperAdmin")]
         public async Task<Pagination<UserDTO>> GetAsync(int pageIndex = 0, int pageSize = 10)
@@ -50,8 +54,6 @@ namespace WebAPI.Controllers
             DuplicateHandle = duplicateHandle ?? DuplicateHandle.Ignore,
         });
         #endregion CSV
-        [HttpPost("SendMail")]
-        public async Task<bool> SendMail([FromBody] SendMailCommand request)
-        => await _mediator.Send(request);
+
     }
 }

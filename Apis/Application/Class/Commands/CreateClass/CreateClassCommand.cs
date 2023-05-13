@@ -11,11 +11,11 @@ namespace Application.Class.Commands.CreateClass
     public record CreateClassCommand : IRequest<ClassDTO>
     {
         public string ClassName { get; set; }
-        public string ClassCode { get; set; }
         public DateTime ClassTimeStart { get; set; }
         public DateTime ClassTimeEnd { get; set; }
         public DateTime ReviewOn { get; set; }
         public DateTime ApproveOn { get; set; }
+        public AttendeeType AttendeeType { get; set; }
         public int NumberAttendeePlanned { get; set; }
         public int NumberAttendeeAccepted { get; set; }
         public int NumberAttendeeActual { get; set; }
@@ -36,13 +36,30 @@ namespace Application.Class.Commands.CreateClass
         public async Task<ClassDTO> Handle(CreateClassCommand request, CancellationToken cancellationToken)
         {
             var trainingClass = _mapper.Map<TrainingClass>(request);
-            // trainingClass.
+            trainingClass.ClassCode = await GenerateClassCode(request);
             await _unitOfWork.ExecuteTransactionAsync(() =>
             {
                 _unitOfWork.ClassRepository.AddAsync(trainingClass);
             });
             var result = _mapper.Map<ClassDTO>(trainingClass);
-            return result ?? throw new NotFoundException("Class not found");
+            return result ?? throw new NotFoundException("Can not create class");
+        }
+        public async Task<string> GenerateClassCode(CreateClassCommand classDTO)
+        {
+            string hcmCode = classDTO.ClassLocation.ToString();
+            string year = DateTime.Now.Year.ToString().Substring(2);
+            string frCode = classDTO.AttendeeType switch
+            {
+                AttendeeType.Intern => "IN",
+                AttendeeType.Fresher => "FR",
+                AttendeeType.OnlineFeeFresher => "OF",
+                AttendeeType.OfflineFeeFresher => "FF",
+                _ => throw new ArgumentException($"Unknown AttendeeType: {classDTO.AttendeeType}")
+            };
+            string oCode = classDTO.ClassTimeStart.ToString("o").Substring(11, 1);
+            int sequenceNumber = await _unitOfWork.ClassRepository.CountAsync();
+            string classCode = $"{hcmCode}{year}_{frCode}.{oCode}_{classDTO.ClassName}_{sequenceNumber.ToString()}";
+            return classCode;
         }
     }
 }

@@ -1,5 +1,9 @@
 ﻿using Application.Interfaces;
+using Application.TestAssessments.Commands.CreateTestAssessment;
+using Application.TestAssessments.Queries.GetListSyllabusScoreOfStudent;
 using Application.ViewModels.TestAssessmentViewModels;
+using Azure.Core;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 
@@ -10,9 +14,15 @@ namespace WebAPI.Controllers;
 public class TestAssessmentController : CustomBaseController
 {
     private readonly ITestAssessmentService _testAssessmentService;
-    public TestAssessmentController(ITestAssessmentService testAssessmentService)
+    private readonly IMediator _mediator;
+
+    public TestAssessmentController(
+        ITestAssessmentService testAssessmentService,
+        IMediator mediator
+        )
     {
         _testAssessmentService = testAssessmentService;
+        _mediator = mediator;
     }
 
     [HttpGet]
@@ -101,10 +111,20 @@ public class TestAssessmentController : CustomBaseController
     }
 
     [HttpGet("student/{id:int}/finalSyllabusScores")]
-    public async Task<IActionResult> GetListSyllabusSocreOfStudentAsync(int id, int? classId, int pageIndex = 0, int pageSize = 10)
+    public async Task<IActionResult> GetListSyllabusScoreOfStudentAsync(int id, int? classId, int pageIndex = 0, int pageSize = 10)
     {
         try
         {
+            //var query = new GetListSyllabusScoreOfStudentQuery
+            //{
+            //    Id = id,
+            //    ClassId = classId,
+            //    PageIndex = pageIndex,
+            //    PageSize = pageSize
+            //};
+
+            //var result = await _mediator.Send(query);
+
             var result = await _testAssessmentService.GetListSyllabusScoreOfStudentAsync(id, classId, pageIndex, pageSize);
             return CustomResult(result);
         }
@@ -119,7 +139,7 @@ public class TestAssessmentController : CustomBaseController
     }
 
     [HttpGet("class/{id:int}/finalSyllabusScores")]
-    public async Task<IActionResult> GetListSyllabusSocreOfClassAsync(int id, int? studentId, int pageIndex = 0, int pageSize = 10)
+    public async Task<IActionResult> GetListSyllabusScoreOfClassAsync(int id, int? studentId, int pageIndex = 0, int pageSize = 10)
     {
         try
         {
@@ -136,7 +156,7 @@ public class TestAssessmentController : CustomBaseController
         };
     }
 
-    [HttpGet("class/{id:int}/gpa")]
+    [HttpGet("class/{id:int}/studentGPA")]
     public async Task<IActionResult> GetStudentGPAScoreOfClassAsync(int id, int? studentId, int pageIndex = 0, int pageSize = 10)
     {
         try
@@ -154,7 +174,7 @@ public class TestAssessmentController : CustomBaseController
         };
     }
 
-    [HttpGet("student/{id:int}/gpa")]
+    [HttpGet("student/{id:int}/classGPA")]
     public async Task<IActionResult> GetClassGPAScoreOfStudentAsync(int id, int? classId, int pageIndex = 0, int pageSize = 10)
     {
         try

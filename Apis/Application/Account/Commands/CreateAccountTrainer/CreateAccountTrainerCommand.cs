@@ -33,7 +33,9 @@ public class CreateAccountTrainerCommandHandler : IRequestHandler<CreateAccountT
         var isExist = await _unitOfWork.UserRepository.CheckExistUser(request.Email);
 
         if (isExist)
+        {
             throw new NotFoundException("Email is exist !!!");
+        }
 
         var user = _mapper.Map<User>(request);
         user.Role = Domain.Enums.UserRoleType.Trainer;

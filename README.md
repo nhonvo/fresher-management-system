@@ -123,24 +123,30 @@
 // duplicate -> program
 // export file csv && export file csv
 
-code generate name code
+// check feedback get evaluate of trainer
+// check attendance feature get report
 
-```c#
-public async Task<string> GenerateClassCode(TrainingClassCreateDTO classDTO)
-        {
-            string hcmCode = classDTO.ClassLocation.ToString();
-            string year = DateTime.Now.Year.ToString().Substring(2);
-            string frCode = classDTO.AttendeeType switch
-            {
-                AttendeeType.Intern => "IN",
-                AttendeeType.Fresher => "FR",
-                AttendeeType.OnlineFeeFresher => "OF",
-                AttendeeType.OfflineFeeFresher => "FF",
-                _ => throw new ArgumentException($"Unknown AttendeeType: {classDTO.AttendeeType}")
-            };
-            string oCode = classDTO.ClassTimeStart.ToString("o").Substring(11, 1);
-            int sequenceNumber = await _unitOfWork.TrainingClass.CountAllTrainingClassAsync();
-            string classCode = $"{hcmCode}{year}_{frCode}.{oCode}_{classDTO.ClassName}_{sequenceNumber.ToString()}";
-            return classCode;
-        }
-```
+---
+
+- fix all code base
+
+  1. update logging move it to extension
+  2. update new check health app
+
+  - jwt, cache move to extension in Infrastructure
+    - control what we need to cache no what to cache
+
+  - remove all apiResult<T> in application 
+
+  - choose the type response and catch it web api, controller
+
+  - improve executeTransaction() 
+  
+
+- refactor source code
+
+  - if must as `{}`
+  - avoid user ! operator use is/ is not instead 
+  - separate code logic u can
+  - must do front-end project
+    - deploy app

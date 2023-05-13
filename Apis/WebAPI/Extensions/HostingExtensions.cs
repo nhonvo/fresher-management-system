@@ -1,6 +1,7 @@
 ﻿using Application;
 using HealthChecks.UI.Client;
 using Infrastructures;
+using Infrastructures.Extensions.Logging.Serilog;
 using Infrastructures.Persistence;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
@@ -13,12 +14,18 @@ public static class HostingExtensions
     public static WebApplication ConfigureServices(
         this WebApplicationBuilder builder,
         string databaseConnection,
-        string userApp, string key, string issuer, string audience)
+        string userApp,
+        string key,
+        string issuer,
+        string audience,
+        string loggingPath,
+        string loggingTemplate)
     {
         builder.Services.AddInfrastructuresService(databaseConnection);
         builder.Services.AddApplicationService();
         builder.Services.AddWebAPIService(userApp, key, issuer, audience);
 
+        builder.AddSerilog(loggingPath, loggingTemplate);
 
         return builder.Build();
     }

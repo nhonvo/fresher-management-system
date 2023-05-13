@@ -3,13 +3,14 @@
 #pragma warning disable
 public class AppConfiguration
 {
-    public string LoggingPath { get; set; }
     public ConnectionStrings ConnectionStrings { get; set; }
     public Jwt Jwt { get; set; }
     public string JWTSecretKey { get; set; }
     public MyAllowSpecificOrigins MyAllowSpecificOrigins { get; set; }
     public Token Token { get; set; }
     public MailConfigurations MailConfigurations { get; set; }
+    public string LoggingPath { get; set; }
+    public string LoggingTemplate { get; set; }
 }
 public class MailConfigurations
 {

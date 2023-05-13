@@ -1,5 +1,6 @@
 ﻿using Application.Account.DTOs;
 using Application.Common.Exceptions;
+using Application.Emails.Commands.SendMail;
 using Application.Interfaces;
 using AutoMapper;
 using Domain.Entities;
@@ -22,12 +23,13 @@ public class RegisterCommandHandler : IRequestHandler<RegisterCommand, AccountDT
     private readonly IUnitOfWork _unitOfWork;
     private readonly IJWTService _jwtService;
     private readonly IMapper _mapper;
-
-    public RegisterCommandHandler(IUnitOfWork unitOfWork, IJWTService jwtService, IMapper mapper)
+    private readonly IMediator _mediator;
+    public RegisterCommandHandler(IUnitOfWork unitOfWork, IJWTService jwtService, IMapper mapper, IMediator mediator)
     {
         _unitOfWork = unitOfWork;
         _jwtService = jwtService;
         _mapper = mapper;
+        _mediator = mediator;
     }
 
     public async Task<AccountDTO> Handle(RegisterCommand request, CancellationToken cancellationToken)
@@ -49,6 +51,7 @@ public class RegisterCommandHandler : IRequestHandler<RegisterCommand, AccountDT
                 _unitOfWork.UserRepository.AddAsync(user);
             });
             var response = _mapper.Map<AccountDTO>(user);
+            await _mediator.Send(new SendMailCreateUserCommand(response));
             return response;
         }
         catch (Exception)

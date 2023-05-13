@@ -2,6 +2,7 @@ using Apis.Domain.Enums;
 using Application.Commons;
 using Application.Emails.Commands.SendMail;
 using Application.Emails.DTOs.MailViewModels;
+using Application.Emails.Queries;
 using Application.Users.Commands.ImportUsersCSV;
 using Application.Users.DTO;
 using Application.Users.GetProfile.Queries;
@@ -23,6 +24,12 @@ namespace WebAPI.Controllers
         [HttpPost("SendMail")]
         public async Task<bool> SendMail([FromBody] SendMailCommand request)
             => await _mediator.Send(request);
+        [HttpPost("SendMailCreate")]
+        public async Task<bool> SendMailCreate([FromBody] SendMailCreateUserCommand request)
+            => await _mediator.Send(request);
+        [HttpGet("getMail")]
+        public async Task<string> GetMail()
+            => await _mediator.Send(new GetMailTemplateQuery());
         [HttpGet]
         [Authorize(Roles = "SuperAdmin")]
         public async Task<Pagination<UserDTO>> GetAsync(int pageIndex = 0, int pageSize = 10)

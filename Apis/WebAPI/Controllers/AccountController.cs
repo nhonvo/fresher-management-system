@@ -1,4 +1,4 @@
-using Application.Account.Commands.AddRole;
+    using Application.Account.Commands.AddRole;
 using Application.Account.Commands.ChangPassword;
 using Application.Account.Commands.CreateAccount;
 using Application.Account.Commands.CreateAccountTrainer;

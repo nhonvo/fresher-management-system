@@ -29,18 +29,35 @@ namespace Infrastructures.Repositories
                     TrainingClassId = group.Key.TrainingClassId,
                     TestAssessmentType = group.Key.TestAssessmentType.ToString(),
                     AverageScore = group.Average(ta => ta.Score),
-                    SyllabusScheme = group.Key.TestAssessmentType == TestAssessmentType.Quiz ? _context.Syllabuses.FirstOrDefault(s => s.Id == group.Key.SyllabusId).QuizScheme
-                    : group.Key.TestAssessmentType == TestAssessmentType.Assignment ? _context.Syllabuses.FirstOrDefault(s => s.Id == group.Key.SyllabusId).AssignmentScheme
-                    : group.Key.TestAssessmentType == TestAssessmentType.FinalTheory ? _context.Syllabuses.Where(s => s.Id == group.Key.SyllabusId)
-                                                                                                          .Select(x => new { FinalScheme = x.FinalTheoryScheme * x.FinalScheme })
-                                                                                                          .FirstOrDefault().FinalScheme
-                    : group.Key.TestAssessmentType == TestAssessmentType.FinalPractice ? _context.Syllabuses.Where(s => s.Id == group.Key.SyllabusId)
-                                                                                                            .Select(x => new { FinalScheme = x.FinalPracticeScheme * x.FinalScheme })
-                                                                                                            .FirstOrDefault().FinalScheme : 0
+                    NumberOfTests = group.Count(),
+                    SyllabusScheme = GetSyllabusAssessmentSchemeByType(group.Key.TestAssessmentType,
+                                                                       _context.Syllabuses.FirstOrDefault(x => x.Id == group.Key.SyllabusId))
                 }).OrderBy(x => x.TrainingClassId).ThenBy(x => x.SyllabusId)
                 .ToListAsync();
-            // paging
 
+            return result;
+        }
+
+        private static float GetSyllabusAssessmentSchemeByType(TestAssessmentType type, Syllabus syllabus)
+        {
+            float result = 0;
+            switch (type)
+            {
+                case TestAssessmentType.Quiz:
+                    result = syllabus.QuizScheme;
+                    break;
+                case TestAssessmentType.Assignment:
+                    result = syllabus.AssignmentScheme;
+                    break;
+                case TestAssessmentType.FinalTheory:
+                    result = syllabus.FinalTheoryScheme * syllabus.FinalScheme;
+                    break;
+                case TestAssessmentType.FinalPractice:
+                    result = syllabus.FinalPracticeScheme * syllabus.FinalScheme;
+                    break;
+                default:
+                    break;
+            }
             return result;
         }
     }

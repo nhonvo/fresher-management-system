@@ -9,7 +9,7 @@ namespace Infrastructures.Repositories
     {
         private readonly ApplicationDbContext _dbContext;
 
-        public ApproveRequestRepository(ApplicationDbContext dbContext, ICacheService cache) : base(dbContext, cache)
+        public ApproveRequestRepository(ApplicationDbContext dbContext) : base(dbContext)
         {
             _dbContext = dbContext;
         }

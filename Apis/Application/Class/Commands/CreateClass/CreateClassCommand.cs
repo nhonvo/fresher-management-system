@@ -25,13 +25,12 @@ namespace Application.Class.Commands.CreateClass
     public class CreateClassHandler : IRequestHandler<CreateClassCommand, ClassDTO>
     {
         private readonly IUnitOfWork _unitOfWork;
-        private readonly IJWTService _jwtService;
+        private readonly IJWTService x;
         private readonly IMapper _mapper;
-        public CreateClassHandler(IUnitOfWork unitOfWork, IMapper mapper, IJWTService jwtService)
+        public CreateClassHandler(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
-            _jwtService = jwtService;
         }
         public async Task<ClassDTO> Handle(CreateClassCommand request, CancellationToken cancellationToken)
         {

@@ -25,7 +25,7 @@
    2. Allow trainers and administrators to view the progress of each student through a dashboard or report.
    3. Have the ability to send automated notifications to students, trainers, or administrators when a training plan is completed or when a student is falling behind.// optional hangfire.
 2. Performance Analytics
-   1. Provide detailed analytics on student performance, including individual performance metrics and comparative metrics against the 
+   1. Provide detailed analytics on student performance, including individual performance metrics and comparative metrics against the
    2. Allow for easy exporting of performance data for further analysis.
 3. Profile Customization _Nhon_ ****done****
    1. Allow for custom fields to be added to student profiles to capture additional information that may be required.
@@ -123,24 +123,49 @@
 // duplicate -> program
 // export file csv && export file csv
 
-code generate name code
+// check feedback get evaluate of trainer
+// check attendance feature get report
 
-```c#
-public async Task<string> GenerateClassCode(TrainingClassCreateDTO classDTO)
-        {
-            string hcmCode = classDTO.ClassLocation.ToString();
-            string year = DateTime.Now.Year.ToString().Substring(2);
-            string frCode = classDTO.AttendeeType switch
-            {
-                AttendeeType.Intern => "IN",
-                AttendeeType.Fresher => "FR",
-                AttendeeType.OnlineFeeFresher => "OF",
-                AttendeeType.OfflineFeeFresher => "FF",
-                _ => throw new ArgumentException($"Unknown AttendeeType: {classDTO.AttendeeType}")
-            };
-            string oCode = classDTO.ClassTimeStart.ToString("o").Substring(11, 1);
-            int sequenceNumber = await _unitOfWork.TrainingClass.CountAllTrainingClassAsync();
-            string classCode = $"{hcmCode}{year}_{frCode}.{oCode}_{classDTO.ClassName}_{sequenceNumber.ToString()}";
-            return classCode;
-        }
-```
+---
+
+- fix all code base
+
+  1. update logging move it to extension **done**
+  2. Add ui health app && logging **later**
+
+- Extension
+  - cache
+  - rate limit - per user
+  - health check
+  - 
+  - jwt, cache move to extension in Infrastructure
+    - control what we need to cache no what to cache
+-> and register both services is singleton
+
+  - remove all apiResult<T> in application
+
+  - choose the type response and catch it web api, controller
+
+  - improve executeTransaction()
+  
+- refactor source code
+
+  - if must as `{}`
+  - avoid user ! operator use is/ is not instead
+  - separate code logic u can
+  - must do front-end project
+    - deploy app
+
+// FIXME: pagination don't work syllabus
+data seed move to endpoints - crojob service ...
+add quartz job
+// check middleware timeout && global exception
+
+// TODO: cleanup source , analyst by rider
+//TODO: write test project and test endpoints
+
+// AUTHENTICATE: FORGET PASSWORD. 
+
+// CONFIRM DB REMOVE UNNECESSARY TABLES, property.
+
+SOFT DELETE

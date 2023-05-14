@@ -12,13 +12,11 @@ public record GetAttendanceByClassQuery(int id, int pageIndex = 0, int pageSize 
 public class GetAttendanceByClassQueryHandler : IRequestHandler<GetAttendanceByClassQuery, Pagination<AttendanceDTO>>
 {
     private readonly IUnitOfWork _unitOfWork;
-    private readonly IJWTService _jwtService;
     private readonly IMapper _mapper;
 
-    public GetAttendanceByClassQueryHandler(IUnitOfWork unitOfWork, IJWTService jwtService, IMapper mapper)
+    public GetAttendanceByClassQueryHandler(IUnitOfWork unitOfWork, IMapper mapper)
     {
         _unitOfWork = unitOfWork;
-        _jwtService = jwtService;
         _mapper = mapper;
     }
 

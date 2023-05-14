@@ -19,19 +19,16 @@ namespace Application.Account.Queries.GetUserById
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IClaimService _claimService;
-        private readonly IJWTService _jwtService;
         private readonly IMapper _mapper;
 
         public GetTokenByIdHandler(
             IUnitOfWork unitOfWork,
             IClaimService claimService,
-            IJWTService jwtService,
             IMapper mapper)
         {
             _unitOfWork = unitOfWork;
             _claimService = claimService;
             _mapper = mapper;
-            _jwtService = jwtService;
         }
 
         public async Task<ApiResult<AccountDTO>> Handle(GetTokenByIdQuery request, CancellationToken cancellationToken)

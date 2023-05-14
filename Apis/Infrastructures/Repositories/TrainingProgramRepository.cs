@@ -5,11 +5,11 @@ using Infrastructures.Persistence;
 
 namespace Infrastructures.Repositories
 {
-    public class TrainingProgramRepository :GenericRepository<TrainingProgram>, ITrainingProgramRepository
+    public class TrainingProgramRepository : GenericRepository<TrainingProgram>, ITrainingProgramRepository
     {
         private readonly ApplicationDbContext _dbcontext;
 
-        public TrainingProgramRepository(ApplicationDbContext dbContext, ICacheService cache) : base(dbContext, cache)
+        public TrainingProgramRepository(ApplicationDbContext dbContext) : base(dbContext)
         {
             _dbcontext = dbContext;
         }

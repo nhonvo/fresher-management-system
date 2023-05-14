@@ -1,7 +1,7 @@
 using Application.Interfaces;
 using Microsoft.Extensions.Caching.Memory;
 
-namespace Application.Services
+namespace Application.Cache
 {
     public class CacheService : ICacheService
     {

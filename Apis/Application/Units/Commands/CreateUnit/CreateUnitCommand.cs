@@ -19,7 +19,6 @@ namespace Application.Units.Commands.CreateUnit
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
-        private readonly IJWTService _jwtService;
         public CreateUnitHandler(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _unitOfWork = unitOfWork;

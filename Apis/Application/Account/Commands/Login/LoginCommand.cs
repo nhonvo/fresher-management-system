@@ -1,7 +1,9 @@
 ﻿using Application.Account.DTOs;
 using Application.Common.Exceptions;
 using Application.Interfaces;
+using Application.Utils;
 using AutoMapper;
+using Domain;
 using MediatR;
 
 namespace Application.Account.Commands.Login;
@@ -14,14 +16,17 @@ public record LoginCommand : IRequest<AccountDTO>
 public class LoginCommandHandler : IRequestHandler<LoginCommand, AccountDTO>
 {
     private readonly IUnitOfWork _unitOfWork;
-    private readonly IJWTService _jwtService;
+    private readonly IClaimService _claimService;
     private readonly IMapper _mapper;
+    private readonly AppConfiguration _configuration;
+    private readonly ICurrentTime _currentTime;
 
-    public LoginCommandHandler(IUnitOfWork unitOfWork, IJWTService jwtService, IMapper mapper)
+    public LoginCommandHandler(IUnitOfWork unitOfWork, IMapper mapper, AppConfiguration configuration, ICurrentTime currentTime)
     {
         _unitOfWork = unitOfWork;
-        _jwtService = jwtService;
         _mapper = mapper;
+        _configuration = configuration;
+        _currentTime = currentTime;
     }
     public async Task<AccountDTO> Handle(LoginCommand request, CancellationToken cancellationToken)
     {
@@ -29,15 +34,18 @@ public class LoginCommandHandler : IRequestHandler<LoginCommand, AccountDTO>
         if (user == null)
             throw new NotFoundException("Incorrect email!!!");
         // verify passwordHash
-        if (!_jwtService.Verify(request.Password, user.Password))
+        if (!TokenUtils.Verify(request.Password, user.Password))
             throw new NotFoundException("Incorrect password!!!");
 
         var newUser = _mapper.Map<AccountDTO>(user);
 
-        newUser.Token = _jwtService.GenerateJWT(user);
+        newUser.Token = TokenUtils.GenerateToken(user,
+                                                 _currentTime.GetCurrentTime(),
+                                                 _configuration.Jwt.Issuer,
+                                                 _configuration.Jwt.Audience,
+                                                 _configuration.Jwt.Key);
 
-        newUser.ExpireDay = DateTime.Now.AddDays(1);
-
+        newUser.ExpireDay = _currentTime.GetCurrentTime().AddDays(1);
         return newUser;
     }
 }

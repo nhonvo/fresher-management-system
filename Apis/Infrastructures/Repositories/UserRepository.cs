@@ -10,7 +10,7 @@ namespace Infrastructures.Repositories
     {
         private readonly ApplicationDbContext _context;
 
-        public UserRepository(ApplicationDbContext dbContext, ICacheService cache) : base(dbContext, cache)
+        public UserRepository(ApplicationDbContext dbContext) : base(dbContext)
         {
             _context = dbContext;
         }

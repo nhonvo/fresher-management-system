@@ -3,9 +3,9 @@ using FluentValidation;
 
 namespace Application.Account.Commands.ChangPassword;
 
-public class CreateAccountCommandValidator : AbstractValidator<CreateAccountCommand>
+public class CreateClassAdminCommandValidator : AbstractValidator<CreateClassAdminCommand>
 {
-    public CreateAccountCommandValidator()
+    public CreateClassAdminCommandValidator()
     {
         RuleFor(x => x.Email).NotEmpty().EmailAddress();
         RuleFor(x => x.Password).NotEmpty();

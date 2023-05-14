@@ -14,8 +14,7 @@ namespace Infrastructures.Repositories
     {
         private readonly ApplicationDbContext _context;
 
-        public TestAssessmentRepository(ApplicationDbContext context,
-                                        ICacheService cache) : base(context, cache)
+        public TestAssessmentRepository(ApplicationDbContext context) : base(context)
         {
             _context = context;
         }

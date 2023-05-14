@@ -9,7 +9,7 @@ namespace Infrastructures.Repositories
     {
         private readonly ApplicationDbContext _dbContext;
 
-        public OutputStandardRepository(ApplicationDbContext dbContext, ICacheService cache) : base(dbContext, cache)
+        public OutputStandardRepository(ApplicationDbContext dbContext) : base(dbContext)
         {
             _dbContext = dbContext;
         }

@@ -42,7 +42,7 @@ namespace WebAPI.Controllers
             => await _mediator.Send(request);
         [Authorize(Roles = "SuperAdmin")]
         [HttpPost("create-account-admin")]
-        public async Task<AccountDTO> CreateAccount([FromBody] CreateAccountCommand request)
+        public async Task<AccountDTO> CreateAccount([FromBody] CreateClassAdminCommand request)
             => await _mediator.Send(request);
         [Authorize(Roles = "ClassAdmin")]
         [HttpPost("create-account-trainer")]

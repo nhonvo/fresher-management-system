@@ -1,32 +1,19 @@
-﻿using Application.Interfaces;
+﻿using System.Security.Claims;
+using Application.Interfaces;
 
 namespace WebAPI.Services
 {
     public class ClaimService : IClaimService
     {
-        private readonly IJWTService _jwtService;
-        private string accessToken;
-
-        public ClaimService(IHttpContextAccessor httpContextAccessor, IJWTService jwtService)
+        private readonly IHttpContextAccessor _contextAccessor;
+        public ClaimService(IHttpContextAccessor httpContextAccessor)
         {
-            _jwtService = jwtService;
-            accessToken = httpContextAccessor.HttpContext.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last()!;
-
-        }
-        public int CurrentUserId
-        {
-            get
+            if (httpContextAccessor.HttpContext != null)
             {
-                if (accessToken == null)
-                    //throw new Exception("No access token found!!!");
-                    return 0;
-                var id = _jwtService.Validate(accessToken).Claims.FirstOrDefault(c => c.Type == "ID")?.Value;
-
-                if (id == null)
-                    throw new Exception("No user id found!!!");
-
-                return string.IsNullOrEmpty(id) ? 0 : int.Parse(id);
+                var id = httpContextAccessor.HttpContext.User.FindFirstValue("ID");
+                CurrentUserId = id == null ? -1 : int.Parse(id);
             }
         }
+        public int CurrentUserId { get; }
     }
 }

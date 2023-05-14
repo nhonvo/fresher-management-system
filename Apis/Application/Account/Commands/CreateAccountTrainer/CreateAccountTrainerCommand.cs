@@ -1,6 +1,7 @@
 ﻿using Application.Account.DTOs;
 using Application.Common.Exceptions;
 using Application.Interfaces;
+using Application.Utils;
 using AutoMapper;
 using Domain.Entities;
 using MediatR;
@@ -13,19 +14,16 @@ public class CreateAccountTrainerCommandHandler : IRequestHandler<CreateAccountT
 {
     private readonly IUnitOfWork _unitOfWork;
     private readonly IClaimService _claimService;
-    private readonly IJWTService _jwtService;
     private readonly IMapper _mapper;
 
     public CreateAccountTrainerCommandHandler(
         IUnitOfWork unitOfWork,
         IClaimService claimService,
-        IJWTService jwtService,
         IMapper mapper)
     {
         _unitOfWork = unitOfWork;
         _claimService = claimService;
         _mapper = mapper;
-        _jwtService = jwtService;
     }
 
     public async Task<AccountDTO> Handle(CreateAccountTrainerCommand request, CancellationToken cancellationToken)
@@ -40,6 +38,7 @@ public class CreateAccountTrainerCommandHandler : IRequestHandler<CreateAccountT
         var user = _mapper.Map<User>(request);
         user.Role = Domain.Enums.UserRoleType.Trainer;
         user.Status = Domain.Enums.UserStatus.Active;
+        user.Password = request.Password.Hash();
         await _unitOfWork.ExecuteTransactionAsync(async () =>
         {
             await _unitOfWork.UserRepository.AddAsync(user);

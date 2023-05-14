@@ -12,24 +12,19 @@ namespace Infrastructures.Repositories
     public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : BaseEntity
     {
         protected DbSet<TEntity> _dbSet;
-        private readonly ICacheService _cacheService;
-        private readonly string _cacheKey = $"{typeof(TEntity)}";
 
-        public GenericRepository(ApplicationDbContext context, ICacheService cacheService)
+        public GenericRepository(ApplicationDbContext context)
         {
             _dbSet = context.Set<TEntity>();
-            _cacheService = cacheService;
         }
         // create
         public async Task AddAsync(TEntity entity)
         {
-            _cacheService.Remove(_cacheKey);
             await _dbSet.AddAsync(entity);
         }
 
         public async Task AddRangeAsync(IEnumerable<TEntity> entities)
         {
-            _cacheService.Remove(_cacheKey);
             await _dbSet.AddRangeAsync(entities);
         }
 
@@ -71,8 +66,6 @@ namespace Infrastructures.Repositories
 
         public async Task<Pagination<TEntity>> ToPagination(int pageIndex = 0, int pageSize = 10)
         {
-            if (_cacheService.TryGet(_cacheKey, out Pagination<TEntity> cachedResult))
-                return cachedResult;
             var itemCount = await _dbSet.Where(x=>x.IsDeleted == false).CountAsync();
             var items = await _dbSet.Where(x => x.IsDeleted == false).Skip(pageIndex * pageSize)
                                     .Take(pageSize)
@@ -86,7 +79,6 @@ namespace Infrastructures.Repositories
                 TotalItemsCount = itemCount,
                 Items = items,
             };
-            _cacheService.Set(_cacheKey, result);
 
             return result;
         }
@@ -181,26 +173,22 @@ namespace Infrastructures.Repositories
         {
             _dbSet.Update(entity);
             // Update the cached list of entities
-            _cacheService.Remove(_cacheKey);
 
         }
 
         public void UpdateRange(IEnumerable<TEntity> entities)
         {
             _dbSet.UpdateRange(entities);
-            _cacheService.Remove(_cacheKey);
         }
 
         public void Delete(TEntity entity)
         {
             _dbSet.Remove(entity);
-            _cacheService.Remove(_cacheKey);
         }
 
         public void DeleteRange(IEnumerable<TEntity> entities)
         {
             _dbSet.RemoveRange(entities);
-            _cacheService.Remove(_cacheKey);
         }
 
         public async Task Delete(object id)

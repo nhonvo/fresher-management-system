@@ -1,6 +1,5 @@
 using Domain;
 using Serilog;
-using Serilog.Sinks.SystemConsole.Themes;
 using WebAPI.Extensions;
 
 try

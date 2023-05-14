@@ -16,13 +16,11 @@ namespace Application.Class.Commands.AddTrainer
     public class AddTrainerHandler : IRequestHandler<AddTrainerCommand, TrainerClassDTO>
     {
         private readonly IUnitOfWork _unitOfWork;
-        private readonly IJWTService _jwtService;
         private readonly IMapper _mapper;
-        public AddTrainerHandler(IUnitOfWork unitOfWork, IMapper mapper, IJWTService jwtService)
+        public AddTrainerHandler(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
-            _jwtService = jwtService;
         }
         public async Task<TrainerClassDTO> Handle(AddTrainerCommand request, CancellationToken cancellationToken)
         {

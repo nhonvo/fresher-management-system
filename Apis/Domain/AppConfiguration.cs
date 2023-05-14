@@ -7,7 +7,6 @@ public class AppConfiguration
     public Jwt Jwt { get; set; }
     public string JWTSecretKey { get; set; }
     public MyAllowSpecificOrigins MyAllowSpecificOrigins { get; set; }
-    public Token Token { get; set; }
     public MailConfigurations MailConfigurations { get; set; }
     public string LoggingPath { get; set; }
     public string LoggingTemplate { get; set; }
@@ -22,14 +21,6 @@ public class MailConfigurations
     public string UserName { get; set; }
     public bool UseSSL { get; set; }
     public bool UseStartTls { get; set; }
-}
-
-public class Token
-{
-    public string TenantId { get; set; }
-    public string ClientId { get; set; }
-    public string ClientSecret { get; set; }
-    public string AccessToken { get; set; }
 }
 
 public class MyAllowSpecificOrigins

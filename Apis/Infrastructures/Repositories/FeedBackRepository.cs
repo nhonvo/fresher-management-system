@@ -7,11 +7,11 @@ namespace Infrastructures.Repositories
 {
     public class FeedBackRepository : GenericRepository<FeedBack>, IFeedBackrepository
     {
-        private readonly ApplicationDbContext _dbcontext;
+        private readonly ApplicationDbContext _context;
 
-        public FeedBackRepository(ApplicationDbContext dbContext, ICacheService cacheService) : base(dbContext, cacheService)
+        public FeedBackRepository(ApplicationDbContext context) : base(context)
         {
-            _dbcontext = dbContext;
+            _context = context;
         }
     }
 }

@@ -13,7 +13,7 @@ public class ClassStudentRepository : GenericRepository<ClassStudent>, IClassStu
 {
     private readonly ApplicationDbContext _dbContext;
 
-    public ClassStudentRepository(ApplicationDbContext context, ICacheService cache) : base(context, cache)
+    public ClassStudentRepository(ApplicationDbContext context) : base(context)
     {
         _dbContext = context;
     }

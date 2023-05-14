@@ -1,34 +1,32 @@
 ﻿using Application.Account.DTOs;
 using Application.Common.Exceptions;
 using Application.Interfaces;
+using Application.Utils;
 using AutoMapper;
 using Domain.Entities;
 using MediatR;
-
+// TODO: RENAME CREATE ACCOUNT CLASS ADMIN
 namespace Application.Account.Commands.CreateAccount;
 
-public record CreateAccountCommand(string Email, string Password) : IRequest<AccountDTO>;
+public record CreateClassAdminCommand(string Email, string Password) : IRequest<AccountDTO>;
 
-public class CreateAccountCommandHandler : IRequestHandler<CreateAccountCommand, AccountDTO>
+public class CreateClassAdminCommandHandler : IRequestHandler<CreateClassAdminCommand, AccountDTO>
 {
     private readonly IUnitOfWork _unitOfWork;
     private readonly IClaimService _claimService;
-    private readonly IJWTService _jwtService;
     private readonly IMapper _mapper;
 
-    public CreateAccountCommandHandler(
+    public CreateClassAdminCommandHandler(
         IUnitOfWork unitOfWork,
         IClaimService claimService,
-        IJWTService jwtService,
         IMapper mapper)
     {
         _unitOfWork = unitOfWork;
         _claimService = claimService;
         _mapper = mapper;
-        _jwtService = jwtService;
     }
 
-    public async Task<AccountDTO> Handle(CreateAccountCommand request, CancellationToken cancellationToken)
+    public async Task<AccountDTO> Handle(CreateClassAdminCommand request, CancellationToken cancellationToken)
     {
         var isExist = await _unitOfWork.UserRepository.CheckExistUser(request.Email);
 
@@ -40,6 +38,7 @@ public class CreateAccountCommandHandler : IRequestHandler<CreateAccountCommand,
         var user = _mapper.Map<User>(request);
         user.Role = Domain.Enums.UserRoleType.ClassAdmin;
         user.Status = Domain.Enums.UserStatus.Active;
+        user.Password = request.Password.Hash();
         await _unitOfWork.ExecuteTransactionAsync(async () =>
         {
             await _unitOfWork.UserRepository.AddAsync(user);

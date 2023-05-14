@@ -1,11 +1,12 @@
+using System.Globalization;
 using Microsoft.AspNetCore.Builder;
 using Serilog;
 using Serilog.Events;
 using Serilog.Sinks.SystemConsole.Themes;
 
-namespace Infrastructures.Extensions.Logging.Serilog
+namespace Infrastructures.Extensions
 {
-    public static class Logging
+    public static class SeriLogExtension
     {
         public static void AddSerilog(this WebApplicationBuilder builder, string loggingPath, string logTemplate)
         {
@@ -14,8 +15,13 @@ namespace Infrastructures.Extensions.Logging.Serilog
                       .MinimumLevel.Override("Microsoft.AspNetCore", LogEventLevel.Warning)
                       .MinimumLevel.Override("Microsoft.EntityFrameworkCore", LogEventLevel.Information)
                       .Enrich.FromLogContext()
-                      .WriteTo.Console(outputTemplate: logTemplate, theme: AnsiConsoleTheme.Grayscale)
-                      .WriteTo.File(
+                      //   .WriteTo.Console(outputTemplate: logTemplate, theme: AnsiConsoleTheme.Grayscale)
+                      .WriteTo.Console(outputTemplate: logTemplate,
+                                       restrictedToMinimumLevel: LogEventLevel.Information,
+                                       formatProvider: CultureInfo.InvariantCulture,
+                                       standardErrorFromLevel: LogEventLevel.Error,
+                                       theme: AnsiConsoleTheme.Literate)
+                    .WriteTo.File(
                           loggingPath,
                           rollingInterval: RollingInterval.Day,
                           outputTemplate: logTemplate)
@@ -24,4 +30,5 @@ namespace Infrastructures.Extensions.Logging.Serilog
             builder.Host.UseSerilog(Log.Logger);
         }
     }
+
 }

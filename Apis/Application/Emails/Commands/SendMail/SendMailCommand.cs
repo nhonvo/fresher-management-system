@@ -50,7 +50,7 @@ namespace Application.Emails.Commands.SendMail
                 mail.To.Add(new MailAddress(mailAddress));
             }
             //set Reply to if specified in request
-            if (!string.IsNullOrEmpty(mailData.ReplyTo))
+            if (string.IsNullOrEmpty(mailData.ReplyTo) is false)
             {
                 mail.ReplyToList.Add(new MailAddress(mailData.ReplyTo, mailData.ReplyToName));
             }

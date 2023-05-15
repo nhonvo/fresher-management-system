@@ -17,7 +17,7 @@ public class UnitOfWork : IUnitOfWork
     private readonly ApplicationDbContext _context;
 
     // repositories
-    public IAttendanceRepository AttendanceRepository { get; }
+    // public IAttendanceRepository AttendanceRepository { get; }
     public IReportAttendanceRepository ReportAttendanceRepository { get; }
     public IApproveRequestRepository ApproveRequestRepository { get; }
     public IClassRepository ClassRepository { get; }
@@ -36,14 +36,13 @@ public class UnitOfWork : IUnitOfWork
     {
         _context = dbContext;
         // repositories
-        AttendanceRepository = new AttendanceRepository(_context);
+        // AttendanceRepository = new AttendanceRepository(_context);
         ClassRepository = new ClassRepository(_context);
         ClassStudentRepository = new ClassStudentRepository(_context);
         UserRepository = new UserRepository(_context);
         SyllabusRepository = new SyllabusRepository(_context);
         OutputStandardRepository = new OutputStandardRepository(_context);
         TestAssessmentRepository = new TestAssessmentRepository(_context);
-        AttendanceRepository = new AttendanceRepository(_context);
         ReportAttendanceRepository = new ReportAttendanceRepository(_context);
         ApproveRequestRepository = new ApproveRequestRepository(_context);
         ClassTrainerRepository = new ClassTrainerRepository(_context);

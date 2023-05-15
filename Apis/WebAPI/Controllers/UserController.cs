@@ -6,6 +6,7 @@ using Application.Users.Commands.ImportUsersCSV;
 using Application.Users.DTO;
 using Application.Users.GetProfile.Queries;
 using Application.Users.Queries.ExportUsers;
+using Application.Users.Queries.GetTipsByUserId;
 using Application.Users.Queries.GetUser;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
@@ -38,7 +39,7 @@ namespace WebAPI.Controllers
         [Authorize]
         public async Task<UserDTO> GetAsync()
             => await _mediator.Send(new GetProfileQuery());
-       
+
         #region CSV
         [HttpGet("export-users-csv")]
         public async Task<FileResult> Get()
@@ -61,5 +62,8 @@ namespace WebAPI.Controllers
         });
         #endregion CSV
 
+        [HttpGet("{id}/tips")]
+        public async Task<IActionResult> GetTipsByUserId(int id)
+        => Ok(await _mediator.Send(new GetTipsByUserIdQuery(id)));
     }
 }

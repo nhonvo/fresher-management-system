@@ -28,25 +28,6 @@ namespace Application.SeedData.Queries.SeedData
         }
         public async Task TrySeedAsync()
         {
-            if (await _unitOfWork.CalenderRepository.AnyAsync() is false)
-            {
-                var filePath = Path.Combine(Directory.GetCurrentDirectory(), "../../Json/Calender.json");
-                if (File.Exists(filePath))
-                {
-                    string json = File.ReadAllText(filePath);
-                    if (string.IsNullOrEmpty(json) is false)
-                    {
-                        var items = JsonSerializer.Deserialize<List<Calender>>(json);
-                        if (items is not null)
-                        {
-                            await _unitOfWork.ExecuteTransactionAsync(() =>
-                           {
-                               _unitOfWork.CalenderRepository.AddRangeAsync(items);
-                           });
-                        }
-                    }
-                }
-            }
             if (!await _unitOfWork.UserRepository.AnyAsync())
             {
                 string json = File.ReadAllText(@"../../Json/User.json");
@@ -85,7 +66,25 @@ namespace Application.SeedData.Queries.SeedData
                     _unitOfWork.ClassRepository.AddRangeAsync(trainingClasses);
                 });
             }
-
+            if (await _unitOfWork.CalenderRepository.AnyAsync() is false)
+            {
+                var filePath = Path.Combine(Directory.GetCurrentDirectory(), "../../Json/Calender.json");
+                if (File.Exists(filePath))
+                {
+                    string json = File.ReadAllText(filePath);
+                    if (string.IsNullOrEmpty(json) is false)
+                    {
+                        var items = JsonSerializer.Deserialize<List<Calender>>(json);
+                        if (items is not null)
+                        {
+                            await _unitOfWork.ExecuteTransactionAsync(() =>
+                           {
+                               _unitOfWork.CalenderRepository.AddRangeAsync(items);
+                           });
+                        }
+                    }
+                }
+            }
             if (!await _unitOfWork.ClassStudentRepository.AnyAsync())
             {
                 string json = File.ReadAllText(@"../../Json/ClassStudent.json");

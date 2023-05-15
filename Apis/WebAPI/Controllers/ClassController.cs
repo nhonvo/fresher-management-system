@@ -1,4 +1,5 @@
 ﻿using Application.Calenders.Queries.GetPagedCalendersByTrainingClassId;
+using Application.Class.Commands.SetCalenders;
 using Application.Class.Commands.AddTrainer;
 using Application.Class.Commands.CreateClass;
 using Application.Class.Commands.DeleteClass;
@@ -62,6 +63,15 @@ namespace WebAPI.Controllers
                 PageIndex = pageIndex,
                 PageSize = pageSize
             }));
+
+        [HttpPost("{id}/calenders/set-all")]
+        public async Task<IActionResult> SetCalendersOfTrainingClass(
+            int id,
+            [FromBody] SetCalendersOfTrainingClassCommand command)
+        {
+            command.TrainingClassId = id;
+            return Ok(await _mediator.Send(command));
+        }
 
         #endregion calenders
     }

@@ -172,6 +172,25 @@ public class UnitOfWork : IUnitOfWork
             throw new TransactionException("Can't execute transaction: " + ex);
         }
     }
+
+    public async Task ExecuteTransactionAsync(Func<Task> action)
+    {
+        using var transaction = await _context.Database.BeginTransactionAsync();
+        try
+        {
+            await action();
+            await _context.SaveChangesAsync();
+            await transaction.CommitAsync();
+            Log.Information("Transaction committed");
+        }
+        catch (Exception ex)
+        {
+            await transaction.RollbackAsync();
+            Log.Error("Something went wrong can not execute transaction. It roll back");
+            throw new TransactionException("Can't execute transaction: " + ex);
+        }
+    }
+
     public List<object> GetTrackedEntities()
     {
         return _context.ChangeTracker

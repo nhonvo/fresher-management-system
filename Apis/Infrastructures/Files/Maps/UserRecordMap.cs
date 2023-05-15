@@ -4,7 +4,7 @@ using System.Globalization;
 
 namespace Infrastructure.Files.Maps;
 
-public class UserRecordMap : ClassMap<UserRecord>
+public class UserRecordMap : ClassMap<UserCSV>
 {
     public UserRecordMap()
     {

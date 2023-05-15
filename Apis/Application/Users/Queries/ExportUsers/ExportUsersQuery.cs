@@ -22,7 +22,7 @@ public class ExportUsersQueryHandler : IRequestHandler<ExportUsersQuery, ExportU
     public async Task<ExportUsersVm> Handle(ExportUsersQuery request, CancellationToken cancellationToken)
     {
         var items = await _unitOfWork.UserRepository.GetAsync();
-        var records = _mapper.Map<List<UserRecord>>(items.Items);
+        var records = _mapper.Map<List<UserCSV>>(items.Items);
 
         var vm = new ExportUsersVm(
             "Users.csv",

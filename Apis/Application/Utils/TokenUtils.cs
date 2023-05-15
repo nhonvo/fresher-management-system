@@ -8,7 +8,7 @@ namespace Application.Utils
 {
     public static class TokenUtils
     {
-        public static string GenerateToken(User user, DateTime now, string issuer, string audience, string key)
+        public static string GenerateToken(this User user, DateTime now, string issuer, string audience, string key)
         {
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);

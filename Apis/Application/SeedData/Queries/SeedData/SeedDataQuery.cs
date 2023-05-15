@@ -86,17 +86,15 @@ namespace Application.SeedData.Queries.SeedData
                     _unitOfWork.TestAssessmentRepository.AddRangeAsync(testAssessments);
                 });
             }
-
-            // if (!await _unitOfWork.FSURepository.AnyAsync())
-            // {
-            //     string json = File.ReadAllText(@"../../Json/FSU.json");
-            //     List<FSU> fsus = JsonSerializer.Deserialize<List<FSU>>(json)!;
-            //     await _unitOfWork.ExecuteTransactionAsync(() =>
-            //     {
-            //         _unitOfWork.FSURepository.AddRangeAsync(fsus);
-            //     });
-            // }
-
+            if (!await _unitOfWork.UnitRepository.AnyAsync())
+            {
+                string json = File.ReadAllText(@"../../Json/Unit.json");
+                List<Domain.Entities.Unit> testAssessments = JsonSerializer.Deserialize<List<Domain.Entities.Unit>>(json)!;
+                await _unitOfWork.ExecuteTransactionAsync(() =>
+               {
+                   _unitOfWork.UnitRepository.AddRangeAsync(testAssessments);
+               });
+            }
         }
     }
 }

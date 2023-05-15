@@ -18,7 +18,7 @@ namespace Infrastructures.Persistence.Configurations
                   .OnDelete(DeleteBehavior.NoAction);
             builder.HasOne(o => o.TrainingClass)
                    .WithOne(u => u.TrainingProgram)
-                   .HasForeignKey<TrainingProgram>(o => o.TrainingClassId);
+                   .HasForeignKey<TrainingClass>(o => o.TrainingProgramId);
             builder.HasOne(e => e.Parent)
                     .WithMany()
                     .HasForeignKey(m => m.ParentId).OnDelete(DeleteBehavior.NoAction);

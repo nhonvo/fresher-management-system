@@ -10,7 +10,8 @@ namespace Application.Users
         public UserMappingProfile()
         {
             CreateMap<User, UserDTO>().ReverseMap();
-            CreateMap<User, UserRecord>().ReverseMap();
+            CreateMap<User, UserCSV>().ReverseMap();
+           
         }
     }
 }

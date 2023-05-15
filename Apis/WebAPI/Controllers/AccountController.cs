@@ -22,12 +22,9 @@ namespace WebAPI.Controllers
         [HttpGet("GetUserByToken")]
         public async Task<AccountDTO> GetUserByToken()
         => await _mediator.Send(new GetTokenByIdQuery());
-
-
         [HttpPost("Login")]
         public async Task<AccountDTO> LoginAsync([FromBody] LoginCommand request)
             => await _mediator.Send(request);
-
         [HttpPost("Register")]
         public async Task<AccountDTO> RegisterAsync([FromBody] RegisterCommand request)
             => await _mediator.Send(request);
@@ -48,5 +45,4 @@ namespace WebAPI.Controllers
         public async Task<AccountDTO> CreateAccount([FromBody] CreateAccountTrainerCommand request)
             => await _mediator.Send(request);
     }
-    // TODO: ADD session service , mail service, hangfire service
 }

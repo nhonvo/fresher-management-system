@@ -38,7 +38,7 @@ namespace WebAPI.Controllers
         [Authorize]
         public async Task<UserDTO> GetAsync()
             => await _mediator.Send(new GetProfileQuery());
-
+       
         #region CSV
         [HttpGet("export-users-csv")]
         public async Task<FileResult> Get()
@@ -49,7 +49,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("import-users-csv")]
-        public async Task<List<UserRecord>> ImportUsersCSV(
+        public async Task<List<UserCSV>> ImportUsersCSV(
         [FromQuery] bool? isScanEmail,
         [FromQuery] DuplicateHandle? duplicateHandle,
         [FromForm] IFormFile formFile)

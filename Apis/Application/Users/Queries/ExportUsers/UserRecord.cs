@@ -3,7 +3,7 @@
 namespace Application.Users.Queries.ExportUsers;
 
 #pragma warning disable 
-public class UserRecord
+public class UserCSV
 {
     public string Email { get; init; }
     public Gender Gender { get; init; }

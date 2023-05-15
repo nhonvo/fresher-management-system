@@ -39,12 +39,10 @@ public class LoginCommandHandler : IRequestHandler<LoginCommand, AccountDTO>
 
         var newUser = _mapper.Map<AccountDTO>(user);
 
-        newUser.Token = TokenUtils.GenerateToken(user,
-                                                 _currentTime.GetCurrentTime(),
-                                                 _configuration.Jwt.Issuer,
-                                                 _configuration.Jwt.Audience,
-                                                 _configuration.Jwt.Key);
-
+        newUser.Token = user.GenerateToken(_currentTime.GetCurrentTime(),
+                                           _configuration.Jwt.Issuer,
+                                           _configuration.Jwt.Audience,
+                                           _configuration.Jwt.Key);
         newUser.ExpireDay = _currentTime.GetCurrentTime().AddDays(1);
         return newUser;
     }

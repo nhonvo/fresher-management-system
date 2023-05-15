@@ -34,4 +34,5 @@ public class TrainingClass : BaseEntity
     public ICollection<Attendance> Attendances { get; set; }
     public ICollection<ApproveRequest> ApproveRequests { get; set; }
     public ICollection<TestAssessment> TestAssessments { get; set; }
+    public ICollection<Calender> Calenders { get; set; }
 }

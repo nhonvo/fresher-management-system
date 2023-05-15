@@ -1,9 +1,6 @@
 ﻿using Application;
-using HealthChecks.UI.Client;
 using Infrastructures;
 using Infrastructures.Extensions;
-using Microsoft.AspNetCore.Diagnostics.HealthChecks;
-using Microsoft.Extensions.Diagnostics.HealthChecks;
 using WebAPI.Middlewares;
 
 namespace WebAPI.Extensions;
@@ -40,27 +37,12 @@ public static class HostingExtensions
             app.UseHsts();
 
             using var scope = app.Services.CreateScope();
-            // var initialiser = scope.ServiceProvider.GetRequiredService<ApplicationDbContextInitializer>();
-            // await initialiser.InitialiseAsync();
-            // await initialiser.SeedAsync();
         }
 
         app.UseCors("MyCors");
         app.UseMiddleware<GlobalExceptionMiddleware>();
         app.UseMiddleware<PerformanceMiddleware>();
         app.MapHealthCheck();
-        // app.MapHealthChecks("/health", new HealthCheckOptions()
-        // {
-        //     Predicate = _ => true,
-        //     ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse,
-        //     AllowCachingResponses = false,
-        //     ResultStatusCodes =
-        //     {
-        //         [HealthStatus.Healthy] = StatusCodes.Status200OK,
-        //         [HealthStatus.Degraded] = StatusCodes.Status200OK,
-        //         [HealthStatus.Unhealthy] = StatusCodes.Status503ServiceUnavailable
-        //     }
-        // });
         app.UseResponseCompression();
         app.UseHttpsRedirection();
         // todo authentication

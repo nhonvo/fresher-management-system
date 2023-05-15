@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Application.Class.Queries.GetClassProgram
 {
-    public record GetClassProgramQuery(int PageIndex = 0, int PageSize = 10) : IRequest<Pagination<ClassProgram>>;
+    public record GetClassProgramQuery(int id, int PageIndex = 0, int PageSize = 10) : IRequest<Pagination<ClassProgram>>;
 
     public class GetClassProgramHandler : IRequestHandler<GetClassProgramQuery, Pagination<ClassProgram>>
     {
@@ -21,7 +21,7 @@ namespace Application.Class.Queries.GetClassProgram
         public async Task<Pagination<ClassProgram>> Handle(GetClassProgramQuery request, CancellationToken cancellationToken)
         {
             var classes = await _unitOfWork.ClassRepository.GetAsync(
-                filter: x => x.Id != null,
+                filter: x => x.Id == request.id,
                 include: x => x.Include(x => x.TrainingProgram),
                 pageIndex: request.PageIndex,
                 pageSize: request.PageSize);

@@ -16,7 +16,7 @@ namespace Application.Class.DTO
         public int NumberAttendeeActual { get; set; }
         public ClassLocation ClassLocation { get; set; }
         public ClassStatus Status { get; set; }
-        public TrainingProgramss? TrainingPrograms { get; set; }
+        public TrainingProgramss? TrainingProgram { get; set; }
     }
     public class TrainingProgramss
     {

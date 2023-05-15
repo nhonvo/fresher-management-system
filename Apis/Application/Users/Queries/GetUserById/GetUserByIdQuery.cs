@@ -6,12 +6,12 @@ using MediatR;
 namespace Application.Users.Queries.GetUserById
 {
     public record GetUserByIdQuery(int PageIndex = 0, int PageSize = 10) : IRequest<Pagination<UserDTO>>;
-    public class GetUserHandler : IRequestHandler<GetUserByIdQuery, Pagination<UserDTO>>
+    public class GetUserByIdHandler : IRequestHandler<GetUserByIdQuery, Pagination<UserDTO>>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
 
-        public GetUserHandler(IUnitOfWork unitOfWork, IMapper mapper)
+        public GetUserByIdHandler(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;

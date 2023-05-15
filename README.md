@@ -189,4 +189,5 @@ add quartz job
 
 // check send mail response
 
-// fix register.
+// **done** fix register.
+// fix validate paging add validate paging.

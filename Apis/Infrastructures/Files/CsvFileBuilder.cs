@@ -8,7 +8,7 @@ namespace Infrastructure.Files;
 
 public class CsvFileBuilder : ICsvFileBuilder
 {
-    public byte[] BuildTUsersFile(IEnumerable<UserRecord> records)
+    public byte[] BuildTUsersFile(IEnumerable<UserCSV> records)
     {
         using var memoryStream = new MemoryStream();
         using (var streamWriter = new StreamWriter(memoryStream))

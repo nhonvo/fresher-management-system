@@ -3,6 +3,8 @@ using Application.Class.Commands.CreateClass;
 using Application.Class.Commands.DeleteClass;
 using Application.Class.Commands.UpdateClass;
 using Application.Class.DTO;
+using Application.Class.DTOs;
+using Application.Class.Queries.GetAdminClass;
 using Application.Class.Queries.GetClass;
 using Application.Class.Queries.GetClassProgram;
 using Application.Commons;
@@ -24,13 +26,15 @@ namespace WebAPI.Controllers
         {
             return await _mediator.Send(new GetClassQuery(pageIndex, pageSize));
         }
-
+        [HttpGet("{id}/Admin")]
+        public async Task<Pagination<AdminClass>> GetClassAsync(int id, int pageIndex = 0, int pageSize = 10)
+            => await _mediator.Send(new GetAdminClassQuery(id, pageIndex, pageSize));
         [HttpGet("{id}")]
         public async Task<ClassDTO> Get(int id)
             => await _mediator.Send(new GetClassByIdQuery(id));
-        [HttpGet("Program")]
-        public async Task<Pagination<ClassProgram>> GetProgram(int pageIndex = 0, int pageSize = 10)
-            => await _mediator.Send(new GetClassProgramQuery(pageIndex, pageSize));
+        [HttpGet("{id}/Program")]
+        public async Task<Pagination<ClassProgram>> GetProgram(int id, int pageIndex = 0, int pageSize = 10)
+            => await _mediator.Send(new GetClassProgramQuery(id, pageIndex, pageSize));
         [HttpPost]
         [Authorize(Roles = "ClassAdmin")]
         public async Task<ClassDTO> Post([FromBody] CreateClassCommand request)

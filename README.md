@@ -136,12 +136,12 @@
 - fix all code base
 
   1. update logging move it to extension **done**
-  2. Add ui health app && logging **later**
+  2. Add ui health app && logging **done**
 
 - Extension
-  - cache
+  - cache **reomve**
   - rate limit - per user
-  - health check
+  - health check **done**
 
 - **DONE** jwt, cache move to extension in Infrastructure
     - control what we need to cache no what to cache
@@ -149,8 +149,9 @@
 
   - **DONE** remove all apiResult<T> in application
 
-  - choose the type response and catch it web api, controller
+  - **done** choose the type response and catch it web api, controller
 
+// add register by google OpenID
   
 - refactor source code
 
@@ -170,8 +171,7 @@ add quartz job
 // TODO: cleanup source , analyst by rider
 //TODO: write test project and test endpoints
 
-
-// AUTHENTICATE: FORGET PASSWORD. 
+// AUTHENTICATE: FORGET PASSWORD.
 // CHECK: attendance, approve request, feedback, score, report, csv
 
 // endpoints: POST: syllabuses/{id}/units
@@ -187,4 +187,6 @@ add quartz job
 // endpoints: DELETE: class/{id}/program
 // duplicates
 
-// END
+// check send mail response
+
+// fix register.

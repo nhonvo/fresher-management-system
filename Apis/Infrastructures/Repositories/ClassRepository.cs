@@ -6,7 +6,7 @@ namespace Infrastructures.Repositories
 {
     public class ClassRepository : GenericRepository<TrainingClass>, IClassRepository
     {
-        public ClassRepository(ApplicationDbContext context, ICacheService cache) : base(context, cache)
+        public ClassRepository(ApplicationDbContext context) : base(context)
         {
         }
 

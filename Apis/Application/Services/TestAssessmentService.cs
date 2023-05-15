@@ -1,12 +1,15 @@
 ﻿using Application.Common.Exceptions;
 using Application.Commons;
 using Application.Interfaces;
+using Application.TestAssessments.Queries.GetListSyllabusScoreOfStudent;
 using Application.ViewModels.TestAssessmentViewModels;
 using AutoMapper;
 using Domain.Entities;
+using MediatR;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Application.Services
 {
@@ -14,11 +17,18 @@ namespace Application.Services
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
+        private readonly IMediator _mediator;
 
-        public TestAssessmentService(IUnitOfWork unitOfWork, IMapper mapper)
+        public TestAssessmentService(
+            IUnitOfWork unitOfWork, 
+            IMapper mapper,
+            IMediator mediator
+            )
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
+            _mediator = mediator;
+
         }
 
         public async Task<TestAssessmentViewModel?> CreateTestAssessmentAsync(CreateTestAssessmentViewModel request)
@@ -71,38 +81,22 @@ namespace Application.Services
 
         public async Task<Pagination<GetListSyllabusScoreOfStudentViewModel>> GetListSyllabusScoreOfStudentAsync(int id, int? classId, int pageIndex, int pageSize)
         {
-            Expression<Func<TestAssessment, bool>> filter = classId == null ? x => x.AttendeeId == id :
-                x => x.AttendeeId == id && x.TrainingClassId == classId;
-            var scoreByTestType = await _unitOfWork.TestAssessmentRepository.GetFinalScoreAsync(filter);
-            var studentFinalSyllabusScore = scoreByTestType.GroupBy(ta => new { ta.SyllabusId, ta.TrainingClassId }).Select(group => new GetListSyllabusScoreOfStudentViewModel
+            var query = new GetListSyllabusScoreOfStudentQuery
             {
-                SyllabusId = group.Key.SyllabusId,
-                TrainingClassId = group.Key.TrainingClassId,
-                FinalSyllabusScore = group.Sum(ta => ta.AverageScore * ta.SyllabusScheme) / group.Sum(ta => ta.SyllabusScheme) ?? 0,
-                ListAssessment = scoreByTestType.Where(x => x.SyllabusId == group.Key.SyllabusId && x.TrainingClassId == group.Key.TrainingClassId).ToList()
-            }).ToList();
-            var count = studentFinalSyllabusScore.Count();
-
-            if (pageSize != 0)
-            {
-                studentFinalSyllabusScore = studentFinalSyllabusScore
-                    .Skip(pageIndex * pageSize)
-                    .Take(pageSize).ToList();
-            }
-
-            var result = new Pagination<GetListSyllabusScoreOfStudentViewModel>()
-            {
+                Id = id,
+                ClassId = classId,
                 PageIndex = pageIndex,
-                PageSize = pageSize,
-                Items = studentFinalSyllabusScore
+                PageSize = pageSize
             };
+
+            var result = await _mediator.Send(query);
             return result ?? throw new NotFoundException("There is no test assessment for this student");
         }
 
         public async Task<Pagination<GetListSyllabusScoreOfClassViewModel>> GetListSyllabusScoreOfClassAsync(int id, int? studentId, int pageIndex = 0, int pageSize = 10)
         {
-            Expression<Func<TestAssessment, bool>> filter = studentId == null ? x => x.TrainingClassId == id :
-                x => x.AttendeeId == studentId && x.TrainingClassId == id;
+            Expression<Func<TestAssessment, bool>> filter = studentId == null ? x => x.TrainingClassId == id && x.Score != null :
+                x => x.AttendeeId == studentId && x.TrainingClassId == id && x.Score != null;
             var scoreByTestType = await _unitOfWork.TestAssessmentRepository.GetFinalScoreAsync(filter);
             var classFinalSyllabusScore = scoreByTestType.GroupBy(ta => new { ta.AttendeeId, ta.SyllabusId }).Select(group => new GetListSyllabusScoreOfClassViewModel
             {
@@ -153,7 +147,7 @@ namespace Application.Services
                 Items = studentGPAScoreOfClass
             };
             return result ?? throw new NotFoundException("There is no test assessment for this class");
-            
+
         }
 
         public async Task<Pagination<GetStudentGPAScoreOfClassViewModel>> GetStudentGPAScoreOfClassAsync(int id, int? studentId, int pageIndex = 0, int pageSize = 10)

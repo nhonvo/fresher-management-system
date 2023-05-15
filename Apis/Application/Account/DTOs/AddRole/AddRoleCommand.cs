@@ -12,19 +12,16 @@ public class AddRoleCommandHandler : IRequestHandler<AddRoleCommand, AccountDTO>
 {
     private readonly IUnitOfWork _unitOfWork;
     private readonly IClaimService _claimService;
-    private readonly IJWTService _jwtService;
     private readonly IMapper _mapper;
 
     public AddRoleCommandHandler(
         IUnitOfWork unitOfWork,
         IClaimService claimService,
-        IJWTService jwtService,
         IMapper mapper)
     {
         _unitOfWork = unitOfWork;
         _claimService = claimService;
         _mapper = mapper;
-        _jwtService = jwtService;
     }
 
     public async Task<AccountDTO> Handle(AddRoleCommand request, CancellationToken cancellationToken)

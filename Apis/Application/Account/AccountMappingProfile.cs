@@ -14,6 +14,6 @@ public class AccountMappingProfile : Profile
         CreateMap<AccountDTO, User>().ReverseMap();
         CreateMap<RegisterCommand, User>().ReverseMap();
         CreateMap<LoginCommand, User>().ReverseMap();
-        CreateMap<CreateAccountCommand, User>().ReverseMap();
+        CreateMap<CreateClassAdminCommand, User>().ReverseMap();
     }
 }

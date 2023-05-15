@@ -10,24 +10,15 @@ try
     var configuration = builder.Configuration.Get<AppConfiguration>() ?? new AppConfiguration();
     builder.Services.AddSingleton(configuration);
 
-    Log.Logger = new LoggerConfiguration()
-        .WriteTo.Console()
-        .WriteTo.File(configuration.LoggingPath, rollingInterval: RollingInterval.Day)
-        .CreateLogger();
-
-    builder.Host.UseSerilog((ctx, lc) => lc
-        .WriteTo.Console(outputTemplate: "[{Timestamp:HH:mm:ss} {Level}] {SourceContext}{NewLine}{Message:lj}{NewLine}{Exception}{NewLine}")
-        .WriteTo.File(configuration.LoggingPath, rollingInterval: RollingInterval.Day)
-        .Enrich.FromLogContext()
-        .ReadFrom.Configuration(ctx.Configuration));
-
     var app = await builder
         .ConfigureServices(
-            configuration.ConnectionStrings.DatabaseConnectionV5,
+            configuration.ConnectionStrings.DatabaseConnectionV4,
             configuration.MyAllowSpecificOrigins.UserApp,
             configuration.Jwt.Key,
             configuration.Jwt.Issuer,
-            configuration.Jwt.Audience)
+            configuration.Jwt.Audience,
+            configuration.LoggingPath,
+            configuration.LoggingTemplate)
         .ConfigurePipelineAsync();
     app.Run();
 

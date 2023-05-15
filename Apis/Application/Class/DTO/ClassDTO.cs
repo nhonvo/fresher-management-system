@@ -11,6 +11,7 @@ namespace Application.Class.DTO
         public DateTime ClassTimeEnd { get; set; }
         public DateTime ReviewOn { get; set; }
         public DateTime ApproveOn { get; set; }
+        public AttendeeType AttendeeType { get; set; }
         public int NumberAttendeePlanned { get; set; }
         public int NumberAttendeeAccepted { get; set; }
         public int NumberAttendeeActual { get; set; }

@@ -1,6 +1,7 @@
 ﻿using Application.Interfaces;
 using Application.Services;
 using FluentValidation.AspNetCore;
+using Infrastructures.Extensions;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.IdentityModel.Tokens;
@@ -37,10 +38,9 @@ namespace WebAPI
             services.AddSingleton<Stopwatch>();
             // Extension Services
             services.AddScoped<IClaimService, ClaimService>();
-            services.AddScoped<IJWTService, JWTService>();
-            // IMemoryCache
-            services.AddMemoryCache();
-            services.AddScoped<ICacheService, CacheService>();
+            // services.AddScoped<IJWTService, JWTService>();
+            // Memory cache extension
+            services.AddCache();
 
             services.AddHttpContextAccessor();
             // IValidator
@@ -118,6 +118,14 @@ namespace WebAPI
             {
                 options.EnableForHttps = true;
                 options.Providers.Add<GzipCompressionProvider>();
+                options.MimeTypes = ResponseCompressionDefaults.MimeTypes.Concat(new[]
+                {
+                    "application/json",
+                    "application/xml",
+                    "text/plain",
+                    "image/png",
+                    "image/jpeg"
+                });
                 options.Providers.Add<BrotliCompressionProvider>();
             });
             services.Configure<BrotliCompressionProviderOptions>(options =>
@@ -126,7 +134,7 @@ namespace WebAPI
             });
             services.Configure<GzipCompressionProviderOptions>(options =>
             {
-                options.Level = CompressionLevel.SmallestSize;
+                options.Level = CompressionLevel.Optimal;
             });
             #endregion
             // Cors
@@ -135,10 +143,10 @@ namespace WebAPI
                 options.AddPolicy(name: "MyCors",
                 policy =>
                 {
-            policy.AllowAnyHeader()
-                 .AllowAnyMethod()
-                 .AllowAnyOrigin();
-                //  .WithOrigins(new string[] { userApp });
+                    policy.AllowAnyHeader()
+                         .AllowAnyMethod()
+                         .AllowAnyOrigin();
+                    //  .WithOrigins(new string[] { userApp });
                 });
             });
             return services;

@@ -1,5 +1,6 @@
 ﻿using Application;
 using Application.Common.Interfaces;
+using Application.Health;
 using Application.Interfaces;
 using Application.Repositories;
 using Application.Services;
@@ -19,6 +20,7 @@ namespace Infrastructures
             #region UnitOfWork
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             #endregion
+            services.AddSingleton<HealthService>();
             #region Repositories
             services.AddScoped<IAttendanceRepository, AttendanceRepository>();
             services.AddScoped<IClassRepository, ClassRepository>();

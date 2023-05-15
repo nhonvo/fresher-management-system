@@ -28,9 +28,9 @@ namespace WebAPI
             });
             services.AddEndpointsApiExplorer();
             // services.AddHealthChecks();
-            services.AddHealthChecks().AddCheck<ApiHealthCheck>(
-                "TrainingManagementSystem",
-                tags: new string[] { "TrainingManagementSystem" });
+            // services.AddHealthChecks().AddCheck<ApiHealthCheck>(
+            //     "TrainingManagementSystem",
+            //     tags: new string[] { "TrainingManagementSystem" });
             // Middleware
             services.AddSingleton<GlobalExceptionMiddleware>();
             services.AddSingleton<PerformanceMiddleware>();
@@ -144,8 +144,8 @@ namespace WebAPI
                 {
                     policy.AllowAnyHeader()
                          .AllowAnyMethod()
-                         .AllowAnyOrigin();
-                    //  .WithOrigins(new string[] { userApp });
+                         .AllowAnyOrigin()
+                        .WithOrigins(new string[] { userApp });
                 });
             });
             return services;

@@ -23,7 +23,7 @@ public static class HostingExtensions
         builder.Services.AddInfrastructuresService(databaseConnection);
         builder.Services.AddApplicationService();
         builder.Services.AddWebAPIService(userApp, key, issuer, audience);
-
+        builder.AddHealthCheck(databaseConnection);
         builder.AddSerilog(loggingPath, loggingTemplate);
 
         return builder.Build();
@@ -48,19 +48,19 @@ public static class HostingExtensions
         app.UseCors("MyCors");
         app.UseMiddleware<GlobalExceptionMiddleware>();
         app.UseMiddleware<PerformanceMiddleware>();
-        // app.MapHealthChecks("/health");
-        app.MapHealthChecks("/health", new HealthCheckOptions()
-        {
-            Predicate = _ => true,
-            ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse,
-            AllowCachingResponses = false,
-            ResultStatusCodes =
-            {
-                [HealthStatus.Healthy] = StatusCodes.Status200OK,
-                [HealthStatus.Degraded] = StatusCodes.Status200OK,
-                [HealthStatus.Unhealthy] = StatusCodes.Status503ServiceUnavailable
-            }
-        });
+        app.MapHealthCheck();
+        // app.MapHealthChecks("/health", new HealthCheckOptions()
+        // {
+        //     Predicate = _ => true,
+        //     ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse,
+        //     AllowCachingResponses = false,
+        //     ResultStatusCodes =
+        //     {
+        //         [HealthStatus.Healthy] = StatusCodes.Status200OK,
+        //         [HealthStatus.Degraded] = StatusCodes.Status200OK,
+        //         [HealthStatus.Unhealthy] = StatusCodes.Status503ServiceUnavailable
+        //     }
+        // });
         app.UseResponseCompression();
         app.UseHttpsRedirection();
         // todo authentication

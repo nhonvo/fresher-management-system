@@ -8,6 +8,11 @@
 // TODO: check and add validation if not has
 // TODO: HANDLE ALL error case response message.
 
+```console
+   Add-migration -Context ApplicationDbContext
+   Update-Database -Context ApplicationDbContext
+```
+
 ## Class _Nhon_
 
 1. Creation
@@ -168,3 +173,18 @@ add quartz job
 
 // AUTHENTICATE: FORGET PASSWORD. 
 // CHECK: attendance, approve request, feedback, score, report, csv
+
+// endpoints: POST: syllabuses/{id}/units
+// endpoints: PUT: syllabuses/{id}/units/{unitid}
+// endpoints: DELETE: syllabuses/{id}/units/{unitid}
+
+// endpoints: POST: program/{id}/syllabus/{syllabusid}
+// endpoints: PUT: program/{id}/syllabus/{syllabusid}
+// endpoints: DELETE: program/{id}/syllabus/{syllabusid}
+
+// endpoints: POST: class/{id}/program
+// endpoints: PUT: class/{id}/program
+// endpoints: DELETE: class/{id}/program
+// duplicates
+
+// END

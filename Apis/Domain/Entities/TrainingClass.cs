@@ -31,7 +31,7 @@ public class TrainingClass : BaseEntity
     public ICollection<UnitClassDetail> UnitClassDetail { get; set; }
     public int? TrainingProgramId { get; set; }
     public TrainingProgram? TrainingProgram { get; set; }
-    public ICollection<Attendance> Attendances { get; set; }
+    // public ICollection<Attendance> Attendances { get; set; }
     public ICollection<ApproveRequest> ApproveRequests { get; set; }
     public ICollection<TestAssessment> TestAssessments { get; set; }
     public ICollection<Calender> Calenders { get; set; }

@@ -6,7 +6,7 @@ namespace Application;
 public interface IUnitOfWork : IDisposable
 {
     // repositories
-    IAttendanceRepository AttendanceRepository { get; }
+    // IAttendanceRepository AttendanceRepository { get; }
     IApproveRequestRepository ApproveRequestRepository { get; }
     IReportAttendanceRepository ReportAttendanceRepository { get; }
     IClassRepository ClassRepository { get; }

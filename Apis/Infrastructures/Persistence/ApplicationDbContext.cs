@@ -11,7 +11,6 @@ namespace Infrastructures.Persistence
 
         }
         public DbSet<ClassAdmin> ClassAdmins { get; set; }
-        public DbSet<FSU> FSUs { get; set; }
         public DbSet<OutputStandard> OutputStandards { get; set; }
         public DbSet<ProgramSyllabus> ProgramSyllabuses { get; set; }
         public DbSet<Syllabus> Syllabuses { get; set; }

@@ -14,6 +14,9 @@ namespace Infrastructures.Persistence.Configurations
 
             builder.Property(x => x.Email).HasMaxLength(100);
             builder
+                .Property(x=>x.IsShowTipCreatingClass)
+                .HasDefaultValue(true);
+            builder
                 .HasMany(x => x.DeletedCalenders)
                 .WithOne(x => x.DeletedByUser)
                 .HasForeignKey(x => x.DeleteBy)

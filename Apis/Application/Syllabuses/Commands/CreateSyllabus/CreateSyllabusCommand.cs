@@ -7,42 +7,41 @@ using MediatR;
 
 namespace Application.Syllabuses.Commands.CreateSyllabus
 {
-    // TODO: not use api result customize the response.
     public record CreateSyllabusCommand : IRequest<SyllabusDTO>
     {
-        public string Name { get; set; }
-        public string Code { get; set; }
-        public int AttendeeNumber { get; set; }
-        public string CourseObjective { get; set; }
-        public SyllabusLevel SyllabusLevel { get; set; }
-        public float QuizScheme { get; set; }
-        public float AssignmentScheme { get; set; }
-        public float FinalScheme { get; set; }
-        public float FinalTheoryScheme { get; set; }
-        public float FinalPracticeScheme { get; set; }
-        public float GPAScheme { get; set; }
-        public List<SyllabusUnit> Units { get; set; }
+        public string Name { get; init; }
+        public string Code { get; init; }
+        public int AttendeeNumber { get; init; }
+        public string CourseObjective { get; init; }
+        public SyllabusLevel SyllabusLevel { get; init; }
+        public float QuizScheme { get; init; }
+        public float AssignmentScheme { get; init; }
+        public float FinalScheme { get; init; }
+        public float FinalTheoryScheme { get; init; }
+        public float FinalPracticeScheme { get; init; }
+        public float GPAScheme { get; init; }
+        public List<SyllabusUnit> Units { get; init; }
     }
     public record SyllabusUnit
     {
-        public string Name { get; set; }
-        public int SyllabusSession { get; set; }
-        public int UnitNumber { get; set; }
-        public List<LessonUnit> UnitLessons { get; set; }
+        public string Name { get; init; }
+        public int SyllabusSession { get; init; }
+        public int UnitNumber { get; init; }
+        public List<LessonUnit> UnitLessons { get; init; }
     }
     public class LessonUnit
     {
-        public string Name { get; set; }
-        public int Duration { get; set; }
-        public LessonType LessonType { get; set; }
-        public DeliveryType DeliveryType { get; set; }
-        public List<LessonTrainingMaterial> TrainingMaterials { get; set; }
+        public string Name { get; init; }
+        public int Duration { get; init; }
+        public LessonType LessonType { get; init; }
+        public DeliveryType DeliveryType { get; init; }
+        public List<LessonTrainingMaterial> TrainingMaterials { get; init; }
     }
     public class LessonTrainingMaterial
     {
-        public string FileName { get; set; }
-        public string FilePath { get; set; }
-        public long FileSize { get; set; }
+        public string FileName { get; init; }
+        public string FilePath { get; init; }
+        public long FileSize { get; init; }
 
     }
     public class CreateSyllabusHandler : IRequestHandler<CreateSyllabusCommand, SyllabusDTO>

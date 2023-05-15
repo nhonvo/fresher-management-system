@@ -137,16 +137,15 @@
   - cache
   - rate limit - per user
   - health check
-  - 
-  - jwt, cache move to extension in Infrastructure
+
+- **DONE** jwt, cache move to extension in Infrastructure
     - control what we need to cache no what to cache
 -> and register both services is singleton
 
-  - remove all apiResult<T> in application
+  - **DONE** remove all apiResult<T> in application
 
   - choose the type response and catch it web api, controller
 
-  - improve executeTransaction()
   
 - refactor source code
 
@@ -156,8 +155,10 @@
   - must do front-end project
     - deploy app
 
-// FIXME: pagination don't work syllabus
-data seed move to endpoints - crojob service ...
+// **done**: pagination don't work syllabus
+// **done** data seed move to endpoints 
+
+- crojob service ...
 add quartz job
 // check middleware timeout && global exception
 
@@ -166,6 +167,4 @@ add quartz job
 
 // AUTHENTICATE: FORGET PASSWORD. 
 
-// CONFIRM DB REMOVE UNNECESSARY TABLES, property.
-
-SOFT DELETE
+// CHECK: attendance, approve request, feedback,

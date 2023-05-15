@@ -13,9 +13,9 @@ using System.Threading.Tasks;
 
 namespace Application.Account.Queries.GetUserById
 {
-    public record GetTokenByIdQuery : IRequest<ApiResult<AccountDTO>>;
+    public record GetTokenByIdQuery : IRequest<AccountDTO>;
 
-    public class GetTokenByIdHandler : IRequestHandler<GetTokenByIdQuery, ApiResult<AccountDTO>>
+    public class GetTokenByIdHandler : IRequestHandler<GetTokenByIdQuery, AccountDTO>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IClaimService _claimService;
@@ -31,14 +31,12 @@ namespace Application.Account.Queries.GetUserById
             _mapper = mapper;
         }
 
-        public async Task<ApiResult<AccountDTO>> Handle(GetTokenByIdQuery request, CancellationToken cancellationToken)
+        public async Task<AccountDTO> Handle(GetTokenByIdQuery request, CancellationToken cancellationToken)
         {
             var userId = _claimService.CurrentUserId;
             var user = await _unitOfWork.UserRepository.GetByIdAsync(userId);
-            if (user == null)
-                return new ApiErrorResult<AccountDTO>("User not found");
             var result = _mapper.Map<AccountDTO>(user);
-            return new ApiSuccessResult<AccountDTO>(result);
+            return result;
         }
     }
 }

@@ -6,9 +6,9 @@ using MediatR;
 
 namespace Application.Units.Queries.GetUnits
 {
-    public record GetUnitQuery(int PageIndex = 0, int PageSize = 10) : IRequest<ApiResult<Pagination<UnitDTO>>>;
+    public record GetUnitQuery(int PageIndex = 0, int PageSize = 10) : IRequest<Pagination<UnitDTO>>;
 
-    public class GetUnitHandler : IRequestHandler<GetUnitQuery, ApiResult<Pagination<UnitDTO>>>
+    public class GetUnitHandler : IRequestHandler<GetUnitQuery, Pagination<UnitDTO>>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
@@ -19,11 +19,11 @@ namespace Application.Units.Queries.GetUnits
             _mapper = mapper;
         }
 
-        public async Task<ApiResult<Pagination<UnitDTO>>> Handle(GetUnitQuery request, CancellationToken cancellationToken)
+        public async Task<Pagination<UnitDTO>> Handle(GetUnitQuery request, CancellationToken cancellationToken)
         {
             var unit = await _unitOfWork.UnitRepository.ToPagination(request.PageIndex, request.PageSize);
             var result = _mapper.Map<Pagination<UnitDTO>>(unit);
-            return new ApiSuccessResult<Pagination<UnitDTO>>(result);
+            return result;
         }
     }
 }

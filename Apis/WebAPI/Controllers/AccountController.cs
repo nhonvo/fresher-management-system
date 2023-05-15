@@ -21,7 +21,7 @@ namespace WebAPI.Controllers
             _mediator = mediator;
         }
         [HttpGet("GetUserByToken")]
-        public async Task<ApiResult<AccountDTO>> GetUserByToken()
+        public async Task<AccountDTO> GetUserByToken()
         => await _mediator.Send(new GetTokenByIdQuery());
 
 

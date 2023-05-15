@@ -24,7 +24,7 @@ public class SyllabusesController : BasesController
         _mediator = mediator;
     }
     [HttpGet]
-    public async Task<ApiResult<Pagination<SyllabusDTO>>> Get(int pageIndex = 0, int pageSize = 10)
+    public async Task<Pagination<SyllabusDTO>> Get(int pageIndex = 0, int pageSize = 10)
      => await _mediator.Send(new GetSyllabusQuery(pageIndex, pageSize));
     [HttpGet("{id}")]
     public async Task<SyllabusDTO> Get(int id)
@@ -62,7 +62,7 @@ public class SyllabusesController : BasesController
     #endregion CSV
 
     [HttpGet("get-paged-syllabuses-by-date-range")]
-    public async Task<ApiResult<Pagination<SyllabusDTO>>> GetPagedSyllabusesByDateRange(
+    public async Task<Pagination<SyllabusDTO>> GetPagedSyllabusesByDateRange(
         [FromQuery] DateTime fromtDate,
         [FromQuery] DateTime toDate,
         [FromQuery] int pageIndex = 0,

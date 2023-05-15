@@ -15,7 +15,6 @@ namespace Infrastructures.Extensions
                       .MinimumLevel.Override("Microsoft.AspNetCore", LogEventLevel.Warning)
                       .MinimumLevel.Override("Microsoft.EntityFrameworkCore", LogEventLevel.Information)
                       .Enrich.FromLogContext()
-                      //   .WriteTo.Console(outputTemplate: logTemplate, theme: AnsiConsoleTheme.Grayscale)
                       .WriteTo.Console(outputTemplate: logTemplate,
                                        restrictedToMinimumLevel: LogEventLevel.Information,
                                        formatProvider: CultureInfo.InvariantCulture,

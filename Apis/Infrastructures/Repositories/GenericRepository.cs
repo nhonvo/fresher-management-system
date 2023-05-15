@@ -84,6 +84,7 @@ namespace Infrastructures.Repositories
         }
 
         public async Task<bool> AnyAsync(Expression<Func<TEntity, bool>> filter) => await _dbSet.AnyAsync(filter);
+        public async Task<bool> AnyAsync() => await _dbSet.AnyAsync();
         public async Task<int> CountAsync(Expression<Func<TEntity, bool>> filter)
         {
             if (filter == null)

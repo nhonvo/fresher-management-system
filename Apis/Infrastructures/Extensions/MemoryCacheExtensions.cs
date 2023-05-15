@@ -13,5 +13,4 @@ namespace Infrastructures.Extensions
             services.AddSingleton<ICacheService, CacheService>();
         }
     }
-
 }

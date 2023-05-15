@@ -31,7 +31,7 @@ namespace WebAPI.Controllers
         public async Task<ClassDTO> Get(int id)
             => await _mediator.Send(new GetClassByIdQuery(id));
         [HttpGet("Program")]
-        public async Task<ApiResult<Pagination<ClassProgram>>> GetProgram(int pageIndex = 0, int pageSize = 10)
+        public async Task<Pagination<ClassProgram>> GetProgram(int pageIndex = 0, int pageSize = 10)
             => await _mediator.Send(new GetClassProgramQuery(pageIndex, pageSize));
         [HttpPost]
         [Authorize(Roles = "ClassAdmin")]

@@ -20,7 +20,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<ApiResult<Pagination<UnitLessonDTO>>> Get(int pageIndex = 0, int pageSize = 10)
+        public async Task<Pagination<UnitLessonDTO>> Get(int pageIndex = 0, int pageSize = 10)
             => await _mediator.Send(new GetUnitLessonQuery(pageIndex, pageSize));
 
         [HttpGet("{id}")]

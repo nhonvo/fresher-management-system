@@ -24,6 +24,7 @@ namespace Application.Repositories
         /// </summary>
         /// <param name="filter">The filter to match</param>
         Task<bool> AnyAsync(Expression<Func<TEntity, bool>> filter);
+        Task<bool> AnyAsync();
 
         /// <summary>
         /// Gets the count asynchronous. This is the equivalent of the LINQ COUNT ( filter )

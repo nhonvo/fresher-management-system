@@ -7,9 +7,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Application.Class.Queries.GetClassProgram
 {
-    public record GetClassProgramQuery(int PageIndex = 0, int PageSize = 10) : IRequest<ApiResult<Pagination<ClassProgram>>>;
+    public record GetClassProgramQuery(int PageIndex = 0, int PageSize = 10) : IRequest<Pagination<ClassProgram>>;
 
-    public class GetClassProgramHandler : IRequestHandler<GetClassProgramQuery, ApiResult<Pagination<ClassProgram>>>
+    public class GetClassProgramHandler : IRequestHandler<GetClassProgramQuery, Pagination<ClassProgram>>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
@@ -19,7 +19,7 @@ namespace Application.Class.Queries.GetClassProgram
             _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
-        public async Task<ApiResult<Pagination<ClassProgram>>> Handle(GetClassProgramQuery request, CancellationToken cancellationToken)
+        public async Task<Pagination<ClassProgram>> Handle(GetClassProgramQuery request, CancellationToken cancellationToken)
         {
             var classes = await _unitOfWork.ClassRepository.GetAsync(
                 filter: x => x.Id != null,
@@ -29,7 +29,7 @@ namespace Application.Class.Queries.GetClassProgram
 
             var result = _mapper.Map<Pagination<ClassProgram>>(classes);
 
-            return new ApiSuccessResult<Pagination<ClassProgram>>(result);
+            return result;
         }
     }
 }

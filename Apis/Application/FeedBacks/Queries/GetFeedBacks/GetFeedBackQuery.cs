@@ -6,8 +6,8 @@ using MediatR;
 
 namespace Application.FeedBacks.Queries.GetFeedBacks
 {
-    public record GetFeedBackQuery(int pageIndex = 0, int pageSize = 10) : IRequest<ApiResult<Pagination<FeedBackDTO>>>;
-    public class GetFeedBackHandler : IRequestHandler<GetFeedBackQuery, ApiResult<Pagination<FeedBackDTO>>>
+    public record GetFeedBackQuery(int pageIndex = 0, int pageSize = 10) : IRequest<Pagination<FeedBackDTO>>;
+    public class GetFeedBackHandler : IRequestHandler<GetFeedBackQuery, Pagination<FeedBackDTO>>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
@@ -18,11 +18,11 @@ namespace Application.FeedBacks.Queries.GetFeedBacks
             _mapper = mapper;
         }
 
-        public async Task<ApiResult<Pagination<FeedBackDTO>>> Handle(GetFeedBackQuery request, CancellationToken cancellationToken)
+        public async Task<Pagination<FeedBackDTO>> Handle(GetFeedBackQuery request, CancellationToken cancellationToken)
         {
             var feedback = await _unitOfWork.FeedBackRepository.ToPagination(request.pageIndex, request.pageSize);
             var result = _mapper.Map<Pagination<FeedBackDTO>>(feedback);
-            return new ApiSuccessResult<Pagination<FeedBackDTO>>(result);
+            return result;
         }
     }
 }

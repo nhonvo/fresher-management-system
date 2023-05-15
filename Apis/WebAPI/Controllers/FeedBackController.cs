@@ -21,7 +21,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<ApiResult<Pagination<FeedBackDTO>>> Get(int pageIndex = 0, int pageSize = 10)
+        public async Task<Pagination<FeedBackDTO>> Get(int pageIndex = 0, int pageSize = 10)
             => await _mediator.Send(new GetFeedBackQuery(pageIndex, pageSize));
 
         [HttpGet("{id}")]

@@ -134,7 +134,8 @@ public class ApiExceptionFilterAttribute : ExceptionFilterAttribute
         var details = new ProblemDetails
         {
             Status = StatusCodes.Status500InternalServerError,
-            Title = "InternalServerError",
+            Title = "TransactionException",
+            Detail = context.Exception.Message,
         };
 
         context.Result = new ObjectResult(details)

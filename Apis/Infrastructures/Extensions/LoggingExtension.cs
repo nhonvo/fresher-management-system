@@ -1,8 +1,8 @@
-using System.Globalization;
 using Microsoft.AspNetCore.Builder;
 using Serilog;
 using Serilog.Events;
 using Serilog.Sinks.SystemConsole.Themes;
+using System.Globalization;
 
 namespace Infrastructures.Extensions
 {

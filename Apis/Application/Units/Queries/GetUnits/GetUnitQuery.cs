@@ -1,7 +1,6 @@
 ﻿using Application.Commons;
 using Application.Units.DTO;
 using AutoMapper;
-using Domain.Aggregate.AppResult;
 using MediatR;
 
 namespace Application.Units.Queries.GetUnits

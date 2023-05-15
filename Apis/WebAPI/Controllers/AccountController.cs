@@ -1,4 +1,4 @@
-    using Application.Account.Commands.AddRole;
+using Application.Account.Commands.AddRole;
 using Application.Account.Commands.ChangPassword;
 using Application.Account.Commands.CreateAccount;
 using Application.Account.Commands.CreateAccountTrainer;
@@ -6,7 +6,6 @@ using Application.Account.Commands.Login;
 using Application.Account.Commands.Register;
 using Application.Account.DTOs;
 using Application.Account.Queries.GetUserById;
-using Domain.Aggregate.AppResult;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

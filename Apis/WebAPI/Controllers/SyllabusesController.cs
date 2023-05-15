@@ -9,7 +9,6 @@ using Application.Syllabuses.Queries.ExportSyllabusesCSV;
 using Application.Syllabuses.Queries.GetPagedSyllabusesByDateRange;
 using Application.Syllabuses.Queries.GetSyllabus;
 using Application.Syllabuses.Queries.GetSyllabusById;
-using Domain.Aggregate.AppResult;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

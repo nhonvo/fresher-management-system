@@ -13,5 +13,5 @@ public class ExportUsersVm
 
     public string ContentType { get; init; }
 
-    public byte[] Content { get; init;}
+    public byte[] Content { get; init; }
 }

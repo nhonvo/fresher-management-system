@@ -2,7 +2,6 @@
 using HealthChecks.UI.Client;
 using Infrastructures;
 using Infrastructures.Extensions;
-using Infrastructures.Persistence;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using WebAPI.Middlewares;

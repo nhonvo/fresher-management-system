@@ -1,7 +1,7 @@
-using System.Net;
-using System.Net.Mail;
 using Domain;
 using MediatR;
+using System.Net;
+using System.Net.Mail;
 
 namespace Application.Emails.Commands.SendMail
 {

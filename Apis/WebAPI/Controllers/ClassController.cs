@@ -1,5 +1,4 @@
-﻿using System.Net;
-using Application.Class.Commands.AddTrainer;
+﻿using Application.Class.Commands.AddTrainer;
 using Application.Class.Commands.CreateClass;
 using Application.Class.Commands.DeleteClass;
 using Application.Class.Commands.UpdateClass;
@@ -7,7 +6,6 @@ using Application.Class.DTO;
 using Application.Class.Queries.GetClass;
 using Application.Class.Queries.GetClassProgram;
 using Application.Commons;
-using Domain.Aggregate.AppResult;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

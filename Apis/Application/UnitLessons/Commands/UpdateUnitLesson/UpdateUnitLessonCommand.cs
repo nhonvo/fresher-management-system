@@ -9,7 +9,7 @@ namespace Application.UnitLessons.Commands.UpdateUnitLesson
 {
     public record UpdateUnitLessonCommand : IRequest<UnitLessonDTO>
     {
-        public int Id { get; set; } 
+        public int Id { get; set; }
         public string Name { get; set; }
         public int Duration { get; set; }
         public LessonType LessonType { get; set; }

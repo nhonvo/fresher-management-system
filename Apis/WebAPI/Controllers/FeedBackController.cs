@@ -6,7 +6,6 @@ using Application.FeedBacks.DTO;
 using Application.FeedBacks.Queries.GetFeedBackById;
 using Application.FeedBacks.Queries.GetFeedbackByTrainee;
 using Application.FeedBacks.Queries.GetFeedBacks;
-using Domain.Aggregate.AppResult;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -37,7 +36,7 @@ namespace WebAPI.Controllers
             => await _mediator.Send(request);
 
         [HttpPut]
-        public async Task<FeedBackDTO> Put([FromBody]UpdateFeedBackCommand request)
+        public async Task<FeedBackDTO> Put([FromBody] UpdateFeedBackCommand request)
             => await _mediator.Send(request);
 
         [HttpDelete("{id}")]

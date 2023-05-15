@@ -1,9 +1,4 @@
-﻿using Application.Interfaces;
-using Domain;
-using Microsoft.Extensions.Configuration;
-using Microsoft.IdentityModel.Logging;
-
-namespace Application.Utils
+﻿namespace Application.Utils
 {
     public static class StringUtils
     {

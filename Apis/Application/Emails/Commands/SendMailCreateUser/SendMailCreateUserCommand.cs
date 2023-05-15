@@ -1,8 +1,5 @@
-using System.Net;
-using System.Net.Mail;
 using Application.Account.DTOs;
 using Application.Emails.Queries;
-using Domain;
 using MediatR;
 
 namespace Application.Emails.Commands.SendMail
@@ -25,7 +22,7 @@ namespace Application.Emails.Commands.SendMail
             var to = new List<string> { request.userinfo.Email };
             var title = "Welcome to FPT Software Academy";
             var speech = "Greetings,\nWelcome to FPT Software Academy and thank you for register account. This is your information:";
-            var mainContent = 
+            var mainContent =
             $@"
                 <div>
                     <h2>Your Information:</h2>

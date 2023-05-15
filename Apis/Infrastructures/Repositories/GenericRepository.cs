@@ -1,5 +1,4 @@
 ﻿using Application.Commons;
-using Application.Interfaces;
 using Application.Repositories;
 using Domain.Entities;
 using Infrastructures.Persistence;
@@ -66,7 +65,7 @@ namespace Infrastructures.Repositories
 
         public async Task<Pagination<TEntity>> ToPagination(int pageIndex = 0, int pageSize = 10)
         {
-            var itemCount = await _dbSet.Where(x=>x.IsDeleted == false).CountAsync();
+            var itemCount = await _dbSet.Where(x => x.IsDeleted == false).CountAsync();
             var items = await _dbSet.Where(x => x.IsDeleted == false).Skip(pageIndex * pageSize)
                                     .Take(pageSize)
                                     .AsNoTracking()

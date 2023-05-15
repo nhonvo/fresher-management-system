@@ -1,5 +1,5 @@
-using System.Text;
 using MediatR;
+using System.Text;
 
 namespace Application.Emails.Queries
 {

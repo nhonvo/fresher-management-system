@@ -1,4 +1,3 @@
-using Application.Interfaces;
 using Microsoft.Extensions.Caching.Memory;
 
 namespace Application.Cache

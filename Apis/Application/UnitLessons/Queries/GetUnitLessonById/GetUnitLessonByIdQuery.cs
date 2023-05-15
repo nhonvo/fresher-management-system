@@ -11,7 +11,7 @@ namespace Application.UnitLessons.Queries.GetUnitLessonById
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
-         
+
         public GetUnitLessonByIdHandler(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _unitOfWork = unitOfWork;

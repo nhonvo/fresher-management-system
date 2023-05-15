@@ -1,11 +1,6 @@
-﻿using Application.Commons;
-using Application.Interfaces;
-using Application.Repositories;
-using Application.Students.DTO;
+﻿using Application.Repositories;
 using Domain.Entities;
-using Domain.Enums;
 using Infrastructures.Persistence;
-using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructures.Repositories;
 

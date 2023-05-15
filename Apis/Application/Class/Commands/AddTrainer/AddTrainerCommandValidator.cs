@@ -7,7 +7,7 @@ namespace Application.Lectures.Commands
     {
         public AddTrainerCommandValidator()
         {
-          
+
         }
     }
 }

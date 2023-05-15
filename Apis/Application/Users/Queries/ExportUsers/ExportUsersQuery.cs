@@ -1,5 +1,5 @@
-﻿using AutoMapper;
-using Application.Common.Interfaces;
+﻿using Application.Common.Interfaces;
+using AutoMapper;
 using MediatR;
 
 namespace Application.Users.Queries.ExportUsers;

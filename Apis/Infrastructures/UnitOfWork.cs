@@ -1,6 +1,5 @@
 ﻿using Application;
 using Application.Common.Exceptions;
-using Application.Interfaces;
 using Application.Repositories;
 using Infrastructures.Persistence;
 using Infrastructures.Repositories;

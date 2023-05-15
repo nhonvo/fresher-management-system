@@ -1,7 +1,6 @@
 ﻿using Application.Attendances.DTOs;
 using Application.Commons;
 using AutoMapper;
-using Domain.Aggregate.AppResult;
 using MediatR;
 
 namespace Application.Attendances.Queries.GetAttdences

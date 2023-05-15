@@ -1,5 +1,4 @@
-﻿using Application.Account.Commands.CreateAccount;
-using Application.Account.Commands.CreateAccountTrainer;
+﻿using Application.Account.Commands.CreateAccountTrainer;
 using FluentValidation;
 
 namespace Application.Account.Commands.ChangPassword;

@@ -1,0 +1,9 @@
+image: mcr.microsoft.com/dotnet/sdk:7.0
+
+before_script:
+  - dotnet restore
+
+stages:          # List of stages for jobs, and their order of execution
+  - build-n-test
+  # - test
+  # - deploy

@@ -1,4 +1,5 @@
-﻿using Application.Class.Commands.AddTrainer;
+﻿using Application.Calenders.Queries.GetPagedCalendersByTrainingClassId;
+using Application.Class.Commands.AddTrainer;
 using Application.Class.Commands.CreateClass;
 using Application.Class.Commands.DeleteClass;
 using Application.Class.Commands.UpdateClass;
@@ -47,5 +48,21 @@ namespace WebAPI.Controllers
         [Authorize(Roles = "ClassAdmin")]
         public async Task<ClassDTO> Delete(int id)
             => await _mediator.Send(new DeleteClassCommand(id));
+
+        #region calenders
+
+        [HttpGet("{id}/calendars")]
+        public async Task<IActionResult> GetPagedCalendersByTrainingClassId(
+            int id,
+            [FromQuery] int pageIndex = 0,
+            [FromQuery] int pageSize = 10)
+            => Ok(await _mediator.Send(new GetPagedCalendersByTrainingClassIdQuery()
+            {
+                TrainingClassId = id,
+                PageIndex = pageIndex,
+                PageSize = pageSize
+            }));
+
+        #endregion calenders
     }
 }

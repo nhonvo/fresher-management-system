@@ -20,6 +20,12 @@ namespace Infrastructures.Persistence.Configurations
             builder.HasOne(tc => tc.TrainingProgram)
                    .WithOne(tp => tp.TrainingClass)
                    .HasForeignKey<TrainingClass>(tc => tc.TrainingProgramId);
+            builder
+                .HasMany(x => x.Calenders)
+                .WithOne(x => x.TrainingClass)
+                .HasForeignKey(x => x.TrainingClassId)
+                .HasPrincipalKey(x => x.Id)
+                .OnDelete(DeleteBehavior.ClientCascade);
         }
     }
 }

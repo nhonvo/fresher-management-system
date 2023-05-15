@@ -1,15 +1,7 @@
 ﻿using Application.Account.DTOs;
 using Application.Interfaces;
 using AutoMapper;
-using Domain.Aggregate.AppResult;
 using MediatR;
-using Microsoft.AspNetCore.Http.Headers;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Application.Account.Queries.GetUserById
 {

@@ -1,8 +1,5 @@
 ﻿using Application.Interfaces;
-using Application.TestAssessments.Commands.CreateTestAssessment;
-using Application.TestAssessments.Queries.GetListSyllabusScoreOfStudent;
 using Application.ViewModels.TestAssessmentViewModels;
-using Azure.Core;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;

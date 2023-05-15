@@ -1,6 +1,4 @@
-﻿using Application.Cache;
-using Application.Interfaces;
-using Application.Repositories;
+﻿using Application.Repositories;
 using Domain.Entities;
 using Infrastructures.Persistence;
 

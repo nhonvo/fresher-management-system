@@ -1,7 +1,6 @@
 using Application.Commons;
 using Application.Syllabuses.DTO;
 using AutoMapper;
-using Domain.Aggregate.AppResult;
 using MediatR;
 
 namespace Application.Syllabuses.Queries.GetPagedSyllabusesByDateRange;

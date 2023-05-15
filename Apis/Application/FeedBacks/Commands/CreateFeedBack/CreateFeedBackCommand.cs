@@ -1,5 +1,4 @@
-﻿using Application.Common.Exceptions;
-using Application.FeedBacks.DTO;
+﻿using Application.FeedBacks.DTO;
 using AutoMapper;
 using Domain.Entities;
 using MediatR;

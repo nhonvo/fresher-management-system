@@ -1,7 +1,6 @@
 ﻿using Application.Attendances.DTOs;
 using Application.Common.Exceptions;
 using Application.Commons;
-using Application.Interfaces;
 using AutoMapper;
 using MediatR;
 using Microsoft.EntityFrameworkCore;

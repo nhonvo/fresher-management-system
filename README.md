@@ -160,11 +160,11 @@
 
 - crojob service ...
 add quartz job
-// check middleware timeout && global exception
+// check middleware timeout && global exception, health check.
 
 // TODO: cleanup source , analyst by rider
 //TODO: write test project and test endpoints
 
-// AUTHENTICATE: FORGET PASSWORD. 
 
-// CHECK: attendance, approve request, feedback,
+// AUTHENTICATE: FORGET PASSWORD. 
+// CHECK: attendance, approve request, feedback, score, report, csv

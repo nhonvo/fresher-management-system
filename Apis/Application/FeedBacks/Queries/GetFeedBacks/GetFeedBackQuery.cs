@@ -1,7 +1,6 @@
 ﻿using Application.Commons;
 using Application.FeedBacks.DTO;
 using AutoMapper;
-using Domain.Aggregate.AppResult;
 using MediatR;
 
 namespace Application.FeedBacks.Queries.GetFeedBacks

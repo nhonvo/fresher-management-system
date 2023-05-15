@@ -1,7 +1,6 @@
 ﻿using Application.Class.DTO;
 using Application.Commons;
 using AutoMapper;
-using Domain.Aggregate.AppResult;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 

@@ -6,10 +6,7 @@ using Application.ViewModels.TestAssessmentViewModels;
 using AutoMapper;
 using Domain.Entities;
 using MediatR;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Security.Cryptography.X509Certificates;
 
 namespace Application.Services
 {
@@ -20,7 +17,7 @@ namespace Application.Services
         private readonly IMediator _mediator;
 
         public TestAssessmentService(
-            IUnitOfWork unitOfWork, 
+            IUnitOfWork unitOfWork,
             IMapper mapper,
             IMediator mediator
             )

@@ -6,7 +6,6 @@ using Application.Units.DTO;
 using Application.Units.Queries.GetUnitById;
 using Application.Units.Queries.GetUnitByName;
 using Application.Units.Queries.GetUnits;
-using Domain.Aggregate.AppResult;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 

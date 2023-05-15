@@ -20,8 +20,8 @@ namespace Application.FeedBacks.Queries.GetFeedbackByTrainee
         public async Task<Pagination<FeedBackDTO>> Handle(GetFeedBackByTrainerQuery request, CancellationToken cancellationToken)
         {
             var feedback = await _unitOfWork.FeedBackRepository.GetAsync(
-                filter: x=>x.Trainer.Name.Contains(request.name) && x.Trainer.Role == Domain.Enums.UserRoleType.Trainer,
-                include:x=>x.Include(x=>x.Trainer),
+                filter: x => x.Trainer.Name.Contains(request.name) && x.Trainer.Role == Domain.Enums.UserRoleType.Trainer,
+                include: x => x.Include(x => x.Trainer),
                 pageIndex: request.pageIndex,
                 pageSize: request.pageSize);
             var result = _mapper.Map<Pagination<FeedBackDTO>>(feedback);

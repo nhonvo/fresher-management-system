@@ -1,6 +1,6 @@
-﻿using System.Globalization;
-using Application.Users.Queries.ExportUsers;
+﻿using Application.Users.Queries.ExportUsers;
 using CsvHelper.Configuration;
+using System.Globalization;
 
 namespace Infrastructure.Files.Maps;
 

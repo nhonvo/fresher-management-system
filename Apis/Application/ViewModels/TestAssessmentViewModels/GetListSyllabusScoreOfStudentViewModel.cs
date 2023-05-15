@@ -1,6 +1,4 @@
-﻿using Domain.Enums;
-
-namespace Application.ViewModels.TestAssessmentViewModels
+﻿namespace Application.ViewModels.TestAssessmentViewModels
 {
     public class GetListSyllabusScoreOfStudentViewModel
     {

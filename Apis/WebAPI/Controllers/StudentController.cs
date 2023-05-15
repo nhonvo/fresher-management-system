@@ -3,7 +3,6 @@ using Application.Student.Commands.AddStudent;
 using Application.Student.Commands.UpdateStudent;
 using Application.StudentProgresses.Queries.GetPagedStudentProgressesById;
 using Application.Students.DTO;
-using Domain.Aggregate.AppResult;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 

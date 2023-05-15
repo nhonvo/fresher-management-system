@@ -1,6 +1,3 @@
-using Domain.Entities;
-using System.Security.Claims;
-
 namespace Application.Interfaces
 {
     public interface IJWTService

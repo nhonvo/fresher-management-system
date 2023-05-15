@@ -1,9 +1,7 @@
 ﻿using Application.Class.DTO;
 using Application.Common.Exceptions;
-using Application.Interfaces;
 using AutoMapper;
 using Domain.Entities;
-using Domain.Enums;
 using MediatR;
 
 namespace Application.Class.Commands.AddTrainer

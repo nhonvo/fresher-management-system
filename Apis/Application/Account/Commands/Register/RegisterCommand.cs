@@ -1,7 +1,6 @@
 ﻿using Application.Account.DTOs;
 using Application.Common.Exceptions;
 using Application.Emails.Commands.SendMail;
-using Application.Interfaces;
 using Application.Utils;
 using AutoMapper;
 using Domain.Entities;

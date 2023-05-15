@@ -10,7 +10,7 @@ namespace Application.UnitLessons.Commands.CreateUnitLesson
             RuleFor(x => x.Duration).GreaterThan(0);
             RuleFor(x => x.LessonType).IsInEnum();
             RuleFor(x => x.DeliveryType).IsInEnum();
-           // RuleFor(x => x.SortOrder).GreaterThanOrEqualTo(0);
+            // RuleFor(x => x.SortOrder).GreaterThanOrEqualTo(0);
         }
     }
 

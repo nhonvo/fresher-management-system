@@ -1,7 +1,6 @@
 using Application.Commons;
 using Application.TestAssessments.DTO;
 using AutoMapper;
-using Domain.Aggregate.AppResult;
 using MediatR;
 
 namespace Application.TestAssessments.Queries.GetPagedTestAssessments;

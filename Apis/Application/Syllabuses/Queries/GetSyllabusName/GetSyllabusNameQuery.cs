@@ -1,7 +1,6 @@
 using Application.Commons;
 using Application.Syllabuses.DTO;
 using AutoMapper;
-using Domain.Aggregate.AppResult;
 using MediatR;
 namespace Application.Syllabuses.Queries.GetSyllabusName
 {
@@ -26,7 +25,7 @@ namespace Application.Syllabuses.Queries.GetSyllabusName
                 pageSize: request.pageSize);
 
             var result = _mapper.Map<Pagination<SyllabusDTO>>(syllabus);
-           
+
             return result;
         }
     }

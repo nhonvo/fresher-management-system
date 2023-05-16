@@ -1,0 +1,452 @@
+[
+  {
+    "TrainingClassId": 1,
+    "Date": "2023-05-14",
+    "Order": 1,
+    "Count": 1,
+    "DeletedBy": null,
+    "DeletionDate": null,
+    "IsDeleted": false
+  },
+  {
+    "TrainingClassId": 1,
+    "Date": "2023-05-15",
+    "Order": 2,
+    "Count": 2,
+    "DeletedBy": null,
+    "DeletionDate": null,
+    "IsDeleted": false
+  },
+  {
+    "TrainingClassId": 1,
+    "Date": "2023-10-11",
+    "Order": 3,
+    "Count": 3,
+    "DeletedBy": null,
+    "DeletionDate": null,
+    "IsDeleted": false
+  },
+  {
+    "TrainingClassId": 1,
+    "Date": "2023-10-12",
+    "Order": 4,
+    "Count": 4,
+    "DeletedBy": null,
+    "DeletionDate": null,
+    "IsDeleted": false
+  },
+  {
+    "TrainingClassId": 1,
+    "Date": "2023-10-13",
+    "Order": 5,
+    "Count": 5,
+    "DeletedBy": null,
+    "DeletionDate": null,
+    "IsDeleted": false
+  },
+  {
+    "TrainingClassId": 1,
+    "Date": "2023-10-14",
+    "Order": 6,
+    "Count": 6,
+    "DeletedBy": null,
+    "DeletionDate": null,
+    "IsDeleted": false
+  },
+  {
+    "TrainingClassId": 1,
+    "Date": "2023-10-15",
+    "Order": 7,
+    "Count": 7,
+    "DeletedBy": null,
+    "DeletionDate": null,
+    "IsDeleted": false
+  },
+  {
+    "TrainingClassId": 1,
+    "Date": "2023-10-16",
+    "Order": 8,
+    "Count": 8,
+    "DeletedBy": null,
+    "DeletionDate": null,
+    "IsDeleted": false
+  },
+  {
+    "TrainingClassId": 1,
+    "Date": "2023-10-17",
+    "Order": 9,
+    "Count": 9,
+    "DeletedBy": null,
+    "DeletionDate": null,
+    "IsDeleted": false
+  },
+  {
+    "TrainingClassId": 1,
+    "Date": "2023-10-18",
+    "Order": 10,
+    "Count": 10,
+    "DeletedBy": null,
+    "DeletionDate": null,
+    "IsDeleted": false
+  },
+  {
+    "TrainingClassId": 1,
+    "Date": "2023-10-19",
+    "Order": 11,
+    "Count": 11,
+    "DeletedBy": 11,
+    "DeletionDate": "2023-02-24",
+    "IsDeleted": true
+  },
+  {
+    "TrainingClassId": 1,
+    "Date": "2023-10-20",
+    "Order": 12,
+    "Count": 12,
+    "DeletedBy": null,
+    "DeletionDate": null,
+    "IsDeleted": false
+  },
+  {
+    "TrainingClassId": 13,
+    "Date": "2023-12-31",
+    "Order": 13,
+    "Count": 13,
+    "DeletedBy": 13,
+    "DeletionDate": "2023-03-21",
+    "IsDeleted": true
+  },
+  {
+    "TrainingClassId": 14,
+    "Date": "2023-12-03",
+    "Order": 14,
+    "Count": 14,
+    "DeletedBy": 14,
+    "DeletionDate": "2022-11-22",
+    "IsDeleted": true
+  },
+  {
+    "TrainingClassId": 15,
+    "Date": "2023-10-06",
+    "Order": 15,
+    "Count": 15,
+    "DeletedBy": null,
+    "DeletionDate": null,
+    "IsDeleted": false
+  },
+  {
+    "TrainingClassId": 16,
+    "Date": "2023-12-22",
+    "Order": 16,
+    "Count": 16,
+    "DeletedBy": null,
+    "DeletionDate": null,
+    "IsDeleted": false
+  },
+  {
+    "TrainingClassId": 17,
+    "Date": "2023-08-17",
+    "Order": 17,
+    "Count": 17,
+    "DeletedBy": 17,
+    "DeletionDate": "2022-07-20",
+    "IsDeleted": true
+  },
+  {
+    "TrainingClassId": 18,
+    "Date": "2024-04-06",
+    "Order": 18,
+    "Count": 18,
+    "DeletedBy": null,
+    "DeletionDate": null,
+    "IsDeleted": false
+  },
+  {
+    "TrainingClassId": 19,
+    "Date": "2023-08-30",
+    "Order": 19,
+    "Count": 19,
+    "DeletedBy": null,
+    "DeletionDate": null,
+    "IsDeleted": false
+  },
+  {
+    "TrainingClassId": 20,
+    "Date": "2023-08-31",
+    "Order": 20,
+    "Count": 20,
+    "DeletedBy": null,
+    "DeletionDate": null,
+    "IsDeleted": false
+  },
+  {
+    "TrainingClassId": 21,
+    "Date": "2024-01-13",
+    "Order": 21,
+    "Count": 21,
+    "DeletedBy": null,
+    "DeletionDate": null,
+    "IsDeleted": false
+  },
+  {
+    "TrainingClassId": 22,
+    "Date": "2023-12-13",
+    "Order": 22,
+    "Count": 22,
+    "DeletedBy": null,
+    "DeletionDate": null,
+    "IsDeleted": false
+  },
+  {
+    "TrainingClassId": 23,
+    "Date": "2023-08-17",
+    "Order": 23,
+    "Count": 23,
+    "DeletedBy": 23,
+    "DeletionDate": "2022-08-13",
+    "IsDeleted": true
+  },
+  {
+    "TrainingClassId": 24,
+    "Date": "2023-09-27",
+    "Order": 24,
+    "Count": 24,
+    "DeletedBy": 24,
+    "DeletionDate": "2023-02-23",
+    "IsDeleted": true
+  },
+  {
+    "TrainingClassId": 25,
+    "Date": "2023-12-11",
+    "Order": 25,
+    "Count": 25,
+    "DeletedBy": 25,
+    "DeletionDate": "2022-08-17",
+    "IsDeleted": true
+  },
+  {
+    "TrainingClassId": 26,
+    "Date": "2023-08-23",
+    "Order": 26,
+    "Count": 26,
+    "DeletedBy": 26,
+    "DeletionDate": "2022-11-11",
+    "IsDeleted": true
+  },
+  {
+    "TrainingClassId": 27,
+    "Date": "2024-02-14",
+    "Order": 27,
+    "Count": 27,
+    "DeletedBy": null,
+    "DeletionDate": null,
+    "IsDeleted": false
+  },
+  {
+    "TrainingClassId": 28,
+    "Date": "2023-06-06",
+    "Order": 28,
+    "Count": 28,
+    "DeletedBy": null,
+    "DeletionDate": null,
+    "IsDeleted": false
+  },
+  {
+    "TrainingClassId": 29,
+    "Date": "2023-07-10",
+    "Order": 29,
+    "Count": 29,
+    "DeletedBy": null,
+    "DeletionDate": null,
+    "IsDeleted": false
+  },
+  {
+    "TrainingClassId": 30,
+    "Date": "2024-04-05",
+    "Order": 30,
+    "Count": 30,
+    "DeletedBy": null,
+    "DeletionDate": null,
+    "IsDeleted": false
+  },
+  {
+    "TrainingClassId": 31,
+    "Date": "2023-07-07",
+    "Order": 31,
+    "Count": 31,
+    "DeletedBy": null,
+    "DeletionDate": null,
+    "IsDeleted": false
+  },
+  {
+    "TrainingClassId": 32,
+    "Date": "2023-12-15",
+    "Order": 32,
+    "Count": 32,
+    "DeletedBy": 32,
+    "DeletionDate": "2022-05-28",
+    "IsDeleted": true
+  },
+  {
+    "TrainingClassId": 33,
+    "Date": "2023-10-20",
+    "Order": 33,
+    "Count": 33,
+    "DeletedBy": null,
+    "DeletionDate": null,
+    "IsDeleted": false
+  },
+  {
+    "TrainingClassId": 34,
+    "Date": "2023-10-29",
+    "Order": 34,
+    "Count": 34,
+    "DeletedBy": null,
+    "DeletionDate": null,
+    "IsDeleted": false
+  },
+  {
+    "TrainingClassId": 35,
+    "Date": "2023-08-06",
+    "Order": 35,
+    "Count": 35,
+    "DeletedBy": null,
+    "DeletionDate": null,
+    "IsDeleted": false
+  },
+  {
+    "TrainingClassId": 36,
+    "Date": "2023-11-10",
+    "Order": 36,
+    "Count": 36,
+    "DeletedBy": null,
+    "DeletionDate": null,
+    "IsDeleted": false
+  },
+  {
+    "TrainingClassId": 37,
+    "Date": "2023-08-23",
+    "Order": 37,
+    "Count": 37,
+    "DeletedBy": null,
+    "DeletionDate": null,
+    "IsDeleted": false
+  },
+  {
+    "TrainingClassId": 38,
+    "Date": "2024-03-21",
+    "Order": 38,
+    "Count": 38,
+    "DeletedBy": 38,
+    "DeletionDate": "2022-08-21",
+    "IsDeleted": true
+  },
+  {
+    "TrainingClassId": 39,
+    "Date": "2024-01-23",
+    "Order": 39,
+    "Count": 39,
+    "DeletedBy": null,
+    "DeletionDate": null,
+    "IsDeleted": false
+  },
+  {
+    "TrainingClassId": 40,
+    "Date": "2023-12-11",
+    "Order": 40,
+    "Count": 40,
+    "DeletedBy": 40,
+    "DeletionDate": "2022-07-22",
+    "IsDeleted": true
+  },
+  {
+    "TrainingClassId": 41,
+    "Date": "2023-10-24",
+    "Order": 41,
+    "Count": 41,
+    "DeletedBy": 41,
+    "DeletionDate": "2022-10-09",
+    "IsDeleted": true
+  },
+  {
+    "TrainingClassId": 42,
+    "Date": "2023-08-20",
+    "Order": 42,
+    "Count": 42,
+    "DeletedBy": 42,
+    "DeletionDate": "2023-02-07",
+    "IsDeleted": true
+  },
+  {
+    "TrainingClassId": 43,
+    "Date": "2023-12-13",
+    "Order": 43,
+    "Count": 43,
+    "DeletedBy": null,
+    "DeletionDate": null,
+    "IsDeleted": false
+  },
+  {
+    "TrainingClassId": 44,
+    "Date": "2023-07-22",
+    "Order": 44,
+    "Count": 44,
+    "DeletedBy": null,
+    "DeletionDate": null,
+    "IsDeleted": false
+  },
+  {
+    "TrainingClassId": 45,
+    "Date": "2023-09-15",
+    "Order": 45,
+    "Count": 45,
+    "DeletedBy": 45,
+    "DeletionDate": "2023-01-08",
+    "IsDeleted": true
+  },
+  {
+    "TrainingClassId": 46,
+    "Date": "2023-11-02",
+    "Order": 46,
+    "Count": 46,
+    "DeletedBy": null,
+    "DeletionDate": null,
+    "IsDeleted": false
+  },
+  {
+    "TrainingClassId": 47,
+    "Date": "2023-10-24",
+    "Order": 47,
+    "Count": 47,
+    "DeletedBy": null,
+    "DeletionDate": null,
+    "IsDeleted": false
+  },
+  {
+    "TrainingClassId": 48,
+    "Date": "2023-05-19",
+    "Order": 48,
+    "Count": 48,
+    "DeletedBy": 48,
+    "DeletionDate": "2023-05-01",
+    "IsDeleted": true
+  },
+  {
+    "TrainingClassId": 49,
+    "Date": "2023-08-26",
+    "Order": 49,
+    "Count": 49,
+    "DeletedBy": 49,
+    "DeletionDate": "2023-01-15",
+    "IsDeleted": true
+  },
+  {
+    "TrainingClassId": 50,
+    "Date": "2024-03-14",
+    "Order": 50,
+    "Count": 50,
+    "DeletedBy": 50,
+    "DeletionDate": "2022-06-19",
+    "IsDeleted": true
+  }
+]

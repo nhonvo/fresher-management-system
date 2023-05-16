@@ -1,4 +1,5 @@
 ﻿using Application.Interfaces;
+using Application.Services;
 using FluentValidation.AspNetCore;
 using Infrastructures.Extensions;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -37,6 +38,7 @@ namespace WebAPI
             services.AddSingleton<Stopwatch>();
             // Extension Services
             services.AddScoped<IClaimService, ClaimService>();
+            services.AddScoped<IFileService, FileService>();
             // services.AddScoped<IJWTService, JWTService>();
             // Memory cache extension
             services.AddCache();

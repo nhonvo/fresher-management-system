@@ -1,4 +1,5 @@
 ﻿using Domain.Enums;
+using Microsoft.AspNetCore.Http;
 
 namespace Application.ViewModels.TestAssessmentViewModels
 {
@@ -9,5 +10,7 @@ namespace Application.ViewModels.TestAssessmentViewModels
         public int AttendeeId { get; set; }
         public int SyllabusId { get; set; }
         public int TrainingClassId { get; set; }
+        public IFormFile FileMaterial { get; set; }
+
     }
 }

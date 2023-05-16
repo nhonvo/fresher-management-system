@@ -7,6 +7,7 @@ using Application.ViewModels.TestAssessmentViewModels;
 using AutoMapper;
 using Domain.Entities;
 using MediatR;
+using Microsoft.AspNetCore.Http.HttpResults;
 using System.Linq.Expressions;
 
 namespace Application.Services
@@ -16,28 +17,44 @@ namespace Application.Services
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
         private readonly IMediator _mediator;
+        private readonly IFileService _fileService;
 
         public TestAssessmentService(
             IUnitOfWork unitOfWork,
             IMapper mapper,
-            IMediator mediator
+            IMediator mediator,
+            IFileService fileService
             )
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
             _mediator = mediator;
+            _fileService = fileService;
 
         }
 
         public async Task<TestAssessmentViewModel?> CreateTestAssessmentAsync(CreateTestAssessmentViewModel request)
         {
             var obj = _mapper.Map<TestAssessment>(request);
+            if (request.FileMaterial != null)
+            {
+                obj.Materials = new List<TrainingMaterial>()
+                    {
+                        new TrainingMaterial()
+                        {
+                            FileName = request.FileMaterial.FileName,
+                            FileSize = request.FileMaterial.Length,
+                            FilePath = await _fileService.UploadFile(request.FileMaterial),
+                        }
+                    };
+            }
             await _unitOfWork.TestAssessmentRepository.AddAsync(obj);
             var isSuccess = await _unitOfWork.SaveChangesAsync() > 0;
             if (isSuccess)
             {
                 return _mapper.Map<TestAssessmentViewModel>(obj);
             }
+            
             return null;
         }
 

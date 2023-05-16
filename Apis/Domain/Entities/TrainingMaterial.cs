@@ -10,6 +10,8 @@ public class TrainingMaterial : BaseEntity
 
 
     //Navigation Property
-    public int UnitLessonId { get; set; }
-    public UnitLesson UnitLesson { get; set; }
+    public int? UnitLessonId { get; set; }
+    public UnitLesson? UnitLesson { get; set; }    
+    public int? TestAssessmentId { get; set; }
+    public TestAssessment? TestAssessment { get; set; }
 }

@@ -1,6 +1,8 @@
+using Application.Common.Exceptions;
 using Domain.Entities;
 using MediatR;
 using System.Text.Json;
+using System.Transactions;
 
 namespace Application.SeedData.Queries.SeedData
 {
@@ -22,8 +24,8 @@ namespace Application.SeedData.Queries.SeedData
             }
             catch (Exception ex)
             {
-                // Log.Error(ex, "Migration error");
                 System.Console.WriteLine(ex.ToString(), "Seeding error");
+                throw new NotFoundException("Some seeding table failed " + ex.Message);
             }
         }
         public async Task TrySeedAsync()

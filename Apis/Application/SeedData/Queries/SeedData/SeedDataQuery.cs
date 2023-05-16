@@ -68,6 +68,15 @@ namespace Application.SeedData.Queries.SeedData
                     _unitOfWork.ClassRepository.AddRangeAsync(trainingClasses);
                 });
             }
+            if (!await _unitOfWork.UnitRepository.AnyAsync())
+            {
+                string json = File.ReadAllText(@"../../Json/Unit.json");
+                List<Domain.Entities.Unit> Units = JsonSerializer.Deserialize<List<Domain.Entities.Unit>>(json)!;
+                await _unitOfWork.ExecuteTransactionAsync(() =>
+                {
+                    _unitOfWork.UnitRepository.AddRangeAsync(Units);
+                });
+            }
             if (await _unitOfWork.CalenderRepository.AnyAsync() is false)
             {
                 var filePath = Path.Combine(Directory.GetCurrentDirectory(), "../../Json/Calender.json");

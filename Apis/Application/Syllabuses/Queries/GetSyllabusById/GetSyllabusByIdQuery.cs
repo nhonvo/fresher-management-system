@@ -23,6 +23,7 @@ namespace Application.Syllabuses.Queries.GetSyllabusById
         {
             var syllabus = await _unitOfWork.SyllabusRepository.GetByIdAsync(request.id);
             var result = _mapper.Map<SyllabusDTO>(syllabus);
+
             return result ?? throw new NotFoundException("Syllabus not found", request.id);
 
         }

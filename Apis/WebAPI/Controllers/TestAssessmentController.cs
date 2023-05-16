@@ -39,7 +39,7 @@ public class TestAssessmentController : CustomBaseController
 
 
     [HttpPost]
-    public async Task<IActionResult> CreateTestAssessment(CreateTestAssessmentViewModel request)
+    public async Task<IActionResult> CreateTestAssessment([FromForm] CreateTestAssessmentViewModel request)
     {
         return CustomResult(await _testAssessmentService.CreateTestAssessmentAsync(request));
     }

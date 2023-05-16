@@ -1,4 +1,5 @@
-﻿using Application.Account.DTOs;
+﻿using System.ComponentModel.DataAnnotations;
+using Application.Account.DTOs;
 using Application.Common.Exceptions;
 using Application.Emails.Commands.SendMail;
 using Application.Utils;
@@ -32,7 +33,6 @@ public class RegisterCommandHandler : IRequestHandler<RegisterCommand, AccountDT
 
     public async Task<AccountDTO> Handle(RegisterCommand request, CancellationToken cancellationToken)
     {
-        // avatarURL, RoleId
         var isExist = await _unitOfWork.UserRepository.CheckExistUser(request.Email);
 
         if (isExist)
@@ -42,19 +42,13 @@ public class RegisterCommandHandler : IRequestHandler<RegisterCommand, AccountDT
         user.Role = UserRoleType.Trainee;
         user.Status = UserStatus.Active;
         user.Password = user.Password.Hash();
-        try
+
+        await _unitOfWork.ExecuteTransactionAsync(() =>
         {
-            await _unitOfWork.ExecuteTransactionAsync(() =>
-            {
-                _unitOfWork.UserRepository.AddAsync(user);
-            });
-            var response = _mapper.Map<AccountDTO>(user);
-            await _mediator.Send(new SendMailCreateUserCommand(response));
-            return response;
-        }
-        catch (Exception)
-        {
-            throw new NotFoundException("Register fail!!");
-        }
+            _unitOfWork.UserRepository.AddAsync(user);
+        });
+        var response = _mapper.Map<AccountDTO>(user);
+        await _mediator.Send(new SendMailCreateUserCommand(response));
+        return response ?? throw new ValidationException("Register fail!!");
     }
 }

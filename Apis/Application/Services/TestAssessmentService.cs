@@ -1,6 +1,7 @@
 ﻿using Application.Common.Exceptions;
 using Application.Commons;
 using Application.Interfaces;
+using Application.Syllabuses.DTO;
 using Application.TestAssessments.Queries.GetListSyllabusScoreOfStudent;
 using Application.ViewModels.TestAssessmentViewModels;
 using AutoMapper;
@@ -87,6 +88,7 @@ namespace Application.Services
             };
 
             var result = await _mediator.Send(query);
+            result = _mapper.Map<Pagination<GetListSyllabusScoreOfStudentViewModel>>(result);
             return result ?? throw new NotFoundException("There is no test assessment for this student");
         }
 
@@ -109,13 +111,14 @@ namespace Application.Services
                 .Skip(pageIndex * pageSize)
                 .Take(pageSize).ToList();
             }
-
             var result = new Pagination<GetListSyllabusScoreOfClassViewModel>()
             {
+                TotalItemsCount = count,
                 PageIndex = pageIndex,
                 PageSize = pageSize,
                 Items = classFinalSyllabusScore
             };
+            result = _mapper.Map<Pagination<GetListSyllabusScoreOfClassViewModel>>(result);
             return result ?? throw new NotFoundException("There is no test assessment for this class");
         }
 
@@ -139,10 +142,14 @@ namespace Application.Services
 
             var result = new Pagination<GetClassGPAScoreOfStudentViewModel>()
             {
+                TotalItemsCount = count,
                 PageIndex = pageIndex,
                 PageSize = pageSize,
-                Items = studentGPAScoreOfClass
+                Items = studentGPAScoreOfClass,
+                
             };
+            result = _mapper.Map<Pagination<GetClassGPAScoreOfStudentViewModel>>(result);
+
             return result ?? throw new NotFoundException("There is no test assessment for this class");
 
         }
@@ -168,10 +175,13 @@ namespace Application.Services
 
             var result = new Pagination<GetStudentGPAScoreOfClassViewModel>()
             {
+                TotalItemsCount = count,
                 PageIndex = pageIndex,
                 PageSize = pageSize,
                 Items = classGPAScoreOfStudent
             };
+            result = _mapper.Map<Pagination<GetStudentGPAScoreOfClassViewModel>>(result);
+
             return result ?? throw new NotFoundException("There is no test assessment for this class");
         }
     }

@@ -22,7 +22,7 @@ namespace Infrastructures
             #endregion
             services.AddSingleton<HealthService>();
             #region Repositories
-            services.AddScoped<IAttendanceRepository, AttendanceRepository>();
+            // services.AddScoped<IAttendanceRepository, AttendanceRepository>();
             services.AddScoped<IClassRepository, ClassRepository>();
             services.AddScoped<IClassStudentRepository, ClassStudentRepository>();
             services.AddScoped<IOutputStandardRepository, OutputStandardRepository>();
@@ -45,9 +45,7 @@ namespace Infrastructures
                     options.UseSqlServer(databaseConnection);
                 }
             });
-            services.AddScoped<ApplicationDbContextInitializer>();
-
-            // this configuration just use in-memory for fast develop
+              // this configuration just use in-memory for fast develop
             //services.AddDbContext<AppDbContext>(option => option.UseInMemoryDatabase("test"));
             #endregion
 

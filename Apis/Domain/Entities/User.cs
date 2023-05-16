@@ -13,6 +13,7 @@ public class User : BaseEntity
     public UserRoleType Role { get; set; }
     public UserStatus Status { get; set; }
     public DateTime? DateOfBirth { get; set; }
+    public bool IsShowTipCreatingClass { get; set; }
     public ICollection<ClassAdmin> CreatedClassAdmin { get; set; }
     public ICollection<ClassAdmin> ClassAdmins { get; set; }
     public ICollection<ClassTrainer> CreatedClassTrainers { get; set; }
@@ -35,4 +36,5 @@ public class User : BaseEntity
     public ICollection<ApproveRequest> ApproveRequests { get; set; }
     public ICollection<FeedBack> FeedbackTrainee { get; set; }
     public ICollection<FeedBack> FeedbackTrainer { get; set; }
+    public ICollection<Calender> DeletedCalenders { get; set; }
 }

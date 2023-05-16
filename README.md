@@ -8,6 +8,11 @@
 // TODO: check and add validation if not has
 // TODO: HANDLE ALL error case response message.
 
+```console
+   Add-migration -Context ApplicationDbContext
+   Update-Database -Context ApplicationDbContext
+```
+
 ## Class _Nhon_
 
 1. Creation
@@ -131,12 +136,12 @@
 - fix all code base
 
   1. update logging move it to extension **done**
-  2. Add ui health app && logging **later**
+  2. Add ui health app && logging **done**
 
 - Extension
-  - cache
+  - cache **reomve**
   - rate limit - per user
-  - health check
+  - health check **done**
 
 - **DONE** jwt, cache move to extension in Infrastructure
     - control what we need to cache no what to cache
@@ -144,8 +149,9 @@
 
   - **DONE** remove all apiResult<T> in application
 
-  - choose the type response and catch it web api, controller
+  - **done** choose the type response and catch it web api, controller
 
+// add register by google OpenID
   
 - refactor source code
 
@@ -165,6 +171,23 @@ add quartz job
 // TODO: cleanup source , analyst by rider
 //TODO: write test project and test endpoints
 
-
-// AUTHENTICATE: FORGET PASSWORD. 
+// AUTHENTICATE: FORGET PASSWORD.
 // CHECK: attendance, approve request, feedback, score, report, csv
+
+// endpoints: POST: syllabuses/{id}/units
+// endpoints: PUT: syllabuses/{id}/units/{unitid}
+// endpoints: DELETE: syllabuses/{id}/units/{unitid}
+
+// endpoints: POST: program/{id}/syllabus/{syllabusid}
+// endpoints: PUT: program/{id}/syllabus/{syllabusid}
+// endpoints: DELETE: program/{id}/syllabus/{syllabusid}
+
+// endpoints: POST: class/{id}/program
+// endpoints: PUT: class/{id}/program
+// endpoints: DELETE: class/{id}/program
+// duplicates
+
+// check send mail response
+
+// **done** fix register.
+// fix validate paging add validate paging.

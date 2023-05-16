@@ -6,7 +6,7 @@ namespace Application;
 public interface IUnitOfWork : IDisposable
 {
     // repositories
-    IAttendanceRepository AttendanceRepository { get; }
+    // IAttendanceRepository AttendanceRepository { get; }
     IApproveRequestRepository ApproveRequestRepository { get; }
     IReportAttendanceRepository ReportAttendanceRepository { get; }
     IClassRepository ClassRepository { get; }
@@ -20,6 +20,7 @@ public interface IUnitOfWork : IDisposable
     IClassTrainerRepository ClassTrainerRepository { get; }
     ITrainingProgramRepository TrainingProgramRepository { get; }
     IFeedBackrepository FeedBackRepository { get; }
+    ICalenderRepository CalenderRepository { get; }
 
     /// <summary>
     /// Saves changes to the database. This is called when the user changes the data or saves a new version of the data.
@@ -47,5 +48,6 @@ public interface IUnitOfWork : IDisposable
     /// </summary>
     void Rollback();
     Task ExecuteTransactionAsync(Action action);
+    Task ExecuteTransactionAsync(Func<Task> action);
     List<object> GetTrackedEntities();
 }

@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace Application.Users.Commands.ImportUsersCSV;
 
-public record ImportUsersCSVCommand : IRequest<List<UserRecord>>
+public record ImportUsersCSVCommand : IRequest<List<UserCSV>>
 {
 #pragma warning disable
     public IFormFile FormFile { get; set; }
@@ -16,7 +16,7 @@ public record ImportUsersCSVCommand : IRequest<List<UserRecord>>
     public DuplicateHandle DuplicateHandle { get; set; }
 }
 
-public class ImportUsersCSVHandler : IRequestHandler<ImportUsersCSVCommand, List<UserRecord>>
+public class ImportUsersCSVHandler : IRequestHandler<ImportUsersCSVCommand, List<UserCSV>>
 {
     private readonly IUnitOfWork _unitOfWork;
     private readonly IMapper _mapper;
@@ -27,10 +27,10 @@ public class ImportUsersCSVHandler : IRequestHandler<ImportUsersCSVCommand, List
         _mapper = mapper;
     }
 
-    public async Task<List<UserRecord>> Handle(ImportUsersCSVCommand request, CancellationToken cancellationToken)
+    public async Task<List<UserCSV>> Handle(ImportUsersCSVCommand request, CancellationToken cancellationToken)
     {
         var newItems = await ConvertToUserRecordList(request.FormFile);
-        var addedItems = new List<UserRecord>();
+        var addedItems = new List<UserCSV>();
         await _unitOfWork.ExecuteTransactionAsync(async () =>
         {
             foreach (var item in newItems)
@@ -51,7 +51,7 @@ public class ImportUsersCSVHandler : IRequestHandler<ImportUsersCSVCommand, List
                     }
                 }
                 await _unitOfWork.UserRepository.AddAsync(newItem);
-                var addedItem = _mapper.Map<UserRecord>(newItem);
+                var addedItem = _mapper.Map<UserCSV>(newItem);
                 addedItems.Add(addedItem);
             }
         });
@@ -59,10 +59,10 @@ public class ImportUsersCSVHandler : IRequestHandler<ImportUsersCSVCommand, List
         return addedItems;
     }
 
-    private async Task<List<UserRecord>> ConvertToUserRecordList(
+    private async Task<List<UserCSV>> ConvertToUserRecordList(
         IFormFile formFile)
     {
-        var items = new List<UserRecord>();
+        var items = new List<UserCSV>();
         using (var reader = new StreamReader(formFile.OpenReadStream()))
         {
             var header = await reader.ReadLineAsync(); // skip the header line
@@ -73,7 +73,7 @@ public class ImportUsersCSVHandler : IRequestHandler<ImportUsersCSVCommand, List
                 var values = line.Split(',');
                 if (values.Length < 3)
                     throw new InvalidDataException("Invalid CSV format");
-                var item = new UserRecord
+                var item = new UserCSV
                 {
                     Email = values[0] ?? "",
                     Gender = Enum.TryParse(typeof(Gender), values[4], out var gender) ? (Gender)gender : Gender.Male,

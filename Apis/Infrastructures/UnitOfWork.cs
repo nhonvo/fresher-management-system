@@ -17,7 +17,7 @@ public class UnitOfWork : IUnitOfWork
     private readonly ApplicationDbContext _context;
 
     // repositories
-    public IAttendanceRepository AttendanceRepository { get; }
+    // public IAttendanceRepository AttendanceRepository { get; }
     public IReportAttendanceRepository ReportAttendanceRepository { get; }
     public IApproveRequestRepository ApproveRequestRepository { get; }
     public IClassRepository ClassRepository { get; }
@@ -31,19 +31,19 @@ public class UnitOfWork : IUnitOfWork
     public IClassTrainerRepository ClassTrainerRepository { get; }
     public ITrainingProgramRepository TrainingProgramRepository { get; }
     public IFeedBackrepository FeedBackRepository { get; }
+    public ICalenderRepository CalenderRepository { get; }
     //
     public UnitOfWork(ApplicationDbContext dbContext)
     {
         _context = dbContext;
         // repositories
-        AttendanceRepository = new AttendanceRepository(_context);
+        // AttendanceRepository = new AttendanceRepository(_context);
         ClassRepository = new ClassRepository(_context);
         ClassStudentRepository = new ClassStudentRepository(_context);
         UserRepository = new UserRepository(_context);
         SyllabusRepository = new SyllabusRepository(_context);
         OutputStandardRepository = new OutputStandardRepository(_context);
         TestAssessmentRepository = new TestAssessmentRepository(_context);
-        AttendanceRepository = new AttendanceRepository(_context);
         ReportAttendanceRepository = new ReportAttendanceRepository(_context);
         ApproveRequestRepository = new ApproveRequestRepository(_context);
         ClassTrainerRepository = new ClassTrainerRepository(_context);
@@ -51,6 +51,7 @@ public class UnitOfWork : IUnitOfWork
         UnitLessonRepository = new UnitLessonRepository(_context);
         UnitRepository = new UnitRepository(_context);
         FeedBackRepository = new FeedBackRepository(_context);
+        CalenderRepository = new CalenderRepository(_context);
     }
 
     // save changes
@@ -171,6 +172,25 @@ public class UnitOfWork : IUnitOfWork
             throw new TransactionException("Can't execute transaction: " + ex);
         }
     }
+
+    public async Task ExecuteTransactionAsync(Func<Task> action)
+    {
+        using var transaction = await _context.Database.BeginTransactionAsync();
+        try
+        {
+            await action();
+            await _context.SaveChangesAsync();
+            await transaction.CommitAsync();
+            Log.Information("Transaction committed");
+        }
+        catch (Exception ex)
+        {
+            await transaction.RollbackAsync();
+            Log.Error("Something went wrong can not execute transaction. It roll back");
+            throw new TransactionException("Can't execute transaction: " + ex);
+        }
+    }
+
     public List<object> GetTrackedEntities()
     {
         return _context.ChangeTracker

@@ -1,8 +1,12 @@
-﻿using Application.Class.Commands.AddTrainer;
+﻿using Application.Calenders.Queries.GetPagedCalendersByTrainingClassId;
+using Application.Class.Commands.SetCalenders;
+using Application.Class.Commands.AddTrainer;
 using Application.Class.Commands.CreateClass;
 using Application.Class.Commands.DeleteClass;
 using Application.Class.Commands.UpdateClass;
 using Application.Class.DTO;
+using Application.Class.DTOs;
+using Application.Class.Queries.GetAdminClass;
 using Application.Class.Queries.GetClass;
 using Application.Class.Queries.GetClassProgram;
 using Application.Commons;
@@ -24,13 +28,15 @@ namespace WebAPI.Controllers
         {
             return await _mediator.Send(new GetClassQuery(pageIndex, pageSize));
         }
-
+        [HttpGet("{id}/Admin")]
+        public async Task<Pagination<AdminClass>> GetClassAsync(int id, int pageIndex = 0, int pageSize = 10)
+            => await _mediator.Send(new GetAdminClassQuery(id, pageIndex, pageSize));
         [HttpGet("{id}")]
         public async Task<ClassDTO> Get(int id)
             => await _mediator.Send(new GetClassByIdQuery(id));
-        [HttpGet("Program")]
-        public async Task<Pagination<ClassProgram>> GetProgram(int pageIndex = 0, int pageSize = 10)
-            => await _mediator.Send(new GetClassProgramQuery(pageIndex, pageSize));
+        [HttpGet("{id}/Program")]
+        public async Task<Pagination<ClassProgram>> GetProgram(int id, int pageIndex = 0, int pageSize = 10)
+            => await _mediator.Send(new GetClassProgramQuery(id, pageIndex, pageSize));
         [HttpPost]
         [Authorize(Roles = "ClassAdmin")]
         public async Task<ClassDTO> Post([FromBody] CreateClassCommand request)
@@ -47,5 +53,30 @@ namespace WebAPI.Controllers
         [Authorize(Roles = "ClassAdmin")]
         public async Task<ClassDTO> Delete(int id)
             => await _mediator.Send(new DeleteClassCommand(id));
+
+        #region calenders
+
+        [HttpGet("{id}/calendars")]
+        public async Task<IActionResult> GetPagedCalendersByTrainingClassId(
+            int id,
+            [FromQuery] int pageIndex = 0,
+            [FromQuery] int pageSize = 10)
+            => Ok(await _mediator.Send(new GetPagedCalendersByTrainingClassIdQuery()
+            {
+                TrainingClassId = id,
+                PageIndex = pageIndex,
+                PageSize = pageSize
+            }));
+
+        [HttpPost("{id}/calenders/set-all")]
+        public async Task<IActionResult> SetCalendersOfTrainingClass(
+            int id,
+            [FromBody] SetCalendersOfTrainingClassCommand command)
+        {
+            command.TrainingClassId = id;
+            return Ok(await _mediator.Send(command));
+        }
+
+        #endregion calenders
     }
 }

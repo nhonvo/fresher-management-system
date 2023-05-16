@@ -5,8 +5,9 @@ using Application.Emails.Queries;
 using Application.Users.Commands.ImportUsersCSV;
 using Application.Users.DTO;
 using Application.Users.GetProfile.Queries;
-using Application.Users.GetUser.Queries;
 using Application.Users.Queries.ExportUsers;
+using Application.Users.Queries.GetTipsByUserId;
+using Application.Users.Queries.GetUser;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -49,7 +50,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("import-users-csv")]
-        public async Task<List<UserRecord>> ImportUsersCSV(
+        public async Task<List<UserCSV>> ImportUsersCSV(
         [FromQuery] bool? isScanEmail,
         [FromQuery] DuplicateHandle? duplicateHandle,
         [FromForm] IFormFile formFile)
@@ -61,5 +62,8 @@ namespace WebAPI.Controllers
         });
         #endregion CSV
 
+        [HttpGet("{id}/tips")]
+        public async Task<IActionResult> GetTipsByUserId(int id)
+        => Ok(await _mediator.Send(new GetTipsByUserIdQuery(id)));
     }
 }

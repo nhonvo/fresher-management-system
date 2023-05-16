@@ -1,0 +1,45 @@
+# image: mcr.microsoft.com/dotnet/sdk:7.0
+
+# stages:
+#   - build
+
+# variables:
+#   PROJECT_NAME: "TRAINING MANAGEMENT SYSTEM"
+#   BUILD_FOLDER: "build"
+
+# before_script:
+#   - dotnet restore
+
+# build_domain_job:
+#   stage: build
+#   script:
+#     - dotnet build --output $BUILD_FOLDER/Domain
+#     - cd Domain && dotnet pack --output $BUILD_FOLDER
+
+# build_application_job:
+#   stage: build
+#   script:
+#     - dotnet build --output $BUILD_FOLDER/Application
+#     - cd Application && dotnet pack --output $BUILD_FOLDER
+
+# build_infrastructures_job:
+#   stage: build
+#   script:
+#     - dotnet build --output $BUILD_FOLDER/Infrastructures
+#     - cd Infrastructures && dotnet pack --output $BUILD_FOLDER
+
+# build_webapi_job:
+#   stage: build
+#   script:
+#     - dotnet build --output $BUILD_FOLDER/WebAPI
+#     - cd WebAPI && dotnet pack --output $BUILD_FOLDER
+
+# # test_job:
+# #   stage: test
+# #   script:
+# #     - Your test commands here
+
+# # deploy_job:
+# #   stage: deploy
+# #   script:
+# #     - Your deployment commands here

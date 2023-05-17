@@ -485,3 +485,4 @@ Apis/Infrastructures/Persistence/ApplicationDbContextInitializer.cs
 **/Loggings/**
 # /Apis/WebAPI/appsettings.Development.json
 /Apis/WebAPI/appsettings.json
+Apis/WebAPI/wwwroot/uploads/

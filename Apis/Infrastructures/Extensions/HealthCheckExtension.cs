@@ -12,14 +12,14 @@ namespace Infrastructures.Extensions
 {
     public static class HealthCheckExtension
     {
-        public static void AddHealthCheck(this WebApplicationBuilder builder, string databaseConnection)
+        public static void AddHealthCheck(this IServiceCollection services)
         {
-            builder.Services.AddHealthChecks()
+            services.AddHealthChecks()
                 .AddCheck<HealthCheck>(nameof(HealthCheck), tags: new[] { "TrainingManagementSystem" })
                 .AddDbContextCheck<ApplicationDbContext>(tags: new[] { "db context" })
-                .AddSqlServer(databaseConnection ?? throw new InvalidOperationException(), tags: new[] { "database" });
+                .AddSqlServer("Data Source=TRUONGNHON;Initial Catalog=TrainingManagementSystem;Integrated Security=True;Encrypt=False;User Id =TRUONGNHON; Password = 123", tags: new[] { "database" });
 
-            builder.Services
+            services
                 .AddHealthChecksUI(options =>
                 {
                     options.AddHealthCheckEndpoint("Health Check API", "/hc");

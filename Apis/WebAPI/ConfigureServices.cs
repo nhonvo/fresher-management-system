@@ -43,6 +43,8 @@ namespace WebAPI
             // Memory cache extension
             services.AddCache();
 
+    
+
             services.AddHttpContextAccessor();
             // IValidator
             services.AddFluentValidationAutoValidation();

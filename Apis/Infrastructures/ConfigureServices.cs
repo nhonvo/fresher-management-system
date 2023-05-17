@@ -5,6 +5,7 @@ using Application.Interfaces;
 using Application.Repositories;
 using Application.Services;
 using Infrastructure.Files;
+using Infrastructures.Extensions;
 using Infrastructures.Mappers;
 using Infrastructures.Persistence;
 using Infrastructures.Repositories;
@@ -21,8 +22,9 @@ namespace Infrastructures
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             #endregion
             services.AddSingleton<HealthService>();
+            services.AddHealthCheck();
+
             #region Repositories
-            // services.AddScoped<IAttendanceRepository, AttendanceRepository>();
             services.AddScoped<IClassRepository, ClassRepository>();
             services.AddScoped<IClassStudentRepository, ClassStudentRepository>();
             services.AddScoped<IOutputStandardRepository, OutputStandardRepository>();
@@ -45,7 +47,7 @@ namespace Infrastructures
                     options.UseSqlServer(databaseConnection);
                 }
             });
-              // this configuration just use in-memory for fast develop
+            // this configuration just use in-memory for fast develop
             //services.AddDbContext<AppDbContext>(option => option.UseInMemoryDatabase("test"));
             #endregion
 

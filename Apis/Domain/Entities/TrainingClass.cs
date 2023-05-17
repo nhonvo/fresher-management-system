@@ -27,7 +27,6 @@ public class TrainingClass : BaseEntity
     public User ApproveBy { get; set; }
     public AttendeeType AttendeeType { get; set; }
     public string? ContactPoint { get; set; }
-    // public ICollection<UnitClassDetail> UnitClassDetail { get; set; }
     public int? TrainingProgramId { get; set; }
     public TrainingProgram? TrainingProgram { get; set; }
     public ICollection<ApproveRequest> ApproveRequests { get; set; }

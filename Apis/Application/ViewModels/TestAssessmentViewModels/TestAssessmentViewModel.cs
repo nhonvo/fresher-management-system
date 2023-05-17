@@ -1,4 +1,5 @@
-﻿using Domain.Enums;
+﻿using Domain.Entities;
+using Domain.Enums;
 
 namespace Application.ViewModels.TestAssessmentViewModels
 {
@@ -9,5 +10,6 @@ namespace Application.ViewModels.TestAssessmentViewModels
         public int AttendeeId { get; set; }
         public int SyllabusId { get; set; }
         public int TrainingCLassId { get; set; }
+        public ICollection<TestAssessment_TrainingMaterialsViewModel> Materials { get; set; }
     }
 }

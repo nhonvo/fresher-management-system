@@ -9,6 +9,7 @@ namespace Infrastructures.Mappers
         public TestAssessementProfile()
         {
             CreateMap<TestAssessmentViewModel, TestAssessment>().ReverseMap();
+            CreateMap<TestAssessment_TrainingMaterialsViewModel, TrainingMaterial>().ReverseMap();
             CreateMap<CreateTestAssessmentViewModel, TestAssessment>().ReverseMap();
             CreateMap<UpdateTestAssessmentViewModel, TestAssessment>().ReverseMap();
 

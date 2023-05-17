@@ -174,6 +174,9 @@ add quartz job
 // AUTHENTICATE: FORGET PASSWORD, REFRESH TOKEN
 // CHECK: attendance, approve request, feedback, score, report, csv
 
+AddOneUnitToSyllabus
+RemoveOneUnitToSyllabus
+
 // endpoints: POST: syllabuses/{id}/units
 // endpoints: DELETE: syllabuses/{id}/units/{unitid}
 

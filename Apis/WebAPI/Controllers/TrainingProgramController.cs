@@ -1,3 +1,4 @@
+using Application.Class.Commands.DuplicateTrainProgram;
 using Application.Commons;
 using Application.TrainingPrograms.Commands.AddOneSyllabusToTrainingProgram;
 using Application.TrainingPrograms.Commands.CreateTrainingProgram;
@@ -26,6 +27,10 @@ namespace WebAPI.Controllers
         [HttpGet("{id}")]
         public async Task<TrainingProgramDTO> GetAsync(int id)
             => await _mediator.Send(new GetTrainingProgramByIdQuery(id));
+        [HttpPost("Duplicate/{id}")]
+        [Authorize(Roles = "ClassAdmin")]
+        public async Task<TrainingProgramDTO> Duplicate(DuplicateTrainProgramCommand request)
+            => await _mediator.Send(request);
         [HttpPost]
         [Authorize(Roles = "ClassAdmin")]
         public async Task<TrainingProgramDTO> Post(CreateTrainingProgramCommand request)

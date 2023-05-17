@@ -28,7 +28,7 @@
         "Name": "Trainer",
         "Phone": "922-215-1843",
         "Password": "$2a$11$8SylUOilhjdL8bfK.8lIg.Heu52KFJrsKLsACsvUroxQAd660dBQG",
-        "Role":1,
+        "Role":2,
         "Gender": 0,
         "Status": 0,
         "DateOfBirth": "2022-06-11",

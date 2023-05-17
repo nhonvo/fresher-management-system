@@ -174,19 +174,19 @@ add quartz job
 // AUTHENTICATE: FORGET PASSWORD, REFRESH TOKEN
 // CHECK: attendance, approve request, feedback, score, report, csv
 
-AddOneUnitToSyllabus
-RemoveOneUnitToSyllabus
 
-// endpoints: POST: syllabuses/{id}/units
-// endpoints: DELETE: syllabuses/{id}/units/{unitid}
+// **done**: POST: syllabuses/{id}/units
+// **done**: DELETE: syllabuses/{id}/units/{unitid}
 
 // **done**: POST: program/{id}/syllabus/{syllabusid}
 // **done**: DELETE: program/{id}/syllabus/{syllabusid}
 
-// endpoints: POST: class/{id}/program
-// endpoints: DELETE: class/{id}/program
+// **done**: POST: class/{id}/program
+// **done**: DELETE: class/{id}/program
 
-// duplicates
+// **done** duplicates Syllabus
+
+// 
 
 // check send mail response
 

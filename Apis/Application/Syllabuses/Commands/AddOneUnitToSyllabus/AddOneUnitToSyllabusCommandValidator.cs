@@ -6,8 +6,10 @@ namespace Application.Syllabuses.Commands.AddOneUnitToSyllabus
     {
         public AddOneUnitToSyllabusCommandValidator()
         {
-            RuleFor(x => x.Code).NotEmpty().NotNull();
-            // add more validation
+            RuleFor(x => x.Name).NotEmpty().NotNull();
+            RuleFor(x => x.SyllabusSession).NotEmpty().NotNull();
+            RuleFor(x => x.UnitNumber).NotEmpty().NotNull();
+            RuleFor(x => x.SyllabusId).NotEmpty().NotNull();
         }
     }
 }

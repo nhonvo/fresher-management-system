@@ -49,15 +49,15 @@ namespace Application.SeedData.Queries.SeedData
                 });
             }
 
-            if (!await _unitOfWork.TrainingProgramRepository.AnyAsync())
-            {
-                string json = File.ReadAllText(@"../../Json/TrainingProgram.json");
-                List<TrainingProgram> trainingPrograms = JsonSerializer.Deserialize<List<TrainingProgram>>(json)!;
-                await _unitOfWork.ExecuteTransactionAsync(() =>
-                {
-                    _unitOfWork.TrainingProgramRepository.AddRangeAsync(trainingPrograms);
-                });
-            }
+            //if (!await _unitOfWork.TrainingProgramRepository.AnyAsync())
+            //{
+            //    string json = File.ReadAllText(@"../../Json/TrainingProgram.json");
+            //    List<TrainingProgram> trainingPrograms = JsonSerializer.Deserialize<List<TrainingProgram>>(json)!;
+            //    await _unitOfWork.ExecuteTransactionAsync(() =>
+            //    {
+            //        _unitOfWork.TrainingProgramRepository.AddRangeAsync(trainingPrograms);
+            //    });
+            //}
 
             if (!await _unitOfWork.ClassRepository.AnyAsync())
             {
@@ -123,6 +123,24 @@ namespace Application.SeedData.Queries.SeedData
                 await _unitOfWork.ExecuteTransactionAsync(() =>
                 {
                     _unitOfWork.UnitLessonRepository.AddRangeAsync(testAssessments);
+                });
+            }
+            if (!await _unitOfWork.OutputStandardRepository.AnyAsync())
+            {
+                string json = File.ReadAllText(@"../../Json/OutputStandard.json");
+                List<OutputStandard> testAssessments = JsonSerializer.Deserialize<List<OutputStandard>>(json)!;
+                await _unitOfWork.ExecuteTransactionAsync(() =>
+                {
+                    _unitOfWork.OutputStandardRepository.AddRangeAsync(testAssessments);
+                });
+            }
+            if (!await _unitOfWork.TrainingProgramRepository.AnyAsync())
+            {
+                string json = File.ReadAllText(@"../../Json/TrainingProgram.json");
+                List<TrainingProgram> trainingPrograms = JsonSerializer.Deserialize<List<TrainingProgram>>(json)!;
+                await _unitOfWork.ExecuteTransactionAsync(() =>
+                {
+                    _unitOfWork.TrainingProgramRepository.AddRangeAsync(trainingPrograms);
                 });
             }
         }

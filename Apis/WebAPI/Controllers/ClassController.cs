@@ -14,7 +14,7 @@ using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Application.Class.Commands.AddTrainProgramToClass;
-using Application.TrainingPrograms.DTOs;
+using Application.Class.Queries.GetClassDuration;
 
 namespace WebAPI.Controllers
 {
@@ -84,5 +84,13 @@ namespace WebAPI.Controllers
         }
 
         #endregion calenders
+
+        #region duration
+
+        [HttpGet("{id}/duration")]
+        public async Task<IActionResult> GetClassDuration(int id)
+            => Ok(await _mediator.Send(new GetClassDurationQuery(id)));
+
+        #endregion duration
     }
 }

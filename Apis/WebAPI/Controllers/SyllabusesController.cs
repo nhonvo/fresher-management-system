@@ -1,7 +1,9 @@
 using Apis.Domain.Enums;
 using Application.Commons;
+using Application.Syllabuses.Commands.AddOneUnitToSyllabus;
 using Application.Syllabuses.Commands.CreateSyllabus;
 using Application.Syllabuses.Commands.DeleteSyllabus;
+using Application.Syllabuses.Commands.DuplicateSyllabus;
 using Application.Syllabuses.Commands.ImportSyllabusesCSV;
 using Application.Syllabuses.Commands.UpdateSyllabus;
 using Application.Syllabuses.DTO;
@@ -9,6 +11,9 @@ using Application.Syllabuses.Queries.ExportSyllabusesCSV;
 using Application.Syllabuses.Queries.GetPagedSyllabusesByDateRange;
 using Application.Syllabuses.Queries.GetSyllabus;
 using Application.Syllabuses.Queries.GetSyllabusById;
+using Application.Syllabuses.Queries.GetSyllabusDetailById;
+using Application.Units.Commands.DeleteUnit;
+using Application.Units.DTO;
 using Domain.Enums;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
@@ -33,10 +38,20 @@ public class SyllabusesController : BasesController
     [HttpGet("{id}")]
     public async Task<IActionResult> GetAsync(int id)
      => Ok(await _mediator.Send(new GetSyllabusByIdQuery(id)));
+    [HttpGet("Detail/{id}")]
+    public async Task<IActionResult> GetDetailAsync(int id)
+     => Ok(await _mediator.Send(new GetSyllabusDetailByIdQuery(id)));
     [HttpPost]
     [Authorize(Roles = "Trainer")]
     public async Task<SyllabusDTO> Post([FromBody] CreateSyllabusCommand request)
     => await _mediator.Send(request);
+    [HttpPost("{id}/Unit")]
+    [Authorize(Roles = "Trainer")]
+    public async Task<bool> Post([FromBody] AddOneUnitToSyllabusCommand request)
+    => await _mediator.Send(request);
+    [HttpDelete("{id}/Unit")]
+    public async Task<UnitDTO> DeleteUnit(int id)
+    => await _mediator.Send(new DeleteUnitCommand(id));
     [HttpPut]
     [Authorize(Roles = "Trainer")]
     public async Task<SyllabusDTO> Put([FromBody] UpdateSyllabusCommand request)
@@ -44,6 +59,10 @@ public class SyllabusesController : BasesController
     [HttpDelete("{id}")]
     public async Task<SyllabusDTO> Delete(int id)
     => await _mediator.Send(new DeleteSyllabusCommand(id));
+    [HttpPost("Duplicate/{id}")]
+    [Authorize(Roles = "Trainer")]
+    public async Task<SyllabusDTO> Duplicate(int id)
+    => await _mediator.Send(new DuplicateSyllabusCommand(id));
 
     #region CSV
     [HttpGet("export-syllabuses-csv")]

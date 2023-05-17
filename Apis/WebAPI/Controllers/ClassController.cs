@@ -13,6 +13,8 @@ using Application.Commons;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Application.Class.Commands.AddTrainProgramToClass;
+using Application.TrainingPrograms.DTOs;
 
 namespace WebAPI.Controllers
 {
@@ -40,6 +42,10 @@ namespace WebAPI.Controllers
         [HttpPost]
         [Authorize(Roles = "ClassAdmin")]
         public async Task<ClassDTO> Post([FromBody] CreateClassCommand request)
+            => await _mediator.Send(request);
+        [HttpPost("TrainingProgram")]
+        [Authorize(Roles = "ClassAdmin")]
+        public async Task<ClassDTO> Post([FromBody] AddTrainProgramToClassCommand request)
             => await _mediator.Send(request);
         [HttpPost("add-trainer")]
         [Authorize(Roles = "ClassAdmin")]

@@ -6,7 +6,6 @@ namespace Domain.Entities;
 public class TrainingProgram : BaseEntity
 {
     public string Name { get; set; }
-    public int Duration { get; set; }
     public TrainingProgramStatus Status { get; set; }
 
     //Navigation properties

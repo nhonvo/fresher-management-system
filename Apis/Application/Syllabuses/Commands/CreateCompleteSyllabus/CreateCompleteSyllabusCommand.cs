@@ -5,9 +5,9 @@ using Domain.Entities;
 using Domain.Enums;
 using MediatR;
 
-namespace Application.Syllabuses.Commands.CreateSyllabus
+namespace Application.Syllabuses.Commands.CreateCompleteSyllabus
 {
-    public record CreateSyllabusCommand : IRequest<SyllabusDTO>
+    public record CreateCompleteSyllabusCommand : IRequest<SyllabusDTO>
     {
         public string Name { get; init; }
         public string Code { get; init; }
@@ -20,20 +20,20 @@ namespace Application.Syllabuses.Commands.CreateSyllabus
         public float FinalTheoryScheme { get; init; }
         public float FinalPracticeScheme { get; init; }
         public float GPAScheme { get; init; }
-        // public List<SyllabusUnit> Units { get; init; }
+        public List<SyllabusUnit> Units { get; init; }
     }
-    
-    public class CreateSyllabusHandler : IRequestHandler<CreateSyllabusCommand, SyllabusDTO>
+
+    public class CreateCompleteSyllabusHandler : IRequestHandler<CreateCompleteSyllabusCommand, SyllabusDTO>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
-        public CreateSyllabusHandler(IUnitOfWork unitOfWork, IMapper mapper)
+        public CreateCompleteSyllabusHandler(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
 
-        public async Task<SyllabusDTO> Handle(CreateSyllabusCommand request, CancellationToken cancellationToken)
+        public async Task<SyllabusDTO> Handle(CreateCompleteSyllabusCommand request, CancellationToken cancellationToken)
         {
             var syllabus = _mapper.Map<Syllabus>(request);
 

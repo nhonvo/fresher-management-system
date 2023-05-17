@@ -7,7 +7,6 @@ namespace Application.Syllabuses.Commands.CreateSyllabus
         public CreateSyllabusCommandValidator()
         {
             RuleFor(x => x.Code).NotEmpty().NotNull();
-            // add more validation
         }
     }
 }

@@ -29,7 +29,7 @@ namespace Application.TrainingPrograms.Commands.AddOneSyllabusToTrainingProgram
         public async Task<bool> Handle(AddOneSyllabusToTrainingProgramCommand request, CancellationToken cancellationToken)
         {
             var syllabusExist = await _unitOfWork.SyllabusRepository.AnyAsync(x => x.Id == request.syllabusId);
-            if (syllabusExist)
+            if (syllabusExist is false)
                 throw new NotFoundException("syllabus is not exist!!");
             var trainingProgram = await _unitOfWork.TrainingProgramRepository.FirstOrdDefaultAsync(x => x.Id == request.trainingProgramId);
             if (trainingProgram is null)

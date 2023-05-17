@@ -4,6 +4,7 @@ namespace Application.Syllabuses.DTO
 {
     public class SyllabusDTO
     {
+        public int Id { get; set; }
         public string Code { get; set; }
         public float Version { get; set; }
         public string Name { get; set; }
@@ -22,5 +23,6 @@ namespace Application.Syllabuses.DTO
         public float PassingGPA { get; set; }
         public bool IsActive { get; set; }
         public int Duration { get; set; }
+        public List<SyllabusUnit> Units { get; set; }
     }
 }

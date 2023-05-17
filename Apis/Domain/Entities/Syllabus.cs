@@ -17,11 +17,7 @@ namespace Domain.Entities
         public float FinalTheoryScheme { get; set; }
         public float FinalPracticeScheme { get; set; }
         public float GPAScheme { get; set; }
-        //public User CreateByUser { get; set; }
-        //public User ModificationByUser { get; set; }
-
-
-
+    
         // Navigation Property
 
         public ICollection<Unit> Units { get; set; }

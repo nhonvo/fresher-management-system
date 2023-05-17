@@ -35,7 +35,7 @@
         "IsDeleted": true,
         "Email": "trainer@gmail.com"
     },
-{"id":4,"Name":"Carlie Swyne","Phone":"840-322-6989","Password":"69haXkZb","Gender":1,"Status":2,"DateOfBirth":"2023-03-21","IsDeleted":true,"Email":"cswyne3@archive.org"},
+{"id":4,"Name":"Võ Thương Trường Nhơn","Phone":"840-322-6989","Password":"$2a$11$8SylUOilhjdL8bfK.8lIg.Heu52KFJrsKLsACsvUroxQAd660dBQG","Gender":1,"Status":2,"DateOfBirth":"2023-03-21","IsDeleted":true,"Email":"vothuongtruongnhon2002@gmail.com"},
 {"id":5,"Name":"Fidelia Ephson","Phone":"877-235-4669","Password":"xBJbQLb","Gender":1,"Status":3,"DateOfBirth":"2022-07-31","IsDeleted":false,"Email":"fephson4@google.com.hk"},
 {"id":6,"Name":"Tate Saer","Phone":"284-978-1575","Password":"lJoTno","Gender":0,"Status":2,"DateOfBirth":"2022-10-16","IsDeleted":false,"Email":"tsaer5@storify.com"},
 {"id":7,"Name":"Stanleigh Mawby","Phone":"208-993-1013","Password":"SqXpqq","Gender":1,"Status":1,"DateOfBirth":"2023-04-06","IsDeleted":false,"Email":"smawby6@google.com"},

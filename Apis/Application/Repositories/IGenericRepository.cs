@@ -1,5 +1,6 @@
 ﻿using Application.Commons;
 using Domain.Entities;
+using Domain.Enums;
 using Microsoft.EntityFrameworkCore.Query;
 using System.Linq.Expressions;
 
@@ -48,7 +49,11 @@ namespace Application.Repositories
         /// <param name="include">Include this entity in the result ( optional )</param>
         /// <param name="pageIndex">Index of the page ( optional ).</param>
         /// <param name="pageSize">Size of the page ( optional ). Default is 10</param>
-        Task<Pagination<TEntity>> GetAsync(Expression<Func<TEntity, bool>> filter = null, Func<IQueryable<TEntity>, IQueryable<TEntity>> include = null, int pageIndex = 0, int pageSize = 10);
+        Task<Pagination<TEntity>> GetAsync(
+            Expression<Func<TEntity, bool>> filter = null,
+            Func<IQueryable<TEntity>, IQueryable<TEntity>> include = null,
+            int pageIndex = 0,
+            int pageSize = 10);
 
         /// <summary>
         /// Get entities by filter. This is a async operation. You can use it to get a subset of entities that match the filter
@@ -56,8 +61,17 @@ namespace Application.Repositories
         /// <param name="filter">Expression that determines which entities to get</param>
         /// <param name="pageIndex">Index of page to start retrieving from.</param>
         /// <param name="pageSize">Size of page to retrieve from the API ( default 10</param>
-        Task<Pagination<TEntity>> GetAsync(Expression<Func<TEntity, bool>> filter, int pageIndex = 0, int pageSize = 10);
-
+        Task<Pagination<TEntity>> GetAsync(
+            Expression<Func<TEntity, bool>> filter,
+            int pageIndex = 0,
+            int pageSize = 10);
+        Task<Pagination<TEntity>> GetAsync<TKey>(
+                   Expression<Func<TEntity, bool>> filter = null,
+                   Func<IQueryable<TEntity>, IQueryable<TEntity>> include = null,
+                   Expression<Func<TEntity, TKey>> keySelectorForSort = null,
+                   SortType sortType = SortType.Ascending,
+                   int pageIndex = 0,
+                   int pageSize = 10);
         Task<Pagination<TEntity>> ToPagination(
             Expression<Func<TEntity, bool>>? filter = null,
             Func<IQueryable<TEntity>, IIncludableQueryable<TEntity, object>>? include = null,

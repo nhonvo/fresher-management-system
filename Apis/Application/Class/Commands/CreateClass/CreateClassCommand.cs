@@ -10,7 +10,7 @@ namespace Application.Class.Commands.CreateClass
 {
     public record CreateClassCommand : IRequest<ClassDTO>
     {
-        public string ClassName { get; set; }
+        public string ClassName { get; set; } = string.Empty;
         public DateTime ClassTimeStart { get; set; }
         public DateTime ClassTimeEnd { get; set; }
         public DateTime ReviewOn { get; set; }
@@ -25,7 +25,6 @@ namespace Application.Class.Commands.CreateClass
     public class CreateClassHandler : IRequestHandler<CreateClassCommand, ClassDTO>
     {
         private readonly IUnitOfWork _unitOfWork;
-        private readonly IJWTService x;
         private readonly IMapper _mapper;
         public CreateClassHandler(IUnitOfWork unitOfWork, IMapper mapper)
         {

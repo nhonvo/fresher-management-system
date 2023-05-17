@@ -8,14 +8,14 @@ public class ApproveRequestDTO
     public int Id { get; set; }
     public StatusApprove Status { get; set; }
     public int StudentId { get; set; }
-    public UserDTO Student { get; set; }
+    public UserDTO? Student { get; set; }
     public int ClassId { get; set; }
-    public TrainingClasses TrainingClass { get; set; }
+    public TrainingClasses? TrainingClass { get; set; }
 }
 public class TrainingClasses
 {
-    public string ClassName { get; set; }
-    public string ClassCode { get; set; }
+    public string ClassName { get; set; }= string.Empty;
+    public string ClassCode { get; set; }= string.Empty;
     public DateTime ClassTimeStart { get; set; }
     public DateTime ClassTimeEnd { get; set; }
     public DateTime ReviewOn { get; set; }

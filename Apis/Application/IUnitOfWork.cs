@@ -19,8 +19,9 @@ public interface IUnitOfWork : IDisposable
     IUnitLessonRepository UnitLessonRepository { get; }
     IClassTrainerRepository ClassTrainerRepository { get; }
     ITrainingProgramRepository TrainingProgramRepository { get; }
-    IFeedBackrepository FeedBackRepository { get; }
+    IFeedBackRepository FeedBackRepository { get; }
     ICalenderRepository CalenderRepository { get; }
+    IProgramSyllabusRepository ProgramSyllabusRepository { get; }
 
     /// <summary>
     /// Saves changes to the database. This is called when the user changes the data or saves a new version of the data.

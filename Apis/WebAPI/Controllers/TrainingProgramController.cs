@@ -1,6 +1,8 @@
 using Application.Commons;
+using Application.TrainingPrograms.Commands.AddOneSyllabusToTrainingProgram;
 using Application.TrainingPrograms.Commands.CreateTrainingProgram;
 using Application.TrainingPrograms.Commands.DeleteTrainingProgram;
+using Application.TrainingPrograms.Commands.RemoveOneSyllabusToTrainingProgram;
 using Application.TrainingPrograms.Commands.UpdateTrainingProgram;
 using Application.TrainingPrograms.DTOs;
 using Application.TrainingPrograms.Queries.GetTrainingProgram;
@@ -28,6 +30,14 @@ namespace WebAPI.Controllers
         [Authorize(Roles = "ClassAdmin")]
         public async Task<TrainingProgramDTO> Post(CreateTrainingProgramCommand request)
             => await _mediator.Send(request);
+        [HttpPost("{trainingProgramId}/Syllabus")]
+        [Authorize(Roles = "ClassAdmin")]
+        public async Task<IActionResult> AddOneSyllabusToTrainingProgram(int syllabusId, int trainingProgramId)
+        => Ok(await _mediator.Send(new AddOneSyllabusToTrainingProgramCommand(syllabusId, trainingProgramId)));
+        [HttpDelete("{trainingProgramId}/Syllabus")]
+        [Authorize(Roles = "ClassAdmin")]
+        public async Task<IActionResult> RemnoveOneSyllabusToTrainingProgram(int syllabusId, int trainingProgramId)
+        => Ok(await _mediator.Send(new RemoveOneSyllabusToTrainingProgramCommand(syllabusId, trainingProgramId)));
         [HttpPut]
         [Authorize(Roles = "ClassAdmin")]
         public async Task<TrainingProgramDTO> Put(UpdateTrainingProgramCommand request)

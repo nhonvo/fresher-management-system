@@ -2,7 +2,7 @@
 
 namespace Application.Repositories
 {
-    public interface IFeedBackrepository : IGenericRepository<FeedBack>
+    public interface IFeedBackRepository : IGenericRepository<FeedBack>
     {
     }
 }

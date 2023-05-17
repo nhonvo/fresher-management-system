@@ -10,13 +10,12 @@ namespace Application.Account.Commands.Login;
 
 public record LoginCommand : IRequest<AccountDTO>
 {
-    public string Email { get; set; }
-    public string Password { get; set; }
+    public string Email { get; set; } = string.Empty;
+    public string Password { get; set; } = string.Empty;
 }
 public class LoginCommandHandler : IRequestHandler<LoginCommand, AccountDTO>
 {
     private readonly IUnitOfWork _unitOfWork;
-    private readonly IClaimService _claimService;
     private readonly IMapper _mapper;
     private readonly AppConfiguration _configuration;
     private readonly ICurrentTime _currentTime;

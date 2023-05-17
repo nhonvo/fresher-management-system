@@ -171,7 +171,7 @@ add quartz job
 // TODO: cleanup source , analyst by rider
 //TODO: write test project and test endpoints
 
-// AUTHENTICATE: FORGET PASSWORD.
+// AUTHENTICATE: FORGET PASSWORD, REFRESH TOKEN
 // CHECK: attendance, approve request, feedback, score, report, csv
 
 // endpoints: POST: syllabuses/{id}/units

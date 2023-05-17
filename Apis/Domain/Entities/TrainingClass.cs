@@ -21,7 +21,6 @@ public class TrainingClass : BaseEntity
     public ICollection<ClassAdmin> Admin { get; set; }
     public ICollection<ClassTrainer> ClassTrainers { get; set; }
     public ICollection<ClassStudent> Students { get; set; }
-
     public int? ReviewByUserId { get; set; }
     public User ReviewBy { get; set; }
     public int? ApproveByUserId { get; set; }
@@ -31,7 +30,6 @@ public class TrainingClass : BaseEntity
     public ICollection<UnitClassDetail> UnitClassDetail { get; set; }
     public int? TrainingProgramId { get; set; }
     public TrainingProgram? TrainingProgram { get; set; }
-    // public ICollection<Attendance> Attendances { get; set; }
     public ICollection<ApproveRequest> ApproveRequests { get; set; }
     public ICollection<TestAssessment> TestAssessments { get; set; }
     public ICollection<Calender> Calenders { get; set; }

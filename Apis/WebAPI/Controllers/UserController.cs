@@ -8,6 +8,7 @@ using Application.Users.GetProfile.Queries;
 using Application.Users.Queries.ExportUsers;
 using Application.Users.Queries.GetTipsByUserId;
 using Application.Users.Queries.GetUser;
+using Domain.Enums;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -21,19 +22,14 @@ namespace WebAPI.Controllers
         {
             _mediator = mediator;
         }
-        [HttpPost("SendMail")]
-        public async Task<bool> SendMail([FromBody] SendMailCommand request)
-            => await _mediator.Send(request);
-        [HttpPost("SendMailCreate")]
-        public async Task<bool> SendMailCreate([FromBody] SendMailCreateUserCommand request)
-            => await _mediator.Send(request);
-        [HttpGet("getMail")]
-        public async Task<string> GetMail()
-            => await _mediator.Send(new GetMailTemplateQuery());
         [HttpGet]
         [Authorize(Roles = "SuperAdmin")]
-        public async Task<Pagination<UserDTO>> GetAsync(int pageIndex = 0, int pageSize = 10)
-            => await _mediator.Send(new GetUserQuery(pageIndex, pageSize));
+        public async Task<Pagination<UserDTO>> GetAsync(
+            string? keyword,
+            SortType sortType = SortType.Ascending,
+            int pageIndex = 0,
+            int pageSize = 10)
+            => await _mediator.Send(new GetUserQuery(keyword, pageIndex, pageSize, sortType));
 
         [HttpGet("Profile")]
         [Authorize]

@@ -8,12 +8,34 @@ using MediatR;
 
 namespace Application.TrainingPrograms.Commands.UpdateTrainingProgram
 {
+    //    public async Task UpdateClassStatusAsync(TrainingClassStatusUpdateDTO updateDTO)
+    //     {
+    //         var _trainingClass = await _unitOfWork.TrainingClass.GetAsync(b => b.Id == updateDTO.TrainingClassId);
+    //         _trainingClass.Status = updateDTO.Status;
+    //         await _unitOfWork.SaveChangesAsync();
+    //     }
+    //   public ClassStatus Status { get; set; }
+    //     public int TrainingClassId { get; set; }
+
+    //     public async Task UpdateClassReviewerAsync(TrainingClassReviewUpdateDTO updateDTO)
+    //     {
+    //         var _trainingClass = await _unitOfWork.TrainingClass.GetAsync(b => b.Id == updateDTO.TrainingClassId);
+    //         _trainingClass.UserReviewedId = updateDTO.UserReviewedId;
+    //         await _unitOfWork.SaveChangesAsync();
+    //     }
+    //   public int UserReviewedId { get; set; }
+    //     public int TrainingClassId { get; set; }
     public record UpdateTrainingProgramCommand : IRequest<TrainingProgramDTO>
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public AttendeeType AttendeeType { get; set; }
         public int Duration { get; set; }
-        public TrainingProgramStatus Status { get; set; }
+        public DateTime ClassTimeStart { get; set; }
+        public DateTime ClassTimeEnd { get; set; }
+        public int NumberAttendeePlanned { get; set; }
+        public int NumberAttendeeAccepted { get; set; }
+        public int NumberAttendeeActual { get; set; }
     }
     public class UpdateTrainingProgramCommandHandler : IRequestHandler<UpdateTrainingProgramCommand, TrainingProgramDTO>
     {

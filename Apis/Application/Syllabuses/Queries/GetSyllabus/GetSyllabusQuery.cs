@@ -1,12 +1,17 @@
 using Application.Commons;
 using Application.Syllabuses.DTO;
 using AutoMapper;
+using Domain.Enums;
 using MediatR;
 
 
 namespace Application.Syllabuses.Queries.GetSyllabus
 {
-    public record GetSyllabusQuery(int PageIndex = 0, int PageSize = 10) : IRequest<Pagination<SyllabusDTO>>;
+    public record GetSyllabusQuery(
+        string? keyword = null,
+        int PageIndex = 0,
+        int PageSize = 10,
+        SortType sortType = SortType.Ascending) : IRequest<Pagination<SyllabusDTO>>;
 
     public class GetSyllabusHandler : IRequestHandler<GetSyllabusQuery, Pagination<SyllabusDTO>>
     {
@@ -20,7 +25,11 @@ namespace Application.Syllabuses.Queries.GetSyllabus
         }
         public async Task<Pagination<SyllabusDTO>> Handle(GetSyllabusQuery request, CancellationToken cancellationToken)
         {
-            var syllabus = await _unitOfWork.SyllabusRepository.ToPagination(request.PageIndex, request.PageSize);
+            var syllabus = await _unitOfWork.SyllabusRepository.GetAsync<DateTime>(
+               pageIndex: request.PageIndex,
+               pageSize: request.PageSize,
+               sortType: SortType.Ascending,
+               keySelectorForSort: x => x.CreationDate);
             var result = _mapper.Map<Pagination<SyllabusDTO>>(syllabus);
             return result;
         }

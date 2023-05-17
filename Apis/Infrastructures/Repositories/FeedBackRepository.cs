@@ -4,7 +4,7 @@ using Infrastructures.Persistence;
 
 namespace Infrastructures.Repositories
 {
-    public class FeedBackRepository : GenericRepository<FeedBack>, IFeedBackrepository
+    public class FeedBackRepository : GenericRepository<FeedBack>, IFeedBackRepository
     {
         private readonly ApplicationDbContext _context;
 

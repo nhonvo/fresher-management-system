@@ -1,11 +1,16 @@
 using Application.Commons;
 using Application.Users.DTO;
 using AutoMapper;
+using Domain.Enums;
 using MediatR;
 
 namespace Application.Users.Queries.GetUser
 {
-    public record GetUserQuery(int PageIndex = 0, int PageSize = 10) : IRequest<Pagination<UserDTO>>;
+    public record GetUserQuery(
+        string? keyword = null,
+        int PageIndex = 0,
+        int PageSize = 10,
+        SortType sortType = SortType.Ascending) : IRequest<Pagination<UserDTO>>;
     public class GetUserHandler : IRequestHandler<GetUserQuery, Pagination<UserDTO>>
     {
         private readonly IUnitOfWork _unitOfWork;
@@ -18,7 +23,12 @@ namespace Application.Users.Queries.GetUser
         }
         public async Task<Pagination<UserDTO>> Handle(GetUserQuery request, CancellationToken cancellationToken)
         {
-            var user = await _unitOfWork.UserRepository.ToPagination(request.PageIndex, request.PageSize);
+            var user = await _unitOfWork.UserRepository.GetAsync<string>(
+             pageIndex: request.PageIndex,
+             pageSize: request.PageSize,
+             sortType: SortType.Ascending,
+             keySelectorForSort: x => x.Email);
+
             var result = _mapper.Map<Pagination<UserDTO>>(user);
             return result;
         }

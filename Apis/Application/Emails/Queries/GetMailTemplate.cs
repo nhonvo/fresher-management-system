@@ -17,9 +17,9 @@ namespace Application.Emails.Queries
     {
         public async Task<string> Handle(GetMailTemplateQuery request, CancellationToken cancellationToken)
         {
-            // TODO: USE relative path link instead
+            Console.WriteLine(Directory.GetCurrentDirectory() + "Here!!!!");
             string body = string.Empty;
-            using (StreamReader reader = new StreamReader(@"D:\SRS_FA TRAINING MANAGEMENT SYSTEM\HtmlTemplate\MailTemplate\Layout.html"))
+            using (StreamReader reader = new StreamReader("../../../../../SRS_FA TRAINING MANAGEMENT SYSTEM/HtmlTemplate/MailTemplate/Layout.html"))
             {
                 string line = "";
                 StringBuilder stringBuilder = new StringBuilder();

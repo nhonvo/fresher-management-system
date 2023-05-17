@@ -132,14 +132,14 @@ public class ApiExceptionFilterAttribute : ExceptionFilterAttribute
     {
         var details = new ProblemDetails
         {
-            Status = StatusCodes.Status500InternalServerError,
-            Title = "TransactionException",
+            Status = StatusCodes.Status400BadRequest,
+            Title = "Bad Request",
             Detail = context.Exception.Message,
         };
 
         context.Result = new ObjectResult(details)
         {
-            StatusCode = StatusCodes.Status500InternalServerError
+            StatusCode = StatusCodes.Status400BadRequest
         };
 
         context.ExceptionHandled = true;

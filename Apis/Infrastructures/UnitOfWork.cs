@@ -30,8 +30,9 @@ public class UnitOfWork : IUnitOfWork
     public IUnitLessonRepository UnitLessonRepository { get; }
     public IClassTrainerRepository ClassTrainerRepository { get; }
     public ITrainingProgramRepository TrainingProgramRepository { get; }
-    public IFeedBackrepository FeedBackRepository { get; }
+    public IFeedBackRepository FeedBackRepository { get; }
     public ICalenderRepository CalenderRepository { get; }
+    public IProgramSyllabusRepository ProgramSyllabusRepository { get; }
     //
     public UnitOfWork(ApplicationDbContext dbContext)
     {
@@ -52,6 +53,7 @@ public class UnitOfWork : IUnitOfWork
         UnitRepository = new UnitRepository(_context);
         FeedBackRepository = new FeedBackRepository(_context);
         CalenderRepository = new CalenderRepository(_context);
+        ProgramSyllabusRepository = new ProgramSyllabusRepository(_context);
     }
 
     // save changes

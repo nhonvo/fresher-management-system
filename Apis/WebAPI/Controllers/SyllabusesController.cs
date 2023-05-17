@@ -9,6 +9,7 @@ using Application.Syllabuses.Queries.ExportSyllabusesCSV;
 using Application.Syllabuses.Queries.GetPagedSyllabusesByDateRange;
 using Application.Syllabuses.Queries.GetSyllabus;
 using Application.Syllabuses.Queries.GetSyllabusById;
+using Domain.Enums;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -23,11 +24,15 @@ public class SyllabusesController : BasesController
         _mediator = mediator;
     }
     [HttpGet]
-    public async Task<Pagination<SyllabusDTO>> Get(int pageIndex = 0, int pageSize = 10)
-     => await _mediator.Send(new GetSyllabusQuery(pageIndex, pageSize));
+    public async Task<IActionResult> GetAsync(
+        string? keyword,
+        SortType sortType = SortType.Ascending,
+        int pageIndex = 0,
+        int pageSize = 10)
+     => Ok(await _mediator.Send(new GetSyllabusQuery(keyword, pageIndex, pageSize, sortType)));
     [HttpGet("{id}")]
-    public async Task<SyllabusDTO> Get(int id)
-     => await _mediator.Send(new GetSyllabusByIdQuery(id));
+    public async Task<IActionResult> GetAsync(int id)
+     => Ok(await _mediator.Send(new GetSyllabusByIdQuery(id)));
     [HttpPost]
     [Authorize(Roles = "Trainer")]
     public async Task<SyllabusDTO> Post([FromBody] CreateSyllabusCommand request)
@@ -61,7 +66,7 @@ public class SyllabusesController : BasesController
     #endregion CSV
 
     [HttpGet("get-paged-syllabuses-by-date-range")]
-    public async Task<Pagination<SyllabusDTO>> GetPagedSyllabusesByDateRange(
+    public async Task<Pagination<SyllabusDTO>> GetAsyncPagedSyllabusesByDateRange(
         [FromQuery] DateTime fromtDate,
         [FromQuery] DateTime toDate,
         [FromQuery] int pageIndex = 0,

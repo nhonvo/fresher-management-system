@@ -13,4 +13,13 @@ namespace Infrastructures.Repositories
             _dbcontext = dbContext;
         }
     }
+    public class ProgramSyllabusRepository : GenericRepository<ProgramSyllabus>, IProgramSyllabusRepository
+    {
+        private readonly ApplicationDbContext _dbcontext;
+
+        public ProgramSyllabusRepository(ApplicationDbContext dbContext) : base(dbContext)
+        {
+            _dbcontext = dbContext;
+        }
+    }
 }

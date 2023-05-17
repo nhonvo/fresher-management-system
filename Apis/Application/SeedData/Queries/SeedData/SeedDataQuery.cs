@@ -30,34 +30,34 @@ namespace Application.SeedData.Queries.SeedData
         }
         public async Task TrySeedAsync()
         {
-            //if (!await _unitOfWork.UserRepository.AnyAsync())
-            //{
-            //    string json = File.ReadAllText(@"../../Json/User.json");
-            //    List<User> users = JsonSerializer.Deserialize<List<User>>(json)!;
-            //    await _unitOfWork.ExecuteTransactionAsync(() =>
-            //    {
-            //        _unitOfWork.UserRepository.AddRangeAsync(users);
-            //    });
-            //};
-            //if (!await _unitOfWork.SyllabusRepository.AnyAsync())
-            //{
-            //    string json = File.ReadAllText(@"../../Json/Syllabus.json");
-            //    List<Syllabus> syllabuses = JsonSerializer.Deserialize<List<Syllabus>>(json)!;
-            //    await _unitOfWork.ExecuteTransactionAsync(() =>
-            //    {
-            //        _unitOfWork.SyllabusRepository.AddRangeAsync(syllabuses);
-            //    });
-            //}
+            if (!await _unitOfWork.UserRepository.AnyAsync())
+            {
+                string json = File.ReadAllText(@"../../Json/User.json");
+                List<User> users = JsonSerializer.Deserialize<List<User>>(json)!;
+                await _unitOfWork.ExecuteTransactionAsync(() =>
+                {
+                    _unitOfWork.UserRepository.AddRangeAsync(users);
+                });
+            };
+            if (!await _unitOfWork.SyllabusRepository.AnyAsync())
+            {
+                string json = File.ReadAllText(@"../../Json/Syllabus.json");
+                List<Syllabus> syllabuses = JsonSerializer.Deserialize<List<Syllabus>>(json)!;
+                await _unitOfWork.ExecuteTransactionAsync(() =>
+                {
+                    _unitOfWork.SyllabusRepository.AddRangeAsync(syllabuses);
+                });
+            }
 
-            //if (!await _unitOfWork.TrainingProgramRepository.AnyAsync())
-            //{
-            //    string json = File.ReadAllText(@"../../Json/TrainingProgram.json");
-            //    List<TrainingProgram> trainingPrograms = JsonSerializer.Deserialize<List<TrainingProgram>>(json)!;
-            //    await _unitOfWork.ExecuteTransactionAsync(() =>
-            //    {
-            //        _unitOfWork.TrainingProgramRepository.AddRangeAsync(trainingPrograms);
-            //    });
-            //}
+            if (!await _unitOfWork.TrainingProgramRepository.AnyAsync())
+            {
+                string json = File.ReadAllText(@"../../Json/TrainingProgram.json");
+                List<TrainingProgram> trainingPrograms = JsonSerializer.Deserialize<List<TrainingProgram>>(json)!;
+                await _unitOfWork.ExecuteTransactionAsync(() =>
+                {
+                    _unitOfWork.TrainingProgramRepository.AddRangeAsync(trainingPrograms);
+                });
+            }
 
             if (!await _unitOfWork.ClassRepository.AnyAsync())
             {
@@ -123,6 +123,15 @@ namespace Application.SeedData.Queries.SeedData
                {
                    _unitOfWork.UnitRepository.AddRangeAsync(testAssessments);
                });
+            }
+            if (!await _unitOfWork.UnitLessonRepository.AnyAsync())
+            {
+                string json = File.ReadAllText(@"../../Json/UnitLesson.json");
+                List<UnitLesson> testAssessments = JsonSerializer.Deserialize<List<UnitLesson>>(json)!;
+                await _unitOfWork.ExecuteTransactionAsync(() =>
+                {
+                    _unitOfWork.UnitLessonRepository.AddRangeAsync(testAssessments);
+                });
             }
         }
     }

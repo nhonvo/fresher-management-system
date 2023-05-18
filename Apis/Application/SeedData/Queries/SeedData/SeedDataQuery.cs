@@ -58,15 +58,15 @@ namespace Application.SeedData.Queries.SeedData
                     _unitOfWork.TrainingProgramRepository.AddRangeAsync(trainingPrograms);
                 });
             }
-            if (!await _unitOfWork.ProgramSyllabusRepository.AnyAsync())
-            {
-                string json = File.ReadAllText(@"../../Json/ProgramSyllabuses.json");
-                List<ProgramSyllabus> programSyllabuses = JsonSerializer.Deserialize<List<ProgramSyllabus>>(json)!;
-                await _unitOfWork.ExecuteTransactionAsync(() =>
-                {
-                    _unitOfWork.ProgramSyllabusRepository.AddRangeAsync(programSyllabuses);
-                });
-            }
+            // if (!await _unitOfWork.ProgramSyllabusRepository.AnyAsync())
+            // {
+            //     string json = File.ReadAllText(@"../../Json/ProgramSyllabuses.json");
+            //     List<ProgramSyllabus> programSyllabuses = JsonSerializer.Deserialize<List<ProgramSyllabus>>(json)!;
+            //     await _unitOfWork.ExecuteTransactionAsync(() =>
+            //     {
+            //         _unitOfWork.ProgramSyllabusRepository.AddRangeAsync(programSyllabuses);
+            //     });
+            // }
 
             if (!await _unitOfWork.ClassRepository.AnyAsync())
             {

@@ -5,10 +5,10 @@ namespace Domain.Entities;
 #pragma warning disable
 public class TrainingClass : BaseEntity
 {
-    public string ClassName { get; set; }
-    public string ClassCode { get; set; }
-    public DateTime ClassTimeStart { get; set; }
-    public DateTime ClassTimeEnd { get; set; }
+    public string Name { get; set; }
+    public string Code { get; set; }
+    public DateTime TimeStart { get; set; }
+    public DateTime TimeEnd { get; set; }
     public DateTime ReviewOn { get; set; }
     public DateTime ApproveOn { get; set; }
     public int NumberAttendeePlanned { get; set; }
@@ -16,7 +16,7 @@ public class TrainingClass : BaseEntity
     public int NumberAttendeeActual { get; set; }
 
     // Navigation Properties
-    public ClassLocation ClassLocation { get; set; }
+    public ClassLocation Location { get; set; }
     public ClassStatus Status { get; set; }
     public ICollection<ClassAdmin> Admin { get; set; }
     public ICollection<ClassTrainer> ClassTrainers { get; set; }
@@ -27,7 +27,6 @@ public class TrainingClass : BaseEntity
     public User ApproveBy { get; set; }
     public AttendeeType AttendeeType { get; set; }
     public string? ContactPoint { get; set; }
-    // public ICollection<UnitClassDetail> UnitClassDetail { get; set; }
     public int? TrainingProgramId { get; set; }
     public TrainingProgram? TrainingProgram { get; set; }
     public ICollection<ApproveRequest> ApproveRequests { get; set; }

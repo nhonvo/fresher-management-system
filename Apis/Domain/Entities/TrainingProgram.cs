@@ -14,7 +14,7 @@ public class TrainingProgram : BaseEntity
     public TrainingClass? TrainingClass { get; set; }
     public ICollection<ProgramSyllabus> ProgramSyllabus { get; set; }
     public ICollection<TestAssessment> TestAssessments { get; set; }
-    public DateTime CreationDate { get; set; }
+    public DateTime? CreationDate { get; set; }
 
     public int? CreatedBy { get; set; }
     public User? CreateByUser { get; set; }

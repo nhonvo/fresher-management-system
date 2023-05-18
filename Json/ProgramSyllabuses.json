@@ -1,0 +1,72 @@
+[
+    {
+        "SyllabusId": 50,
+        "TrainingProgramId": 1,
+        "IsDeleted": false
+    },
+    {
+        "SyllabusId": 49,
+        "TrainingProgramId": 1,
+        "IsDeleted": false
+    },
+    {
+        "SyllabusId": 48,
+        "TrainingProgramId": 1,
+        "IsDeleted": false
+    },
+    {
+        "SyllabusId": 47,
+        "TrainingProgramId": 1,
+        "IsDeleted": false
+    },
+    {
+        "SyllabusId": 82,
+        "TrainingProgramId": 2,
+        "IsDeleted": true
+    },
+    {
+        "SyllabusId": 83,
+        "TrainingProgramId": 2,
+        "IsDeleted": true
+    },
+    {
+        "SyllabusId": 86,
+        "TrainingProgramId": 2,
+        "IsDeleted": true
+    },
+    {
+        "SyllabusId": 72,
+        "TrainingProgramId": 3,
+        "IsDeleted": true
+    },
+    {
+        "SyllabusId": 73,
+        "TrainingProgramId": 3,
+        "IsDeleted": true
+    },
+    {
+        "SyllabusId": 74,
+        "TrainingProgramId": 3,
+        "IsDeleted": true
+    },
+    {
+        "SyllabusId": 156,
+        "TrainingProgramId": 4,
+        "IsDeleted": false
+    },
+    {
+        "SyllabusId": 126,
+        "TrainingProgramId": 4,
+        "IsDeleted": false
+    },
+    {
+        "SyllabusId": 136,
+        "TrainingProgramId": 4,
+        "IsDeleted": false
+    },
+    {
+        "SyllabusId": 115,
+        "TrainingProgramId": 29,
+        "IsDeleted": false
+    }
+]

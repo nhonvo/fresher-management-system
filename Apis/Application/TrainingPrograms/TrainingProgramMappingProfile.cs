@@ -13,7 +13,6 @@ namespace Application.TrainingPrograms
             CreateMap<TrainingProgram, TrainingProgramDTO>();
             CreateMap<TrainingProgram, CreateTrainingProgramCommand>();
             CreateMap<TrainingProgram, UpdateTrainingProgramCommand>();
-
         }
     }
 }

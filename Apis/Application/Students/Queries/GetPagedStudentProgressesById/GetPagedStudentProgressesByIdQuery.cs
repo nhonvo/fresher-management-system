@@ -110,7 +110,7 @@ public class GetPagedStudentProgressesByIdHandler : IRequestHandler<GetPagedStud
             studentProgressList.Add(new StudentProgressDTO()
             {
                 ClassId = classStudent.TrainingClassId,
-                ClassName = classStudent.TrainingClass.ClassName,
+                ClassName = classStudent.TrainingClass.Name,
                 StudentQuizAvg = studentClassQuizScoreList.Average(),
                 StudentAssignmentAvg = studentClassAssignmentScoreList.Average(),
                 StudentFinalTheoryAvg = studentClassFinalTheoryScoreList.Average(),

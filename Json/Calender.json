@@ -96,7 +96,7 @@
     "Count": 11,
     "DeletedBy": 11,
     "DeletionDate": "2023-02-24",
-    "IsDeleted": true
+    "IsDeleted": false
   },
   {
     "TrainingClassId": 1,
@@ -114,7 +114,7 @@
     "Count": 13,
     "DeletedBy": 13,
     "DeletionDate": "2023-03-21",
-    "IsDeleted": true
+    "IsDeleted": false
   },
   {
     "TrainingClassId": 14,
@@ -123,7 +123,7 @@
     "Count": 14,
     "DeletedBy": 14,
     "DeletionDate": "2022-11-22",
-    "IsDeleted": true
+    "IsDeleted": false
   },
   {
     "TrainingClassId": 15,
@@ -150,7 +150,7 @@
     "Count": 17,
     "DeletedBy": 17,
     "DeletionDate": "2022-07-20",
-    "IsDeleted": true
+    "IsDeleted": false
   },
   {
     "TrainingClassId": 18,
@@ -204,7 +204,7 @@
     "Count": 23,
     "DeletedBy": 23,
     "DeletionDate": "2022-08-13",
-    "IsDeleted": true
+    "IsDeleted": false
   },
   {
     "TrainingClassId": 24,
@@ -213,7 +213,7 @@
     "Count": 24,
     "DeletedBy": 24,
     "DeletionDate": "2023-02-23",
-    "IsDeleted": true
+    "IsDeleted": false
   },
   {
     "TrainingClassId": 25,
@@ -222,7 +222,7 @@
     "Count": 25,
     "DeletedBy": 25,
     "DeletionDate": "2022-08-17",
-    "IsDeleted": true
+    "IsDeleted": false
   },
   {
     "TrainingClassId": 26,
@@ -231,7 +231,7 @@
     "Count": 26,
     "DeletedBy": 26,
     "DeletionDate": "2022-11-11",
-    "IsDeleted": true
+    "IsDeleted": false
   },
   {
     "TrainingClassId": 27,
@@ -285,7 +285,7 @@
     "Count": 32,
     "DeletedBy": 32,
     "DeletionDate": "2022-05-28",
-    "IsDeleted": true
+    "IsDeleted": false
   },
   {
     "TrainingClassId": 33,
@@ -339,7 +339,7 @@
     "Count": 38,
     "DeletedBy": 38,
     "DeletionDate": "2022-08-21",
-    "IsDeleted": true
+    "IsDeleted": false
   },
   {
     "TrainingClassId": 39,
@@ -357,7 +357,7 @@
     "Count": 40,
     "DeletedBy": 40,
     "DeletionDate": "2022-07-22",
-    "IsDeleted": true
+    "IsDeleted": false
   },
   {
     "TrainingClassId": 41,
@@ -366,7 +366,7 @@
     "Count": 41,
     "DeletedBy": 41,
     "DeletionDate": "2022-10-09",
-    "IsDeleted": true
+    "IsDeleted": false
   },
   {
     "TrainingClassId": 42,
@@ -375,7 +375,7 @@
     "Count": 42,
     "DeletedBy": 42,
     "DeletionDate": "2023-02-07",
-    "IsDeleted": true
+    "IsDeleted": false
   },
   {
     "TrainingClassId": 43,
@@ -402,7 +402,7 @@
     "Count": 45,
     "DeletedBy": 45,
     "DeletionDate": "2023-01-08",
-    "IsDeleted": true
+    "IsDeleted": false
   },
   {
     "TrainingClassId": 46,
@@ -429,7 +429,7 @@
     "Count": 48,
     "DeletedBy": 48,
     "DeletionDate": "2023-05-01",
-    "IsDeleted": true
+    "IsDeleted": false
   },
   {
     "TrainingClassId": 49,
@@ -438,7 +438,7 @@
     "Count": 49,
     "DeletedBy": 49,
     "DeletionDate": "2023-01-15",
-    "IsDeleted": true
+    "IsDeleted": false
   },
   {
     "TrainingClassId": 50,
@@ -447,6 +447,6 @@
     "Count": 50,
     "DeletedBy": 50,
     "DeletionDate": "2022-06-19",
-    "IsDeleted": true
+    "IsDeleted": false
   }
 ]

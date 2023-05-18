@@ -7,9 +7,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Application.Class.Queries.GetClassDetail
 {
-    public record GetClassDetailQuery(int id) : IRequest<ClassDTO>;
+    public record GetClassDetailQuery(int id) : IRequest<ClassDetail>;
 
-    public class GetClassDetailHandler : IRequestHandler<GetClassDetailQuery, ClassDTO>
+    public class GetClassDetailHandler : IRequestHandler<GetClassDetailQuery, ClassDetail>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
@@ -19,7 +19,7 @@ namespace Application.Class.Queries.GetClassDetail
             _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
-        public async Task<ClassDTO> Handle(GetClassDetailQuery request, CancellationToken cancellationToken)
+        public async Task<ClassDetail> Handle(GetClassDetailQuery request, CancellationToken cancellationToken)
         {
             var syllabus = await _unitOfWork.ClassRepository.FirstOrdDefaultAsync(
                 filter: x => x.Id == request.id,
@@ -30,11 +30,9 @@ namespace Application.Class.Queries.GetClassDetail
                                .ThenInclude(x => x.UnitLessons)
                                .ThenInclude(x => x.TrainingMaterials));
 
-            var result = _mapper.Map<ClassDTO>(syllabus);
+            var result = _mapper.Map<ClassDetail>(syllabus);
 
             return result;
         }
     }
 }
-// TODO: Get all class details
-

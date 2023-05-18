@@ -34,7 +34,7 @@ namespace Application.Class.Commands.CreateClass
         public async Task<ClassDTO> Handle(CreateClassCommand request, CancellationToken cancellationToken)
         {
             var trainingClass = _mapper.Map<TrainingClass>(request);
-            trainingClass.ClassCode = await GenerateClassCode(request);
+            trainingClass.Code = await GenerateClassCode(request);
             await _unitOfWork.ExecuteTransactionAsync(() =>
             {
                 _unitOfWork.ClassRepository.AddAsync(trainingClass);

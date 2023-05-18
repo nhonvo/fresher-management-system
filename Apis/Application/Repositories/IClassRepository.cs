@@ -1,8 +1,9 @@
-﻿using Domain.Entities;
+﻿using Application.ViewModels;
+using Domain.Entities;
 
-namespace Application.Repositories
+namespace Application.Repositories;
+
+public interface IClassRepository : IGenericRepository<TrainingClass>
 {
-    public interface IClassRepository : IGenericRepository<TrainingClass>
-    {
-    }
+    Task<ClassDuration> GetClassDurationAsync(int classId);
 }

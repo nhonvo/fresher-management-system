@@ -49,15 +49,15 @@ namespace Application.SeedData.Queries.SeedData
                 });
             }
 
-            //if (!await _unitOfWork.TrainingProgramRepository.AnyAsync())
-            //{
-            //    string json = File.ReadAllText(@"../../Json/TrainingProgram.json");
-            //    List<TrainingProgram> trainingPrograms = JsonSerializer.Deserialize<List<TrainingProgram>>(json)!;
-            //    await _unitOfWork.ExecuteTransactionAsync(() =>
-            //    {
-            //        _unitOfWork.TrainingProgramRepository.AddRangeAsync(trainingPrograms);
-            //    });
-            //}
+            if (!await _unitOfWork.TrainingProgramRepository.AnyAsync())
+            {
+                string json = File.ReadAllText(@"../../Json/TrainingProgram.json");
+                List<TrainingProgram> trainingPrograms = JsonSerializer.Deserialize<List<TrainingProgram>>(json)!;
+                await _unitOfWork.ExecuteTransactionAsync(() =>
+                {
+                    _unitOfWork.TrainingProgramRepository.AddRangeAsync(trainingPrograms);
+                });
+            }
 
             if (!await _unitOfWork.ClassRepository.AnyAsync())
             {
@@ -134,15 +134,7 @@ namespace Application.SeedData.Queries.SeedData
                     _unitOfWork.OutputStandardRepository.AddRangeAsync(testAssessments);
                 });
             }
-            if (!await _unitOfWork.TrainingProgramRepository.AnyAsync())
-            {
-                string json = File.ReadAllText(@"../../Json/TrainingProgram.json");
-                List<TrainingProgram> trainingPrograms = JsonSerializer.Deserialize<List<TrainingProgram>>(json)!;
-                await _unitOfWork.ExecuteTransactionAsync(() =>
-                {
-                    _unitOfWork.TrainingProgramRepository.AddRangeAsync(trainingPrograms);
-                });
-            }
+            
         }
     }
 }

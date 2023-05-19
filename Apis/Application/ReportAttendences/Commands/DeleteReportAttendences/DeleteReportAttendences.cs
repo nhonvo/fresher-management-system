@@ -1,14 +1,14 @@
 using Application.Common.Exceptions;
 using Application.Interfaces;
-using Application.ReportAttendences.DTO;
+using Application.ReportAttendances.DTO;
 using AutoMapper;
 using MediatR;
 
-namespace Application.ReportAttendences.Commands.DeleteReportAttendences
+namespace Application.ReportAttendances.Commands.DeleteReportAttendances
 {
-    public record DeleteReportAttendencesCommand(int Id) : IRequest<ReportAttendanceDTO>;
+    public record DeleteReportAttendancesCommand(int Id) : IRequest<ReportAttendanceDTO>;
 
-    public class DeleteReportAttendencesHandler : IRequestHandler<DeleteReportAttendencesCommand, ReportAttendanceDTO>
+    public class DeleteReportAttendancesHandler : IRequestHandler<DeleteReportAttendancesCommand, ReportAttendanceDTO>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
@@ -16,28 +16,28 @@ namespace Application.ReportAttendences.Commands.DeleteReportAttendences
         private readonly ICurrentTime _currentTime;
 
 
-        public DeleteReportAttendencesHandler(IUnitOfWork unitOfWork, IMapper mapper, IClaimService claimService, ICurrentTime currentTime)
+        public DeleteReportAttendancesHandler(IUnitOfWork unitOfWork, IMapper mapper, IClaimService claimService, ICurrentTime currentTime)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
             _claimService = claimService;
             _currentTime = currentTime;
         }
-        public async Task<ReportAttendanceDTO> Handle(DeleteReportAttendencesCommand request, CancellationToken cancellationToken)
+        public async Task<ReportAttendanceDTO> Handle(DeleteReportAttendancesCommand request, CancellationToken cancellationToken)
         {
-            var reportAttendence = await _unitOfWork.ReportAttendanceRepository.GetByIdAsync(request.Id);
-            reportAttendence.DeletionDate = _currentTime.GetCurrentTime();
-            reportAttendence.IsDeleted = true;
-            reportAttendence.DeleteBy = _claimService.CurrentUserId;
-            reportAttendence.ModificationBy = _claimService.CurrentUserId;
-            reportAttendence.ModificationDate = _currentTime.GetCurrentTime();
-            if (reportAttendence == null)
-                throw new NotFoundException("reportAttendence not found");
+            var reportAttendance = await _unitOfWork.ReportAttendanceRepository.GetByIdAsync(request.Id);
+            reportAttendance.DeletionDate = _currentTime.GetCurrentTime();
+            reportAttendance.IsDeleted = true;
+            reportAttendance.DeleteBy = _claimService.CurrentUserId;
+            reportAttendance.ModificationBy = _claimService.CurrentUserId;
+            reportAttendance.ModificationDate = _currentTime.GetCurrentTime();
+            if (reportAttendance == null)
+                throw new NotFoundException("reportAttendance not found");
             await _unitOfWork.ExecuteTransactionAsync(() =>
             {
-                _unitOfWork.ReportAttendanceRepository.Update(reportAttendence);
+                _unitOfWork.ReportAttendanceRepository.Update(reportAttendance);
             });
-            var result = _mapper.Map<ReportAttendanceDTO>(reportAttendence);
+            var result = _mapper.Map<ReportAttendanceDTO>(reportAttendance);
             return result ?? throw new NotFoundException("Can not delete class");
         }
     }

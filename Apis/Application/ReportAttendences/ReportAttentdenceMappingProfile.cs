@@ -1,6 +1,6 @@
 ﻿using Application.ReportAttendances.Commands.CreateReportAttendances;
-using Application.ReportAttendences.Commands.UpdateReportAttendences;
-using Application.ReportAttendences.DTO;
+using Application.ReportAttendances.Commands.UpdateReportAttendances;
+using Application.ReportAttendances.DTO;
 using AutoMapper;
 using Domain.Entities;
 

@@ -3751,13 +3751,13 @@
 					]
 				},
 				{
-					"name": "ReportAttendence",
+					"name": "reportAttendance",
 					"item": [
 						{
 							"name": "{id}",
 							"item": [
 								{
-									"name": "/api/ReportAttendence/:id",
+									"name": "/api/reportAttendance/:id",
 									"request": {
 										"method": "GET",
 										"header": [
@@ -3767,13 +3767,13 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/api/ReportAttendence/:id",
+											"raw": "{{baseUrl}}/api/reportAttendance/:id",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
 												"api",
-												"ReportAttendence",
+												"reportAttendance",
 												":id"
 											],
 											"variable": [
@@ -3797,13 +3797,13 @@
 													}
 												],
 												"url": {
-													"raw": "{{baseUrl}}/api/ReportAttendence/:id",
+													"raw": "{{baseUrl}}/api/reportAttendance/:id",
 													"host": [
 														"{{baseUrl}}"
 													],
 													"path": [
 														"api",
-														"ReportAttendence",
+														"reportAttendance",
 														":id"
 													],
 													"variable": [
@@ -3828,7 +3828,7 @@
 									]
 								},
 								{
-									"name": "/api/ReportAttendence/:id",
+									"name": "/api/reportAttendance/:id",
 									"request": {
 										"method": "DELETE",
 										"header": [
@@ -3838,13 +3838,13 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/api/ReportAttendence/:id",
+											"raw": "{{baseUrl}}/api/reportAttendance/:id",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
 												"api",
-												"ReportAttendence",
+												"reportAttendance",
 												":id"
 											],
 											"variable": [
@@ -3868,13 +3868,13 @@
 													}
 												],
 												"url": {
-													"raw": "{{baseUrl}}/api/ReportAttendence/:id",
+													"raw": "{{baseUrl}}/api/reportAttendance/:id",
 													"host": [
 														"{{baseUrl}}"
 													],
 													"path": [
 														"api",
-														"ReportAttendence",
+														"reportAttendance",
 														":id"
 													],
 													"variable": [
@@ -3904,7 +3904,7 @@
 							"name": "status",
 							"item": [
 								{
-									"name": "/api/ReportAttendence/status",
+									"name": "/api/reportAttendance/status",
 									"request": {
 										"method": "PUT",
 										"header": [
@@ -3928,13 +3928,13 @@
 											}
 										},
 										"url": {
-											"raw": "{{baseUrl}}/api/ReportAttendence/status",
+											"raw": "{{baseUrl}}/api/reportAttendance/status",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
 												"api",
-												"ReportAttendence",
+												"reportAttendance",
 												"status"
 											]
 										}
@@ -3966,13 +3966,13 @@
 													}
 												},
 												"url": {
-													"raw": "{{baseUrl}}/api/ReportAttendence/status",
+													"raw": "{{baseUrl}}/api/reportAttendance/status",
 													"host": [
 														"{{baseUrl}}"
 													],
 													"path": [
 														"api",
-														"ReportAttendence",
+														"reportAttendance",
 														"status"
 													]
 												}
@@ -3994,7 +3994,7 @@
 							]
 						},
 						{
-							"name": "/api/ReportAttendence",
+							"name": "/api/reportAttendance",
 							"request": {
 								"method": "GET",
 								"header": [
@@ -4004,13 +4004,13 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/api/ReportAttendence?pageIndex=0&pageSize=10",
+									"raw": "{{baseUrl}}/api/reportAttendance?pageIndex=0&pageSize=10",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"api",
-										"ReportAttendence"
+										"reportAttendance"
 									],
 									"query": [
 										{
@@ -4037,13 +4037,13 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/api/ReportAttendence?pageIndex=0&pageSize=10",
+											"raw": "{{baseUrl}}/api/reportAttendance?pageIndex=0&pageSize=10",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
 												"api",
-												"ReportAttendence"
+												"reportAttendance"
 											],
 											"query": [
 												{
@@ -4072,7 +4072,7 @@
 							]
 						},
 						{
-							"name": "/api/ReportAttendence",
+							"name": "/api/reportAttendance",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -4096,13 +4096,13 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseUrl}}/api/ReportAttendence",
+									"raw": "{{baseUrl}}/api/reportAttendance",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"api",
-										"ReportAttendence"
+										"reportAttendance"
 									]
 								}
 							},
@@ -4133,13 +4133,13 @@
 											}
 										},
 										"url": {
-											"raw": "{{baseUrl}}/api/ReportAttendence",
+											"raw": "{{baseUrl}}/api/reportAttendance",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
 												"api",
-												"ReportAttendence"
+												"reportAttendance"
 											]
 										}
 									},
@@ -4158,7 +4158,7 @@
 							]
 						},
 						{
-							"name": "/api/ReportAttendence",
+							"name": "/api/reportAttendance",
 							"request": {
 								"method": "PUT",
 								"header": [
@@ -4182,13 +4182,13 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseUrl}}/api/ReportAttendence",
+									"raw": "{{baseUrl}}/api/reportAttendance",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"api",
-										"ReportAttendence"
+										"reportAttendance"
 									]
 								}
 							},
@@ -4219,13 +4219,13 @@
 											}
 										},
 										"url": {
-											"raw": "{{baseUrl}}/api/ReportAttendence",
+											"raw": "{{baseUrl}}/api/reportAttendance",
 											"host": [
 												"{{baseUrl}}"
 											],
 											"path": [
 												"api",
-												"ReportAttendence"
+												"reportAttendance"
 											]
 										}
 									},

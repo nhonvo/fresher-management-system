@@ -1,6 +1,6 @@
 ﻿using Domain.Enums;
 
-namespace Application.ReportAttendences.DTO
+namespace Application.ReportAttendances.DTO
 {
     public class ReportAttendanceDTO
     {

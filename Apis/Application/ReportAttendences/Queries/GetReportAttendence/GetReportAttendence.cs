@@ -1,26 +1,26 @@
 ﻿using Application.Commons;
-using Application.ReportAttendences.DTO;
+using Application.ReportAttendances.DTO;
 using AutoMapper;
 using MediatR;
 
-namespace Application.ReportAttendences.Queries.GetReportAttendence
+namespace Application.ReportAttendances.Queries.GetreportAttendance
 {
-    public record GetReportAttendenceQuery(int PageIndex = 0, int PageSize = 10) : IRequest<Pagination<ReportAttendanceDTO>>;
-    public class GetReportAttendenceHandler : IRequestHandler<GetReportAttendenceQuery, Pagination<ReportAttendanceDTO>>
+    public record GetreportAttendanceQuery(int PageIndex = 0, int PageSize = 10) : IRequest<Pagination<ReportAttendanceDTO>>;
+    public class GetreportAttendanceHandler : IRequestHandler<GetreportAttendanceQuery, Pagination<ReportAttendanceDTO>>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
 
-        public GetReportAttendenceHandler(IUnitOfWork unitOfWork, IMapper mapper)
+        public GetreportAttendanceHandler(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
-        public async Task<Pagination<ReportAttendanceDTO>> Handle(GetReportAttendenceQuery request, CancellationToken cancellationToken)
+        public async Task<Pagination<ReportAttendanceDTO>> Handle(GetreportAttendanceQuery request, CancellationToken cancellationToken)
         {
-            var reportAttendence = await _unitOfWork.ReportAttendanceRepository.ToPagination(request.PageIndex, request.PageSize);
+            var reportAttendance = await _unitOfWork.ReportAttendanceRepository.ToPagination(request.PageIndex, request.PageSize);
 
-            var result = _mapper.Map<Pagination<ReportAttendanceDTO>>(reportAttendence);
+            var result = _mapper.Map<Pagination<ReportAttendanceDTO>>(reportAttendance);
 
             return result;
         }

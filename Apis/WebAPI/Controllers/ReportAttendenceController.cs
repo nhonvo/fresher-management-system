@@ -1,20 +1,20 @@
 ﻿using Application.Commons;
 using Application.ReportAttendances.Commands.CreateReportAttendances;
-using Application.ReportAttendences.Commands.DeleteReportAttendences;
-using Application.ReportAttendences.Commands.UpdateReportAttendanceStatus;
-using Application.ReportAttendences.Commands.UpdateReportAttendences;
-using Application.ReportAttendences.DTO;
-using Application.ReportAttendences.Queries.GetReportAttendence;
-using Application.ReportAttendences.Queries.GetReportAttendenceById;
+using Application.ReportAttendances.Commands.DeleteReportAttendances;
+using Application.ReportAttendances.Commands.UpdateReportAttendanceStatus;
+using Application.ReportAttendances.Commands.UpdateReportAttendances;
+using Application.ReportAttendances.DTO;
+using Application.ReportAttendances.Queries.GetreportAttendance;
+using Application.ReportAttendances.Queries.GetreportAttendanceById;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers
 {
-    public class ReportAttendenceController : CustomBaseController
+    public class ReportAttendanceController : CustomBaseController
     {
         private readonly IMediator _mediator;
-        public ReportAttendenceController(IMediator mediator)
+        public ReportAttendanceController(IMediator mediator)
         {
             _mediator = mediator;
         }
@@ -22,11 +22,11 @@ namespace WebAPI.Controllers
         [HttpGet]
         public async Task<Pagination<ReportAttendanceDTO>> Get(int pageIndex = 0, int pageSize = 10)
         {
-            return await _mediator.Send(new GetReportAttendenceQuery(pageIndex, pageSize));
+            return await _mediator.Send(new GetreportAttendanceQuery(pageIndex, pageSize));
         }
         [HttpGet("{id}")]
         public async Task<ReportAttendanceDTO> Get(int id)
-            => await _mediator.Send(new GetReportAttendenceByIdQuery(id));
+            => await _mediator.Send(new GetreportAttendanceByIdQuery(id));
 
         [HttpPost]
         public async Task<ReportAttendanceDTO> Post([FromBody] CreateReportAttendancesCommand request)
@@ -36,7 +36,7 @@ namespace WebAPI.Controllers
             => await _mediator.Send(request);
         [HttpDelete("{id}")]
         public async Task<ReportAttendanceDTO> Delete(int id)
-            => await _mediator.Send(new DeleteReportAttendencesCommand(id));
+            => await _mediator.Send(new DeleteReportAttendancesCommand(id));
 
         [HttpPut("status")]
         public async Task<ReportAttendanceDTO> ChangeStatus(ChangeAttendanceStatusCommand request)

@@ -1,6 +1,6 @@
 ﻿using Application.Common.Exceptions;
 using Application.Interfaces;
-using Application.ReportAttendences.DTO;
+using Application.ReportAttendances.DTO;
 using AutoMapper;
 using Domain.Entities;
 using MediatR;

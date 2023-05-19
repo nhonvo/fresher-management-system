@@ -1,10 +1,10 @@
 ﻿using Application.Common.Exceptions;
-using Application.ReportAttendences.DTO;
+using Application.ReportAttendances.DTO;
 using AutoMapper;
 using Domain.Enums;
 using MediatR;
 
-namespace Application.ReportAttendences.Commands.UpdateReportAttendanceStatus
+namespace Application.ReportAttendances.Commands.UpdateReportAttendanceStatus
 {
     public record ChangeAttendanceStatusCommand : IRequest<ReportAttendanceDTO>
     {

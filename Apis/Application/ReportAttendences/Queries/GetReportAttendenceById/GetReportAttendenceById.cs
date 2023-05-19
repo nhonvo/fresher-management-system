@@ -1,27 +1,27 @@
 ﻿using Application.Common.Exceptions;
-using Application.ReportAttendences.DTO;
+using Application.ReportAttendances.DTO;
 using AutoMapper;
 using MediatR;
 
-namespace Application.ReportAttendences.Queries.GetReportAttendenceById
+namespace Application.ReportAttendances.Queries.GetreportAttendanceById
 {
-    public record GetReportAttendenceByIdQuery(int id) : IRequest<ReportAttendanceDTO>;
+    public record GetreportAttendanceByIdQuery(int id) : IRequest<ReportAttendanceDTO>;
 
-    public class GetReportAttendenceByIdHandler : IRequestHandler<GetReportAttendenceByIdQuery, ReportAttendanceDTO>
+    public class GetreportAttendanceByIdHandler : IRequestHandler<GetreportAttendanceByIdQuery, ReportAttendanceDTO>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
 
-        public GetReportAttendenceByIdHandler(IUnitOfWork unitOfWork, IMapper mapper)
+        public GetreportAttendanceByIdHandler(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
-        public async Task<ReportAttendanceDTO> Handle(GetReportAttendenceByIdQuery request, CancellationToken cancellationToken)
+        public async Task<ReportAttendanceDTO> Handle(GetreportAttendanceByIdQuery request, CancellationToken cancellationToken)
         {
-            var ReportAttendence = await _unitOfWork.ReportAttendanceRepository.GetByIdAsync(request.id);
+            var reportAttendance = await _unitOfWork.ReportAttendanceRepository.GetByIdAsync(request.id);
 
-            var result = _mapper.Map<ReportAttendanceDTO>(ReportAttendence);
+            var result = _mapper.Map<ReportAttendanceDTO>(reportAttendance);
 
             return result ?? throw new NotFoundException("Class not found");
         }

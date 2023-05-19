@@ -1,3 +1,4 @@
+using Domain;
 using MediatR;
 using System.Text;
 
@@ -15,11 +16,18 @@ namespace Application.Emails.Queries
     };
     public class GetMailTemplateHandler : IRequestHandler<GetMailTemplateQuery, string>
     {
+        private readonly AppConfiguration _config;
+
+        public GetMailTemplateHandler(AppConfiguration config)
+        {
+            _config = config;
+        }
+
         public async Task<string> Handle(GetMailTemplateQuery request, CancellationToken cancellationToken)
         {
             Console.WriteLine(Directory.GetCurrentDirectory() + "Here!!!!");
             string body = string.Empty;
-            using (StreamReader reader = new StreamReader("../../../../../SRS_FA TRAINING MANAGEMENT SYSTEM/HtmlTemplate/MailTemplate/Layout.html"))
+            using (StreamReader reader = new StreamReader(_config.HtmlTemplatePath))
             {
                 string line = "";
                 StringBuilder stringBuilder = new StringBuilder();

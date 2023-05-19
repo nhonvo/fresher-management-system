@@ -48,7 +48,7 @@ namespace Application.Class.Commands.AddTrainProgramToClass
             {
                 throw new NotFoundException("Training program not found");
             }
-            var trainingClass = await _unitOfWork.ClassRepository.FirstOrdDefaultAsync(x => x.Id == request.ClassId);
+            var trainingClass = await _unitOfWork.ClassRepository.FirstOrDefaultAsync(x => x.Id == request.ClassId);
             trainingClass.TrainingProgramId = request.TrainProgramId;
             await _unitOfWork.CommitAsync();
             var result = _mapper.Map<ClassDTO>(trainingClass);

@@ -208,7 +208,7 @@ namespace Infrastructures.Repositories
         public async Task<TEntity> FirstOrDefaultAsync(Expression<Func<TEntity, bool>> filter)
           => await _dbSet.IgnoreQueryFilters().AsNoTracking().FirstOrDefaultAsync(filter);
 
-        public async Task<TEntity> FirstOrdDefaultAsync(
+        public async Task<TEntity> FirstOrDefaultAsync(
             Expression<Func<TEntity, bool>> filter,
             Func<IQueryable<TEntity>, IQueryable<TEntity>> include = null)
         {

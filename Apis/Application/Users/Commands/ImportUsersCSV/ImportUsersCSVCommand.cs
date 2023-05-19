@@ -39,7 +39,7 @@ public class ImportUsersCSVHandler : IRequestHandler<ImportUsersCSVCommand, List
                 newItem.Password = "12345678"; // default password
                 if (request.IsScanEmail)
                 {
-                    var oldItem = await _unitOfWork.UserRepository.FirstOrdDefaultAsync(s => s.Email == item.Email);
+                    var oldItem = await _unitOfWork.UserRepository.FirstOrDefaultAsync(s => s.Email == item.Email);
                     if (oldItem != null)
                     {
                         if (request.DuplicateHandle == DuplicateHandle.Ignore)

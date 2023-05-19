@@ -33,7 +33,7 @@ namespace Application.Syllabuses.Commands.DuplicateSyllabus
             var exist = await _unitOfWork.SyllabusRepository.AnyAsync(x => x.Id == request.id);
             if (exist is false)
                 throw new NotFoundException("Syllabus not found");
-            var syllabus = await _unitOfWork.SyllabusRepository.FirstOrdDefaultAsync(
+            var syllabus = await _unitOfWork.SyllabusRepository.FirstOrDefaultAsync(
                 filter: x => x.Id == request.id,
                 include: x => x.Include(x => x.Units)
                                .ThenInclude(x => x.Lessons)

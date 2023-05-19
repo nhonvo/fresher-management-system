@@ -18,7 +18,7 @@ public class UnitOfWork : IUnitOfWork
 
     // repositories
     // public IAttendanceRepository AttendanceRepository { get; }
-    public IReportAttendanceRepository ReportAttendanceRepository { get; }
+    public IAttendanceRepository AttendanceRepository { get; }
     public IApproveRequestRepository ApproveRequestRepository { get; }
     public IClassRepository ClassRepository { get; }
     public IClassStudentRepository ClassStudentRepository { get; }
@@ -45,7 +45,7 @@ public class UnitOfWork : IUnitOfWork
         SyllabusRepository = new SyllabusRepository(_context);
         OutputStandardRepository = new OutputStandardRepository(_context);
         TestAssessmentRepository = new TestAssessmentRepository(_context);
-        ReportAttendanceRepository = new ReportAttendanceRepository(_context);
+        AttendanceRepository = new AttendanceRepository(_context);
         ApproveRequestRepository = new ApproveRequestRepository(_context);
         ClassTrainerRepository = new ClassTrainerRepository(_context);
         TrainingProgramRepository = new TrainingProgramRepository(_context);

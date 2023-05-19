@@ -8,7 +8,7 @@ public interface IUnitOfWork : IDisposable
     // repositories
     // IAttendanceRepository AttendanceRepository { get; }
     IApproveRequestRepository ApproveRequestRepository { get; }
-    IReportAttendanceRepository ReportAttendanceRepository { get; }
+    IAttendanceRepository AttendanceRepository { get; }
     IClassRepository ClassRepository { get; }
     IClassStudentRepository ClassStudentRepository { get; }
     IOutputStandardRepository OutputStandardRepository { get; }

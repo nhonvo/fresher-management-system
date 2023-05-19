@@ -35,7 +35,7 @@ namespace Application.TrainingPrograms.Commands.DuplicateTrainProgram
             {
                 throw new NotFoundException("Training program not found");
             }
-            var trainingProgram = await _unitOfWork.TrainingProgramRepository.FirstOrdDefaultAsync(
+            var trainingProgram = await _unitOfWork.TrainingProgramRepository.FirstOrDefaultAsync(
                 filter: x => x.Id == request.id,
                 include: x => x.Include(x => x.ProgramSyllabus)
                                .ThenInclude(x => x.Syllabus)

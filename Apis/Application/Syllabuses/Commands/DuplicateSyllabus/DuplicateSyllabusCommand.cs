@@ -1,5 +1,6 @@
 using System.Security.Cryptography.X509Certificates;
 using Application.Common.Exceptions;
+using Application.Interfaces;
 using Application.Syllabuses.DTO;
 using AutoMapper;
 using Domain.Entities;
@@ -11,12 +12,20 @@ namespace Application.Syllabuses.Commands.DuplicateSyllabus
     public record DuplicateSyllabusCommand(int id) : IRequest<SyllabusDTO>;
     public class DuplicateSyllabusHandler : IRequestHandler<DuplicateSyllabusCommand, SyllabusDTO>
     {
-        private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
-        public DuplicateSyllabusHandler(IUnitOfWork unitOfWork, IMapper mapper)
+        private readonly IUnitOfWork _unitOfWork;
+        private readonly IClaimService _claimService;
+        private readonly ICurrentTime _currentTime;
+        public DuplicateSyllabusHandler(
+            IMapper mapper,
+            IUnitOfWork unitOfWork,
+            IClaimService claimService,
+            ICurrentTime currentTime)
         {
-            _unitOfWork = unitOfWork;
             _mapper = mapper;
+            _unitOfWork = unitOfWork;
+            _claimService = claimService;
+            _currentTime = currentTime;
         }
 
         public async Task<SyllabusDTO> Handle(DuplicateSyllabusCommand request, CancellationToken cancellationToken)
@@ -29,13 +38,19 @@ namespace Application.Syllabuses.Commands.DuplicateSyllabus
                 include: x => x.Include(x => x.Units)
                                .ThenInclude(x => x.UnitLessons)
                                .ThenInclude(x => x.TrainingMaterials));
-            var removeIdSyllabus = _mapper.Map<SyllabusDuplicate>(syllabus);
-            var duplicateSyllabus = _mapper.Map<Syllabus>(removeIdSyllabus);
+            var duplicate = _mapper.Map<SyllabusDuplicate>(syllabus);
+            var syllabusUpdate = _mapper.Map<Syllabus>(duplicate);
+            syllabusUpdate.CreatedBy = _claimService.CurrentUserId;
+            syllabusUpdate.CreationDate = _currentTime.GetCurrentTime();
+
+            syllabusUpdate.Units.ToList().ForEach(x => x.CreatedBy = _claimService.CurrentUserId);
+            syllabusUpdate.Units.ToList().ForEach(x => x.CreationDate = _currentTime.GetCurrentTime());
+            
             await _unitOfWork.ExecuteTransactionAsync(() =>
             {
-                _unitOfWork.SyllabusRepository.AddAsync(duplicateSyllabus);
+                _unitOfWork.SyllabusRepository.AddAsync(syllabusUpdate);
             });
-            var result = _mapper.Map<SyllabusDTO>(duplicateSyllabus);
+            var result = _mapper.Map<SyllabusDTO>(syllabusUpdate);
             return result;
         }
     }

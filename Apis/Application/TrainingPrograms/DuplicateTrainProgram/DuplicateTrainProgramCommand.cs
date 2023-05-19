@@ -45,9 +45,23 @@ namespace Application.TrainingPrograms.Commands.DuplicateTrainProgram
             );
             var duplicate = _mapper.Map<TrainingProgramDuplicate>(trainingProgram);
             var trainingProgramUpdate = _mapper.Map<TrainingProgram>(duplicate);
+            // update time and current user
             trainingProgramUpdate.CreatedBy = _claimService.CurrentUserId;
             trainingProgramUpdate.CreationDate = _currentTime.GetCurrentTime();
             trainingProgramUpdate.ParentId = request.id;
+            
+            trainingProgramUpdate.ProgramSyllabus.ToList()
+                                                 .ForEach(item => item.Syllabus.CreatedBy = _claimService.CurrentUserId);
+            trainingProgramUpdate.ProgramSyllabus.ToList()
+                                                 .ForEach(item => item.Syllabus.CreationDate = _currentTime.GetCurrentTime());
+
+            trainingProgramUpdate.ProgramSyllabus.ToList()
+                                                 .ForEach(item => item.Syllabus.Units.ToList()
+                                                                                     .ForEach(unit => unit.CreatedBy = _claimService.CurrentUserId));
+            trainingProgramUpdate.ProgramSyllabus.ToList()
+                                                 .ForEach(item => item.Syllabus.Units.ToList()
+                                                                                     .ForEach(unit => unit.CreationDate = _currentTime.GetCurrentTime()));
+     
             // trainingProgramUpdate.ProgramSyllabus
             await _unitOfWork.ExecuteTransactionAsync(() =>
             {

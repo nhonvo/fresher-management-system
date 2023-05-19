@@ -38,7 +38,7 @@ namespace Application.TrainingPrograms.Commands.RemoveOneSyllabusToTrainingProgr
             {
                 throw new NotFoundException("training program is not exist!!");
             }
-            var programSyllabus = await _unitOfWork.ProgramSyllabusRepository.FirstOrdDefaultAsync(x => x.SyllabusId == request.syllabusId && x.TrainingProgramId == request.trainingProgramId);
+            var programSyllabus = await _unitOfWork.ProgramSyllabusRepository.FirstOrDefaultAsync(x => x.SyllabusId == request.syllabusId && x.TrainingProgramId == request.trainingProgramId);
             if (programSyllabus == null)
             {
                 throw new NotFoundException("training program has not syllabus");

@@ -20,7 +20,7 @@ namespace Infrastructures.Persistence
         public DbSet<TrainingMaterial> TrainingMaterials { get; set; }
         public DbSet<TrainingProgram> TrainingPrograms { get; set; }
         public DbSet<Unit> Units { get; set; }
-        public DbSet<UnitLesson> UnitLessons { get; set; }
+        public DbSet<Lesson> UnitLessons { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<ApproveRequest> ApproveRequests { get; set; }
 

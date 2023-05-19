@@ -20,7 +20,7 @@ namespace Application.TrainingPrograms
             CreateMap<TrainingProgramSyllabusDuplicate, Syllabus>().ReverseMap();
             CreateMap<TrainingProgramTestAssessmentDuplicate, TestAssessment>().ReverseMap();
             CreateMap<TrainingProgramUnitDuplicate, Unit>().ReverseMap();
-            CreateMap<TrainingProgramLessonDuplicate, UnitLesson>().ReverseMap();
+            CreateMap<TrainingProgramLessonDuplicate, Lesson>().ReverseMap();
             CreateMap<TrainingProgramTrainingMaterialDuplicate, TrainingMaterial>().ReverseMap();
         }
     }

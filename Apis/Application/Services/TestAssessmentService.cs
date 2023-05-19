@@ -38,7 +38,7 @@ namespace Application.Services
             var obj = _mapper.Map<TestAssessment>(request);
             if (request.FileMaterial != null)
             {
-                obj.Materials = new List<TrainingMaterial>()
+                obj.TrainingMaterials = new List<TrainingMaterial>()
                     {
                         new TrainingMaterial()
                         {
@@ -54,7 +54,7 @@ namespace Application.Services
             {
                 return _mapper.Map<TestAssessmentViewModel>(obj);
             }
-            
+
             return null;
         }
 
@@ -163,7 +163,7 @@ namespace Application.Services
                 PageIndex = pageIndex,
                 PageSize = pageSize,
                 Items = studentGPAScoreOfClass,
-                
+
             };
             result = _mapper.Map<Pagination<GetClassGPAScoreOfStudentViewModel>>(result);
 

@@ -37,7 +37,7 @@ public class ClassRepository : GenericRepository<TrainingClass>, IClassRepositor
             .SelectMany(x => x!.ProgramSyllabus)
             .Select(x => x.Syllabus)
             .SelectMany(x => x.Units)
-            .SelectMany(x => x.UnitLessons)
+            .SelectMany(x => x.Lessons)
             .Select(x => x.Duration)
             .SumAsync(); ;
         var result = new ClassDuration()

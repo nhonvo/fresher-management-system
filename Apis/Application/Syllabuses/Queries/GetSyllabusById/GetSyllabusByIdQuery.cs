@@ -30,7 +30,7 @@ namespace Application.Syllabuses.Queries.GetSyllabusById
             var result = _mapper.Map<SyllabusDTO>(syllabus);
             if (syllabus.Units is not null)
             {
-                result.Duration = syllabus.Units.Sum(x => x.UnitLessons.Sum(ul => ul.Duration));
+                result.Duration = syllabus.Units.Sum(x => x.Lessons.Sum(ul => ul.Duration));
             }
             return result;
         }

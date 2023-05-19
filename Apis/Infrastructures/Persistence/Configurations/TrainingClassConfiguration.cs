@@ -8,9 +8,6 @@ namespace Infrastructures.Persistence.Configurations
     {
         public void Configure(EntityTypeBuilder<TrainingClass> builder)
         {
-            //builder.HasOne(tc => tc.CreatedBy)
-            //       .WithMany(u => u.CreatedTrainingClasses)
-            //       .HasForeignKey(tc => tc.CreatedByUserId).OnDelete(DeleteBehavior.NoAction);
             builder.HasOne(tc => tc.ReviewBy)
                    .WithMany(u => u.ReviewTrainingClasses)
                    .HasForeignKey(tc => tc.ReviewByUserId).OnDelete(DeleteBehavior.NoAction);
@@ -20,12 +17,11 @@ namespace Infrastructures.Persistence.Configurations
             builder.HasOne(tc => tc.TrainingProgram)
                    .WithOne(tp => tp.TrainingClass)
                    .HasForeignKey<TrainingClass>(tc => tc.TrainingProgramId);
-            builder
-                .HasMany(x => x.Calenders)
-                .WithOne(x => x.TrainingClass)
-                .HasForeignKey(x => x.TrainingClassId)
-                .HasPrincipalKey(x => x.Id)
-                .OnDelete(DeleteBehavior.ClientCascade);
+            builder.HasMany(x => x.Calenders)
+                   .WithOne(x => x.TrainingClass)
+                   .HasForeignKey(x => x.TrainingClassId)
+                   .HasPrincipalKey(x => x.Id)
+                   .OnDelete(DeleteBehavior.ClientCascade);
         }
     }
 }

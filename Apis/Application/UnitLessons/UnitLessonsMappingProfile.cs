@@ -10,9 +10,9 @@ namespace Application.UnitLessons
     {
         public UnitLessonsMappingProfile()
         {
-            CreateMap<UnitLesson, UnitLessonDTO>().ReverseMap();
-            CreateMap<UnitLesson, CreateUnitLessonCommand>().ReverseMap();
-            CreateMap<UnitLesson, UpdateUnitLessonCommand>().ReverseMap();
+            CreateMap<Lesson, UnitLessonDTO>().ReverseMap();
+            CreateMap<Lesson, CreateUnitLessonCommand>().ReverseMap();
+            CreateMap<Lesson, UpdateUnitLessonCommand>().ReverseMap();
         }
     }
 }

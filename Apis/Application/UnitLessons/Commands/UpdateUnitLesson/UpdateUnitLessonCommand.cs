@@ -33,7 +33,7 @@ namespace Application.UnitLessons.Commands.UpdateUnitLesson
             var unitlesson = await _unitOfWork.UnitLessonRepository.GetByIdAsyncAsNoTracking(request.Id);
             if (unitlesson == null)
                 throw new NotFoundException("Unit Lesson not found");
-            unitlesson = _mapper.Map<UnitLesson>(request);
+            unitlesson = _mapper.Map<Lesson>(request);
             try
             {
                 _unitOfWork.BeginTransaction();

@@ -33,10 +33,10 @@ namespace Application.Syllabuses.Commands.DuplicateSyllabus
             var exist = await _unitOfWork.SyllabusRepository.AnyAsync(x => x.Id == request.id);
             if (exist is false)
                 throw new NotFoundException("Syllabus not found");
-            var syllabus = await _unitOfWork.SyllabusRepository.FirstOrdDefaultAsync(
+            var syllabus = await _unitOfWork.SyllabusRepository.FirstOrDefaultAsync(
                 filter: x => x.Id == request.id,
                 include: x => x.Include(x => x.Units)
-                               .ThenInclude(x => x.UnitLessons)
+                               .ThenInclude(x => x.Lessons)
                                .ThenInclude(x => x.TrainingMaterials));
             var duplicate = _mapper.Map<SyllabusDuplicate>(syllabus);
             var syllabusUpdate = _mapper.Map<Syllabus>(duplicate);
@@ -45,7 +45,7 @@ namespace Application.Syllabuses.Commands.DuplicateSyllabus
 
             syllabusUpdate.Units.ToList().ForEach(x => x.CreatedBy = _claimService.CurrentUserId);
             syllabusUpdate.Units.ToList().ForEach(x => x.CreationDate = _currentTime.GetCurrentTime());
-            
+
             await _unitOfWork.ExecuteTransactionAsync(() =>
             {
                 _unitOfWork.SyllabusRepository.AddAsync(syllabusUpdate);

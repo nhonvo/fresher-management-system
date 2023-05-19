@@ -4,7 +4,7 @@ using Infrastructures.Persistence;
 
 namespace Infrastructures.Repositories
 {
-    public class UnitLessonRepository : GenericRepository<UnitLesson>, IUnitLessonRepository
+    public class UnitLessonRepository : GenericRepository<Lesson>, IUnitLessonRepository
     {
         private readonly ApplicationDbContext _dbcontext;
 

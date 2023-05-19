@@ -31,7 +31,7 @@ namespace Application.TrainingPrograms.Commands.AddOneSyllabusToTrainingProgram
             var syllabusExist = await _unitOfWork.SyllabusRepository.AnyAsync(x => x.Id == request.syllabusId);
             if (syllabusExist is false)
                 throw new NotFoundException("syllabus is not exist!!");
-            var trainingProgram = await _unitOfWork.TrainingProgramRepository.FirstOrdDefaultAsync(x => x.Id == request.trainingProgramId);
+            var trainingProgram = await _unitOfWork.TrainingProgramRepository.FirstOrDefaultAsync(x => x.Id == request.trainingProgramId);
             if (trainingProgram is null)
                 throw new NotFoundException("training program is not exist!!");
             foreach (var item in trainingProgram.ProgramSyllabus)

@@ -125,7 +125,7 @@
 // **done** approve request.
 // hangfire && send mail
 
-// duplicate -> program
+//**done** duplicate -> program
 // export file csv && export file csv
 
 // check feedback get evaluate of trainer
@@ -164,6 +164,9 @@
 // **done**: pagination don't work syllabus
 // **done** data seed move to endpoints 
 
+// AUTHENTICATE: FORGET PASSWORD, REFRESH TOKEN
+// CHECK: attendance, approve request, feedback, score, report, csv
+
 - crojob service ...
 add quartz job
 // check middleware timeout && global exception, health check.
@@ -171,8 +174,6 @@ add quartz job
 // TODO: cleanup source , analyst by rider
 //TODO: write test project and test endpoints
 
-// AUTHENTICATE: FORGET PASSWORD, REFRESH TOKEN
-// CHECK: attendance, approve request, feedback, score, report, csv
 
 
 // **done**: POST: syllabuses/{id}/units
@@ -185,8 +186,6 @@ add quartz job
 // **done**: DELETE: class/{id}/program
 
 // **done** duplicates Syllabus
-
-// 
 
 // check send mail response
 

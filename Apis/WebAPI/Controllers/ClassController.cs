@@ -37,9 +37,9 @@ namespace WebAPI.Controllers
         [HttpGet("{id}")]
         public async Task<ClassDTO> Get(int id)
             => await _mediator.Send(new GetClassByIdQuery(id));
-        [HttpGet("Detail/{id}")]
-        public async Task<ClassDetail> GetDetail(int id)
-            => await _mediator.Send(new GetClassDetailQuery(id));
+        // [HttpGet("Detail/{id}")]
+        // public async Task<ClassDetail> GetDetail(int id)
+        //     => await _mediator.Send(new GetClassDetailQuery(id));
         [HttpGet("{id}/Program")]
         public async Task<Pagination<ClassProgram>> GetProgram(int id, int pageIndex = 0, int pageSize = 10)
             => await _mediator.Send(new GetClassProgramQuery(id, pageIndex, pageSize));

@@ -7,15 +7,15 @@ using MediatR;
 
 namespace Application.ReportAttendances.Commands.UpdateReportAttendances
 {
-    public record UpdateReportAttendancesCommand : IRequest<ReportAttendanceDTO>
+    public record UpdateReportAttendancesCommand : IRequest<AttendanceDTO>
     {
         public int Id { get; set; }
-        public string Reason { get; set; }
-        public StatusAttendance statusAttendance { get; set; } = StatusAttendance.Waiting;
-        public DateTime expectedDates { get; set; }
-        public string StudentId { get; set; }
+        public int StudentId { get; set; }
+        public string? Reason { get; set; }
+        public StatusAttendance? AttendanceStatus { get; set; }
+        public DateTime Day { get; set; }
     }
-    public class UpdateReportAttendancesHandler : IRequestHandler<UpdateReportAttendancesCommand, ReportAttendanceDTO>
+    public class UpdateReportAttendancesHandler : IRequestHandler<UpdateReportAttendancesCommand, AttendanceDTO>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
@@ -24,17 +24,17 @@ namespace Application.ReportAttendances.Commands.UpdateReportAttendances
             _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
-        public async Task<ReportAttendanceDTO> Handle(UpdateReportAttendancesCommand request, CancellationToken cancellationToken)
+        public async Task<AttendanceDTO> Handle(UpdateReportAttendancesCommand request, CancellationToken cancellationToken)
         {
             var reportAttendance = await _unitOfWork.ReportAttendanceRepository.GetByIdAsyncAsNoTracking(request.Id);
             if (reportAttendance == null)
                 throw new NotFoundException("reportAttendance not found");
-            reportAttendance = _mapper.Map<ReportAttendance>(request);
+            reportAttendance = _mapper.Map<Attendance>(request);
             await _unitOfWork.ExecuteTransactionAsync(() =>
             {
                 _unitOfWork.ReportAttendanceRepository.Update(reportAttendance);
             });
-            var result = _mapper.Map<ReportAttendanceDTO>(reportAttendance);
+            var result = _mapper.Map<AttendanceDTO>(reportAttendance);
             return result ?? throw new NotFoundException("Can not update reportAttendance");
         }
     }

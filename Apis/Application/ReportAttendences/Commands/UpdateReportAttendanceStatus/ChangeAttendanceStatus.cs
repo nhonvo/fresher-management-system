@@ -6,12 +6,12 @@ using MediatR;
 
 namespace Application.ReportAttendances.Commands.UpdateReportAttendanceStatus
 {
-    public record ChangeAttendanceStatusCommand : IRequest<ReportAttendanceDTO>
+    public record ChangeAttendanceStatusCommand : IRequest<AttendanceDTO>
     {
         public int Id { get; set; }
         public StatusAttendance NewStatus { get; set; }
     }
-    public class ChangeAttendanceStatusHandler : IRequestHandler<ChangeAttendanceStatusCommand, ReportAttendanceDTO>
+    public class ChangeAttendanceStatusHandler : IRequestHandler<ChangeAttendanceStatusCommand, AttendanceDTO>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
@@ -21,19 +21,19 @@ namespace Application.ReportAttendances.Commands.UpdateReportAttendanceStatus
             _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
-        public async Task<ReportAttendanceDTO> Handle(ChangeAttendanceStatusCommand request, CancellationToken cancellationToken)
+        public async Task<AttendanceDTO> Handle(ChangeAttendanceStatusCommand request, CancellationToken cancellationToken)
         {
             var report = await _unitOfWork.ReportAttendanceRepository.GetByIdAsyncAsNoTracking(request.Id);
             if (report == null)
             {
                 throw new NotFoundException("Report Not Found");
             }
-            report.statusAttendance = request.NewStatus;
+            report.AttendanceStatus = request.NewStatus;
             await _unitOfWork.ExecuteTransactionAsync(() =>
             {
                 _unitOfWork.ReportAttendanceRepository.Update(report);
             });
-            var result = _mapper.Map<ReportAttendanceDTO>(report);
+            var result = _mapper.Map<AttendanceDTO>(report);
             return result;
         }
     }

@@ -4,15 +4,15 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Infrastructures.Persistence.Configurations
 {
-    public class UnitLessonConfiguration : IEntityTypeConfiguration<UnitLesson>
+    public class UnitLessonConfiguration : IEntityTypeConfiguration<Lesson>
     {
-        public void Configure(EntityTypeBuilder<UnitLesson> builder)
+        public void Configure(EntityTypeBuilder<Lesson> builder)
         {
             builder.HasOne(o => o.OutputStandard)
                    .WithMany(u => u.UnitLessons)
                    .HasForeignKey(o => o.OutputStandardId);
             builder.HasOne(o => o.Unit)
-                   .WithMany(u => u.UnitLessons)
+                   .WithMany(u => u.Lessons)
                    .HasForeignKey(o => o.UnitId);
         }
     }

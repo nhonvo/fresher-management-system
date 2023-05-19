@@ -7,13 +7,13 @@ using MediatR;
 
 namespace Application.ReportAttendances.Commands.CreateReportAttendances
 {
-    public record CreateReportAttendancesCommand : IRequest<ReportAttendanceDTO>
+    public record CreateReportAttendancesCommand : IRequest<AttendanceDTO>
     {
         public string Reason { get; set; }
         public DateTime expectedDates { get; set; }
         public string StudentId { get; set; }
     }
-    public class CreateReportAttendancesHandler : IRequestHandler<CreateReportAttendancesCommand, ReportAttendanceDTO>
+    public class CreateReportAttendancesHandler : IRequestHandler<CreateReportAttendancesCommand, AttendanceDTO>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
@@ -28,9 +28,9 @@ namespace Application.ReportAttendances.Commands.CreateReportAttendances
             _claimService = claimService;
             _currentTime = currentTime;
         }
-        public async Task<ReportAttendanceDTO> Handle(CreateReportAttendancesCommand request, CancellationToken cancellationToken)
+        public async Task<AttendanceDTO> Handle(CreateReportAttendancesCommand request, CancellationToken cancellationToken)
         {
-            var reportAttendance = _mapper.Map<ReportAttendance>(request);
+            var reportAttendance = _mapper.Map<Attendance>(request);
             reportAttendance.IsDeleted = false;
             reportAttendance.CreatedBy = _claimService.CurrentUserId;
             reportAttendance.CreationDate = _currentTime.GetCurrentTime();
@@ -38,7 +38,7 @@ namespace Application.ReportAttendances.Commands.CreateReportAttendances
             {
                 _unitOfWork.ReportAttendanceRepository.AddAsync(reportAttendance);
             });
-            var result = _mapper.Map<ReportAttendanceDTO>(reportAttendance);
+            var result = _mapper.Map<AttendanceDTO>(reportAttendance);
             return result ?? throw new NotFoundException("reportAttendance not found");
         }
     }

@@ -12,6 +12,6 @@ namespace Domain.Entities
         public Syllabus Syllabus { get; set; }
         public int TrainingClassId { get; set; }
         public TrainingClass TrainingClass { get; set; }
-        public ICollection<TrainingMaterial> Materials { get; set; }
+        public ICollection<TrainingMaterial> TrainingMaterials { get; set; }
     }
 }

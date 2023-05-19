@@ -20,26 +20,26 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<Pagination<ReportAttendanceDTO>> Get(int pageIndex = 0, int pageSize = 10)
+        public async Task<Pagination<AttendanceDTO>> Get(int pageIndex = 0, int pageSize = 10)
         {
             return await _mediator.Send(new GetreportAttendanceQuery(pageIndex, pageSize));
         }
         [HttpGet("{id}")]
-        public async Task<ReportAttendanceDTO> Get(int id)
+        public async Task<AttendanceDTO> Get(int id)
             => await _mediator.Send(new GetreportAttendanceByIdQuery(id));
 
         [HttpPost]
-        public async Task<ReportAttendanceDTO> Post([FromBody] CreateReportAttendancesCommand request)
+        public async Task<AttendanceDTO> Post([FromBody] CreateReportAttendancesCommand request)
             => await _mediator.Send(request);
         [HttpPut]
-        public async Task<ReportAttendanceDTO> Put([FromBody] UpdateReportAttendancesCommand request)
+        public async Task<AttendanceDTO> Put([FromBody] UpdateReportAttendancesCommand request)
             => await _mediator.Send(request);
         [HttpDelete("{id}")]
-        public async Task<ReportAttendanceDTO> Delete(int id)
+        public async Task<AttendanceDTO> Delete(int id)
             => await _mediator.Send(new DeleteReportAttendancesCommand(id));
 
         [HttpPut("status")]
-        public async Task<ReportAttendanceDTO> ChangeStatus(ChangeAttendanceStatusCommand request)
+        public async Task<AttendanceDTO> ChangeStatus(ChangeAttendanceStatusCommand request)
        => await _mediator.Send(request);
     }
 }

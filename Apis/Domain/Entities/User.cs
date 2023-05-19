@@ -15,6 +15,7 @@ public class User : BaseEntity
     public DateTime? DateOfBirth { get; set; }
     public bool? IsShowTipCreatingClass { get; set; }
     public ICollection<ClassAdmin> CreatedClassAdmin { get; set; }
+    public ICollection<Attendance> Attendances { get; set; }
     public ICollection<ClassAdmin> ClassAdmins { get; set; }
     public ICollection<ClassTrainer> CreatedClassTrainers { get; set; }
     public ICollection<ClassTrainer> ClassTrainers { get; set; }
@@ -31,8 +32,7 @@ public class User : BaseEntity
     public ICollection<TrainingProgram> ModifiedTrainingPrograms { get; set; }
     public ICollection<Unit> CreatedUnits { get; set; }
     public ICollection<Unit> ModifiedUnits { get; set; }
-    // public ICollection<UnitClassDetail> UnitTrainers { get; set; }
-    public ICollection<ReportAttendance> reportAttendance { get; set; }
+    public ICollection<Attendance> reportAttendance { get; set; }
     public ICollection<ApproveRequest> ApproveRequests { get; set; }
     public ICollection<FeedBack> FeedbackTrainee { get; set; }
     public ICollection<FeedBack> FeedbackTrainer { get; set; }

@@ -2,7 +2,7 @@
 
 namespace Application.ReportAttendances.DTO
 {
-    public class ReportAttendanceDTO
+    public class AttendanceDTO
     {
         public string Reason { get; set; }
         public StatusAttendance statusAttendance { get; set; }

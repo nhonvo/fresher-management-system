@@ -42,7 +42,7 @@ namespace Application.ApproveRequests.Commands.AllowRequest
             var classStudent = new ClassStudent
             {
                 TrainingClassId = request.classId,
-                UserId = request.studentId,
+                StudentId = request.studentId,
                 CreationDate = _currentTime.GetCurrentTime(),
                 GPA = 0
             };

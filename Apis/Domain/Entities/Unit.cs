@@ -10,7 +10,7 @@ public class Unit : BaseEntity
     //Navigation Property
     public int SyllabusId { get; set; }
     public Syllabus Syllabus { get; set; }
-    public ICollection<UnitLesson> UnitLessons { get; set; }
+    public ICollection<Lesson> Lessons { get; set; }
     // public ICollection<UnitClassDetail> UnitClassDetails { get; set; }
     public DateTime CreationDate { get; set; }
 

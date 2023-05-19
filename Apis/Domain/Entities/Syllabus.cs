@@ -8,9 +8,7 @@ namespace Domain.Entities
         public string Code { get; set; }
         public int AttendeeNumber { get; set; }
         public string CourseObjective { get; set; }
-
         public SyllabusLevel SyllabusLevel { get; set; }
-
         public float QuizScheme { get; set; }
         public float AssignmentScheme { get; set; }
         public float FinalScheme { get; set; }
@@ -19,7 +17,6 @@ namespace Domain.Entities
         public float GPAScheme { get; set; }
     
         // Navigation Property
-
         public ICollection<Unit> Units { get; set; }
         public ICollection<ProgramSyllabus> ProgramSyllabus { get; set; }
         public ICollection<TestAssessment> TestAssessments { get; set; }

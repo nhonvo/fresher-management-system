@@ -36,7 +36,7 @@ namespace Application.Syllabuses.Commands.DuplicateSyllabus
             var syllabus = await _unitOfWork.SyllabusRepository.FirstOrdDefaultAsync(
                 filter: x => x.Id == request.id,
                 include: x => x.Include(x => x.Units)
-                               .ThenInclude(x => x.UnitLessons)
+                               .ThenInclude(x => x.Lessons)
                                .ThenInclude(x => x.TrainingMaterials));
             var duplicate = _mapper.Map<SyllabusDuplicate>(syllabus);
             var syllabusUpdate = _mapper.Map<Syllabus>(duplicate);
@@ -45,7 +45,7 @@ namespace Application.Syllabuses.Commands.DuplicateSyllabus
 
             syllabusUpdate.Units.ToList().ForEach(x => x.CreatedBy = _claimService.CurrentUserId);
             syllabusUpdate.Units.ToList().ForEach(x => x.CreationDate = _currentTime.GetCurrentTime());
-            
+
             await _unitOfWork.ExecuteTransactionAsync(() =>
             {
                 _unitOfWork.SyllabusRepository.AddAsync(syllabusUpdate);

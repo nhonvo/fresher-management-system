@@ -27,7 +27,7 @@ namespace Application.Class.Queries.GetClassDetail
                                .ThenInclude(x => x.ProgramSyllabus)
                                .ThenInclude(x => x.Syllabus)
                                .ThenInclude(x => x.Units)
-                               .ThenInclude(x => x.UnitLessons)
+                               .ThenInclude(x => x.Lessons)
                                .ThenInclude(x => x.TrainingMaterials));
 
             var result = _mapper.Map<ClassDetail>(syllabus);

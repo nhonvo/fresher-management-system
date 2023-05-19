@@ -5,9 +5,9 @@ using MediatR;
 
 namespace Application.ReportAttendances.Queries.GetreportAttendanceById
 {
-    public record GetreportAttendanceByIdQuery(int id) : IRequest<ReportAttendanceDTO>;
+    public record GetreportAttendanceByIdQuery(int id) : IRequest<AttendanceDTO>;
 
-    public class GetreportAttendanceByIdHandler : IRequestHandler<GetreportAttendanceByIdQuery, ReportAttendanceDTO>
+    public class GetreportAttendanceByIdHandler : IRequestHandler<GetreportAttendanceByIdQuery, AttendanceDTO>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
@@ -17,11 +17,11 @@ namespace Application.ReportAttendances.Queries.GetreportAttendanceById
             _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
-        public async Task<ReportAttendanceDTO> Handle(GetreportAttendanceByIdQuery request, CancellationToken cancellationToken)
+        public async Task<AttendanceDTO> Handle(GetreportAttendanceByIdQuery request, CancellationToken cancellationToken)
         {
             var reportAttendance = await _unitOfWork.ReportAttendanceRepository.GetByIdAsync(request.id);
 
-            var result = _mapper.Map<ReportAttendanceDTO>(reportAttendance);
+            var result = _mapper.Map<AttendanceDTO>(reportAttendance);
 
             return result ?? throw new NotFoundException("Class not found");
         }

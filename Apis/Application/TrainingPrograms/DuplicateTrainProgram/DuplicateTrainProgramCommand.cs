@@ -40,7 +40,7 @@ namespace Application.TrainingPrograms.Commands.DuplicateTrainProgram
                 include: x => x.Include(x => x.ProgramSyllabus)
                                .ThenInclude(x => x.Syllabus)
                                .ThenInclude(x => x.Units)
-                               .ThenInclude(x => x.UnitLessons)
+                               .ThenInclude(x => x.Lessons)
                                .ThenInclude(x => x.TrainingMaterials)
             );
             var duplicate = _mapper.Map<TrainingProgramDuplicate>(trainingProgram);
@@ -49,7 +49,7 @@ namespace Application.TrainingPrograms.Commands.DuplicateTrainProgram
             trainingProgramUpdate.CreatedBy = _claimService.CurrentUserId;
             trainingProgramUpdate.CreationDate = _currentTime.GetCurrentTime();
             trainingProgramUpdate.ParentId = request.id;
-            
+
             trainingProgramUpdate.ProgramSyllabus.ToList()
                                                  .ForEach(item => item.Syllabus.CreatedBy = _claimService.CurrentUserId);
             trainingProgramUpdate.ProgramSyllabus.ToList()
@@ -61,7 +61,7 @@ namespace Application.TrainingPrograms.Commands.DuplicateTrainProgram
             trainingProgramUpdate.ProgramSyllabus.ToList()
                                                  .ForEach(item => item.Syllabus.Units.ToList()
                                                                                      .ForEach(unit => unit.CreationDate = _currentTime.GetCurrentTime()));
-     
+
             // trainingProgramUpdate.ProgramSyllabus
             await _unitOfWork.ExecuteTransactionAsync(() =>
             {

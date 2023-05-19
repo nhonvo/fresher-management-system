@@ -10,9 +10,9 @@ namespace Application.ReportAttendances
     {
         public ReportAttendanceMappingProfile()
         {
-            CreateMap<ReportAttendance, ReportAttendanceDTO>().ReverseMap();
-            CreateMap<ReportAttendance, CreateReportAttendancesCommand>().ReverseMap();
-            CreateMap<ReportAttendance, UpdateReportAttendancesCommand>().ReverseMap();
+            CreateMap<Attendance, AttendanceDTO>().ReverseMap();
+            CreateMap<Attendance, CreateReportAttendancesCommand>().ReverseMap();
+            CreateMap<Attendance, UpdateReportAttendancesCommand>().ReverseMap();
 
 
         }

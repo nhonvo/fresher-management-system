@@ -1,7 +1,7 @@
 using Application.Class.Commands.CreateClass;
 using FluentValidation;
 
-namespace Application.Class.Commands.DuplicateTrainProgram
+namespace Application.TrainingPrograms.Commands.DuplicateTrainProgram
 {
     public class DuplicateTrainProgramCommandValidator : AbstractValidator<DuplicateTrainProgramCommand>
     {

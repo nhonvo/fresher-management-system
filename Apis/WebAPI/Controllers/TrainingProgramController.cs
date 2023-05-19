@@ -29,8 +29,8 @@ namespace WebAPI.Controllers
             => await _mediator.Send(new GetTrainingProgramByIdQuery(id));
         [HttpPost("Duplicate/{id}")]
         [Authorize(Roles = "ClassAdmin")]
-        public async Task<TrainingProgramDTO> Duplicate(DuplicateTrainProgramCommand request)
-            => await _mediator.Send(request);
+        public async Task<TrainingProgramDTO> Duplicate(int id)
+            => await _mediator.Send(new DuplicateTrainProgramCommand(id));
         [HttpPost]
         [Authorize(Roles = "ClassAdmin")]
         public async Task<TrainingProgramDTO> Post(CreateTrainingProgramCommand request)

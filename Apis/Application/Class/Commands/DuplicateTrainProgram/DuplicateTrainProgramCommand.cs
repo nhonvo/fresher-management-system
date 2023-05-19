@@ -4,16 +4,12 @@ using Application.Interfaces;
 using Application.TrainingPrograms.DTOs;
 using AutoMapper;
 using Domain.Entities;
-using Domain.Enums;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
 namespace Application.Class.Commands.DuplicateTrainProgram
 {
-    public record DuplicateTrainProgramCommand : IRequest<TrainingProgramDTO>
-    {
-        public int id { get; init; }
-    }
+    public record DuplicateTrainProgramCommand(int id) : IRequest<TrainingProgramDTO>;
     public class DuplicateTrainProgramHandler : IRequestHandler<DuplicateTrainProgramCommand, TrainingProgramDTO>
     {
         private readonly IMapper _mapper;
@@ -31,6 +27,7 @@ namespace Application.Class.Commands.DuplicateTrainProgram
             _claimService = claimService;
             _currentTime = currentTime;
         }
+        // FIXME: can not duplicate related objects too complex
         public async Task<TrainingProgramDTO> Handle(DuplicateTrainProgramCommand request, CancellationToken cancellationToken)
         {
 
@@ -52,6 +49,7 @@ namespace Application.Class.Commands.DuplicateTrainProgram
             trainingProgramUpdate.CreatedBy = _claimService.CurrentUserId;
             trainingProgramUpdate.CreationDate = _currentTime.GetCurrentTime();
             trainingProgramUpdate.ParentId = request.id;
+            // trainingProgramUpdate.ProgramSyllabus
             await _unitOfWork.ExecuteTransactionAsync(() =>
             {
                 _unitOfWork.TrainingProgramRepository.AddAsync(trainingProgramUpdate);

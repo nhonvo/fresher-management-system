@@ -37,7 +37,6 @@ namespace Application.Syllabuses.Commands.DuplicateSyllabus
             });
             var result = _mapper.Map<SyllabusDTO>(duplicateSyllabus);
             return result;
-
         }
     }
 }

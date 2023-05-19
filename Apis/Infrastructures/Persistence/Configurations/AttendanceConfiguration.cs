@@ -1,31 +1,24 @@
-// using Domain.Entities;
-// using Microsoft.EntityFrameworkCore;
-// using Microsoft.EntityFrameworkCore.Metadata.Builders;
+﻿using Domain.Entities;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-// namespace Infrastructures.Persistence.Configurations
-// {
-//     public class AttendanceConfiguration : IEntityTypeConfiguration<Attendance>
-//     {
-//         public void Configure(EntityTypeBuilder<Attendance> builder)
-//         {
-//             builder.ToTable("Attendances");
+namespace Infrastructures.Persistence.Configurations
+{
+    public class AttendanceConfiguration : IEntityTypeConfiguration<Attendance>
+    {
+        public void Configure(EntityTypeBuilder<Attendance> builder)
+        {
+            builder.ToTable("Attendance");
 
-//             //Id
-//             builder.HasKey(x => x.AttendanceId);
+            builder.HasKey(x => x.Id);
 
-//             //ClassUserId
-//             builder.Property(x => x.ClassUserId).IsRequired();
+            builder.HasOne(st => st.ClassStudent)
+                   .WithMany(rp => rp.Attendances)
+                   .HasForeignKey(ps => ps.StudentId);
 
-//             //Day
-//             builder.Property(x => x.Day).IsRequired();
-
-//             //Reason
-//             builder.Property(a => a.Reason).HasMaxLength(1000);
-
-//             //ClassUsers
-//             builder.HasOne(x => x.ClassUser)
-//                 .WithMany(x => x.Attendances)
-//                 .HasForeignKey(x => x.ClassUserId);
-//         }
-//     }
-// }
+            builder.HasOne(x => x.Admin)
+                   .WithMany(x => x.Attendances)
+                   .HasForeignKey(x => x.AdminId);
+        }
+    }
+}

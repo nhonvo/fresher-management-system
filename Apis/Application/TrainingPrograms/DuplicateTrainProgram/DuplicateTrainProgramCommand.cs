@@ -35,12 +35,12 @@ namespace Application.TrainingPrograms.Commands.DuplicateTrainProgram
             {
                 throw new NotFoundException("Training program not found");
             }
-            var trainingProgram = await _unitOfWork.TrainingProgramRepository.FirstOrdDefaultAsync(
+            var trainingProgram = await _unitOfWork.TrainingProgramRepository.FirstOrDefaultAsync(
                 filter: x => x.Id == request.id,
                 include: x => x.Include(x => x.ProgramSyllabus)
                                .ThenInclude(x => x.Syllabus)
                                .ThenInclude(x => x.Units)
-                               .ThenInclude(x => x.UnitLessons)
+                               .ThenInclude(x => x.Lessons)
                                .ThenInclude(x => x.TrainingMaterials)
             );
             var duplicate = _mapper.Map<TrainingProgramDuplicate>(trainingProgram);
@@ -49,7 +49,7 @@ namespace Application.TrainingPrograms.Commands.DuplicateTrainProgram
             trainingProgramUpdate.CreatedBy = _claimService.CurrentUserId;
             trainingProgramUpdate.CreationDate = _currentTime.GetCurrentTime();
             trainingProgramUpdate.ParentId = request.id;
-            
+
             trainingProgramUpdate.ProgramSyllabus.ToList()
                                                  .ForEach(item => item.Syllabus.CreatedBy = _claimService.CurrentUserId);
             trainingProgramUpdate.ProgramSyllabus.ToList()
@@ -61,7 +61,7 @@ namespace Application.TrainingPrograms.Commands.DuplicateTrainProgram
             trainingProgramUpdate.ProgramSyllabus.ToList()
                                                  .ForEach(item => item.Syllabus.Units.ToList()
                                                                                      .ForEach(unit => unit.CreationDate = _currentTime.GetCurrentTime()));
-     
+
             // trainingProgramUpdate.ProgramSyllabus
             await _unitOfWork.ExecuteTransactionAsync(() =>
             {

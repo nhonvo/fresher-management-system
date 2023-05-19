@@ -8,12 +8,13 @@ namespace Infrastructures.Persistence.Configurations
     {
         public void Configure(EntityTypeBuilder<TrainingMaterial> builder)
         {
-            //builder.HasOne(o => o.ModifiedByUser)
-            //       .WithMany(u => u.ModifiedTrainingMaterial)
-            //       .HasForeignKey(o => o.ModifiedByUserId);
             builder.HasOne(o => o.UnitLesson)
-                   .WithMany(u => u.TrainingMaterials)
-                   .HasForeignKey(o => o.UnitLessonId);
+                 .WithMany(u => u.TrainingMaterials)
+                 .HasForeignKey(o => o.UnitLessonId);
+
+            builder.HasOne(x => x.TestAssessment)
+                   .WithMany(x => x.TrainingMaterials)
+                   .HasForeignKey(x => x.TestAssessmentId);
         }
     }
 }

@@ -130,7 +130,7 @@ namespace Application.SeedData.Queries.SeedData
             if (!await _unitOfWork.UnitLessonRepository.AnyAsync())
             {
                 string json = File.ReadAllText(@"../../Json/UnitLesson.json");
-                List<UnitLesson> unitLessons = JsonSerializer.Deserialize<List<UnitLesson>>(json)!;
+                List<Lesson> unitLessons = JsonSerializer.Deserialize<List<Lesson>>(json)!;
                 await _unitOfWork.ExecuteTransactionAsync(() =>
                {
                    _unitOfWork.UnitLessonRepository.AddRangeAsync(unitLessons);

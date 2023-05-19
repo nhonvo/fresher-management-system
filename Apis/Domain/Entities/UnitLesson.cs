@@ -3,7 +3,7 @@
 namespace Domain.Entities;
 
 #pragma warning disable
-public class UnitLesson : BaseEntity
+public class Lesson : BaseEntity
 {
     public string Name { get; set; }
     public int Duration { get; set; }

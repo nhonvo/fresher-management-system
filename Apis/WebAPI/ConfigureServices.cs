@@ -1,4 +1,5 @@
-﻿using Application.Interfaces;
+﻿using Application.Cronjob;
+using Application.Interfaces;
 using Application.Services;
 using FluentValidation.AspNetCore;
 using Infrastructures.Extensions;
@@ -6,6 +7,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using Quartz;
 using System.Diagnostics;
 using System.IO.Compression;
 using System.Text;
@@ -19,6 +21,7 @@ namespace WebAPI
     {
         public static IServiceCollection AddWebAPIService(this IServiceCollection services,
             string userApp,
+            string userAppDev,
             string key,
             string issuer,
             string audience)
@@ -39,11 +42,10 @@ namespace WebAPI
             // Extension Services
             services.AddScoped<IClaimService, ClaimService>();
             services.AddScoped<IFileService, FileService>();
-            // services.AddScoped<IJWTService, JWTService>();
             // Memory cache extension
             services.AddCache();
 
-    
+
 
             services.AddHttpContextAccessor();
             // IValidator
@@ -150,8 +152,23 @@ namespace WebAPI
                          .AllowAnyMethod()
                          .AllowAnyOrigin()
                         .WithOrigins(new string[] { userApp });
+                    // policy.WithOrigins(userApp, userApp)
+                    //                  .AllowAnyHeader()
+                    //                  .AllowAnyMethod();
                 });
             });
+            // Quartz
+            services.AddTransient<SendAttendanceMailJob>();
+            services.AddQuartz(q =>
+            {
+                q.UseMicrosoftDependencyInjectionJobFactory();
+                q.ScheduleJob<SendAttendanceMailJob>(job => job
+                    .WithIdentity("AttendanceMailJob")
+                    .WithDescription("Sends attendance report emails at 11:10pm every day.")
+                    .WithSchedule(CronScheduleBuilder.DailyAtHourAndMinute(11, 10))
+                );
+            });
+
             return services;
         }
     }

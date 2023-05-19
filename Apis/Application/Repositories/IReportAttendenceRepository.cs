@@ -2,7 +2,7 @@
 
 namespace Application.Repositories
 {
-    public interface IReportAttendanceRepository : IGenericRepository<ReportAttendance>
+    public interface IAttendanceRepository : IGenericRepository<Attendance>
     {
     }
 }

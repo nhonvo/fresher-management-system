@@ -22,9 +22,9 @@ namespace Application.Class
             CreateMap<ProgramSyllabus, ProgramSyllabusDetail>().ReverseMap();
             CreateMap<SyllabusDetail, Syllabus>().ReverseMap();
             CreateMap<UnitDetail, Unit>().ReverseMap();
-            CreateMap<LessonDetail, UnitLesson>().ReverseMap();
+            CreateMap<LessonDetail, Lesson>().ReverseMap();
             CreateMap<TrainingMaterialDetail, TrainingMaterial>().ReverseMap();
-            
+
             CreateMap<TrainingProgramDTO, TrainingProgram>().ReverseMap();
             CreateMap<TrainingClass, CreateClassCommand>().ReverseMap();
             CreateMap<TrainingClass, UpdateClassCommand>().ReverseMap();

@@ -29,7 +29,7 @@ namespace Application.UnitLessons.Commands.CreateUnitLesson
         public async Task<UnitLessonDTO> Handle(CreateUnitLessonCommand request, CancellationToken cancellationToken)
         {
 
-            var unitlesson = _mapper.Map<UnitLesson>(request);
+            var unitlesson = _mapper.Map<Lesson>(request);
 
             await _unitOfWork.ExecuteTransactionAsync(() =>
             {

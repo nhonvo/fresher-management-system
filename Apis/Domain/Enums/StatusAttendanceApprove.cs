@@ -3,10 +3,10 @@
 namespace Domain.Enums
 {
     [JsonConverter(typeof(JsonStringEnumConverter))]
-    public enum StatusAttendance
+    public enum StatusAttendanceApprove
     {
-        Approve = 0,
-        Reject = 1,
-        Waiting = 2
+        Pending,
+        Approved,
+        Declined
     }
 }

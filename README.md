@@ -167,7 +167,24 @@
 // AUTHENTICATE: FORGET PASSWORD, REFRESH TOKEN
 // CHECK: attendance, approve request, feedback, score, report, csv
 
-- crojob service ...
+// Set up Quartz service allow auto do job in the time set
+Package needed:
+
+```console
+dotnet add package Quartz.Extensions.DependencyInjection
+dotnet add package Quartz.Extensions.Hosting
+dotnet add package Quartz
+```
+
+- install in 2 project: Application and WebApi
+- Add cronjob in application inherit from IJob
+- config in configure service register service for class implement IJob
+- set up time do.
+
+// fix attendance component
+fix name and business logic
+// if i can add soft delete for all table use global query filter and ignore.
+-**done** crojob service ...
 add quartz job
 // check middleware timeout && global exception, health check.
 

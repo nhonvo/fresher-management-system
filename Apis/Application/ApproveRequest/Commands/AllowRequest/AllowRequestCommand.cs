@@ -32,7 +32,7 @@ namespace Application.ApproveRequests.Commands.AllowRequest
             var classExist = await CheckClassExitsAsync(request.classId);
             if (classExist)
                 throw new NotFoundException("Can not found class!!");
-            var approved = await _unitOfWork.ApproveRequestRepository.FirstOrdDefaultAsync(
+            var approved = await _unitOfWork.ApproveRequestRepository.FirstOrDefaultAsync(
                 filter: x => x.ClassId == request.classId && x.StudentId == request.studentId,
                 include: x => x.Include(x => x.TrainingClass).Include(x => x.Student));
 
@@ -42,7 +42,7 @@ namespace Application.ApproveRequests.Commands.AllowRequest
             var classStudent = new ClassStudent
             {
                 TrainingClassId = request.classId,
-                UserId = request.studentId,
+                StudentId = request.studentId,
                 CreationDate = _currentTime.GetCurrentTime(),
                 GPA = 0
             };

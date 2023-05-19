@@ -40,7 +40,7 @@ public class ImportSyllabusesCSVHandler : IRequestHandler<ImportSyllabusesCSVCom
             foreach (var item in newSyllabuses)
             {
                 var syllabus = _mapper.Map<Syllabus>(item);
-                var oldSyllabus = await _unitOfWork.SyllabusRepository.FirstOrdDefaultAsync(s => s.Code == item.Code);
+                var oldSyllabus = await _unitOfWork.SyllabusRepository.FirstOrDefaultAsync(s => s.Code == item.Code);
                 if (oldSyllabus != null)
                 {
                     if (request.DuplicateHandle == DuplicateHandle.Ignore)

@@ -26,10 +26,10 @@ namespace Application.Syllabuses.Queries.GetSyllabusDetailById
             {
                 throw new NotFoundException("Syllabus is not exist");
             }
-            var syllabus = await _unitOfWork.SyllabusRepository.FirstOrdDefaultAsync(
+            var syllabus = await _unitOfWork.SyllabusRepository.FirstOrDefaultAsync(
                 filter: x => x.Id == request.id,
                 include: x => x.Include(x => x.Units)
-                               .ThenInclude(x => x.UnitLessons)
+                               .ThenInclude(x => x.Lessons)
                                .ThenInclude(x => x.TrainingMaterials));
             var result = _mapper.Map<SyllabusDTO>(syllabus);
             return result;

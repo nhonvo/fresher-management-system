@@ -3,8 +3,8 @@
 #pragma warning disable
 public class ProgramSyllabus : BaseEntity
 {
-    public int TrainingProgramId;
-    public TrainingProgram TrainingProgram;
-    public int SyllabusId;
-    public Syllabus Syllabus;
+    public int TrainingProgramId { get; set; }
+    public TrainingProgram TrainingProgram { get; set; }
+    public int SyllabusId { get; set; }
+    public Syllabus Syllabus { get; set; }
 }

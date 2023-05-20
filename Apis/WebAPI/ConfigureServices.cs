@@ -150,8 +150,8 @@ namespace WebAPI
                 {
                     policy.AllowAnyHeader()
                          .AllowAnyMethod()
-                         .AllowAnyOrigin()
-                        .WithOrigins(new string[] { userApp });
+                         .AllowAnyOrigin();
+                        //.WithOrigins(new string[] { userApp });
                     // policy.WithOrigins(userApp, userApp)
                     //                  .AllowAnyHeader()
                     //                  .AllowAnyMethod();

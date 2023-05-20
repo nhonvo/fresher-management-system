@@ -13,6 +13,8 @@ namespace Application.Mapper
         public TestAssessementProfile()
         {
             CreateMap<TestAssessment, TestAssessmentDTO>().ReverseMap();
+            CreateMap<TestAssessment_TrainingMaterialDTO, TrainingMaterial>().ReverseMap();
+            CreateMap<TestAssessment_AttendeeViewModel, User>().ReverseMap();
             CreateMap<CreateTestAssessmentCommand, TestAssessment>().ReverseMap();
             CreateMap<UpdateTestAssessmentCommand, TestAssessment>().ReverseMap();
         }

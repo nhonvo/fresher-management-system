@@ -21,13 +21,13 @@ namespace Application.Class.Queries.GetClassDetail
         }
         public async Task<ClassDetail> Handle(GetClassDetailQuery request, CancellationToken cancellationToken)
         {
-            var syllabus = await _unitOfWork.ClassRepository.FirstOrdDefaultAsync(
+            var syllabus = await _unitOfWork.ClassRepository.FirstOrDefaultAsync(
                 filter: x => x.Id == request.id,
                 include: x => x.Include(x => x.TrainingProgram)
                                .ThenInclude(x => x.ProgramSyllabus)
                                .ThenInclude(x => x.Syllabus)
                                .ThenInclude(x => x.Units)
-                               .ThenInclude(x => x.UnitLessons)
+                               .ThenInclude(x => x.Lessons)
                                .ThenInclude(x => x.TrainingMaterials));
 
             var result = _mapper.Map<ClassDetail>(syllabus);

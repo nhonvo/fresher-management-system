@@ -1,11 +1,12 @@
-using Application.Class.Commands.DuplicateTrainProgram;
 using Application.Commons;
 using Application.TrainingPrograms.Commands.AddOneSyllabusToTrainingProgram;
 using Application.TrainingPrograms.Commands.CreateTrainingProgram;
 using Application.TrainingPrograms.Commands.DeleteTrainingProgram;
+using Application.TrainingPrograms.Commands.DuplicateTrainProgram;
 using Application.TrainingPrograms.Commands.RemoveOneSyllabusToTrainingProgram;
 using Application.TrainingPrograms.Commands.UpdateTrainingProgram;
 using Application.TrainingPrograms.DTOs;
+using Application.TrainingPrograms.Queries.GetPagedSyllabusesByTraningProgramId;
 using Application.TrainingPrograms.Queries.GetTrainingProgram;
 using Application.TrainingPrograms.Queries.GetTrainingProgramById;
 using MediatR;
@@ -35,6 +36,17 @@ namespace WebAPI.Controllers
         [Authorize(Roles = "ClassAdmin")]
         public async Task<TrainingProgramDTO> Post(CreateTrainingProgramCommand request)
             => await _mediator.Send(request);
+        [HttpGet("{trainingProgramId}/Syllabuses")]
+        public async Task<IActionResult> GetPagedSyllabusesByTraningProgramId(
+            int trainingProgramId,
+            [FromQuery] int pageIndex = 0,
+            [FromQuery] int pageSize = 10)
+        => Ok(await _mediator.Send(new GetPagedSyllabusesByTraningProgramIdQuery()
+        {
+            TrainingProgramId = trainingProgramId,
+            PageIndex = pageIndex,
+            PageSize = pageSize
+        }));
         [HttpPost("{trainingProgramId}/Syllabus")]
         [Authorize(Roles = "ClassAdmin")]
         public async Task<IActionResult> AddOneSyllabusToTrainingProgram(int syllabusId, int trainingProgramId)

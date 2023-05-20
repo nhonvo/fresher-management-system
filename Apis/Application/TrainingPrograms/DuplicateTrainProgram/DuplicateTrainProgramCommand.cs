@@ -7,7 +7,7 @@ using Domain.Entities;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
-namespace Application.Class.Commands.DuplicateTrainProgram
+namespace Application.TrainingPrograms.Commands.DuplicateTrainProgram
 {
     public record DuplicateTrainProgramCommand(int id) : IRequest<TrainingProgramDTO>;
     public class DuplicateTrainProgramHandler : IRequestHandler<DuplicateTrainProgramCommand, TrainingProgramDTO>
@@ -27,28 +27,41 @@ namespace Application.Class.Commands.DuplicateTrainProgram
             _claimService = claimService;
             _currentTime = currentTime;
         }
-        // FIXME: can not duplicate related objects too complex
         public async Task<TrainingProgramDTO> Handle(DuplicateTrainProgramCommand request, CancellationToken cancellationToken)
         {
 
-            var isExistTrainProgram = await _unitOfWork.TrainingProgramRepository.AnyAsync(x => x.Id == request.id);
-            if (isExistTrainProgram is false)
+            var exist = await _unitOfWork.TrainingProgramRepository.AnyAsync(x => x.Id == request.id);
+            if (exist is false)
             {
                 throw new NotFoundException("Training program not found");
             }
-            var trainingProgram = await _unitOfWork.TrainingProgramRepository.FirstOrdDefaultAsync(
+            var trainingProgram = await _unitOfWork.TrainingProgramRepository.FirstOrDefaultAsync(
                 filter: x => x.Id == request.id,
                 include: x => x.Include(x => x.ProgramSyllabus)
                                .ThenInclude(x => x.Syllabus)
                                .ThenInclude(x => x.Units)
-                               .ThenInclude(x => x.UnitLessons)
+                               .ThenInclude(x => x.Lessons)
                                .ThenInclude(x => x.TrainingMaterials)
             );
             var duplicate = _mapper.Map<TrainingProgramDuplicate>(trainingProgram);
             var trainingProgramUpdate = _mapper.Map<TrainingProgram>(duplicate);
+            // update time and current user
             trainingProgramUpdate.CreatedBy = _claimService.CurrentUserId;
             trainingProgramUpdate.CreationDate = _currentTime.GetCurrentTime();
             trainingProgramUpdate.ParentId = request.id;
+
+            trainingProgramUpdate.ProgramSyllabus.ToList()
+                                                 .ForEach(item => item.Syllabus.CreatedBy = _claimService.CurrentUserId);
+            trainingProgramUpdate.ProgramSyllabus.ToList()
+                                                 .ForEach(item => item.Syllabus.CreationDate = _currentTime.GetCurrentTime());
+
+            trainingProgramUpdate.ProgramSyllabus.ToList()
+                                                 .ForEach(item => item.Syllabus.Units.ToList()
+                                                                                     .ForEach(unit => unit.CreatedBy = _claimService.CurrentUserId));
+            trainingProgramUpdate.ProgramSyllabus.ToList()
+                                                 .ForEach(item => item.Syllabus.Units.ToList()
+                                                                                     .ForEach(unit => unit.CreationDate = _currentTime.GetCurrentTime()));
+
             // trainingProgramUpdate.ProgramSyllabus
             await _unitOfWork.ExecuteTransactionAsync(() =>
             {

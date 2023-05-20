@@ -11,6 +11,7 @@ public static class HostingExtensions
         this WebApplicationBuilder builder,
         string databaseConnection,
         string userApp,
+        string userAppDev,
         string key,
         string issuer,
         string audience,
@@ -19,14 +20,14 @@ public static class HostingExtensions
     {
         builder.Services.AddInfrastructuresService(databaseConnection);
         builder.Services.AddApplicationService();
-        builder.Services.AddWebAPIService(userApp, key, issuer, audience);
+        builder.Services.AddWebAPIService(userApp, userAppDev, key, issuer, audience);
         builder.AddSerilog(loggingPath, loggingTemplate);
 
         return builder.Build();
     }
     public static async Task<WebApplication> ConfigurePipelineAsync(this WebApplication app)
     {
-        if (app.Environment.IsDevelopment())
+        if (app.Environment.IsDevelopment() || true)
         {
             app.UseSwagger();
             app.UseSwaggerUI();

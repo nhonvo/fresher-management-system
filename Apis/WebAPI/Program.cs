@@ -14,6 +14,7 @@ try
         .ConfigureServices(
             configuration.ConnectionStrings.DatabaseConnectionV5,
             configuration.MyAllowSpecificOrigins.UserApp,
+            configuration.MyAllowSpecificOrigins.UserAppDev,
             configuration.Jwt.Key,
             configuration.Jwt.Issuer,
             configuration.Jwt.Audience,

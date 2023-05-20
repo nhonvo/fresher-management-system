@@ -125,7 +125,7 @@
 // **done** approve request.
 // hangfire && send mail
 
-// duplicate -> program
+//**done** duplicate -> program
 // export file csv && export file csv
 
 // check feedback get evaluate of trainer
@@ -164,15 +164,33 @@
 // **done**: pagination don't work syllabus
 // **done** data seed move to endpoints 
 
-- crojob service ...
+// AUTHENTICATE: FORGET PASSWORD, REFRESH TOKEN
+// CHECK: attendance, approve request, feedback, score, report, csv
+
+// Set up Quartz service allow auto do job in the time set
+Package needed:
+
+```console
+dotnet add package Quartz.Extensions.DependencyInjection
+dotnet add package Quartz.Extensions.Hosting
+dotnet add package Quartz
+```
+
+- install in 2 project: Application and WebApi
+- Add cronjob in application inherit from IJob
+- config in configure service register service for class implement IJob
+- set up time do.
+
+// fix attendance component
+fix name and business logic
+// if i can add soft delete for all table use global query filter and ignore.
+-**done** crojob service ...
 add quartz job
 // check middleware timeout && global exception, health check.
 
 // TODO: cleanup source , analyst by rider
 //TODO: write test project and test endpoints
 
-// AUTHENTICATE: FORGET PASSWORD, REFRESH TOKEN
-// CHECK: attendance, approve request, feedback, score, report, csv
 
 
 // **done**: POST: syllabuses/{id}/units
@@ -185,8 +203,6 @@ add quartz job
 // **done**: DELETE: class/{id}/program
 
 // **done** duplicates Syllabus
-
-// 
 
 // check send mail response
 

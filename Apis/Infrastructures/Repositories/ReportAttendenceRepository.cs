@@ -4,9 +4,9 @@ using Infrastructures.Persistence;
 
 namespace Infrastructures.Repositories
 {
-    public class ReportAttendanceRepository : GenericRepository<ReportAttendance>, IReportAttendanceRepository
+    public class AttendanceRepository : GenericRepository<Attendance>, IAttendanceRepository
     {
-        public ReportAttendanceRepository(ApplicationDbContext context) : base(context)
+        public AttendanceRepository(ApplicationDbContext context) : base(context)
         {
         }
     }

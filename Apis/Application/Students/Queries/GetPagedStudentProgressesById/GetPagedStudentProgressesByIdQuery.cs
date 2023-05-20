@@ -39,7 +39,7 @@ public class GetPagedStudentProgressesByIdHandler : IRequestHandler<GetPagedStud
                     .ThenInclude(x => x.Syllabus);
         }
         var items = await _unitOfWork.ClassStudentRepository.ToPagination(
-            filter: x => x.UserId == request.Id,
+            filter: x => x.StudentId == request.Id,
             include: include,
             pageIndex: request.PageIndex,
             pageSize: request.PageSize);

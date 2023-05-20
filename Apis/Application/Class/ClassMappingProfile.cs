@@ -15,11 +15,19 @@ namespace Application.Class
             CreateMap<TrainingClass, ClassDTO>().ReverseMap();
             CreateMap<TrainingClass, ClassProgram>().ReverseMap();
             CreateMap<TrainingProgram, TrainingProgramDuplicate>().ReverseMap();
-            CreateMap<TrainingProgramDTO, TrainingProgram>().ReverseMap();
             CreateMap<ProgramSyllabus, ProgramSyllabusDuplicate>().ReverseMap();
+            CreateMap<TrainingProgram, TrainingProgramss>().ReverseMap();
+            // get class detail
+            CreateMap<TrainingProgram, TrainingProgramDetail>().ReverseMap();
+            CreateMap<ProgramSyllabus, ProgramSyllabusDetail>().ReverseMap();
+            CreateMap<SyllabusDetail, Syllabus>().ReverseMap();
+            CreateMap<UnitDetail, Unit>().ReverseMap();
+            CreateMap<LessonDetail, Lesson>().ReverseMap();
+            CreateMap<TrainingMaterialDetail, TrainingMaterial>().ReverseMap();
+
+            CreateMap<TrainingProgramDTO, TrainingProgram>().ReverseMap();
             CreateMap<TrainingClass, CreateClassCommand>().ReverseMap();
             CreateMap<TrainingClass, UpdateClassCommand>().ReverseMap();
-            CreateMap<TrainingProgram, TrainingProgramss>().ReverseMap();
             CreateMap<ClassAdmin, Admin>().ReverseMap();
             CreateMap<AdminClass, TrainingClass>().ReverseMap();
             CreateMap<ClassDetail, TrainingClass>().ReverseMap();

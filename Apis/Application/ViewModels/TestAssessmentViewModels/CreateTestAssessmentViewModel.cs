@@ -10,7 +10,7 @@ namespace Application.ViewModels.TestAssessmentViewModels
         public int AttendeeId { get; set; }
         public int SyllabusId { get; set; }
         public int TrainingClassId { get; set; }
-        public IFormFile FileMaterial { get; set; }
+        public List<IFormFile> FileMaterials { get; set; }
 
     }
 }

@@ -10,6 +10,7 @@ public class AppConfiguration
     public MailConfigurations MailConfigurations { get; set; }
     public string LoggingPath { get; set; }
     public string LoggingTemplate { get; set; }
+    public string HtmlTemplatePath { get; init; }
 }
 public class MailConfigurations
 {
@@ -26,6 +27,7 @@ public class MailConfigurations
 public class MyAllowSpecificOrigins
 {
     public string UserApp { get; set; }
+    public string UserAppDev { get; set; }
 }
 public class ConnectionStrings
 {

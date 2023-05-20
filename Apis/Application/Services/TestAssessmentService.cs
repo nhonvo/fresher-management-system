@@ -36,17 +36,18 @@ namespace Application.Services
         public async Task<TestAssessmentViewModel?> CreateTestAssessmentAsync(CreateTestAssessmentViewModel request)
         {
             var obj = _mapper.Map<TestAssessment>(request);
-            if (request.FileMaterial != null)
+            if (request.FileMaterials != null)
             {
-                obj.Materials = new List<TrainingMaterial>()
+                obj.TrainingMaterials = new List<TrainingMaterial>() { };
+                foreach (var item in request.FileMaterials)
+                {
+                    obj.TrainingMaterials.Add(new TrainingMaterial()
                     {
-                        new TrainingMaterial()
-                        {
-                            FileName = request.FileMaterial.FileName,
-                            FileSize = request.FileMaterial.Length,
-                            FilePath = await _fileService.UploadFile(request.FileMaterial),
-                        }
-                    };
+                        FileName = item.FileName,
+                        FileSize = item.Length,
+                        FilePath = await _fileService.UploadFile(item),
+                    });
+                };
             }
             await _unitOfWork.TestAssessmentRepository.AddAsync(obj);
             var isSuccess = await _unitOfWork.SaveChangesAsync() > 0;
@@ -54,7 +55,7 @@ namespace Application.Services
             {
                 return _mapper.Map<TestAssessmentViewModel>(obj);
             }
-            
+
             return null;
         }
 
@@ -163,7 +164,7 @@ namespace Application.Services
                 PageIndex = pageIndex,
                 PageSize = pageSize,
                 Items = studentGPAScoreOfClass,
-                
+
             };
             result = _mapper.Map<Pagination<GetClassGPAScoreOfStudentViewModel>>(result);
 

@@ -14,9 +14,9 @@ public class TrainingMaterial : BaseEntity
     public int? TestAssessmentId { get; set; }
     public TestAssessment? TestAssessment { get; set; }
 
-    public DateTime? CreationDate { get; set; }
-    public int? CreatedBy { get; set; }
-    public DateTime? ModificationDate { get; set; }
-    public int? ModificationBy { get; set; }
-    public User ModifiedByUser { get; set; }
+    //public DateTime? CreationDate { get; set; }
+    //public int? CreatedBy { get; set; }
+    //public DateTime? ModificationDate { get; set; }
+    //public int? ModificationBy { get; set; }
+    //public User? ModifiedByUser { get; set; }
 }

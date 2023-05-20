@@ -4,6 +4,7 @@ namespace Application.Attendances.DTO
 {
     public class AttendanceDTO
     {
+        // fix return model
         public int StudentId { get; set; }
         public string ClassName { get; set; }
         public string? Reason { get; set; }

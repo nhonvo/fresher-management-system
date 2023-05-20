@@ -1,15 +1,18 @@
-﻿using System.Net;
-using Application.Commons;
+﻿using Application.Commons;
 using Application.Attendances.Commands.CreateAttendances;
-using Application.Attendances.Commands.DeleteAttendances;
-using Application.Attendances.Commands.UpdateAttendanceStatus;
 using Application.Attendances.Commands.UpdateAttendances;
 using Application.Attendances.DTO;
-using Application.Attendances.Queries.GetAttendance;
 using Application.Attendances.Queries.GetAttendanceById;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
+using Application.Attendances.Queries.GetAttendanceRequest;
+using Application.Attendances.Queries.GetAttendancePendingRequest;
+using Domain.Enums;
+using Application.Attendances.Queries.SearchAttendanceRequest;
+using Application.Attendances.Commands.ApproveAbsent;
+using Application.Attendances.Queries.GetAttendanceEachClass;
+using Application.Attendances.Commands.SendMailAttendance;
 
 namespace WebAPI.Controllers
 {
@@ -20,41 +23,64 @@ namespace WebAPI.Controllers
         {
             _mediator = mediator;
         }
-        /// <summary>
-        ///done  public Task<bool> CreateAbsentRequestAsync(string reason);
-        ///done public Task<bool> ApproveAbsentRequestAsync(int id, string status);
-        ///done public Task<TMS> GetAbsentRequestByIdAsync(int id);
-        ///done public Task<List<TMSListViewModel>> GetAllAbsentRequestsAsync();
-        /// public Task<List<TMSPendingListViewModel>> GetAllPendingAbsentRequestsAsync();
-        /// public Task<List<TMSListViewModel>> SearchAbsentRequest(string searchBy, string searchElement);
-        /// public Task SendAttendanceMailAsync();
-        /// </summary>
-        /// Task<bool> EditAttendanceAsync(EditAttendanceViewModel editAttendanceViewModel,int id);
-        /// Task<List<AttendanceViewModel>> GetAllAttendanceAsync(int id);
-        /// Task<AttendanceViewModel> TakeAttendance(TakeAttendanceModel view);
-        /// Task<ValidationResult> ValidateTakeAttendanceAsync(TakeAttendanceModel attendance);
         [HttpGet]
         public async Task<Pagination<AttendanceDTO>> Get(int pageIndex = 0, int pageSize = 10)
         {
-            return await _mediator.Send(new GetAttendanceQuery(pageIndex, pageSize));
+            return await _mediator.Send(new GetAttendanceRequestQuery(pageIndex, pageSize));
+        }
+        [HttpGet("Search")]
+        public async Task<Pagination<AttendanceRelatedDTO>> Search(
+            string? searchString,
+            SortType sortType = SortType.Ascending,
+            int pageIndex = 0,
+            int pageSize = 10)
+        {
+            return await _mediator.Send(new SearchAttendanceRequestQuery(
+                searchString,
+                sortType,
+                pageIndex,
+                pageSize));
+        }
+        [HttpGet("Pending")]
+        public async Task<Pagination<AttendanceRelatedDTO>> GetPending(int pageIndex = 0, int pageSize = 10)
+        {
+            return await _mediator.Send(new GetAttendancePendingRequestQuery(pageIndex, pageSize));
+        }
+        [HttpGet("attendance-class")]
+        public async Task<Pagination<AttendanceRelatedDTO>> GetAttendanceClass(int pageIndex = 0, int pageSize = 10)
+        {
+            return await _mediator.Send(new GetAttendanceOfClassQuery(pageIndex, pageSize));
         }
         [HttpGet("{id}")]
-        public async Task<AttendanceDTO> Get(int id)
-            => await _mediator.Send(new GetAttendanceByIdQuery(id));
+        public async Task<AttendanceRelatedDTO> Get(int id)
+        {
+
+            return await _mediator.Send(new GetAttendanceByIdQuery(id));
+        }
+        [HttpGet("test")]
+        public async Task Get()
+        {
+
+            await _mediator.Send(new SendMailAttendanceCommand());
+        }
 
         [HttpPost]
         public async Task<AttendanceDTO> Post([FromBody] CreateAttendancesCommand request)
-            => await _mediator.Send(request);
+        {
+
+            return await _mediator.Send(request);
+        }
         [HttpPut]
         public async Task<AttendanceDTO> Put([FromBody] UpdateAttendancesCommand request)
-            => await _mediator.Send(request);
-        // [HttpDelete("{id}")]
-        // public async Task<AttendanceDTO> Delete(int id)
-        //     => await _mediator.Send(new DeleteAttendancesCommand(id));
+        {
 
+            return await _mediator.Send(request);
+        }
         [HttpPut("ApproveAbsent")]
         [Authorize(Roles = "ClassAdmin")]
         public async Task<AttendanceDTO> ApproveAbsent(ApproveAbsentCommand request)
-            => await _mediator.Send(request);
+        {
+            return await _mediator.Send(request);
+        }
     }
 }

@@ -8,7 +8,7 @@ namespace Infrastructures.Persistence.Configurations
     {
         public void Configure(EntityTypeBuilder<ClassTrainer> builder)
         {
-            builder.HasKey(x => new { x.TrainingClassId, x.TrainerId });
+            builder.HasKey(x => x.Id);
             builder.HasOne(ca => ca.Trainer)
                    .WithMany(tc => tc.ClassTrainers)
                    .HasForeignKey(ca => ca.TrainerId);

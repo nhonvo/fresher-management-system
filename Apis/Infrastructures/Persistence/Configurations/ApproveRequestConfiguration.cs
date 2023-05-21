@@ -16,15 +16,18 @@ namespace Infrastructures.Persistence.Configurations
             // student
             builder.HasOne(x => x.Student)
                    .WithMany(x => x.ApproveRequests)
-                   .HasForeignKey(x => x.StudentId);
+                   .HasForeignKey(x => x.StudentId)
+                   .OnDelete(DeleteBehavior.NoAction);
             // admin
             builder.HasOne(x => x.Admin)
                    .WithMany(x => x.AdminApproveRequests)
-                   .HasForeignKey(x => x.ApproveBy);
+                   .HasForeignKey(x => x.ApproveBy)
+                   .OnDelete(DeleteBehavior.NoAction);
             // class
             builder.HasOne(x => x.TrainingClass)
                    .WithMany(x => x.ApproveRequests)
-                   .HasForeignKey(x => x.ClassId);
+                   .HasForeignKey(x => x.ClassId)
+                   .OnDelete(DeleteBehavior.NoAction);
         }
     }
 }

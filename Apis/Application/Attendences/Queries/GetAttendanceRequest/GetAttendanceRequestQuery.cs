@@ -18,7 +18,7 @@ namespace Application.Attendances.Queries.GetAttendanceRequest
         }
         public async Task<Pagination<AttendanceDTO>> Handle(GetAttendanceRequestQuery request, CancellationToken cancellationToken)
         {
-            var Attendance = await _unitOfWork.AttendanceRepository.ToPagination(request.PageIndex, request.PageSize);
+            var Attendance = await _unitOfWork.AttendanceRepository.GetAsync(pageIndex: request.PageIndex, pageSize: request.PageSize);
 
             var result = _mapper.Map<Pagination<AttendanceDTO>>(Attendance);
 

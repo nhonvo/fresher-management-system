@@ -125,6 +125,15 @@ namespace Application.SeedData.Queries.SeedData
                     _unitOfWork.ClassAdminRepository.AddRangeAsync(classAdmin);
                 });
             }
+            if (!await _unitOfWork.ApproveRequestRepository.AnyAsync())
+            {
+                string json = File.ReadAllText(@"../../Json/ApproveRequest.json");
+                List<ApproveRequest> approveRequest = JsonSerializer.Deserialize<List<ApproveRequest>>(json)!;
+                await _unitOfWork.ExecuteTransactionAsync(() =>
+                {
+                    _unitOfWork.ApproveRequestRepository.AddRangeAsync(approveRequest);
+                });
+            }
 
             //if (!await _unitOfWork.TestAssessmentRepository.AnyAsync())
             //{

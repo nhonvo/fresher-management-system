@@ -20,8 +20,6 @@ namespace Application.Attendances.Queries.GetAttendanceEachClass
         }
         public async Task<Pagination<AttendanceRelatedDTO>> Handle(GetAttendanceEachClassQuery request, CancellationToken cancellationToken)
         {
-            var classs = await _unitOfWork.ClassTrainerRepository.ToPagination(0, 100);
-
             var attendance = await _unitOfWork.AttendanceRepository.GetAsync(
                 filter: x => x.AttendanceStatus == StatusAttendance.Absent && x.ClassStudent.TrainingClassId == request.id,
                  include: x => x.Include(x => x.Admin)

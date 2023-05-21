@@ -19,7 +19,7 @@ namespace Application.ApproveRequests.GetApprove
         }
         public async Task<Pagination<ApproveRequestDTO>> Handle(GetApproveQuery request, CancellationToken cancellationToken)
         {
-            var approveRequest = await _unitOfWork.ApproveRequestRepository.ToPagination(request.pageIndex, request.pageSize);
+            var approveRequest = await _unitOfWork.ApproveRequestRepository.GetAsync(pageIndex: request.pageIndex, pageSize: request.pageSize);
 
             var result = _mapper.Map<Pagination<ApproveRequestDTO>>(approveRequest);
 

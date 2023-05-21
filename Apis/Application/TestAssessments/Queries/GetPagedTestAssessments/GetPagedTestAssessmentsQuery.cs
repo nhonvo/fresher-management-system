@@ -19,7 +19,7 @@ public class GetPagedTestAssessmentsHandler : IRequestHandler<GetPagedTestAssess
     }
     public async Task<Pagination<TestAssessmentDTO>> Handle(GetPagedTestAssessmentsQuery request, CancellationToken cancellationToken)
     {
-        var syllabus = await _unitOfWork.TestAssessmentRepository.ToPagination(request.PageIndex, request.PageSize);
+        var syllabus = await _unitOfWork.TestAssessmentRepository.GetAsync(pageIndex: request.PageIndex, pageSize: request.PageSize);
         var result = _mapper.Map<Pagination<TestAssessmentDTO>>(syllabus);
         return result;
     }

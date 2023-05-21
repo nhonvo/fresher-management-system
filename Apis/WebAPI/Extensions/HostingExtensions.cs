@@ -51,6 +51,7 @@ public static class HostingExtensions
         app.UseAuthorization();
 
         app.MapControllers();
+        // app.MapControllers().RequirePerUserRateLimit();
 
         return app;
     }

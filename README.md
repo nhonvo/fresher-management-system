@@ -184,8 +184,8 @@ dotnet add package Quartz
 - config in configure service register service for class implement IJob
 - set up time do.
 
-// fix attendance component
-fix name and business logic
+//**done** fix attendance component
+//**done** fix name and business logic
 // if i can add soft delete for all table use global query filter and ignore.
 
 // openid login by google refer fake news.
@@ -193,14 +193,14 @@ fix name and business logic
 
 -**done** crojob service ...
 **done** add quartz job
-// check middleware timeout && global exception, health check.
-// approve request
-create request join to class
+// check middleware timeout && global exception, health check, try do sth.
+//**done** approve request
+<!-- create request join to class
 approve request join to class
     change state of table approveRequest and and new record classStudent, 
     send mail for student when approve 
 get list approved with related data
-    get by id 
+    get by id  -->
 ---
 
 

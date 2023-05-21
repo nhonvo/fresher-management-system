@@ -28,10 +28,10 @@ namespace Application.Emails.Commands.SendMail
 
 
     }
-    public class SendMailCommandHandler : IRequestHandler<SendMailCommand, bool>
+    public class SendMailHandler : IRequestHandler<SendMailCommand, bool>
     {
         private readonly AppConfiguration config;
-        public SendMailCommandHandler(AppConfiguration configuration)
+        public SendMailHandler(AppConfiguration configuration)
         {
             config = configuration;
         }

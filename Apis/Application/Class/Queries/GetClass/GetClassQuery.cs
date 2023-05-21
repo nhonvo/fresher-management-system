@@ -1,13 +1,14 @@
 ﻿using Application.Class.DTO;
+using Application.Class.DTOs;
 using Application.Commons;
 using AutoMapper;
 using MediatR;
 
 namespace Application.Class.Queries.GetClass
 {
-    public record GetClassQuery(int PageIndex = 0, int PageSize = 10) : IRequest<Pagination<ClassDTO>>;
+    public record GetClassQuery(int PageIndex = 0, int PageSize = 10) : IRequest<Pagination<ClassRelated>>;
 
-    public class GetClassHandler : IRequestHandler<GetClassQuery, Pagination<ClassDTO>>
+    public class GetClassHandler : IRequestHandler<GetClassQuery, Pagination<ClassRelated>>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
@@ -17,11 +18,11 @@ namespace Application.Class.Queries.GetClass
             _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
-        public async Task<Pagination<ClassDTO>> Handle(GetClassQuery request, CancellationToken cancellationToken)
+        public async Task<Pagination<ClassRelated>> Handle(GetClassQuery request, CancellationToken cancellationToken)
         {
             var syllabus = await _unitOfWork.ClassRepository.GetAsync(pageIndex: request.PageIndex, pageSize: request.PageSize);
 
-            var result = _mapper.Map<Pagination<ClassDTO>>(syllabus);
+            var result = _mapper.Map<Pagination<ClassRelated>>(syllabus);
 
             return result;
         }

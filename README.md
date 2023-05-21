@@ -12,7 +12,9 @@
    Add-migration -Context ApplicationDbContext
    Update-Database -Context ApplicationDbContext
 ```
-ASP.NET Core ElasticSearch, Kibana & Serilog Integration
+**notdone** ASP.NET Core ElasticSearch, Kibana & Serilog Integration
+   - can search in log file and ui kibana.
+   - must set up docker not for this time
 
 ## Class _Nhon_
 
@@ -213,7 +215,7 @@ get list approved with related data
 
 // **done** duplicates Syllabus
 
-// check send mail response
+//**done** check send mail response
 
 // **done** fix register.
 //**done** fix validate paging add validate paging.

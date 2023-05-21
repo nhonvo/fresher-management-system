@@ -26,15 +26,22 @@ namespace WebAPI.Controllers
             _mediator = mediator;
         }
         [HttpGet]
-        public async Task<Pagination<ClassDTO>> Get(int pageIndex = 0, int pageSize = 10)
+        public async Task<Pagination<ClassRelated>> Get(int pageIndex = 0, int pageSize = 10)
         {
             return await _mediator.Send(new GetClassQuery(pageIndex, pageSize));
         }
+        /// <summary>
+        /// from class get all admin of class
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="pageIndex"></param>
+        /// <param name="pageSize"></param>
+        /// <returns></returns>
         [HttpGet("{id}/Admin")]
-        public async Task<Pagination<AdminClass>> GetClassAsync(int id, int pageIndex = 0, int pageSize = 10)
+        public async Task<Pagination<ClassRelated>> GetClassAsync(int id, int pageIndex = 0, int pageSize = 10)
             => await _mediator.Send(new GetAdminClassQuery(id, pageIndex, pageSize));
         [HttpGet("{id}")]
-        public async Task<ClassDTO> Get(int id)
+        public async Task<ClassRelated> Get(int id)
             => await _mediator.Send(new GetClassByIdQuery(id));
         // [HttpGet("Detail/{id}")]
         // public async Task<ClassDetail> GetDetail(int id)

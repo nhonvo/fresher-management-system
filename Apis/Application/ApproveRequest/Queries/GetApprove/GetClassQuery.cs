@@ -2,12 +2,13 @@
 using Application.Commons;
 using AutoMapper;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 
 namespace Application.ApproveRequests.GetApprove
 {
-    public record GetApproveQuery(int pageIndex = 0, int pageSize = 10) : IRequest<Pagination<ApproveRequestDTO>>;
+    public record GetApproveQuery(int pageIndex = 0, int pageSize = 10) : IRequest<Pagination<ApproveRequestRelatedDTO>>;
 
-    public class GetApproveHandler : IRequestHandler<GetApproveQuery, Pagination<ApproveRequestDTO>>
+    public class GetApproveHandler : IRequestHandler<GetApproveQuery, Pagination<ApproveRequestRelatedDTO>>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
@@ -17,11 +18,12 @@ namespace Application.ApproveRequests.GetApprove
             _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
-        public async Task<Pagination<ApproveRequestDTO>> Handle(GetApproveQuery request, CancellationToken cancellationToken)
+        public async Task<Pagination<ApproveRequestRelatedDTO>> Handle(GetApproveQuery request, CancellationToken cancellationToken)
         {
-            var approveRequest = await _unitOfWork.ApproveRequestRepository.GetAsync(pageIndex: request.pageIndex, pageSize: request.pageSize);
+            var approveRequest = await _unitOfWork.ApproveRequestRepository.GetAsync(
+                pageIndex: request.pageIndex, pageSize: request.pageSize);
 
-            var result = _mapper.Map<Pagination<ApproveRequestDTO>>(approveRequest);
+            var result = _mapper.Map<Pagination<ApproveRequestRelatedDTO>>(approveRequest);
 
             return result;
         }

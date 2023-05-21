@@ -8,9 +8,10 @@ namespace Infrastructures.Persistence.Configurations
     {
         public void Configure(EntityTypeBuilder<ClassAdmin> builder)
         {
-            builder.HasKey(x => new { x.TrainingClassId, x.AdminId });
+            builder.ToTable("ClassAdmin");
+            builder.HasKey(x => x.Id);
             builder.HasOne(ca => ca.TrainingClass)
-                   .WithMany(tc => tc.Admin)
+                   .WithMany(tc => tc.ClassAdmins)
                    .HasForeignKey(ca => ca.TrainingClassId);
             builder.HasOne(ca => ca.Admin)
                    .WithMany(tc => tc.ClassAdmins)

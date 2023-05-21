@@ -1,21 +1,20 @@
 ﻿using Application.Calenders.Queries.GetPagedCalendersByTrainingClassId;
-using Application.Class.Commands.SetCalenders;
 using Application.Class.Commands.AddTrainer;
+using Application.Class.Commands.AddTrainProgramToClass;
 using Application.Class.Commands.CreateClass;
 using Application.Class.Commands.DeleteClass;
+using Application.Class.Commands.SetCalenders;
 using Application.Class.Commands.UpdateClass;
 using Application.Class.DTO;
 using Application.Class.DTOs;
 using Application.Class.Queries.GetAdminClass;
 using Application.Class.Queries.GetClass;
+using Application.Class.Queries.GetClassDuration;
 using Application.Class.Queries.GetClassProgram;
 using Application.Commons;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Application.Class.Commands.AddTrainProgramToClass;
-using Application.Class.Queries.GetClassDuration;
-using Application.Class.Queries.GetClassDetail;
 
 namespace WebAPI.Controllers
 {

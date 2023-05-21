@@ -1,5 +1,3 @@
-using Application.Syllabuses.DTO;
-using Application.TrainingPrograms.DTOs;
 using Domain.Enums;
 
 namespace Application.Class.DTO

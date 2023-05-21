@@ -1,7 +1,7 @@
-using System.Transactions;
 using Application.Interfaces;
 using AutoMapper;
 using MediatR;
+using System.Transactions;
 
 namespace Application.Syllabuses.Commands.AddOneUnitToSyllabus
 {
@@ -30,7 +30,7 @@ namespace Application.Syllabuses.Commands.AddOneUnitToSyllabus
         public async Task<bool> Handle(AddOneUnitToSyllabusCommand request, CancellationToken cancellationToken)
         {
             var syllabuses = await _unitOfWork.SyllabusRepository.AnyAsync(x => x.Id == request.SyllabusId);
-            if (syllabuses is false) 
+            if (syllabuses is false)
                 throw new TransactionException("Syllabus not exist");
             var unit = _mapper.Map<Domain.Entities.Unit>(request);
             unit.CreationDate = _currentTime.GetCurrentTime();

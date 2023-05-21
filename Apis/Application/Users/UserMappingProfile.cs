@@ -11,7 +11,7 @@ namespace Application.Users
         {
             CreateMap<User, UserDTO>().ReverseMap();
             CreateMap<User, UserCSV>().ReverseMap();
-           
+
         }
     }
 }

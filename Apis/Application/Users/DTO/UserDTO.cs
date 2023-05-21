@@ -12,5 +12,5 @@ namespace Application.Users.DTO
         public UserStatus Status { get; set; }
         public DateTime DateOfBirth { get; set; }
     }
-   
+
 }

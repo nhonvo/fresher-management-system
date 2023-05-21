@@ -7,7 +7,7 @@ public class ClassAdmin : BaseEntity
     public TrainingClass TrainingClass { get; set; }
     public int AdminId { get; set; }
     public User Admin { get; set; }
-    public DateTime CreationDate { get; set; }
+    public DateTime? CreationDate { get; set; }
     public int? CreatedBy { get; set; }
     public User? CreateByUser { get; set; }
     public DateTime? ModificationDate { get; set; }

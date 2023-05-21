@@ -8,6 +8,9 @@ namespace Infrastructures.Persistence.Configurations
     {
         public void Configure(EntityTypeBuilder<Unit> builder)
         {
+            builder.ToTable("Unit");
+            builder.HasKey(x => x.Id);
+
             builder.HasOne(o => o.CreateByUser)
                   .WithMany(u => u.CreatedUnits)
                   .HasForeignKey(o => o.CreatedBy)

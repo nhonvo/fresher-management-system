@@ -14,8 +14,8 @@ public class ApproveRequestDTO
 }
 public class TrainingClasses
 {
-    public string ClassName { get; set; }= string.Empty;
-    public string ClassCode { get; set; }= string.Empty;
+    public string ClassName { get; set; } = string.Empty;
+    public string ClassCode { get; set; } = string.Empty;
     public DateTime ClassTimeStart { get; set; }
     public DateTime ClassTimeEnd { get; set; }
     public DateTime ReviewOn { get; set; }

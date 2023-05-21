@@ -24,7 +24,6 @@ namespace Infrastructures.Persistence.Configurations
                    .HasForeignKey(x => x.DeleteBy)
                    .HasPrincipalKey(x => x.Id)
                    .OnDelete(DeleteBehavior.ClientCascade);
-
             builder.HasMany(x => x.Attendances)
                    .WithOne(x => x.Admin)
                    .HasForeignKey(x => x.AdminId);

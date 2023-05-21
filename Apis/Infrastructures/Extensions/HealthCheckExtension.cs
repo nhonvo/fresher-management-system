@@ -16,7 +16,7 @@ namespace Infrastructures.Extensions
             services.AddHealthChecks()
                 .AddCheck<HealthCheck>(nameof(HealthCheck), tags: new[] { "TrainingManagementSystem" })
                 .AddDbContextCheck<ApplicationDbContext>(tags: new[] { "db context" })
-                .AddSqlServer("Data Source=TRUONGNHON;Initial Catalog=TrainingManagementSystem;Integrated Security=True;Encrypt=False;User Id =TRUONGNHON; Password = 123", tags: new[] { "database" });
+                .AddSqlServer("workstation id=mockprojectDb.mssql.somee.com;packet size=4096;user id=binhdeptrai;pwd=123456789;data source=mockprojectDb.mssql.somee.com;persist security info=False;initial catalog=mockprojectDb ;TrustServerCertificate=True", tags: new[] { "database" });
 
             services
                 .AddHealthChecksUI(options =>

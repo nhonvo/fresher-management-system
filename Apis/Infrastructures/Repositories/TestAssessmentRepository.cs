@@ -1,9 +1,12 @@
-﻿using Application.Repositories;
+﻿using Application.Commons;
+using Application.Repositories;
 using Application.ViewModels.TestAssessmentViewModels;
 using Domain.Entities;
 using Domain.Enums;
+using IdentityModel;
 using Infrastructures.Persistence;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
 using System.Linq.Expressions;
 #nullable disable warnings
 
@@ -16,6 +19,59 @@ namespace Infrastructures.Repositories
         public TestAssessmentRepository(ApplicationDbContext context) : base(context)
         {
             _context = context;
+        }
+
+        public async Task<Pagination<TestAssessment>> ToPagination(int pageIndex = 0, int pageSize = 10)
+        {
+            var itemCount = await _dbSet.Where(x => x.IsDeleted == false).CountAsync();
+            var items = await _dbSet.Where(x => x.IsDeleted == false)
+                                    .Skip(pageIndex * pageSize)
+                                    .Take(pageSize)
+                                    .Include(x => x.TrainingMaterials)
+                                    .Include(x => x.Attendee)
+                                    .AsNoTracking()
+                                    .ToListAsync();
+
+            var result = new Pagination<TestAssessment>()
+            {
+                PageIndex = pageIndex,
+                PageSize = pageSize,
+                TotalItemsCount = itemCount,
+                Items = items,
+            };
+
+            return result;
+        }
+
+        public async Task<Pagination<TestAssessment>> GetAsync(
+        Expression<Func<TestAssessment, bool>> filter = null,
+           int pageIndex = 0,
+           int pageSize = 10)
+        {
+            var query = _dbSet.AsQueryable();
+
+            if (filter != null)
+            {
+                query = query.Where(filter);
+            }
+
+            var itemCount = await query.CountAsync();
+
+            var items = await query.Include(x => x.TrainingMaterials)
+                                   .Include(x => x.Attendee)
+                                   .Skip(pageIndex * pageSize)
+                                   .Take(pageSize)
+                                   .ToListAsync();
+
+            var result = new Pagination<TestAssessment>()
+            {
+                PageIndex = pageIndex,
+                PageSize = pageSize,
+                TotalItemsCount = itemCount,
+                Items = items,
+            };
+
+            return result;
         }
 
         public async Task<List<GetStudentTestScoreViewModel>> GetFinalScoreAsync(Expression<Func<TestAssessment, bool>> filter = null)

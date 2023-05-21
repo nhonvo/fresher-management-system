@@ -73,7 +73,7 @@ namespace Infrastructures.Repositories
             return result;
         }
 
-        public async Task<Pagination<TEntity>> ToPagination(int pageIndex = 0, int pageSize = 10)
+        public async Task<Pagination<TEntity>> ToPagination(int pageIndex, int pageSize)
         {
             var itemCount = await _dbSet.Where(x => x.IsDeleted == false).CountAsync();
             var items = await _dbSet.Where(x => x.IsDeleted == false).Skip(pageIndex * pageSize)

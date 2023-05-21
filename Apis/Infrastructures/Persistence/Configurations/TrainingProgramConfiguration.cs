@@ -17,7 +17,6 @@ namespace Infrastructures.Persistence.Configurations
                   .WithMany(u => u.CreatedTrainingPrograms)
                   .HasForeignKey(o => o.CreatedBy)
                   .OnDelete(DeleteBehavior.NoAction);
-
             builder.HasOne(o => o.ModificationByUser)
                   .WithMany(u => u.ModifiedTrainingPrograms)
                   .HasForeignKey(o => o.ModificationBy)

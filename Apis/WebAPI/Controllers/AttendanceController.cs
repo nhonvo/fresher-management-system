@@ -16,7 +16,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers
 {
-
+    [Authorize]
     public class AttendanceController : CustomBaseController
     {
         private readonly IMediator _mediator;
@@ -24,11 +24,6 @@ namespace WebAPI.Controllers
         {
             _mediator = mediator;
         }
-        // [HttpGet("test-send-mail")]
-        // public async Task Gets()
-        // {
-        //     await _mediator.Send(new SendMailAttendanceCommand());
-        // }
         [HttpGet]
         public async Task<Pagination<AttendanceDTO>> Get(int pageIndex = 0, int pageSize = 10)
         {

@@ -187,6 +187,7 @@ fix name and business logic
 // if i can add soft delete for all table use global query filter and ignore.
 
 // openid login by google refer fake news.
+// research write unit test for mediator
 
 -**done** crojob service ...
 **done** add quartz job
@@ -217,3 +218,4 @@ get list approved with related data
 // **done** fix register.
 //**done** fix validate paging add validate paging.
 
+// TODO: check validation of attendance and approve request

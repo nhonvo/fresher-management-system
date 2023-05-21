@@ -20,7 +20,7 @@ namespace Application.Units.Queries.GetUnits
 
         public async Task<Pagination<UnitDTO>> Handle(GetUnitQuery request, CancellationToken cancellationToken)
         {
-            var unit = await _unitOfWork.UnitRepository.ToPagination(request.PageIndex, request.PageSize);
+            var unit = await _unitOfWork.UnitRepository.GetAsync(pageIndex: request.PageIndex, pageSize: request.PageSize);
             var result = _mapper.Map<Pagination<UnitDTO>>(unit);
             return result;
         }

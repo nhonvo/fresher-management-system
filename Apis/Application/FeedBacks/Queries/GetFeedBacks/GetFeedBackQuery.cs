@@ -19,7 +19,7 @@ namespace Application.FeedBacks.Queries.GetFeedBacks
 
         public async Task<Pagination<FeedBackDTO>> Handle(GetFeedBackQuery request, CancellationToken cancellationToken)
         {
-            var feedback = await _unitOfWork.FeedBackRepository.ToPagination(request.pageIndex, request.pageSize);
+            var feedback = await _unitOfWork.FeedBackRepository.GetAsync(pageIndex: request.pageIndex, pageSize: request.pageSize);
             var result = _mapper.Map<Pagination<FeedBackDTO>>(feedback);
             return result;
         }

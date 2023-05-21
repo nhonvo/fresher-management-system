@@ -151,7 +151,7 @@ namespace WebAPI
                     policy.AllowAnyHeader()
                          .AllowAnyMethod()
                          .AllowAnyOrigin();
-                        //.WithOrigins(new string[] { userApp });
+                    //.WithOrigins(new string[] { userApp });
                     // policy.WithOrigins(userApp, userApp)
                     //                  .AllowAnyHeader()
                     //                  .AllowAnyMethod();
@@ -170,6 +170,8 @@ namespace WebAPI
                 .WithSchedule(CronScheduleBuilder.DailyAtHourAndMinute(23, 10))
                 );
             });
+            // rate limiting
+            // services.AddRateLimiting();
             return services;
         }
     }

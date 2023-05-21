@@ -17,7 +17,7 @@ namespace Application.TrainingPrograms.Queries.GetTrainingProgram
         }
         public async Task<Pagination<TrainingProgramDTO>> Handle(GetTrainingProgramQuery request, CancellationToken cancellationToken)
         {
-            var trainingProgram = await _unitOfWork.TrainingProgramRepository.ToPagination(request.pageIndex, request.pageSize);
+            var trainingProgram = await _unitOfWork.TrainingProgramRepository.GetAsync(pageIndex: request.pageIndex, pageSize: request.pageSize);
             var result = _mapper.Map<Pagination<TrainingProgramDTO>>(trainingProgram);
             return result;
         }

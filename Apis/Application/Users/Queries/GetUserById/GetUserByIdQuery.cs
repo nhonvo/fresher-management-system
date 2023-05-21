@@ -18,7 +18,7 @@ namespace Application.Users.Queries.GetUserById
         }
         public async Task<Pagination<UserDTO>> Handle(GetUserByIdQuery request, CancellationToken cancellationToken)
         {
-            var user = await _unitOfWork.UserRepository.ToPagination(request.PageIndex, request.PageSize);
+            var user = await _unitOfWork.UserRepository.GetAsync(pageIndex: request.PageIndex, pageSize: request.PageSize);
             var result = _mapper.Map<Pagination<UserDTO>>(user);
             return result;
         }

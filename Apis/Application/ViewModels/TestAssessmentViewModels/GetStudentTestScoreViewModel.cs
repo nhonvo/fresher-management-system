@@ -9,5 +9,6 @@
         public int NumberOfTests { get; set; }
         public string TestAssessmentType { get; set; }
         public float? SyllabusScheme { get; set; }
+        public ICollection<GetStudentTestScore_TestAssessmentViewModel> AssessmentList { get; set; }
     }
 }

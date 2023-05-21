@@ -34,6 +34,7 @@ public class User : BaseEntity
     public ICollection<Unit> ModifiedUnits { get; set; }
     public ICollection<Attendance> Attendance { get; set; }
     public ICollection<ApproveRequest> ApproveRequests { get; set; }
+    public ICollection<ApproveRequest> AdminApproveRequests { get; set; }
     public ICollection<FeedBack> FeedbackTrainee { get; set; }
     public ICollection<FeedBack> FeedbackTrainer { get; set; }
     public ICollection<Calender> DeletedCalenders { get; set; }

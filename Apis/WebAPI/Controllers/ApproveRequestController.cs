@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers
 {
+    [Authorize]
     public class ApproveRequestController : CustomBaseController
     {
         private readonly IMediator _mediator;
@@ -28,7 +29,6 @@ namespace WebAPI.Controllers
             int pageSize = 10)
             => await _mediator.Send(new GetApproveFilterQuery(order, pageIndex, pageSize));
         [HttpPost]
-        [Authorize(Roles = "Trainee")]
         public async Task<ApproveRequestDTO> Post(CreateRequestCommand request)
             => await _mediator.Send(request);
         [HttpPost("ApproveEnroll")]

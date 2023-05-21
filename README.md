@@ -166,9 +166,9 @@ ASP.NET Core ElasticSearch, Kibana & Serilog Integration
 // **done** data seed move to endpoints 
 
 // AUTHENTICATE: FORGET PASSWORD, REFRESH TOKEN
-// CHECK: attendance, approve request, feedback, score, report, csv
+// CHECK: **done** attendance, approve request, feedback, score, report, csv
 
-// Set up Quartz service allow auto do job in the time set
+// **done** Set up Quartz service allow auto do job in the time set
 Package needed:
 
 ```console
@@ -185,13 +185,20 @@ dotnet add package Quartz
 // fix attendance component
 fix name and business logic
 // if i can add soft delete for all table use global query filter and ignore.
+
+// openid login by google refer fake news.
+
 -**done** crojob service ...
-add quartz job
+**done** add quartz job
 // check middleware timeout && global exception, health check.
-
-// TODO: cleanup source , analyst by rider
-//TODO: write test project and test endpoints
-
+// approve request
+create request join to class
+approve request join to class
+    change state of table approveRequest and and new record classStudent, 
+    send mail for student when approve 
+get list approved with related data
+    get by id 
+---
 
 
 // **done**: POST: syllabuses/{id}/units

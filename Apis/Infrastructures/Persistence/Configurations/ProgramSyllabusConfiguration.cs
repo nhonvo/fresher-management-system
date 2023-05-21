@@ -8,7 +8,8 @@ namespace Infrastructures.Persistence.Configurations
     {
         public void Configure(EntityTypeBuilder<ProgramSyllabus> builder)
         {
-            builder.HasKey(x =>  x.Id );
+            builder.ToTable("ProgramSyllabus");
+            builder.HasKey(x => x.Id);
             builder.HasOne(ps => ps.TrainingProgram)
                    .WithMany(tp => tp.ProgramSyllabus)
                    .HasForeignKey(ps => ps.TrainingProgramId);

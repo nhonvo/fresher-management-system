@@ -31,10 +31,10 @@ namespace WebAPI
                 options.Filters.Add<ApiExceptionFilterAttribute>();
             });
             services.AddEndpointsApiExplorer();
-            // services.AddHealthChecks();
-            // services.AddHealthChecks().AddCheck<ApiHealthCheck>(
-            //     "TrainingManagementSystem",
-            //     tags: new string[] { "TrainingManagementSystem" });
+            services.AddHealthChecks();
+            services.AddHealthChecks().AddCheck<ApiHealthCheck>(
+                "TrainingManagementSystem",
+                tags: new string[] { "TrainingManagementSystem" });
             // Middleware
             services.AddSingleton<GlobalExceptionMiddleware>();
             services.AddSingleton<PerformanceMiddleware>();
@@ -151,7 +151,7 @@ namespace WebAPI
                     policy.AllowAnyHeader()
                          .AllowAnyMethod()
                          .AllowAnyOrigin();
-                        //.WithOrigins(new string[] { userApp });
+                    //.WithOrigins(new string[] { userApp });
                     // policy.WithOrigins(userApp, userApp)
                     //                  .AllowAnyHeader()
                     //                  .AllowAnyMethod();
@@ -165,10 +165,13 @@ namespace WebAPI
                 q.ScheduleJob<SendAttendanceMailJob>(job => job
                     .WithIdentity("AttendanceMailJob")
                     .WithDescription("Sends attendance report emails at 11:10pm every day.")
-                    .WithSchedule(CronScheduleBuilder.DailyAtHourAndMinute(11, 10))
+                //  .WithSimpleSchedule(schedule => schedule.WithIntervalInSeconds(20)
+                //                                          .RepeatForever())
+                .WithSchedule(CronScheduleBuilder.DailyAtHourAndMinute(23, 10))
                 );
             });
-
+            // rate limiting
+            // services.AddRateLimiting();
             return services;
         }
     }

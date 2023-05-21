@@ -2,7 +2,6 @@ using Application.Common.Exceptions;
 using Domain.Entities;
 using MediatR;
 using System.Text.Json;
-using System.Transactions;
 
 namespace Application.SeedData.Queries.SeedData
 {
@@ -108,6 +107,33 @@ namespace Application.SeedData.Queries.SeedData
                     _unitOfWork.ClassStudentRepository.AddRangeAsync(classStudents);
                 });
             }
+            if (!await _unitOfWork.ClassTrainerRepository.AnyAsync())
+            {
+                string json = File.ReadAllText(@"../../Json/ClassTrainer.json");
+                List<ClassTrainer> classTrainer = JsonSerializer.Deserialize<List<ClassTrainer>>(json)!;
+                await _unitOfWork.ExecuteTransactionAsync(() =>
+                {
+                    _unitOfWork.ClassTrainerRepository.AddRangeAsync(classTrainer);
+                });
+            }
+            if (!await _unitOfWork.ClassAdminRepository.AnyAsync())
+            {
+                string json = File.ReadAllText(@"../../Json/ClassAdmin.json");
+                List<ClassAdmin> classAdmin = JsonSerializer.Deserialize<List<ClassAdmin>>(json)!;
+                await _unitOfWork.ExecuteTransactionAsync(() =>
+                {
+                    _unitOfWork.ClassAdminRepository.AddRangeAsync(classAdmin);
+                });
+            }
+            if (!await _unitOfWork.ApproveRequestRepository.AnyAsync())
+            {
+                string json = File.ReadAllText(@"../../Json/ApproveRequest.json");
+                List<ApproveRequest> approveRequest = JsonSerializer.Deserialize<List<ApproveRequest>>(json)!;
+                await _unitOfWork.ExecuteTransactionAsync(() =>
+                {
+                    _unitOfWork.ApproveRequestRepository.AddRangeAsync(approveRequest);
+                });
+            }
 
             //if (!await _unitOfWork.TestAssessmentRepository.AnyAsync())
             //{
@@ -118,6 +144,16 @@ namespace Application.SeedData.Queries.SeedData
             //        _unitOfWork.TestAssessmentRepository.AddRangeAsync(testAssessments);
             //    });
             //}
+
+            if (!await _unitOfWork.AttendanceRepository.AnyAsync())
+            {
+                string json = File.ReadAllText(@"../../Json/Attendance.json");
+                List<Attendance> attendance = JsonSerializer.Deserialize<List<Attendance>>(json)!;
+                await _unitOfWork.ExecuteTransactionAsync(() =>
+               {
+                   _unitOfWork.AttendanceRepository.AddRangeAsync(attendance);
+               });
+            }
             if (!await _unitOfWork.UnitRepository.AnyAsync())
             {
                 string json = File.ReadAllText(@"../../Json/Unit.json");

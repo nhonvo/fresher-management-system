@@ -1,5 +1,5 @@
-﻿using Application.Commons;
-using Application.Calenders.DTO;
+﻿using Application.Calenders.DTO;
+using Application.Commons;
 using AutoMapper;
 using MediatR;
 
@@ -20,7 +20,7 @@ public class GetPagedCalendersHandler : IRequestHandler<GetPagedCalendersQuery, 
 
     public async Task<Pagination<CalenderDTO>> Handle(GetPagedCalendersQuery request, CancellationToken cancellationToken)
     {
-        var unit = await _unitOfWork.CalenderRepository.ToPagination(request.PageIndex, request.PageSize);
+        var unit = await _unitOfWork.CalenderRepository.GetAsync(pageIndex: request.PageIndex, pageSize: request.PageSize);
         var result = _mapper.Map<Pagination<CalenderDTO>>(unit);
         return result;
     }

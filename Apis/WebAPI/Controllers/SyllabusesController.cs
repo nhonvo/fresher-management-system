@@ -18,6 +18,7 @@ using Domain.Enums;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
 
 namespace WebAPI.Controllers;
 
@@ -42,7 +43,7 @@ public class SyllabusesController : BasesController
     public async Task<IActionResult> GetDetailAsync(int id)
      => Ok(await _mediator.Send(new GetSyllabusDetailByIdQuery(id)));
     [HttpPost]
-    [Authorize(Roles = "Trainer")]
+    [Authorize(Roles = "Trainer,SuperAdmin")]
     public async Task<SyllabusDTO> Post([FromBody] CreateSyllabusCommand request)
     => await _mediator.Send(request);
     [HttpPost("{id}/Unit")]

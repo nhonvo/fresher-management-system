@@ -3,21 +3,21 @@ using Application.Attendances.DTO;
 using AutoMapper;
 using MediatR;
 
-namespace Application.Attendances.Queries.GetAttendanceById
+namespace Application.Attendances.Queries.GetReportAttendanceById
 {
-    public record GetAttendanceByIdQuery(int id) : IRequest<AttendanceDTO>;
+    public record GetReportAttendanceByIdQuery(int id) : IRequest<AttendanceDTO>;
 
-    public class GetAttendanceByIdHandler : IRequestHandler<GetAttendanceByIdQuery, AttendanceDTO>
+    public class GetReportAttendanceByIdHandler : IRequestHandler<GetReportAttendanceByIdQuery, AttendanceDTO>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
 
-        public GetAttendanceByIdHandler(IUnitOfWork unitOfWork, IMapper mapper)
+        public GetReportAttendanceByIdHandler(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
-        public async Task<AttendanceDTO> Handle(GetAttendanceByIdQuery request, CancellationToken cancellationToken)
+        public async Task<AttendanceDTO> Handle(GetReportAttendanceByIdQuery request, CancellationToken cancellationToken)
         {
             var Attendance = await _unitOfWork.AttendanceRepository.GetByIdAsync(request.id);
 

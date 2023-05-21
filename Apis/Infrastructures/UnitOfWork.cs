@@ -17,7 +17,6 @@ public class UnitOfWork : IUnitOfWork
     private readonly ApplicationDbContext _context;
 
     // repositories
-    // public IAttendanceRepository AttendanceRepository { get; }
     public IAttendanceRepository AttendanceRepository { get; }
     public IApproveRequestRepository ApproveRequestRepository { get; }
     public IClassRepository ClassRepository { get; }
@@ -33,12 +32,12 @@ public class UnitOfWork : IUnitOfWork
     public IFeedBackRepository FeedBackRepository { get; }
     public ICalenderRepository CalenderRepository { get; }
     public IProgramSyllabusRepository ProgramSyllabusRepository { get; }
+    public IClassAdminRepository ClassAdminRepository { get; }
     //
     public UnitOfWork(ApplicationDbContext dbContext)
     {
         _context = dbContext;
         // repositories
-        // AttendanceRepository = new AttendanceRepository(_context);
         ClassRepository = new ClassRepository(_context);
         ClassStudentRepository = new ClassStudentRepository(_context);
         UserRepository = new UserRepository(_context);
@@ -54,6 +53,7 @@ public class UnitOfWork : IUnitOfWork
         FeedBackRepository = new FeedBackRepository(_context);
         CalenderRepository = new CalenderRepository(_context);
         ProgramSyllabusRepository = new ProgramSyllabusRepository(_context);
+        ClassAdminRepository = new ClassAdminRepository(_context);
     }
 
     // save changes

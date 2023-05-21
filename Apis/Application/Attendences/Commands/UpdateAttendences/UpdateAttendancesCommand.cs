@@ -1,5 +1,5 @@
-﻿using Application.Common.Exceptions;
-using Application.Attendances.DTO;
+﻿using Application.Attendances.DTO;
+using Application.Common.Exceptions;
 using AutoMapper;
 using Domain.Entities;
 using Domain.Enums;

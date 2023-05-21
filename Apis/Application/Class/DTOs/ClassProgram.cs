@@ -26,6 +26,6 @@ namespace Application.Class.DTO
         public bool IsActive { get; set; } = true;
         public int DaysDuration { get; set; }
         public int TimeDuration { get; set; }
-        
+
     }
 }

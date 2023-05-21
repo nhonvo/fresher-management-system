@@ -1,9 +1,7 @@
 using Application.Common.Exceptions;
 using Application.Interfaces;
-using Application.TrainingPrograms.DTOs;
 using AutoMapper;
 using Domain.Entities;
-using Domain.Enums;
 using MediatR;
 
 namespace Application.TrainingPrograms.Commands.AddOneSyllabusToTrainingProgram

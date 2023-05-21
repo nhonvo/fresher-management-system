@@ -1,5 +1,4 @@
 ﻿using Application.Class.DTO;
-using Application.Class.DTOs;
 using Application.Commons;
 using AutoMapper;
 using MediatR;
@@ -20,7 +19,7 @@ namespace Application.Class.Queries.GetClass
         }
         public async Task<Pagination<ClassDTO>> Handle(GetClassQuery request, CancellationToken cancellationToken)
         {
-            var syllabus = await _unitOfWork.ClassRepository.ToPagination(request.PageIndex, request.PageSize);
+            var syllabus = await _unitOfWork.ClassRepository.GetAsync(pageIndex: request.PageIndex, pageSize: request.PageSize);
 
             var result = _mapper.Map<Pagination<ClassDTO>>(syllabus);
 

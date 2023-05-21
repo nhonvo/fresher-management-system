@@ -1,0 +1,22 @@
+[
+    {
+        "TrainingClassId": 1,
+        "AdminId": 2
+    },
+    {
+        "TrainingClassId": 2,
+        "AdminId": 7
+    },
+    {
+        "TrainingClassId": 3,
+        "AdminId": 8
+    },
+    {
+        "TrainingClassId": 50,
+        "AdminId": 9
+    },
+    {
+        "TrainingClassId": 4,
+        "AdminId": 7
+    }
+]

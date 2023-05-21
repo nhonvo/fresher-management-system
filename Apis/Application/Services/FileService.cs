@@ -8,7 +8,8 @@ namespace Application.Services
     {
         private readonly IWebHostEnvironment _hostingEnvironment;
 
-        public FileService(IWebHostEnvironment hostingEnvironment) {
+        public FileService(IWebHostEnvironment hostingEnvironment)
+        {
             _hostingEnvironment = hostingEnvironment;
         }
         public async Task<string> UploadFile(IFormFile file)

@@ -1,4 +1,3 @@
-using Application.Syllabuses.Commands.DeleteSyllabus;
 using Application.Syllabuses.Commands.DuplicateSyllabus;
 using FluentValidation;
 

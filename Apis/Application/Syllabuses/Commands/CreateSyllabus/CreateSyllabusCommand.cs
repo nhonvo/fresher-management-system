@@ -1,4 +1,3 @@
-using Application.Common.Exceptions;
 using Application.Syllabuses.DTO;
 using AutoMapper;
 using Domain.Entities;
@@ -22,7 +21,7 @@ namespace Application.Syllabuses.Commands.CreateSyllabus
         public float GPAScheme { get; init; }
         // public List<SyllabusUnit> Units { get; init; }
     }
-    
+
     public class CreateSyllabusHandler : IRequestHandler<CreateSyllabusCommand, SyllabusDTO>
     {
         private readonly IUnitOfWork _unitOfWork;

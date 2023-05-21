@@ -1,4 +1,3 @@
-using System.Security.Cryptography.X509Certificates;
 using Application.Common.Exceptions;
 using Application.Interfaces;
 using Application.Syllabuses.DTO;

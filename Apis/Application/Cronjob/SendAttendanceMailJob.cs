@@ -1,17 +1,21 @@
-﻿using Quartz;
+using Application.Attendances.Commands.SendMailAttendance;
+using MediatR;
+using Quartz;
 
 namespace Application.Cronjob
 {
     public class SendAttendanceMailJob : IJob
     {
+        private readonly IMediator _mediator;
 
-        public SendAttendanceMailJob()
+        public SendAttendanceMailJob(IMediator mediator)
         {
+            _mediator = mediator;
         }
 
-        public Task Execute(IJobExecutionContext context)
+        public async Task Execute(IJobExecutionContext context)
         {
-            throw new NotImplementedException();
+            await _mediator.Send(new SendMailAttendanceCommand());
         }
 
     }

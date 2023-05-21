@@ -8,6 +8,8 @@ namespace Infrastructures.Persistence.Configurations
     {
         public void Configure(EntityTypeBuilder<TrainingMaterial> builder)
         {
+            builder.ToTable("TrainingMaterial");
+
             builder.HasOne(o => o.UnitLesson)
                  .WithMany(u => u.TrainingMaterials)
                  .HasForeignKey(o => o.UnitLessonId);

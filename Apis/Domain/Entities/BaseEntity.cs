@@ -8,6 +8,6 @@ public abstract class BaseEntity
     public int? DeleteBy { get; set; }
     // public User DeleteByUser { get; set; }
     public DateTime? DeletionDate { get; set; }
-    public bool IsDeleted { get; set; }
+    public bool? IsDeleted { get; set; }
 
 }

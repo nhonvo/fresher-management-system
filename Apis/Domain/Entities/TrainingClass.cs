@@ -18,7 +18,7 @@ public class TrainingClass : BaseEntity
     // Navigation Properties
     public ClassLocation Location { get; set; }
     public ClassStatus Status { get; set; }
-    public ICollection<ClassAdmin> Admin { get; set; }
+    public ICollection<ClassAdmin> ClassAdmins { get; set; }
     public ICollection<ClassTrainer> ClassTrainers { get; set; }
     public ICollection<ClassStudent> Students { get; set; }
     public int? ReviewByUserId { get; set; }

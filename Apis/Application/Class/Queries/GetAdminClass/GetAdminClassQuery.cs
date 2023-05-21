@@ -25,7 +25,7 @@ namespace Application.Class.Queries.GetAdminClass
         {
             var user = await _unitOfWork.ClassRepository.GetAsync(
                 filter: x => x.Id == request.id,
-                include: x => x.Include(x => x.Admin),
+                include: x => x.Include(x => x.ClassAdmins),
                 pageIndex: request.PageIndex,
                 pageSize: request.PageSize);
             var result = _mapper.Map<Pagination<AdminClass>>(user);

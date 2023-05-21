@@ -1,5 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-using Application.Account.DTOs;
+﻿using Application.Account.DTOs;
 using Application.Common.Exceptions;
 using Application.Emails.Commands.SendMail;
 using Application.Utils;
@@ -7,6 +6,7 @@ using AutoMapper;
 using Domain.Entities;
 using Domain.Enums;
 using MediatR;
+using System.ComponentModel.DataAnnotations;
 
 namespace Application.Account.Commands.Register;
 

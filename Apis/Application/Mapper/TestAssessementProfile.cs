@@ -1,8 +1,6 @@
-﻿using Application.Commons;
-using Application.TestAssessments.Commands.CreateTestAssessment;
+﻿using Application.TestAssessments.Commands.CreateTestAssessment;
 using Application.TestAssessments.Commands.UpdateTestAssessment;
 using Application.TestAssessments.DTO;
-using Application.ViewModels.TestAssessmentViewModels;
 using AutoMapper;
 using Domain.Entities;
 

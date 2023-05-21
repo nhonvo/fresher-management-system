@@ -1,5 +1,4 @@
 ﻿using Application.Attendances.Commands.CreateAttendances;
-using Application.Attendances.Commands.UpdateAttendances;
 using Application.Attendances.DTO;
 using AutoMapper;
 using Domain.Entities;

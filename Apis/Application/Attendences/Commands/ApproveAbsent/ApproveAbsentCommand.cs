@@ -1,10 +1,10 @@
-﻿using Application.Common.Exceptions;
-using Application.Attendances.DTO;
+﻿using Application.Attendances.DTO;
+using Application.Common.Exceptions;
+using Application.Interfaces;
 using AutoMapper;
 using Domain.Enums;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using Application.Interfaces;
 
 namespace Application.Attendances.Commands.ApproveAbsent
 {
@@ -36,7 +36,7 @@ namespace Application.Attendances.Commands.ApproveAbsent
             {
                 throw new NotFoundException("Attendance Not Found");
             }
-            
+
             attendance.ModificationBy = _claimService.CurrentUserId;
             attendance.ModificationDate = _currentTime.GetCurrentTime();
             attendance.AdminId = _claimService.CurrentUserId;

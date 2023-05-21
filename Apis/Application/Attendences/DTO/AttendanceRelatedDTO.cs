@@ -14,6 +14,7 @@ namespace Application.Attendances.DTO
     }
     public class AttendanceRelatedClassStudentDTO
     {
+        public List<AttendanceRelatedDTO> Attendances { get; set; }
         public AttendanceRelatedStudent Student { get; set; }
         public AttendanceRelatedTrainingClassDTO TrainingClass { get; set; }
     }

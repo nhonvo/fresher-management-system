@@ -1,11 +1,11 @@
-﻿using Application.Commons;
-using Application.Attendances.DTO;
+﻿using Application.Attendances.DTO;
+using Application.Commons;
 using AutoMapper;
-using MediatR;
 using Domain.Enums;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
 
-namespace Application.Attendances.Queries.GetAttendanceEachClass
+namespace Application.Attendances.Queries.GetAttendanceOfClass
 {
     public record GetAttendanceOfClassQuery(int PageIndex = 0, int PageSize = 10) : IRequest<Pagination<AttendanceRelatedDTO>>;
     public class SendAttendanceEachClassHandler : IRequestHandler<GetAttendanceOfClassQuery, Pagination<AttendanceRelatedDTO>>
@@ -41,4 +41,5 @@ namespace Application.Attendances.Queries.GetAttendanceEachClass
             return result;
         }
     }
+
 }

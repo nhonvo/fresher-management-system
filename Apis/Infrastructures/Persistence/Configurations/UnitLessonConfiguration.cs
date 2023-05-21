@@ -8,6 +8,9 @@ namespace Infrastructures.Persistence.Configurations
     {
         public void Configure(EntityTypeBuilder<Lesson> builder)
         {
+            builder.ToTable("Lesson");
+            builder.HasKey(x => x.Id);
+
             builder.HasOne(o => o.OutputStandard)
                    .WithMany(u => u.UnitLessons)
                    .HasForeignKey(o => o.OutputStandardId);

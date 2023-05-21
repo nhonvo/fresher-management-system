@@ -1,5 +1,3 @@
-
-using System.Globalization;
 using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;

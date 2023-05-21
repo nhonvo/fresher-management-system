@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using Application.Attendances.Commands.SendMailAttendance;
+using MediatR;
 using Quartz;
 
 namespace Application.Cronjob
@@ -14,7 +15,7 @@ namespace Application.Cronjob
 
         public async Task Execute(IJobExecutionContext context)
         {
-            throw new NotImplementedException();
+            await _mediator.Send(new SendMailAttendanceCommand());
         }
 
     }

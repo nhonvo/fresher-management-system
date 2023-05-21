@@ -1,13 +1,11 @@
 ﻿using Application.Common.Exceptions;
 using Application.Commons;
 using Application.Interfaces;
-using Application.Syllabuses.DTO;
 using Application.TestAssessments.Queries.GetListSyllabusScoreOfStudent;
 using Application.ViewModels.TestAssessmentViewModels;
 using AutoMapper;
 using Domain.Entities;
 using MediatR;
-using Microsoft.AspNetCore.Http.HttpResults;
 using System.Linq.Expressions;
 
 namespace Application.Services

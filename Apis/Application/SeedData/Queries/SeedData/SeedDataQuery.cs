@@ -2,7 +2,6 @@ using Application.Common.Exceptions;
 using Domain.Entities;
 using MediatR;
 using System.Text.Json;
-using System.Transactions;
 
 namespace Application.SeedData.Queries.SeedData
 {

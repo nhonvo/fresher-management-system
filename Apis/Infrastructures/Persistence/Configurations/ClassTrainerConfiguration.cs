@@ -8,6 +8,7 @@ namespace Infrastructures.Persistence.Configurations
     {
         public void Configure(EntityTypeBuilder<ClassTrainer> builder)
         {
+            builder.ToTable("ClassTrainer");
             builder.HasKey(x => x.Id);
             builder.HasOne(ca => ca.Trainer)
                    .WithMany(tc => tc.ClassTrainers)

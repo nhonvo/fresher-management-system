@@ -1,5 +1,5 @@
-﻿using Application.Commons;
-using Application.Attendances.DTO;
+﻿using Application.Attendances.DTO;
+using Application.Commons;
 using AutoMapper;
 using MediatR;
 

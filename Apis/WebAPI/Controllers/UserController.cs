@@ -1,7 +1,5 @@
 using Apis.Domain.Enums;
 using Application.Commons;
-using Application.Emails.Commands.SendMail;
-using Application.Emails.Queries;
 using Application.Users.Commands.ImportUsersCSV;
 using Application.Users.DTO;
 using Application.Users.GetProfile.Queries;

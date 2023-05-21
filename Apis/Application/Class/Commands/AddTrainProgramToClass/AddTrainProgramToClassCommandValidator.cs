@@ -1,4 +1,3 @@
-using Application.Class.Commands.CreateClass;
 using FluentValidation;
 
 namespace Application.Class.Commands.AddTrainProgramToClass

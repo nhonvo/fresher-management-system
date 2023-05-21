@@ -1,21 +1,22 @@
-﻿using Application.Commons;
+﻿using Application.Attendances.Commands.ApproveAbsent;
 using Application.Attendances.Commands.CreateAttendances;
+using Application.Attendances.Commands.SendMailAttendance;
 using Application.Attendances.Commands.UpdateAttendances;
 using Application.Attendances.DTO;
 using Application.Attendances.Queries.GetAttendanceById;
-using MediatR;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Authorization;
-using Application.Attendances.Queries.GetAttendanceRequest;
+using Application.Attendances.Queries.GetAttendanceOfClass;
 using Application.Attendances.Queries.GetAttendancePendingRequest;
-using Domain.Enums;
+using Application.Attendances.Queries.GetAttendanceRequest;
 using Application.Attendances.Queries.SearchAttendanceRequest;
-using Application.Attendances.Commands.ApproveAbsent;
-using Application.Attendances.Queries.GetAttendanceEachClass;
-using Application.Attendances.Commands.SendMailAttendance;
+using Application.Commons;
+using Domain.Enums;
+using MediatR;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers
 {
+
     public class AttendanceController : CustomBaseController
     {
         private readonly IMediator _mediator;
@@ -23,6 +24,11 @@ namespace WebAPI.Controllers
         {
             _mediator = mediator;
         }
+        // [HttpGet("test-send-mail")]
+        // public async Task Gets()
+        // {
+        //     await _mediator.Send(new SendMailAttendanceCommand());
+        // }
         [HttpGet]
         public async Task<Pagination<AttendanceDTO>> Get(int pageIndex = 0, int pageSize = 10)
         {

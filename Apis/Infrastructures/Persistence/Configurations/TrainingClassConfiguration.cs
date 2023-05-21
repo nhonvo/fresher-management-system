@@ -8,6 +8,8 @@ namespace Infrastructures.Persistence.Configurations
     {
         public void Configure(EntityTypeBuilder<TrainingClass> builder)
         {
+            builder.ToTable("TrainingClass");
+
             builder.HasOne(tc => tc.ReviewBy)
                    .WithMany(u => u.ReviewTrainingClasses)
                    .HasForeignKey(tc => tc.ReviewByUserId).OnDelete(DeleteBehavior.NoAction);

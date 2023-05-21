@@ -1,12 +1,8 @@
 ﻿using Application.Class.DTO;
 using Application.Common.Exceptions;
 using Application.Interfaces;
-using Application.TrainingPrograms.DTOs;
 using AutoMapper;
-using Domain.Entities;
-using Domain.Enums;
 using MediatR;
-using Microsoft.EntityFrameworkCore;
 
 namespace Application.Class.Commands.AddTrainProgramToClass
 {

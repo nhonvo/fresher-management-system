@@ -1,8 +1,8 @@
-﻿using Application.Commons;
-using Application.Attendances.DTO;
+﻿using Application.Attendances.DTO;
+using Application.Commons;
 using AutoMapper;
-using MediatR;
 using Domain.Enums;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
 
 namespace Application.Attendances.Queries.GetAttendancePendingRequest

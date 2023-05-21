@@ -8,11 +8,11 @@ namespace Application.Emails.Commands.SendMail
     {
 
     }
-    public class SendMailCreateUserCommandHandler : IRequestHandler<SendMailCreateUserCommand, bool>
+    public class SendMailCreateUserHandler : IRequestHandler<SendMailCreateUserCommand, bool>
     {
         private readonly IMediator _mediator;
 
-        public SendMailCreateUserCommandHandler(IMediator mediator)
+        public SendMailCreateUserHandler(IMediator mediator)
         {
             _mediator = mediator;
         }

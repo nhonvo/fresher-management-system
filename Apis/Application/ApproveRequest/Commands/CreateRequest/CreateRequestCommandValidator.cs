@@ -7,8 +7,8 @@ namespace Application.ApproveRequests.Commands
     {
         public CreateRequestCommandValidator()
         {
-            RuleFor(x => x.StudentId).NotEmpty().NotNull();
-            RuleFor(x => x.ClassId).NotEmpty().NotNull();
+            RuleFor(x => x.StudentId).NotEmpty().NotNull().GreaterThan(0);
+            RuleFor(x => x.ClassId).NotEmpty().NotNull().GreaterThan(0);
         }
     }
 }

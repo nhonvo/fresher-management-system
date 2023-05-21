@@ -25,7 +25,7 @@ namespace Application.Emails.Queries
 
         public async Task<string> Handle(GetMailTemplateQuery request, CancellationToken cancellationToken)
         {
-            Console.WriteLine(Directory.GetCurrentDirectory() + "Here!!!!");
+            // Console.WriteLine(Directory.GetCurrentDirectory() + "Here!!!!");
             string body = string.Empty;
             using (StreamReader reader = new StreamReader(_config.HtmlTemplatePath))
             {

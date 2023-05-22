@@ -135,15 +135,15 @@ namespace Application.SeedData.Queries.SeedData
                 });
             }
 
-            //if (!await _unitOfWork.TestAssessmentRepository.AnyAsync())
-            //{
-            //    string json = File.ReadAllText(@"../../Json/TestAssessment.json");
-            //    List<TestAssessment> testAssessments = JsonSerializer.Deserialize<List<TestAssessment>>(json)!;
-            //    await _unitOfWork.ExecuteTransactionAsync(() =>
-            //    {
-            //        _unitOfWork.TestAssessmentRepository.AddRangeAsync(testAssessments);
-            //    });
-            //}
+            if (!await _unitOfWork.TestAssessmentRepository.AnyAsync())
+            {
+                string json = File.ReadAllText(@"../../Json/TestAssessment.json");
+                List<TestAssessment> testAssessments = JsonSerializer.Deserialize<List<TestAssessment>>(json)!;
+                await _unitOfWork.ExecuteTransactionAsync(() =>
+                {
+                    _unitOfWork.TestAssessmentRepository.AddRangeAsync(testAssessments);
+                });
+            }
 
             if (!await _unitOfWork.AttendanceRepository.AnyAsync())
             {

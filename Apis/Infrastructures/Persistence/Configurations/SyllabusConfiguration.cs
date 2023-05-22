@@ -16,6 +16,13 @@ namespace Infrastructures.Persistence.Configurations
             builder.HasOne(o => o.ModificationByUser)
                   .WithMany(u => u.ModifiedSyllabuses)
                   .HasForeignKey(o => o.ModificationBy).OnDelete(DeleteBehavior.NoAction);
+
+            builder
+                .HasMany(x => x.ProgramSyllabus)
+                .WithOne(x => x.Syllabus)
+                .HasForeignKey(x => x.SyllabusId)
+                .HasPrincipalKey(x => x.Id)
+                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

@@ -117,7 +117,9 @@ namespace Application.Services
             {
                 AttendeeId = group.Key.AttendeeId,
                 SyllabusId = group.Key.SyllabusId,
-                FinalSyllabusScore = group.Sum(ta => ta.AverageScore * ta.SyllabusScheme) / group.Sum(ta => ta.SyllabusScheme) ?? 0,
+                SyllabusName = _unitOfWork.SyllabusRepository.GetByIdAsync(group.Key.SyllabusId).Result.Name,
+                FinalScheme = (float)Math.Round((float)_unitOfWork.SyllabusRepository.GetByIdAsync(group.Key.SyllabusId).Result.FinalScheme * 10, 2),
+                FinalSyllabusScore =  (float)Math.Round((float)(group.Sum(ta => ta.AverageScore * ta.SyllabusScheme) / group.Sum(ta => ta.SyllabusScheme) ?? 0), 2),
                 ListAssessment = scoreByTestType.Where(x => x.SyllabusId == group.Key.SyllabusId && x.AttendeeId == group.Key.AttendeeId).ToList()
             }).OrderBy(x => x.AttendeeId).ToList();
             var count = classFinalSyllabusScore.Count();
@@ -147,7 +149,10 @@ namespace Application.Services
             {
                 AttendeeId = id,
                 ClassId = group.Key.TrainingClassId,
-                GPA = classFinalSyllabusScore.Items.Where(x => x.TrainingClassId == group.Key.TrainingClassId).SelectMany(x => x.ListAssessment).Average(x => x.AverageScore),
+                ClassName = _unitOfWork.ClassRepository.GetByIdAsync(group.Key.TrainingClassId).Result.Name,
+                GPA = (float)Math.Round((float)classFinalSyllabusScore.Items.Where(x => x.TrainingClassId == group.Key.TrainingClassId)
+                                                                             .SelectMany(x => x.ListAssessment)
+                                                                             .Average(x => x.AverageScore),2),
                 ListSyllabus = classFinalSyllabusScore.Items.Where(x => x.TrainingClassId == group.Key.TrainingClassId).ToList()
             }).ToList();
 
@@ -177,9 +182,13 @@ namespace Application.Services
             {
                 ClassId = id,
                 AttendeeId = group.Key.AttendeeId,
-                GPA = classFinalSyllabusScore.Items.Where(x => x.AttendeeId == group.Key.AttendeeId).SelectMany(x => x.ListAssessment).Average(x => x.AverageScore),
+                AttendeeName = _unitOfWork.UserRepository.GetByIdAsync(group.Key.AttendeeId).Result.Name,
+                GPA = (float)Math.Round((float)classFinalSyllabusScore.Items.Where(x => x.AttendeeId == group.Key.AttendeeId)
+                                                                             .SelectMany(x => x.ListAssessment)
+                                                                             .Average(x => x.AverageScore), 2),
                 ListSyllabus = classFinalSyllabusScore.Items.Where(x => x.AttendeeId == group.Key.AttendeeId).ToList()
             }).ToList();
+
 
             var count = classGPAScoreOfStudent.Count();
             if (pageSize != 0)

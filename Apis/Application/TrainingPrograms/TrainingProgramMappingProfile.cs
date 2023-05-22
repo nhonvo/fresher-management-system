@@ -16,6 +16,7 @@ namespace Application.TrainingPrograms
             // duplicate
             CreateMap<TrainingProgramDuplicate, TrainingProgram>().ReverseMap();
             CreateMap<TrainingProgramProgramSyllabusDuplicate, ProgramSyllabus>().ReverseMap();
+            CreateMap<TrainingProgramProgramSyllabusDuplicate, ProgramSyllabus>().ReverseMap();
             CreateMap<TrainingProgramSyllabusDuplicate, Syllabus>().ReverseMap();
             CreateMap<TrainingProgramTestAssessmentDuplicate, TestAssessment>().ReverseMap();
             CreateMap<TrainingProgramUnitDuplicate, Unit>().ReverseMap();

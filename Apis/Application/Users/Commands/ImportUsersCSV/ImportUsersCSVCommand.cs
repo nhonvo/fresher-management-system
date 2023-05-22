@@ -11,9 +11,9 @@ namespace Application.Users.Commands.ImportUsersCSV;
 public record ImportUsersCSVCommand : IRequest<List<UserCSV>>
 {
 #pragma warning disable
-    public IFormFile FormFile { get; set; }
-    public bool IsScanEmail { get; set; }
-    public DuplicateHandle DuplicateHandle { get; set; }
+    public IFormFile FormFile { get; init; }
+    public bool? IsScanEmail { get; init; }
+    public DuplicateHandle? DuplicateHandle { get; init; }
 }
 
 public class ImportUsersCSVHandler : IRequestHandler<ImportUsersCSVCommand, List<UserCSV>>
@@ -37,7 +37,7 @@ public class ImportUsersCSVHandler : IRequestHandler<ImportUsersCSVCommand, List
             {
                 var newItem = _mapper.Map<User>(item);
                 newItem.Password = "12345678"; // default password
-                if (request.IsScanEmail)
+                if (request.IsScanEmail is true)
                 {
                     var oldItem = await _unitOfWork.UserRepository.FirstOrDefaultAsync(s => s.Email == item.Email);
                     if (oldItem != null)

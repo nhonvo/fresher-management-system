@@ -61,7 +61,7 @@ public class SyllabusesController : BasesController
     public async Task<SyllabusDTO> Delete(int id)
     => await _mediator.Send(new DeleteSyllabusCommand(id));
     [HttpPost("Duplicate/{id}")]
-    [Authorize(Roles = "Trainer")]
+    [Authorize(Roles = "Trainer, ClassAdmin")]
     public async Task<SyllabusDTO> Duplicate(int id)
     => await _mediator.Send(new DuplicateSyllabusCommand(id));
 

@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Application.TrainingPrograms.Commands.DuplicateTrainProgram
 {
-    public record DuplicateTrainProgramCommand(int id) : IRequest<TrainingProgramDTO>;
-    public class DuplicateTrainProgramHandler : IRequestHandler<DuplicateTrainProgramCommand, TrainingProgramDTO>
+    public record DuplicateTrainProgramCommand(int id) : IRequest<TrainingProgramRelated>;
+    public class DuplicateTrainProgramHandler : IRequestHandler<DuplicateTrainProgramCommand, TrainingProgramRelated>
     {
         private readonly IMapper _mapper;
         private readonly IUnitOfWork _unitOfWork;
@@ -27,7 +27,7 @@ namespace Application.TrainingPrograms.Commands.DuplicateTrainProgram
             _claimService = claimService;
             _currentTime = currentTime;
         }
-        public async Task<TrainingProgramDTO> Handle(DuplicateTrainProgramCommand request, CancellationToken cancellationToken)
+        public async Task<TrainingProgramRelated> Handle(DuplicateTrainProgramCommand request, CancellationToken cancellationToken)
         {
 
             var exist = await _unitOfWork.TrainingProgramRepository.AnyAsync(x => x.Id == request.id);
@@ -67,7 +67,7 @@ namespace Application.TrainingPrograms.Commands.DuplicateTrainProgram
             {
                 _unitOfWork.TrainingProgramRepository.AddAsync(trainingProgramUpdate);
             });
-            var result = _mapper.Map<TrainingProgramDTO>(trainingProgramUpdate);
+            var result = _mapper.Map<TrainingProgramRelated>(trainingProgramUpdate);
             return result;
         }
     }

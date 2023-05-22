@@ -25,19 +25,21 @@ namespace Application.Attendances.Commands.DeleteAttendances
         }
         public async Task<AttendanceDTO> Handle(DeleteAttendancesCommand request, CancellationToken cancellationToken)
         {
-            var Attendance = await _unitOfWork.AttendanceRepository.GetByIdAsync(request.Id);
-            Attendance.DeletionDate = _currentTime.GetCurrentTime();
-            Attendance.IsDeleted = true;
-            Attendance.DeleteBy = _claimService.CurrentUserId;
-            Attendance.ModificationBy = _claimService.CurrentUserId;
-            Attendance.ModificationDate = _currentTime.GetCurrentTime();
-            if (Attendance == null)
+            var attendance = await _unitOfWork.AttendanceRepository.GetByIdAsync(request.Id);
+            attendance.DeletionDate = _currentTime.GetCurrentTime();
+            attendance.IsDeleted = true;
+            attendance.DeleteBy = _claimService.CurrentUserId;
+            attendance.ModificationBy = _claimService.CurrentUserId;
+            attendance.ModificationDate = _currentTime.GetCurrentTime();
+            if (attendance == null)
+            {
                 throw new NotFoundException("Attendance not found");
+            }
             await _unitOfWork.ExecuteTransactionAsync(() =>
             {
-                _unitOfWork.AttendanceRepository.Update(Attendance);
+                _unitOfWork.AttendanceRepository.Update(attendance);
             });
-            var result = _mapper.Map<AttendanceDTO>(Attendance);
+            var result = _mapper.Map<AttendanceDTO>(attendance);
             return result ?? throw new NotFoundException("Can not delete class");
         }
     }

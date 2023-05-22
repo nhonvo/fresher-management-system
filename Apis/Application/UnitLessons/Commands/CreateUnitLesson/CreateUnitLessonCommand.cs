@@ -33,7 +33,7 @@ namespace Application.UnitLessons.Commands.CreateUnitLesson
 
             await _unitOfWork.ExecuteTransactionAsync(() =>
             {
-                _unitOfWork.UnitLessonRepository.AddAsync(unitlesson);
+                _unitOfWork.LessonRepository.AddAsync(unitlesson);
             });
             var result = _mapper.Map<UnitLessonDTO>(unitlesson);
 

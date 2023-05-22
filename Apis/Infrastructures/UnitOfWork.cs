@@ -26,7 +26,7 @@ public class UnitOfWork : IUnitOfWork
     public ITestAssessmentRepository TestAssessmentRepository { get; }
     public IUserRepository UserRepository { get; }
     public IUnitRepository UnitRepository { get; }
-    public IUnitLessonRepository UnitLessonRepository { get; }
+    public ILessonRepository LessonRepository { get; }
     public IClassTrainerRepository ClassTrainerRepository { get; }
     public ITrainingProgramRepository TrainingProgramRepository { get; }
     public IFeedBackRepository FeedBackRepository { get; }
@@ -49,7 +49,7 @@ public class UnitOfWork : IUnitOfWork
         ApproveRequestRepository = new ApproveRequestRepository(_context);
         ClassTrainerRepository = new ClassTrainerRepository(_context);
         TrainingProgramRepository = new TrainingProgramRepository(_context);
-        UnitLessonRepository = new UnitLessonRepository(_context);
+        LessonRepository = new LessonRepository(_context);
         UnitRepository = new UnitRepository(_context);
         FeedBackRepository = new FeedBackRepository(_context);
         CalenderRepository = new CalenderRepository(_context);

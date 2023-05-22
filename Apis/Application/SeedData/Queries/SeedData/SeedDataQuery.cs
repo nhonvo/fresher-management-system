@@ -163,13 +163,13 @@ namespace Application.SeedData.Queries.SeedData
                    _unitOfWork.UnitRepository.AddRangeAsync(testAssessments);
                });
             }
-            if (!await _unitOfWork.UnitLessonRepository.AnyAsync())
+            if (!await _unitOfWork.LessonRepository.AnyAsync())
             {
                 string json = File.ReadAllText(@"../../Json/UnitLesson.json");
                 List<Lesson> unitLessons = JsonSerializer.Deserialize<List<Lesson>>(json)!;
                 await _unitOfWork.ExecuteTransactionAsync(() =>
                {
-                   _unitOfWork.UnitLessonRepository.AddRangeAsync(unitLessons);
+                   _unitOfWork.LessonRepository.AddRangeAsync(unitLessons);
                });
             }
             if (!await _unitOfWork.TrainingMaterialRepository.AnyAsync())

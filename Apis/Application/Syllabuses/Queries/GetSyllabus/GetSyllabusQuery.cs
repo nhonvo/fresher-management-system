@@ -1,5 +1,5 @@
 using Application.Commons;
-using Application.Syllabuses.DTO;
+using Application.Syllabuses.DTOs;
 using AutoMapper;
 using Domain.Enums;
 using MediatR;

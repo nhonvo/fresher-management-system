@@ -21,6 +21,8 @@ public class TrainingClass : BaseEntity
     public ICollection<ClassAdmin> ClassAdmins { get; set; }
     public ICollection<ClassTrainer> ClassTrainers { get; set; }
     public ICollection<ClassStudent> Students { get; set; }
+    public int? CreateByUserId { get; set; }
+    public User? CreateBy { get; set; }
     public int? ReviewByUserId { get; set; }
     public User ReviewBy { get; set; }
     public int? ApproveByUserId { get; set; }

@@ -10,6 +10,13 @@ namespace Infrastructures.Persistence.Configurations
         {
             builder.ToTable("TrainingClass");
 
+            builder
+              .HasOne(x => x.CreateBy)
+              .WithMany(x => x.CreatedTrainingClasses)
+              .HasForeignKey(x => x.CreateByUserId)
+              .HasPrincipalKey(x => x.Id)
+              .OnDelete(DeleteBehavior.Restrict);
+
             builder.HasOne(tc => tc.ReviewBy)
                    .WithMany(u => u.ReviewTrainingClasses)
                    .HasForeignKey(tc => tc.ReviewByUserId).OnDelete(DeleteBehavior.NoAction);

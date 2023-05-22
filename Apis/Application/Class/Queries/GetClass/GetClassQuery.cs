@@ -1,14 +1,17 @@
-﻿using Application.Class.DTO;
-using Application.Class.DTOs;
-using Application.Commons;
+﻿using Application.Commons;
 using AutoMapper;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 
 namespace Application.Class.Queries.GetClass
 {
-    public record GetClassQuery(int PageIndex = 0, int PageSize = 10) : IRequest<Pagination<ClassRelated>>;
+    public record GetClassQuery : IRequest<Pagination<ClassDto>>
+    {
+        public int PageIndex { get; init; }
+        public int PageSize { get; init; }
+    };
 
-    public class GetClassHandler : IRequestHandler<GetClassQuery, Pagination<ClassRelated>>
+    public class GetClassHandler : IRequestHandler<GetClassQuery, Pagination<ClassDto>>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
@@ -18,11 +21,23 @@ namespace Application.Class.Queries.GetClass
             _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
-        public async Task<Pagination<ClassRelated>> Handle(GetClassQuery request, CancellationToken cancellationToken)
+        public async Task<Pagination<ClassDto>> Handle(GetClassQuery request, CancellationToken cancellationToken)
         {
-            var syllabus = await _unitOfWork.ClassRepository.GetAsync(pageIndex: request.PageIndex, pageSize: request.PageSize);
+            var classes = await _unitOfWork.ClassRepository.GetAsync(
+                include: x => x
+                    .Include(x => x.CreateBy)
+                    .Include(x => x.ReviewBy)
+                    .Include(x => x.ApproveBy)
+                    .Include(x => x.TrainingProgram)
+                        .ThenInclude(x => x.ProgramSyllabus)
+                        .ThenInclude(x => x.Syllabus)
+                        .ThenInclude(x => x.Units)
+                        .ThenInclude(x => x.Lessons)
+                        .ThenInclude(x => x.TrainingMaterials),
+                pageIndex: request.PageIndex,
+                pageSize: request.PageSize);
 
-            var result = _mapper.Map<Pagination<ClassRelated>>(syllabus);
+            var result = _mapper.Map<Pagination<ClassDto>>(classes);
 
             return result;
         }

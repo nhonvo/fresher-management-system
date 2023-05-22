@@ -29,7 +29,7 @@ namespace WebAPI.Controllers
         public async Task<AccountDTO> RegisterAsync([FromBody] RegisterCommand request)
             => await _mediator.Send(request);
         [Authorize]
-        [HttpPatch("change-password")]
+        [HttpPut("change-password")]
         public async Task<AccountDTO> ChangePassword(ChangePasswordCommand request)
             => await _mediator.Send(request);
         [Authorize(Roles = "SuperAdmin")]

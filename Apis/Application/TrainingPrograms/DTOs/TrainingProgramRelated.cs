@@ -1,21 +1,21 @@
 using Domain.Enums;
 
-namespace Application.Class.DTO
+namespace Application.TrainingPrograms.DTOs
 {
-    public class TrainingProgramDuplicate
+    public class TrainingProgramRelated
     {
         public string Name { get; set; }
         public TrainingProgramStatus Status { get; set; }
-        public ICollection<TrainingProgramProgramSyllabusDuplicate> ProgramSyllabus { get; set; }
+        public ICollection<TrainingProgramProgramSyllabusRelated> ProgramSyllabus { get; set; }
     }
-    public class TrainingProgramProgramSyllabusDuplicate
+    public class TrainingProgramProgramSyllabusRelated
     {
-        public int TrainingProgramId { get; set; }
-        public TrainingProgramDuplicate TrainingProgram { get; set; }
+        // public int TrainingProgramId { get; set; }
+        // public TrainingProgramRelated TrainingProgram { get; set; }
         public int SyllabusId { get; set; }
-        public TrainingProgramSyllabusDuplicate Syllabus { get; set; }
+        public TrainingProgramSyllabusRelated Syllabus { get; set; }
     }
-    public class TrainingProgramSyllabusDuplicate
+    public class TrainingProgramSyllabusRelated
     {
         public string Name { get; set; }
         public string Code { get; set; }
@@ -33,36 +33,35 @@ namespace Application.Class.DTO
 
         // Navigation Property
 
-        public ICollection<TrainingProgramUnitDuplicate> Units { get; set; }
-        // public ICollection<ProgramSyllabus>? ProgramSyllabus { get; set; }
-        public ICollection<TrainingProgramTestAssessmentDuplicate>? TestAssessments { get; set; }
-        // public DateTime CreationDate { get; set; }
+        public ICollection<TrainingProgramUnitRelated> Units { get; set; }
+        public ICollection<TrainingProgramTestAssessmentRelated>? TestAssessments { get; set; }
+        public DateTime CreationDate { get; set; }
     }
-    public class TrainingProgramTestAssessmentDuplicate
+    public class TrainingProgramTestAssessmentRelated
     {
         public float? Score { get; set; }
         public TestAssessmentType TestAssessmentType { get; set; }
         public int AttendeeId { get; set; }
         public int SyllabusId { get; set; }
         public int TrainingClassId { get; set; }
-        public ICollection<TrainingProgramTrainingMaterialDuplicate> Materials { get; set; }
+        public ICollection<TrainingProgramTrainingMaterialRelated> Materials { get; set; }
     }
-    public class TrainingProgramUnitDuplicate
+    public class TrainingProgramUnitRelated
     {
         public string Name { get; init; }
         public int SyllabusSession { get; init; }
         public int UnitNumber { get; init; }
-        public List<TrainingProgramLessonDuplicate> UnitLessons { get; init; }
+        public List<TrainingProgramLessonRelated> Lessons { get; init; }
     }
-    public class TrainingProgramLessonDuplicate
+    public class TrainingProgramLessonRelated
     {
         public string Name { get; init; }
         public int Duration { get; init; }
         public LessonType LessonType { get; init; }
         public DeliveryType DeliveryType { get; init; }
-        public List<TrainingProgramTrainingMaterialDuplicate> TrainingMaterials { get; init; }
+        public List<TrainingProgramTrainingMaterialRelated> TrainingMaterials { get; init; }
     }
-    public class TrainingProgramTrainingMaterialDuplicate
+    public class TrainingProgramTrainingMaterialRelated
     {
         public string FileName { get; init; }
         public string FilePath { get; init; }

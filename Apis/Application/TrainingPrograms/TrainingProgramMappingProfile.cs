@@ -22,6 +22,15 @@ namespace Application.TrainingPrograms
             CreateMap<TrainingProgramUnitDuplicate, Unit>().ReverseMap();
             CreateMap<TrainingProgramLessonDuplicate, Lesson>().ReverseMap();
             CreateMap<TrainingProgramTrainingMaterialDuplicate, TrainingMaterial>().ReverseMap();
+            // related
+            CreateMap<TrainingProgram, TrainingProgramRelated>().ReverseMap();
+            CreateMap<ProgramSyllabus, TrainingProgramProgramSyllabusRelated>().ReverseMap();
+            CreateMap<Syllabus, TrainingProgramSyllabusRelated>().ReverseMap();
+            CreateMap<TestAssessment, TrainingProgramTestAssessmentRelated>().ReverseMap();
+            CreateMap<Unit, TrainingProgramUnitRelated>().ReverseMap();
+            CreateMap<Lesson, TrainingProgramLessonRelated>().ReverseMap();
+            CreateMap<TrainingMaterial, TrainingProgramTrainingMaterialRelated>().ReverseMap();
+            
         }
     }
 }

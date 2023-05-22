@@ -1,59 +1,46 @@
-﻿using Application.Units.DTO;
+﻿using Application.Interfaces;
+using Application.Units.DTOs;
 using AutoMapper;
 using MediatR;
 
 namespace Application.Units.Commands.CreateUnit
 {
-    public record CreateUnitCommand : IRequest<UnitDTO>
+    public record CreateUnitCommand : IRequest<UnitHasIdDTO>
     {
-        public string Name { get; set; }
-        public int SyllabusSession { get; set; }
-        public int UnitNumber { get; set; }
-        public DateTime CreationDate { get; set; }
-        public DateTime? ModificationDate { get; set; }
-        public int SyllabusId { get; set; }
+        public string Name { get; init; }
+        public int SyllabusSession { get; init; }
+        public int UnitNumber { get; init; }
+        public int SyllabusId { get; init; }
     }
 
-    public class CreateUnitHandler : IRequestHandler<CreateUnitCommand, UnitDTO>
+    public class CreateUnitHandler : IRequestHandler<CreateUnitCommand, UnitHasIdDTO>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
-        public CreateUnitHandler(IUnitOfWork unitOfWork, IMapper mapper)
+        private readonly IClaimService _claimService;
+        private readonly ICurrentTime _currentTime;
+        public CreateUnitHandler(IUnitOfWork unitOfWork, IMapper mapper, IClaimService claimService, ICurrentTime currentTime)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
+            _claimService = claimService;
+            _currentTime = currentTime;
         }
 
-        public async Task<UnitDTO> Handle(CreateUnitCommand request, CancellationToken cancellationToken)
+        public async Task<UnitHasIdDTO> Handle(CreateUnitCommand request, CancellationToken cancellationToken)
         {
-            //var unit = _mapper.Map<Domain.Entities.Unit>(request);
-
-            //await _unitOfWork.ExecuteTransactionAsync(() =>
-            //{
-            //    _unitOfWork.UnitRepository.AddAsync(unit);
-            //});
-            //var result = _mapper.Map<UnitDTO>(unit);
-
-            //return result ?? throw new NotFoundException("Unit not found");
-
-            try
+            var unit = _mapper.Map<Domain.Entities.Unit>(request);
+            unit.CreatedBy = _claimService.CurrentUserId;
+            unit.CreationDate = _currentTime.GetCurrentTime();
+            await _unitOfWork.ExecuteTransactionAsync(() =>
             {
-                var unit = _mapper.Map<Domain.Entities.Unit>(request);
+                _unitOfWork.UnitRepository.AddAsync(unit);
+            });
+            var result = _mapper.Map<UnitHasIdDTO>(unit);
 
-                await _unitOfWork.ExecuteTransactionAsync(() =>
-                {
-                    _unitOfWork.UnitRepository.AddAsync(unit);
-                });
+            return result;
 
-                var result = _mapper.Map<UnitDTO>(unit);
 
-                return result; /*?? throw new NotFoundException("Unit not found");*/
-            }
-            catch (Exception ex)
-            {
-                // Handle the exception here
-                throw new Exception($"An error occurred while creating a unit: {ex.Message}");
-            }
         }
     }
 }

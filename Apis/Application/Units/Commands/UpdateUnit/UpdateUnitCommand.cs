@@ -1,50 +1,50 @@
 ﻿using Application.Common.Exceptions;
-using Application.Units.DTO;
+using Application.Interfaces;
+using Application.Units.DTOs;
 using AutoMapper;
 using MediatR;
 
 namespace Application.Units.Commands.UpdateUnit
 {
-    public record UpdateUnitCommand : IRequest<UnitDTO>
+    public record UpdateUnitCommand : IRequest<UnitHasIdDTO>
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public int SyllabusSession { get; set; }
-        public int UnitNumber { get; set; }
-        public DateTime CreationDate { get; set; }
-        public DateTime? ModificationDate { get; set; }
-        public int SyllabusId { get; set; }
+        public int Id { get; init; }
+        public string Name { get; init; }
+        public int SyllabusSession { get; init; }
+        public int UnitNumber { get; init; }
+        public int SyllabusId { get; init; }
     }
 
-    public class UpdateUnitHandler : IRequestHandler<UpdateUnitCommand, UnitDTO>
+    public class UpdateUnitHandler : IRequestHandler<UpdateUnitCommand, UnitHasIdDTO>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
-        public UpdateUnitHandler(IUnitOfWork unitOfWork, IMapper mapper)
+        private readonly IClaimService _claimService;
+        private readonly ICurrentTime _currentTime;
+        public UpdateUnitHandler(IUnitOfWork unitOfWork, IMapper mapper, IClaimService claimService, ICurrentTime currentTime)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
+            _claimService = claimService;
+            _currentTime = currentTime;
         }
 
-        public async Task<UnitDTO> Handle(UpdateUnitCommand request, CancellationToken cancellationToken)
+        public async Task<UnitHasIdDTO> Handle(UpdateUnitCommand request, CancellationToken cancellationToken)
         {
             var unit = await _unitOfWork.UnitRepository.GetByIdAsyncAsNoTracking(request.Id);
             if (unit == null)
+            {
                 throw new NotFoundException("Unit not found");
+            }
             unit = _mapper.Map<Domain.Entities.Unit>(request);
-            try
+            unit.ModificationBy = _claimService.CurrentUserId;
+            unit.ModificationDate = _currentTime.GetCurrentTime();
+            await _unitOfWork.ExecuteTransactionAsync(() =>
             {
-                _unitOfWork.BeginTransaction();
                 _unitOfWork.UnitRepository.Update(unit);
-                await _unitOfWork.CommitAsync();
-                var result = _mapper.Map<UnitDTO>(unit);
-                return result;
-            }
-            catch (Exception ex)
-            {
-                _unitOfWork.Rollback();
-                throw new NotFoundException("Update has some Error");
-            }
+            });
+            var result = _mapper.Map<UnitHasIdDTO>(unit);
+            return result;
         }
     }
 }

@@ -25,26 +25,26 @@ namespace WebAPI.Controllers
 
         [HttpGet]
         // [Authorize(Roles = "SuperAdmin")]
-        public async Task<Pagination<UserContainIdDTO>> GetAsync(
+        public async Task<IActionResult> GetAsync(
             string? keyword,
             SortType sortType = SortType.Ascending,
             int pageIndex = 0,
             int pageSize = 10)
-            => await _mediator.Send(new GetUserQuery(keyword, pageIndex, pageSize, sortType));
+            => Ok(await _mediator.Send(new GetUserQuery(keyword, pageIndex, pageSize, sortType)));
 
         [HttpPut]
         [Authorize]
-        public async Task<UserDTO> Put(UpdateUserCommand request)
-            => await _mediator.Send(request);
+        public async Task<IActionResult> Put(UpdateUserCommand request)
+            => Ok(await _mediator.Send(request));
 
         [HttpGet("Profile")]
         [Authorize]
-        public async Task<UserDTO> GetAsync()
-            => await _mediator.Send(new GetProfileQuery());
+        public async Task<IActionResult> GetAsync()
+            => Ok(await _mediator.Send(new GetProfileQuery()));
         [HttpPut("Profile")]
         [Authorize]
-        public async Task<UserDTO> PutAsync(EditProfileCommand request)
-            => await _mediator.Send(request);
+        public async Task<IActionResult> PutAsync(EditProfileCommand request)
+            => Ok(await _mediator.Send(request));
 
         #region CSV
         [HttpGet("export-users-csv")]
@@ -74,7 +74,7 @@ namespace WebAPI.Controllers
         #endregion CSV
 
         [HttpGet("{id}/tips")]
-        public async Task<IActionResult> GetTipsByUserId(int id)
-        => Ok(await _mediator.Send(new GetTipsByUserIdQuery(id)));
+        public async Task<List<Tip>> GetTipsByUserId(int id)
+        => await _mediator.Send(new GetTipsByUserIdQuery(id));
     }
 }

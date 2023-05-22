@@ -222,19 +222,18 @@ get list approved with related data
    // refer get file csv
 
 //**done** fix training program
-// update seed data
-// send mail when request join class
-// optimize code
-// check validator
+//**done** send mail when request join class
+//**done** optimize code
+//**done** check validator unit, lesson
+// review all feature old project
 // score report
+// update seed data
 // test project
 // check feedback get evaluate of trainer
-// review all feature old project
 
 // add register by google OpenID
 // AUTHENTICATE: FORGET PASSWORD, REFRESH TOKEN
   // openid login by google refer fake news.
-// research write unit test for mediator
 // if i can add soft delete for all table use global query filter and ignore.
 // check middleware timeout && global exception, health check, try do sth.
 // TODO: check validation of attendance and approve request

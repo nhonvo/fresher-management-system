@@ -3,8 +3,8 @@ using Application.Attendances.Commands.CreateAttendances;
 using Application.Attendances.Commands.UpdateAttendances;
 using Application.Attendances.DTO;
 using Application.Attendances.Queries.GetAttendanceById;
+using Application.Attendances.Queries.GetAttendanceFilterRequest;
 using Application.Attendances.Queries.GetAttendanceOfClass;
-using Application.Attendances.Queries.GetAttendancePendingRequest;
 using Application.Attendances.Queries.GetAttendanceRequest;
 using Application.Attendances.Queries.SearchAttendanceRequest;
 using Application.Commons;
@@ -25,62 +25,58 @@ namespace WebAPI.Controllers
             _mediator = mediator;
         }
         [HttpGet]
-        public async Task<Pagination<AttendanceDTO>> Get(int pageIndex = 0, int pageSize = 10)
+        public async Task<IActionResult> Get(int pageIndex = 0, int pageSize = 10)
         {
-            return await _mediator.Send(new GetAttendanceRequestQuery(pageIndex, pageSize));
+            return Ok(await _mediator.Send(new GetAttendanceRequestQuery(pageIndex, pageSize)));
         }
         [HttpGet("Search")]
-        public async Task<Pagination<AttendanceRelatedDTO>> Search(
+        public async Task<IActionResult> Search(
             string? searchString,
             SortType sortType = SortType.Ascending,
             int pageIndex = 0,
             int pageSize = 10)
         {
-            return await _mediator.Send(new SearchAttendanceRequestQuery(
+            return Ok(await _mediator.Send(new SearchAttendanceRequestQuery(
                 searchString,
                 sortType,
                 pageIndex,
-                pageSize));
+                pageSize)));
         }
-        [HttpGet("Pending")]
-        public async Task<Pagination<AttendanceRelatedDTO>> GetPending(int pageIndex = 0, int pageSize = 10)
+        [HttpGet("Filter")]
+        public async Task<IActionResult> GetPending(
+            StatusAttendanceApprove? status = StatusAttendanceApprove.Pending,
+            int pageIndex = 0,
+            int pageSize = 10)
         {
-            return await _mediator.Send(new GetAttendancePendingRequestQuery(pageIndex, pageSize));
+            return Ok(await _mediator.Send(new GetAttendanceFilterRequestQuery(status, pageIndex, pageSize)));
         }
         [HttpGet("attendance-class")]
-        public async Task<Pagination<AttendanceRelatedDTO>> GetAttendanceClass(int pageIndex = 0, int pageSize = 10)
+        public async Task<IActionResult> GetAttendanceClass(int pageIndex = 0, int pageSize = 10)
         {
-            return await _mediator.Send(new GetAttendanceOfClassQuery(pageIndex, pageSize));
+            return Ok(await _mediator.Send(new GetAttendanceOfClassQuery(pageIndex, pageSize)));
         }
         [HttpGet("{id}")]
-        public async Task<AttendanceRelatedDTO> Get(int id)
+        public async Task<IActionResult> Get(int id)
         {
-
-            return await _mediator.Send(new GetAttendanceByIdQuery(id));
+            return Ok(await _mediator.Send(new GetAttendanceByIdQuery(id)));
         }
-        [HttpGet("test")]
-        public async Task Get()
-        {
-            await _mediator.Send(new SendMailAttendanceCommand());
-        }
-
         [HttpPost]
-        public async Task<AttendanceDTO> Post([FromBody] CreateAttendancesCommand request)
+        public async Task<ActionResult> Post([FromBody] CreateAttendancesCommand request)
         {
 
-            return await _mediator.Send(request);
+            return Ok(await _mediator.Send(request));
         }
         [HttpPut]
-        public async Task<AttendanceDTO> Put([FromBody] UpdateAttendancesCommand request)
+        public async Task<ActionResult> Put([FromBody] UpdateAttendancesCommand request)
         {
 
-            return await _mediator.Send(request);
+            return Ok(await _mediator.Send(request));
         }
         [HttpPut("ApproveAbsent")]
         [Authorize(Roles = "ClassAdmin")]
-        public async Task<AttendanceDTO> ApproveAbsent(ApproveAbsentCommand request)
+        public async Task<ActionResult> ApproveAbsent(ApproveAbsentCommand request)
         {
-            return await _mediator.Send(request);
+            return Ok(await _mediator.Send(request));
         }
     }
 }

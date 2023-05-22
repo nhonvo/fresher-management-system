@@ -2,7 +2,7 @@
 using Application.Units.Commands.CreateUnit;
 using Application.Units.Commands.DeleteUnit;
 using Application.Units.Commands.UpdateUnit;
-using Application.Units.DTO;
+using Application.Units.DTOs;
 using Application.Units.Queries.GetUnitById;
 using Application.Units.Queries.GetUnitByName;
 using Application.Units.Queries.GetUnits;
@@ -20,27 +20,27 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<Pagination<UnitDTO>> Get(int pageIndex = 0, int pageSize = 10)
-            => await _mediator.Send(new GetUnitQuery(pageIndex, pageSize));
+        public async Task<IActionResult> Get(int pageIndex = 0, int pageSize = 10)
+            => Ok(await _mediator.Send(new GetUnitQuery(pageIndex, pageSize)));
 
         [HttpGet("{id}")]
-        public async Task<UnitDTO> Get(int id)
-            => await _mediator.Send(new GetUnitByIdQuery(id));
+        public async Task<IActionResult> Get(int id)
+            => Ok(await _mediator.Send(new GetUnitByIdQuery(id)));
 
         [HttpGet("name/{name}")]
-        public async Task<Pagination<UnitDTO>> Get(string name)
-            => await _mediator.Send(new GetUnitByNameQuery(name));
+        public async Task<IActionResult> Get(string name)
+            => Ok(await _mediator.Send(new GetUnitByNameQuery(name)));
 
         [HttpPost]
-        public async Task<UnitDTO> Post([FromBody] CreateUnitCommand request)
-            => await _mediator.Send(request);
+        public async Task<IActionResult> Post([FromBody] CreateUnitCommand request)
+            => Ok(await _mediator.Send(request));
 
         [HttpPut]
-        public async Task<UnitDTO> Put([FromBody] UpdateUnitCommand request)
-            => await _mediator.Send(request);
+        public async Task<IActionResult> Put([FromBody] UpdateUnitCommand request)
+            => Ok(await _mediator.Send(request));
 
         [HttpDelete("{id}")]
-        public async Task<UnitDTO> Delete(int id)
-            => await _mediator.Send(new DeleteUnitCommand(id));
+        public async Task<IActionResult> Delete(int id)
+            => Ok(await _mediator.Send(new DeleteUnitCommand(id)));
     }
 }

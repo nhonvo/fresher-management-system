@@ -21,7 +21,7 @@
     "TrainingClassId": 1,
     "Date": "2023-10-11",
     "Order": 3,
-    "Count": 3,
+    "Count": 12,
     "DeletedBy": null,
     "DeletionDate": null,
     "IsDeleted": false
@@ -30,7 +30,7 @@
     "TrainingClassId": 1,
     "Date": "2023-10-12",
     "Order": 4,
-    "Count": 4,
+    "Count": 12,
     "DeletedBy": null,
     "DeletionDate": null,
     "IsDeleted": false

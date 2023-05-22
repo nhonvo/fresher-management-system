@@ -14,6 +14,7 @@ namespace Application.Class
         {
             CreateMap<TrainingClass, ClassDTO>().ReverseMap();
             CreateMap<TrainingClass, ClassProgram>().ReverseMap();
+            // duplicate
             CreateMap<TrainingProgram, TrainingProgramDuplicate>().ReverseMap();
             CreateMap<ProgramSyllabus, ProgramSyllabusDuplicate>().ReverseMap();
             CreateMap<TrainingProgram, TrainingProgramss>().ReverseMap();

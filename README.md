@@ -107,36 +107,6 @@
    // **done**
 3. Evaluation
    1. Have the ability to evaluate the performance of trainers based on student feedback.
-// TODO: endpoint: POST /student:trainerId/feedback
-// _Score_ & _feedback_ & _Time_
-// create table feedback between student and TrainingProgram.
-
-// TODO: endpoint: GET /student:trainerId/feedback
-
-
-// check duplicate syllabus, training program
-// file upload training material
-// update seed data
-// check feedback get evaluate of trainer
-// score
-// test project 
-// review all feature old project
-
-// add register by google OpenID
-// AUTHENTICATE: FORGET PASSWORD, REFRESH TOKEN
-  // openid login by google refer fake news.
-// research write unit test for mediator
-// if i can add soft delete for all table use global query filter and ignore.
-// check middleware timeout && global exception, health check, try do sth.
-// TODO: check validation of attendance and approve request
-
-- refactor source code
-
-  - if must as `{}`
-  - avoid user ! operator use is/ is not instead
-  - separate code logic u can
-  - must do front-end project
-    - deploy app
 
 //**DONE** super admin -> admin
 //**DONE** admin -> trainer
@@ -233,4 +203,41 @@ get list approved with related data
 //**done** fix validate paging add validate paging.
 // **done** fix class miss id, and attendance type
 // **done** fix Syllabus miss related
-// **done** fix use reposne miss id
+// **done** fix use response miss id
+
+
+// TODO: endpoint: POST /student:trainerId/feedback
+// _Score_ & _feedback_ & _Time_
+// create table feedback between student and TrainingProgram.
+
+// TODO: endpoint: GET /student:trainerId/feedback
+
+
+// **done** check duplicate syllabus, 
+// file upload training material
+   // refer test assignment upload file
+   // download file
+   // report all student pass or fail. score of student in class
+   // refer get file csv
+// fix training program
+// update seed data
+// check feedback get evaluate of trainer
+// score
+// test project 
+// review all feature old project
+
+// add register by google OpenID
+// AUTHENTICATE: FORGET PASSWORD, REFRESH TOKEN
+  // openid login by google refer fake news.
+// research write unit test for mediator
+// if i can add soft delete for all table use global query filter and ignore.
+// check middleware timeout && global exception, health check, try do sth.
+// TODO: check validation of attendance and approve request
+
+- refactor source code
+
+  - if must as `{}`
+  - avoid user ! operator use is/ is not instead
+  - separate code logic u can
+  - must do front-end project
+    - deploy app

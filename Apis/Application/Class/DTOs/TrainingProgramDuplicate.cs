@@ -12,8 +12,6 @@ namespace Application.Class.DTO
     {
         public int SyllabusId { get; set; }
         public TrainingProgramSyllabusDuplicate Syllabus { get; set; }
-        // public int TrainingProgramId { get; set; }
-        // public TrainingProgramDTO TrainingProgram { get; set; }
     }
     public class TrainingProgramSyllabusDuplicate
     {

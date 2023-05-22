@@ -8,7 +8,6 @@ namespace Application.Lectures.Commands
         public AddStudentCommandValidator()
         {
             RuleFor(x => x.Id).NotEmpty().NotNull().GreaterThan(0); ;
-            RuleFor(x => x.AvatarURL).NotEmpty().NotNull();
         }
     }
 }

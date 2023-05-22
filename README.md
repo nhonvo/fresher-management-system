@@ -113,7 +113,15 @@
 
 // TODO: endpoint: GET /student:trainerId/feedback
 
+
+// check duplicate syllabus, training program
+// file upload training material
+// update seed data
 // check feedback get evaluate of trainer
+// score
+// test project 
+// review all feature old project
+
 // add register by google OpenID
 // AUTHENTICATE: FORGET PASSWORD, REFRESH TOKEN
   // openid login by google refer fake news.
@@ -223,9 +231,6 @@ get list approved with related data
 
 // **done** fix register.
 //**done** fix validate paging add validate paging.
-// Syllabus miss related
-   // 
-// use reposne miss id
-// class miss id, and attendance type
-// class detail inlcude admin 
-// approve 
+// **done** fix class miss id, and attendance type
+// **done** fix Syllabus miss related
+// **done** fix use reposne miss id

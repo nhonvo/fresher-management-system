@@ -3,15 +3,11 @@ using Application.Students.DTO;
 using AutoMapper;
 using Domain.Entities;
 using MediatR;
-// TODO: user soft removes
-// TODO: add createBy, modify when, from authentication
-// TODO: create all api endpoints
 namespace Application.Student.Commands.AddStudent
 {
     public record AddStudentCommand : IRequest<StudentDTO>
     {
         public int Id { get; set; }
-        public string AvatarURL { get; set; }
     }
     public class AddStudentHandler : IRequestHandler<AddStudentCommand, StudentDTO>
     {

@@ -91,8 +91,5 @@ namespace Application.Emails.Commands.SendMail
 
             return true;
         }
-
-        //TODO: schedule setup hangfire or quartz auto sendmail in mid night. 
-        // 
     }
 }

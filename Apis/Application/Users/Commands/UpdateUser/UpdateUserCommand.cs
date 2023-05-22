@@ -28,7 +28,7 @@ namespace Application.Student.Commands.UpdateUser
             var user = await _unitOfWork.UserRepository.FirstOrDefaultAsync(x => x.Id == request.Id);
             if (user is null)
             {
-                throw new NotFoundException("Student not found");
+                throw new NotFoundException("User not found");
             }
 
             user.Role = request.Role;

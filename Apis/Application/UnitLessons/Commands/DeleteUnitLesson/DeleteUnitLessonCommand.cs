@@ -18,14 +18,14 @@ namespace Application.UnitLessons.Commands.DeleteUnitLesson
 
         public async Task<UnitLessonDTO> Handle(DeleteUnitLessonCommand request, CancellationToken cancellationToken)
         {
-            var unitlesson = await _unitOfWork.UnitLessonRepository.GetByIdAsync(request.id);
+            var unitlesson = await _unitOfWork.LessonRepository.GetByIdAsync(request.id);
             if (unitlesson == null)
                 throw new NotFoundException("Unit Lesson not found");
             try
             {
                 await _unitOfWork.ExecuteTransactionAsync(() =>
                 {
-                    _unitOfWork.UnitLessonRepository.Delete(unitlesson);
+                    _unitOfWork.LessonRepository.Delete(unitlesson);
                 });
                 var result = _mapper.Map<UnitLessonDTO>(unitlesson);
                 return result;

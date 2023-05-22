@@ -1,4 +1,4 @@
-using Application.Syllabuses.DTO;
+using Application.Syllabuses.DTOs;
 using AutoMapper;
 using Domain.Entities;
 using Domain.Enums;

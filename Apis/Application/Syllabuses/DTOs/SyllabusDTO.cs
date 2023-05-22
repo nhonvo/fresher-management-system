@@ -1,5 +1,5 @@
 using Domain.Enums;
-namespace Application.Syllabuses.DTO
+namespace Application.Syllabuses.DTOs
 {
     public class SyllabusDTO
     {

@@ -17,20 +17,25 @@ namespace Application.ApproveRequests.Commands.CreateRequest
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
-        public CreateRequestHandler(IUnitOfWork unitOfWork, IMapper mapper)
+        private readonly IMediator _mediator;
+        public CreateRequestHandler(IUnitOfWork unitOfWork, IMapper mapper, IMediator mediator)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
+            _mediator = mediator;
         }
         public async Task<ApproveRequestRelatedDTO> Handle(CreateRequestCommand request, CancellationToken cancellationToken)
         {
             if (await CheckExist(request.StudentId, request.ClassId))
+            {
                 throw new TransactionException("Approve request exists for class ");
+            }
             var approved = _mapper.Map<ApproveRequest>(request);
             await _unitOfWork.ExecuteTransactionAsync(() =>
             {
                 _unitOfWork.ApproveRequestRepository.AddAsync(approved);
             });
+            // await _mediator.Send(new );
             var result = _mapper.Map<ApproveRequestRelatedDTO>(approved);
             return result;
         }

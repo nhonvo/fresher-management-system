@@ -1,6 +1,6 @@
 using Application.Class.Commands.CreateClass;
 using Application.Class.Commands.UpdateClass;
-using Application.Class.DTO;
+using Application.Class.DTOs;
 using Application.Class.DTOs;
 using Application.TrainingPrograms.DTOs;
 using AutoMapper;

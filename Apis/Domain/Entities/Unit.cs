@@ -11,7 +11,7 @@ public class Unit : BaseEntity
     public int SyllabusId { get; set; }
     public Syllabus Syllabus { get; set; }
     public ICollection<Lesson> Lessons { get; set; }
-    public DateTime CreationDate { get; set; }
+    public DateTime? CreationDate { get; set; }
 
     public int? CreatedBy { get; set; }
     public User? CreateByUser { get; set; }

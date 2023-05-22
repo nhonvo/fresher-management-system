@@ -1,4 +1,4 @@
-﻿using Application.Class.DTO;
+﻿using Application.Class.DTOs;
 using AutoMapper;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -25,6 +25,12 @@ namespace Application.Class.Queries.GetClassDetail
                     .Include(x => x.CreateBy)
                     .Include(x => x.ReviewBy)
                     .Include(x => x.ApproveBy)
+                    .Include(x => x.ClassAdmins)
+                        .ThenInclude(x => x.Admin)
+                    .Include(x => x.ClassTrainers)
+                        .ThenInclude(x => x.Trainer)
+                    .Include(x => x.Students)
+                        .ThenInclude(x => x.Student)
                     .Include(x => x.TrainingProgram)
                         .ThenInclude(x => x.ProgramSyllabus)
                         .ThenInclude(x => x.Syllabus)

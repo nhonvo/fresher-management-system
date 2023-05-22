@@ -2,7 +2,6 @@ using Application.Common.Exceptions;
 using Application.Syllabuses.DTOs;
 using AutoMapper;
 using MediatR;
-using Microsoft.EntityFrameworkCore;
 
 namespace Application.Syllabuses.Queries.GetSyllabusById
 {

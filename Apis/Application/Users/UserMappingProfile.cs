@@ -1,5 +1,4 @@
 using Application.Student.Commands.EditProfile;
-using Application.Student.Commands.UpdateUser;
 using Application.Users.DTO;
 using Application.Users.Queries.ExportUsers;
 using AutoMapper;

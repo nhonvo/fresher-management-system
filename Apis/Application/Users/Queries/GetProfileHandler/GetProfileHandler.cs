@@ -6,9 +6,9 @@ using MediatR;
 
 namespace Application.Users.GetProfile.Queries
 {
-    public record GetProfileQuery() : IRequest<UserDTO>;
+    public record GetProfileQuery() : IRequest<UserContainIdDTO>;
 
-    public class GetProfileHandler : IRequestHandler<GetProfileQuery, UserDTO>
+    public class GetProfileHandler : IRequestHandler<GetProfileQuery, UserContainIdDTO>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
@@ -20,10 +20,10 @@ namespace Application.Users.GetProfile.Queries
             _mapper = mapper;
             _claimService = claimService;
         }
-        public async Task<UserDTO> Handle(GetProfileQuery request, CancellationToken cancellationToken)
+        public async Task<UserContainIdDTO> Handle(GetProfileQuery request, CancellationToken cancellationToken)
         {
             var user = await _unitOfWork.UserRepository.GetByIdAsync(_claimService.CurrentUserId);
-            var result = _mapper.Map<UserDTO>(user);
+            var result = _mapper.Map<UserContainIdDTO>(user);
             return result ?? throw new NotFoundException("User not found", _claimService.CurrentUserId);
 
         }

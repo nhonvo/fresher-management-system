@@ -5,8 +5,8 @@ using MediatR;
 
 namespace Application.Users.Queries.GetUserById
 {
-    public record GetUserByIdQuery(int PageIndex = 0, int PageSize = 10) : IRequest<Pagination<UserDTO>>;
-    public class GetUserByIdHandler : IRequestHandler<GetUserByIdQuery, Pagination<UserDTO>>
+    public record GetUserByIdQuery(int PageIndex = 0, int PageSize = 10) : IRequest<Pagination<UserContainIdDTO>>;
+    public class GetUserByIdHandler : IRequestHandler<GetUserByIdQuery, Pagination<UserContainIdDTO>>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
@@ -16,10 +16,10 @@ namespace Application.Users.Queries.GetUserById
             _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
-        public async Task<Pagination<UserDTO>> Handle(GetUserByIdQuery request, CancellationToken cancellationToken)
+        public async Task<Pagination<UserContainIdDTO>> Handle(GetUserByIdQuery request, CancellationToken cancellationToken)
         {
             var user = await _unitOfWork.UserRepository.GetAsync(pageIndex: request.PageIndex, pageSize: request.PageSize);
-            var result = _mapper.Map<Pagination<UserDTO>>(user);
+            var result = _mapper.Map<Pagination<UserContainIdDTO>>(user);
             return result;
         }
     }

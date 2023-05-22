@@ -114,7 +114,7 @@ public class UnitDto
     public string Name { get; set; }
     public int SyllabusSession { get; set; }
     public int UnitNumber { get; set; }
-    public List<LessonDto> UnitLessons { get; set; }
+    public List<LessonDto> Lessons { get; set; }
 }
 
 public class LessonDto

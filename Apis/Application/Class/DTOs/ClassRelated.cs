@@ -2,7 +2,7 @@ using AutoMapper;
 using Domain.Entities;
 using Domain.Enums;
 
-namespace Application.Class.DTOs.GetClassById;
+namespace Application.Class.DTOs;
 
 #pragma warning disable 
 public class ClassRelated
@@ -133,23 +133,4 @@ public class TrainingMaterialDto
     public string FileName { get; set; }
     public string FilePath { get; set; }
     public long FileSize { get; set; }
-}
-
-public class ClassMappingProfile : Profile
-{
-    public ClassMappingProfile()
-    {
-        CreateMap<TrainingClass, ClassRelated>();
-        CreateMap<User, UserDto>();
-        CreateMap<Calender, CalenderDto>();
-        CreateMap<ClassAdmin, ClassAdminDto>();
-        CreateMap<ClassTrainer, ClassTrainerDto>();
-        CreateMap<ClassStudent, ClassStudentDto>();
-        CreateMap<TrainingProgram, TrainingProgramDto>();
-        CreateMap<ProgramSyllabus, ProgramSyllabusDto>();
-        CreateMap<Syllabus, SyllabusDto>();
-        CreateMap<Unit, UnitDto>();
-        CreateMap<Lesson, LessonDto>();
-        CreateMap<TrainingMaterial, TrainingMaterialDto>();
-    }
 }

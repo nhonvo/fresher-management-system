@@ -3,7 +3,7 @@ using Domain.Enums;
 
 namespace Application.Class.DTOs
 {
-    public class ClassRelated
+    public class AdminClass
     {
         public string Name { get; set; }
         public string Code { get; set; }

@@ -1,13 +1,10 @@
-using Application.Commons;
 using Application.TrainingPrograms.Commands.AddOneSyllabusToTrainingProgram;
 using Application.TrainingPrograms.Commands.CreateTrainingProgram;
 using Application.TrainingPrograms.Commands.DeleteTrainingProgram;
 using Application.TrainingPrograms.Commands.DuplicateTrainProgram;
 using Application.TrainingPrograms.Commands.RemoveOneSyllabusToTrainingProgram;
 using Application.TrainingPrograms.Commands.UpdateTrainingProgram;
-using Application.TrainingPrograms.DTOs;
 using Application.TrainingPrograms.Queries.GetPagedSyllabusesByTraningProgramId;
-using Application.TrainingPrograms.Queries.GetTrainingProgram;
 using Application.TrainingPrograms.Queries.GetTrainingProgramById;
 using Application.TrainingPrograms.Queries.GetTrainingProgramByIdRelated;
 using Application.TrainingPrograms.Queries.GetTrainingProgramRelated;

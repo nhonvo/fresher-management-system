@@ -1,5 +1,4 @@
-﻿using Application.Class.DTO;
-using Application.Class.DTOs;
+﻿using Application.Class.DTOs;
 using Application.Common.Exceptions;
 using AutoMapper;
 using MediatR;

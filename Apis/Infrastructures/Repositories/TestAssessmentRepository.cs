@@ -3,10 +3,8 @@ using Application.Repositories;
 using Application.ViewModels.TestAssessmentViewModels;
 using Domain.Entities;
 using Domain.Enums;
-using IdentityModel;
 using Infrastructures.Persistence;
 using Microsoft.EntityFrameworkCore;
-using System.Linq;
 using System.Linq.Expressions;
 #nullable disable warnings
 

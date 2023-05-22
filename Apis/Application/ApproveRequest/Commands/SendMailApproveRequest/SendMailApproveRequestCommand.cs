@@ -1,4 +1,3 @@
-using Application.Account.DTOs;
 using Application.ApproveRequests.DTOs;
 using Application.ApproveRequests.GetApproveById;
 using Application.Emails.Commands.SendMail;

@@ -1,4 +1,3 @@
-using Application.Class.DTO;
 using Application.TrainingPrograms.Commands.CreateTrainingProgram;
 using Application.TrainingPrograms.Commands.UpdateTrainingProgram;
 using Application.TrainingPrograms.DTOs;
@@ -30,7 +29,7 @@ namespace Application.TrainingPrograms
             CreateMap<Unit, TrainingProgramUnitRelated>().ReverseMap();
             CreateMap<Lesson, TrainingProgramLessonRelated>().ReverseMap();
             CreateMap<TrainingMaterial, TrainingProgramTrainingMaterialRelated>().ReverseMap();
-            
+
         }
     }
 }

@@ -7,132 +7,132 @@ namespace Application.Class.DTOs.GetClassById;
 #pragma warning disable 
 public class ClassRelated
 {
-    public int Id { get; init; }
-    public string Name { get; init; }
-    public string Code { get; init; }
-    public int StartMinute { get; init; }
-    public int EndMinute { get; init; }
-    public DateTime TimeStart { get; init; }
-    public DateTime TimeEnd { get; init; }
-    public DateTime ReviewOn { get; init; }
-    public DateTime ApproveOn { get; init; }
-    public AttendeeType AttendeeType { get; init; }
-    public int NumberAttendeePlanned { get; init; }
-    public int NumberAttendeeAccepted { get; init; }
-    public int NumberAttendeeActual { get; init; }
-    public ClassLocation Location { get; init; }
-    public ClassStatus Status { get; init; }
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public string Code { get; set; }
+    public int StartMinute { get; set; }
+    public int EndMinute { get; set; }
+    public DateTime TimeStart { get; set; }
+    public DateTime TimeEnd { get; set; }
+    public DateTime ReviewOn { get; set; }
+    public DateTime ApproveOn { get; set; }
+    public AttendeeType AttendeeType { get; set; }
+    public int NumberAttendeePlanned { get; set; }
+    public int NumberAttendeeAccepted { get; set; }
+    public int NumberAttendeeActual { get; set; }
+    public ClassLocation Location { get; set; }
+    public ClassStatus Status { get; set; }
     // ref
-    public UserDto? CreateBy { get; init; }
-    public UserDto? ReviewBy { get; init; }
-    public UserDto? ApproveBy { get; init; }
-    public ICollection<CalenderDto> Calenders { get; init; }
-    public ICollection<ClassAdminDto> ClassAdmins { get; init; }
-    public ICollection<ClassTrainerDto> ClassTrainers { get; init; }
-    public ICollection<ClassStudentDto> Students { get; init; }
-    public TrainingProgramDto TrainingProgram { get; init; }
+    public UserDto? CreateBy { get; set; }
+    public UserDto? ReviewBy { get; set; }
+    public UserDto? ApproveBy { get; set; }
+    public ICollection<CalenderDto> Calenders { get; set; }
+    public ICollection<ClassAdminDto> ClassAdmins { get; set; }
+    public ICollection<ClassTrainerDto> ClassTrainers { get; set; }
+    public ICollection<ClassStudentDto> Students { get; set; }
+    public TrainingProgramDto TrainingProgram { get; set; }
 }
 
 public class UserDto
 {
-    public int Id { get; init; }
-    public string Name { get; init; }
-    public string Email { get; init; }
-    public UserRoleType Role { get; init; }
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public string Email { get; set; }
+    public UserRoleType Role { get; set; }
 }
 
 public class CalenderDto
 {
-    public int TrainingClassId { get; init; }
-    public DateTime Date { get; init; }
-    public int Order { get; init; }
-    public int Count { get; init; }
+    public int TrainingClassId { get; set; }
+    public DateTime Date { get; set; }
+    public int Order { get; set; }
+    public int Count { get; set; }
 }
 
 public class ClassAdminDto
 {
-    public int AdminId { get; init; }
-    public UserDto Admin { get; init; }
+    public int AdminId { get; set; }
+    public UserDto Admin { get; set; }
 }
 
 public class ClassTrainerDto
 {
-    public int TrainerId { get; init; }
-    public UserDto Trainer { get; init; }
+    public int TrainerId { get; set; }
+    public UserDto Trainer { get; set; }
 }
 
 public class ClassStudentDto
 {
-    public int StudentId { get; init; }
-    public UserDto Student { get; init; }
+    public int StudentId { get; set; }
+    public UserDto Student { get; set; }
 }
 
 public class TrainingProgramDto
 {
-    public int Id { get; init; }
-    public string Name { get; init; }
-    public int Duration { get; init; }
-    public DateTime LastModify { get; init; }
-    public bool IsActive { get; init; } = true;
-    public int DaysDuration { get; init; }
-    public int TimeDuration { get; init; }
-    public List<ProgramSyllabusDto> ProgramSyllabus { get; init; }
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public int Duration { get; set; }
+    public DateTime LastModify { get; set; }
+    public bool IsActive { get; set; } = true;
+    public int DaysDuration { get; set; }
+    public int TimeDuration { get; set; }
+    public List<ProgramSyllabusDto> ProgramSyllabus { get; set; }
 }
 
 public class ProgramSyllabusDto
 {
-    public int TrainingProgramId { get; init; }
-    public int SyllabusId { get; init; }
-    public SyllabusDto Syllabus { get; init; }
+    public int TrainingProgramId { get; set; }
+    public int SyllabusId { get; set; }
+    public SyllabusDto Syllabus { get; set; }
 }
 
 public class SyllabusDto
 {
-    public int Id { get; init; }
-    public string Name { get; init; }
-    public string Code { get; init; }
-    public int AttendeeNumber { get; init; }
-    public string CourseObjective { get; init; }
-    public SyllabusLevel SyllabusLevel { get; init; }
-    public float QuizScheme { get; init; }
-    public float AssignmentScheme { get; init; }
-    public float FinalScheme { get; init; }
-    public float FinalTheoryScheme { get; init; }
-    public float FinalPracticeScheme { get; init; }
-    public float GPAScheme { get; init; }
-    public int? CreatedBy { get; init; }
-    public int? ModificationBy { get; init; }
-    public DateTime? ModificationDate { get; init; }
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public string Code { get; set; }
+    public int AttendeeNumber { get; set; }
+    public string CourseObjective { get; set; }
+    public SyllabusLevel SyllabusLevel { get; set; }
+    public float QuizScheme { get; set; }
+    public float AssignmentScheme { get; set; }
+    public float FinalScheme { get; set; }
+    public float FinalTheoryScheme { get; set; }
+    public float FinalPracticeScheme { get; set; }
+    public float GPAScheme { get; set; }
+    public int? CreatedBy { get; set; }
+    public int? ModificationBy { get; set; }
+    public DateTime? ModificationDate { get; set; }
     // ref
-    public DateTime CreationDate { get; init; }
-    public List<UnitDto> Units { get; init; }
+    public DateTime CreationDate { get; set; }
+    public List<UnitDto> Units { get; set; }
 }
 
 public class UnitDto
 {
-    public int Id { get; init; }
-    public string Name { get; init; }
-    public int SyllabusSession { get; init; }
-    public int UnitNumber { get; init; }
-    public List<LessonDto> UnitLessons { get; init; }
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public int SyllabusSession { get; set; }
+    public int UnitNumber { get; set; }
+    public List<LessonDto> UnitLessons { get; set; }
 }
 
 public class LessonDto
 {
-    public int Id { get; init; }
-    public string Name { get; init; }
-    public int Duration { get; init; }
-    public LessonType LessonType { get; init; }
-    public DeliveryType DeliveryType { get; init; }
-    public List<TrainingMaterialDto> TrainingMaterials { get; init; }
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public int Duration { get; set; }
+    public LessonType LessonType { get; set; }
+    public DeliveryType DeliveryType { get; set; }
+    public List<TrainingMaterialDto> TrainingMaterials { get; set; }
 }
 
 public class TrainingMaterialDto
 {
-    public int Id { get; init; }
-    public string FileName { get; init; }
-    public string FilePath { get; init; }
-    public long FileSize { get; init; }
+    public int Id { get; set; }
+    public string FileName { get; set; }
+    public string FilePath { get; set; }
+    public long FileSize { get; set; }
 }
 
 public class ClassMappingProfile : Profile

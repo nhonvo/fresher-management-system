@@ -9,7 +9,6 @@ namespace Application.Units.Commands.CreateUnit
             RuleFor(x => x.Name).NotEmpty();
             RuleFor(x => x.SyllabusSession).GreaterThan(0);
             RuleFor(x => x.UnitNumber).GreaterThan(0);
-            RuleFor(x => x.CreationDate).NotEmpty();
         }
     }
 

@@ -1,3 +1,5 @@
+using Application.Student.Commands.EditProfile;
+using Application.Student.Commands.UpdateUser;
 using Application.Users.DTO;
 using Application.Users.Queries.ExportUsers;
 using AutoMapper;
@@ -11,6 +13,8 @@ namespace Application.Users
         {
             CreateMap<User, UserDTO>().ReverseMap();
             CreateMap<User, UserCSV>().ReverseMap();
+            CreateMap<User, UserContainIdDTO>().ReverseMap();
+            CreateMap<User, EditProfileCommand>().ReverseMap();
 
         }
     }

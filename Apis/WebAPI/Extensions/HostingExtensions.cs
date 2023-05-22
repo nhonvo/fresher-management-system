@@ -46,13 +46,11 @@ public static class HostingExtensions
         app.MapHealthCheck();
         app.UseResponseCompression();
         app.UseHttpsRedirection();
-        // todo authentication
         app.UseAuthentication();
         app.UseAuthorization();
 
         app.MapControllers();
         // app.MapControllers().RequirePerUserRateLimit();
-
         return app;
     }
 }

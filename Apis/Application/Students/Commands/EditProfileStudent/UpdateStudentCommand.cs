@@ -2,19 +2,18 @@
 using Application.Students.DTO;
 using AutoMapper;
 using Domain.Entities;
+using Domain.Enums;
 using MediatR;
-// TODO: user soft removes
 namespace Application.Student.Commands.UpdateStudent
 {
     public record UpdateStudentCommand : IRequest<StudentDTO>
     {
         public int Id { get; set; }
-        public string FullName { get; set; }
+        public string Name { get; set; }
         public string Email { get; set; }
         public string Phone { get; set; }
         public DateTime DateOfBirth { get; set; }
-        public bool IsMale { get; set; } = true;
-        public string AvatarURL { get; set; }
+        public Gender? Gender { get; set; }
     }
     public class UpdateStudentHandler : IRequestHandler<UpdateStudentCommand, StudentDTO>
     {

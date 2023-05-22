@@ -1,4 +1,5 @@
 ﻿using Application.Interfaces;
+using Application.TestAssessments.Commands.AddTrainingMaterialsToTestAssessment;
 using Application.ViewModels.TestAssessmentViewModels;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -105,6 +106,15 @@ public class TestAssessmentController : CustomBaseController
                 };
             return CustomResult(ErrorMessages, HttpStatusCode.BadRequest);
         };
+    }
+
+    [HttpPost("{id}/training-materials")]
+    public async Task<IActionResult> AddTrainingMaterialsToTestAssessment(
+        int id,
+        [FromForm] AddTrainingMaterialsToTestAssessmentCommand request)
+    {
+        request.Id = id;
+        return Ok(await _mediator.Send(request));
     }
 
     [HttpGet("student/{id:int}/finalSyllabusScores")]

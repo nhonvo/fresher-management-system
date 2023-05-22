@@ -7,6 +7,8 @@ public class TrainingClass : BaseEntity
 {
     public string Name { get; set; }
     public string Code { get; set; }
+    public int StartMinute { get; set; }
+    public int EndMinute { get; set; }
     public DateTime TimeStart { get; set; }
     public DateTime TimeEnd { get; set; }
     public DateTime ReviewOn { get; set; }

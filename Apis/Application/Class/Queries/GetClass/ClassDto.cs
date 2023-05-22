@@ -10,6 +10,8 @@ public class ClassDto
     public int Id { get; init; }
     public string Name { get; init; }
     public string Code { get; init; }
+    public int StartMinute { get; init; }
+    public int EndMinute { get; init; }
     public DateTime TimeStart { get; init; }
     public DateTime TimeEnd { get; init; }
     public DateTime ReviewOn { get; init; }
@@ -25,6 +27,9 @@ public class ClassDto
     public UserDto? ReviewBy { get; init; }
     public UserDto? ApproveBy { get; init; }
     public ICollection<CalenderDto> Calenders { get; init; }
+    public ICollection<ClassAdminDto> ClassAdmins { get; init; }
+    public ICollection<ClassTrainerDto> ClassTrainers { get; init; }
+    public ICollection<ClassStudentDto> Students { get; init; }
     public TrainingProgramDto TrainingProgram { get; init; }
 }
 
@@ -42,6 +47,24 @@ public class CalenderDto
     public DateTime Date { get; init; }
     public int Order { get; init; }
     public int Count { get; init; }
+}
+
+public class ClassAdminDto
+{
+    public int AdminId { get; init; }
+    public UserDto Admin { get; init; }
+}
+
+public class ClassTrainerDto
+{
+    public int TrainerId { get; init; }
+    public UserDto Trainer { get; init; }
+}
+
+public class ClassStudentDto
+{
+    public int StudentId { get; init; }
+    public UserDto Student { get; init; }
 }
 
 public class TrainingProgramDto
@@ -119,6 +142,9 @@ public class ClassMappingProfile : Profile
         CreateMap<TrainingClass, ClassDto>();
         CreateMap<User, UserDto>();
         CreateMap<Calender, CalenderDto>();
+        CreateMap<ClassAdmin, ClassAdminDto>();
+        CreateMap<ClassTrainer, ClassTrainerDto>();
+        CreateMap<ClassStudent, ClassStudentDto>();
         CreateMap<TrainingProgram, TrainingProgramDto>();
         CreateMap<ProgramSyllabus, ProgramSyllabusDto>();
         CreateMap<Syllabus, SyllabusDto>();

@@ -19,7 +19,7 @@ namespace Application.Syllabuses.Commands.CreateCompleteSyllabus
         public float FinalTheoryScheme { get; init; }
         public float FinalPracticeScheme { get; init; }
         public float GPAScheme { get; init; }
-        public List<SyllabusUnit> Units { get; init; }
+        public List<SyllabusUnitRelated> Units { get; init; }
     }
 
     public class CreateCompleteSyllabusHandler : IRequestHandler<CreateCompleteSyllabusCommand, SyllabusDTO>

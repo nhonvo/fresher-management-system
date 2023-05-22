@@ -7,9 +7,9 @@ using Microsoft.EntityFrameworkCore;
 namespace Application.Syllabuses.Queries.GetSyllabusDetailById
 {
 
-    public record GetSyllabusDetailByIdQuery(int id) : IRequest<SyllabusDTO>;
+    public record GetSyllabusDetailByIdQuery(int id) : IRequest<SyllabusRelated>;
 
-    public class GetSyllabusDetailByIdHandler : IRequestHandler<GetSyllabusDetailByIdQuery, SyllabusDTO>
+    public class GetSyllabusDetailByIdHandler : IRequestHandler<GetSyllabusDetailByIdQuery, SyllabusRelated>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
@@ -19,7 +19,7 @@ namespace Application.Syllabuses.Queries.GetSyllabusDetailById
             _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
-        public async Task<SyllabusDTO> Handle(GetSyllabusDetailByIdQuery request, CancellationToken cancellationToken)
+        public async Task<SyllabusRelated> Handle(GetSyllabusDetailByIdQuery request, CancellationToken cancellationToken)
         {
             var isExist = await _unitOfWork.SyllabusRepository.AnyAsync(x => x.Id == request.id);
             if (isExist is false)
@@ -28,10 +28,12 @@ namespace Application.Syllabuses.Queries.GetSyllabusDetailById
             }
             var syllabus = await _unitOfWork.SyllabusRepository.FirstOrDefaultAsync(
                 filter: x => x.Id == request.id,
-                include: x => x.Include(x => x.Units)
+                   include: x => x.Include(x => x.CreateByUser)
+                               .Include(x => x.ModificationByUser)
+                               .Include(x => x.Units)
                                .ThenInclude(x => x.Lessons)
                                .ThenInclude(x => x.TrainingMaterials));
-            var result = _mapper.Map<SyllabusDTO>(syllabus);
+            var result = _mapper.Map<SyllabusRelated>(syllabus);
             return result;
         }
     }

@@ -1,5 +1,5 @@
 using Application.Common.Exceptions;
-using Application.Syllabuses.DTO;
+using Application.Syllabuses.DTOs;
 using AutoMapper;
 using Domain.Entities;
 using Domain.Enums;
@@ -9,7 +9,7 @@ namespace Application.Syllabuses.Commands.UpdateSyllabus
 {
     public record UpdateSyllabusCommand : IRequest<SyllabusDTO>
     {
-        public int Id { get; set; }
+        public int Id { get; init; }
         public string Name { get; init; }
         public string Code { get; init; }
         public int AttendeeNumber { get; init; }

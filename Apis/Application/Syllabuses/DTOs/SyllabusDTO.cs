@@ -1,6 +1,5 @@
 using Domain.Enums;
-// TODO: Fix syllabus model dto
-namespace Application.Syllabuses.DTO
+namespace Application.Syllabuses.DTOs
 {
     public class SyllabusDTO
     {
@@ -23,6 +22,6 @@ namespace Application.Syllabuses.DTO
         public float PassingGPA { get; set; }
         public bool IsActive { get; set; }
         public int Duration { get; set; }
-        public List<SyllabusUnit> Units { get; set; }
+        public List<SyllabusUnitRelated> Units { get; set; }
     }
 }

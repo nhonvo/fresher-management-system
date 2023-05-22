@@ -1,19 +1,20 @@
 using Application.Interfaces;
+using Application.Syllabuses.DTOs;
 using AutoMapper;
 using MediatR;
 using System.Transactions;
 
 namespace Application.Syllabuses.Commands.AddOneUnitToSyllabus
 {
-    public record AddOneUnitToSyllabusCommand : IRequest<bool>
+    public record AddOneUnitToSyllabusCommand : IRequest<AddOneUnitToSyllabusResponse>
     {
-        public string Name { get; set; }
-        public int SyllabusSession { get; set; }
-        public int UnitNumber { get; set; }
-        public int SyllabusId { get; set; }
+        public string Name { get; init; }
+        public int SyllabusSession { get; init; }
+        public int UnitNumber { get; init; }
+        public int SyllabusId { get; init; }
     }
 
-    public class AddOneUnitToSyllabusHandler : IRequestHandler<AddOneUnitToSyllabusCommand, bool>
+    public class AddOneUnitToSyllabusHandler : IRequestHandler<AddOneUnitToSyllabusCommand, AddOneUnitToSyllabusResponse>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
@@ -27,7 +28,7 @@ namespace Application.Syllabuses.Commands.AddOneUnitToSyllabus
             _claimService = claimService;
         }
 
-        public async Task<bool> Handle(AddOneUnitToSyllabusCommand request, CancellationToken cancellationToken)
+        public async Task<AddOneUnitToSyllabusResponse> Handle(AddOneUnitToSyllabusCommand request, CancellationToken cancellationToken)
         {
             var syllabuses = await _unitOfWork.SyllabusRepository.AnyAsync(x => x.Id == request.SyllabusId);
             if (syllabuses is false)
@@ -39,7 +40,8 @@ namespace Application.Syllabuses.Commands.AddOneUnitToSyllabus
             {
                 _unitOfWork.UnitRepository.AddAsync(unit);
             });
-            return true;
+            var result = _mapper.Map<AddOneUnitToSyllabusResponse>(unit);
+            return result;
         }
     }
 }

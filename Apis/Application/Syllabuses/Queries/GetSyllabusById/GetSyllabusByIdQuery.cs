@@ -1,15 +1,14 @@
 using Application.Common.Exceptions;
-using Application.Syllabuses.DTO;
+using Application.Syllabuses.DTOs;
 using AutoMapper;
 using MediatR;
-
 
 namespace Application.Syllabuses.Queries.GetSyllabusById
 {
 
-    public record GetSyllabusByIdQuery(int id) : IRequest<SyllabusDTO>;
+    public record GetSyllabusByIdQuery(int id) : IRequest<SyllabusRelated>;
 
-    public class GetSyllabusByIdHandler : IRequestHandler<GetSyllabusByIdQuery, SyllabusDTO>
+    public class GetSyllabusByIdHandler : IRequestHandler<GetSyllabusByIdQuery, SyllabusRelated>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
@@ -19,19 +18,15 @@ namespace Application.Syllabuses.Queries.GetSyllabusById
             _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
-        public async Task<SyllabusDTO> Handle(GetSyllabusByIdQuery request, CancellationToken cancellationToken)
+        public async Task<SyllabusRelated> Handle(GetSyllabusByIdQuery request, CancellationToken cancellationToken)
         {
-            var isExist = await _unitOfWork.SyllabusRepository.AnyAsync(x => x.Id == request.id);
-            if (isExist is false)
+            var syllabus = await _unitOfWork.SyllabusRepository.FirstOrDefaultAsync(
+               filter: x => x.Id == request.id);
+            if (syllabus is null)
             {
                 throw new NotFoundException("Syllabus is not exist");
             }
-            var syllabus = await _unitOfWork.SyllabusRepository.GetByIdAsync(request.id);
-            var result = _mapper.Map<SyllabusDTO>(syllabus);
-            if (syllabus.Units is not null)
-            {
-                result.Duration = syllabus.Units.Sum(x => x.Lessons.Sum(ul => ul.Duration));
-            }
+            var result = _mapper.Map<SyllabusRelated>(syllabus);
             return result;
         }
     }

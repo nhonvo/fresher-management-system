@@ -1,6 +1,7 @@
 ﻿using Application.Account.DTOs;
 using Application.Common.Exceptions;
 using Application.Emails.Commands.SendMail;
+using Application.Emails.Commands.SendMailUserRegister;
 using Application.Utils;
 using AutoMapper;
 using Domain.Entities;
@@ -48,7 +49,7 @@ public class RegisterCommandHandler : IRequestHandler<RegisterCommand, AccountDT
             _unitOfWork.UserRepository.AddAsync(user);
         });
         var response = _mapper.Map<AccountDTO>(user);
-        await _mediator.Send(new SendMailCreateUserCommand(response));
-        return response ?? throw new ValidationException("Register fail!!");
+        await _mediator.Send(new SendMailUserRegisterCommand(response));
+        return response;
     }
 }

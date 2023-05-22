@@ -20,7 +20,7 @@ namespace Application.UnitLessons.Queries.GetUnitLessonById
 
         public async Task<UnitLessonDTO> Handle(GetUnitLessonByIdQuery request, CancellationToken cancellationToken)
         {
-            var unitlesson = await _unitOfWork.UnitLessonRepository.GetByIdAsync(request.id);
+            var unitlesson = await _unitOfWork.LessonRepository.GetByIdAsync(request.id);
             var result = _mapper.Map<UnitLessonDTO>(unitlesson);
             return result ?? throw new NotFoundException("Unit Lesson not found", request.id);
         }

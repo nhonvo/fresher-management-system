@@ -29,6 +29,13 @@ namespace Infrastructures.Persistence.Configurations
             builder.HasOne(e => e.Parent)
                     .WithMany()
                     .HasForeignKey(m => m.ParentId).OnDelete(DeleteBehavior.NoAction);
+
+            builder
+                .HasMany(x => x.ProgramSyllabus)
+                .WithOne(x => x.TrainingProgram)
+                .HasForeignKey(x => x.TrainingProgramId)
+                .HasPrincipalKey(x => x.Id)
+                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

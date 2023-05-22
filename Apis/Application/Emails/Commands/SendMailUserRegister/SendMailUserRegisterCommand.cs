@@ -1,25 +1,23 @@
 using Application.Account.DTOs;
+using Application.Emails.Commands.SendMail;
 using Application.Emails.Queries;
 using MediatR;
 
-namespace Application.Emails.Commands.SendMail
+namespace Application.Emails.Commands.SendMailUserRegister
 {
-    public record SendMailCreateUserCommand(AccountDTO userinfo) : IRequest<bool>
-    {
-
-    }
-    public class SendMailCreateUserHandler : IRequestHandler<SendMailCreateUserCommand, bool>
+    public record SendMailUserRegisterCommand(AccountDTO user) : IRequest<bool>;
+    public class SendMailUserRegisterHandler : IRequestHandler<SendMailUserRegisterCommand, bool>
     {
         private readonly IMediator _mediator;
 
-        public SendMailCreateUserHandler(IMediator mediator)
+        public SendMailUserRegisterHandler(IMediator mediator)
         {
             _mediator = mediator;
         }
 
-        public async Task<bool> Handle(SendMailCreateUserCommand request, CancellationToken cancellationToken)
+        public async Task<bool> Handle(SendMailUserRegisterCommand request, CancellationToken cancellationToken)
         {
-            var to = new List<string> { request.userinfo.Email };
+            var to = new List<string> { request.user.Email };
             var title = "Welcome to FPT Software Academy";
             var speech = "Greetings,\nWelcome to FPT Software Academy and thank you for register account. This is your information:";
             var mainContent =
@@ -27,11 +25,11 @@ namespace Application.Emails.Commands.SendMail
                 <div>
                     <h2>Your Information:</h2>
                     <ul>
-                        <li><strong>Name:</strong> {request.userinfo.Name}</li>
-                        <li><strong>Email:</strong> {request.userinfo.Email}</li>
-                        <li><strong>Phone:</strong> {request.userinfo.Phone}</li>
-                        <li><strong>Date of Birth:</strong> {request.userinfo.DateOfBirth.ToShortDateString()}</li>
-                        <li><strong>Role:</strong> {request.userinfo.Role.ToString()}</li>
+                        <li><strong>Name:</strong> {request.user.Name}</li>
+                        <li><strong>Email:</strong> {request.user.Email}</li>
+                        <li><strong>Phone:</strong> {request.user.Phone}</li>
+                        <li><strong>Date of Birth:</strong> {request.user.DateOfBirth.ToShortDateString()}</li>
+                        <li><strong>Role:</strong> {request.user.Role.ToString()}</li>
                     </ul>
                 </div>
             ";

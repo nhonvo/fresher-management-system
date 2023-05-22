@@ -118,6 +118,7 @@ namespace Application.Services
                 AttendeeId = group.Key.AttendeeId,
                 SyllabusId = group.Key.SyllabusId,
                 SyllabusName = _unitOfWork.SyllabusRepository.GetByIdAsync(group.Key.SyllabusId).Result.Name,
+                FinalScheme = (float)Math.Round((float)_unitOfWork.SyllabusRepository.GetByIdAsync(group.Key.SyllabusId).Result.FinalScheme * 10, 2),
                 FinalSyllabusScore =  (float)Math.Round((float)(group.Sum(ta => ta.AverageScore * ta.SyllabusScheme) / group.Sum(ta => ta.SyllabusScheme) ?? 0), 2),
                 ListAssessment = scoreByTestType.Where(x => x.SyllabusId == group.Key.SyllabusId && x.AttendeeId == group.Key.AttendeeId).ToList()
             }).OrderBy(x => x.AttendeeId).ToList();

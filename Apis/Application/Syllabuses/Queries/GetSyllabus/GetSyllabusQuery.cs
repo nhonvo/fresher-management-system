@@ -1,9 +1,9 @@
 using Application.Commons;
-using Application.Syllabuses.DTO;
+using Application.Syllabuses.DTOs;
 using AutoMapper;
 using Domain.Enums;
 using MediatR;
-
+using Microsoft.EntityFrameworkCore;
 
 namespace Application.Syllabuses.Queries.GetSyllabus
 {
@@ -11,9 +11,9 @@ namespace Application.Syllabuses.Queries.GetSyllabus
         string? keyword = null,
         int PageIndex = 0,
         int PageSize = 10,
-        SortType sortType = SortType.Ascending) : IRequest<Pagination<SyllabusDTO>>;
+        SortType sortType = SortType.Ascending) : IRequest<Pagination<SyllabusRelated>>;
 
-    public class GetSyllabusHandler : IRequestHandler<GetSyllabusQuery, Pagination<SyllabusDTO>>
+    public class GetSyllabusHandler : IRequestHandler<GetSyllabusQuery, Pagination<SyllabusRelated>>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
@@ -23,15 +23,22 @@ namespace Application.Syllabuses.Queries.GetSyllabus
             _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
-        public async Task<Pagination<SyllabusDTO>> Handle(GetSyllabusQuery request, CancellationToken cancellationToken)
+        public async Task<Pagination<SyllabusRelated>> Handle(GetSyllabusQuery request, CancellationToken cancellationToken)
         {
             var syllabus = await _unitOfWork.SyllabusRepository.GetAsync<string>(
-                filter: x => x.Name.Contains(request.keyword ?? ""),
+                filter: x => x.Name.Contains(request.keyword ?? "")
+                             || x.Code.Contains(request.keyword ?? "")
+                             || x.Id.ToString().Contains(request.keyword ?? ""),
+                include: x => x.Include(x => x.CreateByUser)
+                               .Include(x => x.ModificationByUser)
+                               .Include(x => x.Units)
+                               .ThenInclude(x => x.Lessons)
+                               .ThenInclude(x => x.TrainingMaterials),
                 pageIndex: request.PageIndex,
                 pageSize: request.PageSize,
                 sortType: SortType.Ascending,
                 keySelectorForSort: x => x.Name);
-            var result = _mapper.Map<Pagination<SyllabusDTO>>(syllabus);
+            var result = _mapper.Map<Pagination<SyllabusRelated>>(syllabus);
             return result;
         }
     }

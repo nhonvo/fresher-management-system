@@ -9,6 +9,7 @@ using Application.Class.DTO;
 using Application.Class.DTOs;
 using Application.Class.Queries.GetAdminClass;
 using Application.Class.Queries.GetClass;
+using Application.Class.Queries.GetClassById;
 using Application.Class.Queries.GetClassDuration;
 using Application.Class.Queries.GetClassProgram;
 using Application.Commons;
@@ -25,11 +26,13 @@ namespace WebAPI.Controllers
         {
             _mediator = mediator;
         }
+
         [HttpGet]
-        public async Task<Pagination<ClassRelated>> Get(int pageIndex = 0, int pageSize = 10)
-        {
-            return await _mediator.Send(new GetClassQuery(pageIndex, pageSize));
-        }
+        public async Task<IActionResult> Get(
+            [FromQuery] int pageIndex = 0,
+            [FromQuery] int pageSize = 10)
+        => Ok(await _mediator.Send(new GetClassQuery() { PageIndex = pageIndex, PageSize = pageSize }));
+
         /// <summary>
         /// from class get all admin of class
         /// </summary>
@@ -40,9 +43,11 @@ namespace WebAPI.Controllers
         [HttpGet("{id}/Admin")]
         public async Task<Pagination<ClassRelated>> GetClassAsync(int id, int pageIndex = 0, int pageSize = 10)
             => await _mediator.Send(new GetAdminClassQuery(id, pageIndex, pageSize));
+
         [HttpGet("{id}")]
-        public async Task<ClassRelated> Get(int id)
-            => await _mediator.Send(new GetClassByIdQuery(id));
+        public async Task<IActionResult> Get(int id)
+        => Ok(await _mediator.Send(new GetClassByIdQuery(id)));
+
         // [HttpGet("Detail/{id}")]
         // public async Task<ClassDetail> GetDetail(int id)
         //     => await _mediator.Send(new GetClassDetailQuery(id));

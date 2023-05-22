@@ -15,13 +15,14 @@ public interface IUnitOfWork : IDisposable
     ITestAssessmentRepository TestAssessmentRepository { get; }
     IUserRepository UserRepository { get; }
     IUnitRepository UnitRepository { get; }
-    IUnitLessonRepository UnitLessonRepository { get; }
+    ILessonRepository LessonRepository { get; }
     IClassTrainerRepository ClassTrainerRepository { get; }
     ITrainingProgramRepository TrainingProgramRepository { get; }
     IFeedBackRepository FeedBackRepository { get; }
     ICalenderRepository CalenderRepository { get; }
     IProgramSyllabusRepository ProgramSyllabusRepository { get; }
     IClassAdminRepository ClassAdminRepository { get; }
+    ITrainingMaterialRepository TrainingMaterialRepository { get; }
     /// <summary>
     /// Saves changes to the database. This is called when the user changes the data or saves a new version of the data.
     /// </summary>

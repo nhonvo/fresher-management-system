@@ -5,9 +5,8 @@ using Application.Utils;
 using AutoMapper;
 using Domain.Entities;
 using MediatR;
-// TODO: RENAME CREATE ACCOUNT CLASS ADMIN
 namespace Application.Account.Commands.CreateAccount;
-
+// TODO: CHECK duplicate feature
 public record CreateClassAdminCommand(string Email, string Password) : IRequest<AccountDTO>;
 
 public class CreateClassAdminCommandHandler : IRequestHandler<CreateClassAdminCommand, AccountDTO>

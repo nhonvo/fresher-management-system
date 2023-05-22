@@ -7,7 +7,7 @@ using Application.Interfaces;
 using AutoMapper;
 using MediatR;
 
-namespace Application.Attendances.Commands.SendMailAttendance
+namespace Application.Emails.Commands.SendMailAttendance
 {
     public record SendMailAttendanceCommand : IRequest;
     public class SendMailAttendanceHandler : IRequestHandler<SendMailAttendanceCommand>

@@ -4,11 +4,11 @@ using Infrastructures.Persistence;
 
 namespace Infrastructures.Repositories
 {
-    public class UnitLessonRepository : GenericRepository<Lesson>, IUnitLessonRepository
+    public class LessonRepository : GenericRepository<Lesson>, ILessonRepository
     {
         private readonly ApplicationDbContext _dbcontext;
 
-        public UnitLessonRepository(ApplicationDbContext dbContext) : base(dbContext)
+        public LessonRepository(ApplicationDbContext dbContext) : base(dbContext)
         {
             _dbcontext = dbContext;
         }

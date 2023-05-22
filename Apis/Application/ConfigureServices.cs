@@ -26,6 +26,3 @@ namespace Application
         }
     }
 }
-// TODO: Add caching service(memory cache or redis cache). Add excel service.
-
-// TODO: DO FIRST Do authentication feature which has send mail when registration, role, set up policies.

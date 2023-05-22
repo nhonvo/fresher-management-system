@@ -1,4 +1,3 @@
-using Application.Class.DTO;
 using Application.TrainingPrograms.Commands.CreateTrainingProgram;
 using Application.TrainingPrograms.Commands.UpdateTrainingProgram;
 using Application.TrainingPrograms.DTOs;
@@ -16,12 +15,22 @@ namespace Application.TrainingPrograms
             CreateMap<TrainingProgram, UpdateTrainingProgramCommand>().ReverseMap();
             // duplicate
             CreateMap<TrainingProgramDuplicate, TrainingProgram>().ReverseMap();
-            CreateMap<ProgramSyllabusDuplicate, ProgramSyllabus>().ReverseMap();
+            CreateMap<TrainingProgramProgramSyllabusDuplicate, ProgramSyllabus>().ReverseMap();
+            CreateMap<TrainingProgramProgramSyllabusDuplicate, ProgramSyllabus>().ReverseMap();
             CreateMap<TrainingProgramSyllabusDuplicate, Syllabus>().ReverseMap();
             CreateMap<TrainingProgramTestAssessmentDuplicate, TestAssessment>().ReverseMap();
             CreateMap<TrainingProgramUnitDuplicate, Unit>().ReverseMap();
             CreateMap<TrainingProgramLessonDuplicate, Lesson>().ReverseMap();
             CreateMap<TrainingProgramTrainingMaterialDuplicate, TrainingMaterial>().ReverseMap();
+            // related
+            CreateMap<TrainingProgram, TrainingProgramRelated>().ReverseMap();
+            CreateMap<ProgramSyllabus, TrainingProgramProgramSyllabusRelated>().ReverseMap();
+            CreateMap<Syllabus, TrainingProgramSyllabusRelated>().ReverseMap();
+            CreateMap<TestAssessment, TrainingProgramTestAssessmentRelated>().ReverseMap();
+            CreateMap<Unit, TrainingProgramUnitRelated>().ReverseMap();
+            CreateMap<Lesson, TrainingProgramLessonRelated>().ReverseMap();
+            CreateMap<TrainingMaterial, TrainingProgramTrainingMaterialRelated>().ReverseMap();
+
         }
     }
 }

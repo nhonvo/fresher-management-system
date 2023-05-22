@@ -1,4 +1,5 @@
-﻿using Application.Commons;
+using Application.Class.DTOs;
+using Application.Commons;
 using AutoMapper;
 using MediatR;
 using Microsoft.EntityFrameworkCore;

@@ -2,7 +2,6 @@
 using Application.Commons;
 using AutoMapper;
 using MediatR;
-using Microsoft.EntityFrameworkCore;
 
 namespace Application.ApproveRequests.GetApprove
 {

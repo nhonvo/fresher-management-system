@@ -14,13 +14,10 @@ using Application.Syllabuses.Queries.GetPagedSyllabusesByDateRange;
 using Application.Syllabuses.Queries.GetSyllabus;
 using Application.Syllabuses.Queries.GetSyllabusById;
 using Application.Syllabuses.Queries.GetSyllabusDetailById;
-using Application.Units.Commands.DeleteUnit;
-using Application.Units.DTO;
 using Domain.Enums;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.Data;
 
 namespace WebAPI.Controllers;
 

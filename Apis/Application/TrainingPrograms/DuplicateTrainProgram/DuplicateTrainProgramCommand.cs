@@ -1,5 +1,4 @@
-﻿using Application.Class.DTO;
-using Application.Common.Exceptions;
+﻿using Application.Common.Exceptions;
 using Application.Interfaces;
 using Application.TrainingPrograms.DTOs;
 using AutoMapper;

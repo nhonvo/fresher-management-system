@@ -1,6 +1,4 @@
-﻿using Domain.Entities;
-
-namespace Application.ViewModels.TestAssessmentViewModels
+﻿namespace Application.ViewModels.TestAssessmentViewModels
 {
     public class TestAssessment_TrainingMaterialDTO
     {

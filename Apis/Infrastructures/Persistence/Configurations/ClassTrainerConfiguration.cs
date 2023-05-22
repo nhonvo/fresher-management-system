@@ -15,7 +15,7 @@ namespace Infrastructures.Persistence.Configurations
                    .HasForeignKey(ca => ca.TrainerId);
             builder.HasOne(ca => ca.TrainingClass)
                    .WithMany(tc => tc.ClassTrainers)
-                   .HasForeignKey(ca => ca.TrainerId);
+                   .HasForeignKey(ca => ca.TrainingClassId);
             builder.HasOne(ca => ca.CreateByUser)
                    .WithMany(tc => tc.CreatedClassTrainers)
                    .HasForeignKey(ca => ca.CreatedBy);

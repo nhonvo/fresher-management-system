@@ -18,7 +18,7 @@ namespace Application.UnitLessons.Queries.GetUnitLessonByName
 
         public async Task<Pagination<UnitLessonDTO>> Handle(GetUnitLessonByNameQuery request, CancellationToken cancellationToken)
         {
-            var unitlesson = await _unitOfWork.UnitLessonRepository.GetAsync(
+            var unitlesson = await _unitOfWork.LessonRepository.GetAsync(
                 filter: x => x.Name == request.name,
                 pageIndex: request.pageIndex,
                 pageSize: request.pageSize);

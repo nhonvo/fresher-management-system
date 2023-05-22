@@ -30,14 +30,14 @@ namespace Application.UnitLessons.Commands.UpdateUnitLesson
 
         public async Task<UnitLessonDTO> Handle(UpdateUnitLessonCommand request, CancellationToken cancellationToken)
         {
-            var unitlesson = await _unitOfWork.UnitLessonRepository.GetByIdAsyncAsNoTracking(request.Id);
+            var unitlesson = await _unitOfWork.LessonRepository.GetByIdAsyncAsNoTracking(request.Id);
             if (unitlesson == null)
                 throw new NotFoundException("Unit Lesson not found");
             unitlesson = _mapper.Map<Lesson>(request);
             try
             {
                 _unitOfWork.BeginTransaction();
-                _unitOfWork.UnitLessonRepository.Update(unitlesson);
+                _unitOfWork.LessonRepository.Update(unitlesson);
                 await _unitOfWork.CommitAsync();
                 var result = _mapper.Map<UnitLessonDTO>(unitlesson);
                 return result;

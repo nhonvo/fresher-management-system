@@ -20,7 +20,7 @@ namespace Application.UnitLessons.Queries.GetUnitLessons
 
         public async Task<Pagination<UnitLessonDTO>> Handle(GetUnitLessonQuery request, CancellationToken cancellationToken)
         {
-            var unitlesson = await _unitOfWork.UnitLessonRepository.GetAsync(pageIndex: request.PageIndex, pageSize: request.PageSize);
+            var unitlesson = await _unitOfWork.LessonRepository.GetAsync(pageIndex: request.PageIndex, pageSize: request.PageSize);
             var result = _mapper.Map<Pagination<UnitLessonDTO>>(unitlesson);
             return result;
         }

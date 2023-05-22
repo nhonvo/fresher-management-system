@@ -1,7 +1,7 @@
 using Application.Users.DTO;
 using Domain.Entities;
 using Domain.Enums;
-namespace Application.Syllabuses.DTO
+namespace Application.Syllabuses.DTOs
 {
     public class SyllabusRelated
     {
@@ -35,25 +35,25 @@ namespace Application.Syllabuses.DTO
     public record SyllabusUnitRelated
     {
         public int Id { get; set; }
-        public string Name { get; init; }
-        public int SyllabusSession { get; init; }
-        public int UnitNumber { get; init; }
-        public List<SyllabusLessonRelated> Lessons { get; init; }
+        public string Name { get; set; }
+        public int SyllabusSession { get; set; }
+        public int UnitNumber { get; set; }
+        public List<SyllabusLessonRelated> Lessons { get; set; }
     }
     public class SyllabusLessonRelated
     {
         public int Id { get; set; }
-        public string Name { get; init; }
-        public int Duration { get; init; }
-        public LessonType LessonType { get; init; }
-        public DeliveryType DeliveryType { get; init; }
-        public List<TrainingMaterialRelated> TrainingMaterials { get; init; }
+        public string Name { get; set; }
+        public int Duration { get; set; }
+        public LessonType LessonType { get; set; }
+        public DeliveryType DeliveryType { get; set; }
+        public List<TrainingMaterialRelated> TrainingMaterials { get; set; }
     }
     public class TrainingMaterialRelated
     {
         public int Id { get; set; }
-        public string FileName { get; init; }
-        public string FilePath { get; init; }
-        public long FileSize { get; init; }
+        public string FileName { get; set; }
+        public string FilePath { get; set; }
+        public long FileSize { get; set; }
     }
 }

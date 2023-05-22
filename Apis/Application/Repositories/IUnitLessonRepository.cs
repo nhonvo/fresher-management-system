@@ -2,7 +2,7 @@
 
 namespace Application.Repositories
 {
-    public interface IUnitLessonRepository : IGenericRepository<Lesson>
+    public interface ILessonRepository : IGenericRepository<Lesson>
     {
     }
 }

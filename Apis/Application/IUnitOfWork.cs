@@ -15,7 +15,7 @@ public interface IUnitOfWork : IDisposable
     ITestAssessmentRepository TestAssessmentRepository { get; }
     IUserRepository UserRepository { get; }
     IUnitRepository UnitRepository { get; }
-    IUnitLessonRepository UnitLessonRepository { get; }
+    ILessonRepository LessonRepository { get; }
     IClassTrainerRepository ClassTrainerRepository { get; }
     ITrainingProgramRepository TrainingProgramRepository { get; }
     IFeedBackRepository FeedBackRepository { get; }

@@ -1,7 +1,7 @@
 using Application.Users.DTO;
 using Domain.Entities;
 using Domain.Enums;
-namespace Application.Syllabuses.DTO
+namespace Application.Syllabuses.DTOs
 {
     public class SyllabusDuplicate
     {

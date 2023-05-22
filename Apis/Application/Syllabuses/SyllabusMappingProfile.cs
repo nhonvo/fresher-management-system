@@ -1,6 +1,9 @@
+using Application.Syllabuses.Commands.AddOneLessonToUnit;
+using Application.Syllabuses.Commands.AddOneMaterialToLesson;
+using Application.Syllabuses.Commands.AddOneUnitToSyllabus;
 using Application.Syllabuses.Commands.CreateSyllabus;
 using Application.Syllabuses.Commands.UpdateSyllabus;
-using Application.Syllabuses.DTO;
+using Application.Syllabuses.DTOs;
 using AutoMapper;
 using Domain.Entities;
 
@@ -23,6 +26,14 @@ namespace Application.Syllabuses
             CreateMap<Lesson, SyllabusLessonRelated>().ReverseMap();
             CreateMap<TrainingMaterialRelated, TrainingMaterial>().ReverseMap();
             CreateMap<Syllabus, SyllabusRelated>().ReverseMap();
+            // add to syllabus
+            CreateMap<Unit, AddOneUnitToSyllabusCommand>().ReverseMap();
+            CreateMap<Lesson, AddOneLessonToUnitCommand>().ReverseMap();
+            CreateMap<TrainingMaterial, AddOneMaterialToLessonCommand>().ReverseMap();
+            // response
+            CreateMap<Lesson, AddOneLessonToUnitResponse>().ReverseMap();
+            CreateMap<TrainingMaterial, AddOneMaterialToLessonResponse>().ReverseMap();
+            CreateMap<Unit, AddOneUnitToSyllabusResponse>().ReverseMap();
         }
     }
 }

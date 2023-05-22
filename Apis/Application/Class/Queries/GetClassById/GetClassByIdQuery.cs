@@ -6,9 +6,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Application.Class.Queries.GetClassById;
 
-public record GetClassByIdQuery(int id) : IRequest<ClassDTO>;
+public record GetClassByIdQuery(int id) : IRequest<ClassRelated>;
 
-public class GetClassByIdHandler : IRequestHandler<GetClassByIdQuery, ClassDTO>
+public class GetClassByIdHandler : IRequestHandler<GetClassByIdQuery, ClassRelated>
 {
     private readonly IUnitOfWork _unitOfWork;
     private readonly IMapper _mapper;
@@ -19,7 +19,7 @@ public class GetClassByIdHandler : IRequestHandler<GetClassByIdQuery, ClassDTO>
         _mapper = mapper;
     }
 
-    public async Task<ClassDTO> Handle(GetClassByIdQuery request, CancellationToken cancellationToken)
+    public async Task<ClassRelated> Handle(GetClassByIdQuery request, CancellationToken cancellationToken)
     {
         var item = await _unitOfWork.ClassRepository.FirstOrDefaultAsync(
             filter: x => x.Id == request.id,
@@ -41,7 +41,7 @@ public class GetClassByIdHandler : IRequestHandler<GetClassByIdQuery, ClassDTO>
                     .ThenInclude(x => x.TrainingMaterials)
                 .Include(x => x.Calenders));
 
-        var result = _mapper.Map<ClassDTO>(item);
+        var result = _mapper.Map<ClassRelated>(item);
 
         return result ?? throw new NotFoundException("Could not find the class");
     }

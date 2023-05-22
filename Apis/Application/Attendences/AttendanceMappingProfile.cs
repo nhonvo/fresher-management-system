@@ -12,6 +12,10 @@ namespace Application.Attendances
             CreateMap<Attendance, AttendanceDTO>().ReverseMap();
             CreateMap<Attendance, AttendanceRelatedDTO>().ReverseMap();
             CreateMap<Attendance, CreateAttendancesCommand>().ReverseMap();
+            // related
+            CreateMap<Attendance, AttendanceRelatedFilterDTO>().ReverseMap();
+            CreateMap<AttendanceRelatedClassStudentFilterDTO, ClassStudent>().ReverseMap();
+            
             CreateMap<AttendanceRelatedClassStudentDTO, ClassStudent>().ReverseMap();
             CreateMap<AttendanceRelatedTrainingClassDTO, TrainingClass>().ReverseMap();
             CreateMap<AttendanceRelatedStudent, User>().ReverseMap();

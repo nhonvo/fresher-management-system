@@ -3,7 +3,8 @@ using MediatR;
 
 namespace Application.Users.Queries.GetTipsByUserId
 {
-    public record GetTipsByUserIdQuery(int UserId) : IRequest<List<Tip>>;
+    public record 
+    GetTipsByUserIdQuery(int UserId) : IRequest<List<Tip>>;
 
     public class GetTipsByUserIdHandler : IRequestHandler<GetTipsByUserIdQuery, List<Tip>>
     {

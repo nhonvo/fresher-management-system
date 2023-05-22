@@ -5,32 +5,32 @@ using Domain.Enums;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
-namespace Application.Attendances.Queries.GetAttendancePendingRequest
+namespace Application.Attendances.Queries.GetAttendanceFilterRequest
 {
-    public record GetAttendancePendingRequestQuery(int PageIndex = 0, int PageSize = 10) : IRequest<Pagination<AttendanceRelatedDTO>>;
-    public class GetAttendancePendingRequestHandler : IRequestHandler<GetAttendancePendingRequestQuery, Pagination<AttendanceRelatedDTO>>
+    public record GetAttendanceFilterRequestQuery(StatusAttendanceApprove? status = StatusAttendanceApprove.Pending, int PageIndex = 0, int PageSize = 10) : IRequest<Pagination<AttendanceRelatedFilterDTO>>;
+    public class GetAttendanceFilterRequestHandler : IRequestHandler<GetAttendanceFilterRequestQuery, Pagination<AttendanceRelatedFilterDTO>>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
 
-        public GetAttendancePendingRequestHandler(IUnitOfWork unitOfWork, IMapper mapper)
+        public GetAttendanceFilterRequestHandler(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
-        public async Task<Pagination<AttendanceRelatedDTO>> Handle(GetAttendancePendingRequestQuery request, CancellationToken cancellationToken)
+        public async Task<Pagination<AttendanceRelatedFilterDTO>> Handle(GetAttendanceFilterRequestQuery request, CancellationToken cancellationToken)
         {
             var attendance = await _unitOfWork.AttendanceRepository.GetAsync(
-                filter: x => x.ApproveStatus == StatusAttendanceApprove.Pending,
+                filter: x => x.ApproveStatus == request.status,
                  include: x => x.Include(x => x.Admin)
-                               .Include(x => x.ClassStudent)
-                               .ThenInclude(x => x.Student)
-                               .Include(x => x.ClassStudent)
-                               .ThenInclude(x => x.TrainingClass),
+                                .Include(x => x.ClassStudent)
+                                .ThenInclude(x => x.Student)
+                                .Include(x => x.ClassStudent)
+                                .ThenInclude(x => x.TrainingClass),
                 pageIndex: request.PageIndex,
                 pageSize: request.PageSize);
 
-            var result = _mapper.Map<Pagination<AttendanceRelatedDTO>>(attendance);
+            var result = _mapper.Map<Pagination<AttendanceRelatedFilterDTO>>(attendance);
 
             return result;
         }

@@ -16,7 +16,7 @@ namespace Application.TrainingPrograms
             CreateMap<TrainingProgram, UpdateTrainingProgramCommand>().ReverseMap();
             // duplicate
             CreateMap<TrainingProgramDuplicate, TrainingProgram>().ReverseMap();
-            CreateMap<ProgramSyllabusDuplicate, ProgramSyllabus>().ReverseMap();
+            CreateMap<TrainingProgramProgramSyllabusDuplicate, ProgramSyllabus>().ReverseMap();
             CreateMap<TrainingProgramSyllabusDuplicate, Syllabus>().ReverseMap();
             CreateMap<TrainingProgramTestAssessmentDuplicate, TestAssessment>().ReverseMap();
             CreateMap<TrainingProgramUnitDuplicate, Unit>().ReverseMap();

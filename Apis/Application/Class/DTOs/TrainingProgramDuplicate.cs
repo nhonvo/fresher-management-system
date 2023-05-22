@@ -6,10 +6,12 @@ namespace Application.Class.DTO
     {
         public string Name { get; set; }
         public TrainingProgramStatus Status { get; set; }
-        public ICollection<ProgramSyllabusDuplicate> ProgramSyllabus { get; set; }
+        public ICollection<TrainingProgramProgramSyllabusDuplicate> ProgramSyllabus { get; set; }
     }
-    public class ProgramSyllabusDuplicate
+    public class TrainingProgramProgramSyllabusDuplicate
     {
+        public int TrainingProgramId { get; set; }
+        public TrainingProgramDuplicate TrainingProgram { get; set; }
         public int SyllabusId { get; set; }
         public TrainingProgramSyllabusDuplicate Syllabus { get; set; }
     }
@@ -34,11 +36,10 @@ namespace Application.Class.DTO
         public ICollection<TrainingProgramUnitDuplicate> Units { get; set; }
         // public ICollection<ProgramSyllabus>? ProgramSyllabus { get; set; }
         public ICollection<TrainingProgramTestAssessmentDuplicate>? TestAssessments { get; set; }
-        public DateTime CreationDate { get; set; }
+        // public DateTime CreationDate { get; set; }
     }
     public class TrainingProgramTestAssessmentDuplicate
     {
-
         public float? Score { get; set; }
         public TestAssessmentType TestAssessmentType { get; set; }
         public int AttendeeId { get; set; }

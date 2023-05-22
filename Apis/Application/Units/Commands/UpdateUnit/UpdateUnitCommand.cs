@@ -1,6 +1,6 @@
 ﻿using Application.Common.Exceptions;
 using Application.Interfaces;
-using Application.Units.DTO;
+using Application.Units.DTOs;
 using AutoMapper;
 using MediatR;
 
@@ -12,7 +12,7 @@ namespace Application.Units.Commands.UpdateUnit
         public string Name { get; init; }
         public int SyllabusSession { get; init; }
         public int UnitNumber { get; init; }
-        public int SyllabusId { get; init; } 
+        public int SyllabusId { get; init; }
     }
 
     public class UpdateUnitHandler : IRequestHandler<UpdateUnitCommand, UnitHasIdDTO>

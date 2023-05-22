@@ -223,3 +223,9 @@ get list approved with related data
 
 // **done** fix register.
 //**done** fix validate paging add validate paging.
+// Syllabus miss related
+   // 
+// use reposne miss id
+// class miss id, and attendance type
+// class detail inlcude admin 
+// approve 

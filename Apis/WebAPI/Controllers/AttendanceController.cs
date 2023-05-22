@@ -1,6 +1,5 @@
 ﻿using Application.Attendances.Commands.ApproveAbsent;
 using Application.Attendances.Commands.CreateAttendances;
-using Application.Attendances.Commands.SendMailAttendance;
 using Application.Attendances.Commands.UpdateAttendances;
 using Application.Attendances.DTO;
 using Application.Attendances.Queries.GetAttendanceById;
@@ -9,6 +8,7 @@ using Application.Attendances.Queries.GetAttendancePendingRequest;
 using Application.Attendances.Queries.GetAttendanceRequest;
 using Application.Attendances.Queries.SearchAttendanceRequest;
 using Application.Commons;
+using Application.Emails.Commands.SendMailAttendance;
 using Domain.Enums;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
@@ -61,7 +61,6 @@ namespace WebAPI.Controllers
         [HttpGet("test")]
         public async Task Get()
         {
-
             await _mediator.Send(new SendMailAttendanceCommand());
         }
 

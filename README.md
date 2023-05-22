@@ -12,6 +12,7 @@
    Add-migration -Context ApplicationDbContext
    Update-Database -Context ApplicationDbContext
 ```
+
 **notdone** ASP.NET Core ElasticSearch, Kibana & Serilog Integration
    - can search in log file and ui kibana.
    - must set up docker not for this time
@@ -214,16 +215,20 @@ get list approved with related data
 
 
 // **done** check duplicate syllabus, 
-// file upload training material
+//**dokuro** file upload training material
    // refer test assignment upload file
    // download file
    // report all student pass or fail. score of student in class
    // refer get file csv
-// fix training program
+
+//**done** fix training program
 // update seed data
+// send mail when request join class
+// optimize code
+// check validator
+// score report
+// test project
 // check feedback get evaluate of trainer
-// score
-// test project 
 // review all feature old project
 
 // add register by google OpenID

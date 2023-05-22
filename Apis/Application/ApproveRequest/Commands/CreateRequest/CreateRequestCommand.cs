@@ -1,5 +1,6 @@
 ﻿using Application.ApproveRequests.DTOs;
 using Application.Common.Exceptions;
+using Application.Emails.Commands.SendMailRequestJoinClass;
 using AutoMapper;
 using Domain.Entities;
 using Domain.Enums;
@@ -35,7 +36,7 @@ namespace Application.ApproveRequests.Commands.CreateRequest
             {
                 _unitOfWork.ApproveRequestRepository.AddAsync(approved);
             });
-            // await _mediator.Send(new );
+            await _mediator.Send(new SendMailRequestJoinClassCommand(request.ClassId));
             var result = _mapper.Map<ApproveRequestRelatedDTO>(approved);
             return result;
         }

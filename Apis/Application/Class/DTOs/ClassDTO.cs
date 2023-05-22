@@ -1,6 +1,6 @@
 ﻿using Domain.Enums;
 
-namespace Application.Class.DTO
+namespace Application.Class.DTOs
 {
     public class ClassDTO
     {

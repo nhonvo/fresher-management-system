@@ -2,10 +2,10 @@ using AutoMapper;
 using Domain.Entities;
 using Domain.Enums;
 
-namespace Application.Class.Queries.GetClassById;
+namespace Application.Class.DTOs.GetClassById;
 
 #pragma warning disable 
-public class ClassDto
+public class ClassRelated
 {
     public int Id { get; init; }
     public string Name { get; init; }
@@ -139,7 +139,7 @@ public class ClassMappingProfile : Profile
 {
     public ClassMappingProfile()
     {
-        CreateMap<TrainingClass, ClassDto>();
+        CreateMap<TrainingClass, ClassRelated>();
         CreateMap<User, UserDto>();
         CreateMap<Calender, CalenderDto>();
         CreateMap<ClassAdmin, ClassAdminDto>();

@@ -1,13 +1,14 @@
-﻿using Application.Common.Exceptions;
+﻿using Application.Class.DTOs;
+using Application.Common.Exceptions;
 using AutoMapper;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
 namespace Application.Class.Queries.GetClassById;
 
-public record GetClassByIdQuery(int id) : IRequest<ClassDto>;
+public record GetClassByIdQuery(int id) : IRequest<ClassRelated>;
 
-public class GetClassByIdHandler : IRequestHandler<GetClassByIdQuery, ClassDto>
+public class GetClassByIdHandler : IRequestHandler<GetClassByIdQuery, ClassRelated>
 {
     private readonly IUnitOfWork _unitOfWork;
     private readonly IMapper _mapper;
@@ -18,32 +19,13 @@ public class GetClassByIdHandler : IRequestHandler<GetClassByIdQuery, ClassDto>
         _mapper = mapper;
     }
 
-    public async Task<ClassDto> Handle(GetClassByIdQuery request, CancellationToken cancellationToken)
+    public async Task<ClassRelated> Handle(GetClassByIdQuery request, CancellationToken cancellationToken)
     {
         var item = await _unitOfWork.ClassRepository.FirstOrDefaultAsync(
-            filter: x => x.Id == request.id,
-            include: x => x
-                .Include(x => x.CreateBy)
-                .Include(x => x.ReviewBy)
-                .Include(x => x.ApproveBy)
-                .Include(x => x.ClassAdmins)
-                .Include(x => x.ClassTrainers)
-                .Include(x => x.Students)
-                .Include(x => x.TrainingProgram)
-                    .ThenInclude(x => x.ProgramSyllabus)
-                    .ThenInclude(x => x.Syllabus)
-                    .ThenInclude(x => x.Units)
-                    .ThenInclude(x => x.Lessons)
-                    .ThenInclude(x => x.TrainingMaterials)
-                .Include(x => x.Calenders));
+            filter: x => x.Id == request.id);
 
-        if (item is null)
-        {
-            throw new NotFoundException(nameof(Class), request.id);
-        }
+        var result = _mapper.Map<ClassRelated>(item);
 
-        var result = _mapper.Map<ClassDto>(item);
-
-        return result;
+        return result ?? throw new NotFoundException("Could not find the class");
     }
 }

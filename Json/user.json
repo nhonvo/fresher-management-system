@@ -2,7 +2,7 @@
     {
         "Name": "SuperAdmin",
         "Phone": "922-215-1843",
-        "Password": "$2a$11$8SylUOilhjdL8bfK.8lIg.$2a$11$8SylUOilhjdL8bfK.8lIg.Heu52KFJrsKLsACsvUroxQAd660dBQG",
+        "Password": "$2a$11$8SylUOilhjdL8bfK.8lIg.Heu52KFJrsKLsACsvUroxQAd660dBQG",
         "Role": 0,
         "Gender": 0,
         "Status": 0,
@@ -54,7 +54,7 @@
         "Password": "$2a$11$8SylUOilhjdL8bfK.8lIg.Heu52KFJrsKLsACsvUroxQAd660dBQG",
         "Gender": 0,
         "Role": 2,
-        "Status": 2,
+        "Status": 0,
         "DateOfBirth": "2022-10-16",
         "Email": "DuongAM@gmail.com"
     },
@@ -104,7 +104,7 @@
         "Password": "$2a$11$8SylUOilhjdL8bfK.8lIg.Heu52KFJrsKLsACsvUroxQAd660dBQG",
         "Gender": 1,
         "Role": 3,
-        "Status": 2,
+        "Status": 0,
         "DateOfBirth": "2023-03-21",
         "Email": "vothuongtruongnhon2002@gmail.com"
     },
@@ -114,7 +114,7 @@
         "Password": "$2a$11$8SylUOilhjdL8bfK.8lIg.Heu52KFJrsKLsACsvUroxQAd660dBQG",
         "Role": 3,
         "Gender": 1,
-        "Status": 3,
+        "Status": 0,
         "DateOfBirth": "2022-09-19",
         "Email": "nmacleod8@alexa.com"
     },
@@ -124,7 +124,7 @@
         "Password": "$2a$11$8SylUOilhjdL8bfK.8lIg.Heu52KFJrsKLsACsvUroxQAd660dBQG",
         "Role": 3,
         "Gender": 1,
-        "Status": 3,
+        "Status": 0,
         "DateOfBirth": "2022-11-01",
         "Email": "athorington9@facebook.com"
     },
@@ -154,7 +154,7 @@
         "Password": "$2a$11$8SylUOilhjdL8bfK.8lIg.Heu52KFJrsKLsACsvUroxQAd660dBQG",
         "Role": 3,
         "Gender": 1,
-        "Status": 3,
+        "Status": 0,
         "DateOfBirth": "2022-10-30",
         "Email": "meddisforthc@prnewswire.com"
     },
@@ -164,7 +164,7 @@
         "Password": "$2a$11$8SylUOilhjdL8bfK.8lIg.Heu52KFJrsKLsACsvUroxQAd660dBQG",
         "Role": 3,
         "Gender": 1,
-        "Status": 2,
+        "Status": 0,
         "DateOfBirth": "2022-05-11",
         "Email": "genrdigod@zimbio.com"
     },
@@ -174,7 +174,7 @@
         "Password": "$2a$11$8SylUOilhjdL8bfK.8lIg.Heu52KFJrsKLsACsvUroxQAd660dBQG",
         "Role": 3,
         "Gender": 0,
-        "Status": 2,
+        "Status": 0,
         "DateOfBirth": "2022-06-13",
         "Email": "cdanieloue@tmall.com"
     },
@@ -194,7 +194,7 @@
         "Password": "$2a$11$8SylUOilhjdL8bfK.8lIg.Heu52KFJrsKLsACsvUroxQAd660dBQG",
         "Role": 3,
         "Gender": 1,
-        "Status": 2,
+        "Status": 0,
         "DateOfBirth": "2023-05-09",
         "Email": "htosspellg@mac.com"
     },
@@ -204,7 +204,7 @@
         "Password": "$2a$11$8SylUOilhjdL8bfK.8lIg.Heu52KFJrsKLsACsvUroxQAd660dBQG",
         "Role": 3,
         "Gender": 0,
-        "Status": 3,
+        "Status": 0,
         "DateOfBirth": "2023-04-07",
         "Email": "lgrealishh@theglobeandmail.com"
     },
@@ -214,7 +214,7 @@
         "Password": "$2a$11$8SylUOilhjdL8bfK.8lIg.Heu52KFJrsKLsACsvUroxQAd660dBQG",
         "Role": 3,
         "Gender": 0,
-        "Status": 2,
+        "Status": 0,
         "DateOfBirth": "2023-03-20",
         "Email": "aberndseni@loc.gov"
     },
@@ -234,7 +234,7 @@
         "Password": "$2a$11$8SylUOilhjdL8bfK.8lIg.Heu52KFJrsKLsACsvUroxQAd660dBQG",
         "Role": 3,
         "Gender": 1,
-        "Status": 3,
+        "Status": 0,
         "DateOfBirth": "2023-01-30",
         "Email": "arallingsk@artisteer.com"
     },
@@ -254,7 +254,7 @@
         "Password": "$2a$11$8SylUOilhjdL8bfK.8lIg.Heu52KFJrsKLsACsvUroxQAd660dBQG",
         "Role": 3,
         "Gender": 1,
-        "Status": 3,
+        "Status": 0,
         "DateOfBirth": "2022-09-20",
         "Email": "cstrangwoodm@free.fr"
     },
@@ -264,7 +264,7 @@
         "Password": "$2a$11$8SylUOilhjdL8bfK.8lIg.Heu52KFJrsKLsACsvUroxQAd660dBQG",
         "Role": 3,
         "Gender": 0,
-        "Status": 3,
+        "Status": 0,
         "DateOfBirth": "2022-10-29",
         "Email": "eboveyn@samsung.com"
     },
@@ -274,7 +274,7 @@
         "Password": "$2a$11$8SylUOilhjdL8bfK.8lIg.Heu52KFJrsKLsACsvUroxQAd660dBQG",
         "Role": 3,
         "Gender": 1,
-        "Status": 3,
+        "Status": 0,
         "DateOfBirth": "2022-05-15",
         "Email": "mtaleso@blogs.com"
     },
@@ -294,7 +294,7 @@
         "Password": "$2a$11$8SylUOilhjdL8bfK.8lIg.Heu52KFJrsKLsACsvUroxQAd660dBQG",
         "Role": 3,
         "Gender": 0,
-        "Status": 2,
+        "Status": 0,
         "DateOfBirth": "2022-12-02",
         "Email": "mhumeq@msn.com"
     },
@@ -324,7 +324,7 @@
         "Password": "$2a$11$8SylUOilhjdL8bfK.8lIg.Heu52KFJrsKLsACsvUroxQAd660dBQG",
         "Role": 3,
         "Gender": 0,
-        "Status": 3,
+        "Status": 0,
         "DateOfBirth": "2023-04-14",
         "Email": "jmartont@cam.ac.uk"
     },
@@ -364,7 +364,7 @@
         "Password": "$2a$11$8SylUOilhjdL8bfK.8lIg.Heu52KFJrsKLsACsvUroxQAd660dBQG",
         "Role": 3,
         "Gender": 0,
-        "Status": 3,
+        "Status": 0,
         "DateOfBirth": "2023-03-14",
         "Email": "lstoltex@tiny.cc"
     },
@@ -384,7 +384,7 @@
         "Password": "$2a$11$8SylUOilhjdL8bfK.8lIg.Heu52KFJrsKLsACsvUroxQAd660dBQG",
         "Role": 3,
         "Gender": 1,
-        "Status": 3,
+        "Status": 0,
         "DateOfBirth": "2022-09-11",
         "Email": "wthomez@elegantthemes.com"
     },
@@ -434,7 +434,7 @@
         "Password": "$2a$11$8SylUOilhjdL8bfK.8lIg.Heu52KFJrsKLsACsvUroxQAd660dBQG",
         "Role": 3,
         "Gender": 1,
-        "Status": 3,
+        "Status": 0,
         "DateOfBirth": "2022-05-28",
         "Email": "ede14@nasa.gov"
     },
@@ -444,7 +444,7 @@
         "Password": "$2a$11$8SylUOilhjdL8bfK.8lIg.Heu52KFJrsKLsACsvUroxQAd660dBQG",
         "Role": 3,
         "Gender": 1,
-        "Status": 3,
+        "Status": 0,
         "DateOfBirth": "2022-12-04",
         "Email": "sfeaver15@wordpress.org"
     },
@@ -504,7 +504,7 @@
         "Password": "$2a$11$8SylUOilhjdL8bfK.8lIg.Heu52KFJrsKLsACsvUroxQAd660dBQG",
         "Role": 3,
         "Gender": 0,
-        "Status": 3,
+        "Status": 0,
         "DateOfBirth": "2022-07-07",
         "Email": "bseif1b@webmd.com"
     },
@@ -514,7 +514,7 @@
         "Password": "$2a$11$8SylUOilhjdL8bfK.8lIg.Heu52KFJrsKLsACsvUroxQAd660dBQG",
         "Role": 3,
         "Gender": 0,
-        "Status": 2,
+        "Status": 0,
         "DateOfBirth": "2022-12-17",
         "Email": "logilby1c@csmonitor.com"
     },
@@ -524,7 +524,7 @@
         "Password": "$2a$11$8SylUOilhjdL8bfK.8lIg.Heu52KFJrsKLsACsvUroxQAd660dBQG",
         "Role": 3,
         "Gender": 1,
-        "Status": 2,
+        "Status": 0,
         "DateOfBirth": "2023-03-20",
         "Email": "lkellet1d@usa.gov"
     },
@@ -534,7 +534,7 @@
         "Password": "$2a$11$8SylUOilhjdL8bfK.8lIg.Heu52KFJrsKLsACsvUroxQAd660dBQG",
         "Role": 3,
         "Gender": 0,
-        "Status": 3,
+        "Status": 0,
         "DateOfBirth": "2023-02-15",
         "Email": "kmishow1e@sciencedirect.com"
     },
@@ -554,7 +554,7 @@
         "Password": "$2a$11$8SylUOilhjdL8bfK.8lIg.Heu52KFJrsKLsACsvUroxQAd660dBQG",
         "Role": 3,
         "Gender": 1,
-        "Status": 3,
+        "Status": 0,
         "DateOfBirth": "2022-07-08",
         "Email": "lgarmey1g@biglobe.ne.jp"
     },
@@ -574,7 +574,7 @@
         "Password": "$2a$11$8SylUOilhjdL8bfK.8lIg.Heu52KFJrsKLsACsvUroxQAd660dBQG",
         "Role": 3,
         "Gender": 0,
-        "Status": 3,
+        "Status": 0,
         "DateOfBirth": "2022-05-25",
         "Email": "ealvaro1i@tinypic.com"
     },
@@ -584,7 +584,7 @@
         "Password": "$2a$11$8SylUOilhjdL8bfK.8lIg.Heu52KFJrsKLsACsvUroxQAd660dBQG",
         "Role": 3,
         "Gender": 1,
-        "Status": 3,
+        "Status": 0,
         "DateOfBirth": "2022-06-18",
         "Email": "sinwood1j@fema.gov"
     },
@@ -594,7 +594,7 @@
         "Password": "$2a$11$8SylUOilhjdL8bfK.8lIg.Heu52KFJrsKLsACsvUroxQAd660dBQG",
         "Role": 3,
         "Gender": 0,
-        "Status": 2,
+        "Status": 0,
         "DateOfBirth": "2023-01-08",
         "Email": "wroskilly1k@auda.org.au"
     },
@@ -644,7 +644,7 @@
         "Password": "$2a$11$8SylUOilhjdL8bfK.8lIg.Heu52KFJrsKLsACsvUroxQAd660dBQG",
         "Role": 3,
         "Gender": 0,
-        "Status": 3,
+        "Status": 0,
         "DateOfBirth": "2022-10-31",
         "Email": "jbaike1p@squarespace.com"
     },
@@ -654,7 +654,7 @@
         "Password": "$2a$11$8SylUOilhjdL8bfK.8lIg.Heu52KFJrsKLsACsvUroxQAd660dBQG",
         "Role": 3,
         "Gender": 0,
-        "Status": 2,
+        "Status": 0,
         "DateOfBirth": "2022-05-20",
         "Email": "abales1q@dot.gov"
     },
@@ -664,7 +664,7 @@
         "Password": "$2a$11$8SylUOilhjdL8bfK.8lIg.Heu52KFJrsKLsACsvUroxQAd660dBQG",
         "Role": 3,
         "Gender": 1,
-        "Status": 3,
+        "Status": 0,
         "DateOfBirth": "2023-02-17",
         "Email": "gmcguff1r@google.ca"
     },
@@ -684,7 +684,7 @@
         "Password": "$2a$11$8SylUOilhjdL8bfK.8lIg.Heu52KFJrsKLsACsvUroxQAd660dBQG",
         "Role": 3,
         "Gender": 0,
-        "Status": 2,
+        "Status": 0,
         "DateOfBirth": "2022-09-15",
         "Email": "bmatusson1t@va.gov"
     },
@@ -704,7 +704,7 @@
         "Password": "$2a$11$8SylUOilhjdL8bfK.8lIg.Heu52KFJrsKLsACsvUroxQAd660dBQG",
         "Role": 3,
         "Gender": 0,
-        "Status": 3,
+        "Status": 0,
         "DateOfBirth": "2022-12-15",
         "Email": "anatalie1v@sciencedirect.com"
     },
@@ -714,7 +714,7 @@
         "Password": "$2a$11$8SylUOilhjdL8bfK.8lIg.Heu52KFJrsKLsACsvUroxQAd660dBQG",
         "Role": 3,
         "Gender": 0,
-        "Status": 2,
+        "Status": 0,
         "DateOfBirth": "2022-06-27",
         "Email": "cwoodcroft1w@epa.gov"
     },
@@ -724,7 +724,7 @@
         "Password": "$2a$11$8SylUOilhjdL8bfK.8lIg.Heu52KFJrsKLsACsvUroxQAd660dBQG",
         "Role": 3,
         "Gender": 0,
-        "Status": 2,
+        "Status": 0,
         "DateOfBirth": "2023-04-16",
         "Email": "vcoupar1x@state.gov"
     },
@@ -734,7 +734,7 @@
         "Password": "$2a$11$8SylUOilhjdL8bfK.8lIg.Heu52KFJrsKLsACsvUroxQAd660dBQG",
         "Role": 3,
         "Gender": 1,
-        "Status": 3,
+        "Status": 0,
         "DateOfBirth": "2022-10-26",
         "Email": "sgeely1y@dion.ne.jp"
     },
@@ -774,7 +774,7 @@
         "Password": "$2a$11$8SylUOilhjdL8bfK.8lIg.Heu52KFJrsKLsACsvUroxQAd660dBQG",
         "Role": 3,
         "Gender": 0,
-        "Status": 3,
+        "Status": 0,
         "DateOfBirth": "2022-11-15",
         "Email": "jrozalski22@lycos.com"
     },
@@ -804,7 +804,7 @@
         "Password": "$2a$11$8SylUOilhjdL8bfK.8lIg.Heu52KFJrsKLsACsvUroxQAd660dBQG",
         "Role": 3,
         "Gender": 0,
-        "Status": 2,
+        "Status": 0,
         "DateOfBirth": "2022-08-11",
         "Email": "tlukianov25@ning.com"
     },
@@ -814,7 +814,7 @@
         "Password": "$2a$11$8SylUOilhjdL8bfK.8lIg.Heu52KFJrsKLsACsvUroxQAd660dBQG",
         "Role": 3,
         "Gender": 0,
-        "Status": 2,
+        "Status": 0,
         "DateOfBirth": "2022-09-26",
         "Email": "gvolet26@dedecms.com"
     },
@@ -834,7 +834,7 @@
         "Password": "$2a$11$8SylUOilhjdL8bfK.8lIg.Heu52KFJrsKLsACsvUroxQAd660dBQG",
         "Role": 3,
         "Gender": 0,
-        "Status": 2,
+        "Status": 0,
         "DateOfBirth": "2023-03-01",
         "Email": "bmccurtin28@springer.com"
     },
@@ -854,7 +854,7 @@
         "Password": "$2a$11$8SylUOilhjdL8bfK.8lIg.Heu52KFJrsKLsACsvUroxQAd660dBQG",
         "Role": 3,
         "Gender": 0,
-        "Status": 2,
+        "Status": 0,
         "DateOfBirth": "2023-03-10",
         "Email": "tjewer2a@flavors.me"
     },
@@ -874,7 +874,7 @@
         "Password": "$2a$11$8SylUOilhjdL8bfK.8lIg.Heu52KFJrsKLsACsvUroxQAd660dBQG",
         "Role": 3,
         "Gender": 0,
-        "Status": 2,
+        "Status": 0,
         "DateOfBirth": "2022-11-25",
         "Email": "phentze2c@toplist.cz"
     },
@@ -904,7 +904,7 @@
         "Password": "$2a$11$8SylUOilhjdL8bfK.8lIg.Heu52KFJrsKLsACsvUroxQAd660dBQG",
         "Role": 3,
         "Gender": 1,
-        "Status": 2,
+        "Status": 0,
         "DateOfBirth": "2022-07-08",
         "Email": "rjulian2f@over-blog.com"
     },
@@ -924,7 +924,7 @@
         "Password": "$2a$11$8SylUOilhjdL8bfK.8lIg.Heu52KFJrsKLsACsvUroxQAd660dBQG",
         "Role": 3,
         "Gender": 1,
-        "Status": 2,
+        "Status": 0,
         "DateOfBirth": "2022-07-30",
         "Email": "opettingill2h@hp.com"
     },
@@ -944,7 +944,7 @@
         "Password": "$2a$11$8SylUOilhjdL8bfK.8lIg.Heu52KFJrsKLsACsvUroxQAd660dBQG",
         "Role": 3,
         "Gender": 0,
-        "Status": 3,
+        "Status": 0,
         "DateOfBirth": "2022-05-21",
         "Email": "csaggs2j@youtu.be"
     },
@@ -954,7 +954,7 @@
         "Password": "$2a$11$8SylUOilhjdL8bfK.8lIg.Heu52KFJrsKLsACsvUroxQAd660dBQG",
         "Role": 3,
         "Gender": 0,
-        "Status": 3,
+        "Status": 0,
         "DateOfBirth": "2023-01-02",
         "Email": "hbrum2k@tuttocitta.it"
     },
@@ -1014,7 +1014,7 @@
         "Password": "$2a$11$8SylUOilhjdL8bfK.8lIg.Heu52KFJrsKLsACsvUroxQAd660dBQG",
         "Role": 3,
         "Gender": 0,
-        "Status": 3,
+        "Status": 0,
         "DateOfBirth": "2023-04-02",
         "Email": "ledsell2q@mashable.com"
     },

@@ -25,11 +25,13 @@ namespace WebAPI.Controllers
         {
             _mediator = mediator;
         }
+
         [HttpGet]
-        public async Task<Pagination<ClassRelated>> Get(int pageIndex = 0, int pageSize = 10)
-        {
-            return await _mediator.Send(new GetClassQuery(pageIndex, pageSize));
-        }
+        public async Task<IActionResult> Get(
+            [FromQuery] int pageIndex = 0,
+            [FromQuery] int pageSize = 10)
+        => Ok(await _mediator.Send(new GetClassQuery() { PageIndex = pageIndex, PageSize = pageSize }));
+
         /// <summary>
         /// from class get all admin of class
         /// </summary>

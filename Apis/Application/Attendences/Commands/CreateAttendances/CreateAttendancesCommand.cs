@@ -39,7 +39,7 @@ namespace Application.Attendances.Commands.CreateAttendances
                 _unitOfWork.AttendanceRepository.AddAsync(Attendance);
             });
             var result = _mapper.Map<AttendanceDTO>(Attendance);
-            return result ?? throw new NotFoundException("Attendance not found");
+            return result;
         }
     }
 }

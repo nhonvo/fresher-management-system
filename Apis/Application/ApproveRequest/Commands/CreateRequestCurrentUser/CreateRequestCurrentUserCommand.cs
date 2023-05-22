@@ -1,37 +1,40 @@
 ﻿using Application.ApproveRequests.DTOs;
 using Application.Common.Exceptions;
 using Application.Emails.Commands.SendMailRequestJoinClass;
+using Application.Interfaces;
 using AutoMapper;
 using Domain.Entities;
 using Domain.Enums;
 using MediatR;
 
-namespace Application.ApproveRequests.Commands.CreateRequest
+namespace Application.ApproveRequests.Commands.CreateRequestCurrentUser
 {
-    public record CreateRequestCommand : IRequest<ApproveRequestRelatedDTO>
+    public record CreateRequestCurrentUserCommand : IRequest<ApproveRequestRelatedDTO>
     {
-        public int StudentId { get; set; }
         public int ClassId { get; set; }
-
     }
-    public class CreateRequestHandler : IRequestHandler<CreateRequestCommand, ApproveRequestRelatedDTO>
+    public class CreateRequestCurrentUserHandler : IRequestHandler<CreateRequestCurrentUserCommand, ApproveRequestRelatedDTO>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
         private readonly IMediator _mediator;
-        public CreateRequestHandler(IUnitOfWork unitOfWork, IMapper mapper, IMediator mediator)
+        private readonly IClaimService _claimService;
+        public CreateRequestCurrentUserHandler(IUnitOfWork unitOfWork, IMapper mapper, IMediator mediator, IClaimService claimService)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
             _mediator = mediator;
+            _claimService = claimService;
         }
-        public async Task<ApproveRequestRelatedDTO> Handle(CreateRequestCommand request, CancellationToken cancellationToken)
+        public async Task<ApproveRequestRelatedDTO> Handle(CreateRequestCurrentUserCommand request, CancellationToken cancellationToken)
         {
-            if (await CheckExist(request.StudentId, request.ClassId))
+            if (await CheckExist(_claimService.CurrentUserId, request.ClassId))
             {
                 throw new TransactionException("Approve request exists for class ");
             }
             var approved = _mapper.Map<ApproveRequest>(request);
+            approved.StudentId = _claimService.CurrentUserId;
+            
             await _unitOfWork.ExecuteTransactionAsync(() =>
             {
                 _unitOfWork.ApproveRequestRepository.AddAsync(approved);

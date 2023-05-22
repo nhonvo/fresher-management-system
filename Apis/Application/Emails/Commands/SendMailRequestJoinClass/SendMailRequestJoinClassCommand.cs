@@ -1,4 +1,5 @@
 using Application.Account.DTOs;
+using Application.Class.Queries.GetClassById;
 using Application.Emails.Commands.SendMail;
 using Application.Emails.Queries;
 using Application.Interfaces;
@@ -22,10 +23,12 @@ namespace Application.Emails.Commands.SendMailRequestJoinClass
         public async Task<bool> Handle(SendMailRequestJoinClassCommand request, CancellationToken cancellationToken)
         {
             var user = await _mediator.Send(new GetProfileQuery());
-            // var TrainingClass = await _mediator.
+            var trainingClass = await _mediator.Send(new GetClassByIdQuery(request.classId));
+
             var to = new List<string> { user.Email };
-            var title = "Welcome to FPT Software Academy";
-            var speech = "Greetings,\nWelcome to FPT Software Academy and thank you for register account. This is your information:";
+
+            var title = "Successfully registered for the class";
+            var speech = "Greetings,\nWelcome to FPT Software Academy, and thank you for registering for the class. Here are your registration details";
             var mainContent =
             $@"
                 <div>
@@ -37,6 +40,14 @@ namespace Application.Emails.Commands.SendMailRequestJoinClass
                         <li><strong>Date of Birth:</strong> {user.DateOfBirth.ToShortDateString()}</li>
                         <li><strong>Role:</strong> {user.Role.ToString()}</li>
                     </ul>
+                       <h2>Class Details:</h2>
+                    <ul>
+                        <li><strong>Class Name:</strong> {trainingClass.Name}</li>
+                        <li><strong>Class Date:</strong> {trainingClass.TimeStart.ToShortDateString()}</li>
+                        <li><strong>Class Time:</strong> {trainingClass.TimeStart.ToShortTimeString()} - {trainingClass.TimeEnd.ToShortTimeString()}</li>
+                        <li><strong>Class Location:</strong> {trainingClass.Location}</li>
+                    </ul>
+
                 </div>
             ";
 
@@ -48,7 +59,7 @@ namespace Application.Emails.Commands.SendMailRequestJoinClass
                 mainContent = mainContent,
                 sign = sign
             });
-            var subject = "Welcome to FPT Software Academy";
+            var subject = "Successfully registered for the class";
             var mailData = new SendMailCommand
             {
                 To = to,

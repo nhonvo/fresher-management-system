@@ -5,8 +5,8 @@ using MediatR;
 
 namespace Application.Units.Commands.DeleteUnit
 {
-    public record DeleteUnitCommand(int id) : IRequest<UnitDTO>;
-    public class DeleteUnitHandler : IRequestHandler<DeleteUnitCommand, UnitDTO>
+    public record DeleteUnitCommand(int id) : IRequest<UnitHasIdDTO>;
+    public class DeleteUnitHandler : IRequestHandler<DeleteUnitCommand, UnitHasIdDTO>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
@@ -16,24 +16,19 @@ namespace Application.Units.Commands.DeleteUnit
             _mapper = mapper;
         }
 
-        public async Task<UnitDTO> Handle(DeleteUnitCommand request, CancellationToken cancellationToken)
+        public async Task<UnitHasIdDTO> Handle(DeleteUnitCommand request, CancellationToken cancellationToken)
         {
-            var unit = await _unitOfWork.UnitRepository.GetByIdAsync(request.id);
+            var unit = await _unitOfWork.UnitRepository.FirstOrDefaultAsync(x => x.Id == request.id);
             if (unit == null)
+            {
                 throw new NotFoundException("Unit not found");
-            try
-            {
-                await _unitOfWork.ExecuteTransactionAsync(() =>
-                {
-                    _unitOfWork.UnitRepository.Delete(unit);
-                });
-                var result = _mapper.Map<UnitDTO>(unit);
-                return result;
             }
-            catch (Exception ex)
+            await _unitOfWork.ExecuteTransactionAsync(() =>
             {
-                throw new InvalidOperationException(ex.Message);
-            }
+                _unitOfWork.UnitRepository.Delete(unit);
+            });
+            var result = _mapper.Map<UnitHasIdDTO>(unit);
+            return result;
         }
     }
 }

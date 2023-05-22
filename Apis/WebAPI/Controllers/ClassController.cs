@@ -5,11 +5,12 @@ using Application.Class.Commands.CreateClass;
 using Application.Class.Commands.DeleteClass;
 using Application.Class.Commands.SetCalenders;
 using Application.Class.Commands.UpdateClass;
-using Application.Class.DTO;
+using Application.Class.DTOs;
 using Application.Class.DTOs;
 using Application.Class.Queries.GetAdminClass;
 using Application.Class.Queries.GetClass;
 using Application.Class.Queries.GetClassById;
+using Application.Class.Queries.GetClassDetail;
 using Application.Class.Queries.GetClassDuration;
 using Application.Class.Queries.GetClassProgram;
 using Application.Commons;
@@ -41,16 +42,16 @@ namespace WebAPI.Controllers
         /// <param name="pageSize"></param>
         /// <returns></returns>
         [HttpGet("{id}/Admin")]
-        public async Task<Pagination<ClassRelated>> GetClassAsync(int id, int pageIndex = 0, int pageSize = 10)
+        public async Task<Pagination<Application.Class.DTOs.ClassRelated>> GetClassAsync(int id, int pageIndex = 0, int pageSize = 10)
             => await _mediator.Send(new GetAdminClassQuery(id, pageIndex, pageSize));
 
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
-        => Ok(await _mediator.Send(new GetClassByIdQuery(id)));
+        => Ok(await _mediator.Send(new GetClassDetailQuery(id)));
 
-        // [HttpGet("Detail/{id}")]
-        // public async Task<ClassDetail> GetDetail(int id)
-        //     => await _mediator.Send(new GetClassDetailQuery(id));
+        [HttpGet("Detail/{id}")]
+        public async Task<IActionResult> GetDetail(int id)
+            => Ok(await _mediator.Send(new GetClassByIdQuery(id)));
         [HttpGet("{id}/Program")]
         public async Task<Pagination<ClassProgram>> GetProgram(int id, int pageIndex = 0, int pageSize = 10)
             => await _mediator.Send(new GetClassProgramQuery(id, pageIndex, pageSize));

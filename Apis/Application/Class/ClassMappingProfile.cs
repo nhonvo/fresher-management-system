@@ -28,8 +28,8 @@ namespace Application.Class
             CreateMap<TrainingProgramDTO, TrainingProgram>().ReverseMap();
             CreateMap<TrainingClass, CreateClassCommand>().ReverseMap();
             CreateMap<TrainingClass, UpdateClassCommand>().ReverseMap();
-            CreateMap<ClassAdmin, Admin>().ReverseMap();
-            CreateMap<AdminClass, TrainingClass>().ReverseMap();
+            CreateMap<ClassAdmin, ClassClassAdminRelated>().ReverseMap();
+            CreateMap<ClassRelated, TrainingClass>().ReverseMap();
             CreateMap<ClassDetail, TrainingClass>().ReverseMap();
         }
     }

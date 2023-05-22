@@ -10,23 +10,17 @@ namespace Application.Syllabuses.Commands.UpdateSyllabus
     public record UpdateSyllabusCommand : IRequest<SyllabusDTO>
     {
         public int Id { get; set; }
-        public string Code { get; set; }
-        public float Version { get; set; }
-        public string Name { get; set; }
-        public DateTime LastModifiedOn { get; set; }
-        public SyllabusLevel Level { get; set; }
-        public int AttendeeNumber { get; set; }
-        public string CourseObjectives { get; set; }
-        public string TechnicalRequirements { get; set; }
-        public string TrainingDeliveryPrinciple { get; set; }
-        public float QuizCriteria { get; set; }
-        public float AssignmentCriteria { get; set; }
-        public float FinalCriteria { get; set; }
-        public float FinalTheoryCriteria { get; set; }
-        public float FinalPracticalCriteria { get; set; }
-        public float PassingGPA { get; set; }
-        public bool isActive { get; set; }
-        public int Duration { get; set; }
+        public string Name { get; init; }
+        public string Code { get; init; }
+        public int AttendeeNumber { get; init; }
+        public string CourseObjective { get; init; }
+        public SyllabusLevel SyllabusLevel { get; init; }
+        public float QuizScheme { get; init; }
+        public float AssignmentScheme { get; init; }
+        public float FinalScheme { get; init; }
+        public float FinalTheoryScheme { get; init; }
+        public float FinalPracticeScheme { get; init; }
+        public float GPAScheme { get; init; }
     }
     public class UpdateSyllabusHandler : IRequestHandler<UpdateSyllabusCommand, SyllabusDTO>
     {

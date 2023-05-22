@@ -37,6 +37,7 @@ namespace Application.TestAssessments.Queries.GetListSyllabusScoreOfStudent
             var studentFinalSyllabusScore = scoreByTestType.GroupBy(ta => new { ta.SyllabusId, ta.TrainingClassId }).Select(group => new GetListSyllabusScoreOfStudentViewModel
             {
                 SyllabusId = group.Key.SyllabusId,
+                SyllabusName = _unitOfWork.SyllabusRepository.GetByIdAsync(group.Key.SyllabusId).Result.Name,
                 TrainingClassId = group.Key.TrainingClassId,
                 FinalSyllabusScore = group.Sum(ta => ta.AverageScore * ta.SyllabusScheme) / group.Sum(ta => ta.SyllabusScheme) ?? 0,
                 ListAssessment = scoreByTestType.Where(x => x.SyllabusId == group.Key.SyllabusId && x.TrainingClassId == group.Key.TrainingClassId).ToList()

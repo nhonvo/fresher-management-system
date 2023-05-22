@@ -7,13 +7,13 @@ public class ClassStudent : BaseEntity
     public TrainingClass TrainingClass { get; set; }
     public int StudentId { get; set; }
     public User Student { get; set; }
-    public DateTime CreationDate { get; set; }
+    public DateTime? CreationDate { get; set; }
     public int? CreatedBy { get; set; }
     public User? CreateByUser { get; set; }
     public DateTime? ModificationDate { get; set; }
     public int? ModificationBy { get; set; }
     public User? ModificationByUser { get; set; }
     public string? PersonalEmail { get; set; }
-    public float GPA { get; set; }
+    public float? GPA { get; set; }
     public ICollection<Attendance> Attendances { get; set; }
 }

@@ -9,8 +9,9 @@ public partial class ApproveRequestMappingProfile : Profile
 {
     public ApproveRequestMappingProfile()
     {
-        CreateMap<ApproveRequestDTO, ApproveRequest>().ReverseMap();
+        CreateMap<ApproveRequestRelatedDTO, ApproveRequest>().ReverseMap();
         CreateMap<CreateRequestCommand, ApproveRequest>().ReverseMap();
+        CreateMap<ApproveRequestTrainingClass, TrainingClass>().ReverseMap();
     }
 
 }

@@ -12,7 +12,9 @@
    Add-migration -Context ApplicationDbContext
    Update-Database -Context ApplicationDbContext
 ```
-ASP.NET Core ElasticSearch, Kibana & Serilog Integration
+**notdone** ASP.NET Core ElasticSearch, Kibana & Serilog Integration
+   - can search in log file and ui kibana.
+   - must set up docker not for this time
 
 ## Class _Nhon_
 
@@ -182,8 +184,8 @@ dotnet add package Quartz
 - config in configure service register service for class implement IJob
 - set up time do.
 
-// fix attendance component
-fix name and business logic
+//**done** fix attendance component
+//**done** fix name and business logic
 // if i can add soft delete for all table use global query filter and ignore.
 
 // openid login by google refer fake news.
@@ -191,14 +193,14 @@ fix name and business logic
 
 -**done** crojob service ...
 **done** add quartz job
-// check middleware timeout && global exception, health check.
-// approve request
-create request join to class
+// check middleware timeout && global exception, health check, try do sth.
+//**done** approve request
+<!-- create request join to class
 approve request join to class
     change state of table approveRequest and and new record classStudent, 
     send mail for student when approve 
 get list approved with related data
-    get by id 
+    get by id  -->
 ---
 
 
@@ -213,7 +215,7 @@ get list approved with related data
 
 // **done** duplicates Syllabus
 
-// check send mail response
+//**done** check send mail response
 
 // **done** fix register.
 //**done** fix validate paging add validate paging.

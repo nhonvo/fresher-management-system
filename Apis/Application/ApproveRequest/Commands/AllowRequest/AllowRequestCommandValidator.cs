@@ -7,8 +7,11 @@ namespace Application.ApproveRequests.Commands
     {
         public AllowRequestCommandValidator()
         {
-            RuleFor(x => x.studentId).NotEmpty().NotNull();
-            RuleFor(x => x.classId).NotEmpty().NotNull();
+            RuleFor(x => x.id).NotEmpty().NotNull().GreaterThan(0);
+            // RuleFor(x => x.allowJoin)
+            //     .NotEmpty().NotNull()
+            //     .InclusiveBetween(false, true)
+            //     .WithMessage("'allowJoin' must be either true or false.");
         }
     }
 }

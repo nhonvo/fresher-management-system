@@ -1,23 +1,23 @@
 [
     {
-        "Status": 1,
+        "Status": 0,
         "StudentId": 48,
         "ApproveBy": 2,
         "ClassId": 1    
     },
     {
-        "Status": 1,
+        "Status": 0,
         "StudentId": 50,
         "ApproveBy": 2,
         "ClassId": 2    
     },
     {
-        "Status": 1,
+        "Status": 2,
         "StudentId": 49,
         "ClassId": 2    
     },
     {
-        "Status": 1,
+        "Status": 2,
         "StudentId": 51,
         "ClassId": 2    
     },
@@ -27,7 +27,7 @@
         "ClassId": 2    
     },
     {
-        "Status": 3,
+        "Status": 1,
         "StudentId": 53,
         "ClassId": 2    
     }

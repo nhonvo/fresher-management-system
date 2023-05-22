@@ -15,9 +15,9 @@ public class TrainingClass : BaseEntity
     public int NumberAttendeeAccepted { get; set; }
     public int NumberAttendeeActual { get; set; }
 
-    // Navigation Properties
     public ClassLocation Location { get; set; }
     public ClassStatus Status { get; set; }
+    // Navigation Properties
     public ICollection<ClassAdmin> ClassAdmins { get; set; }
     public ICollection<ClassTrainer> ClassTrainers { get; set; }
     public ICollection<ClassStudent> Students { get; set; }

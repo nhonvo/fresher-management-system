@@ -76,17 +76,29 @@ namespace Infrastructures.Repositories
 
         public async Task<List<GetStudentTestScoreViewModel>> GetFinalScoreAsync(Expression<Func<TestAssessment, bool>> filter = null)
         {
-            List<GetStudentTestScoreViewModel> result = await _context.TestAssessments.Where(filter).GroupBy(ta => new { ta.AttendeeId, ta.SyllabusId, ta.TrainingClassId, ta.TestAssessmentType })
+            List<GetStudentTestScoreViewModel> result = await _context.TestAssessments.Where(filter).Include(x => x.TrainingMaterials).GroupBy(ta => new { ta.AttendeeId, ta.SyllabusId, ta.TrainingClassId, ta.TestAssessmentType })
                 .Select(group => new GetStudentTestScoreViewModel
                 {
                     AttendeeId = group.Key.AttendeeId,
                     SyllabusId = group.Key.SyllabusId,
                     TrainingClassId = group.Key.TrainingClassId,
                     TestAssessmentType = group.Key.TestAssessmentType.ToString(),
-                    AverageScore = group.Average(ta => ta.Score),
+                    AverageScore = (float)Math.Round((float)group.Average(ta => ta.Score) , 2),
                     NumberOfTests = group.Count(),
                     SyllabusScheme = GetSyllabusAssessmentSchemeByType(group.Key.TestAssessmentType,
-                                                                       _context.Syllabuses.FirstOrDefault(x => x.Id == group.Key.SyllabusId))
+                                                                       _context.Syllabuses.FirstOrDefault(x => x.Id == group.Key.SyllabusId)),
+                    AssessmentList = group.Select(ta => new GetStudentTestScore_TestAssessmentViewModel
+                    {
+                        Id = ta.Id,
+                        Score = ta.Score,
+                        TrainingMaterials = ta.TrainingMaterials.Select(tm => new GetStudentTestScore_TestAssessment_TrainingMaterialViewModel
+                        {
+                            Id = tm.Id,
+                            FileName = tm.FileName,
+                            FilePath = tm.FilePath,
+                            FileSize = tm.FileSize
+                        }).ToList()
+                    }).ToList()
                 }).OrderBy(x => x.TrainingClassId).ThenBy(x => x.SyllabusId)
                 .ToListAsync();
 

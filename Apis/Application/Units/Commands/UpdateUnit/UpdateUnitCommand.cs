@@ -37,8 +37,8 @@ namespace Application.Units.Commands.UpdateUnit
                 throw new NotFoundException("Unit not found");
             }
             unit = _mapper.Map<Domain.Entities.Unit>(request);
-            unit.CreatedBy = _claimService.CurrentUserId;
-            unit.CreationDate = _currentTime.GetCurrentTime();
+            unit.ModificationBy = _claimService.CurrentUserId;
+            unit.ModificationDate = _currentTime.GetCurrentTime();
             await _unitOfWork.ExecuteTransactionAsync(() =>
             {
                 _unitOfWork.UnitRepository.Update(unit);

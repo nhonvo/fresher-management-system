@@ -1,4 +1,4 @@
-using Application.Attendances.Commands.SendMailAttendance;
+using Application.Emails.Commands.SendMailAttendance;
 using MediatR;
 using Quartz;
 

@@ -1,12 +1,12 @@
 ﻿using Application.Common.Exceptions;
-using Application.UnitLessons.DTO;
+using Application.Lessons.DTO;
 using AutoMapper;
 using MediatR;
 
-namespace Application.UnitLessons.Commands.DeleteUnitLesson
+namespace Application.Lessons.Commands.DeleteUnitLesson
 {
-    public record DeleteUnitLessonCommand(int id) : IRequest<UnitLessonDTO>;
-    public class DeleteUnitLessonHandler : IRequestHandler<DeleteUnitLessonCommand, UnitLessonDTO>
+    public record DeleteUnitLessonCommand(int id) : IRequest<UnitLessonHasIdDTO>;
+    public class DeleteUnitLessonHandler : IRequestHandler<DeleteUnitLessonCommand, UnitLessonHasIdDTO>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
@@ -16,18 +16,20 @@ namespace Application.UnitLessons.Commands.DeleteUnitLesson
             _mapper = mapper;
         }
 
-        public async Task<UnitLessonDTO> Handle(DeleteUnitLessonCommand request, CancellationToken cancellationToken)
+        public async Task<UnitLessonHasIdDTO> Handle(DeleteUnitLessonCommand request, CancellationToken cancellationToken)
         {
-            var unitlesson = await _unitOfWork.LessonRepository.GetByIdAsync(request.id);
-            if (unitlesson == null)
+            var lesson = await _unitOfWork.LessonRepository.GetByIdAsync(request.id);
+            if (lesson == null)
+            {
                 throw new NotFoundException("Unit Lesson not found");
+            }
             try
             {
                 await _unitOfWork.ExecuteTransactionAsync(() =>
                 {
-                    _unitOfWork.LessonRepository.Delete(unitlesson);
+                    _unitOfWork.LessonRepository.Delete(lesson);
                 });
-                var result = _mapper.Map<UnitLessonDTO>(unitlesson);
+                var result = _mapper.Map<UnitLessonHasIdDTO>(lesson);
                 return result;
             }
             catch (Exception ex)

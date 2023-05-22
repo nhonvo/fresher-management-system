@@ -1,13 +1,13 @@
 ﻿using Application.Common.Exceptions;
-using Application.UnitLessons.DTO;
+using Application.Lessons.DTO;
 using AutoMapper;
 using MediatR;
 
-namespace Application.UnitLessons.Queries.GetUnitLessonById
+namespace Application.Lessons.Queries.GetUnitLessonById
 {
-    public record GetUnitLessonByIdQuery(int id) : IRequest<UnitLessonDTO>;
+    public record GetUnitLessonByIdQuery(int id) : IRequest<UnitLessonHasIdDTO>;
 
-    public class GetUnitLessonByIdHandler : IRequestHandler<GetUnitLessonByIdQuery, UnitLessonDTO>
+    public class GetUnitLessonByIdHandler : IRequestHandler<GetUnitLessonByIdQuery, UnitLessonHasIdDTO>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
@@ -18,10 +18,10 @@ namespace Application.UnitLessons.Queries.GetUnitLessonById
             _mapper = mapper;
         }
 
-        public async Task<UnitLessonDTO> Handle(GetUnitLessonByIdQuery request, CancellationToken cancellationToken)
+        public async Task<UnitLessonHasIdDTO> Handle(GetUnitLessonByIdQuery request, CancellationToken cancellationToken)
         {
             var unitlesson = await _unitOfWork.LessonRepository.GetByIdAsync(request.id);
-            var result = _mapper.Map<UnitLessonDTO>(unitlesson);
+            var result = _mapper.Map<UnitLessonHasIdDTO>(unitlesson);
             return result ?? throw new NotFoundException("Unit Lesson not found", request.id);
         }
     }

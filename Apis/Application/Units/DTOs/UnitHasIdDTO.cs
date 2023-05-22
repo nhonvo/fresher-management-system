@@ -1,4 +1,4 @@
-namespace Application.Units.DTO
+namespace Application.Units.DTOs
 {
     public class UnitHasIdDTO
     {

@@ -1,22 +1,21 @@
 ﻿using Application.Common.Exceptions;
-using Application.UnitLessons.DTO;
+using Application.Lessons.DTO;
 using AutoMapper;
 using Domain.Entities;
 using Domain.Enums;
 using MediatR;
 
-namespace Application.UnitLessons.Commands.CreateUnitLesson
+namespace Application.Lessons.Commands.CreateUnitLesson
 {
-    public record CreateUnitLessonCommand : IRequest<UnitLessonDTO>
+    public record CreateUnitLessonCommand : IRequest<UnitLessonHasIdDTO>
     {
         public string Name { get; set; }
         public int Duration { get; set; }
         public LessonType LessonType { get; set; }
         public DeliveryType DeliveryType { get; set; }
         public int UnitId { get; set; }
-        //public int SortOrder { get; set; }
     }
-    public class CreateUnitLessonHandler : IRequestHandler<CreateUnitLessonCommand, UnitLessonDTO>
+    public class CreateUnitLessonHandler : IRequestHandler<CreateUnitLessonCommand, UnitLessonHasIdDTO>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
@@ -26,18 +25,18 @@ namespace Application.UnitLessons.Commands.CreateUnitLesson
             _mapper = mapper;
         }
 
-        public async Task<UnitLessonDTO> Handle(CreateUnitLessonCommand request, CancellationToken cancellationToken)
+        public async Task<UnitLessonHasIdDTO> Handle(CreateUnitLessonCommand request, CancellationToken cancellationToken)
         {
 
-            var unitlesson = _mapper.Map<Lesson>(request);
+            var unit = _mapper.Map<Lesson>(request);
 
             await _unitOfWork.ExecuteTransactionAsync(() =>
             {
-                _unitOfWork.LessonRepository.AddAsync(unitlesson);
+                _unitOfWork.LessonRepository.AddAsync(unit);
             });
-            var result = _mapper.Map<UnitLessonDTO>(unitlesson);
+            var result = _mapper.Map<UnitLessonHasIdDTO>(unit);
 
-            return result ?? throw new NotFoundException("Unit Lesson can not create");
+            return result;
         }
     }
 }

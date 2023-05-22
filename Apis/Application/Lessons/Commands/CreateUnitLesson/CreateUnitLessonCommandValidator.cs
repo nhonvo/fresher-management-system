@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace Application.UnitLessons.Commands.CreateUnitLesson
+namespace Application.Lessons.Commands.CreateUnitLesson
 {
     public class CreateUnitLessonCommandValidator : AbstractValidator<CreateUnitLessonCommand>
     {
@@ -10,7 +10,6 @@ namespace Application.UnitLessons.Commands.CreateUnitLesson
             RuleFor(x => x.Duration).GreaterThan(0);
             RuleFor(x => x.LessonType).IsInEnum();
             RuleFor(x => x.DeliveryType).IsInEnum();
-            // RuleFor(x => x.SortOrder).GreaterThanOrEqualTo(0);
         }
     }
 

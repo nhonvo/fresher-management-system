@@ -1,6 +1,5 @@
 using Application.Common.Exceptions;
 using Application.Syllabuses.DTOs;
-using Application.Syllabuses.DTOs;
 using AutoMapper;
 using MediatR;
 

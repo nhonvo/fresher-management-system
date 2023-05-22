@@ -2,6 +2,8 @@
   {
     "Name": "Drusi Benka",
     "Code": "HCW",
+    "StartMinute": 48,
+    "EndMinute": 136,
     "TimeStart": "2022-12-03",
     "TimeEnd": "2023-04-24",
     "ReviewOn": "2023-03-11",

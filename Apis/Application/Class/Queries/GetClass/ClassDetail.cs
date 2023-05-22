@@ -21,10 +21,11 @@ public class ClassDto
     public ClassLocation Location { get; init; }
     public ClassStatus Status { get; init; }
     // ref
-    public UserDto? CreateBy { get; set; }
+    public UserDto? CreateBy { get; init; }
     public UserDto? ReviewBy { get; init; }
     public UserDto? ApproveBy { get; init; }
-    public TrainingProgramDto trainingProgram { get; init; }
+    public ICollection<CalenderDto> Calenders { get; init; }
+    public TrainingProgramDto TrainingProgram { get; init; }
 }
 
 public class UserDto
@@ -33,6 +34,14 @@ public class UserDto
     public string Name { get; init; }
     public string Email { get; init; }
     public UserRoleType Role { get; init; }
+}
+
+public class CalenderDto
+{
+    public int TrainingClassId { get; init; }
+    public DateTime Date { get; init; }
+    public int Order { get; init; }
+    public int Count { get; init; }
 }
 
 public class TrainingProgramDto
@@ -109,6 +118,7 @@ public class ClassMappingProfile : Profile
     {
         CreateMap<TrainingClass, ClassDto>();
         CreateMap<User, UserDto>();
+        CreateMap<Calender, CalenderDto>();
         CreateMap<TrainingProgram, TrainingProgramDto>();
         CreateMap<ProgramSyllabus, ProgramSyllabusDto>();
         CreateMap<Syllabus, SyllabusDto>();

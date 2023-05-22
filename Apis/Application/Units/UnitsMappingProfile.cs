@@ -11,6 +11,7 @@ namespace Application.Units
         public UnitsMappingProfile()
         {
             CreateMap<Unit, UnitDTO>().ReverseMap();
+            CreateMap<Unit, UnitHasIdDTO>().ReverseMap();
             CreateMap<Unit, CreateUnitCommand>().ReverseMap();
             CreateMap<Unit, UpdateUnitCommand>().ReverseMap();
         }

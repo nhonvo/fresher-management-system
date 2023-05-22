@@ -1,4 +1,4 @@
-namespace Application.Class.DTO
+namespace Application.Class.DTOs
 {
     public class TrainerClassDTO
     {

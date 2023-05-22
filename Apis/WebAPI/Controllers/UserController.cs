@@ -24,7 +24,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet]
-        [Authorize(Roles = "SuperAdmin")]
+        // [Authorize(Roles = "SuperAdmin")]
         public async Task<Pagination<UserContainIdDTO>> GetAsync(
             string? keyword,
             SortType sortType = SortType.Ascending,
@@ -66,6 +66,11 @@ namespace WebAPI.Controllers
             IsScanEmail = isScanEmail ?? false,
             DuplicateHandle = duplicateHandle ?? DuplicateHandle.Ignore,
         });
+
+        [HttpPost("import-users-csv-v2")]
+        public async Task<List<UserCSV>> ImportUsersCSVV2([FromForm] ImportUsersCSVCommand command)
+        => await _mediator.Send(command);
+
         #endregion CSV
 
         [HttpGet("{id}/tips")]

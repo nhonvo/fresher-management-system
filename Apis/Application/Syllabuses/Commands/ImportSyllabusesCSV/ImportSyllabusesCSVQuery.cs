@@ -12,9 +12,9 @@ public record ImportSyllabusesCSVCommand : IRequest<List<SyllabusDTO>>
 {
 #pragma warning disable
     public IFormFile FormFile { get; set; }
-    public bool IsScanCode { get; set; }
-    public bool IsScanName { get; set; }
-    public DuplicateHandle DuplicateHandle { get; set; }
+    public bool? IsScanCode { get; set; }
+    public bool? IsScanName { get; set; }
+    public DuplicateHandle? DuplicateHandle { get; set; }
 }
 
 public class ImportSyllabusesCSVHandler : IRequestHandler<ImportSyllabusesCSVCommand, List<SyllabusDTO>>
@@ -32,8 +32,8 @@ public class ImportSyllabusesCSVHandler : IRequestHandler<ImportSyllabusesCSVCom
     {
         var newSyllabuses = await ConvertToSyllabusDTOList(
             request.FormFile,
-            request.IsScanCode,
-            request.IsScanName);
+            request.IsScanCode ?? true,
+            request.IsScanName ?? true);
         var items = new List<SyllabusDTO>();
         await _unitOfWork.ExecuteTransactionAsync(async () =>
         {
@@ -43,12 +43,11 @@ public class ImportSyllabusesCSVHandler : IRequestHandler<ImportSyllabusesCSVCom
                 var oldSyllabus = await _unitOfWork.SyllabusRepository.FirstOrDefaultAsync(s => s.Code == item.Code);
                 if (oldSyllabus != null)
                 {
-                    if (request.DuplicateHandle == DuplicateHandle.Ignore)
-                        continue; // skip the syllabus if it already exists
-                    else if (request.DuplicateHandle == DuplicateHandle.Replace)
+                    if (request.DuplicateHandle == DuplicateHandle.Replace)
                         _unitOfWork.SyllabusRepository.Delete(oldSyllabus);
                     else if (request.DuplicateHandle == DuplicateHandle.Throw)
                         throw new DuplicateWaitObjectException("Duplicate code found in CSV file");
+                    else continue;
                 }
                 await _unitOfWork.SyllabusRepository.AddAsync(syllabus);
                 var syllabusDTO = _mapper.Map<SyllabusDTO>(syllabus);

@@ -74,8 +74,8 @@ public class SyllabusesController : BasesController
 
     #region CSV
     [HttpGet("export-syllabuses-csv")]
-    public async Task<FileStreamResult> ExportSyllabusesCSV(string columnSeparator)
-        => await _mediator.Send(new ExportSyllabusesCSVQuery(columnSeparator));
+    public async Task<FileStreamResult> ExportSyllabusesCSV(string? columnSeparator)
+    => await _mediator.Send(new ExportSyllabusesCSVQuery(columnSeparator ?? ","));
 
     [HttpPost("import-syllabuses-csv")]
     public async Task<List<SyllabusDTO>> ImportSyllabusesCSV(
@@ -90,6 +90,11 @@ public class SyllabusesController : BasesController
             IsScanName = IsScanName,
             DuplicateHandle = DuplicateHandle
         });
+
+    [HttpPost("import-syllabuses-csv-v2")]
+    public async Task<List<SyllabusDTO>> ImportSyllabusesCSVV2([FromForm] ImportSyllabusesCSVCommand command)
+    => await _mediator.Send(command);
+
     #endregion CSV
 
     [HttpGet("get-paged-syllabuses-by-date-range")]

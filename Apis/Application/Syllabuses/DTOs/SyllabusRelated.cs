@@ -10,6 +10,7 @@ namespace Application.Syllabuses.DTO
         public string Code { get; set; }
         public int AttendeeNumber { get; set; }
         public string CourseObjective { get; set; }
+        public int Duration { get; set; }
 
         public SyllabusLevel SyllabusLevel { get; set; }
 

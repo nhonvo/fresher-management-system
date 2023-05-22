@@ -22,6 +22,7 @@ public interface IUnitOfWork : IDisposable
     ICalenderRepository CalenderRepository { get; }
     IProgramSyllabusRepository ProgramSyllabusRepository { get; }
     IClassAdminRepository ClassAdminRepository { get; }
+    ITrainingMaterialRepository TrainingMaterialRepository { get; }
     /// <summary>
     /// Saves changes to the database. This is called when the user changes the data or saves a new version of the data.
     /// </summary>

@@ -3,8 +3,9 @@ using Domain.Entities;
 using Domain.Enums;
 namespace Application.Syllabuses.DTO
 {
-    public class SyllabusDuplicate
+    public class SyllabusRelated
     {
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Code { get; set; }
         public int AttendeeNumber { get; set; }
@@ -19,38 +20,37 @@ namespace Application.Syllabuses.DTO
         public float FinalPracticeScheme { get; set; }
         public float GPAScheme { get; set; }
 
-        // Navigation Property
-
-        public List<SyllabusUnitDuplicate> Units { get; set; }
-        public List<ProgramSyllabus>? ProgramSyllabus { get; set; }
-        public List<TestAssessment>? TestAssessments { get; set; }
+        public List<SyllabusUnitRelated> Units { get; set; }
         public DateTime CreationDate { get; set; }
 
         public int? CreatedBy { get; set; }
-        public UserDTO? CreateByUser { get; set; }
+        public UserContainIdDTO? CreateByUser { get; set; }
 
         public DateTime? ModificationDate { get; set; }
 
         public int? ModificationBy { get; set; }
-        public UserDTO? ModificationByUser { get; set; }
+        public UserContainIdDTO? ModificationByUser { get; set; }
     }
-    public record SyllabusUnitDuplicate
+    public record SyllabusUnitRelated
     {
+        public int Id { get; set; }
         public string Name { get; init; }
         public int SyllabusSession { get; init; }
         public int UnitNumber { get; init; }
-        public List<SyllabusLessonDuplicate> UnitLessons { get; init; }
+        public List<SyllabusLessonRelated> Lessons { get; init; }
     }
-    public class SyllabusLessonDuplicate
+    public class SyllabusLessonRelated
     {
+        public int Id { get; set; }
         public string Name { get; init; }
         public int Duration { get; init; }
         public LessonType LessonType { get; init; }
         public DeliveryType DeliveryType { get; init; }
-        public List<TrainingMaterialDuplicate> TrainingMaterials { get; init; }
+        public List<TrainingMaterialRelated> TrainingMaterials { get; init; }
     }
-    public class TrainingMaterialDuplicate
+    public class TrainingMaterialRelated
     {
+        public int Id { get; set; }
         public string FileName { get; init; }
         public string FilePath { get; init; }
         public long FileSize { get; init; }

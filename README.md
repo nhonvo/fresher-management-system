@@ -108,8 +108,27 @@
 3. Evaluation
    1. Have the ability to evaluate the performance of trainers based on student feedback.
 // TODO: endpoint: POST /student:trainerId/feedback
-// create table feedback between student and syllabus.
+// _Score_ & _feedback_ & _Time_
+// create table feedback between student and TrainingProgram.
+
 // TODO: endpoint: GET /student:trainerId/feedback
+
+// check feedback get evaluate of trainer
+// add register by google OpenID
+// AUTHENTICATE: FORGET PASSWORD, REFRESH TOKEN
+  // openid login by google refer fake news.
+// research write unit test for mediator
+// if i can add soft delete for all table use global query filter and ignore.
+// check middleware timeout && global exception, health check, try do sth.
+// TODO: check validation of attendance and approve request
+
+- refactor source code
+
+  - if must as `{}`
+  - avoid user ! operator use is/ is not instead
+  - separate code logic u can
+  - must do front-end project
+    - deploy app
 
 //**DONE** super admin -> admin
 //**DONE** admin -> trainer
@@ -123,16 +142,14 @@
 
 // **done** check attendance.
 // **done** approve attendance.
-// get list attendance.
-// report attendance of class and student.
+//**done** get list attendance.
+//**done** report attendance of class and student.
 // **done** approve request.
-// hangfire && send mail
 
 //**done** duplicate -> program
 // export file csv && export file csv
 
-// check feedback get evaluate of trainer
-// check attendance feature get report
+//**done** check attendance feature get report
 
 ---
 
@@ -154,20 +171,11 @@
 
   - **done** choose the type response and catch it web api, controller
 
-// add register by google OpenID
-  
-- refactor source code
 
-  - if must as `{}`
-  - avoid user ! operator use is/ is not instead
-  - separate code logic u can
-  - must do front-end project
-    - deploy app
 
 // **done**: pagination don't work syllabus
 // **done** data seed move to endpoints 
 
-// AUTHENTICATE: FORGET PASSWORD, REFRESH TOKEN
 // CHECK: **done** attendance, approve request, feedback, score, report, csv
 
 // **done** Set up Quartz service allow auto do job in the time set
@@ -186,14 +194,10 @@ dotnet add package Quartz
 
 //**done** fix attendance component
 //**done** fix name and business logic
-// if i can add soft delete for all table use global query filter and ignore.
 
-// openid login by google refer fake news.
-// research write unit test for mediator
 
 -**done** crojob service ...
 **done** add quartz job
-// check middleware timeout && global exception, health check, try do sth.
 //**done** approve request
 <!-- create request join to class
 approve request join to class
@@ -219,5 +223,3 @@ get list approved with related data
 
 // **done** fix register.
 //**done** fix validate paging add validate paging.
-
-// TODO: check validation of attendance and approve request

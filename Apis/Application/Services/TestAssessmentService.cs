@@ -119,7 +119,7 @@ namespace Application.Services
                 SyllabusId = group.Key.SyllabusId,
                 SyllabusName = _unitOfWork.SyllabusRepository.GetByIdAsync(group.Key.SyllabusId).Result.Name,
                 FinalScheme = (float)Math.Round((float)_unitOfWork.SyllabusRepository.GetByIdAsync(group.Key.SyllabusId).Result.FinalScheme * 10, 2),
-                FinalSyllabusScore =  (float)Math.Round((float)(group.Sum(ta => ta.AverageScore * ta.SyllabusScheme) / group.Sum(ta => ta.SyllabusScheme) ?? 0), 2),
+                FinalSyllabusScore = (float)Math.Round((float)(group.Sum(ta => ta.AverageScore * ta.SyllabusScheme) / group.Sum(ta => ta.SyllabusScheme) ?? 0), 2),
                 ListAssessment = scoreByTestType.Where(x => x.SyllabusId == group.Key.SyllabusId && x.AttendeeId == group.Key.AttendeeId).ToList()
             }).OrderBy(x => x.AttendeeId).ToList();
             var count = classFinalSyllabusScore.Count();
@@ -152,7 +152,7 @@ namespace Application.Services
                 ClassName = _unitOfWork.ClassRepository.GetByIdAsync(group.Key.TrainingClassId).Result.Name,
                 GPA = (float)Math.Round((float)classFinalSyllabusScore.Items.Where(x => x.TrainingClassId == group.Key.TrainingClassId)
                                                                              .SelectMany(x => x.ListAssessment)
-                                                                             .Average(x => x.AverageScore),2),
+                                                                             .Average(x => x.AverageScore), 2),
                 ListSyllabus = classFinalSyllabusScore.Items.Where(x => x.TrainingClassId == group.Key.TrainingClassId).ToList()
             }).ToList();
 
@@ -188,8 +188,12 @@ namespace Application.Services
                                                                              .Average(x => x.AverageScore), 2),
                 ListSyllabus = classFinalSyllabusScore.Items.Where(x => x.AttendeeId == group.Key.AttendeeId).ToList()
             }).ToList();
-
-
+            var classAverage = (float)Math.Round((float)classGPAScoreOfStudent.Average(x => x.GPA),2);
+            foreach (var item in classGPAScoreOfStudent)
+            {
+                item.classAverage = classAverage;
+                item.diffFromClassAverage = (float)Math.Round((float)(item.GPA - classAverage),2);
+            }
             var count = classGPAScoreOfStudent.Count();
             if (pageSize != 0)
             {

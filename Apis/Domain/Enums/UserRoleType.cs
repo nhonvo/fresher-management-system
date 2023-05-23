@@ -8,6 +8,7 @@ namespace Domain.Enums
         SuperAdmin = 0,
         ClassAdmin = 1,
         Trainer = 2,
-        Trainee = 3
+        Trainee = 3,
+        Dev = 4
     }
 }

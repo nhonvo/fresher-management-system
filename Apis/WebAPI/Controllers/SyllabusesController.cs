@@ -46,29 +46,29 @@ public class SyllabusesController : BasesController
     public async Task<IActionResult> Post([FromBody] CreateSyllabusCommand request)
     => Ok(await _mediator.Send(request));
     [HttpPost("{id}/Unit")]
-    [Authorize(Roles = "Trainer")]
+    [Authorize(Roles = "Trainer, SuperAdmin")]
     public async Task<IActionResult> Post([FromBody] AddOneUnitToSyllabusCommand request)
     => Ok(await _mediator.Send(request));
     [HttpPost("{id}/Lesson")]
-    [Authorize(Roles = "Trainer")]
+    [Authorize(Roles = "Trainer, SuperAdmin")]
     public async Task<IActionResult> Post([FromBody] AddOneLessonToUnitCommand request)
     => Ok(await _mediator.Send(request));
     [HttpPost("{id}/TrainingMaterials")]
-    [Authorize(Roles = "Trainer")]
+    [Authorize(Roles = "Trainer, SuperAdmin")]
     public async Task<IActionResult> Post([FromBody] AddOneMaterialToLessonCommand request)
     => Ok(await _mediator.Send(request));
     // [HttpDelete("{id}/Unit")]
     // public async Task<UnitDTO> DeleteUnit(int id)
     // => await _mediator.Send(new DeleteUnitCommand(id));
     [HttpPut]
-    [Authorize(Roles = "Trainer")]
+    [Authorize(Roles = "Trainer, SuperAdmin")]
     public async Task<SyllabusDTO> Put([FromBody] UpdateSyllabusCommand request)
     => await _mediator.Send(request);
     [HttpDelete("{id}")]
     public async Task<SyllabusDTO> Delete(int id)
     => await _mediator.Send(new DeleteSyllabusCommand(id));
     [HttpPost("Duplicate/{id}")]
-    [Authorize(Roles = "Trainer, ClassAdmin")]
+    [Authorize(Roles = "Trainer, ClassAdmin, SuperAdmin")]
     public async Task<SyllabusDTO> Duplicate(int id)
     => await _mediator.Send(new DuplicateSyllabusCommand(id));
 

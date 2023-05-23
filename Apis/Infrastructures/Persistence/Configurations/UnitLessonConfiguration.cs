@@ -13,10 +13,13 @@ namespace Infrastructures.Persistence.Configurations
 
             builder.HasOne(o => o.OutputStandard)
                    .WithMany(u => u.UnitLessons)
-                   .HasForeignKey(o => o.OutputStandardId);
+                   .HasForeignKey(o => o.OutputStandardId)
+                   .OnDelete(DeleteBehavior.Cascade);
+                   
             builder.HasOne(o => o.Unit)
                    .WithMany(u => u.Lessons)
-                   .HasForeignKey(o => o.UnitId);
+                   .HasForeignKey(o => o.UnitId)
+                   .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

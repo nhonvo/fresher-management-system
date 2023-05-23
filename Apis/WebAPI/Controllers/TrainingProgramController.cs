@@ -16,6 +16,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers
 {
+    [Authorize]
     public class TrainingProgramController : BasesController
     {
         private readonly IMediator _mediator;

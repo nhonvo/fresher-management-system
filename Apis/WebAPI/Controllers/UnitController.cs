@@ -1,4 +1,5 @@
-﻿using Application.Commons;
+﻿using System.Net;
+using Application.Commons;
 using Application.Units.Commands.CreateUnit;
 using Application.Units.Commands.DeleteUnit;
 using Application.Units.Commands.UpdateUnit;
@@ -7,10 +8,12 @@ using Application.Units.Queries.GetUnitById;
 using Application.Units.Queries.GetUnitByName;
 using Application.Units.Queries.GetUnits;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers
 {
+    [Authorize]
     public class UnitController : BasesController
     {
         private readonly IMediator _mediator;

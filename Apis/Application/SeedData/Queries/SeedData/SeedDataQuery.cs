@@ -38,15 +38,15 @@ namespace Application.SeedData.Queries.SeedData
                     _unitOfWork.UserRepository.AddRangeAsync(users);
                 });
             };
-            if (!await _unitOfWork.SyllabusRepository.AnyAsync())
-            {
-                string json = File.ReadAllText(@"../../Json/Syllabus.json");
-                List<Syllabus> syllabuses = JsonSerializer.Deserialize<List<Syllabus>>(json)!;
-                await _unitOfWork.ExecuteTransactionAsync(() =>
-                {
-                    _unitOfWork.SyllabusRepository.AddRangeAsync(syllabuses);
-                });
-            }
+             if (!await _unitOfWork.SyllabusRepository.AnyAsync())
+             {
+                 string json = File.ReadAllText(@"../../Json/Syllabus.json");
+                 List<Syllabus> syllabuses = JsonSerializer.Deserialize<List<Syllabus>>(json)!;
+                 await _unitOfWork.ExecuteTransactionAsync(() =>
+                 {
+                     _unitOfWork.SyllabusRepository.AddRangeAsync(syllabuses);
+                 });
+             }
 
             if (!await _unitOfWork.TrainingProgramRepository.AnyAsync())
             {
@@ -58,16 +58,16 @@ namespace Application.SeedData.Queries.SeedData
                 });
             }
 
-            if (!await _unitOfWork.ProgramSyllabusRepository.AnyAsync())
-            {
-                string json = File.ReadAllText(@"../../Json/ProgramSyllabuses.json");
-                List<ProgramSyllabus> programSyllabuses = JsonSerializer.Deserialize<List<ProgramSyllabus>>(json)!;
+             if (!await _unitOfWork.ProgramSyllabusRepository.AnyAsync())
+             {
+                 string json = File.ReadAllText(@"../../Json/ProgramSyllabuses.json");
+                 List<ProgramSyllabus> programSyllabuses = JsonSerializer.Deserialize<List<ProgramSyllabus>>(json)!;
 
-                await _unitOfWork.ExecuteTransactionAsync(() =>
-                {
-                    _unitOfWork.ProgramSyllabusRepository.AddRangeAsync(programSyllabuses);
-                });
-            }
+                 await _unitOfWork.ExecuteTransactionAsync(() =>
+                 {
+                     _unitOfWork.ProgramSyllabusRepository.AddRangeAsync(programSyllabuses);
+                 });
+             }
 
             if (!await _unitOfWork.ClassRepository.AnyAsync())
             {
@@ -79,108 +79,108 @@ namespace Application.SeedData.Queries.SeedData
                 });
             }
 
-            if (await _unitOfWork.CalenderRepository.AnyAsync() is false)
-            {
-                var filePath = Path.Combine(Directory.GetCurrentDirectory(), "../../Json/Calender.json");
-                if (File.Exists(filePath))
-                {
-                    string json = File.ReadAllText(filePath);
-                    if (string.IsNullOrEmpty(json) is false)
-                    {
-                        var items = JsonSerializer.Deserialize<List<Calender>>(json);
-                        if (items is not null)
-                        {
-                            await _unitOfWork.ExecuteTransactionAsync(() =>
-                           {
-                               _unitOfWork.CalenderRepository.AddRangeAsync(items);
-                           });
-                        }
-                    }
-                }
-            }
-            if (!await _unitOfWork.ClassStudentRepository.AnyAsync())
-            {
-                string json = File.ReadAllText(@"../../Json/ClassStudent.json");
-                List<ClassStudent> classStudents = JsonSerializer.Deserialize<List<ClassStudent>>(json)!;
-                await _unitOfWork.ExecuteTransactionAsync(() =>
-                {
-                    _unitOfWork.ClassStudentRepository.AddRangeAsync(classStudents);
-                });
-            }
-            if (!await _unitOfWork.ClassTrainerRepository.AnyAsync())
-            {
-                string json = File.ReadAllText(@"../../Json/ClassTrainer.json");
-                List<ClassTrainer> classTrainer = JsonSerializer.Deserialize<List<ClassTrainer>>(json)!;
-                await _unitOfWork.ExecuteTransactionAsync(() =>
-                {
-                    _unitOfWork.ClassTrainerRepository.AddRangeAsync(classTrainer);
-                });
-            }
-            if (!await _unitOfWork.ClassAdminRepository.AnyAsync())
-            {
-                string json = File.ReadAllText(@"../../Json/ClassAdmin.json");
-                List<ClassAdmin> classAdmin = JsonSerializer.Deserialize<List<ClassAdmin>>(json)!;
-                await _unitOfWork.ExecuteTransactionAsync(() =>
-                {
-                    _unitOfWork.ClassAdminRepository.AddRangeAsync(classAdmin);
-                });
-            }
-            if (!await _unitOfWork.ApproveRequestRepository.AnyAsync())
-            {
-                string json = File.ReadAllText(@"../../Json/ApproveRequest.json");
-                List<ApproveRequest> approveRequest = JsonSerializer.Deserialize<List<ApproveRequest>>(json)!;
-                await _unitOfWork.ExecuteTransactionAsync(() =>
-                {
-                    _unitOfWork.ApproveRequestRepository.AddRangeAsync(approveRequest);
-                });
-            }
+             if (await _unitOfWork.CalenderRepository.AnyAsync() is false)
+             {
+                 var filePath = Path.Combine(Directory.GetCurrentDirectory(), "../../Json/Calender.json");
+                 if (File.Exists(filePath))
+                 {
+                     string json = File.ReadAllText(filePath);
+                     if (string.IsNullOrEmpty(json) is false)
+                     {
+                         var items = JsonSerializer.Deserialize<List<Calender>>(json);
+                         if (items is not null)
+                         {
+                             await _unitOfWork.ExecuteTransactionAsync(() =>
+                            {
+                                _unitOfWork.CalenderRepository.AddRangeAsync(items);
+                            });
+                         }
+                     }
+                 }
+             }
+             if (!await _unitOfWork.ClassStudentRepository.AnyAsync())
+             {
+                 string json = File.ReadAllText(@"../../Json/ClassStudent.json");
+                 List<ClassStudent> classStudents = JsonSerializer.Deserialize<List<ClassStudent>>(json)!;
+                 await _unitOfWork.ExecuteTransactionAsync(() =>
+                 {
+                     _unitOfWork.ClassStudentRepository.AddRangeAsync(classStudents);
+                 });
+             }
+             if (!await _unitOfWork.ClassTrainerRepository.AnyAsync())
+             {
+                 string json = File.ReadAllText(@"../../Json/ClassTrainer.json");
+                 List<ClassTrainer> classTrainer = JsonSerializer.Deserialize<List<ClassTrainer>>(json)!;
+                 await _unitOfWork.ExecuteTransactionAsync(() =>
+                 {
+                     _unitOfWork.ClassTrainerRepository.AddRangeAsync(classTrainer);
+                 });
+             }
+             if (!await _unitOfWork.ClassAdminRepository.AnyAsync())
+             {
+                 string json = File.ReadAllText(@"../../Json/ClassAdmin.json");
+                 List<ClassAdmin> classAdmin = JsonSerializer.Deserialize<List<ClassAdmin>>(json)!;
+                 await _unitOfWork.ExecuteTransactionAsync(() =>
+                 {
+                     _unitOfWork.ClassAdminRepository.AddRangeAsync(classAdmin);
+                 });
+             }
+             if (!await _unitOfWork.ApproveRequestRepository.AnyAsync())
+             {
+                 string json = File.ReadAllText(@"../../Json/ApproveRequest.json");
+                 List<ApproveRequest> approveRequest = JsonSerializer.Deserialize<List<ApproveRequest>>(json)!;
+                 await _unitOfWork.ExecuteTransactionAsync(() =>
+                 {
+                     _unitOfWork.ApproveRequestRepository.AddRangeAsync(approveRequest);
+                 });
+             }
 
-            if (!await _unitOfWork.TestAssessmentRepository.AnyAsync())
-            {
-                string json = File.ReadAllText(@"../../Json/TestAssessment.json");
-                List<TestAssessment> testAssessments = JsonSerializer.Deserialize<List<TestAssessment>>(json)!;
-                await _unitOfWork.ExecuteTransactionAsync(() =>
-                {
-                    _unitOfWork.TestAssessmentRepository.AddRangeAsync(testAssessments);
-                });
-            }
+             if (!await _unitOfWork.TestAssessmentRepository.AnyAsync())
+             {
+                 string json = File.ReadAllText(@"../../Json/TestAssessment.json");
+                 List<TestAssessment> testAssessments = JsonSerializer.Deserialize<List<TestAssessment>>(json)!;
+                 await _unitOfWork.ExecuteTransactionAsync(() =>
+                 {
+                     _unitOfWork.TestAssessmentRepository.AddRangeAsync(testAssessments);
+                 });
+             }
 
-            if (!await _unitOfWork.AttendanceRepository.AnyAsync())
-            {
-                string json = File.ReadAllText(@"../../Json/Attendance.json");
-                List<Attendance> attendance = JsonSerializer.Deserialize<List<Attendance>>(json)!;
-                await _unitOfWork.ExecuteTransactionAsync(() =>
-               {
-                   _unitOfWork.AttendanceRepository.AddRangeAsync(attendance);
-               });
-            }
-            if (!await _unitOfWork.UnitRepository.AnyAsync())
-            {
-                string json = File.ReadAllText(@"../../Json/Unit.json");
-                List<Domain.Entities.Unit> testAssessments = JsonSerializer.Deserialize<List<Domain.Entities.Unit>>(json)!;
-                await _unitOfWork.ExecuteTransactionAsync(() =>
-               {
-                   _unitOfWork.UnitRepository.AddRangeAsync(testAssessments);
-               });
-            }
-            if (!await _unitOfWork.LessonRepository.AnyAsync())
-            {
-                string json = File.ReadAllText(@"../../Json/Lesson.json");
-                List<Lesson> unitLessons = JsonSerializer.Deserialize<List<Lesson>>(json)!;
-                await _unitOfWork.ExecuteTransactionAsync(() =>
-               {
-                   _unitOfWork.LessonRepository.AddRangeAsync(unitLessons);
-               });
-            }
-            if (!await _unitOfWork.TrainingMaterialRepository.AnyAsync())
-            {
-                string json = File.ReadAllText(@"../../Json/TrainingMaterial.json");
-                List<TrainingMaterial> trainingMaterial = JsonSerializer.Deserialize<List<TrainingMaterial>>(json)!;
-                await _unitOfWork.ExecuteTransactionAsync(() =>
-               {
-                   _unitOfWork.TrainingMaterialRepository.AddRangeAsync(trainingMaterial);
-               });
-            }
+             if (!await _unitOfWork.AttendanceRepository.AnyAsync())
+             {
+                 string json = File.ReadAllText(@"../../Json/Attendance.json");
+                 List<Attendance> attendance = JsonSerializer.Deserialize<List<Attendance>>(json)!;
+                 await _unitOfWork.ExecuteTransactionAsync(() =>
+                {
+                    _unitOfWork.AttendanceRepository.AddRangeAsync(attendance);
+                });
+             }
+             if (!await _unitOfWork.UnitRepository.AnyAsync())
+             {
+                 string json = File.ReadAllText(@"../../Json/Unit.json");
+                 List<Domain.Entities.Unit> testAssessments = JsonSerializer.Deserialize<List<Domain.Entities.Unit>>(json)!;
+                 await _unitOfWork.ExecuteTransactionAsync(() =>
+                {
+                    _unitOfWork.UnitRepository.AddRangeAsync(testAssessments);
+                });
+             }
+             if (!await _unitOfWork.LessonRepository.AnyAsync())
+             {
+                 string json = File.ReadAllText(@"../../Json/Lesson.json");
+                 List<Lesson> unitLessons = JsonSerializer.Deserialize<List<Lesson>>(json)!;
+                 await _unitOfWork.ExecuteTransactionAsync(() =>
+                {
+                    _unitOfWork.LessonRepository.AddRangeAsync(unitLessons);
+                });
+             }
+             if (!await _unitOfWork.TrainingMaterialRepository.AnyAsync())
+             {
+                 string json = File.ReadAllText(@"../../Json/TrainingMaterial.json");
+                 List<TrainingMaterial> trainingMaterial = JsonSerializer.Deserialize<List<TrainingMaterial>>(json)!;
+                 await _unitOfWork.ExecuteTransactionAsync(() =>
+                {
+                    _unitOfWork.TrainingMaterialRepository.AddRangeAsync(trainingMaterial);
+                });
+             }
         }
     }
 }

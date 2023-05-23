@@ -20,6 +20,10 @@ namespace Application.Services
                 try
                 {
                     string uploadDir = Path.Combine(_hostingEnvironment.WebRootPath, "uploads");
+                    if (!Directory.Exists(uploadDir))
+                    {
+                        Directory.CreateDirectory(uploadDir);
+                    }
                     fileName = Guid.NewGuid().ToString() + "-" + file.FileName;
                     string filePath = Path.Combine(uploadDir, fileName);
                     using (var fileStream = new FileStream(filePath, FileMode.Create))

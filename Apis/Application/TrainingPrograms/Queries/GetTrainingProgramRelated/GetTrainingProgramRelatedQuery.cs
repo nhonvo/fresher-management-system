@@ -11,8 +11,8 @@ namespace Application.TrainingPrograms.Queries.GetTrainingProgramRelated
         string? keyword,
         SortType sortType = SortType.Ascending,
         int pageIndex = 0,
-        int pageSize = 10) : IRequest<Pagination<TrainingProgramRelated>>;
-    public class GetTrainingProgramRelatedHandler : IRequestHandler<GetTrainingProgramRelatedQuery, Pagination<TrainingProgramRelated>>
+        int pageSize = 10) : IRequest<Pagination<TrainingProgramHasIdRelated>>;
+    public class GetTrainingProgramRelatedHandler : IRequestHandler<GetTrainingProgramRelatedQuery, Pagination<TrainingProgramHasIdRelated>>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
@@ -21,9 +21,9 @@ namespace Application.TrainingPrograms.Queries.GetTrainingProgramRelated
             _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
-        public async Task<Pagination<TrainingProgramRelated>> Handle(GetTrainingProgramRelatedQuery request, CancellationToken cancellationToken)
+        public async Task<Pagination<TrainingProgramHasIdRelated>> Handle(GetTrainingProgramRelatedQuery request, CancellationToken cancellationToken)
         {
-            var trainingProgram = await _unitOfWork.TrainingProgramRepository.GetAsync(
+            var trainingProgram = await _unitOfWork.TrainingProgramRepository.GetAsync<int>(
                  filter: x => x.Name.Contains(request.keyword ?? "")
                              || x.Id.ToString().Contains(request.keyword ?? ""),
                 include: x => x.Include(x => x.CreateByUser)
@@ -36,8 +36,8 @@ namespace Application.TrainingPrograms.Queries.GetTrainingProgramRelated
                 pageIndex: request.pageIndex,
                 pageSize: request.pageSize,
                 sortType: SortType.Ascending,
-                keySelectorForSort: x => x.Name);
-            var result = _mapper.Map<Pagination<TrainingProgramRelated>>(trainingProgram);
+                keySelectorForSort: x => x.Id);
+            var result = _mapper.Map<Pagination<TrainingProgramHasIdRelated>>(trainingProgram);
             return result;
         }
     }

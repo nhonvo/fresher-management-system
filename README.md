@@ -14,8 +14,9 @@
 ```
 
 **notdone** ASP.NET Core ElasticSearch, Kibana & Serilog Integration
-   - can search in log file and ui kibana.
-   - must set up docker not for this time
+
+- can search in log file and ui kibana.
+- must set up docker not for this time
 
 ## Class _Nhon_
 
@@ -138,22 +139,20 @@
   2. Add ui health app && logging **done**
 
 - Extension
-  - cache **reomve**
+  - cache **remove**
   - rate limit - per user
   - health check **done**
 
 - **DONE** jwt, cache move to extension in Infrastructure
-    - control what we need to cache no what to cache
+  - control what we need to cache no what to cache
 -> and register both services is singleton
 
   - **DONE** remove all apiResult<T> in application
 
   - **done** choose the type response and catch it web api, controller
 
-
-
 // **done**: pagination don't work syllabus
-// **done** data seed move to endpoints 
+// **done** data seed move to endpoints
 
 // CHECK: **done** attendance, approve request, feedback, score, report, csv
 
@@ -174,7 +173,6 @@ dotnet add package Quartz
 //**done** fix attendance component
 //**done** fix name and business logic
 
-
 -**done** crojob service ...
 **done** add quartz job
 //**done** approve request
@@ -185,7 +183,6 @@ approve request join to class
 get list approved with related data
     get by id  -->
 ---
-
 
 // **done**: POST: syllabuses/{id}/units
 // **done**: DELETE: syllabuses/{id}/units/{unitid}
@@ -206,16 +203,14 @@ get list approved with related data
 // **done** fix Syllabus miss related
 // **done** fix use response miss id
 
-
 // TODO: endpoint: POST /student:trainerId/feedback
 // _Score_ & _feedback_ & _Time_
 // create table feedback between student and TrainingProgram.
 
 // TODO: endpoint: GET /student:trainerId/feedback
 
-
-// **done** check duplicate syllabus, 
-//**dokuro** file upload training material
+// **done** check duplicate syllabus,
+//**done** file upload training material
    // refer test assignment upload file
    // download file
    // report all student pass or fail. score of student in class
@@ -225,17 +220,18 @@ get list approved with related data
 //**done** send mail when request join class
 //**done** optimize code
 //**done** check validator unit, lesson
-// score report, export excel
 // update seed data
-// test project
 // check validator
-// check feedback get evaluate of trainer
+// test project
 
-// add register by google OpenID
-// AUTHENTICATE: FORGET PASSWORD, REFRESH TOKEN
-  // openid login by google refer fake news.
-// if i can add soft delete for all table use global query filter and ignore.
-// check middleware timeout && global exception, health check, try do sth.
+--// check feedback get evaluate of trainer--
+--// add register by google OpenID--
+--// chart real time--
+--// export to pdf--
+--// AUTHENTICATE: FORGET PASSWORD, REFRESH TOKEN--
+--// if i can add soft delete for all table use global query filter and ignore.--
+
+//**done** check middleware timeout && global exception, health check, try do sth.
 // TODO: check validation of attendance and approve request
 
 - refactor source code
@@ -245,3 +241,6 @@ get list approved with related data
   - separate code logic u can
   - must do front-end project
     - deploy app
+
+// tracking score and send mail when student absent
+// test project by moq

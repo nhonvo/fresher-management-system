@@ -4,33 +4,36 @@ using Domain.Entities;
 using Domain.Enums;
 using MediatR;
 
-namespace Application.TrainingMaterials.Queries.GetPagedTrainingMaterials;
+namespace Application.Lessons.Queries.GetPagedTrainingMaterialsByLessonId;
 
-public record GetPagedTrainingMaterialsQuery : IRequest<Pagination<TrainingMaterialDto>>
+public record GetPagedTrainingMaterialsByLessonIdQuery : IRequest<Pagination<TrainingMaterialDto>>
 {
-    public string? Keyword = null;
-    public int PageIndex = 0;
-    public int PageSize = 10;
-    public SortType SortType = SortType.Ascending;
+    public int LessonId { get; set; }
+    public string? Keyword { get; init; }
+    public int PageIndex { get; init; } = 0;
+    public int PageSize { get; init; } = 10;
+    public SortType SortType { get; init; } = SortType.Ascending;
 }
 
-public class GetPagedTrainingMaterialsQueryHandler : IRequestHandler<GetPagedTrainingMaterialsQuery, Pagination<TrainingMaterialDto>>
+public class GetPagedTrainingMaterialsByLessonIdQueryHandler : IRequestHandler<GetPagedTrainingMaterialsByLessonIdQuery, Pagination<TrainingMaterialDto>>
 {
     private readonly IUnitOfWork _unitOfWork;
     private readonly IMapper _mapper;
 
-    public GetPagedTrainingMaterialsQueryHandler(IUnitOfWork unitOfWork, IMapper mapper)
+    public GetPagedTrainingMaterialsByLessonIdQueryHandler(IUnitOfWork unitOfWork, IMapper mapper)
     {
         _unitOfWork = unitOfWork;
         _mapper = mapper;
     }
 
     public async Task<Pagination<TrainingMaterialDto>> Handle(
-        GetPagedTrainingMaterialsQuery request,
+        GetPagedTrainingMaterialsByLessonIdQuery request,
         CancellationToken cancellationToken)
     {
         var pagedItems = await _unitOfWork.TrainingMaterialRepository.GetAsync<int>(
-            filter: x => x.FileName.Contains(request.Keyword ?? ""),
+            filter: x =>
+                x.UnitLessonId == request.LessonId &&
+                x.FileName.Contains(request.Keyword ?? ""),
             pageIndex: request.PageIndex,
             pageSize: request.PageSize,
             sortType: SortType.Ascending,

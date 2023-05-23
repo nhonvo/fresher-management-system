@@ -1,5 +1,7 @@
+using Application.Common.Exceptions;
 using Domain;
 using MediatR;
+using Microsoft.AspNetCore.Hosting;
 using System.Text;
 
 namespace Application.Emails.Queries
@@ -16,10 +18,14 @@ namespace Application.Emails.Queries
     };
     public class GetMailTemplateHandler : IRequestHandler<GetMailTemplateQuery, string>
     {
+        private readonly IWebHostEnvironment _hostingEnvironment;
         private readonly AppConfiguration _config;
 
-        public GetMailTemplateHandler(AppConfiguration config)
+        public GetMailTemplateHandler(
+            IWebHostEnvironment hostingEnvironment,
+            AppConfiguration config)
         {
+            _hostingEnvironment = hostingEnvironment;
             _config = config;
         }
 
@@ -27,7 +33,12 @@ namespace Application.Emails.Queries
         {
             // Console.WriteLine(Directory.GetCurrentDirectory() + "Here!!!!");
             string body = string.Empty;
-            using (StreamReader reader = new StreamReader(_config.HtmlTemplatePath))
+            string filePath = Path.Combine(_hostingEnvironment.WebRootPath, _config.HtmlTemplatePath);
+            if (!File.Exists(filePath))
+            {
+                throw new NotFoundException(nameof(GetMailTemplateQuery), "Html template not found");
+            }
+            using (StreamReader reader = new StreamReader(filePath))
             {
                 string line = "";
                 StringBuilder stringBuilder = new StringBuilder();

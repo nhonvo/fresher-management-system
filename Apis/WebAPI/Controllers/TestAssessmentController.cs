@@ -1,7 +1,9 @@
 ﻿using Application.Interfaces;
 using Application.TestAssessments.Commands.AddTrainingMaterialsToTestAssessment;
 using Application.TestAssessments.Queries.CalculatorAverageOfStudentInSyllabus;
+using Application.TestAssessments.Queries.GetPagedTrainingMaterialsByTestAssessmentId;
 using Application.ViewModels.TestAssessmentViewModels;
+using Domain.Enums;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
@@ -108,6 +110,22 @@ public class TestAssessmentController : CustomBaseController
             return CustomResult(ErrorMessages, HttpStatusCode.BadRequest);
         };
     }
+
+    [HttpGet("{id}/training-materials")]
+    public async Task<IActionResult> GetPagedTrainingMaterialsByTestAssessmentId(
+        int id,
+        string? keyword,
+        SortType sortType = SortType.Ascending,
+        int pageIndex = 0,
+        int pageSize = 10)
+    => Ok(await _mediator.Send(new GetPagedTrainingMaterialsByTestAssessmentIdQuery()
+    {
+        TestAssessmentId = id,
+        Keyword = keyword,
+        PageIndex = pageIndex,
+        PageSize = pageSize,
+        SortType = sortType
+    }));
 
     [HttpPost("{id}/training-materials")]
     public async Task<IActionResult> AddTrainingMaterialsToTestAssessment(

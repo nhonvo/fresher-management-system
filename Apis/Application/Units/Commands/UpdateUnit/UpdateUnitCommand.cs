@@ -39,6 +39,7 @@ namespace Application.Units.Commands.UpdateUnit
             unit = _mapper.Map<Domain.Entities.Unit>(request);
             unit.ModificationBy = _claimService.CurrentUserId;
             unit.ModificationDate = _currentTime.GetCurrentTime();
+            unit.CreationDate = _currentTime.GetCurrentTime();
             await _unitOfWork.ExecuteTransactionAsync(() =>
             {
                 _unitOfWork.UnitRepository.Update(unit);

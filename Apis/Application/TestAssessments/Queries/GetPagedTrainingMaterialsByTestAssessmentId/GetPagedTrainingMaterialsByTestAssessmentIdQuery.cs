@@ -4,33 +4,36 @@ using Domain.Entities;
 using Domain.Enums;
 using MediatR;
 
-namespace Application.TrainingMaterials.Queries.GetPagedTrainingMaterials;
+namespace Application.TestAssessments.Queries.GetPagedTrainingMaterialsByTestAssessmentId;
 
-public record GetPagedTrainingMaterialsQuery : IRequest<Pagination<TrainingMaterialDto>>
+public record GetPagedTrainingMaterialsByTestAssessmentIdQuery : IRequest<Pagination<TrainingMaterialDto>>
 {
-    public string? Keyword = null;
-    public int PageIndex = 0;
-    public int PageSize = 10;
-    public SortType SortType = SortType.Ascending;
+    public int TestAssessmentId { get; set; }
+    public string? Keyword { get; init; }
+    public int PageIndex { get; init; } = 0;
+    public int PageSize { get; init; } = 10;
+    public SortType SortType { get; init; } = SortType.Ascending;
 }
 
-public class GetPagedTrainingMaterialsQueryHandler : IRequestHandler<GetPagedTrainingMaterialsQuery, Pagination<TrainingMaterialDto>>
+public class GetPagedTrainingMaterialsByTestAssessmentIdQueryHandler : IRequestHandler<GetPagedTrainingMaterialsByTestAssessmentIdQuery, Pagination<TrainingMaterialDto>>
 {
     private readonly IUnitOfWork _unitOfWork;
     private readonly IMapper _mapper;
 
-    public GetPagedTrainingMaterialsQueryHandler(IUnitOfWork unitOfWork, IMapper mapper)
+    public GetPagedTrainingMaterialsByTestAssessmentIdQueryHandler(IUnitOfWork unitOfWork, IMapper mapper)
     {
         _unitOfWork = unitOfWork;
         _mapper = mapper;
     }
 
     public async Task<Pagination<TrainingMaterialDto>> Handle(
-        GetPagedTrainingMaterialsQuery request,
+        GetPagedTrainingMaterialsByTestAssessmentIdQuery request,
         CancellationToken cancellationToken)
     {
         var pagedItems = await _unitOfWork.TrainingMaterialRepository.GetAsync<int>(
-            filter: x => x.FileName.Contains(request.Keyword ?? ""),
+            filter: x =>
+                x.TestAssessmentId == request.TestAssessmentId &&
+                x.FileName.Contains(request.Keyword ?? ""),
             pageIndex: request.PageIndex,
             pageSize: request.PageSize,
             sortType: SortType.Ascending,

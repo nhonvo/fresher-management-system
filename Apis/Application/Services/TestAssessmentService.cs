@@ -79,6 +79,7 @@ namespace Application.Services
                 throw new Exception("Product not found");
             }
             await _unitOfWork.TestAssessmentRepository.Delete(id);
+            await _unitOfWork.SaveChangesAsync();
         }
 
         public async Task<TestAssessmentViewModel> UpdateAsync(int id, UpdateTestAssessmentViewModel updateDTO)
@@ -155,11 +156,20 @@ namespace Application.Services
                                                                              .Average(x => x.AverageScore), 2),
                 ListSyllabus = classFinalSyllabusScore.Items.Where(x => x.TrainingClassId == group.Key.TrainingClassId).ToList()
             }).ToList();
+            var studentAverage = (float)Math.Round((float)studentGPAScoreOfClass.Average(x => x.GPA), 2);
+            foreach (var item in studentGPAScoreOfClass)
+            {
+                item.studentAverage = studentAverage;
+                item.diffFromStudentAverage = (float)Math.Round((float)(item.GPA - studentAverage), 2);
+            }
 
             var count = studentGPAScoreOfClass.Count();
-            studentGPAScoreOfClass = studentGPAScoreOfClass
+            if (pageSize != 0)
+            {
+                studentGPAScoreOfClass = studentGPAScoreOfClass
                 .Skip(pageIndex * pageSize)
                 .Take(pageSize).ToList();
+            }
 
             var result = new Pagination<GetClassGPAScoreOfStudentViewModel>()
             {
@@ -188,11 +198,11 @@ namespace Application.Services
                                                                              .Average(x => x.AverageScore), 2),
                 ListSyllabus = classFinalSyllabusScore.Items.Where(x => x.AttendeeId == group.Key.AttendeeId).ToList()
             }).ToList();
-            var classAverage = (float)Math.Round((float)classGPAScoreOfStudent.Average(x => x.GPA),2);
+            var classAverage = (float)Math.Round((float)classGPAScoreOfStudent.Average(x => x.GPA), 2);
             foreach (var item in classGPAScoreOfStudent)
             {
                 item.classAverage = classAverage;
-                item.diffFromClassAverage = (float)Math.Round((float)(item.GPA - classAverage),2);
+                item.diffFromClassAverage = (float)Math.Round((float)(item.GPA - classAverage), 2);
             }
             var count = classGPAScoreOfStudent.Count();
             if (pageSize != 0)

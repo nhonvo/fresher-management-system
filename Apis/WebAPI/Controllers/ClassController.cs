@@ -49,23 +49,23 @@ namespace WebAPI.Controllers
         public async Task<Pagination<ClassProgram>> GetProgram(int id, int pageIndex = 0, int pageSize = 10)
             => await _mediator.Send(new GetClassProgramQuery(id, pageIndex, pageSize));
         [HttpPost]
-        [Authorize(Roles = "ClassAdmin")]
+        [Authorize(Roles = "ClassAdmin, SuperAdmin")]
         public async Task<ClassDTO> Post([FromBody] CreateClassCommand request)
             => await _mediator.Send(request);
         [HttpPost("TrainingProgram")]
-        [Authorize(Roles = "ClassAdmin")]
+        [Authorize(Roles = "ClassAdmin, SuperAdmin")]
         public async Task<ClassDTO> Post([FromBody] AddTrainProgramToClassCommand request)
             => await _mediator.Send(request);
         [HttpPost("add-trainer")]
-        [Authorize(Roles = "ClassAdmin")]
+        [Authorize(Roles = "ClassAdmin, SuperAdmin")]
         public async Task<TrainerClassDTO> Post([FromBody] AddTrainerCommand request)
             => await _mediator.Send(request);
         [HttpPut]
-        [Authorize(Roles = "ClassAdmin")]
+        [Authorize(Roles = "ClassAdmin, SuperAdmin")]
         public async Task<ClassDTO> Put([FromBody] UpdateClassCommand request)
             => await _mediator.Send(request);
         [HttpDelete("{id}")]
-        [Authorize(Roles = "ClassAdmin")]
+        [Authorize(Roles = "ClassAdmin, SuperAdmin")]
         public async Task<ClassDTO> Delete(int id)
             => await _mediator.Send(new DeleteClassCommand(id));
 

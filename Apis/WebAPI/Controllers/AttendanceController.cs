@@ -50,16 +50,16 @@ namespace WebAPI.Controllers
         {
             return Ok(await _mediator.Send(new GetAttendanceFilterRequestQuery(status, pageIndex, pageSize)));
         }
-        [HttpGet("attendance-class")]
-        public async Task<IActionResult> GetAttendanceClass(int pageIndex = 0, int pageSize = 10)
-        {
-            return Ok(await _mediator.Send(new GetAttendanceOfClassQuery(pageIndex, pageSize)));
-        }
-        [HttpGet("{id}")]
-        public async Task<IActionResult> Get(int id)
-        {
-            return Ok(await _mediator.Send(new GetAttendanceByIdQuery(id)));
-        }
+        // [HttpGet("attendance-class")]
+        // public async Task<IActionResult> GetAttendanceClass(int pageIndex = 0, int pageSize = 10)
+        // {
+        //     return Ok(await _mediator.Send(new GetAttendanceOfClassQuery(pageIndex, pageSize)));
+        // }
+        // [HttpGet("{id}")]
+        // public async Task<IActionResult> Get(int id)
+        // {
+        //     return Ok(await _mediator.Send(new GetAttendanceByIdQuery(id)));
+        // }
         [HttpPost]
         public async Task<ActionResult> Post([FromBody] CreateAttendancesCommand request)
         {
@@ -73,7 +73,7 @@ namespace WebAPI.Controllers
             return Ok(await _mediator.Send(request));
         }
         [HttpPut("ApproveAbsent")]
-        [Authorize(Roles = "ClassAdmin")]
+        [Authorize(Roles = "ClassAdmin, SuperAdmin")]
         public async Task<ActionResult> ApproveAbsent(ApproveAbsentCommand request)
         {
             return Ok(await _mediator.Send(request));

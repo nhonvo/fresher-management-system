@@ -25,7 +25,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet]
-        // [Authorize(Roles = "SuperAdmin")]
+        [Authorize(Roles = "SuperAdmin")]
         public async Task<IActionResult> GetAsync(
             string? keyword,
             SortType sortType = SortType.Ascending,

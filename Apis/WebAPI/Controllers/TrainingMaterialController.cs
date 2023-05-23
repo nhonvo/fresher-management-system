@@ -9,8 +9,7 @@ using System.Net;
 
 namespace WebAPI.Controllers;
 
-[Route("api/[controller]")]
-[ApiController]
+
 public class TrainingMaterialController : CustomBaseController
 {
     private readonly IMediator _mediator;
@@ -37,5 +36,5 @@ public class TrainingMaterialController : CustomBaseController
 
     [HttpGet("{id}/download")]
     public async Task<IActionResult> Download(int id)
-    => await _mediator.Send(new DownloadTrainingMaterialQuery(id));
+    => Ok(await _mediator.Send(new DownloadTrainingMaterialQuery(id)));
 }

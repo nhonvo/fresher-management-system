@@ -1,6 +1,6 @@
 ﻿using Application.Interfaces;
-using Application.Lessons.Queries.GetPagedTrainingMaterialsByLessonId;
 using Application.TestAssessments.Commands.AddTrainingMaterialsToTestAssessment;
+using Application.TestAssessments.Queries.CalculatorAverageOfStudentInSyllabus;
 using Application.TestAssessments.Queries.GetPagedTrainingMaterialsByTestAssessmentId;
 using Application.ViewModels.TestAssessmentViewModels;
 using Domain.Enums;
@@ -216,6 +216,11 @@ public class TestAssessmentController : CustomBaseController
                 };
             return CustomResult(ErrorMessages, HttpStatusCode.BadRequest);
         };
+    }
+    [HttpGet("calculate-average-student-in-syllabus")]
+    public async Task<IActionResult> CalculatorAverageOfStudentInSyllabus(int trainingClassId, int syllabusId, int attendeeId)
+    {
+        return Ok(await _mediator.Send(new CalculatorAverageOfStudentInSyllabusQuery(trainingClassId, syllabusId, attendeeId)));
     }
 
 }

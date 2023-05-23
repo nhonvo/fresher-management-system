@@ -81,7 +81,7 @@ namespace Infrastructures.Repositories
                     SyllabusId = group.Key.SyllabusId,
                     TrainingClassId = group.Key.TrainingClassId,
                     TestAssessmentType = group.Key.TestAssessmentType.ToString(),
-                    AverageScore = (float)Math.Round((float)group.Average(ta => ta.Score) , 2),
+                    AverageScore = (float)Math.Round((float)group.Average(ta => ta.Score), 2),
                     NumberOfTests = group.Count(),
                     SyllabusScheme = GetSyllabusAssessmentSchemeByType(group.Key.TestAssessmentType,
                                                                        _context.Syllabuses.FirstOrDefault(x => x.Id == group.Key.SyllabusId)),
@@ -102,7 +102,17 @@ namespace Infrastructures.Repositories
 
             return result;
         }
-
+        // private static float GetSyllabusAssessmentSchemeByType(TestAssessmentType type, Syllabus syllabus)
+        // {
+        //     return type switch
+        //     {
+        //         TestAssessmentType.Quiz => syllabus.QuizScheme,
+        //         TestAssessmentType.Assignment => syllabus.AssignmentScheme,
+        //         TestAssessmentType.FinalTheory => syllabus.FinalTheoryScheme * syllabus.FinalScheme,
+        //         TestAssessmentType.FinalPractice => syllabus.FinalPracticeScheme * syllabus.FinalScheme,
+        //         _ => throw new Transaction...() // Handle the default case accordingly
+        //     };
+        // }
         private static float GetSyllabusAssessmentSchemeByType(TestAssessmentType type, Syllabus syllabus)
         {
             float result = 0;

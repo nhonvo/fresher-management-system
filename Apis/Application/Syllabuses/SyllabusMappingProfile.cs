@@ -9,9 +9,9 @@ using Domain.Entities;
 
 namespace Application.Syllabuses
 {
-    public class ClassMappingProfile : Profile
+    public class SyllabusMappingProfile : Profile
     {
-        public ClassMappingProfile()
+        public SyllabusMappingProfile()
         {
             CreateMap<Syllabus, SyllabusDTO>().ReverseMap();
             CreateMap<Syllabus, CreateSyllabusCommand>().ReverseMap();

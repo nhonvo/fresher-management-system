@@ -37,7 +37,7 @@ namespace WebAPI.Controllers
         public async Task<IActionResult> Post(CreateRequestCurrentUserCommand request)
             => Ok(await _mediator.Send(request));
         [HttpPost("ApproveEnroll")]
-        [Authorize(Roles = "ClassAdmin")]
+        [Authorize(Roles = "ClassAdmin, SuperAdmin")]
         public async Task<IActionResult> Post(AllowRequestCommand request)
             => Ok(await _mediator.Send(request));
     }

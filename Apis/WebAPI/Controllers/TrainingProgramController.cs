@@ -40,11 +40,11 @@ namespace WebAPI.Controllers
         public async Task<IActionResult> GetDetailAsync(int id)
             => Ok(await _mediator.Send(new GetTrainingProgramByIdRelatedQuery(id)));
         [HttpPost("Duplicate/{id}")]
-        // [Authorize(Roles = "ClassAdmin, Trainer")]
+        [Authorize(Roles = "ClassAdmin, Trainer, SuperAdmin")]
         public async Task<IActionResult> Duplicate(int id)
             => Ok(await _mediator.Send(new DuplicateTrainProgramCommand(id)));
         [HttpPost]
-        [Authorize(Roles = "ClassAdmin")]
+        [Authorize(Roles = "ClassAdmin, SuperAdmin")]
         public async Task<IActionResult> Post(CreateTrainingProgramCommand request)
             => Ok(await _mediator.Send(request));
         [HttpGet("{trainingProgramId}/Syllabuses")]
@@ -65,19 +65,19 @@ namespace WebAPI.Controllers
             [FromQuery] int pageSize = 10)
             => Ok(await _mediator.Send(new GetListSyllabusesNotExistInTrainingProgramQuery(trainingProgramId, pageIndex, pageSize)));
         [HttpPost("{trainingProgramId}/Syllabus/{syllabusId}")]
-        // [Authorize(Roles = "ClassAdmin")]
+        [Authorize(Roles = "ClassAdmin, SuperAdmin")]
         public async Task<IActionResult> AddOneSyllabusToTrainingProgram(int syllabusId, int trainingProgramId)
             => Ok(await _mediator.Send(new AddOneSyllabusToTrainingProgramCommand(syllabusId, trainingProgramId)));
         [HttpDelete("{trainingProgramId}/Syllabus")]
-        [Authorize(Roles = "ClassAdmin")]
+        [Authorize(Roles = "ClassAdmin, SuperAdmin")]
         public async Task<IActionResult> RemnoveOneSyllabusToTrainingProgram(int syllabusId, int trainingProgramId)
             => Ok(await _mediator.Send(new RemoveOneSyllabusToTrainingProgramCommand(syllabusId, trainingProgramId)));
         [HttpPut]
-        [Authorize(Roles = "ClassAdmin")]
+        [Authorize(Roles = "ClassAdmin, SuperAdmin")]
         public async Task<IActionResult> Put(UpdateTrainingProgramCommand request)
             => Ok(await _mediator.Send(request));
         [HttpDelete("{id}")]
-        [Authorize(Roles = "ClassAdmin")]
+        [Authorize(Roles = "ClassAdmin, SuperAdmin")]
         public async Task<IActionResult> Delete(DeleteTrainingProgramCommand request)
             => Ok(await _mediator.Send(request));
     }

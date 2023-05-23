@@ -5,8 +5,8 @@ using MediatR;
 
 namespace Application.Attendances.Queries.GetAttendanceRequest
 {
-    public record GetAttendanceRequestQuery(int PageIndex = 0, int PageSize = 10) : IRequest<Pagination<AttendanceDTO>>;
-    public class GetAttendanceRequestHandler : IRequestHandler<GetAttendanceRequestQuery, Pagination<AttendanceDTO>>
+    public record GetAttendanceRequestQuery(int PageIndex = 0, int PageSize = 10) : IRequest<Pagination<AttendanceRelatedDTO>>;
+    public class GetAttendanceRequestHandler : IRequestHandler<GetAttendanceRequestQuery, Pagination<AttendanceRelatedDTO>>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
@@ -16,11 +16,11 @@ namespace Application.Attendances.Queries.GetAttendanceRequest
             _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
-        public async Task<Pagination<AttendanceDTO>> Handle(GetAttendanceRequestQuery request, CancellationToken cancellationToken)
+        public async Task<Pagination<AttendanceRelatedDTO>> Handle(GetAttendanceRequestQuery request, CancellationToken cancellationToken)
         {
             var Attendance = await _unitOfWork.AttendanceRepository.GetAsync(pageIndex: request.PageIndex, pageSize: request.PageSize);
 
-            var result = _mapper.Map<Pagination<AttendanceDTO>>(Attendance);
+            var result = _mapper.Map<Pagination<AttendanceRelatedDTO>>(Attendance);
 
             return result;
         }

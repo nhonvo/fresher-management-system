@@ -30,6 +30,14 @@ namespace Application.TrainingPrograms
             CreateMap<Unit, TrainingProgramUnitRelated>().ReverseMap();
             CreateMap<Lesson, TrainingProgramLessonRelated>().ReverseMap();
             CreateMap<TrainingMaterial, TrainingProgramTrainingMaterialRelated>().ReverseMap();
+            // related has id
+            CreateMap<TrainingProgram, TrainingProgramHasIdRelated>().ReverseMap();
+            CreateMap<ProgramSyllabus, TrainingProgramProgramSyllabusHasIdRelated>().ReverseMap();
+            CreateMap<Syllabus, TrainingProgramSyllabusHasIdRelated>().ReverseMap();
+            CreateMap<TestAssessment, TrainingProgramTestAssessmentHasIdRelated>().ReverseMap();
+            CreateMap<Unit, TrainingProgramUnitHasIdRelated>().ReverseMap();
+            CreateMap<Lesson, TrainingProgramLessonHasIdRelated>().ReverseMap();
+            CreateMap<TrainingMaterial, TrainingProgramTrainingMaterialHasIdRelated>().ReverseMap();
 
         }
     }

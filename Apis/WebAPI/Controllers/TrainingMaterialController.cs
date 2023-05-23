@@ -22,7 +22,7 @@ public class TrainingMaterialController : CustomBaseController
     }
 
     [HttpGet]
-    public async Task<IActionResult> GetAsync(
+    public async Task<IActionResult> GetPagedItems(
         string? keyword,
         SortType sortType = SortType.Ascending,
         int pageIndex = 0,

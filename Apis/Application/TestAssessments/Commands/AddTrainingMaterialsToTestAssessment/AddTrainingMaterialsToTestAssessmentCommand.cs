@@ -32,19 +32,16 @@ public record AddTrainingMaterialsToTestAssessmentCommandHandler : IRequestHandl
     public async Task<List<TrainingMaterialDto>> Handle(AddTrainingMaterialsToTestAssessmentCommand request, CancellationToken cancellationToken)
     {
         var testAssessment = await _unitOfWork.TestAssessmentRepository.GetByIdAsync(request.Id);
-        if (request.TrainingMaterials != null)
+        testAssessment.TrainingMaterials = new List<TrainingMaterial>() { };
+        foreach (var item in request.TrainingMaterials)
         {
-            testAssessment.TrainingMaterials = new List<TrainingMaterial>() { };
-            foreach (var item in request.TrainingMaterials)
+            testAssessment.TrainingMaterials.Add(new TrainingMaterial()
             {
-                testAssessment.TrainingMaterials.Add(new TrainingMaterial()
-                {
-                    FileName = item.FileName,
-                    FileSize = item.Length,
-                    FilePath = await _fileService.UploadFile(item),
-                });
-            };
-        }
+                FileName = item.FileName,
+                FileSize = item.Length,
+                FilePath = await _fileService.UploadFile(item),
+            });
+        };
         _unitOfWork.TestAssessmentRepository.Update(testAssessment);
         await _unitOfWork.SaveChangesAsync();
         var result = _mapper.Map<List<TrainingMaterialDto>>(testAssessment.TrainingMaterials);
@@ -55,6 +52,8 @@ public record AddTrainingMaterialsToTestAssessmentCommandHandler : IRequestHandl
 public class TrainingMaterialDto
 {
     public int Id { get; init; }
+    public int UnitLessonId { get; init; }
+    public int TestAssessmentId { get; init; }
     public string FileName { get; init; }
     public string FilePath { get; init; }
     public long FileSize { get; init; }

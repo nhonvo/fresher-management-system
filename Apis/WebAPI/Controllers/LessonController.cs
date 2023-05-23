@@ -1,10 +1,15 @@
 ﻿using Application.Commons;
+using Application.Lessons.Commands.AddTrainingMaterialsToLesson;
 using Application.Lessons.Commands.CreateUnitLesson;
 using Application.Lessons.Commands.DeleteUnitLesson;
 using Application.Lessons.Commands.UpdateUnitLesson;
 using Application.Lessons.DTO;
+using Application.Lessons.Queries.GetPagedTrainingMaterialsByLessonId;
 using Application.Lessons.Queries.GetUnitLessonById;
 using Application.Lessons.Queries.GetUnitLessons;
+using Application.Syllabuses.Commands.AddOneMaterialToLesson;
+using Application.TrainingMaterials.Queries.GetPagedTrainingMaterials;
+using Domain.Enums;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -37,5 +42,30 @@ namespace WebAPI.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
             => Ok(await _mediator.Send(new DeleteUnitLessonCommand(id)));
+
+        [HttpGet("{id}/training-materials")]
+        public async Task<IActionResult> GetAsync(
+            int id,
+            string? keyword,
+            SortType sortType = SortType.Ascending,
+            int pageIndex = 0,
+            int pageSize = 10)
+        => Ok(await _mediator.Send(new GetPagedTrainingMaterialsByLessonIdQuery()
+        {
+            LessonId = id,
+            Keyword = keyword,
+            PageIndex = pageIndex,
+            PageSize = pageSize,
+            SortType = sortType
+        }));
+
+        [HttpPost("{id}/training-materials")]
+        public async Task<IActionResult> AddTrainingMaterialsToTestAssessment(
+            int id,
+            [FromForm] AddTrainingMaterialsToLessonCommand request)
+        {
+            request.Id = id;
+            return Ok(await _mediator.Send(request));
+        }
     }
 }

@@ -7,10 +7,12 @@ using Application.FeedBacks.Queries.GetFeedBackById;
 using Application.FeedBacks.Queries.GetFeedbackByTrainee;
 using Application.FeedBacks.Queries.GetFeedBacks;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers
 {
+    [Authorize]
     public class FeedBackController : BasesController
     {
         private readonly IMediator _mediator;

@@ -7,10 +7,12 @@ using Application.Lessons.Queries.GetUnitLessonById;
 using Application.Lessons.Queries.GetUnitLessons;
 using Domain.Enums;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers
 {
+    [Authorize]
     public class LessonController : BasesController
     {
         private readonly IMediator _mediator;

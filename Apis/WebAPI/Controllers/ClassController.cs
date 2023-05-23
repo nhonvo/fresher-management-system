@@ -19,6 +19,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers
 {
+    [Authorize]
     public class ClassController : BasesController
     {
         private readonly IMediator _mediator;

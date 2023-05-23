@@ -4,10 +4,11 @@ using Application.Student.Commands.UpdateStudent;
 using Application.StudentProgresses.Queries.GetPagedStudentProgressesById;
 using Application.Students.DTO;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers;
-
+[Authorize]
 public class StudentController : BasesController
 {
     private readonly IMediator _mediator;

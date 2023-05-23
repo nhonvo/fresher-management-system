@@ -1,14 +1,10 @@
-﻿using Application.Syllabuses.Queries.ExportSyllabusesCSV;
-using Application.Syllabuses.Queries.GetSyllabus;
-using Application.TrainingMaterials.Queries.DownloadTrainingMateria;
+﻿using Application.TrainingMaterials.Queries.DownloadTrainingMateria;
 using Application.TrainingMaterials.Queries.GetPagedTrainingMaterials;
 using Domain.Enums;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using System.Net;
 
 namespace WebAPI.Controllers;
-
 
 public class TrainingMaterialController : CustomBaseController
 {
@@ -36,5 +32,5 @@ public class TrainingMaterialController : CustomBaseController
 
     [HttpGet("{id}/download")]
     public async Task<IActionResult> Download(int id)
-    => Ok(await _mediator.Send(new DownloadTrainingMaterialQuery(id)));
+    => await _mediator.Send(new DownloadTrainingMaterialQuery(id));
 }

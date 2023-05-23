@@ -1,14 +1,10 @@
-﻿using Application.Commons;
-using Application.Lessons.Commands.AddTrainingMaterialsToLesson;
+﻿using Application.Lessons.Commands.AddTrainingMaterialsToLesson;
 using Application.Lessons.Commands.CreateUnitLesson;
 using Application.Lessons.Commands.DeleteUnitLesson;
 using Application.Lessons.Commands.UpdateUnitLesson;
-using Application.Lessons.DTO;
 using Application.Lessons.Queries.GetPagedTrainingMaterialsByLessonId;
 using Application.Lessons.Queries.GetUnitLessonById;
 using Application.Lessons.Queries.GetUnitLessons;
-using Application.Syllabuses.Commands.AddOneMaterialToLesson;
-using Application.TrainingMaterials.Queries.GetPagedTrainingMaterials;
 using Domain.Enums;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;

@@ -5,8 +5,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Application.TrainingPrograms.Queries.GetTrainingProgramByIdRelated
 {
-    public record GetTrainingProgramByIdRelatedQuery(int id) : IRequest<TrainingProgramRelated>;
-    public class GetTrainingProgramByIdRelatedHandler : IRequestHandler<GetTrainingProgramByIdRelatedQuery, TrainingProgramRelated>
+    public record GetTrainingProgramByIdRelatedQuery(int id) : IRequest<TrainingProgramHasIdRelated>;
+    public class GetTrainingProgramByIdRelatedHandler : IRequestHandler<GetTrainingProgramByIdRelatedQuery, TrainingProgramHasIdRelated>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
@@ -15,7 +15,7 @@ namespace Application.TrainingPrograms.Queries.GetTrainingProgramByIdRelated
             _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
-        public async Task<TrainingProgramRelated> Handle(GetTrainingProgramByIdRelatedQuery request, CancellationToken cancellationToken)
+        public async Task<TrainingProgramHasIdRelated> Handle(GetTrainingProgramByIdRelatedQuery request, CancellationToken cancellationToken)
         {
             var trainingProgram = await _unitOfWork.TrainingProgramRepository.FirstOrDefaultAsync(
                 filter: x => x.Id == request.id,
@@ -26,7 +26,7 @@ namespace Application.TrainingPrograms.Queries.GetTrainingProgramByIdRelated
                                 .ThenInclude(x => x.Units)
                                 .ThenInclude(x => x.Lessons)
                                 .ThenInclude(x => x.TrainingMaterials));
-            var result = _mapper.Map<TrainingProgramRelated>(trainingProgram);
+            var result = _mapper.Map<TrainingProgramHasIdRelated>(trainingProgram);
             return result;
         }
     }

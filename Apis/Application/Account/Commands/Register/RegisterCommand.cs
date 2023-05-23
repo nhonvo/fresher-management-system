@@ -1,17 +1,14 @@
-﻿using Application.Account.DTOs;
-using Application.Common.Exceptions;
-using Application.Emails.Commands.SendMail;
+﻿using Application.Common.Exceptions;
 using Application.Emails.Commands.SendMailUserRegister;
 using Application.Utils;
 using AutoMapper;
 using Domain.Entities;
 using Domain.Enums;
 using MediatR;
-using System.ComponentModel.DataAnnotations;
 
 namespace Application.Account.Commands.Register;
 
-public record RegisterCommand : IRequest<AccountDTO>
+public record RegisterCommand : IRequest<AccountDto>
 {
     public string Email { get; set; } = string.Empty;
     public Gender Gender { get; set; }
@@ -20,19 +17,22 @@ public record RegisterCommand : IRequest<AccountDTO>
     public string Password { get; set; } = string.Empty;
     public DateTime DateOfBirth { get; set; }
 }
-public class RegisterCommandHandler : IRequestHandler<RegisterCommand, AccountDTO>
+public class RegisterCommandHandler : IRequestHandler<RegisterCommand, AccountDto>
 {
     private readonly IUnitOfWork _unitOfWork;
     private readonly IMapper _mapper;
     private readonly IMediator _mediator;
-    public RegisterCommandHandler(IUnitOfWork unitOfWork, IMapper mapper, IMediator mediator)
+    public RegisterCommandHandler(
+        IUnitOfWork unitOfWork,
+        IMapper mapper,
+        IMediator mediator)
     {
         _unitOfWork = unitOfWork;
         _mapper = mapper;
         _mediator = mediator;
     }
 
-    public async Task<AccountDTO> Handle(RegisterCommand request, CancellationToken cancellationToken)
+    public async Task<AccountDto> Handle(RegisterCommand request, CancellationToken cancellationToken)
     {
         var isExist = await _unitOfWork.UserRepository.CheckExistUser(request.Email);
 
@@ -48,7 +48,7 @@ public class RegisterCommandHandler : IRequestHandler<RegisterCommand, AccountDT
         {
             _unitOfWork.UserRepository.AddAsync(user);
         });
-        var response = _mapper.Map<AccountDTO>(user);
+        var response = _mapper.Map<AccountDto>(user);
         await _mediator.Send(new SendMailUserRegisterCommand(response));
         return response;
     }

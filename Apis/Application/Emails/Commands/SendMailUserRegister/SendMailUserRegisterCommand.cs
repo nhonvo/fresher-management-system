@@ -1,27 +1,29 @@
-using Application.Account.DTOs;
 using Application.Emails.Commands.SendMail;
 using Application.Emails.Queries;
+using AutoMapper;
+using Domain.Entities;
+using Domain.Enums;
 using MediatR;
 
-namespace Application.Emails.Commands.SendMailUserRegister
+namespace Application.Emails.Commands.SendMailUserRegister;
+
+public record SendMailUserRegisterCommand(AccountDto user) : IRequest<bool>;
+public class SendMailUserRegisterHandler : IRequestHandler<SendMailUserRegisterCommand, bool>
 {
-    public record SendMailUserRegisterCommand(AccountDTO user) : IRequest<bool>;
-    public class SendMailUserRegisterHandler : IRequestHandler<SendMailUserRegisterCommand, bool>
+    private readonly IMediator _mediator;
+
+    public SendMailUserRegisterHandler(IMediator mediator)
     {
-        private readonly IMediator _mediator;
+        _mediator = mediator;
+    }
 
-        public SendMailUserRegisterHandler(IMediator mediator)
-        {
-            _mediator = mediator;
-        }
-
-        public async Task<bool> Handle(SendMailUserRegisterCommand request, CancellationToken cancellationToken)
-        {
-            var to = new List<string> { request.user.Email };
-            var title = "Welcome to FPT Software Academy";
-            var speech = "Greetings,\nWelcome to FPT Software Academy and thank you for register account. This is your information:";
-            var mainContent =
-            $@"
+    public async Task<bool> Handle(SendMailUserRegisterCommand request, CancellationToken cancellationToken)
+    {
+        var to = new List<string> { request.user.Email };
+        var title = "Welcome to FPT Software Academy";
+        var speech = "Greetings,\nWelcome to FPT Software Academy and thank you for register account. This is your information:";
+        var mainContent =
+        $@"
                 <div>
                     <h2>Your Information:</h2>
                     <ul>
@@ -34,22 +36,43 @@ namespace Application.Emails.Commands.SendMailUserRegister
                 </div>
             ";
 
-            var sign = "FPT Academy Team";
-            var body = await _mediator.Send(new GetMailTemplateQuery
-            {
-                title = title,
-                speech = speech,
-                mainContent = mainContent,
-                sign = sign
-            });
-            var subject = "Welcome to FPT Software Academy";
-            var mailData = new SendMailCommand
-            {
-                To = to,
-                Subject = subject,
-                Body = body
-            };
-            return await _mediator.Send(mailData, new CancellationToken());
-        }
+        var sign = "FPT Academy Team";
+        var body = await _mediator.Send(new GetMailTemplateQuery
+        {
+            title = title,
+            speech = speech,
+            mainContent = mainContent,
+            sign = sign
+        });
+        var subject = "Welcome to FPT Software Academy";
+        var mailData = new SendMailCommand
+        {
+            To = to,
+            Subject = subject,
+            Body = body
+        };
+        return await _mediator.Send(mailData, new CancellationToken());
+    }
+}
+
+public record AccountDto
+{
+#pragma warning disable
+    public int Id { get; set; }
+    public string Email { get; set; }
+    public Gender Gender { get; set; }
+    public string Name { get; set; }
+    public string Phone { get; set; }
+    public UserRoleType Role { get; set; }
+    public UserStatus Status { get; set; }
+    public DateTime DateOfBirth { get; set; }
+    public DateTime? ExpireDay { get; set; }
+}
+
+public class MappingProfile : Profile
+{
+    public MappingProfile()
+    {
+        CreateMap<User, AccountDto>();
     }
 }

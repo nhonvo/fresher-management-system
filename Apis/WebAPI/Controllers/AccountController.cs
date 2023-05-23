@@ -25,9 +25,11 @@ namespace WebAPI.Controllers
         [HttpPost("Login")]
         public async Task<AccountDTO> LoginAsync([FromBody] LoginCommand request)
             => await _mediator.Send(request);
+
         [HttpPost("Register")]
-        public async Task<AccountDTO> RegisterAsync([FromBody] RegisterCommand request)
-            => await _mediator.Send(request);
+        public async Task<IActionResult> RegisterAsync([FromBody] RegisterCommand request)
+        => Ok(await _mediator.Send(request));
+
         [Authorize]
         [HttpPut("change-password")]
         public async Task<AccountDTO> ChangePassword(ChangePasswordCommand request)

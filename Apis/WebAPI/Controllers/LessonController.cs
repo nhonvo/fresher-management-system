@@ -10,10 +10,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers
 {
-    public class UnitLessonController : BasesController
+    public class LessonController : BasesController
     {
         private readonly IMediator _mediator;
-        public UnitLessonController(IMediator mediator)
+        public LessonController(IMediator mediator)
         {
             _mediator = mediator;
         }

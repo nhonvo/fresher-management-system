@@ -225,10 +225,10 @@ get list approved with related data
 //**done** send mail when request join class
 //**done** optimize code
 //**done** check validator unit, lesson
-// review all feature old project
-// score report
+// score report, export excel
 // update seed data
 // test project
+// check validator
 // check feedback get evaluate of trainer
 
 // add register by google OpenID

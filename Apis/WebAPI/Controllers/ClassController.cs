@@ -6,7 +6,6 @@ using Application.Class.Commands.DeleteClass;
 using Application.Class.Commands.SetCalenders;
 using Application.Class.Commands.UpdateClass;
 using Application.Class.DTOs;
-using Application.Class.DTOs;
 using Application.Class.Queries.GetAdminClass;
 using Application.Class.Queries.GetClass;
 using Application.Class.Queries.GetClassById;
@@ -34,13 +33,6 @@ namespace WebAPI.Controllers
             [FromQuery] int pageSize = 10)
         => Ok(await _mediator.Send(new GetClassQuery() { PageIndex = pageIndex, PageSize = pageSize }));
 
-        /// <summary>
-        /// from class get all admin of class
-        /// </summary>
-        /// <param name="id"></param>
-        /// <param name="pageIndex"></param>
-        /// <param name="pageSize"></param>
-        /// <returns></returns>
         [HttpGet("{id}/Admin")]
         public async Task<Pagination<Application.Class.DTOs.ClassRelated>> GetClassAsync(int id, int pageIndex = 0, int pageSize = 10)
             => await _mediator.Send(new GetAdminClassQuery(id, pageIndex, pageSize));

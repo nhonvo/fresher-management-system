@@ -163,24 +163,24 @@ namespace Application.SeedData.Queries.SeedData
                     _unitOfWork.UnitRepository.AddRangeAsync(testAssessments);
                 });
              }
-             if (!await _unitOfWork.LessonRepository.AnyAsync())
-             {
-                 string json = File.ReadAllText(@"../../Json/Lesson.json");
-                 List<Lesson> unitLessons = JsonSerializer.Deserialize<List<Lesson>>(json)!;
-                 await _unitOfWork.ExecuteTransactionAsync(() =>
-                {
-                    _unitOfWork.LessonRepository.AddRangeAsync(unitLessons);
-                });
-             }
-             if (!await _unitOfWork.TrainingMaterialRepository.AnyAsync())
-             {
-                 string json = File.ReadAllText(@"../../Json/TrainingMaterial.json");
-                 List<TrainingMaterial> trainingMaterial = JsonSerializer.Deserialize<List<TrainingMaterial>>(json)!;
-                 await _unitOfWork.ExecuteTransactionAsync(() =>
-                {
-                    _unitOfWork.TrainingMaterialRepository.AddRangeAsync(trainingMaterial);
-                });
-             }
+            if (!await _unitOfWork.LessonRepository.AnyAsync())
+            {
+                string json = File.ReadAllText(@"../../Json/Lesson.json");
+                List<Lesson> unitLessons = JsonSerializer.Deserialize<List<Lesson>>(json)!;
+                await _unitOfWork.ExecuteTransactionAsync(() =>
+               {
+                   _unitOfWork.LessonRepository.AddRangeAsync(unitLessons);
+               });
+            }
+            if (!await _unitOfWork.TrainingMaterialRepository.AnyAsync())
+            {
+                string json = File.ReadAllText(@"../../Json/TrainingMaterial.json");
+                List<TrainingMaterial> trainingMaterial = JsonSerializer.Deserialize<List<TrainingMaterial>>(json)!;
+                await _unitOfWork.ExecuteTransactionAsync(() =>
+               {
+                   _unitOfWork.TrainingMaterialRepository.AddRangeAsync(trainingMaterial);
+               });
+            }
         }
     }
 }

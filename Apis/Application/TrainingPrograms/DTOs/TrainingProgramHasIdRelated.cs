@@ -1,3 +1,4 @@
+using Application.Users.DTO;
 using Domain.Enums;
 
 namespace Application.TrainingPrograms.DTOs
@@ -7,6 +8,8 @@ namespace Application.TrainingPrograms.DTOs
         public int Id { get; set; }
         public string Name { get; set; }
         public TrainingProgramStatus Status { get; set; }
+        public int? CreatedBy { get; set; }
+        public UserContainIdDTO? CreateByUser { get; set; }
         public ICollection<TrainingProgramProgramSyllabusHasIdRelated> ProgramSyllabus { get; set; }
     }
     public class TrainingProgramProgramSyllabusHasIdRelated

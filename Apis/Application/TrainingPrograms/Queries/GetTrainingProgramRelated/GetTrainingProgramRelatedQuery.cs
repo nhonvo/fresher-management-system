@@ -23,7 +23,7 @@ namespace Application.TrainingPrograms.Queries.GetTrainingProgramRelated
         }
         public async Task<Pagination<TrainingProgramHasIdRelated>> Handle(GetTrainingProgramRelatedQuery request, CancellationToken cancellationToken)
         {
-            var trainingProgram = await _unitOfWork.TrainingProgramRepository.GetAsync(
+            var trainingProgram = await _unitOfWork.TrainingProgramRepository.GetAsync<int>(
                  filter: x => x.Name.Contains(request.keyword ?? "")
                              || x.Id.ToString().Contains(request.keyword ?? ""),
                 include: x => x.Include(x => x.CreateByUser)
@@ -36,7 +36,7 @@ namespace Application.TrainingPrograms.Queries.GetTrainingProgramRelated
                 pageIndex: request.pageIndex,
                 pageSize: request.pageSize,
                 sortType: SortType.Ascending,
-                keySelectorForSort: x => x.Name);
+                keySelectorForSort: x => x.Id);
             var result = _mapper.Map<Pagination<TrainingProgramHasIdRelated>>(trainingProgram);
             return result;
         }

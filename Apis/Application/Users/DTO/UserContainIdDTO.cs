@@ -2,8 +2,9 @@ using Domain.Enums;
 
 namespace Application.Users.DTO
 {
-    public class UserDTO
+    public class UserContainIdDTO
     {
+        public int Id { get; set; }
         public string Email { get; set; }
         public Gender Gender { get; set; }
         public string Name { get; set; }

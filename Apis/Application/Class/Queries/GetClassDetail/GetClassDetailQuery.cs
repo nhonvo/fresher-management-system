@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Application.Class.Queries.GetClassDetail
 {
-    public record GetClassDetailQuery(int id) : IRequest<ClassDetail>;
+    public record GetClassDetailQuery(int id) : IRequest<ClassRelated>;
 
-    public class GetClassDetailHandler : IRequestHandler<GetClassDetailQuery, ClassDetail>
+    public class GetClassDetailHandler : IRequestHandler<GetClassDetailQuery, ClassRelated>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
@@ -17,7 +17,7 @@ namespace Application.Class.Queries.GetClassDetail
             _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
-        public async Task<ClassDetail> Handle(GetClassDetailQuery request, CancellationToken cancellationToken)
+        public async Task<ClassRelated> Handle(GetClassDetailQuery request, CancellationToken cancellationToken)
         {
             var item = await _unitOfWork.ClassRepository.FirstOrDefaultAsync(
                 filter: x => x.Id == request.id,
@@ -39,7 +39,7 @@ namespace Application.Class.Queries.GetClassDetail
                         .ThenInclude(x => x.TrainingMaterials)
                     .Include(x => x.Calenders));
 
-            var result = _mapper.Map<ClassDetail>(item);
+            var result = _mapper.Map<ClassRelated>(item);
 
             return result;
         }

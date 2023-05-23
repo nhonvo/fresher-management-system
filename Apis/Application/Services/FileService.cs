@@ -14,7 +14,7 @@ namespace Application.Services
         }
         public async Task<string> UploadFile(IFormFile file)
         {
-            string fileName = null;
+            string fileName = "";
             if (file != null)
             {
                 try
@@ -24,7 +24,7 @@ namespace Application.Services
                     string filePath = Path.Combine(uploadDir, fileName);
                     using (var fileStream = new FileStream(filePath, FileMode.Create))
                     {
-                        file.CopyTo(fileStream);
+                        await file.CopyToAsync(fileStream);
                     }
                 }
                 catch (Exception ex)

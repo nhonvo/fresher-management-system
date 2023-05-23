@@ -11,7 +11,6 @@ namespace Application.Attendances.Commands.CreateAttendances
     {
         public string Reason { get; set; }
         public DateTime expectedDates { get; set; }
-        public string StudentId { get; set; }
     }
     public class CreateAttendancesHandler : IRequestHandler<CreateAttendancesCommand, AttendanceDTO>
     {
@@ -30,15 +29,16 @@ namespace Application.Attendances.Commands.CreateAttendances
         }
         public async Task<AttendanceDTO> Handle(CreateAttendancesCommand request, CancellationToken cancellationToken)
         {
-            var Attendance = _mapper.Map<Attendance>(request);
-            Attendance.IsDeleted = false;
-            Attendance.CreatedBy = _claimService.CurrentUserId;
-            Attendance.CreationDate = _currentTime.GetCurrentTime();
+            var attendance = _mapper.Map<Attendance>(request);
+            attendance.StudentId = _claimService.CurrentUserId;
+            attendance.IsDeleted = false;
+            attendance.CreatedBy = _claimService.CurrentUserId;
+            attendance.CreationDate = _currentTime.GetCurrentTime();
             await _unitOfWork.ExecuteTransactionAsync(() =>
             {
-                _unitOfWork.AttendanceRepository.AddAsync(Attendance);
+                _unitOfWork.AttendanceRepository.AddAsync(attendance);
             });
-            var result = _mapper.Map<AttendanceDTO>(Attendance);
+            var result = _mapper.Map<AttendanceDTO>(attendance);
             return result;
         }
     }

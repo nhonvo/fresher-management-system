@@ -1,10 +1,10 @@
 using FluentValidation;
 
-namespace Application.TrainingPrograms.Queries.GetPagedSyllabusesByTraningProgramId;
+namespace Application.TrainingPrograms.Queries.GetPagedSyllabusesByTrainingProgramId;
 
-public class GetPagedSyllabusesByTraningProgramIdQueryValidator : AbstractValidator<GetPagedSyllabusesByTraningProgramIdQuery>
+public class GetPagedSyllabusesByTrainingProgramIdQueryValidator : AbstractValidator<GetPagedSyllabusesByTrainingProgramIdQuery>
 {
-    public GetPagedSyllabusesByTraningProgramIdQueryValidator()
+    public GetPagedSyllabusesByTrainingProgramIdQueryValidator()
     {
         RuleFor(x => x.TrainingProgramId)
             .NotNull().GreaterThan(0);

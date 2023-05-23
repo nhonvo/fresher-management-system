@@ -32,8 +32,8 @@ namespace Application.Class.DTOs
     }
     public class ProgramSyllabusDetail
     {
-        public int SyllabusId;
-        public SyllabusDetail Syllabus;
+        public int SyllabusId { get; set; }
+        public SyllabusDetail Syllabus { get; set; }
     }
 
     public class SyllabusDetail

@@ -4,7 +4,8 @@ using Application.TrainingPrograms.Commands.DeleteTrainingProgram;
 using Application.TrainingPrograms.Commands.DuplicateTrainProgram;
 using Application.TrainingPrograms.Commands.RemoveOneSyllabusToTrainingProgram;
 using Application.TrainingPrograms.Commands.UpdateTrainingProgram;
-using Application.TrainingPrograms.Queries.GetPagedSyllabusesByTraningProgramId;
+using Application.TrainingPrograms.Queries.GetListSyllabusesNotExistInTrainingProgram;
+using Application.TrainingPrograms.Queries.GetPagedSyllabusesByTrainingProgramId;
 using Application.TrainingPrograms.Queries.GetTrainingProgramById;
 using Application.TrainingPrograms.Queries.GetTrainingProgramByIdRelated;
 using Application.TrainingPrograms.Queries.GetTrainingProgramRelated;
@@ -46,24 +47,30 @@ namespace WebAPI.Controllers
         public async Task<IActionResult> Post(CreateTrainingProgramCommand request)
             => Ok(await _mediator.Send(request));
         [HttpGet("{trainingProgramId}/Syllabuses")]
-        public async Task<IActionResult> GetPagedSyllabusesByTraningProgramId(
+        public async Task<IActionResult> GetPagedSyllabusesByTrainingProgramId(
             int trainingProgramId,
             [FromQuery] int pageIndex = 0,
             [FromQuery] int pageSize = 10)
-        => Ok(await _mediator.Send(new GetPagedSyllabusesByTraningProgramIdQuery()
-        {
-            TrainingProgramId = trainingProgramId,
-            PageIndex = pageIndex,
-            PageSize = pageSize
-        }));
-        [HttpPost("{trainingProgramId}/Syllabus")]
-        [Authorize(Roles = "ClassAdmin")]
+            => Ok(await _mediator.Send(new GetPagedSyllabusesByTrainingProgramIdQuery()
+            {
+                TrainingProgramId = trainingProgramId,
+                PageIndex = pageIndex,
+                PageSize = pageSize
+            }));
+        [HttpGet("not-exist/{trainingProgramId}/Syllabuses")]
+        public async Task<IActionResult> GetListSyllabusesNotExist(
+            int trainingProgramId,
+            [FromQuery] int pageIndex = 0,
+            [FromQuery] int pageSize = 10)
+            => Ok(await _mediator.Send(new GetListSyllabusesNotExistInTrainingProgramQuery(trainingProgramId, pageIndex, pageSize)));
+        [HttpPost("{trainingProgramId}/Syllabus/{syllabusId}")]
+        // [Authorize(Roles = "ClassAdmin")]
         public async Task<IActionResult> AddOneSyllabusToTrainingProgram(int syllabusId, int trainingProgramId)
-        => Ok(await _mediator.Send(new AddOneSyllabusToTrainingProgramCommand(syllabusId, trainingProgramId)));
+            => Ok(await _mediator.Send(new AddOneSyllabusToTrainingProgramCommand(syllabusId, trainingProgramId)));
         [HttpDelete("{trainingProgramId}/Syllabus")]
         [Authorize(Roles = "ClassAdmin")]
         public async Task<IActionResult> RemnoveOneSyllabusToTrainingProgram(int syllabusId, int trainingProgramId)
-        => Ok(await _mediator.Send(new RemoveOneSyllabusToTrainingProgramCommand(syllabusId, trainingProgramId)));
+            => Ok(await _mediator.Send(new RemoveOneSyllabusToTrainingProgramCommand(syllabusId, trainingProgramId)));
         [HttpPut]
         [Authorize(Roles = "ClassAdmin")]
         public async Task<IActionResult> Put(UpdateTrainingProgramCommand request)

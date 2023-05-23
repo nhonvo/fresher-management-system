@@ -1,4 +1,6 @@
 ﻿using Application.Interfaces;
+using Application.TestAssessments.Commands.AddTrainingMaterialsToTestAssessment;
+using Application.TestAssessments.Queries.CalculatorAverageOfStudentInSyllabus;
 using Application.ViewModels.TestAssessmentViewModels;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -107,6 +109,15 @@ public class TestAssessmentController : CustomBaseController
         };
     }
 
+    [HttpPost("{id}/training-materials")]
+    public async Task<IActionResult> AddTrainingMaterialsToTestAssessment(
+        int id,
+        [FromForm] AddTrainingMaterialsToTestAssessmentCommand request)
+    {
+        request.Id = id;
+        return Ok(await _mediator.Send(request));
+    }
+
     [HttpGet("student/{id:int}/finalSyllabusScores")]
     public async Task<IActionResult> GetListSyllabusScoreOfStudentAsync(int id, int? classId, int pageIndex = 0, int pageSize = 10)
     {
@@ -187,6 +198,11 @@ public class TestAssessmentController : CustomBaseController
                 };
             return CustomResult(ErrorMessages, HttpStatusCode.BadRequest);
         };
+    }
+    [HttpGet("calculate-average-student-in-syllabus")]
+    public async Task<IActionResult> CalculatorAverageOfStudentInSyllabus(int trainingClassId, int syllabusId, int attendeeId)
+    {
+        return Ok(await _mediator.Send(new CalculatorAverageOfStudentInSyllabusQuery(trainingClassId, syllabusId, attendeeId)));
     }
 
 }

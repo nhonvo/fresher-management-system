@@ -1,3 +1,5 @@
+using Application.Lessons.DTO;
+
 namespace Application.Units.DTOs
 {
     public class UnitHasIdDTO
@@ -9,5 +11,6 @@ namespace Application.Units.DTOs
         public DateTime CreationDate { get; set; }
         public DateTime? ModificationDate { get; set; }
         public int SyllabusId { get; set; }
+        public UnitLessonDTO? UnitLessonDTOs { get; set; }
     }
 }

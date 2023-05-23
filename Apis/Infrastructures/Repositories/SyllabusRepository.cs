@@ -24,5 +24,13 @@ namespace Infrastructures.Repositories
             }
             return syllabus;
         }
+        public async Task<Syllabus?> GetSyllabusRelationUnitAsync(int id) => await _dbSet
+                                                                            .Include(s => s.Units)
+                                                                                .ThenInclude(u => u.Lessons)
+                                                                                .ThenInclude(ul => ul.OutputStandard)
+                                                                            .Include(s => s.Units)
+                                                                            .ThenInclude(u => u.Lessons)
+                                                                            .ThenInclude(ul => ul.TrainingMaterials)
+                                                                            .FirstOrDefaultAsync(x => x.Id == id);
     }
 }

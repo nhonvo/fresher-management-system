@@ -210,7 +210,7 @@ get list approved with related data
 // TODO: endpoint: GET /student:trainerId/feedback
 
 // **done** check duplicate syllabus,
-//**dokuro** file upload training material
+//**done** file upload training material
    // refer test assignment upload file
    // download file
    // report all student pass or fail. score of student in class
@@ -220,17 +220,17 @@ get list approved with related data
 //**done** send mail when request join class
 //**done** optimize code
 //**done** check validator unit, lesson
-// score report, export excel
 // update seed data
-// test project
 // check validator
-// check feedback get evaluate of trainer
+// test project
 
-// add register by google OpenID
-// chart real time
-// export to pdf
-// AUTHENTICATE: FORGET PASSWORD, REFRESH TOKEN
-// if i can add soft delete for all table use global query filter and ignore.
+--// check feedback get evaluate of trainer--
+--// add register by google OpenID--
+--// chart real time--
+--// export to pdf--
+--// AUTHENTICATE: FORGET PASSWORD, REFRESH TOKEN--
+--// if i can add soft delete for all table use global query filter and ignore.--
+
 //**done** check middleware timeout && global exception, health check, try do sth.
 // TODO: check validation of attendance and approve request
 
@@ -241,7 +241,6 @@ get list approved with related data
   - separate code logic u can
   - must do front-end project
     - deploy app
-
 
 // tracking score and send mail when student absent
 // test project by moq

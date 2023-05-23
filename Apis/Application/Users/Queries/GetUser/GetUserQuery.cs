@@ -23,14 +23,14 @@ namespace Application.Users.Queries.GetUser
         }
         public async Task<Pagination<UserContainIdDTO>> Handle(GetUserQuery request, CancellationToken cancellationToken)
         {
-            var user = await _unitOfWork.UserRepository.GetAsync<string>(
+            var user = await _unitOfWork.UserRepository.GetAsync<int>(
             filter: x => x.Name.Contains(request.keyword ?? "")
                         || x.Email.Contains(request.keyword ?? "")
                         || x.Id.ToString().Contains(request.keyword ?? ""),
              pageIndex: request.PageIndex,
              pageSize: request.PageSize,
              sortType: SortType.Ascending,
-             keySelectorForSort: x => x.Email);
+             keySelectorForSort: x => x.Id);
 
             var result = _mapper.Map<Pagination<UserContainIdDTO>>(user);
             return result;

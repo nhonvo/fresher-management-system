@@ -1,50 +1,522 @@
-[{"Name":"Tres-Zap","Status":0,"ParentId":null,"TrainingClassId":null,"CreationDate":"2023-02-12","CreatedBy":9,"IsDeleted":false},
-{"Name":"Redhold","Status":0,"ParentId":null,"TrainingClassId":null,"CreationDate":"2022-10-26","CreatedBy":1,"IsDeleted":false},
-{"Name":"Pannier","Status":1,"ParentId":null,"TrainingClassId":null,"CreationDate":"2022-12-30","CreatedBy":6,"IsDeleted":false},
-{"Name":"Tresom","Status":1,"ParentId":null,"TrainingClassId":null,"CreationDate":"2022-12-11","CreatedBy":9,"IsDeleted":false},
-{"Name":"Bitchip","Status":0,"ParentId":null,"TrainingClassId":null,"CreationDate":"2023-04-12","CreatedBy":3,"IsDeleted":false},
-{"Name":"Namfix","Status":0,"ParentId":null,"TrainingClassId":null,"CreationDate":"2022-09-01","CreatedBy":6,"IsDeleted":false},
-{"Name":"Sub-Ex","Status":1,"ParentId":null,"TrainingClassId":null,"CreationDate":"2022-12-13","CreatedBy":1,"IsDeleted":false},
-{"Name":"Job","Status":0,"ParentId":null,"TrainingClassId":null,"CreationDate":"2022-12-27","CreatedBy":8,"IsDeleted":false},
-{"Name":"Lotlux","Status":0,"ParentId":null,"TrainingClassId":null,"CreationDate":"2022-09-05","CreatedBy":3,"IsDeleted":false},
-{"Name":"Daltfresh","Status":1,"ParentId":null,"TrainingClassId":null,"CreationDate":"2023-02-24","CreatedBy":4,"IsDeleted":false},
-{"Name":"Tres-Zap","Status":0,"ParentId":null,"TrainingClassId":null,"CreationDate":"2022-12-26","CreatedBy":6,"IsDeleted":false},
-{"Name":"Wrapsafe","Status":1,"ParentId":null,"TrainingClassId":null,"CreationDate":"2022-08-14","CreatedBy":7,"IsDeleted":false},
-{"Name":"Tampflex","Status":0,"ParentId":null,"TrainingClassId":null,"CreationDate":"2023-02-22","CreatedBy":1,"IsDeleted":false},
-{"Name":"Vagram","Status":0,"ParentId":null,"TrainingClassId":null,"CreationDate":"2023-03-23","CreatedBy":9,"IsDeleted":false},
-{"Name":"Tresom","Status":1,"ParentId":null,"TrainingClassId":null,"CreationDate":"2022-12-24","CreatedBy":3,"IsDeleted":false},
-{"Name":"Viva","Status":0,"ParentId":null,"TrainingClassId":null,"CreationDate":"2022-07-06","CreatedBy":6,"IsDeleted":false},
-{"Name":"Domainer","Status":0,"ParentId":null,"TrainingClassId":null,"CreationDate":"2022-09-14","CreatedBy":9,"IsDeleted":false},
-{"Name":"Lotlux","Status":1,"ParentId":null,"TrainingClassId":null,"CreationDate":"2023-02-16","CreatedBy":10,"IsDeleted":false},
-{"Name":"Duobam","Status":1,"ParentId":null,"TrainingClassId":null,"CreationDate":"2023-01-06","CreatedBy":1,"IsDeleted":false},
-{"Name":"Bytecard","Status":0,"ParentId":null,"TrainingClassId":null,"CreationDate":"2022-12-29","CreatedBy":6,"IsDeleted":false},
-{"Name":"Bytecard","Status":1,"ParentId":null,"TrainingClassId":null,"CreationDate":"2023-01-01","CreatedBy":6,"IsDeleted":false},
-{"Name":"Holdlamis","Status":0,"ParentId":null,"TrainingClassId":null,"CreationDate":"2023-04-30","CreatedBy":4,"IsDeleted":false},
-{"Name":"Konklux","Status":0,"ParentId":null,"TrainingClassId":null,"CreationDate":"2023-01-11","CreatedBy":7,"IsDeleted":false},
-{"Name":"Alphazap","Status":0,"ParentId":null,"TrainingClassId":null,"CreationDate":"2022-11-14","CreatedBy":8,"IsDeleted":false},
-{"Name":"Konklab","Status":0,"ParentId":null,"TrainingClassId":null,"CreationDate":"2022-12-19","CreatedBy":8,"IsDeleted":false},
-{"Name":"Bytecard","Status":0,"ParentId":null,"TrainingClassId":null,"CreationDate":"2023-04-24","CreatedBy":5,"IsDeleted":false},
-{"Name":"Temp","Status":0,"ParentId":null,"TrainingClassId":null,"CreationDate":"2022-12-21","CreatedBy":9,"IsDeleted":false},
-{"Name":"Y-find","Status":0,"ParentId":null,"TrainingClassId":null,"CreationDate":"2022-11-01","CreatedBy":5,"IsDeleted":false},
-{"Name":"Voyatouch","Status":1,"ParentId":null,"TrainingClassId":null,"CreationDate":"2022-06-18","CreatedBy":10,"IsDeleted":false},
-{"Name":"Sub-Ex","Status":0,"ParentId":null,"TrainingClassId":null,"CreationDate":"2022-08-10","CreatedBy":9,"IsDeleted":false},
-{"Name":"Span","Status":1,"ParentId":null,"TrainingClassId":null,"CreationDate":"2022-10-18","CreatedBy":4,"IsDeleted":false},
-{"Name":"Otcom","Status":0,"ParentId":null,"TrainingClassId":null,"CreationDate":"2023-04-29","CreatedBy":4,"IsDeleted":false},
-{"Name":"Flowdesk","Status":0,"ParentId":null,"TrainingClassId":null,"CreationDate":"2022-11-27","CreatedBy":10,"IsDeleted":false},
-{"Name":"Pannier","Status":0,"ParentId":null,"TrainingClassId":null,"CreationDate":"2022-08-26","CreatedBy":9,"IsDeleted":false},
-{"Name":"Overhold","Status":0,"ParentId":null,"TrainingClassId":null,"CreationDate":"2022-05-31","CreatedBy":3,"IsDeleted":false},
-{"Name":"Solarbreeze","Status":0,"ParentId":null,"TrainingClassId":null,"CreationDate":"2023-02-11","CreatedBy":5,"IsDeleted":false},
-{"Name":"Home Ing","Status":1,"ParentId":null,"TrainingClassId":null,"CreationDate":"2023-02-07","CreatedBy":4,"IsDeleted":false},
-{"Name":"Quo Lux","Status":0,"ParentId":null,"TrainingClassId":null,"CreationDate":"2023-02-04","CreatedBy":5,"IsDeleted":false},
-{"Name":"Vagram","Status":1,"ParentId":null,"TrainingClassId":null,"CreationDate":"2022-09-08","CreatedBy":7,"IsDeleted":false},
-{"Name":"Voltsillam","Status":1,"ParentId":null,"TrainingClassId":null,"CreationDate":"2022-11-24","CreatedBy":5,"IsDeleted":false},
-{"Name":"Flowdesk","Status":0,"ParentId":null,"TrainingClassId":null,"CreationDate":"2022-08-29","CreatedBy":3,"IsDeleted":false},
-{"Name":"Prodder","Status":1,"ParentId":null,"TrainingClassId":null,"CreationDate":"2022-05-21","CreatedBy":3,"IsDeleted":false},
-{"Name":"Stronghold","Status":1,"ParentId":null,"TrainingClassId":null,"CreationDate":"2022-12-06","CreatedBy":7,"IsDeleted":false},
-{"Name":"Toughjoyfax","Status":1,"ParentId":null,"TrainingClassId":null,"CreationDate":"2022-10-16","CreatedBy":8,"IsDeleted":false},
-{"Name":"Andalax","Status":0,"ParentId":null,"TrainingClassId":null,"CreationDate":"2022-12-18","CreatedBy":2,"IsDeleted":false},
-{"Name":"Matsoft","Status":1,"ParentId":null,"TrainingClassId":null,"CreationDate":"2022-06-30","CreatedBy":3,"IsDeleted":false},
-{"Name":"Viva","Status":1,"ParentId":null,"TrainingClassId":null,"CreationDate":"2023-01-12","CreatedBy":3,"IsDeleted":false},
-{"Name":"Zathin","Status":1,"ParentId":null,"TrainingClassId":null,"CreationDate":"2023-02-15","CreatedBy":8,"IsDeleted":false},
-{"Name":"Bitchip","Status":0,"ParentId":null,"TrainingClassId":null,"CreationDate":"2022-11-26","CreatedBy":5,"IsDeleted":false},
-{"Name":"Greenlam","Status":0,"ParentId":null,"TrainingClassId":null,"CreationDate":"2022-08-22","CreatedBy":5,"IsDeleted":false}]
+[
+    {
+        "Name": "C# basic program",
+        "Status": "Active",
+        "ParentId": null,
+        "CreationDate": "2023-02-12",
+        "CreatedBy": 7,
+        "IsDeleted": false
+    },
+    {
+        "Name": "Python advanced program",
+        "Status": "Active",
+        "ParentId": null,
+        "CreationDate": "2023-03-05",
+        "CreatedBy": 7,
+        "IsDeleted": false
+    },
+    {
+        "Name": "Java fundamentals",
+        "Status": "Active",
+        "ParentId": null,
+        "CreationDate": "2023-04-18",
+        "CreatedBy": 7,
+        "IsDeleted": false
+    },
+    {
+        "Name": "HTML and CSS basics",
+        "Status": "Active",
+        "ParentId": null,
+        "CreationDate": "2023-01-22",
+        "CreatedBy": 7,
+        "IsDeleted": false
+    },
+    {
+        "Name": "JavaScript for beginners",
+        "Status": "Active",
+        "ParentId": null,
+        "CreationDate": "2023-05-10",
+        "CreatedBy": 7,
+        "IsDeleted": false
+    },
+    {
+        "Name": "C++ programming basics",
+        "Status": "Active",
+        "ParentId": null,
+        "CreationDate": "2023-02-28",
+        "CreatedBy": 7,
+        "IsDeleted": false
+    },
+    {
+        "Name": "Ruby on Rails fundamentals",
+        "Status": "Active",
+        "ParentId": null,
+        "CreationDate": "2023-03-15",
+        "CreatedBy": 7,
+        "IsDeleted": false
+    },
+    {
+        "Name": "Data structures and algorithms in Python",
+        "Status": "Active",
+        "ParentId": null,
+        "CreationDate": "2023-04-02",
+        "CreatedBy": 7,
+        "IsDeleted": false
+    },
+    {
+        "Name": "PHP web development",
+        "Status": "Active",
+        "ParentId": null,
+        "CreationDate": "2023-05-01",
+        "CreatedBy": 7,
+        "IsDeleted": false
+    },
+    {
+        "Name": "Introduction to SQL",
+        "Status": "Active",
+        "ParentId": null,
+        "CreationDate": "2023-01-10",
+        "CreatedBy": 7,
+        "IsDeleted": false
+    },
+    {
+        "Name": "Mobile app development with React Native",
+        "Status": "Active",
+        "ParentId": null,
+        "CreationDate": "2023-02-22",
+        "CreatedBy": 7,
+        "IsDeleted": false
+    },
+    {
+        "Name": "Scala programming essentials",
+        "Status": "Active",
+        "ParentId": null,
+        "CreationDate": "2023-03-20",
+        "CreatedBy": 7,
+        "IsDeleted": false
+    },
+    {
+        "Name": "Introduction to Unity game development",
+        "Status": "Active",
+        "ParentId": null,
+        "CreationDate": "2023-04-12",
+        "CreatedBy": 7,
+        "IsDeleted": false
+    },
+    {
+        "Name": "Angular framework fundamentals",
+        "Status": "Active",
+        "ParentId": null,
+        "CreationDate": "2023-05-08",
+        "CreatedBy": 7,
+        "IsDeleted": false
+    },
+    {
+        "Name": "Network security and cryptography",
+        "Status": "Active",
+        "ParentId": null,
+        "CreationDate": "2023-01-28",
+        "CreatedBy": 7,
+        "IsDeleted": false
+    },
+    {
+        "Name": "Tres-Zap",
+        "Status": 0,
+        "ParentId": null,
+        "CreationDate": "2023-02-12",
+        "CreatedBy": 7,
+        "IsDeleted": false
+    },
+    {
+        "Name": "Redhold",
+        "Status": 0,
+        "ParentId": null,
+        "CreationDate": "2022-10-26",
+        "CreatedBy": 7,
+        "IsDeleted": false
+    },
+    {
+        "Name": "Pannier",
+        "Status": 1,
+        "ParentId": null,
+        "CreationDate": "2022-12-30",
+        "CreatedBy": 7,
+        "IsDeleted": false
+    },
+    {
+        "Name": "Tresom",
+        "Status": 1,
+        "ParentId": null,
+        "CreationDate": "2022-12-11",
+        "CreatedBy": 7,
+        "IsDeleted": false
+    },
+    {
+        "Name": "Bitchip",
+        "Status": 0,
+        "ParentId": null,
+        "CreationDate": "2023-04-12",
+        "CreatedBy": 7,
+        "IsDeleted": false
+    },
+    {
+        "Name": "Namfix",
+        "Status": 0,
+        "ParentId": null,
+        "CreationDate": "2022-09-01",
+        "CreatedBy": 7,
+        "IsDeleted": false
+    },
+    {
+        "Name": "Sub-Ex",
+        "Status": 1,
+        "ParentId": null,
+        "CreationDate": "2022-12-13",
+        "CreatedBy": 7,
+        "IsDeleted": false
+    },
+    {
+        "Name": "Job",
+        "Status": 0,
+        "ParentId": null,
+        "CreationDate": "2022-12-27",
+        "CreatedBy": 7,
+        "IsDeleted": false
+    },
+    {
+        "Name": "Lotlux",
+        "Status": 0,
+        "ParentId": null,
+        "CreationDate": "2022-09-05",
+        "CreatedBy": 7,
+        "IsDeleted": false
+    },
+    {
+        "Name": "Daltfresh",
+        "Status": 1,
+        "ParentId": null,
+        "CreationDate": "2023-02-24",
+        "CreatedBy": 7,
+        "IsDeleted": false
+    },
+    {
+        "Name": "Tres-Zap",
+        "Status": 0,
+        "ParentId": null,
+        "CreationDate": "2022-12-26",
+        "CreatedBy": 7,
+        "IsDeleted": false
+    },
+    {
+        "Name": "Wrapsafe",
+        "Status": 1,
+        "ParentId": null,
+        "CreationDate": "2022-08-14",
+        "CreatedBy": 7,
+        "IsDeleted": false
+    },
+    {
+        "Name": "Tampflex",
+        "Status": 0,
+        "ParentId": null,
+        "CreationDate": "2023-02-22",
+        "CreatedBy": 7,
+        "IsDeleted": false
+    },
+    {
+        "Name": "Vagram",
+        "Status": 0,
+        "ParentId": null,
+        "CreationDate": "2023-03-23",
+        "CreatedBy": 7,
+        "IsDeleted": false
+    },
+    {
+        "Name": "Tresom",
+        "Status": 1,
+        "ParentId": null,
+        "CreationDate": "2022-12-24",
+        "CreatedBy": 7,
+        "IsDeleted": false
+    },
+    {
+        "Name": "Viva",
+        "Status": 0,
+        "ParentId": null,
+        "CreationDate": "2022-07-06",
+        "CreatedBy": 7,
+        "IsDeleted": false
+    },
+    {
+        "Name": "Domainer",
+        "Status": 0,
+        "ParentId": null,
+        "CreationDate": "2022-09-14",
+        "CreatedBy": 7,
+        "IsDeleted": false
+    },
+    {
+        "Name": "Lotlux",
+        "Status": 1,
+        "ParentId": null,
+        "CreationDate": "2023-02-16",
+        "CreatedBy": 7,
+        "IsDeleted": false
+    },
+    {
+        "Name": "Duobam",
+        "Status": 1,
+        "ParentId": null,
+        "CreationDate": "2023-01-06",
+        "CreatedBy": 7,
+        "IsDeleted": false
+    },
+    {
+        "Name": "Bytecard",
+        "Status": 0,
+        "ParentId": null,
+        "CreationDate": "2022-12-29",
+        "CreatedBy": 7,
+        "IsDeleted": false
+    },
+    {
+        "Name": "Bytecard",
+        "Status": 1,
+        "ParentId": null,
+        "CreationDate": "2023-01-01",
+        "CreatedBy": 7,
+        "IsDeleted": false
+    },
+    {
+        "Name": "Holdlamis",
+        "Status": 0,
+        "ParentId": null,
+        "CreationDate": "2023-04-30",
+        "CreatedBy": 7,
+        "IsDeleted": false
+    },
+    {
+        "Name": "Konklux",
+        "Status": 0,
+        "ParentId": null,
+        "CreationDate": "2023-01-11",
+        "CreatedBy": 7,
+        "IsDeleted": false
+    },
+    {
+        "Name": "Alphazap",
+        "Status": 0,
+        "ParentId": null,
+        "CreationDate": "2022-11-14",
+        "CreatedBy": 7,
+        "IsDeleted": false
+    },
+    {
+        "Name": "Konklab",
+        "Status": 0,
+        "ParentId": null,
+        "CreationDate": "2022-12-19",
+        "CreatedBy": 7,
+        "IsDeleted": false
+    },
+    {
+        "Name": "Bytecard",
+        "Status": 0,
+        "ParentId": null,
+        "CreationDate": "2023-04-24",
+        "CreatedBy": 7,
+        "IsDeleted": false
+    },
+    {
+        "Name": "Temp",
+        "Status": 0,
+        "ParentId": null,
+        "CreationDate": "2022-12-21",
+        "CreatedBy": 7,
+        "IsDeleted": false
+    },
+    {
+        "Name": "Y-find",
+        "Status": 0,
+        "ParentId": null,
+        "CreationDate": "2022-11-01",
+        "CreatedBy": 7,
+        "IsDeleted": false
+    },
+    {
+        "Name": "Voyatouch",
+        "Status": 1,
+        "ParentId": null,
+        "CreationDate": "2022-06-18",
+        "CreatedBy": 7,
+        "IsDeleted": false
+    },
+    {
+        "Name": "Sub-Ex",
+        "Status": 0,
+        "ParentId": null,
+        "CreationDate": "2022-08-10",
+        "CreatedBy": 7,
+        "IsDeleted": false
+    },
+    {
+        "Name": "Span",
+        "Status": 1,
+        "ParentId": null,
+        "CreationDate": "2022-10-18",
+        "CreatedBy": 7,
+        "IsDeleted": false
+    },
+    {
+        "Name": "Otcom",
+        "Status": 0,
+        "ParentId": null,
+        "CreationDate": "2023-04-29",
+        "CreatedBy": 7,
+        "IsDeleted": false
+    },
+    {
+        "Name": "Flowdesk",
+        "Status": 0,
+        "ParentId": null,
+        "CreationDate": "2022-11-27",
+        "CreatedBy": 7,
+        "IsDeleted": false
+    },
+    {
+        "Name": "Pannier",
+        "Status": 0,
+        "ParentId": null,
+        "CreationDate": "2022-08-26",
+        "CreatedBy": 7,
+        "IsDeleted": false
+    },
+    {
+        "Name": "Overhold",
+        "Status": 0,
+        "ParentId": null,
+        "CreationDate": "2022-05-31",
+        "CreatedBy": 7,
+        "IsDeleted": false
+    },
+    {
+        "Name": "Solarbreeze",
+        "Status": 0,
+        "ParentId": null,
+        "CreationDate": "2023-02-11",
+        "CreatedBy": 7,
+        "IsDeleted": false
+    },
+    {
+        "Name": "Home Ing",
+        "Status": 1,
+        "ParentId": null,
+        "CreationDate": "2023-02-07",
+        "CreatedBy": 7,
+        "IsDeleted": false
+    },
+    {
+        "Name": "Quo Lux",
+        "Status": 0,
+        "ParentId": null,
+        "CreationDate": "2023-02-04",
+        "CreatedBy": 7,
+        "IsDeleted": false
+    },
+    {
+        "Name": "Vagram",
+        "Status": 1,
+        "ParentId": null,
+        "CreationDate": "2022-09-08",
+        "CreatedBy": 7,
+        "IsDeleted": false
+    },
+    {
+        "Name": "Voltsillam",
+        "Status": 1,
+        "ParentId": null,
+        "CreationDate": "2022-11-24",
+        "CreatedBy": 7,
+        "IsDeleted": false
+    },
+    {
+        "Name": "Flowdesk",
+        "Status": 0,
+        "ParentId": null,
+        "CreationDate": "2022-08-29",
+        "CreatedBy": 7,
+        "IsDeleted": false
+    },
+    {
+        "Name": "Prodder",
+        "Status": 1,
+        "ParentId": null,
+        "CreationDate": "2022-05-21",
+        "CreatedBy": 7,
+        "IsDeleted": false
+    },
+    {
+        "Name": "Stronghold",
+        "Status": 1,
+        "ParentId": null,
+        "CreationDate": "2022-12-06",
+        "CreatedBy": 7,
+        "IsDeleted": false
+    },
+    {
+        "Name": "Toughjoyfax",
+        "Status": 1,
+        "ParentId": null,
+        "CreationDate": "2022-10-16",
+        "CreatedBy": 7,
+        "IsDeleted": false
+    },
+    {
+        "Name": "Andalax",
+        "Status": 0,
+        "ParentId": null,
+        "CreationDate": "2022-12-18",
+        "CreatedBy": 7,
+        "IsDeleted": false
+    },
+    {
+        "Name": "Matsoft",
+        "Status": 1,
+        "ParentId": null,
+        "CreationDate": "2022-06-30",
+        "CreatedBy": 7,
+        "IsDeleted": false
+    },
+    {
+        "Name": "Viva",
+        "Status": 1,
+        "ParentId": null,
+        "CreationDate": "2023-01-12",
+        "CreatedBy": 7,
+        "IsDeleted": false
+    },
+    {
+        "Name": "Zathin",
+        "Status": 1,
+        "ParentId": null,
+        "CreationDate": "2023-02-15",
+        "CreatedBy": 7,
+        "IsDeleted": false
+    },
+    {
+        "Name": "Bitchip",
+        "Status": 0,
+        "ParentId": null,
+        "CreationDate": "2022-11-26",
+        "CreatedBy": 7,
+        "IsDeleted": false
+    },
+    {
+        "Name": "Greenlam",
+        "Status": 0,
+        "ParentId": null,
+        "CreationDate": "2022-08-22",
+        "CreatedBy": 7,
+        "IsDeleted": false
+    }
+]

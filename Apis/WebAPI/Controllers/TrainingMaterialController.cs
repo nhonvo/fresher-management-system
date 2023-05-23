@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers;
 
-
 public class TrainingMaterialController : CustomBaseController
 {
     private readonly IMediator _mediator;
@@ -33,5 +32,5 @@ public class TrainingMaterialController : CustomBaseController
 
     [HttpGet("{id}/download")]
     public async Task<IActionResult> Download(int id)
-    => Ok(await _mediator.Send(new DownloadTrainingMaterialQuery(id)));
+    => await _mediator.Send(new DownloadTrainingMaterialQuery(id));
 }

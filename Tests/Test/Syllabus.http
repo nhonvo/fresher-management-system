@@ -5,6 +5,8 @@
 @id=https://localhost:5000/api/
 # Get all syllabuses
 GET {{base_url}}/{{controller}} HTTP/1.1
+Host: localhost:5000
+{{access_token}}
 
 ###
 

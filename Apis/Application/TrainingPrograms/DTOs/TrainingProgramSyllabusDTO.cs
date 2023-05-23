@@ -1,9 +1,9 @@
 using Domain.Enums;
 
-namespace Application.TrainingPrograms.Queries.GetPagedSyllabusesByTraningProgramId;
+namespace Application.TrainingPrograms.DTOs;
 
 #pragma warning disable 
-public class SyllabusDTO
+public class TrainingProgramSyllabusDTO
 {
     public int Id { get; set; }
     public string Code { get; set; }

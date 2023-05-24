@@ -1,7 +1,4 @@
-﻿using Application.Attendances.DTO;
-using Application.Attendances.Queries.GetAttendanceById;
-using Application.Attendances.Queries.GetAttendanceEachClass;
-using Application.Attendances.Queries.GetAttendanceOfClass;
+﻿using Application.Attendances.Queries.GetAttendanceById;
 using Application.Emails.Commands.SendMail;
 using Application.Emails.Queries;
 using Application.Interfaces;

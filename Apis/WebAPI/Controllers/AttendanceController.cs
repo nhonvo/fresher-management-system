@@ -44,7 +44,7 @@ namespace WebAPI.Controllers
         }
         [HttpGet("Filter")]
         public async Task<IActionResult> GetPending(
-            StatusAttendanceApprove? status = StatusAttendanceApprove.Pending,
+            StatusAttendanceApprove? status,
             int pageIndex = 0,
             int pageSize = 10)
         {

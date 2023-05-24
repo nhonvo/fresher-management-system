@@ -11,7 +11,7 @@ using MediatR;
 
 namespace Application.Emails.Commands.SendMailApproveAbsent
 {
-    public record SendMailApproveAbsentCommand(int attendanceId) : IRequest;
+    public record SendMailApproveAbsentCommand(int attendanceId, string email, string name ) : IRequest;
     public class SendMailApproveAbsentHandler : IRequestHandler<SendMailApproveAbsentCommand>
     {
         private readonly IUnitOfWork _unitOfWork;
@@ -31,21 +31,19 @@ namespace Application.Emails.Commands.SendMailApproveAbsent
 
         public async Task Handle(SendMailApproveAbsentCommand request, CancellationToken cancellationToken)
         {
-            var user = await _mediator.Send(new GetProfileQuery());
             var attendance = await _mediator.Send(new GetAttendanceByIdQuery(request.attendanceId));
 
-            var to = new List<string> { user.Email };
+            var to = new List<string> { request.email };
 
             var title = "Approve absence";
             var speech = "Approve request absence";
             var mainContent =
             $@"
                 <div>
-                    <h2>Your class Information:</h2>
+                    <h2>Your student Information:</h2>
                     <ul>
-                        <li><strong>Name:</strong> {user.Name}</li>
-                        <li><strong>Email:</strong> {user.Email}</li>
-                        <li><strong>Phone:</strong> {user.Phone}</li>
+                        <li><strong>Name:</strong> {request.name}</li>
+                        <li><strong>Email:</strong> {request.email}</li>
                     </ul>
                        <h2>Attendance:</h2>
                     <ul>

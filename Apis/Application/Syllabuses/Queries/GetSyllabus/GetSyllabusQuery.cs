@@ -25,7 +25,7 @@ namespace Application.Syllabuses.Queries.GetSyllabus
         }
         public async Task<Pagination<SyllabusRelated>> Handle(GetSyllabusQuery request, CancellationToken cancellationToken)
         {
-            var syllabus = await _unitOfWork.SyllabusRepository.GetAsync<string>(
+            var syllabus = await _unitOfWork.SyllabusRepository.GetAsync<int>(
                 filter: x => x.Name.Contains(request.keyword ?? "")
                              || x.Code.Contains(request.keyword ?? "")
                              || x.Id.ToString().Contains(request.keyword ?? ""),
@@ -37,7 +37,7 @@ namespace Application.Syllabuses.Queries.GetSyllabus
                 pageIndex: request.PageIndex,
                 pageSize: request.PageSize,
                 sortType: SortType.Ascending,
-                keySelectorForSort: x => x.Name);
+                keySelectorForSort: x => x.Id);
             var result = _mapper.Map<Pagination<SyllabusRelated>>(syllabus);
             return result;
         }

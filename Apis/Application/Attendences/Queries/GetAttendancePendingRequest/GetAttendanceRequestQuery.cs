@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Application.Attendances.Queries.GetAttendanceFilterRequest
 {
-    public record GetAttendanceFilterRequestQuery(StatusAttendanceApprove? status = StatusAttendanceApprove.Pending, int PageIndex = 0, int PageSize = 10) : IRequest<Pagination<AttendanceRelatedFilterDTO>>;
+    public record GetAttendanceFilterRequestQuery(StatusAttendanceApprove? status, int PageIndex = 0, int PageSize = 10) : IRequest<Pagination<AttendanceRelatedFilterDTO>>;
     public class GetAttendanceFilterRequestHandler : IRequestHandler<GetAttendanceFilterRequestQuery, Pagination<AttendanceRelatedFilterDTO>>
     {
         private readonly IUnitOfWork _unitOfWork;
@@ -21,7 +21,9 @@ namespace Application.Attendances.Queries.GetAttendanceFilterRequest
         public async Task<Pagination<AttendanceRelatedFilterDTO>> Handle(GetAttendanceFilterRequestQuery request, CancellationToken cancellationToken)
         {
             var attendance = await _unitOfWork.AttendanceRepository.GetAsync(
-                filter: x => x.ApproveStatus == request.status,
+                filter: x => request.status == null ?
+                    true :
+                    x.ApproveStatus == request.status,
                  include: x => x.Include(x => x.Admin)
                                 .Include(x => x.ClassStudent)
                                 .ThenInclude(x => x.Student)

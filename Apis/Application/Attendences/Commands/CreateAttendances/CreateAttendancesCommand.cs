@@ -37,6 +37,7 @@ namespace Application.Attendances.Commands.CreateAttendances
             attendance.IsDeleted = false;
             attendance.CreatedBy = _claimService.CurrentUserId;
             attendance.CreationDate = _currentTime.GetCurrentTime();
+            attendance.AdminId  = 8;
             await _unitOfWork.ExecuteTransactionAsync(() =>
             {
                 _unitOfWork.AttendanceRepository.AddAsync(attendance);

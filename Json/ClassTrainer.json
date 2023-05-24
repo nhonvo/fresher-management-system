@@ -12,11 +12,11 @@
         "TrainerId": 5
     },
     {
-        "TrainingClassId": 50,
+        "TrainingClassId": 4,
         "TrainerId": 6
     },
     {
-        "TrainingClassId": 4,
+        "TrainingClassId": 5,
         "TrainerId": 4
     }
 ]

@@ -12,11 +12,31 @@
         "AdminId": 8
     },
     {
-        "TrainingClassId": 50,
+        "TrainingClassId": 4,
         "AdminId": 9
     },
     {
-        "TrainingClassId": 4,
+        "TrainingClassId": 5,
+        "AdminId": 7
+    },
+    {
+        "TrainingClassId": 6,
+        "AdminId": 2
+    },
+    {
+        "TrainingClassId": 7,
+        "AdminId": 7
+    },
+    {
+        "TrainingClassId": 8,
+        "AdminId": 8
+    },
+    {
+        "TrainingClassId": 9,
+        "AdminId": 9
+    },
+    {
+        "TrainingClassId": 10,
         "AdminId": 7
     }
 ]

@@ -998,5 +998,35 @@
         "Role": "Trainee",
         "Status": "Active",
         "DateOfBirth": "1999-06-22T00:00:00"
+    },
+    {
+        "Email": "superadminBackup@gmail.com",
+        "Gender": "Male",
+        "Name": "SuperAdmin",
+        "Phone": "122-215-1843",
+        "Password": "$2a$11$8SylUOilhjdL8bfK.8lIg.Heu52KFJrsKLsACsvUroxQAd660dBQG",
+        "Role": "SuperAdmin",
+        "Status": "Active",
+        "DateOfBirth": "1997-06-11T00:00:00"
+    },
+    {
+        "Email": "classadminBackup@gmail.com",
+        "Gender": "Male",
+        "Name": "ClassAdmin",
+        "Phone": "222-215-1843",
+        "Password": "$2a$11$8SylUOilhjdL8bfK.8lIg.Heu52KFJrsKLsACsvUroxQAd660dBQG",
+        "Role": "ClassAdmin",
+        "Status": "Active",
+        "DateOfBirth": "1999-06-11T00:00:00"
+    },
+    {
+        "Email": "trainerBackup@gmail.com",
+        "Gender": "Female",
+        "Name": "Trainer",
+        "Phone": "322-215-1843",
+        "Password": "$2a$11$8SylUOilhjdL8bfK.8lIg.Heu52KFJrsKLsACsvUroxQAd660dBQG",
+        "Role": "Trainer",
+        "Status": "Active",
+        "DateOfBirth": "2000-04-06T00:00:00"
     }
 ]

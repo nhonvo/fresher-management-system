@@ -4,6 +4,7 @@ namespace Application.Attendances.DTO
 {
     public class AttendanceDTO
     {
+        public int Id { get; set; }
         public int StudentId { get; set; }
         public string ClassName { get; set; }
         public string? Reason { get; set; }

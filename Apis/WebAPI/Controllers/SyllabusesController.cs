@@ -20,7 +20,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers;
-[Authorize]
+
 public class SyllabusesController : BasesController
 {
     private readonly IMediator _mediator;

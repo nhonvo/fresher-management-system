@@ -40,8 +40,10 @@ namespace WebAPI.Controllers
         public async Task<IActionResult> Delete(int id)
             => Ok(await _mediator.Send(new DeleteUnitLessonCommand(id)));
 
+        #region TrainingMaterials
+
         [HttpGet("{id}/training-materials")]
-        public async Task<IActionResult> GetAsync(
+        public async Task<IActionResult> GetPagedTrainingMaterialsByLessonId(
             int id,
             string? keyword,
             SortType sortType = SortType.Ascending,
@@ -64,5 +66,8 @@ namespace WebAPI.Controllers
             request.Id = id;
             return Ok(await _mediator.Send(request));
         }
+
+        #endregion TrainingMaterials
+
     }
 }

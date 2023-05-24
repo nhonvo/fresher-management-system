@@ -73,6 +73,7 @@ public class SyllabusesController : BasesController
     => await _mediator.Send(new DuplicateSyllabusCommand(id));
 
     #region CSV
+
     [HttpGet("export-syllabuses-csv")]
     public async Task<FileStreamResult> ExportSyllabusesCSV(string? columnSeparator)
     => await _mediator.Send(new ExportSyllabusesCSVQuery(columnSeparator ?? ","));

@@ -111,6 +111,8 @@ public class TestAssessmentController : CustomBaseController
         };
     }
 
+    #region Training Materials
+
     [HttpGet("{id}/training-materials")]
     public async Task<IActionResult> GetPagedTrainingMaterialsByTestAssessmentId(
         int id,
@@ -135,6 +137,8 @@ public class TestAssessmentController : CustomBaseController
         request.Id = id;
         return Ok(await _mediator.Send(request));
     }
+
+    #endregion Training Materials
 
     [HttpGet("student/{id:int}/finalSyllabusScores")]
     public async Task<IActionResult> GetListSyllabusScoreOfStudentAsync(int id, int? classId, int pageIndex = 0, int pageSize = 10)

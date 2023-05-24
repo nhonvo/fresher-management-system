@@ -2,7 +2,6 @@
 using Application.TrainingMaterials.Queries.GetPagedTrainingMaterials;
 using Domain.Enums;
 using MediatR;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers;
@@ -34,4 +33,10 @@ public class TrainingMaterialController : CustomBaseController
     [HttpGet("{id}/download")]
     public async Task<IActionResult> Download(int id)
     => await _mediator.Send(new DownloadTrainingMaterialQuery(id));
+
+    [HttpGet("{id}/share")]
+    public RedirectResult Share(int id)
+    {
+        return RedirectPermanent($"https://qr.softvn.com?q=trainingmanagementsystem.azurewebsites.net/api/TrainingMaterial/{id}/download");
+    }
 }
